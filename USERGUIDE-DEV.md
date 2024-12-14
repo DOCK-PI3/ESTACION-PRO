@@ -120,6 +120,8 @@ _This is the dialog shown if no game files were found. It lets you configure the
 
 ## Upgrading to a newer release
 
+**Linux, macOS and Windows**
+
 **Note:** Before upgrading ES-DE, make sure that you have not made any system customizations anywhere in the installation directory structure as these files will be overwritten during the upgrade process. All customizations should go into ~/ES-DE/custom_systems/ as described elsewhere in this guide. None of the upgrade methods mentioned below will ever touch any files inside your ES-DE directory tree.
 
 There is a built-in application updater that can automatically upgrade the Linux AppImages, and for Windows and macOS there is support for downloading the packages directly inside ES-DE. Just be aware that these will need to be manually installed. Using the application updater is straightforward, just follow the on-screen instructions. For the AppImage releases the old file is retained by renaming it, adding its version to the filename followed by the .OLD extension, for example `ES-DE_x64_SteamDeck.AppImage_3.0.0.OLD`
@@ -128,7 +130,16 @@ Note that the updater will keep whatever filename you had for your running AppIm
 
 On Windows and macOS you can specify to which directory you want to save the downloaded file. The default is `C:\Users\myusername\Downloads` on Windows and `/Users/myusername/Downloads` on macOS.
 
-On Android the update process differs depending on whether you have the Patreon release or a release from either the Samsung Galaxy Store or Huawei AppGallery. For the store versions you simply update via the store app. For the Patreon release you'll get an email (sent to the address you used when buying ES-DE there) whenever there is a new version. For all Android releases, unless you have modifed the option _Check for application updates_ you'll see a popup on application startup whenever there's a new release available.
+**Android**
+
+On Android the update process differs depending on whether you have the Patreon release or a release from either the Samsung Galaxy Store or Huawei AppGallery. For the store versions you simply update via the store app. For the Patreon release you'll get an email (sent to the address you used on Patreon) whenever there is a new version. This email contains a download link to the latest APK, and to apply the update you simply run this APK file. This is a safe operation that will not change or remove any of your data such as settings, scraped media etc.
+
+Also for the Patreon release you'll see a popup on application startup whenever there's a new version available, unless you have modifed the option _Check for application updates_ in the _Other settings_ menu. Note that such notifications are not shown for the Galaxy Store and AppGallery releases as those store apps have their built-in update notifications.
+
+For the Patreon release you can also resend the latest update email to yourself using the self-service resend tool:\
+https://resend.es-de.org
+
+**After the upgrade**
 
 Regardless of package format and operating system it's a good idea to update the ROM directory tree after upgrading to a new version. It's possible that the new ES-DE release adds support for more systems and emulators compared to the version you previously had installed. The easiest way to do this is via the _Create/update system directories_ entry in the _Utilities_ menu. Alternatively the _--create-system-dirs_ command line option can be used. Both methods work identically and will create any missing system directories and also update the systems.txt and systeminfo.txt files. This is a safe operation as it will not overwrite or delete your game files.
 
