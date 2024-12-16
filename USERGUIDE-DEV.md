@@ -728,6 +728,7 @@ The following emulators are supported in AppImage format when using the bundled 
 | psvita        | Vita3K              | Vita3K*.AppImage               |
 | psx           | DuckStation         | DuckStation*.AppImage          |
 | snes          | Snes9x              | Snes9x*.AppImage               |
+| switch        | Ryujuinx            | \*yujinx\*.AppImage            |
 | xbox          | xemu                | xemu*.AppImage                 |
 | wii           | Dolphin             | Dolphin_Emulator*.AppImage     |
 | wiiu          | Cemu                | Cemu*.AppImage                 |
@@ -2516,6 +2517,11 @@ To add an installed game to ES-DE, create an empty file in `~/ROMs/psvita` and n
 Then add the game Title ID to this file. This ID can be found inside the Vita3K GUI, in the _Title ID_ column. For example the game _WipEout 2048_ has an ID that is PCSF00007. So simply add the string PCSF00007 to the `WipEout 2048.psvita` file and the setup for this game is complete.
 
 Game launching and scraping should now work fine in ES-DE.
+
+To simplify the setup described above there is a convenient archive of .psvita files available that covers most of the game library for this console. It can be downloaded from here:\
+https://github.com/Jetup13/Retroid-Pocket-5-Wiki/wiki/Emulators-and-Formats#vita3k-frontend-support
+
+Just extract the corresponding file for any game you have installed in Vita3K and place it in ~/ROMs/psvita and you're good to go.
 
 ### Steam
 

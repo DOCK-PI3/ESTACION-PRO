@@ -2515,6 +2515,11 @@ Then add the game Title ID to this file. This ID can be found inside the Vita3K 
 
 Game launching and scraping should now work fine in ES-DE.
 
+To simplify the setup described above there is a convenient archive of .psvita files available that covers most of the game library for this console. It can be downloaded from here:\
+https://github.com/Jetup13/Retroid-Pocket-5-Wiki/wiki/Emulators-and-Formats#vita3k-frontend-support
+
+Just extract the corresponding file for any game you have installed in Vita3K and place it in ~/ROMs/psvita and you're good to go.
+
 ### Steam
 
 These games can easily be added to ES-DE using shortcuts, just be aware that this requires that the games have been installed locally.
