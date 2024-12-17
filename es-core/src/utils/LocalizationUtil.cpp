@@ -44,7 +44,8 @@ namespace Utils
                                                                                   {{"sv"}, {"SE"}},
                                                                                   {{"ja"}, {"JP"}},
                                                                                   {{"ko"}, {"KR"}},
-                                                                                  {{"zh"}, {"CN"}}};
+                                                                                  {{"zh"}, {"CN"}},
+                                                                                  {{"zh"}, {"TW"}}};
         // clang-format on
 
         std::string sCurrentLocale {"en_US"};
