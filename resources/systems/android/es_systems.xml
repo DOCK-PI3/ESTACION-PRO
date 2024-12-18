@@ -705,6 +705,7 @@
         <command label="Gearsystem">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=gearsystem_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="SMS Plus GX">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=smsplus_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="PicoDrive">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=picodrive_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="Pizza Boy SC (Standalone)">%EMULATOR_PIZZA-BOY-SC% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_rom_uri%=%ROM%</command>
         <command label="MasterGear (Standalone)">%EMULATOR_MASTERGEAR% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %ACTION%=android.intent.action.VIEW %DATA%=%ROMSAF%</command>
         <platform>gamegear</platform>
         <theme>gamegear</theme>
@@ -786,6 +787,7 @@
         <command label="Genesis Plus GX Wide">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=genesis_plus_gx_wide_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="PicoDrive">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=picodrive_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="MD.emu (Standalone)">%EMULATOR_MD-EMU% %DATA%=%ROMPROVIDER%</command>
+        <command label="Pizza Boy SC (Standalone)">%EMULATOR_PIZZA-BOY-SC% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_rom_uri%=%ROM%</command>
         <platform>genesis</platform>
         <theme>genesis</theme>
     </system>
@@ -941,6 +943,7 @@
         <command label="Gearsystem">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=gearsystem_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="PicoDrive">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=picodrive_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="MD.emu (Standalone)">%EMULATOR_MD-EMU% %DATA%=%ROMPROVIDER%</command>
+        <command label="Pizza Boy SC (Standalone)">%EMULATOR_PIZZA-BOY-SC% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_rom_uri%=%ROM%</command>
         <command label="MasterGear (Standalone)">%EMULATOR_MASTERGEAR% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %ACTION%=android.intent.action.VIEW %DATA%=%ROMSAF%</command>
         <platform>mastersystem</platform>
         <theme>mastersystem</theme>
@@ -978,6 +981,7 @@
         <command label="Genesis Plus GX Wide">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=genesis_plus_gx_wide_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="PicoDrive">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=picodrive_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="MD.emu (Standalone)">%EMULATOR_MD-EMU% %DATA%=%ROMPROVIDER%</command>
+        <command label="Pizza Boy SC (Standalone)">%EMULATOR_PIZZA-BOY-SC% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_rom_uri%=%ROM%</command>
         <platform>megadrive</platform>
         <theme>megadrive</theme>
     </system>
@@ -990,6 +994,7 @@
         <command label="Genesis Plus GX Wide">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=genesis_plus_gx_wide_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="PicoDrive">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=picodrive_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="MD.emu (Standalone)">%EMULATOR_MD-EMU% %DATA%=%ROMPROVIDER%</command>
+        <command label="Pizza Boy SC (Standalone)">%EMULATOR_PIZZA-BOY-SC% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_rom_uri%=%ROM%</command>
         <platform>megadrive</platform>
         <theme>megadrivejp</theme>
     </system>
