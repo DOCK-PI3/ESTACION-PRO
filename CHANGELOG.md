@@ -1,5 +1,22 @@
 # ES-DE Frontend - Changelog
 
+## Version 3.2.0 (in development)
+
+**Release date:** TBD
+
+### Release overview
+
+### Detailed list of changes
+
+* Added translations for Traditional Chinese (zh_TW)
+* (Android) Added Pizza Boy SC standalone as an alternative emulator for the gamegear, genesis, mastersystem, megadrive and megadrivejp systems
+* (Android) Changed the target SDK version to 35 (Android 15)
+
+### Bug fixes
+
+* The text element containerStartDelay timer was sometimes not reset which made vertical text scrolling start too early under some circumstances
+* Returning from a game when running in the background ignored the video element delay property for the first playback
+
 ## Version 3.1.1 / 3.1.1-39
 
 **Release date:** 2024-12-13

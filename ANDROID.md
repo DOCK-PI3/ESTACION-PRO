@@ -585,6 +585,8 @@ This emulator can be installed from the Play store. Note that only the paid Pro 
 
 https://play.google.com/store/apps/details?id=org.devmiyax.yabasanshioro2.pro
 
+**Note:** At the time of writing this emulator is broken on some devices and will simply display the error message _Cannot initialize SH2_ on game launch. The issue was apparently introduced in a recent update and is awaiting a fix from the developer.
+
 ## Device compatibility
 
 This is clearly not a complete list of Android devices, but rather those we know have been tested with ES-DE and for which there is a known status.

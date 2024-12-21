@@ -48,7 +48,9 @@ Leon Styhre \
 wakeboxer \
 **Simplified Chinese** \
 邻家小熊 \
-冰棍
+冰棍 \
+**Traditional Chinese** \
+Hsin Chiang
 
 # Licenses
 

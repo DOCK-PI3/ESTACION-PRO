@@ -130,6 +130,10 @@ Note that the updater will keep whatever filename you had for your running AppIm
 
 On Windows and macOS you can specify to which directory you want to save the downloaded file. The default is `C:\Users\myusername\Downloads` on Windows and `/Users/myusername/Downloads` on macOS.
 
+To perform the upgrade on macOS simply open the .dmg file and install ES-DE on top of the old installation (i.e. replacing it).
+
+For the Windows installer release simply run the .exe file and select uninstallation of the old version before installing the new version. For the Windows portable release refer to the README.txt file in the zip archive for instructions on how to perform the update.
+
 **Android**
 
 On Android the update process differs depending on whether you have the Patreon release or a release from either the Samsung Galaxy Store or Huawei AppGallery. For the store versions you simply update via the store app. For the Patreon release you'll get an email (sent to the address you used on Patreon) whenever there is a new version. This email contains a download link to the latest APK, and to apply the update you simply run this APK file. This is a safe operation that will not change or remove any of your data such as settings, scraped media etc.
@@ -728,7 +732,7 @@ The following emulators are supported in AppImage format when using the bundled 
 | psvita        | Vita3K              | Vita3K*.AppImage               |
 | psx           | DuckStation         | DuckStation*.AppImage          |
 | snes          | Snes9x              | Snes9x*.AppImage               |
-| switch        | Ryujuinx            | \*yujinx\*.AppImage            |
+| switch        | Ryujinx             | \*yujinx\*.AppImage            |
 | xbox          | xemu                | xemu*.AppImage                 |
 | wii           | Dolphin             | Dolphin_Emulator*.AppImage     |
 | wiiu          | Cemu                | Cemu*.AppImage                 |
