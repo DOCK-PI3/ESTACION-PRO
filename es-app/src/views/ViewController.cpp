@@ -1230,6 +1230,7 @@ bool ViewController::input(InputConfig* config, Input input)
         mWindow->setAllowTextScrolling(true);
         mWindow->setAllowFileAnimation(true);
         mWindow->setLaunchedGame(false);
+        resetViewVideosTimer();
         // Filter out the "a" button so the game is not restarted if there was such a button press
         // queued when leaving the game.
         if (config->isMappedTo("a", input) && input.value != 0)
