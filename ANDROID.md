@@ -520,7 +520,7 @@ https://play.google.com/store/apps/details?id=io.recompiled.redream
 
 ### ScummVM
 
-ScummVM can be installed from the Play store. There are also daily builds available on their GitHub site. Such a build may be required to be able to launch games from ES-DE until the Play store version has been updated.
+ScummVM can be installed from the Play store. There are also daily builds available on their GitHub site.
 
 https://play.google.com/store/apps/details?id=org.scummvm.scummvm\
 https://buildbot.scummvm.org/#/dailybuilds
@@ -632,8 +632,6 @@ This is clearly not a complete list of Android devices, but rather those we know
 | Huawei       | Mate 20 Pro             | 10              | Yes       | None                |                            |
 | Huawei       | MatePad 11 (2021)       | 13              | Yes       | None                |                            |
 | Infinix      | Zero 30 5G              | 13              | Yes       | None                |                            |
-| Kinhank      | G1                      | 11              | No        | Unable to install   | Possibly 32-bit operating system? |
-| Kinhank      | Super Console X5 Pro    | 12 (TV)         | No        | None                | Custom 64-bit Android TV OS |
 | KTPocket     | KT-R1                   | GammaOS 12      | Yes       | None                |                            |
 | Lenovo       | Legion Y700 (2022)      | 12              | Yes       | None                |                            |
 | Lenovo       | Legion Y700 (2023)      | 13              | Yes       | None                |                            |
