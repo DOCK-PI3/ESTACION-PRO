@@ -35,8 +35,12 @@
 #include "views/ViewController.h"
 
 #include <SDL2/SDL_events.h>
-#include <SDL2/SDL_main.h>
 #include <SDL2/SDL_timer.h>
+
+// TODO: Not needed after moving to SDL3.
+#if !defined(__IOS__)
+#include <SDL2/SDL_main.h>
+#endif
 
 #if defined(__ANDROID__)
 #include "utils/PlatformUtilAndroid.h"
@@ -570,7 +574,7 @@ int main(int argc, char* argv[])
 
     SDL_SetHint(SDL_HINT_APP_NAME, "ES-DE");
 
-#if defined(__APPLE__)
+#if defined(__APPLE__) && !defined(__IOS__)
     // This is a workaround to disable the incredibly annoying save state functionality in
     // macOS which forces a restore of the previous window state. The problem is that this
     // removes the splash screen on startup and it may have other adverse effects as well.
@@ -598,7 +602,7 @@ int main(int argc, char* argv[])
     outputToConsole();
 #endif
 
-#if !defined(__ANDROID__)
+#if !defined(__ANDROID__) && !defined(__IOS__)
     {
         std::vector<std::string> arguments;
         for (int i {0}; i < argc; ++i)
@@ -871,7 +875,7 @@ int main(int argc, char* argv[])
     }
 
     {
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) || defined(__IOS__)
         const std::string themeDir {Utils::FileSystem::getAppDataDirectory() + "/themes"};
         if (!Utils::FileSystem::exists(themeDir)) {
             LOG(LogInfo) << "Creating themes directory \"" << themeDir << "\"...";
@@ -881,6 +885,7 @@ int main(int argc, char* argv[])
                 LOG(LogWarning) << "Couldn't create directory, permission problems?";
             }
         }
+#if defined(__ANDROID__)
         if (!Utils::FileSystem::exists(themeDir + "/.nomedia")) {
             LOG(LogInfo) << "Creating \"no media\" file \"" << themeDir + "/.nomedia" << "\"...";
             Utils::FileSystem::createEmptyFile(themeDir + "/.nomedia");
@@ -888,6 +893,7 @@ int main(int argc, char* argv[])
                 LOG(LogWarning) << "Couldn't create file, permission problems?";
             }
         }
+#endif
 #else
         // Create the themes folder in the application data directory (or elsewhere if the
         // UserThemeDirectory setting has been defined).
@@ -932,6 +938,7 @@ int main(int argc, char* argv[])
 #endif
     }
 
+#if !defined(__IOS__)
     {
         // Create the scripts folder in the application data directory. This is only required
         // for custom event scripts so it's also created as a convenience.
@@ -949,6 +956,7 @@ int main(int argc, char* argv[])
             }
         }
     }
+#endif
 
     {
         // Create the screensavers and screensavers/custom_slideshow directories.
@@ -1064,9 +1072,11 @@ int main(int argc, char* argv[])
         return 1;
     }
 
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) || defined(__IOS__)
     InputOverlay::getInstance().init();
+#endif
 
+#if defined(__ANDROID__)
     LOG(LogDebug) << "Android API level: " << SDL_GetAndroidSDKVersion();
     Utils::Platform::Android::printDeviceInfo();
     int storageState {SDL_AndroidGetExternalStorageState()};
@@ -1311,6 +1321,10 @@ int main(int argc, char* argv[])
 
 #if defined(_WIN64)
     FreeConsole();
+#endif
+
+#if defined(__IOS__)
+    exit(0);
 #endif
 
     return 0;

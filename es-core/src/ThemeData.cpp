@@ -21,6 +21,10 @@
 #include <algorithm>
 #include <pugixml.hpp>
 
+#if defined(__IOS__)
+#include "utils/PlatformUtilIOS.h"
+#endif
+
 // clang-format off
 std::vector<std::string> ThemeData::sSupportedViews {
     {"all"},
@@ -770,6 +774,8 @@ void ThemeData::populateThemes()
 #if defined(__ANDROID__)
     const std::string userThemeDirectory {Utils::FileSystem::getInternalAppDataDirectory() +
                                           "/themes"};
+#elif defined(__IOS__)
+    const std::string userThemeDirectory;
 #else
     const std::string defaultUserThemeDir {Utils::FileSystem::getAppDataDirectory() + "/themes"};
     const std::string userThemeDirSetting {Utils::FileSystem::expandHomePath(
@@ -801,6 +807,10 @@ void ThemeData::populateThemes()
     const std::vector<std::string> themePaths {Utils::FileSystem::getProgramDataPath() + "/themes",
                                                Utils::FileSystem::getAppDataDirectory() + "/themes",
                                                userThemeDirectory};
+#elif defined(__IOS__)
+    const std::vector<std::string> themePaths {Utils::Platform::iOS::getPackagePath() + "themes",
+                                               Utils::FileSystem::getAppDataDirectory() +
+                                                   "/themes"};
 #elif defined(__APPLE__)
     const std::vector<std::string> themePaths {
         Utils::FileSystem::getExePath() + "/themes",

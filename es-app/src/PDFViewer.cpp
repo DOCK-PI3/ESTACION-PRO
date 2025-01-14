@@ -21,7 +21,7 @@
 #include <windows.h>
 #endif
 
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) || defined(__IOS__)
 #include "ConvertPDF.h"
 #endif
 
@@ -56,7 +56,7 @@ bool PDFViewer::startPDFViewer(FileData* game)
 {
     ViewController::getInstance()->pauseViewVideos();
 
-#if !defined(__ANDROID__)
+#if !defined(__ANDROID__) && !defined(__IOS__)
 #if defined(_WIN64)
     const std::string convertBinary {"/es-pdf-converter/es-pdf-convert.exe"};
 #else
@@ -305,7 +305,7 @@ bool PDFViewer::getDocumentInfo()
     // Close process and thread handles.
     CloseHandle(pi.hProcess);
     CloseHandle(pi.hThread);
-#elif defined(__ANDROID__)
+#elif defined(__ANDROID__) || defined(__IOS__)
     if (ConvertPDF::processFile(mManualPath, "-fileinfo", 0, 0, 0, commandOutput) == -1)
         return false;
 #else
@@ -449,7 +449,7 @@ void PDFViewer::convertPage(int pageNum)
         CloseHandle(childStdoutRead);
         WaitForSingleObject(pi.hThread, INFINITE);
         WaitForSingleObject(pi.hProcess, INFINITE);
-#elif (__ANDROID__)
+#elif (__ANDROID__) || defined(__IOS__)
         ConvertPDF::processFile(mManualPath, "-convert", pageNum,
                                 static_cast<int>(mPages[pageNum].width),
                                 static_cast<int>(mPages[pageNum].height), imageData);
@@ -478,7 +478,7 @@ void PDFViewer::convertPage(int pageNum)
 #if defined(_WIN64)
         if (!processReturnValue || (static_cast<int>(imageDataSize) <
                                     mPages[pageNum].width * mPages[pageNum].height * 4)) {
-#elif defined(__ANDROID__)
+#elif defined(__ANDROID__) || defined(__IOS__)
         if (static_cast<int>(imageDataSize) < mPages[pageNum].width * mPages[pageNum].height * 4) {
 #else
         if (returnValue != 0 || (static_cast<int>(imageDataSize) <

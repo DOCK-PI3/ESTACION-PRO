@@ -166,7 +166,7 @@ GuiThemeDownloader::GuiThemeDownloader(std::function<void()> updateCallback)
 
     git_libgit2_init();
 
-#if defined(__ANDROID__) && defined(USE_BUNDLED_CERTIFICATES)
+#if (defined(__ANDROID__) || defined(__IOS__)) && defined(USE_BUNDLED_CERTIFICATES)
     git_libgit2_opts(
         GIT_OPT_SET_SSL_CERT_LOCATIONS,
         ResourceManager::getInstance().getResourcePath(":/certificates/curl-ca-bundle.crt").c_str(),
@@ -178,7 +178,7 @@ GuiThemeDownloader::GuiThemeDownloader(std::function<void()> updateCallback)
     std::promise<bool>().swap(mPromise);
     mFuture = mPromise.get_future();
 
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) || defined(__IOS__)
     mThemeDirectory = Utils::FileSystem::getInternalAppDataDirectory() + "/themes";
 #else
     const std::string defaultUserThemeDir {Utils::FileSystem::getAppDataDirectory() + "/themes"};

@@ -266,7 +266,7 @@ void ViewController::invalidSystemsFileDialog()
 
 void ViewController::noGamesDialog()
 {
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) || defined(__IOS__)
     mNoGamesErrorMessage = _("NO GAME FILES WERE FOUND, PLEASE PLACE YOUR GAMES IN "
                              "THE CONFIGURED ROM DIRECTORY. OPTIONALLY THE ROM "
                              "DIRECTORY STRUCTURE CAN BE GENERATED WHICH WILL "
@@ -289,7 +289,7 @@ void ViewController::noGamesDialog()
     mRomDirectory = FileData::getROMDirectory();
 #endif
 
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) || defined(__IOS__)
     mNoGamesMessageBox = new GuiMsgBox(
         HelpStyle(), mNoGamesErrorMessage + mRomDirectory,
 #else
@@ -404,7 +404,7 @@ void ViewController::noGamesDialog()
             quit.type = SDL_QUIT;
             SDL_PushEvent(&quit);
         },
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) || defined(__IOS__)
         "", nullptr, nullptr, true, false,
         (mRenderer->getIsVerticalOrientation() ?
              0.90f :

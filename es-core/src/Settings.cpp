@@ -245,7 +245,7 @@ void Settings::setDefaults()
 
     // Input device settings.
     mStringMap["InputControllerType"] = {"xbox", "xbox"};
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) || defined(__IOS__)
     mStringMap["InputTouchOverlaySize"] = {"medium", "medium"};
     mStringMap["InputTouchOverlayOpacity"] = {"normal", "normal"};
     mIntMap["InputTouchOverlayFadeTime"] = {6, 6};
@@ -263,7 +263,9 @@ void Settings::setDefaults()
     mBoolMap["FavStarCustom"] = {false, false};
 
     // Other settings.
+#if !defined(__IOS__)
     mStringMap["MediaDirectory"] = {"", ""};
+#endif
 #if defined(STEAM_DECK) || defined(RETRODECK)
     mIntMap["MaxVRAM"] = {512, 512};
 #elif defined(RASPBERRY_PI)
@@ -274,7 +276,9 @@ void Settings::setDefaults()
 #if !defined(USE_OPENGLES)
     mIntMap["AntiAliasing"] = {0, 0};
 #endif
+#if !defined(__IOS__)
     mIntMap["DisplayIndex"] = {1, 1};
+#endif
     mIntMap["ScreenRotate"] = {0, 0};
 #if defined(__APPLE__)
     mStringMap["KeyboardQuitShortcut"] = {"CmdQ", "CmdQ"};
@@ -304,7 +308,9 @@ void Settings::setDefaults()
     mBoolMap["AlternativeEmulatorPerGame"] = {true, true};
     mBoolMap["ShowHiddenFiles"] = {true, true};
     mBoolMap["ShowHiddenGames"] = {true, true};
+#if !defined(__IOS__)
     mBoolMap["CustomEventScripts"] = {false, false};
+#endif
     mBoolMap["ParseGamelistOnly"] = {false, false};
     mBoolMap["MAMENameStripExtraInfo"] = {true, true};
 #if defined(__unix__) && !defined(__ANDROID__)
@@ -351,11 +357,11 @@ void Settings::setDefaults()
     mBoolMap["LegacyGamelistFileLocation"] = {false, false};
     mBoolMap["CreatePlaceholderSystemDirectories"] = {false, false};
     mStringMap["OpenGLVersion"] = {"", ""};
-#if !defined(__ANDROID__)
+#if !defined(__ANDROID__) && !defined(__IOS__)
     mStringMap["ROMDirectory"] = {"", ""};
 #endif
     mStringMap["UIMode_passkey"] = {"uuddlrlrba", "uuddlrlrba"};
-#if !defined(__ANDROID__)
+#if !defined(__ANDROID__) && !defined(__IOS__)
     mStringMap["UserThemeDirectory"] = {"", ""};
 #endif
     mIntMap["LottieMaxFileCache"] = {150, 150};

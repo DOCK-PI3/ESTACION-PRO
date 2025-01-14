@@ -19,7 +19,7 @@
 #include "resources/Font.h"
 #include "utils/LocalizationUtil.h"
 
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) || defined(__IOS__)
 #include "InputOverlay.h"
 #endif
 
@@ -436,7 +436,7 @@ void Window::update(int deltaTime)
     if (mScreensaver && mRenderScreensaver)
         mScreensaver->update(deltaTime);
 
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) || defined(__IOS__)
     if (Settings::getInstance()->getBool("InputTouchOverlay"))
         InputOverlay::getInstance().update(deltaTime);
 #endif
@@ -657,7 +657,7 @@ void Window::render()
     if (mRenderScreensaver)
         mScreensaver->renderScreensaver();
 
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) || defined(__IOS__)
     if (Settings::getInstance()->getBool("InputTouchOverlay"))
         InputOverlay::getInstance().render(mRenderer->getIdentity());
 #endif

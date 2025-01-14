@@ -156,6 +156,9 @@ const std::string FileData::getROMDirectory()
 {
 #if defined(__ANDROID__)
     return AndroidVariables::sROMDirectory;
+#elif defined(__IOS__)
+    std::string dir {Utils::FileSystem::getHomePath() + "/Documents/ROMs"};
+    return dir;
 #endif
 
     const std::string& romDirSetting {Settings::getInstance()->getString("ROMDirectory")};
@@ -187,6 +190,10 @@ const std::string FileData::getROMDirectory()
 
 const std::string FileData::getMediaDirectory()
 {
+#if defined(__IOS__)
+    return Utils::FileSystem::getAppDataDirectory() + "/downloaded_media/";
+#endif
+
     const std::string& mediaDirSetting {Settings::getInstance()->getString("MediaDirectory")};
     std::string mediaDirPath;
 

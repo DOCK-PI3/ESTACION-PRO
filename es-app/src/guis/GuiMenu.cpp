@@ -44,6 +44,10 @@
 #include "utils/PlatformUtilAndroid.h"
 #endif
 
+#if defined(__IOS__)
+#include "InputOverlay.h"
+#endif
+
 #include <SDL2/SDL_events.h>
 #include <algorithm>
 
@@ -1332,7 +1336,7 @@ void GuiMenu::openInputDeviceOptions()
         }
     });
 
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) || defined(__IOS__)
     // Touch overlay size.
     auto touchOverlaySize = std::make_shared<OptionListComponent<std::string>>(
         getHelpStyle(), _("TOUCH OVERLAY SIZE"), false);
@@ -1585,6 +1589,7 @@ void GuiMenu::openOtherOptions()
         std::bind([this] { mWindow->pushGui(new GuiAlternativeEmulators); }));
     s->addRow(alternativeEmulatorsRow);
 
+#if !defined(__IOS__)
     // Game media directory.
     ComponentListRow rowMediaDir;
     auto mediaDirectory = std::make_shared<TextComponent>(
@@ -1626,6 +1631,7 @@ void GuiMenu::openOtherOptions()
         }
     });
     s->addRow(rowMediaDir);
+#endif
 
     // Maximum VRAM.
     auto maxVram = std::make_shared<SliderComponent>(128.0f, 2048.0f, 16.0f, "MiB");
@@ -1663,6 +1669,7 @@ void GuiMenu::openOtherOptions()
     });
 #endif
 
+#if !defined(__IOS__)
     // Display/monitor.
     auto displayIndex = std::make_shared<OptionListComponent<std::string>>(
         getHelpStyle(), _("DISPLAY/MONITOR INDEX"), false);
@@ -1683,6 +1690,7 @@ void GuiMenu::openOtherOptions()
             s->setNeedsSaving();
         }
     });
+#endif
 
     // Screen contents rotation.
     auto screenRotate = std::make_shared<OptionListComponent<std::string>>(
@@ -1918,6 +1926,7 @@ void GuiMenu::openOtherOptions()
         }
     });
 
+#if !defined(__IOS__)
     // Custom event scripts, fired using Scripting::fireEvent().
     auto customEventScripts = std::make_shared<SwitchComponent>();
     customEventScripts->setState(Settings::getInstance()->getBool("CustomEventScripts"));
@@ -1929,6 +1938,7 @@ void GuiMenu::openOtherOptions()
             s->setNeedsSaving();
         }
     });
+#endif
 
     // Only show games included in the gamelist.xml files.
     auto parseGamelistOnly = std::make_shared<SwitchComponent>();
