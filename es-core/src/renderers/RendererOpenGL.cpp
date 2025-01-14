@@ -265,7 +265,7 @@ bool RendererOpenGL::createContext()
 
     UIWindow* uiWindow {nullptr};
     if (SDL_GetWindowWMInfo(getSDLWindow(), &info) && info.subsystem == SDL_SYSWM_UIKIT)
-        uiWindow = (UIWindow*)info.info.uikit.window;
+        uiWindow = reinterpret_cast<UIWindow*>(info.info.uikit.window);
 
     if (uiWindow) {
         mFramebuffer = info.info.uikit.framebuffer;
