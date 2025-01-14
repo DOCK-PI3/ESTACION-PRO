@@ -145,7 +145,6 @@ fi
 
 cd libtiff
 git checkout v4.5.1
-mkdir build
 cd ..
 
 echo
