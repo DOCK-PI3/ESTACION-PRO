@@ -263,6 +263,14 @@ Console/system logos by Dan Patrick (GitHub mirror, not officially maintained by
 
 https://github.com/PRO100BYTE/console-logos
 
+High-resolution photos of classic gaming hardware:
+
+https://commons.wikimedia.org/wiki/User:Evan-Amos
+
+Large set of controller and game cartridge images in SVG and PNG formats:
+
+https://archive.org/details/@pineapple_graphics
+
 ## Simple example theme
 
 Here is a very simple theme that changes the color of the game name text:
