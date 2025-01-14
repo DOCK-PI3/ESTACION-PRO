@@ -178,8 +178,10 @@ GuiThemeDownloader::GuiThemeDownloader(std::function<void()> updateCallback)
     std::promise<bool>().swap(mPromise);
     mFuture = mPromise.get_future();
 
-#if defined(__ANDROID__) || defined(__IOS__)
+#if defined(__ANDROID__)
     mThemeDirectory = Utils::FileSystem::getInternalAppDataDirectory() + "/themes";
+#elif defined(__IOS__)
+    mThemeDirectory = Utils::FileSystem::getAppDataDirectory() + "/themes";
 #else
     const std::string defaultUserThemeDir {Utils::FileSystem::getAppDataDirectory() + "/themes"};
     const std::string userThemeDirSetting {Utils::FileSystem::expandHomePath(
