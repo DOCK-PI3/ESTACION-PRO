@@ -111,14 +111,16 @@ set(ES_SOURCES
 )
 
 if(WIN32)
-    LIST(APPEND ES_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/assets/ES-DE.rc)
+    list(APPEND ES_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/assets/ES-DE.rc)
 endif()
 
 #---------------------------------------------------------------------------------------------------
 # OS-specific installation and package generation setup.
 
 # Define target.
-if(APPLE)
+if(IOS)
+    include(${CMAKE_SOURCE_DIR}/ios/cmake/ios.cmake)
+elseif(APPLE)
     include_directories(${COMMON_INCLUDE_DIRS} ${CMAKE_CURRENT_SOURCE_DIR}/src)
     add_executable(ES-DE ${ES_SOURCES} ${ES_HEADERS})
     target_link_libraries(ES-DE ${COMMON_LIBRARIES} es-core)
@@ -202,7 +204,7 @@ if(WIN32)
     install(DIRECTORY ${CMAKE_SOURCE_DIR}/themes/modern-es-de DESTINATION themes)
     install(DIRECTORY ${CMAKE_SOURCE_DIR}/themes/slate-es-de DESTINATION themes)
     install(DIRECTORY ${CMAKE_SOURCE_DIR}/resources DESTINATION .)
-elseif(APPLE)
+elseif(APPLE AND NOT IOS)
     # For completely unknown reasons, when generating a Bundle using cpack, an extra 'Resources'
     # directory is added to the target path. Simply adding the two dots as a prefix fixes the
     # problem, but doing so would break 'make install' which was actually behaving correctly.
@@ -288,7 +290,7 @@ elseif(HAIKU)
         DESTINATION data/es-de/themes)
     install(DIRECTORY ${CMAKE_SOURCE_DIR}/resources
         DESTINATION data/es-de)
-elseif(NOT ANDROID)
+elseif(NOT ANDROID AND NOT IOS)
     install(TARGETS es-de RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
     install(TARGETS es-pdf-convert RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
     if(CMAKE_SYSTEM_NAME MATCHES Linux OR CMAKE_SYSTEM_NAME MATCHES FreeBSD)
