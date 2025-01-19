@@ -10,7 +10,9 @@
 
 * Added translations for Traditional Chinese (zh_TW)
 * (Android) Added Pizza Boy SC standalone as an alternative emulator for the gamegear, genesis, mastersystem, megadrive and megadrivejp systems
+* (Android) Changed all RetroArch core entries to use absolute paths (this makes the ancient Play store release work correctly)
 * (Android) Changed the target SDK version to 35 (Android 15)
+* (macOS) Added a build script to cross-compile for x86_64 using an ARM processor
 
 ### Bug fixes
 

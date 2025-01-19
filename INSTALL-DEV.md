@@ -580,6 +580,19 @@ export ASAN_OPTIONS=detect_container_overflow=0
 
 Running ES-DE from the build directory may be a bit flaky as there is no Info.plist file available which is required for setting the proper window mode and such. It's therefore recommended to run the application from the installation directory for any more in-depth testing. But normal debugging can of course be done from the build directory.
 
+**Cross-compiling for x86_64**
+
+To cross-compile for x86_64 using an ARM processor you only need to change two things.
+
+First you need to run `tools/macOS_dependencies_build_x86_cross.sh` instead of `tools/macOS_dependencies_build.sh`
+
+Second you need to pass the target architecture using the CMAKE_OSX_ARCHITECTURES variable such as this:
+```
+cmake -DCMAKE_OSX_ARCHITECTURES=x86_64 .
+```
+
+Following this you can just build and package the application in the same way as a native ARM build.
+
 **Code signing**
 
 A detailed explanation of macOS code signing is beyond the scope of this document, but the CMake option MACOS_CODESIGN_IDENTITY is used to specify the code signing certificate identity, for example:
