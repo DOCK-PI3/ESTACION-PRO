@@ -352,6 +352,11 @@ endif()
 
 # Settings per operating system and generator type.
 if(APPLE)
+    # In case we're cross-compiling for x86_64 using an ARM processor.
+    if(CPU_ARCHITECTURE MATCHES arm64 AND CMAKE_OSX_ARCHITECTURES MATCHES x86_64)
+        set(CPU_ARCHITECTURE x64)
+    endif()
+
     set(CPACK_GENERATOR Bundle)
     set(CPACK_PACKAGE_FILE_NAME ES-DE_${CPACK_PACKAGE_VERSION}-${CPU_ARCHITECTURE})
     set(CPACK_DMG_VOLUME_NAME "ES-DE ${CPACK_PACKAGE_VERSION}")
