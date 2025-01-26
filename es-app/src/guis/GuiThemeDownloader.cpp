@@ -20,6 +20,12 @@
 #define LOCAL_TESTING_FILE false
 #define DEBUG_CLONING false
 
+// Someone obviously thought it was a bright idea to change the version macros in libgit2 v1.9.0.
+#if defined(LIBGIT2_VERSION_MAJOR)
+#define LIBGIT2_VER_MAJOR LIBGIT2_VERSION_MAJOR
+#define LIBGIT2_VER_MINOR LIBGIT2_VERSION_MINOR
+#endif
+
 GuiThemeDownloader::GuiThemeDownloader(std::function<void()> updateCallback)
     : mRenderer {Renderer::getInstance()}
     , mBackground {":/graphics/frame.svg"}
