@@ -948,7 +948,8 @@ template <typename T> void CarouselComponent<T>::render(const glm::mat4& parentT
 
         glm::mat4 itemTrans {carouselTrans};
         if (singleEntry)
-            itemTrans = glm::translate(carouselTrans, glm::vec3 {xOff, yOff, 0.0f});
+            itemTrans = glm::translate(carouselTrans, glm::vec3 {xOff + itemHorizontalOffset,
+                                                                 yOff + itemVerticallOffset, 0.0f});
         else
             itemTrans = glm::translate(
                 itemTrans,
