@@ -9,14 +9,17 @@
 ### Detailed list of changes
 
 * Added translations for Traditional Chinese (zh_TW)
+* Added the Holani RetroArch core as an alternative emulator for the atarilynx system
 * (Android) Added Pizza Boy SC standalone as an alternative emulator for the gamegear, genesis, mastersystem, megadrive and megadrivejp systems
 * (Android) Changed all RetroArch core entries to use absolute paths (this makes the ancient Play store release work correctly)
 * (Android) Changed the target SDK version to 35 (Android 15)
 * (macOS) Added a build script to cross-compile for x86_64 using an ARM processor
+* Added support for building against libgit2 v1.9.0 and later
 
 ### Bug fixes
 
 * The text element containerStartDelay timer was sometimes not reset which made vertical text scrolling start too early under some circumstances
+* The selectedItemOffset property did not work correctly for carousels with a single item
 * Returning from a game when running in the background ignored the video element delay property for the first playback
 
 ## Version 3.1.1 / 3.1.1-39
