@@ -370,7 +370,7 @@ void GuiScraperSearch::search(ScraperSearchParams& params)
 
     mMD5Hash = "";
     params.md5Hash = "";
-    if (!Utils::FileSystem::isDirectory(params.game->getPath()))
+    if (!Utils::FileSystem::isDirectory(params.game->getPath()) && mSearchType != MANUAL_MODE)
         params.fileSize = Utils::FileSystem::getFileSize(params.game->getPath());
 
     // Only use MD5 file hash searching when in automatic mode.
