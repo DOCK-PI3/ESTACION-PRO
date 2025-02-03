@@ -822,6 +822,8 @@ void Window::setHelpPrompts(const std::vector<HelpPrompt>& prompts)
     std::sort(addPrompts.begin(), addPrompts.end(),
               [](const HelpPrompt& a, const HelpPrompt& b) -> bool {
                   static const std::vector<std::string> map {"thumbstickclick",
+                                                             "lr",
+                                                             "ltrt",
                                                              "up/down/left/right",
                                                              "up/down",
                                                              "up",

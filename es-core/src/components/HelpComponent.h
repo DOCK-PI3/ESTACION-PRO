@@ -55,6 +55,8 @@ private:
 
     std::vector<std::string> mEntries;
     static inline std::vector<std::string> sAllowedEntries {"thumbstickclick",
+                                                            "lr",
+                                                            "ltrt",
                                                             "up/down/left/right",
                                                             "up/down",
                                                             "up",
