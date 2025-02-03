@@ -3466,6 +3466,8 @@ Properties:
       `up`,
       `up/down`,
       `up/down/left/right`,
+      `ltrt`,
+      `lr`,
       `thumbstickclick`
     - Default is `all` which displays all entries
 * `entrySpacing` - type: FLOAT
