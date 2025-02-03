@@ -132,7 +132,7 @@ public:
 
     std::vector<HelpPrompt> getHelpPrompts() override;
 
-    void setHelpComponentsVisibility(const bool state)
+    void setHelpComponentsVisibility(const bool state) override
     {
         if (mCurrentView != nullptr)
             mCurrentView->setHelpComponentsVisibility(state);

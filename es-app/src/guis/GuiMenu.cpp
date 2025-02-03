@@ -2247,7 +2247,7 @@ void GuiMenu::openQuitMenu()
         s->addRow(row);
 
         row.elements.clear();
-        row.makeAcceptInputHandler([window, this] {
+        row.makeAcceptInputHandler([window] {
             window->pushGui(new GuiMsgBox(
                 _("REALLY REBOOT?"), _("YES"),
                 [] {
@@ -2264,7 +2264,7 @@ void GuiMenu::openQuitMenu()
         s->addRow(row);
 
         row.elements.clear();
-        row.makeAcceptInputHandler([window, this] {
+        row.makeAcceptInputHandler([window] {
             window->pushGui(new GuiMsgBox(
                 _("REALLY POWER OFF?"), _("YES"),
                 [] {
