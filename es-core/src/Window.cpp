@@ -818,10 +818,11 @@ void Window::setHelpPrompts(const std::vector<HelpPrompt>& prompts)
         }
     }
 
-    // Sort prompts so it goes [dpad_all] [dpad_u/d] [dpad_l/r] [a/b/x/y/l/r] [start/back].
+    // Sort the prompts so that they are always displayed in the same order on screen.
     std::sort(addPrompts.begin(), addPrompts.end(),
               [](const HelpPrompt& a, const HelpPrompt& b) -> bool {
-                  static const std::vector<std::string> map {"up/down/left/right",
+                  static const std::vector<std::string> map {"thumbstickclick",
+                                                             "up/down/left/right",
                                                              "up/down",
                                                              "up",
                                                              "down",

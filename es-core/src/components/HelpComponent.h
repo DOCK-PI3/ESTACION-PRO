@@ -54,7 +54,8 @@ private:
     std::shared_ptr<Font> mStyleFontDimmed;
 
     std::vector<std::string> mEntries;
-    static inline std::vector<std::string> sAllowedEntries {"up/down/left/right",
+    static inline std::vector<std::string> sAllowedEntries {"thumbstickclick",
+                                                            "up/down/left/right",
                                                             "up/down",
                                                             "up",
                                                             "down",
