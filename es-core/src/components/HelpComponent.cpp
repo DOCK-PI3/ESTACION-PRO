@@ -8,22 +8,38 @@
 
 #include "components/HelpComponent.h"
 
-#include "Log.h"
 #include "Settings.h"
 #include "Window.h"
-#include "components/ComponentGrid.h"
 #include "components/ImageComponent.h"
 #include "components/TextComponent.h"
-#include "resources/TextureResource.h"
-#include "utils/StringUtil.h"
 
-static std::map<std::string, std::string> sIconPathMap {};
+#define PREFIX "button_"
 
-HelpComponent::HelpComponent()
+HelpComponent::HelpComponent(std::shared_ptr<Font> font)
     : mRenderer {Renderer::getInstance()}
+    , mStyleFont {font}
+    , mStyleFontDimmed {font}
+    , mStylePosition {glm::vec2 {Renderer::getScreenWidth() * 0.012f,
+                                 Renderer::getScreenHeight() *
+                                     (Renderer::getIsVerticalOrientation() ? 0.975f : 0.9515f)}}
+    , mStylePositionDimmed {mStylePosition}
+    , mStyleOrigin {glm::vec2 {0.0f, 0.0f}}
+    , mStyleOriginDimmed {mStyleOrigin}
+    , mStyleTextColor {0x777777FF}
+    , mStyleTextColorDimmed {0x777777FF}
+    , mStyleIconColor {0x777777FF}
+    , mStyleIconColorDimmed {0x777777FF}
+    , mStyleEntrySpacing {0.00833f}
+    , mStyleEntrySpacingDimmed {mStyleEntrySpacing}
+    , mStyleIconTextSpacing {0.00416f}
+    , mStyleIconTextSpacingDimmed {mStyleIconTextSpacing}
+    , mStyleOpacity {1.0f}
+    , mStyleOpacityDimmed {mStyleOpacity}
+    , mStyleLetterCase {"uppercase"}
+
 {
-    // Assign icons.
     assignIcons();
+    updateGrid();
 }
 
 void HelpComponent::assignIcons()
@@ -46,179 +62,176 @@ void HelpComponent::assignIcons()
     }
 
     // These graphics files are common between all controller types.
-    sIconPathMap["up/down"] = mStyle.mCustomButtons.dpad_updown.empty() ?
+    sIconPathMap["up/down"] = mCustomButtons.dpad_updown.empty() ?
                                   ":/graphics/help/dpad_updown.svg" :
-                                  mStyle.mCustomButtons.dpad_updown;
-    sIconPathMap["up"] = mStyle.mCustomButtons.dpad_up.empty() ? ":/graphics/help/dpad_up.svg" :
-                                                                 mStyle.mCustomButtons.dpad_up;
-    sIconPathMap["down"] = mStyle.mCustomButtons.dpad_down.empty() ?
-                               ":/graphics/help/dpad_down.svg" :
-                               mStyle.mCustomButtons.dpad_down;
-    sIconPathMap["left/right"] = mStyle.mCustomButtons.dpad_leftright.empty() ?
+                                  mCustomButtons.dpad_updown;
+    sIconPathMap["up"] =
+        mCustomButtons.dpad_up.empty() ? ":/graphics/help/dpad_up.svg" : mCustomButtons.dpad_up;
+    sIconPathMap["down"] = mCustomButtons.dpad_down.empty() ? ":/graphics/help/dpad_down.svg" :
+                                                              mCustomButtons.dpad_down;
+    sIconPathMap["left/right"] = mCustomButtons.dpad_leftright.empty() ?
                                      ":/graphics/help/dpad_leftright.svg" :
-                                     mStyle.mCustomButtons.dpad_leftright;
-    sIconPathMap["up/down/left/right"] = mStyle.mCustomButtons.dpad_all.empty() ?
-                                             ":/graphics/help/dpad_all.svg" :
-                                             mStyle.mCustomButtons.dpad_all;
-    sIconPathMap["thumbstickclick"] = mStyle.mCustomButtons.thumbstick_click.empty() ?
+                                     mCustomButtons.dpad_leftright;
+    sIconPathMap["up/down/left/right"] =
+        mCustomButtons.dpad_all.empty() ? ":/graphics/help/dpad_all.svg" : mCustomButtons.dpad_all;
+    sIconPathMap["thumbstickclick"] = mCustomButtons.thumbstick_click.empty() ?
                                           ":/graphics/help/thumbstick_click.svg" :
-                                          mStyle.mCustomButtons.thumbstick_click;
-    sIconPathMap["l"] = mStyle.mCustomButtons.button_l.empty() ? ":/graphics/help/button_l.svg" :
-                                                                 mStyle.mCustomButtons.button_l;
-    sIconPathMap["r"] = mStyle.mCustomButtons.button_r.empty() ? ":/graphics/help/button_r.svg" :
-                                                                 mStyle.mCustomButtons.button_r;
-    sIconPathMap["lr"] = mStyle.mCustomButtons.button_lr.empty() ? ":/graphics/help/button_lr.svg" :
-                                                                   mStyle.mCustomButtons.button_lr;
-    sIconPathMap["lt"] = mStyle.mCustomButtons.button_lt.empty() ? ":/graphics/help/button_lt.svg" :
-                                                                   mStyle.mCustomButtons.button_lt;
-    sIconPathMap["rt"] = mStyle.mCustomButtons.button_rt.empty() ? ":/graphics/help/button_rt.svg" :
-                                                                   mStyle.mCustomButtons.button_rt;
-    sIconPathMap["ltrt"] = mStyle.mCustomButtons.button_ltrt.empty() ?
-                               ":/graphics/help/button_ltrt.svg" :
-                               mStyle.mCustomButtons.button_ltrt;
+                                          mCustomButtons.thumbstick_click;
+    sIconPathMap["l"] =
+        mCustomButtons.button_l.empty() ? ":/graphics/help/button_l.svg" : mCustomButtons.button_l;
+    sIconPathMap["r"] =
+        mCustomButtons.button_r.empty() ? ":/graphics/help/button_r.svg" : mCustomButtons.button_r;
+    sIconPathMap["lr"] = mCustomButtons.button_lr.empty() ? ":/graphics/help/button_lr.svg" :
+                                                            mCustomButtons.button_lr;
+    sIconPathMap["lt"] = mCustomButtons.button_lt.empty() ? ":/graphics/help/button_lt.svg" :
+                                                            mCustomButtons.button_lt;
+    sIconPathMap["rt"] = mCustomButtons.button_rt.empty() ? ":/graphics/help/button_rt.svg" :
+                                                            mCustomButtons.button_rt;
+    sIconPathMap["ltrt"] = mCustomButtons.button_ltrt.empty() ? ":/graphics/help/button_ltrt.svg" :
+                                                                mCustomButtons.button_ltrt;
 
     // These graphics files are custom per controller type.
     if (controllerType == "snes") {
-        sIconPathMap[buttonA] = mStyle.mCustomButtons.button_a_SNES.empty() ?
+        sIconPathMap[buttonA] = mCustomButtons.button_a_SNES.empty() ?
                                     ":/graphics/help/button_a_SNES.svg" :
-                                    mStyle.mCustomButtons.button_a_SNES;
-        sIconPathMap[buttonB] = mStyle.mCustomButtons.button_b_SNES.empty() ?
+                                    mCustomButtons.button_a_SNES;
+        sIconPathMap[buttonB] = mCustomButtons.button_b_SNES.empty() ?
                                     ":/graphics/help/button_b_SNES.svg" :
-                                    mStyle.mCustomButtons.button_b_SNES;
-        sIconPathMap[buttonX] = mStyle.mCustomButtons.button_x_SNES.empty() ?
+                                    mCustomButtons.button_b_SNES;
+        sIconPathMap[buttonX] = mCustomButtons.button_x_SNES.empty() ?
                                     ":/graphics/help/button_x_SNES.svg" :
-                                    mStyle.mCustomButtons.button_x_SNES;
-        sIconPathMap[buttonY] = mStyle.mCustomButtons.button_y_SNES.empty() ?
+                                    mCustomButtons.button_x_SNES;
+        sIconPathMap[buttonY] = mCustomButtons.button_y_SNES.empty() ?
                                     ":/graphics/help/button_y_SNES.svg" :
-                                    mStyle.mCustomButtons.button_y_SNES;
-        sIconPathMap["back"] = mStyle.mCustomButtons.button_back_SNES.empty() ?
+                                    mCustomButtons.button_y_SNES;
+        sIconPathMap["back"] = mCustomButtons.button_back_SNES.empty() ?
                                    ":/graphics/help/button_back_SNES.svg" :
-                                   mStyle.mCustomButtons.button_back_SNES;
-        sIconPathMap["start"] = mStyle.mCustomButtons.button_start_SNES.empty() ?
+                                   mCustomButtons.button_back_SNES;
+        sIconPathMap["start"] = mCustomButtons.button_start_SNES.empty() ?
                                     ":/graphics/help/button_start_SNES.svg" :
-                                    mStyle.mCustomButtons.button_start_SNES;
+                                    mCustomButtons.button_start_SNES;
     }
     else if (controllerType == "switchpro") {
-        sIconPathMap[buttonA] = mStyle.mCustomButtons.button_a_switch.empty() ?
+        sIconPathMap[buttonA] = mCustomButtons.button_a_switch.empty() ?
                                     ":/graphics/help/button_a_switch.svg" :
-                                    mStyle.mCustomButtons.button_a_switch;
-        sIconPathMap[buttonB] = mStyle.mCustomButtons.button_b_switch.empty() ?
+                                    mCustomButtons.button_a_switch;
+        sIconPathMap[buttonB] = mCustomButtons.button_b_switch.empty() ?
                                     ":/graphics/help/button_b_switch.svg" :
-                                    mStyle.mCustomButtons.button_b_switch;
-        sIconPathMap[buttonX] = mStyle.mCustomButtons.button_x_switch.empty() ?
+                                    mCustomButtons.button_b_switch;
+        sIconPathMap[buttonX] = mCustomButtons.button_x_switch.empty() ?
                                     ":/graphics/help/button_x_switch.svg" :
-                                    mStyle.mCustomButtons.button_x_switch;
-        sIconPathMap[buttonY] = mStyle.mCustomButtons.button_y_switch.empty() ?
+                                    mCustomButtons.button_x_switch;
+        sIconPathMap[buttonY] = mCustomButtons.button_y_switch.empty() ?
                                     ":/graphics/help/button_y_switch.svg" :
-                                    mStyle.mCustomButtons.button_y_switch;
-        sIconPathMap["back"] = mStyle.mCustomButtons.button_back_switch.empty() ?
+                                    mCustomButtons.button_y_switch;
+        sIconPathMap["back"] = mCustomButtons.button_back_switch.empty() ?
                                    ":/graphics/help/button_back_switch.svg" :
-                                   mStyle.mCustomButtons.button_back_switch;
-        sIconPathMap["start"] = mStyle.mCustomButtons.button_start_switch.empty() ?
+                                   mCustomButtons.button_back_switch;
+        sIconPathMap["start"] = mCustomButtons.button_start_switch.empty() ?
                                     ":/graphics/help/button_start_switch.svg" :
-                                    mStyle.mCustomButtons.button_start_switch;
+                                    mCustomButtons.button_start_switch;
     }
     else if (controllerType == "ps123") {
-        sIconPathMap[buttonA] = mStyle.mCustomButtons.button_a_PS.empty() ?
+        sIconPathMap[buttonA] = mCustomButtons.button_a_PS.empty() ?
                                     ":/graphics/help/button_a_PS.svg" :
-                                    mStyle.mCustomButtons.button_a_PS;
-        sIconPathMap[buttonB] = mStyle.mCustomButtons.button_b_PS.empty() ?
+                                    mCustomButtons.button_a_PS;
+        sIconPathMap[buttonB] = mCustomButtons.button_b_PS.empty() ?
                                     ":/graphics/help/button_b_PS.svg" :
-                                    mStyle.mCustomButtons.button_b_PS;
-        sIconPathMap[buttonX] = mStyle.mCustomButtons.button_x_PS.empty() ?
+                                    mCustomButtons.button_b_PS;
+        sIconPathMap[buttonX] = mCustomButtons.button_x_PS.empty() ?
                                     ":/graphics/help/button_x_PS.svg" :
-                                    mStyle.mCustomButtons.button_x_PS;
-        sIconPathMap[buttonY] = mStyle.mCustomButtons.button_y_PS.empty() ?
+                                    mCustomButtons.button_x_PS;
+        sIconPathMap[buttonY] = mCustomButtons.button_y_PS.empty() ?
                                     ":/graphics/help/button_y_PS.svg" :
-                                    mStyle.mCustomButtons.button_y_PS;
-        sIconPathMap["back"] = mStyle.mCustomButtons.button_back_PS123.empty() ?
+                                    mCustomButtons.button_y_PS;
+        sIconPathMap["back"] = mCustomButtons.button_back_PS123.empty() ?
                                    ":/graphics/help/button_back_PS123.svg" :
-                                   mStyle.mCustomButtons.button_back_PS123;
-        sIconPathMap["start"] = mStyle.mCustomButtons.button_start_PS123.empty() ?
+                                   mCustomButtons.button_back_PS123;
+        sIconPathMap["start"] = mCustomButtons.button_start_PS123.empty() ?
                                     ":/graphics/help/button_start_PS123.svg" :
-                                    mStyle.mCustomButtons.button_start_PS123;
+                                    mCustomButtons.button_start_PS123;
     }
     else if (controllerType == "ps4") {
-        sIconPathMap[buttonA] = mStyle.mCustomButtons.button_a_PS.empty() ?
+        sIconPathMap[buttonA] = mCustomButtons.button_a_PS.empty() ?
                                     ":/graphics/help/button_a_PS.svg" :
-                                    mStyle.mCustomButtons.button_a_PS;
-        sIconPathMap[buttonB] = mStyle.mCustomButtons.button_b_PS.empty() ?
+                                    mCustomButtons.button_a_PS;
+        sIconPathMap[buttonB] = mCustomButtons.button_b_PS.empty() ?
                                     ":/graphics/help/button_b_PS.svg" :
-                                    mStyle.mCustomButtons.button_b_PS;
-        sIconPathMap[buttonX] = mStyle.mCustomButtons.button_x_PS.empty() ?
+                                    mCustomButtons.button_b_PS;
+        sIconPathMap[buttonX] = mCustomButtons.button_x_PS.empty() ?
                                     ":/graphics/help/button_x_PS.svg" :
-                                    mStyle.mCustomButtons.button_x_PS;
-        sIconPathMap[buttonY] = mStyle.mCustomButtons.button_y_PS.empty() ?
+                                    mCustomButtons.button_x_PS;
+        sIconPathMap[buttonY] = mCustomButtons.button_y_PS.empty() ?
                                     ":/graphics/help/button_y_PS.svg" :
-                                    mStyle.mCustomButtons.button_y_PS;
-        sIconPathMap["back"] = mStyle.mCustomButtons.button_back_PS4.empty() ?
+                                    mCustomButtons.button_y_PS;
+        sIconPathMap["back"] = mCustomButtons.button_back_PS4.empty() ?
                                    ":/graphics/help/button_back_PS4.svg" :
-                                   mStyle.mCustomButtons.button_back_PS4;
-        sIconPathMap["start"] = mStyle.mCustomButtons.button_start_PS4.empty() ?
+                                   mCustomButtons.button_back_PS4;
+        sIconPathMap["start"] = mCustomButtons.button_start_PS4.empty() ?
                                     ":/graphics/help/button_start_PS4.svg" :
-                                    mStyle.mCustomButtons.button_start_PS4;
+                                    mCustomButtons.button_start_PS4;
     }
     else if (controllerType == "ps5") {
-        sIconPathMap[buttonA] = mStyle.mCustomButtons.button_a_PS.empty() ?
+        sIconPathMap[buttonA] = mCustomButtons.button_a_PS.empty() ?
                                     ":/graphics/help/button_a_PS.svg" :
-                                    mStyle.mCustomButtons.button_a_PS;
-        sIconPathMap[buttonB] = mStyle.mCustomButtons.button_b_PS.empty() ?
+                                    mCustomButtons.button_a_PS;
+        sIconPathMap[buttonB] = mCustomButtons.button_b_PS.empty() ?
                                     ":/graphics/help/button_b_PS.svg" :
-                                    mStyle.mCustomButtons.button_b_PS;
-        sIconPathMap[buttonX] = mStyle.mCustomButtons.button_x_PS.empty() ?
+                                    mCustomButtons.button_b_PS;
+        sIconPathMap[buttonX] = mCustomButtons.button_x_PS.empty() ?
                                     ":/graphics/help/button_x_PS.svg" :
-                                    mStyle.mCustomButtons.button_x_PS;
-        sIconPathMap[buttonY] = mStyle.mCustomButtons.button_y_PS.empty() ?
+                                    mCustomButtons.button_x_PS;
+        sIconPathMap[buttonY] = mCustomButtons.button_y_PS.empty() ?
                                     ":/graphics/help/button_y_PS.svg" :
-                                    mStyle.mCustomButtons.button_y_PS;
-        sIconPathMap["back"] = mStyle.mCustomButtons.button_back_PS5.empty() ?
+                                    mCustomButtons.button_y_PS;
+        sIconPathMap["back"] = mCustomButtons.button_back_PS5.empty() ?
                                    ":/graphics/help/button_back_PS5.svg" :
-                                   mStyle.mCustomButtons.button_back_PS5;
-        sIconPathMap["start"] = mStyle.mCustomButtons.button_start_PS5.empty() ?
+                                   mCustomButtons.button_back_PS5;
+        sIconPathMap["start"] = mCustomButtons.button_start_PS5.empty() ?
                                     ":/graphics/help/button_start_PS5.svg" :
-                                    mStyle.mCustomButtons.button_start_PS5;
+                                    mCustomButtons.button_start_PS5;
     }
     else if (controllerType == "xbox360") {
 
-        sIconPathMap[buttonA] = mStyle.mCustomButtons.button_a_XBOX.empty() ?
+        sIconPathMap[buttonA] = mCustomButtons.button_a_XBOX.empty() ?
                                     ":/graphics/help/button_a_XBOX.svg" :
-                                    mStyle.mCustomButtons.button_a_XBOX;
-        sIconPathMap[buttonB] = mStyle.mCustomButtons.button_b_XBOX.empty() ?
+                                    mCustomButtons.button_a_XBOX;
+        sIconPathMap[buttonB] = mCustomButtons.button_b_XBOX.empty() ?
                                     ":/graphics/help/button_b_XBOX.svg" :
-                                    mStyle.mCustomButtons.button_b_XBOX;
-        sIconPathMap[buttonX] = mStyle.mCustomButtons.button_x_XBOX.empty() ?
+                                    mCustomButtons.button_b_XBOX;
+        sIconPathMap[buttonX] = mCustomButtons.button_x_XBOX.empty() ?
                                     ":/graphics/help/button_x_XBOX.svg" :
-                                    mStyle.mCustomButtons.button_x_XBOX;
-        sIconPathMap[buttonY] = mStyle.mCustomButtons.button_y_XBOX.empty() ?
+                                    mCustomButtons.button_x_XBOX;
+        sIconPathMap[buttonY] = mCustomButtons.button_y_XBOX.empty() ?
                                     ":/graphics/help/button_y_XBOX.svg" :
-                                    mStyle.mCustomButtons.button_y_XBOX;
-        sIconPathMap["back"] = mStyle.mCustomButtons.button_back_XBOX360.empty() ?
+                                    mCustomButtons.button_y_XBOX;
+        sIconPathMap["back"] = mCustomButtons.button_back_XBOX360.empty() ?
                                    ":/graphics/help/button_back_XBOX360.svg" :
-                                   mStyle.mCustomButtons.button_back_XBOX360;
-        sIconPathMap["start"] = mStyle.mCustomButtons.button_start_XBOX360.empty() ?
+                                   mCustomButtons.button_back_XBOX360;
+        sIconPathMap["start"] = mCustomButtons.button_start_XBOX360.empty() ?
                                     ":/graphics/help/button_start_XBOX360.svg" :
-                                    mStyle.mCustomButtons.button_start_XBOX360;
+                                    mCustomButtons.button_start_XBOX360;
     }
     else {
         // Xbox One and later.
-        sIconPathMap[buttonA] = mStyle.mCustomButtons.button_a_XBOX.empty() ?
+        sIconPathMap[buttonA] = mCustomButtons.button_a_XBOX.empty() ?
                                     ":/graphics/help/button_a_XBOX.svg" :
-                                    mStyle.mCustomButtons.button_a_XBOX;
-        sIconPathMap[buttonB] = mStyle.mCustomButtons.button_b_XBOX.empty() ?
+                                    mCustomButtons.button_a_XBOX;
+        sIconPathMap[buttonB] = mCustomButtons.button_b_XBOX.empty() ?
                                     ":/graphics/help/button_b_XBOX.svg" :
-                                    mStyle.mCustomButtons.button_b_XBOX;
-        sIconPathMap[buttonX] = mStyle.mCustomButtons.button_x_XBOX.empty() ?
+                                    mCustomButtons.button_b_XBOX;
+        sIconPathMap[buttonX] = mCustomButtons.button_x_XBOX.empty() ?
                                     ":/graphics/help/button_x_XBOX.svg" :
-                                    mStyle.mCustomButtons.button_x_XBOX;
-        sIconPathMap[buttonY] = mStyle.mCustomButtons.button_y_XBOX.empty() ?
+                                    mCustomButtons.button_x_XBOX;
+        sIconPathMap[buttonY] = mCustomButtons.button_y_XBOX.empty() ?
                                     ":/graphics/help/button_y_XBOX.svg" :
-                                    mStyle.mCustomButtons.button_y_XBOX;
-        sIconPathMap["back"] = mStyle.mCustomButtons.button_back_XBOX.empty() ?
+                                    mCustomButtons.button_y_XBOX;
+        sIconPathMap["back"] = mCustomButtons.button_back_XBOX.empty() ?
                                    ":/graphics/help/button_back_XBOX.svg" :
-                                   mStyle.mCustomButtons.button_back_XBOX;
-        sIconPathMap["start"] = mStyle.mCustomButtons.button_start_XBOX.empty() ?
+                                   mCustomButtons.button_back_XBOX;
+        sIconPathMap["start"] = mCustomButtons.button_start_XBOX.empty() ?
                                     ":/graphics/help/button_start_XBOX.svg" :
-                                    mStyle.mCustomButtons.button_start_XBOX;
+                                    mCustomButtons.button_start_XBOX;
     }
 
     // Invalidate cache for icons that have changed.
@@ -246,92 +259,243 @@ void HelpComponent::setPrompts(const std::vector<HelpPrompt>& prompts)
     updateGrid();
 }
 
-void HelpComponent::setStyle(const HelpStyle& style)
+void HelpComponent::setOpacity(float opacity)
 {
-    mStyle = style;
-    updateGrid();
+    if (!mGrid)
+        return;
+
+    GuiComponent::setOpacity(opacity *
+                             (mWindow->isBackgroundDimmed() ? mStyleOpacityDimmed : mStyleOpacity));
+
+    for (unsigned int i {0}; i < mGrid->getChildCount(); ++i)
+        mGrid->getChild(i)->setOpacity(
+            opacity * (mWindow->isBackgroundDimmed() ? mStyleOpacityDimmed : mStyleOpacity));
+}
+
+void HelpComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
+                               const std::string& view,
+                               const std::string& element,
+                               unsigned int properties)
+{
+    const ThemeData::ThemeElement* elem {theme->getElement(view, element, "helpsystem")};
+
+    if (!elem)
+        return;
+
+    if (elem->has("pos"))
+        mStylePosition = elem->get<glm::vec2>("pos") *
+                         glm::vec2 {Renderer::getScreenWidth(), Renderer::getScreenHeight()};
+
+    if (elem->has("posDimmed"))
+        mStylePositionDimmed = elem->get<glm::vec2>("posDimmed") *
+                               glm::vec2 {Renderer::getScreenWidth(), Renderer::getScreenHeight()};
+    else
+        mStylePositionDimmed = mStylePosition;
+
+    if (elem->has("origin"))
+        mStyleOrigin = elem->get<glm::vec2>("origin");
+
+    if (elem->has("originDimmed"))
+        mStyleOriginDimmed = elem->get<glm::vec2>("originDimmed");
+    else
+        mStyleOriginDimmed = mStyleOrigin;
+
+    if (elem->has("textColor"))
+        mStyleTextColor = elem->get<unsigned int>("textColor");
+
+    if (elem->has("textColorDimmed"))
+        mStyleTextColorDimmed = elem->get<unsigned int>("textColorDimmed");
+    else
+        mStyleTextColorDimmed = mStyleTextColor;
+
+    if (elem->has("iconColor"))
+        mStyleIconColor = elem->get<unsigned int>("iconColor");
+
+    if (elem->has("iconColorDimmed"))
+        mStyleIconColorDimmed = elem->get<unsigned int>("iconColorDimmed");
+    else
+        mStyleIconColorDimmed = mStyleIconColor;
+
+    if (elem->has("fontPath") || elem->has("fontSize")) {
+        mStyleFont = Font::getFromTheme(elem, ThemeFlags::ALL, mStyleFont);
+        if (!elem->has("fontSizeDimmed"))
+            mStyleFontDimmed = Font::getFromTheme(elem, ThemeFlags::ALL, mStyleFont);
+    }
+
+    if (elem->has("fontSizeDimmed"))
+        mStyleFontDimmed = Font::getFromTheme(elem, ThemeFlags::ALL, mStyleFont, 0.0f, 1.0f, true);
+
+    if (elem->has("scope")) {
+        const std::string& scope {elem->get<std::string>("scope")};
+        if (scope == "shared") {
+            mHelpComponentScope = HelpComponentScope::SHARED;
+        }
+        else if (scope == "view") {
+            mHelpComponentScope = HelpComponentScope::VIEW;
+        }
+        else if (scope == "menu") {
+            mHelpComponentScope = HelpComponentScope::MENU;
+        }
+        else {
+            LOG(LogWarning) << "HelpComponent: Invalid theme configuration, property "
+                               "\"scope\" for element \""
+                            << element.substr(11) << "\" defined as \"" << scope << "\"";
+        }
+    }
+
+    if (elem->has("entries")) {
+        // Replace possible whitespace separators with commas.
+        std::string entriesTag {Utils::String::toLower(elem->get<std::string>("entries"))};
+        for (auto& character : entriesTag) {
+            if (std::isspace(character))
+                character = ',';
+        }
+        entriesTag = Utils::String::replace(entriesTag, ",,", ",");
+        std::vector<std::string> entries {Utils::String::delimitedStringToVector(entriesTag, ",")};
+
+        // If the "all" value has been set then leave mEntries blank (allow all entries).
+        if (std::find(entries.begin(), entries.end(), "all") == entries.end()) {
+            for (auto& allowedEntry : sAllowedEntries) {
+                if (std::find(entries.cbegin(), entries.cend(), allowedEntry) != entries.cend())
+                    mEntries.emplace_back(allowedEntry);
+            }
+        }
+    }
+
+    if (elem->has("entrySpacing"))
+        mStyleEntrySpacing = glm::clamp(elem->get<float>("entrySpacing"), 0.0f, 0.04f);
+
+    if (elem->has("entrySpacingDimmed"))
+        mStyleEntrySpacingDimmed = glm::clamp(elem->get<float>("entrySpacingDimmed"), 0.0f, 0.04f);
+    else
+        mStyleEntrySpacingDimmed = mStyleEntrySpacing;
+
+    if (elem->has("iconTextSpacing"))
+        mStyleIconTextSpacing = glm::clamp(elem->get<float>("iconTextSpacing"), 0.0f, 0.04f);
+
+    if (elem->has("iconTextSpacingDimmed"))
+        mStyleIconTextSpacingDimmed =
+            glm::clamp(elem->get<float>("iconTextSpacingDimmed"), 0.0f, 0.04f);
+    else
+        mStyleIconTextSpacingDimmed = mStyleIconTextSpacing;
+
+    if (elem->has("letterCase"))
+        mStyleLetterCase = elem->get<std::string>("letterCase");
+
+    if (elem->has("opacity"))
+        mStyleOpacity = glm::clamp(elem->get<float>("opacity"), 0.2f, 1.0f);
+
+    if (elem->has("opacityDimmed"))
+        mStyleOpacityDimmed = glm::clamp(elem->get<float>("opacityDimmed"), 0.2f, 1.0f);
+    else
+        mStyleOpacityDimmed = mStyleOpacity;
+
+    // Load custom button icons.
+    // The names may look a bit strange when combined with the PREFIX string "button_" but it's
+    // because ThemeData adds this prefix to avoid name collisions when using XML attributes.
+
+    // General.
+    if (elem->has(PREFIX "dpad_updown"))
+        mCustomButtons.dpad_updown = elem->get<std::string>(PREFIX "dpad_updown");
+    if (elem->has(PREFIX "dpad_leftright"))
+        mCustomButtons.dpad_leftright = elem->get<std::string>(PREFIX "dpad_leftright");
+    if (elem->has(PREFIX "dpad_all"))
+        mCustomButtons.dpad_all = elem->get<std::string>(PREFIX "dpad_all");
+    if (elem->has(PREFIX "thumbstick_click"))
+        mCustomButtons.thumbstick_click = elem->get<std::string>(PREFIX "thumbstick_click");
+    if (elem->has(PREFIX "button_l"))
+        mCustomButtons.button_l = elem->get<std::string>(PREFIX "button_l");
+    if (elem->has(PREFIX "button_r"))
+        mCustomButtons.button_r = elem->get<std::string>(PREFIX "button_r");
+    if (elem->has(PREFIX "button_lr"))
+        mCustomButtons.button_lr = elem->get<std::string>(PREFIX "button_lr");
+    if (elem->has(PREFIX "button_lt"))
+        mCustomButtons.button_lt = elem->get<std::string>(PREFIX "button_lt");
+    if (elem->has(PREFIX "button_rt"))
+        mCustomButtons.button_rt = elem->get<std::string>(PREFIX "button_rt");
+    if (elem->has(PREFIX "button_ltrt"))
+        mCustomButtons.button_ltrt = elem->get<std::string>(PREFIX "button_ltrt");
+
+    // SNES.
+    if (elem->has(PREFIX "button_a_SNES"))
+        mCustomButtons.button_a_SNES = elem->get<std::string>(PREFIX "button_a_SNES");
+    if (elem->has(PREFIX "button_b_SNES"))
+        mCustomButtons.button_b_SNES = elem->get<std::string>(PREFIX "button_b_SNES");
+    if (elem->has(PREFIX "button_x_SNES"))
+        mCustomButtons.button_x_SNES = elem->get<std::string>(PREFIX "button_x_SNES");
+    if (elem->has(PREFIX "button_y_SNES"))
+        mCustomButtons.button_y_SNES = elem->get<std::string>(PREFIX "button_y_SNES");
+    if (elem->has(PREFIX "button_back_SNES"))
+        mCustomButtons.button_back_SNES = elem->get<std::string>(PREFIX "button_back_SNES");
+    if (elem->has(PREFIX "button_start_SNES"))
+        mCustomButtons.button_start_SNES = elem->get<std::string>(PREFIX "button_start_SNES");
+
+    // Switch Pro.
+    if (elem->has(PREFIX "button_a_switch"))
+        mCustomButtons.button_a_switch = elem->get<std::string>(PREFIX "button_a_switch");
+    if (elem->has(PREFIX "button_b_switch"))
+        mCustomButtons.button_b_switch = elem->get<std::string>(PREFIX "button_b_switch");
+    if (elem->has(PREFIX "button_x_switch"))
+        mCustomButtons.button_x_switch = elem->get<std::string>(PREFIX "button_x_switch");
+    if (elem->has(PREFIX "button_y_switch"))
+        mCustomButtons.button_y_switch = elem->get<std::string>(PREFIX "button_y_switch");
+    if (elem->has(PREFIX "button_back_switch"))
+        mCustomButtons.button_back_switch = elem->get<std::string>(PREFIX "button_back_switch");
+    if (elem->has(PREFIX "button_start_switch"))
+        mCustomButtons.button_start_switch = elem->get<std::string>(PREFIX "button_start_switch");
+
+    // PlayStation.
+    if (elem->has(PREFIX "button_a_PS"))
+        mCustomButtons.button_a_PS = elem->get<std::string>(PREFIX "button_a_PS");
+    if (elem->has(PREFIX "button_b_PS"))
+        mCustomButtons.button_b_PS = elem->get<std::string>(PREFIX "button_b_PS");
+    if (elem->has(PREFIX "button_x_PS"))
+        mCustomButtons.button_x_PS = elem->get<std::string>(PREFIX "button_x_PS");
+    if (elem->has(PREFIX "button_y_PS"))
+        mCustomButtons.button_y_PS = elem->get<std::string>(PREFIX "button_y_PS");
+    if (elem->has(PREFIX "button_back_PS123"))
+        mCustomButtons.button_back_PS123 = elem->get<std::string>(PREFIX "button_back_PS123");
+    if (elem->has(PREFIX "button_start_PS123"))
+        mCustomButtons.button_start_PS123 = elem->get<std::string>(PREFIX "button_start_PS123");
+    if (elem->has(PREFIX "button_back_PS4"))
+        mCustomButtons.button_back_PS4 = elem->get<std::string>(PREFIX "button_back_PS4");
+    if (elem->has(PREFIX "button_start_PS4"))
+        mCustomButtons.button_start_PS4 = elem->get<std::string>(PREFIX "button_start_PS4");
+    if (elem->has(PREFIX "button_back_PS5"))
+        mCustomButtons.button_back_PS5 = elem->get<std::string>(PREFIX "button_back_PS5");
+    if (elem->has(PREFIX "button_start_PS5"))
+        mCustomButtons.button_start_PS5 = elem->get<std::string>(PREFIX "button_start_PS5");
+
+    // XBOX.
+    if (elem->has(PREFIX "button_a_XBOX"))
+        mCustomButtons.button_a_XBOX = elem->get<std::string>(PREFIX "button_a_XBOX");
+    if (elem->has(PREFIX "button_b_XBOX"))
+        mCustomButtons.button_b_XBOX = elem->get<std::string>(PREFIX "button_b_XBOX");
+    if (elem->has(PREFIX "button_x_XBOX"))
+        mCustomButtons.button_x_XBOX = elem->get<std::string>(PREFIX "button_x_XBOX");
+    if (elem->has(PREFIX "button_y_XBOX"))
+        mCustomButtons.button_y_XBOX = elem->get<std::string>(PREFIX "button_y_XBOX");
+    if (elem->has(PREFIX "button_back_XBOX"))
+        mCustomButtons.button_back_XBOX = elem->get<std::string>(PREFIX "button_back_XBOX");
+    if (elem->has(PREFIX "button_start_XBOX"))
+        mCustomButtons.button_start_XBOX = elem->get<std::string>(PREFIX "button_start_XBOX");
+    if (elem->has(PREFIX "button_back_XBOX360"))
+        mCustomButtons.button_back_XBOX360 = elem->get<std::string>(PREFIX "button_back_XBOX360");
+    if (elem->has(PREFIX "button_start_XBOX360"))
+        mCustomButtons.button_start_XBOX360 = elem->get<std::string>(PREFIX "button_start_XBOX360");
+
     assignIcons();
 }
 
-void HelpComponent::updateGrid()
+void HelpComponent::render(const glm::mat4& parentTrans)
 {
-    if (!Settings::getInstance()->getBool("ShowHelpPrompts") || mPrompts.empty()) {
-        mGrid.reset();
+    if (!mVisible)
         return;
-    }
 
-    const bool isDimmed {mWindow->isBackgroundDimmed()};
+    const glm::mat4 trans {parentTrans * getTransform()};
 
-    std::shared_ptr<Font>& font {isDimmed ? mStyle.fontDimmed : mStyle.font};
-    mGrid = std::make_shared<ComponentGrid>(glm::ivec2 {static_cast<int>(mPrompts.size()) * 5, 1});
-
-    std::vector<std::shared_ptr<ImageComponent>> icons;
-    std::vector<std::shared_ptr<TextComponent>> labels;
-
-    float width {0.0f};
-    float height {font->getLetterHeight() * 1.25f};
-
-    for (auto it = mPrompts.cbegin(); it != mPrompts.cend(); ++it) {
-        auto icon = std::make_shared<ImageComponent>();
-        icon->setImage(getIconTexture(it->first.c_str()), false);
-        icon->setColorShift(isDimmed ? mStyle.iconColorDimmed : mStyle.iconColor);
-        icon->setResize(0, height);
-        icon->setOpacity(isDimmed ? mStyle.opacityDimmed : mStyle.opacity);
-        icons.push_back(icon);
-
-        // Apply text style and color from the theme to the label and add it to the label list.
-        std::string lblInput {it->second};
-        if (mStyle.letterCase == "lowercase")
-            lblInput = Utils::String::toLower(lblInput);
-        else if (mStyle.letterCase == "capitalize")
-            lblInput = Utils::String::toCapitalized(lblInput);
-        else
-            lblInput = Utils::String::toUpper(lblInput);
-        auto lbl = std::make_shared<TextComponent>(
-            lblInput, font, isDimmed ? mStyle.textColorDimmed : mStyle.textColor);
-        lbl->setOpacity(isDimmed ? mStyle.opacityDimmed : mStyle.opacity);
-        labels.push_back(lbl);
-
-        width += icon->getSize().x + lbl->getSize().x +
-                 (((isDimmed ? mStyle.iconTextSpacingDimmed : mStyle.iconTextSpacing) *
-                       mRenderer->getScreenWidth() +
-                   (isDimmed ? mStyle.entrySpacingDimmed : mStyle.entrySpacing) *
-                       mRenderer->getScreenWidth()));
-    }
-
-    mGrid->setSize(width, height);
-
-    for (int i {0}; i < static_cast<int>(icons.size()); ++i) {
-        const int col {i * 5};
-        mGrid->setColWidthPerc(col, icons.at(i)->getSize().x / width);
-        mGrid->setColWidthPerc(col + 1,
-                               ((isDimmed ? mStyle.iconTextSpacingDimmed : mStyle.iconTextSpacing) *
-                                mRenderer->getScreenWidth()) /
-                                   width);
-        mGrid->setColWidthPerc(col + 2, labels.at(i)->getSize().x / width);
-        mGrid->setColWidthPerc(col + 3,
-                               ((isDimmed ? mStyle.entrySpacingDimmed : mStyle.entrySpacing) *
-                                mRenderer->getScreenWidth()) /
-                                   width);
-
-        mGrid->setEntry(icons.at(i), glm::ivec2 {col, 0}, false, false);
-        mGrid->setEntry(labels.at(i), glm::ivec2 {col + 2, 0}, false, false);
-    }
-
-    if (isDimmed) {
-        mGrid->setPosition(
-            {mStyle.positionDimmed.x + ((mStyle.entrySpacingDimmed * mRenderer->getScreenWidth()) *
-                                        mStyle.originDimmed.x),
-             mStyle.positionDimmed.y, 0.0f});
-    }
-    else {
-        mGrid->setPosition(
-            {mStyle.position.x +
-                 ((mStyle.entrySpacing * mRenderer->getScreenWidth()) * mStyle.origin.x),
-             mStyle.position.y, 0.0f});
-    }
-
-    mGrid->setOrigin(isDimmed ? mStyle.originDimmed : mStyle.origin);
+    if (mGrid)
+        mGrid->render(trans);
 }
 
 std::shared_ptr<TextureResource> HelpComponent::getIconTexture(const char* name)
@@ -358,20 +522,86 @@ std::shared_ptr<TextureResource> HelpComponent::getIconTexture(const char* name)
     return tex;
 }
 
-void HelpComponent::setOpacity(float opacity)
+void HelpComponent::updateGrid()
 {
-    GuiComponent::setOpacity(
-        opacity * (mWindow->isBackgroundDimmed() ? mStyle.opacityDimmed : mStyle.opacity));
+    if (!Settings::getInstance()->getBool("ShowHelpPrompts") || mPrompts.empty()) {
+        mGrid.reset();
+        return;
+    }
 
-    for (unsigned int i = 0; i < mGrid->getChildCount(); ++i)
-        mGrid->getChild(i)->setOpacity(
-            opacity * (mWindow->isBackgroundDimmed() ? mStyle.opacityDimmed : mStyle.opacity));
-}
+    const bool isDimmed {mWindow->isBackgroundDimmed()};
 
-void HelpComponent::render(const glm::mat4& parentTrans)
-{
-    glm::mat4 trans {parentTrans * getTransform()};
+    std::shared_ptr<Font>& font {isDimmed ? mStyleFontDimmed : mStyleFont};
+    mGrid = std::make_shared<ComponentGrid>(glm::ivec2 {static_cast<int>(mPrompts.size()) * 5, 1});
 
-    if (mGrid)
-        mGrid->render(trans);
+    std::vector<std::shared_ptr<ImageComponent>> icons;
+    std::vector<std::shared_ptr<TextComponent>> labels;
+
+    float width {0.0f};
+    float height {font->getLetterHeight() * 1.25f};
+
+    for (auto it = mPrompts.cbegin(); it != mPrompts.cend(); ++it) {
+        if (!mEntries.empty() &&
+            std::find(mEntries.cbegin(), mEntries.cend(), (*it).first) == mEntries.cend())
+            continue;
+
+        auto icon = std::make_shared<ImageComponent>();
+        icon->setImage(getIconTexture(it->first.c_str()), false);
+        icon->setColorShift(isDimmed ? mStyleIconColorDimmed : mStyleIconColor);
+        icon->setResize(0, height);
+        icon->setOpacity(isDimmed ? mStyleOpacityDimmed : mStyleOpacity);
+        icons.push_back(icon);
+
+        // Apply text style and color from the theme to the label and add it to the label list.
+        std::string lblInput {it->second};
+        if (mStyleLetterCase == "lowercase")
+            lblInput = Utils::String::toLower(lblInput);
+        else if (mStyleLetterCase == "capitalize")
+            lblInput = Utils::String::toCapitalized(lblInput);
+        else
+            lblInput = Utils::String::toUpper(lblInput);
+        auto lbl = std::make_shared<TextComponent>(
+            lblInput, font, isDimmed ? mStyleTextColorDimmed : mStyleTextColor);
+        lbl->setOpacity(isDimmed ? mStyleOpacityDimmed : mStyleOpacity);
+        labels.push_back(lbl);
+
+        width += icon->getSize().x + lbl->getSize().x +
+                 (((isDimmed ? mStyleIconTextSpacingDimmed : mStyleIconTextSpacing) *
+                       mRenderer->getScreenWidth() +
+                   (isDimmed ? mStyleEntrySpacingDimmed : mStyleEntrySpacing) *
+                       mRenderer->getScreenWidth()));
+    }
+
+    mGrid->setSize(width, height);
+
+    for (int i {0}; i < static_cast<int>(icons.size()); ++i) {
+        const int col {i * 5};
+        mGrid->setColWidthPerc(col, icons.at(i)->getSize().x / width);
+        mGrid->setColWidthPerc(col + 1,
+                               ((isDimmed ? mStyleIconTextSpacingDimmed : mStyleIconTextSpacing) *
+                                mRenderer->getScreenWidth()) /
+                                   width);
+        mGrid->setColWidthPerc(col + 2, labels.at(i)->getSize().x / width);
+        mGrid->setColWidthPerc(col + 3,
+                               ((isDimmed ? mStyleEntrySpacingDimmed : mStyleEntrySpacing) *
+                                mRenderer->getScreenWidth()) /
+                                   width);
+
+        mGrid->setEntry(icons.at(i), glm::ivec2 {col, 0}, false, false);
+        mGrid->setEntry(labels.at(i), glm::ivec2 {col + 2, 0}, false, false);
+    }
+
+    if (isDimmed) {
+        mGrid->setPosition(
+            {mStylePositionDimmed.x +
+                 ((mStyleEntrySpacingDimmed * mRenderer->getScreenWidth()) * mStyleOriginDimmed.x),
+             mStylePositionDimmed.y, 0.0f});
+    }
+    else {
+        mGrid->setPosition({mStylePosition.x + ((mStyleEntrySpacing * mRenderer->getScreenWidth()) *
+                                                mStyleOrigin.x),
+                            mStylePosition.y, 0.0f});
+    }
+
+    mGrid->setOrigin(isDimmed ? mStyleOriginDimmed : mStyleOrigin);
 }

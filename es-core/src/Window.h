@@ -12,7 +12,6 @@
 
 #include "GuiComponent.h"
 #include "HelpPrompt.h"
-#include "HelpStyle.h"
 #include "InputConfig.h"
 #include "Settings.h"
 #include "components/HelpComponent.h"
@@ -119,7 +118,7 @@ public:
     void renderListScrollOverlay(const float opacity, const std::string& text);
 
     void renderHelpPromptsEarly(); // Used to render HelpPrompts before a fade.
-    void setHelpPrompts(const std::vector<HelpPrompt>& prompts, const HelpStyle& style);
+    void setHelpPrompts(const std::vector<HelpPrompt>& prompts);
 
     // GuiInfoPopup notifications.
     void queueInfoPopup(const std::string& message, const int& duration)
@@ -169,6 +168,11 @@ public:
     void setChangedTheme() { mChangedTheme = true; }
     bool getChangedTheme() { return mChangedTheme; }
 
+    void passHelpComponents(std::vector<std::unique_ptr<HelpComponent>>* helpComponents)
+    {
+        mHelpComponents = helpComponents;
+    }
+
 private:
     Window() noexcept;
     ~Window();
@@ -185,6 +189,7 @@ private:
     };
 
     Renderer* mRenderer;
+    std::vector<std::unique_ptr<HelpComponent>>* mHelpComponents;
     std::unique_ptr<HelpComponent> mHelp;
     std::unique_ptr<ImageComponent> mBackgroundOverlay;
     std::unique_ptr<ImageComponent> mSplash;

@@ -131,8 +131,12 @@ public:
     const State& getState() const { return mState; }
 
     std::vector<HelpPrompt> getHelpPrompts() override;
-    HelpStyle getHelpStyle() override;
-    HelpStyle getViewHelpStyle();
+
+    void setHelpComponentsVisibility(const bool state)
+    {
+        if (mCurrentView != nullptr)
+            mCurrentView->setHelpComponentsVisibility(state);
+    }
 
     std::shared_ptr<GamelistView> getGamelistView(SystemData* system);
     std::shared_ptr<SystemView> getSystemListView();

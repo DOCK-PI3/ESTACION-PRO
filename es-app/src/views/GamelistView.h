@@ -101,10 +101,15 @@ public:
     }
     void onThemeChanged(const std::shared_ptr<ThemeData>& theme);
 
+    void setHelpComponentsVisibility(const bool state) override
+    {
+        for (auto& helpComponent : mHelpComponents)
+            helpComponent->setVisible(state);
+    }
+
     void update(int deltaTime) override;
     void render(const glm::mat4& parentTrans) override;
 
-    HelpStyle getHelpStyle() override { return mHelpStyle; }
     std::vector<HelpPrompt> getHelpPrompts() override;
 
 private:
@@ -112,7 +117,6 @@ private:
     void setGameImage(FileData* file, GuiComponent* comp);
 
     Renderer* mRenderer;
-    HelpStyle mHelpStyle;
     bool mStaticVideoAudio;
 
     std::shared_ptr<ThemeData> mTheme;
@@ -130,6 +134,7 @@ private:
     std::vector<std::unique_ptr<ScrollableContainer>> mContainerComponents;
     std::vector<std::unique_ptr<TextComponent>> mContainerTextComponents;
     std::vector<std::unique_ptr<TextComponent>> mGamelistInfoComponents;
+    std::vector<std::unique_ptr<HelpComponent>> mHelpComponents;
 };
 
 #endif // ES_APP_VIEWS_GAMELIST_VIEW_H

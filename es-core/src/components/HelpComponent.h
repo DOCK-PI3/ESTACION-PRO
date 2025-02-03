@@ -10,27 +10,34 @@
 #define ES_CORE_COMPONENTS_HELP_COMPONENT_H
 
 #include "GuiComponent.h"
-#include "HelpStyle.h"
+#include "components/ComponentGrid.h"
 #include "renderers/Renderer.h"
-
-class ComponentGrid;
-class ImageComponent;
-class TextureResource;
+#include "resources/Font.h"
+#include "resources/TextureResource.h"
 
 class HelpComponent : public GuiComponent
 {
 public:
-    HelpComponent();
+    HelpComponent(std::shared_ptr<Font> font = Renderer::getIsVerticalOrientation() ?
+                                                   Font::get(0.025f * Renderer::getScreenWidth()) :
+                                                   Font::get(FONT_SIZE_SMALL));
 
     void assignIcons();
-
     void clearPrompts();
     void setPrompts(const std::vector<HelpPrompt>& prompts);
 
-    void render(const glm::mat4& parent) override;
     void setOpacity(float opacity) override;
+    void setStylePosition(const glm::vec2 position) { mStylePosition = position; }
+    void setStyleOrigin(const glm::vec2 origin) { mStyleOrigin = origin; }
+    void setStyleTextColor(const unsigned int textColor) { mStyleTextColor = textColor; }
+    void setStyleIconColor(const unsigned int iconColor) { mStyleIconColor = iconColor; }
 
-    void setStyle(const HelpStyle& style);
+    void applyTheme(const std::shared_ptr<ThemeData>& theme,
+                    const std::string& view,
+                    const std::string& element,
+                    unsigned int properties) override;
+
+    void render(const glm::mat4& parent) override;
 
 private:
     Renderer* mRenderer;
@@ -41,7 +48,99 @@ private:
     void updateGrid();
 
     std::vector<HelpPrompt> mPrompts;
-    HelpStyle mStyle;
+    static inline std::map<std::string, std::string> sIconPathMap;
+
+    std::shared_ptr<Font> mStyleFont;
+    std::shared_ptr<Font> mStyleFontDimmed;
+
+    std::vector<std::string> mEntries;
+    static inline std::vector<std::string> sAllowedEntries {"up/down/left/right",
+                                                            "up/down",
+                                                            "up",
+                                                            "down",
+                                                            "left/right",
+                                                            "rt",
+                                                            "lt",
+                                                            "r",
+                                                            "l",
+                                                            "y",
+                                                            "x",
+                                                            "b",
+                                                            "a",
+                                                            "start",
+                                                            "back"};
+
+    glm::vec2 mStylePosition;
+    glm::vec2 mStylePositionDimmed;
+    glm::vec2 mStyleOrigin;
+    glm::vec2 mStyleOriginDimmed;
+    unsigned int mStyleTextColor;
+    unsigned int mStyleTextColorDimmed;
+    unsigned int mStyleIconColor;
+    unsigned int mStyleIconColorDimmed;
+    float mStyleEntrySpacing;
+    float mStyleEntrySpacingDimmed;
+    float mStyleIconTextSpacing;
+    float mStyleIconTextSpacingDimmed;
+    float mStyleOpacity;
+    float mStyleOpacityDimmed;
+    std::string mStyleLetterCase;
+
+    struct CustomButtonIcons {
+        // Generic
+        std::string dpad_updown;
+        std::string dpad_up;
+        std::string dpad_down;
+        std::string dpad_leftright;
+        std::string dpad_all;
+        std::string thumbstick_click;
+        std::string button_l;
+        std::string button_r;
+        std::string button_lr;
+        std::string button_lt;
+        std::string button_rt;
+        std::string button_ltrt;
+
+        // SNES
+        std::string button_a_SNES;
+        std::string button_b_SNES;
+        std::string button_x_SNES;
+        std::string button_y_SNES;
+        std::string button_back_SNES;
+        std::string button_start_SNES;
+
+        // Switch Pro
+        std::string button_a_switch;
+        std::string button_b_switch;
+        std::string button_x_switch;
+        std::string button_y_switch;
+        std::string button_back_switch;
+        std::string button_start_switch;
+
+        // PlayStation
+        std::string button_a_PS;
+        std::string button_b_PS;
+        std::string button_x_PS;
+        std::string button_y_PS;
+        std::string button_back_PS123;
+        std::string button_start_PS123;
+        std::string button_back_PS4;
+        std::string button_start_PS4;
+        std::string button_back_PS5;
+        std::string button_start_PS5;
+
+        // XBOX
+        std::string button_a_XBOX;
+        std::string button_b_XBOX;
+        std::string button_x_XBOX;
+        std::string button_y_XBOX;
+        std::string button_back_XBOX;
+        std::string button_start_XBOX;
+        std::string button_back_XBOX360;
+        std::string button_start_XBOX360;
+    };
+
+    CustomButtonIcons mCustomButtons;
 };
 
 #endif // ES_CORE_COMPONENTS_HELP_COMPONENT_H

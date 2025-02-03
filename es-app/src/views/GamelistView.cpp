@@ -349,9 +349,11 @@ void GamelistView::onThemeChanged(const std::shared_ptr<ThemeData>& theme)
                 mRatingComponents.back()->setOpacity(mRatingComponents.back()->getOpacity());
                 addChild(mRatingComponents.back().get());
             }
+            else if (element.second.type == "helpsystem") {
+                mHelpComponents.emplace_back(std::make_unique<HelpComponent>());
+                mHelpComponents.back()->applyTheme(theme, "gamelist", element.first, ALL);
+            }
         }
-
-        mHelpStyle.applyTheme(mTheme, "gamelist");
     }
 
     if (mPrimary == nullptr) {
@@ -512,6 +514,7 @@ void GamelistView::render(const glm::mat4& parentTrans)
 
 std::vector<HelpPrompt> GamelistView::getHelpPrompts()
 {
+    mWindow->passHelpComponents(&mHelpComponents);
     std::vector<HelpPrompt> prompts;
 
     if (Settings::getInstance()->getString("QuickSystemSelect") != "disabled") {

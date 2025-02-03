@@ -30,6 +30,7 @@
 
 Window::Window() noexcept
     : mRenderer {Renderer::getInstance()}
+    , mHelpComponents {nullptr}
     , mSplashTextPositions {0.0f, 0.0f, 0.0f, 0.0f}
     , mBackgroundOverlayOpacity {1.0f}
     , mScreensaver {nullptr}
@@ -347,8 +348,13 @@ void Window::logInput(InputConfig* config, Input input)
 
 void Window::update(int deltaTime)
 {
-    if (mInvalidateCacheTimer > 0)
+    if (mInvalidateCacheTimer > 0) {
         mInvalidateCacheTimer = glm::clamp(mInvalidateCacheTimer - deltaTime, 0, 500);
+        if (mHelpComponents != nullptr) {
+            for (auto& helpComponent : *mHelpComponents)
+                helpComponent->setVisible(false);
+        }
+    }
 
     if (mNormalizeNextUpdate) {
         mNormalizeNextUpdate = false;
@@ -599,8 +605,19 @@ void Window::render()
                 }
             }
 
-            if (!mRenderedHelpPrompts)
-                mHelp->render(trans);
+            if (!mRenderedHelpPrompts) {
+                if (mHelpComponents != nullptr) {
+                    for (auto& helpComponent : *mHelpComponents) {
+                        if (helpComponent->getHelpComponentScope() != HelpComponentScope::VIEW) {
+                            helpComponent->setVisible(true);
+                            helpComponent->render(trans);
+                        }
+                    }
+                }
+                else {
+                    mHelp->render(trans);
+                }
+            }
 
             if (!mRenderLaunchScreen)
                 top->render(trans);
@@ -754,15 +771,22 @@ void Window::renderListScrollOverlay(const float opacity, const std::string& tex
 
 void Window::renderHelpPromptsEarly()
 {
-    mHelp->render(mRenderer->getIdentity());
+    if (mHelpComponents != nullptr) {
+        for (auto& helpComponent : *mHelpComponents) {
+            if (helpComponent->getHelpComponentScope() != HelpComponentScope::MENU) {
+                helpComponent->setVisible(true);
+                helpComponent->render(mRenderer->getIdentity());
+            }
+        }
+    }
+    else {
+        mHelp->render(mRenderer->getIdentity());
+    }
     mRenderedHelpPrompts = true;
 }
 
-void Window::setHelpPrompts(const std::vector<HelpPrompt>& prompts, const HelpStyle& style)
+void Window::setHelpPrompts(const std::vector<HelpPrompt>& prompts)
 {
-    mHelp->clearPrompts();
-    mHelp->setStyle(style);
-
     std::vector<HelpPrompt> addPrompts;
 
     std::map<std::string, bool> inputSeenMap;
@@ -826,7 +850,15 @@ void Window::setHelpPrompts(const std::vector<HelpPrompt>& prompts, const HelpSt
                   return aVal > bVal;
               });
 
-    mHelp->setPrompts(addPrompts);
+    if (mHelpComponents != nullptr) {
+        for (auto& helpComponent : *mHelpComponents) {
+            helpComponent->clearPrompts();
+            helpComponent->setPrompts(addPrompts);
+        }
+    }
+    else {
+        mHelp->setPrompts(addPrompts);
+    }
 }
 
 void Window::stopInfoPopup()

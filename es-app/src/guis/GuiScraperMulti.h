@@ -35,7 +35,6 @@ public:
     void onSizeChanged() override;
 
     std::vector<HelpPrompt> getHelpPrompts() override;
-    HelpStyle getHelpStyle() override { return ViewController::getInstance()->getViewHelpStyle(); }
 
 private:
     void acceptResult(const ScraperSearchResult& result);

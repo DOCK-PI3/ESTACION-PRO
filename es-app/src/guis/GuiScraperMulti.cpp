@@ -327,7 +327,7 @@ void GuiScraperMulti::finish()
 
     // Pressing either OK or using the back button should delete us.
     mWindow->pushGui(new GuiMsgBox(
-        getHelpStyle(), ss.str(), _("OK"),
+        ss.str(), _("OK"),
         [&] {
             mIsProcessing = false;
             delete this;

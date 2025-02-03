@@ -30,7 +30,6 @@ public:
     void update(int deltaTime) override;
 
     std::vector<HelpPrompt> getHelpPrompts() override;
-    HelpStyle getHelpStyle() override { return ViewController::getInstance()->getViewHelpStyle(); }
 
 private:
     bool mClose;

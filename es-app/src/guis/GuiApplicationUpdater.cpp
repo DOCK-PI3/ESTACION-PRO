@@ -161,13 +161,13 @@ GuiApplicationUpdater::GuiApplicationUpdater()
                 };
                 if (Settings::getInstance()->getBool("VirtualKeyboard")) {
                     mWindow->pushGui(new GuiTextEditKeyboardPopup(
-                        getHelpStyle(), 0.0f, _("ENTER DOWNLOAD DIRECTORY"),
-                        currentDownloadDirectory, directoryFunc, false));
+                        0.0f, _("ENTER DOWNLOAD DIRECTORY"), currentDownloadDirectory,
+                        directoryFunc, false));
                 }
                 else {
-                    mWindow->pushGui(
-                        new GuiTextEditPopup(getHelpStyle(), _("ENTER DOWNLOAD DIRECTORY"),
-                                             currentDownloadDirectory, directoryFunc, false));
+                    mWindow->pushGui(new GuiTextEditPopup(_("ENTER DOWNLOAD DIRECTORY"),
+                                                          currentDownloadDirectory, directoryFunc,
+                                                          false));
                 }
             });
         buttons.push_back(mButton2);
@@ -180,20 +180,20 @@ GuiApplicationUpdater::GuiApplicationUpdater()
             mThread.reset();
         }
         if (mDownloading) {
-            mWindow->pushGui(new GuiMsgBox(
-                getHelpStyle(), _("DOWNLOAD ABORTED") + "\n" + _("NO PACKAGE SAVED TO DISK"),
-                _("OK"), nullptr, "", nullptr, "", nullptr, nullptr, true, true,
-                (mRenderer->getIsVerticalOrientation() ?
-                     0.70f :
-                     0.45f * (1.778f / mRenderer->getScreenAspectRatio()))));
+            mWindow->pushGui(
+                new GuiMsgBox(_("DOWNLOAD ABORTED") + "\n" + _("NO PACKAGE SAVED TO DISK"), _("OK"),
+                              nullptr, "", nullptr, "", nullptr, nullptr, true, true,
+                              (mRenderer->getIsVerticalOrientation() ?
+                                   0.70f :
+                                   0.45f * (1.778f / mRenderer->getScreenAspectRatio()))));
         }
         else if (mHasDownloaded || mReadyToInstall) {
-            mWindow->pushGui(new GuiMsgBox(
-                getHelpStyle(), _("PACKAGE WAS DOWNLOADED AND CAN BE MANUALLY INSTALLED"), _("OK"),
-                nullptr, "", nullptr, "", nullptr, nullptr, true, true,
-                (mRenderer->getIsVerticalOrientation() ?
-                     0.60f :
-                     0.35f * (1.778f / mRenderer->getScreenAspectRatio()))));
+            mWindow->pushGui(
+                new GuiMsgBox(_("PACKAGE WAS DOWNLOADED AND CAN BE MANUALLY INSTALLED"), _("OK"),
+                              nullptr, "", nullptr, "", nullptr, nullptr, true, true,
+                              (mRenderer->getIsVerticalOrientation() ?
+                                   0.60f :
+                                   0.35f * (1.778f / mRenderer->getScreenAspectRatio()))));
         }
         delete this;
     });

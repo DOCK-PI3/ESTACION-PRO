@@ -199,8 +199,7 @@ void ViewController::legacyAppDataDialog()
 #endif
 
     mWindow->pushGui(new GuiMsgBox(
-        HelpStyle(), upgradeMessage.c_str(), _("OK"), [] {}, "", nullptr, "", nullptr, nullptr,
-        true, true,
+        upgradeMessage.c_str(), _("OK"), [] {}, "", nullptr, "", nullptr, nullptr, true, true,
         (mRenderer->getIsVerticalOrientation() ?
              0.85f :
              0.55f * (1.778f / mRenderer->getScreenAspectRatio()))));
@@ -213,7 +212,7 @@ void ViewController::migratedAppDataFilesDialog()
                                "THE CONFIGURATION"};
 
     mWindow->pushGui(new GuiMsgBox(
-        HelpStyle(), message.c_str(), "QUIT",
+        message.c_str(), "QUIT",
         [] {
             SDL_Event quit {};
             quit.type = SDL_QUIT;
@@ -235,8 +234,7 @@ void ViewController::unsafeUpgradeDialog()
           "README.TXT FILE THAT CAN BE FOUND IN THE ES-DE DIRECTORY.")};
 
     mWindow->pushGui(new GuiMsgBox(
-        HelpStyle(), upgradeMessage.c_str(), _("OK"), [] {}, "", nullptr, "", nullptr, nullptr,
-        true, true,
+        upgradeMessage.c_str(), _("OK"), [] {}, "", nullptr, "", nullptr, nullptr, true, true,
         (mRenderer->getIsVerticalOrientation() ?
              0.85f :
              0.55f * (1.778f / mRenderer->getScreenAspectRatio()))));
@@ -252,7 +250,7 @@ void ViewController::invalidSystemsFileDialog()
                                       "LOG FILE es_log.txt FOR ADDITIONAL INFO")};
 
     mWindow->pushGui(new GuiMsgBox(
-        HelpStyle(), errorMessage.c_str(), _("QUIT"),
+        errorMessage.c_str(), _("QUIT"),
         [] {
             SDL_Event quit {};
             quit.type = SDL_QUIT;
@@ -291,10 +289,10 @@ void ViewController::noGamesDialog()
 
 #if defined(__ANDROID__) || defined(__IOS__)
     mNoGamesMessageBox = new GuiMsgBox(
-        HelpStyle(), mNoGamesErrorMessage + mRomDirectory,
+        mNoGamesErrorMessage + mRomDirectory,
 #else
     mNoGamesMessageBox = new GuiMsgBox(
-        HelpStyle(), mNoGamesErrorMessage + mRomDirectory, _("CHANGE ROM DIRECTORY"),
+        mNoGamesErrorMessage + mRomDirectory, _("CHANGE ROM DIRECTORY"),
         [this] {
             std::string currentROMDirectory;
 #if defined(_WIN64)
@@ -304,7 +302,7 @@ void ViewController::noGamesDialog()
 #endif
             if (Settings::getInstance()->getBool("VirtualKeyboard")) {
                 mWindow->pushGui(new GuiTextEditKeyboardPopup(
-                    HelpStyle(), 0.0f, _("ENTER ROM DIRECTORY PATH"), currentROMDirectory,
+                    0.0f, _("ENTER ROM DIRECTORY PATH"), currentROMDirectory,
                     [this, currentROMDirectory](const std::string& newROMDirectory) {
                         if (currentROMDirectory != newROMDirectory) {
                             Settings::getInstance()->setString(
@@ -318,7 +316,6 @@ void ViewController::noGamesDialog()
 #endif
                             mNoGamesMessageBox->changeText(mNoGamesErrorMessage + mRomDirectory);
                             mWindow->pushGui(new GuiMsgBox(
-                                HelpStyle(),
                                 _("ROM DIRECTORY SETTING SAVED, RESTART "
                                   "THE APPLICATION TO RESCAN THE SYSTEMS"),
                                 _("OK"), nullptr, "", nullptr, "", nullptr, nullptr, true, true,
@@ -333,7 +330,7 @@ void ViewController::noGamesDialog()
             }
             else {
                 mWindow->pushGui(new GuiTextEditPopup(
-                    HelpStyle(), _("ENTER ROM DIRECTORY PATH"), currentROMDirectory,
+                    _("ENTER ROM DIRECTORY PATH"), currentROMDirectory,
                     [this](const std::string& newROMDirectory) {
                         Settings::getInstance()->setString("ROMDirectory",
                                                            Utils::String::trim(newROMDirectory));
@@ -346,7 +343,6 @@ void ViewController::noGamesDialog()
 #endif
                         mNoGamesMessageBox->changeText(mNoGamesErrorMessage + mRomDirectory);
                         mWindow->pushGui(new GuiMsgBox(
-                            HelpStyle(),
                             _("ROM DIRECTORY SETTING SAVED, RESTART "
                               "THE APPLICATION TO RESCAN THE SYSTEMS"),
                             _("OK"), nullptr, "", nullptr, "", nullptr, nullptr, true, true,
@@ -363,7 +359,6 @@ void ViewController::noGamesDialog()
         _("CREATE DIRECTORIES"),
         [this] {
             mWindow->pushGui(new GuiMsgBox(
-                HelpStyle(),
                 _("THIS WILL CREATE DIRECTORIES FOR ALL THE "
                   "GAME SYSTEMS DEFINED IN es_systems.xml\n\n"
                   "THIS MAY CREATE A LOT OF FOLDERS SO IT'S "
@@ -372,7 +367,6 @@ void ViewController::noGamesDialog()
                 [this] {
                     if (!SystemData::createSystemDirectories()) {
                         mWindow->pushGui(new GuiMsgBox(
-                            HelpStyle(),
                             _("THE SYSTEM DIRECTORIES WERE SUCCESSFULLY "
                               "GENERATED, EXIT THE APPLICATION AND PLACE "
                               "YOUR GAMES IN THE NEW FOLDERS"),
@@ -383,7 +377,6 @@ void ViewController::noGamesDialog()
                     }
                     else {
                         mWindow->pushGui(new GuiMsgBox(
-                            HelpStyle(),
                             _("ERROR CREATING THE SYSTEM DIRECTORIES, "
                               "PERMISSION PROBLEMS OR DISK FULL?\n\n"
                               "SEE THE LOG FILE FOR MORE DETAILS"),
@@ -422,8 +415,7 @@ void ViewController::noGamesDialog()
 void ViewController::invalidAlternativeEmulatorDialog()
 {
     cancelViewTransitions();
-    mWindow->pushGui(new GuiMsgBox(getHelpStyle(),
-                                   _("AT LEAST ONE OF YOUR SYSTEMS HAS AN "
+    mWindow->pushGui(new GuiMsgBox(_("AT LEAST ONE OF YOUR SYSTEMS HAS AN "
                                      "INVALID ALTERNATIVE EMULATOR CONFIGURED "
                                      "WITH NO MATCHING ENTRY IN THE SYSTEMS "
                                      "CONFIGURATION FILE, PLEASE REVIEW YOUR "
@@ -451,7 +443,7 @@ void ViewController::updateAvailableDialog()
                       << "\"";
 
         mWindow->pushGui(new GuiMsgBox(
-            getHelpStyle(), results, _("UPDATE"),
+            results, _("UPDATE"),
             [this, package] {
                 mWindow->pushGui(new GuiApplicationUpdater());
 
@@ -481,8 +473,8 @@ void ViewController::updateAvailableDialog()
                               "THE UPGRADE.");
                     }
                     mWindow->pushGui(new GuiMsgBox(
-                        getHelpStyle(), upgradeMessage.c_str(), _("OK"), [] {}, "", nullptr, "",
-                        nullptr, nullptr, true, true,
+                        upgradeMessage.c_str(), _("OK"), [] {}, "", nullptr, "", nullptr, nullptr,
+                        true, true,
                         (mRenderer->getIsVerticalOrientation() ?
                              0.85f :
                              0.535f * (1.778f / mRenderer->getScreenAspectRatio()))));
@@ -499,8 +491,8 @@ void ViewController::updateAvailableDialog()
                  0.45f * (1.778f / mRenderer->getScreenAspectRatio()))));
     }
     else {
-        mWindow->pushGui(new GuiMsgBox(getHelpStyle(), results, _("OK"), nullptr, "", nullptr, "",
-                                       nullptr, nullptr, true, true,
+        mWindow->pushGui(new GuiMsgBox(results, _("OK"), nullptr, "", nullptr, "", nullptr, nullptr,
+                                       true, true,
                                        (mRenderer->getIsVerticalOrientation() ?
                                             0.70f :
                                             0.45f * (1.778f / mRenderer->getScreenAspectRatio()))));
@@ -1249,6 +1241,9 @@ bool ViewController::input(InputConfig* config, Input input)
     if (!(UIModeController::getInstance()->isUIModeKid() &&
           !Settings::getInstance()->getBool("EnableMenuKidMode")) &&
         config->isMappedTo("start", input) && input.value != 0 && mCurrentView != nullptr) {
+
+        setHelpComponentsVisibility(false);
+
         // If we don't stop the scrolling here, it will continue to
         // run after closing the menu.
         if (mSystemListView->isScrolling())
@@ -1688,20 +1683,4 @@ std::vector<HelpPrompt> ViewController::getHelpPrompts()
           !Settings::getInstance()->getBool("EnableMenuKidMode")))
         prompts.push_back(HelpPrompt("start", _("menu")));
     return prompts;
-}
-
-HelpStyle ViewController::getHelpStyle()
-{
-    if (!mCurrentView)
-        return GuiComponent::getHelpStyle();
-
-    return mCurrentView->getHelpStyle();
-}
-
-HelpStyle ViewController::getViewHelpStyle()
-{
-    if (mState.viewing == ViewMode::GAMELIST)
-        return getGamelistView(mState.getSystem())->getHelpStyle();
-    else
-        return getSystemListView()->getHelpStyle();
 }

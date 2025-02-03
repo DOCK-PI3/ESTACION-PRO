@@ -554,6 +554,8 @@ std::map<std::string, std::map<std::string, ThemeData::ElementPropertyType>>
        {"fontPath", PATH},
        {"fontSize", FLOAT},
        {"fontSizeDimmed", FLOAT},
+       {"scope", STRING},
+       {"entries", STRING},
        {"entrySpacing", FLOAT},
        {"entrySpacingDimmed", FLOAT},
        {"iconTextSpacing", FLOAT},

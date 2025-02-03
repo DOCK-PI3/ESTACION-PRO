@@ -211,7 +211,9 @@ void SystemView::onThemeChanged(const std::shared_ptr<ThemeData>& /*theme*/)
 
 std::vector<HelpPrompt> SystemView::getHelpPrompts()
 {
+    mWindow->passHelpComponents(&mSystemElements[mPrimary->getCursor()].helpComponents);
     std::vector<HelpPrompt> prompts;
+
     if (mCarousel != nullptr) {
         if (mCarousel->getType() == CarouselComponent<SystemData*>::CarouselType::VERTICAL ||
             mCarousel->getType() == CarouselComponent<SystemData*>::CarouselType::VERTICAL_WHEEL)
@@ -239,6 +241,8 @@ std::vector<HelpPrompt> SystemView::getHelpPrompts()
 
 void SystemView::onCursorChanged(const CursorState& state)
 {
+    mWindow->passHelpComponents(nullptr);
+
     // Reset horizontally scrolling text.
     for (auto& text : mSystemElements[mPrimary->getCursor()].gameCountComponents)
         text->resetComponent();
@@ -714,6 +718,11 @@ void SystemView::populate()
                         elements.ratingComponents.back()->getOpacity());
                     elements.children.emplace_back(elements.ratingComponents.back().get());
                 }
+                else if (element.second.type == "helpsystem") {
+                    elements.helpComponents.emplace_back(std::make_unique<HelpComponent>());
+                    elements.helpComponents.back()->applyTheme(theme, "system", element.first,
+                                                               ThemeFlags::ALL);
+                }
             }
         }
 
@@ -737,7 +746,6 @@ void SystemView::populate()
                 return b->getZIndex() > a->getZIndex();
             });
         mSystemElements.emplace_back(std::move(elements));
-        mSystemElements.back().helpStyle.applyTheme(theme, "system");
 
         if (mPrimary == nullptr) {
             mCarousel = std::make_unique<CarouselComponent<SystemData*>>();
@@ -877,6 +885,7 @@ void SystemView::populate()
         }
     }
 
+    mWindow->passHelpComponents(&mSystemElements[mPrimary->getCursor()].helpComponents);
     mFadeTransitions = (static_cast<ViewTransitionAnimation>(Settings::getInstance()->getInt(
                             "TransitionsSystemToSystem")) == ViewTransitionAnimation::FADE);
 }

@@ -500,6 +500,7 @@ bool GamelistBase::input(InputConfig* config, Input input)
         stopListScrolling();
         pauseViewVideos();
         stopGamelistFadeAnimations();
+        ViewController::getInstance()->setHelpComponentsVisibility(false);
         mWindow->setAllowTextScrolling(false);
         mWindow->setAllowFileAnimation(false);
         mWindow->pushGui(new GuiGamelistOptions(this->mRoot->getSystem()));

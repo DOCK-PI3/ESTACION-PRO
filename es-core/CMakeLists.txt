@@ -14,7 +14,6 @@ set(CORE_HEADERS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/AudioManager.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/CECInput.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/GuiComponent.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/HelpStyle.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/HttpReq.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ImageIO.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/InputConfig.h
@@ -101,7 +100,6 @@ set(CORE_SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/src/AudioManager.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/CECInput.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/GuiComponent.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/HelpStyle.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/HttpReq.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ImageIO.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/InputConfig.cpp

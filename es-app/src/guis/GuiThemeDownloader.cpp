@@ -609,7 +609,6 @@ bool GuiThemeDownloader::renameDirectory(const std::string& path, const std::str
 
     if (renameStatus) {
         mWindow->pushGui(new GuiMsgBox(
-            getHelpStyle(),
             Utils::String::format(_("COULDN'T RENAME DIRECTORY \"%s\"\nPERMISSION PROBLEMS?"),
                                   path.c_str()),
             _("OK"), [] { return; }, "", nullptr, "", nullptr, nullptr, true));
@@ -633,8 +632,8 @@ void GuiThemeDownloader::parseThemesList()
     if (!Utils::FileSystem::exists(themesFile)) {
         LOG(LogError) << "GuiThemeDownloader: No themes.json file found";
         mWindow->pushGui(new GuiMsgBox(
-            getHelpStyle(), _("COULDN'T FIND THE THEMES LIST CONFIGURATION FILE"), _("OK"),
-            [] { return; }, "", nullptr, "", nullptr, nullptr, true));
+            _("COULDN'T FIND THE THEMES LIST CONFIGURATION FILE"), _("OK"), [] { return; }, "",
+            nullptr, "", nullptr, nullptr, true));
         mGrid.removeEntry(mCenterGrid);
         mGrid.setCursorTo(mButtons);
         return;
@@ -647,7 +646,6 @@ void GuiThemeDownloader::parseThemesList()
     if (doc.HasParseError()) {
         LOG(LogError) << "GuiThemeDownloader: Couldn't parse the themes.json file";
         mWindow->pushGui(new GuiMsgBox(
-            getHelpStyle(),
             _("COULDN'T PARSE THE THEMES LIST CONFIGURATION FILE, MAYBE THE LOCAL REPOSITORY IS "
               "CORRUPT?"),
             _("OK"), [] { return; }, "", nullptr, "", nullptr, nullptr, true));
@@ -662,7 +660,6 @@ void GuiThemeDownloader::parseThemesList()
             LOG(LogWarning) << "Not running the most current application release, theme "
                                "downloading is not recommended";
             mWindow->pushGui(new GuiMsgBox(
-                getHelpStyle(),
                 _("IT SEEMS AS IF YOU'RE NOT RUNNING THE LATEST ES-DE RELEASE, PLEASE UPGRADE "
                   "BEFORE PROCEEDING AS THESE THEMES MAY NOT BE COMPATIBLE WITH YOUR VERSION"),
                 _("OK"), [] { return; }, "", nullptr, "", nullptr, nullptr, true));
@@ -802,7 +799,6 @@ void GuiThemeDownloader::populateGUI()
             std::promise<bool>().swap(mPromise);
             if (theme.manuallyDownloaded || theme.invalidRepository) {
                 mWindow->pushGui(new GuiMsgBox(
-                    getHelpStyle(),
                     Utils::String::format(
                         _("IT SEEMS AS IF THIS THEME HAS BEEN MANUALLY DOWNLOADED INSTEAD OF VIA "
                           "THIS THEME DOWNLOADER. A FRESH DOWNLOAD IS REQUIRED AND THE OLD THEME "
@@ -830,7 +826,6 @@ void GuiThemeDownloader::populateGUI()
             }
             else if (theme.corruptRepository) {
                 mWindow->pushGui(new GuiMsgBox(
-                    getHelpStyle(),
                     Utils::String::format(
                         _("IT SEEMS AS IF THIS THEME REPOSITORY IS CORRUPT, WHICH COULD HAVE BEEN "
                           "CAUSED BY AN INTERRUPTION OF A PREVIOUS DOWNLOAD OR UPDATE, FOR EXAMPLE "
@@ -859,7 +854,6 @@ void GuiThemeDownloader::populateGUI()
             }
             else if (theme.shallowRepository) {
                 mWindow->pushGui(new GuiMsgBox(
-                    getHelpStyle(),
                     Utils::String::format(
                         _("IT SEEMS AS IF THIS IS A SHALLOW REPOSITORY WHICH MEANS THAT IT HAS "
                           "BEEN DOWNLOADED USING SOME OTHER TOOL THAN THIS THEME DOWNLOADER. A "
@@ -888,7 +882,6 @@ void GuiThemeDownloader::populateGUI()
             }
             else if (theme.wrongUrl) {
                 mWindow->pushGui(new GuiMsgBox(
-                    getHelpStyle(),
                     Utils::String::format(
                         _("THE LOCALLY CLONED REPOSITORY CONTAINS THE WRONG URL WHICH NORMALLY "
                           "MEANS THE THEME HAS BEEN MOVED TO A NEW GIT SITE. A FRESH DOWNLOAD IS "
@@ -917,7 +910,6 @@ void GuiThemeDownloader::populateGUI()
             }
             else if (theme.hasLocalChanges) {
                 mWindow->pushGui(new GuiMsgBox(
-                    getHelpStyle(),
                     Utils::String::format(
                         _("THEME REPOSITORY \"%s\" CONTAINS LOCAL CHANGES. PROCEED TO OVERWRITE "
                           "YOUR CHANGES OR CANCEL TO SKIP ALL UPDATES FOR THIS THEME"),
@@ -1133,8 +1125,8 @@ void GuiThemeDownloader::update(int deltaTime)
                     }
                     errorMessage.append(" ").append(Utils::String::toUpper(mMessage));
                     mWindow->pushGui(new GuiMsgBox(
-                        getHelpStyle(), errorMessage, _("OK"), [] { return; }, "", nullptr, "",
-                        nullptr, nullptr, true));
+                        errorMessage, _("OK"), [] { return; }, "", nullptr, "", nullptr, nullptr,
+                        true));
                     mRepositoryError = RepositoryError::NO_REPO_ERROR;
                     mMessage = "";
                     getHelpPrompts();
@@ -1320,7 +1312,6 @@ bool GuiThemeDownloader::input(InputConfig* config, Input input)
     if (config->isMappedTo("y", input) && input.value &&
         mGrid.getSelectedComponent() == mCenterGrid && mThemes[mList->getCursorId()].isCloned) {
         mWindow->pushGui(new GuiMsgBox(
-            getHelpStyle(),
 #if defined(__ANDROID__)
             _("THIS WILL COMPLETELY DELETE THE THEME"),
 #else
@@ -1339,8 +1330,8 @@ bool GuiThemeDownloader::input(InputConfig* config, Input input)
                 LOG(LogInfo) << "Deleting theme directory \"" << themeDirectory << "\"";
                 if (!Utils::FileSystem::removeDirectory(themeDirectory, true)) {
                     mWindow->pushGui(new GuiMsgBox(
-                        getHelpStyle(), _("COULDN'T DELETE THEME, PERMISSION PROBLEMS?"), _("OK"),
-                        [] { return; }, "", nullptr, "", nullptr, nullptr, true));
+                        _("COULDN'T DELETE THEME, PERMISSION PROBLEMS?"), _("OK"), [] { return; },
+                        "", nullptr, "", nullptr, nullptr, true));
                 }
                 else {
                     mMessage = _("THEME WAS DELETED");
@@ -1424,7 +1415,6 @@ bool GuiThemeDownloader::fetchThemesList()
 
         if (errorCode != 0 || checkCorruptRepository(repository)) {
             mWindow->pushGui(new GuiMsgBox(
-                getHelpStyle(),
                 _("IT SEEMS AS IF THE THEMES LIST REPOSITORY IS CORRUPT, WHICH COULD HAVE BEEN "
                   "CAUSED BY AN INTERRUPTION OF A PREVIOUS DOWNLOAD OR UPDATE, FOR EXAMPLE IF THE "
                   "ES-DE PROCESS WAS KILLED. A FRESH DOWNLOAD IS REQUIRED AND THE OLD DIRECTORY "
@@ -1467,7 +1457,6 @@ bool GuiThemeDownloader::fetchThemesList()
     }
     else {
         mWindow->pushGui(new GuiMsgBox(
-            getHelpStyle(),
             _("IT SEEMS AS IF YOU'RE USING THE THEME DOWNLOADER FOR THE FIRST TIME. "
               "AS SUCH THE THEMES LIST REPOSITORY WILL BE DOWNLOADED WHICH WILL TAKE A LITTLE "
               "WHILE. SUBSEQUENT RUNS WILL HOWEVER BE MUCH FASTER AS ONLY NEW OR MODIFIED FILES "
