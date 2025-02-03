@@ -3396,18 +3396,20 @@ Properties:
 
 #### helpsystem
 
-The helpsystem is a special element that displays a context-sensitive list of actions the user can take at any time. You should try and keep the position constant throughout every screen. Note that this element does not have a zIndex value, instead it's always rendered on top of all other elements. It also has to have its name attribute set to `help` or the configuration will not get loaded.
+The helpsystem is a special element that displays a context-sensitive list of actions the user can take at any time. You should try and keep the position constant throughout every screen. Note that this element does not have a zIndex value, instead it's always rendered on top of all other elements.
 
 It's possible to set this element as right-aligned or center-aligned using a combination of the `pos` and `origin` properties. For example `<pos>1 1</pos>` and `<origin>1 1</origin>` will place it in the lower right corner of the screen.
 
 Keep in mind that the width of this element can vary depending on a number of factors, for example the _Toggle favorites_ and _Random system or game_ buttons can be enabled or disabled via the _UI Settings_ menu. Test extensively with the menu system as well, especially the virtual keyboard which displays a number of helpsystem entries.
+
+Using the `entries` property it's possible to restrict which help entries to display, and it's also possible to create multiple helpsystem elements and split up the entries between them.
 
 Supported views:
 * `system`
 * `gamelist`
 
 Instances per view:
-* `single`
+* `unlimited`
 
 Properties:
 * `pos` - type: NORMALIZED_PAIR
@@ -3442,6 +3444,30 @@ Properties:
     - Font size when a menu is open (background is dimmed).
     - Minimum value is `0.001` and maximum value is `1.5`. Note that when running at a really low resolution, the minimum value may get clamped to a larger relative size.
     - Default is the same value as `fontSize`
+* `scope` - type: STRING
+    - This property makes it possible to specify when the helpsystem element should be displayed. If it's set to `view` then it will only be displayed in the system and gamelist views and will be hidden when the menu is open. The opposite is true if it's set to `menu`, in this case the element will only be shown when the menu is open. Setting the property to `shared` will display the element both in the system and gamelist views and when the menu is open.
+    - Valid values are `shared`, `view` or `menu`
+    - Default is `shared`
+* `entries` - type: STRING
+   - This property controls which help entries that should be displayed, which can for instance be useful for narrow aspect ratio displays where all entries would otherwise not fit on screen. The entries are specified as a list of strings delimited by commas or by whitespace characters (tabs, spaces or line breaks). These are the available entries:\
+      `all`,
+      `back`,
+      `start`,
+      `a`,
+      `b`,
+      `x`,
+      `y`,
+      `l`,
+      `r`,
+      `lt`,
+      `rt`,
+      `left/right`,
+      `down`,
+      `up`,
+      `up/down`,
+      `up/down/left/right`,
+      `thumbstickclick`
+    - Default is `all` which displays all entries
 * `entrySpacing` - type: FLOAT
     - Spacing between the help element pairs.
     - Minimum value is `0` and maximum value is `0.04`
