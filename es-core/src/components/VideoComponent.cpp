@@ -28,9 +28,11 @@ VideoComponent::VideoComponent()
     , mColorGradientHorizontal {true}
     , mTargetSize {0.0f, 0.0f}
     , mCropPos {0.5f, 0.5f}
+    , mImageCropPos {0.5f, 0.5f}
     , mCropOffset {0.0f, 0.0f}
     , mVideoAreaPos {0.0f, 0.0f}
     , mVideoAreaSize {0.0f, 0.0f}
+    , mImageAreaSize {0.0f, 0.0f}
     , mTopLeftCrop {0.0f, 0.0f}
     , mBottomRightCrop {1.0f, 1.0f}
     , mPillarboxThreshold {0.85f, 0.90f}
@@ -136,6 +138,41 @@ void VideoComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
     glm::vec2 scale {getParent() ?
                          getParent()->getSize() :
                          glm::vec2 {mRenderer->getScreenWidth(), mRenderer->getScreenHeight()}};
+
+    if (properties & ThemeFlags::SIZE) {
+        if (elem->has("imageSize")) {
+            glm::vec2 imageSize {elem->get<glm::vec2>("imageSize")};
+            if (imageSize == glm::vec2 {0.0f, 0.0f}) {
+                LOG(LogWarning)
+                    << "VideoComponent: Invalid theme configuration, property \"imageSize\" "
+                       "for element \""
+                    << element.substr(6) << "\" is set to zero";
+                imageSize = {0.01f, 0.01f};
+            }
+            if (imageSize.x > 0.0f)
+                imageSize.x = glm::clamp(imageSize.x, 0.01f, 2.0f);
+            if (imageSize.y > 0.0f)
+                imageSize.y = glm::clamp(imageSize.y, 0.01f, 2.0f);
+            setImageResize(imageSize.x * scale.x, imageSize.y * scale.y);
+            mImageAreaSize = imageSize * scale;
+        }
+        else if (elem->has("imageMaxSize")) {
+            glm::vec2 imageMaxSize {elem->get<glm::vec2>("imageMaxSize")};
+            imageMaxSize.x = glm::clamp(imageMaxSize.x, 0.01f, 2.0f);
+            imageMaxSize.y = glm::clamp(imageMaxSize.y, 0.01f, 2.0f);
+            setImageMaxSize(imageMaxSize * scale);
+            mImageAreaSize = imageMaxSize * scale;
+        }
+        else if (elem->has("imageCropSize")) {
+            glm::vec2 imageCropSize {elem->get<glm::vec2>("imageCropSize")};
+            imageCropSize.x = glm::clamp(imageCropSize.x, 0.01f, 2.0f);
+            imageCropSize.y = glm::clamp(imageCropSize.y, 0.01f, 2.0f);
+            if (elem->has("imageCropPos"))
+                mImageCropPos = glm::clamp(elem->get<glm::vec2>("imageCropPos"), 0.0f, 1.0f);
+            setImageCroppedSize(imageCropSize * scale);
+            mImageAreaSize = imageCropSize * scale;
+        }
+    }
 
     if (properties & ThemeFlags::SIZE) {
         if (elem->has("size")) {
