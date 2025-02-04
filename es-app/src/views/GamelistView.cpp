@@ -514,7 +514,11 @@ void GamelistView::render(const glm::mat4& parentTrans)
 
 std::vector<HelpPrompt> GamelistView::getHelpPrompts()
 {
-    mWindow->passHelpComponents(&mHelpComponents);
+    if (mHelpComponents.empty())
+        mWindow->passHelpComponents(nullptr);
+    else
+        mWindow->passHelpComponents(&mHelpComponents);
+
     std::vector<HelpPrompt> prompts;
 
     if (Settings::getInstance()->getString("QuickSystemSelect") != "disabled") {

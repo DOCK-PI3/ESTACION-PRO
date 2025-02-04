@@ -211,7 +211,11 @@ void SystemView::onThemeChanged(const std::shared_ptr<ThemeData>& /*theme*/)
 
 std::vector<HelpPrompt> SystemView::getHelpPrompts()
 {
-    mWindow->passHelpComponents(&mSystemElements[mPrimary->getCursor()].helpComponents);
+    if (mSystemElements[mPrimary->getCursor()].helpComponents.empty())
+        mWindow->passHelpComponents(nullptr);
+    else
+        mWindow->passHelpComponents(&mSystemElements[mPrimary->getCursor()].helpComponents);
+
     std::vector<HelpPrompt> prompts;
 
     if (mCarousel != nullptr) {
@@ -885,7 +889,11 @@ void SystemView::populate()
         }
     }
 
-    mWindow->passHelpComponents(&mSystemElements[mPrimary->getCursor()].helpComponents);
+    if (mSystemElements[mPrimary->getCursor()].helpComponents.empty())
+        mWindow->passHelpComponents(nullptr);
+    else
+        mWindow->passHelpComponents(&mSystemElements[mPrimary->getCursor()].helpComponents);
+
     mFadeTransitions = (static_cast<ViewTransitionAnimation>(Settings::getInstance()->getInt(
                             "TransitionsSystemToSystem")) == ViewTransitionAnimation::FADE);
 }
