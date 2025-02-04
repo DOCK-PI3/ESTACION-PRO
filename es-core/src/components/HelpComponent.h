@@ -13,7 +13,6 @@
 #include "components/ComponentGrid.h"
 #include "renderers/Renderer.h"
 #include "resources/Font.h"
-#include "resources/TextureResource.h"
 
 class HelpComponent : public GuiComponent
 {
@@ -41,14 +40,12 @@ public:
 
 private:
     Renderer* mRenderer;
-    std::shared_ptr<TextureResource> getIconTexture(const char* name);
-    std::map<std::string, std::shared_ptr<TextureResource>> mIconCache;
 
     std::shared_ptr<ComponentGrid> mGrid;
     void updateGrid();
 
     std::vector<HelpPrompt> mPrompts;
-    static inline std::map<std::string, std::string> sIconPathMap;
+    std::map<std::string, std::string> mIconPathMap;
 
     std::shared_ptr<Font> mStyleFont;
     std::shared_ptr<Font> mStyleFontDimmed;
