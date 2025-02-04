@@ -855,6 +855,12 @@ void Window::setHelpPrompts(const std::vector<HelpPrompt>& prompts)
 
     if (mHelpComponents != nullptr) {
         for (auto& helpComponent : *mHelpComponents) {
+            if (mGuiStack.size() == 1 &&
+                helpComponent->getHelpComponentScope() == HelpComponentScope::MENU)
+                continue;
+            else if (mGuiStack.size() > 1 &&
+                     helpComponent->getHelpComponentScope() == HelpComponentScope::VIEW)
+                continue;
             helpComponent->clearPrompts();
             helpComponent->setPrompts(addPrompts);
         }
