@@ -2571,6 +2571,23 @@ Properties:
     - Minimum value per axis is `0` and maximum value per axis is `1`
     - Default is `0.5 0.5` (texture is centered)
     - This property can only be used if `cropSize` is used.
+* `imageSize` - type: NORMALIZED_PAIR
+    - This property works exactly the same as `size` but applies only to the static image.
+    - Minimum value per axis is `0.01` and maximum value per axis is `2`. If specifying a value outside the allowed range then no attempt will be made to preserve the aspect ratio.
+    - Default is the same value as `size`
+* `imageMaxSize` - type: NORMALIZED_PAIR
+    - This property works exactly the same as `maxSize` but applies only to the static image.
+    - Minimum value per axis is `0.01` and maximum value per axis is `2`
+    - Default is the same value as `maxSize`
+* `imageCropSize` - type: NORMALIZED_PAIR
+     - This property works exactly the same as `cropSize` but applies only to the static image.
+    - Minimum value per axis is `0.01` and maximum value per axis is `2`
+    - Default is the same value as `cropSize`
+* `imageCropPos` - type: NORMALIZED_PAIR
+    - If the static image has been cropped using `imageCropSize` then this property makes it possible to position the texture within the cropped area. The first value of the pair is the X axis where `0` means align to the left and `1` means align to the right, and the second value of the pair is the Y axis where `0` means align on top and `1` means align at the bottom. Any arbitrary floating point values between 0 and 1 can be used for granular positioning.
+    - Minimum value per axis is `0` and maximum value per axis is `1`
+    - Default is `0.5 0.5` (texture is centered)
+    - This property can only be used if `imageCropSize` is used.
 * `origin` - type: NORMALIZED_PAIR
     - Where on the element `pos` refers to. For example, an origin of `0.5 0.5` and a `pos` of `0.5 0.5` would place the element exactly in the middle of the screen. If the position and size attributes are themeable, origin is implied.
     - Minimum value per axis is `0` and maximum value per axis is `1`
