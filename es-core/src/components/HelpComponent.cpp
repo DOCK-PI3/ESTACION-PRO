@@ -243,6 +243,7 @@ void HelpComponent::clearPrompts()
 void HelpComponent::setPrompts(const std::vector<HelpPrompt>& prompts)
 {
     mPrompts = prompts;
+    assignIcons();
     updateGrid();
 }
 
