@@ -3442,6 +3442,13 @@ Properties:
     - Origin when a menu is open (background is dimmed).
     - Minimum value per axis is `0` and maximum value per axis is `1`
     - Default is the same value as `origin`
+* `rotation` - type: FLOAT
+    - Angle in degrees that the element should be rotated. Positive values will rotate clockwise, negative values will rotate counterclockwise.
+    - Default is `0`
+* `rotationOrigin` - type: NORMALIZED_PAIR
+    - Point around which the element will be rotated.
+    - Minimum value per axis is `0` and maximum value per axis is `1`
+    - Default is `0.5 0.5`
 * `textColor` - type: COLOR
     - Default is `777777FF`
 * `textColorDimmed` - type: COLOR

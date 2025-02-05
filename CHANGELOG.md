@@ -16,6 +16,7 @@
 * (Android) Changed the target SDK version to 35 (Android 15)
 * Refactored the helpsystem code and added support for using an arbitrary amount of helpsystem elements
 * Added support for specifying which specific entries to display for the helpsystem elements
+* Added "rotation" and "rotationOrigin" properties to the helpsystem element
 * Added "imageSize", "imageMaxSize", "imageCropSize" and "imageCropPos" properties to the video element
 * (macOS) Added a build script for cross-compiling for x86_64 when using an ARM processor
 * Added support for building against libgit2 v1.9.0 and later
