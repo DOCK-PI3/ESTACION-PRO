@@ -3462,8 +3462,8 @@ Properties:
     - Minimum value is `0.001` and maximum value is `1.5`. Note that when running at a really low resolution, the minimum value may get clamped to a larger relative size.
     - Default is the same value as `fontSize`
 * `scope` - type: STRING
-    - This property makes it possible to specify when the helpsystem element should be displayed. If it's set to `view` then it will only be displayed in the system and gamelist views and will be hidden when the menu is open. The opposite is true if it's set to `menu`, in this case the element will only be shown when the menu is open. Setting the property to `shared` will display the element both in the system and gamelist views and when the menu is open.
-    - Valid values are `shared`, `view` or `menu`
+    - This property makes it possible to specify when the helpsystem element should be displayed. If it's set to `view` then it will only be displayed in the system and gamelist views and will be hidden when the menu is open. The opposite is true if it's set to `menu`, in this case the element will only be shown when the menu is open. Setting the property to `shared` will display the element both in the system and gamelist views and when the menu is open. Finally, setting it to `none` will not display the element at all, which is useful for special cases where there is shared configuration between multiple elements and you wish to disable one or more of these elements per view.
+    - Valid values are `shared`, `view`, `menu` or `none`
     - Default is `shared`
 * `entries` - type: STRING
    - This property controls which help entries that should be displayed, which can for instance be useful for narrow aspect ratio displays where all entries would otherwise not fit on screen. The entries are specified as a list of strings delimited by commas or by whitespace characters (tabs, spaces or line breaks). These are the available entries:\
