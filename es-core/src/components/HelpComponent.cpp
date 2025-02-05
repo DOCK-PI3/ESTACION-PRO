@@ -270,11 +270,6 @@ void HelpComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
     if (!elem)
         return;
 
-    if (elem->has("scope") && elem->get<std::string>("scope") == "none") {
-        mHelpComponentScope = HelpComponentScope::NONE;
-        return;
-    }
-
     if (elem->has("pos"))
         mStylePosition = elem->get<glm::vec2>("pos") *
                          glm::vec2 {Renderer::getScreenWidth(), Renderer::getScreenHeight()};
@@ -328,6 +323,9 @@ void HelpComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
         }
         else if (scope == "menu") {
             mHelpComponentScope = HelpComponentScope::MENU;
+        }
+        else if (scope == "none") {
+            mHelpComponentScope = HelpComponentScope::NONE;
         }
         else {
             LOG(LogWarning) << "HelpComponent: Invalid theme configuration, property "

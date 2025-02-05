@@ -352,8 +352,6 @@ void GamelistView::onThemeChanged(const std::shared_ptr<ThemeData>& theme)
             else if (element.second.type == "helpsystem") {
                 mHelpComponents.emplace_back(std::make_unique<HelpComponent>());
                 mHelpComponents.back()->applyTheme(theme, "gamelist", element.first, ALL);
-                if (mHelpComponents.back()->getHelpComponentScope() == HelpComponentScope::NONE)
-                    mHelpComponents.pop_back();
             }
         }
     }

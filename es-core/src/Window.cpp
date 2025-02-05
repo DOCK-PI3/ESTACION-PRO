@@ -608,6 +608,8 @@ void Window::render()
             if (!mRenderedHelpPrompts) {
                 if (mHelpComponents != nullptr) {
                     for (auto& helpComponent : *mHelpComponents) {
+                        if (helpComponent->getHelpComponentScope() == HelpComponentScope::NONE)
+                            continue;
                         if (helpComponent->getHelpComponentScope() != HelpComponentScope::VIEW) {
                             helpComponent->setVisible(true);
                             helpComponent->render(trans);
@@ -773,6 +775,8 @@ void Window::renderHelpPromptsEarly()
 {
     if (mHelpComponents != nullptr) {
         for (auto& helpComponent : *mHelpComponents) {
+            if (helpComponent->getHelpComponentScope() == HelpComponentScope::NONE)
+                continue;
             if (helpComponent->getHelpComponentScope() != HelpComponentScope::MENU) {
                 helpComponent->setVisible(true);
                 helpComponent->render(mRenderer->getIdentity());
@@ -855,11 +859,13 @@ void Window::setHelpPrompts(const std::vector<HelpPrompt>& prompts)
 
     if (mHelpComponents != nullptr) {
         for (auto& helpComponent : *mHelpComponents) {
+            if (helpComponent->getHelpComponentScope() == HelpComponentScope::NONE)
+                continue;
             if (mGuiStack.size() == 1 &&
                 helpComponent->getHelpComponentScope() == HelpComponentScope::MENU)
                 continue;
-            else if (mGuiStack.size() > 1 &&
-                     helpComponent->getHelpComponentScope() == HelpComponentScope::VIEW)
+            if (mGuiStack.size() > 1 &&
+                helpComponent->getHelpComponentScope() == HelpComponentScope::VIEW)
                 continue;
             helpComponent->clearPrompts();
             helpComponent->setPrompts(addPrompts);
