@@ -25,10 +25,12 @@ HelpComponent::HelpComponent(std::shared_ptr<Font> font)
     , mStylePositionDimmed {mStylePosition}
     , mStyleOrigin {glm::vec2 {0.0f, 0.0f}}
     , mStyleOriginDimmed {mStyleOrigin}
+    , mStyleRotationOrigin {0.5f, 0.5f}
     , mStyleTextColor {0x777777FF}
     , mStyleTextColorDimmed {0x777777FF}
     , mStyleIconColor {0x777777FF}
     , mStyleIconColorDimmed {0x777777FF}
+    , mStyleRotation {0.0f}
     , mStyleEntrySpacing {0.00833f}
     , mStyleEntrySpacingDimmed {mStyleEntrySpacing}
     , mStyleIconTextSpacing {0.00416f}
@@ -288,6 +290,12 @@ void HelpComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
     else
         mStyleOriginDimmed = mStyleOrigin;
 
+    if (elem->has("rotation"))
+        mStyleRotation = static_cast<float>(glm::radians(elem->get<float>("rotation")));
+
+    if (elem->has("rotationOrigin"))
+        mStyleRotationOrigin = glm::clamp(elem->get<glm::vec2>("rotationOrigin"), 0.0f, 1.0f);
+
     if (elem->has("textColor"))
         mStyleTextColor = elem->get<unsigned int>("textColor");
 
@@ -485,8 +493,11 @@ void HelpComponent::render(const glm::mat4& parentTrans)
 
     const glm::mat4 trans {parentTrans * getTransform()};
 
-    if (mGrid)
+    if (mGrid) {
+        mGrid->setRotationOrigin(mStyleRotationOrigin);
+        mGrid->setRotation(mStyleRotation);
         mGrid->render(trans);
+    }
 }
 
 void HelpComponent::updateGrid()

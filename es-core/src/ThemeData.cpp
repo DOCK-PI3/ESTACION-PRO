@@ -551,6 +551,8 @@ std::map<std::string, std::map<std::string, ThemeData::ElementPropertyType>>
        {"posDimmed", NORMALIZED_PAIR},
        {"origin", NORMALIZED_PAIR},
        {"originDimmed", NORMALIZED_PAIR},
+       {"rotation", FLOAT},
+       {"rotationOrigin", NORMALIZED_PAIR},
        {"textColor", COLOR},
        {"textColorDimmed", COLOR},
        {"iconColor", COLOR},

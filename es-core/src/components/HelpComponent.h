@@ -74,10 +74,12 @@ private:
     glm::vec2 mStylePositionDimmed;
     glm::vec2 mStyleOrigin;
     glm::vec2 mStyleOriginDimmed;
+    glm::vec2 mStyleRotationOrigin;
     unsigned int mStyleTextColor;
     unsigned int mStyleTextColorDimmed;
     unsigned int mStyleIconColor;
     unsigned int mStyleIconColorDimmed;
+    float mStyleRotation;
     float mStyleEntrySpacing;
     float mStyleEntrySpacingDimmed;
     float mStyleIconTextSpacing;
