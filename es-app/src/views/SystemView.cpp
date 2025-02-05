@@ -726,6 +726,10 @@ void SystemView::populate()
                     elements.helpComponents.emplace_back(std::make_unique<HelpComponent>());
                     elements.helpComponents.back()->applyTheme(theme, "system", element.first,
                                                                ThemeFlags::ALL);
+                    if (elements.helpComponents.back()->getHelpComponentScope() ==
+                        HelpComponentScope::NONE) {
+                        elements.helpComponents.pop_back();
+                    }
                 }
             }
         }

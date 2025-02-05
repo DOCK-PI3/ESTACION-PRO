@@ -270,6 +270,11 @@ void HelpComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
     if (!elem)
         return;
 
+    if (elem->has("scope") && elem->get<std::string>("scope") == "none") {
+        mHelpComponentScope = HelpComponentScope::NONE;
+        return;
+    }
+
     if (elem->has("pos"))
         mStylePosition = elem->get<glm::vec2>("pos") *
                          glm::vec2 {Renderer::getScreenWidth(), Renderer::getScreenHeight()};

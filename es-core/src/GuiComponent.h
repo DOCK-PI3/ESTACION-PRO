@@ -68,7 +68,8 @@ enum class Stationary {
 enum class HelpComponentScope {
     SHARED,
     VIEW,
-    MENU
+    MENU,
+    NONE
 };
 
 class GuiComponent
