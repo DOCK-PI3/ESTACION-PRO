@@ -2613,7 +2613,7 @@ Properties:
 * `defaultImage` - type: PATH
     - Path to a default image file. If the `imageType` property has a value set, then the default image will be displayed if the selected game does not have an image for any of the defined types. If `imageType` is not defined, then the default image will be shown if there is no video file found and if `default` has not been set. This property is also applied to any custom collection that does not contain any games when browsing the grouped custom collections system.
 * `imageType` - type: STRING
-    - This displays a game image of a certain media type, either before the video starts to play if `delay` is set to a non-zero value, or if there is no video file found and `default` has not been defined. Multiple types can be defined, in which case the entries should be delimited by commas or by whitespace characters (tabs, spaces or line breaks). The media will be searched for in the order that the entries have been defined. If no image is found, then the space will be left blank unless either the `default` or `defaultImage` properties have been set. To use this property from the `system` view, you will first need to add a `gameselector` element. If `delay` is set to zero, then this property has no effect. Defining duplicate values is considered an error and will result in the property getting ignored.
+    - This displays a game image of a certain media type, either before the video starts to play if `delay` is set to a non-zero value, or if there is no video file found and `default` has not been defined. Multiple types can be defined, in which case the entries should be delimited by commas or by whitespace characters (tabs, spaces or line breaks). The media will be searched for in the order that the entries have been defined. If no image is found, then the space will be left blank unless either the `default` or `defaultImage` properties have been set. To use this property from the `system` view, you will first need to add a `gameselector` element. If `delay` is set to zero, then this property has no effect. There is also a special type named `none` which will display no game media, but that will still enable the `delay` property as if game media was present. This makes it possible to leave the space blank during the delay period, or to display an image defined using the `defaultImage` property. Defining duplicate values is considered an error and will result in the property getting ignored.
     - Valid values:
     - `image` - This will look for a `miximage`, and if that is not found `screenshot` is tried next, then `titlescreen` and finally `cover`. This is just a convenient shortcut and it's equivalent to explicitly defining `miximage, screenshot, titlescreen, cover`
     - `miximage` - This will look for a miximage.
@@ -2625,6 +2625,7 @@ Properties:
     - `3dbox` - This will look for a 3D box image.
     - `physicalmedia` - This will look for a physical media image.
     - `fanart` - This will look for a fan art image.
+    - `none` - This will not display any game media, but it will still enable the `defaultImage` and `delay` properties.
 * `metadataElement` - type: BOOLEAN
     - By default game metadata and media are faded out during gamelist fast-scrolling and text metadata fields, ratings and badges are hidden when enabling the _Hide metadata fields_ setting for a game entry. Using this property it's possible to explicitly define static video elements that should be treated as if they were game media files. This property is ignored if `path` is not set.
     - Default is `false`
@@ -3432,14 +3433,14 @@ Properties:
 * `pos` - type: NORMALIZED_PAIR
     - Default is `0.012 0.9515` for horizontally oriented screens and `0.012 0.975` for vertically oriented screens
 * `posDimmed` - type: NORMALIZED_PAIR
-    - Position when a menu is open (background is dimmed).
+    - Position when a menu is open (background is dimmed). This property mostly exists for backward compatibility purposes, the recommended approach is to setup a separate helpsystem element with `scope` set to `menu`
     - Default is the same value as `pos`
 * `origin` - type: NORMALIZED_PAIR
     - Where on the element `pos` refers to. For example, an origin of `0.5 0.5` and a `pos` of `0.5 0.5` would place the element exactly in the middle of the screen.
     - Minimum value per axis is `0` and maximum value per axis is `1`
     - Default is `0 0`
 * `originDimmed` - type: NORMALIZED_PAIR
-    - Origin when a menu is open (background is dimmed).
+    - Origin when a menu is open (background is dimmed). This property mostly exists for backward compatibility purposes, the recommended approach is to setup a separate helpsystem element with `scope` set to `menu`
     - Minimum value per axis is `0` and maximum value per axis is `1`
     - Default is the same value as `origin`
 * `rotation` - type: FLOAT
@@ -3452,12 +3453,12 @@ Properties:
 * `textColor` - type: COLOR
     - Default is `777777FF`
 * `textColorDimmed` - type: COLOR
-    - Text color when a menu is open (background is dimmed).
+    - Text color when a menu is open (background is dimmed). This property mostly exists for backward compatibility purposes, the recommended approach is to setup a separate helpsystem element with `scope` set to `menu`
     - Default is the same value as `textColor`
 * `iconColor` - type: COLOR
     - Default is `777777FF`
 * `iconColorDimmed` - type: COLOR
-    - Icon color when a menu is open (background is dimmed).
+    - Icon color when a menu is open (background is dimmed). This property mostly exists for backward compatibility purposes, the recommended approach is to setup a separate helpsystem element with `scope` set to `menu`
     - Default is the same value as `iconColor`
 * `fontPath` - type: PATH
 * `fontSize` - type: FLOAT
@@ -3465,7 +3466,7 @@ Properties:
     - Minimum value is `0.001` and maximum value is `1.5`. Note that when running at a really low resolution, the minimum value may get clamped to a larger relative size.
     - Default is `0.035` for horizontally oriented screens and `0.025` for vertically oriented screens
 * `fontSizeDimmed` - type: FLOAT
-    - Font size when a menu is open (background is dimmed).
+    - Font size when a menu is open (background is dimmed). This property mostly exists for backward compatibility purposes, the recommended approach is to setup a separate helpsystem element with `scope` set to `menu`
     - Minimum value is `0.001` and maximum value is `1.5`. Note that when running at a really low resolution, the minimum value may get clamped to a larger relative size.
     - Default is the same value as `fontSize`
 * `scope` - type: STRING
@@ -3494,12 +3495,16 @@ Properties:
       `lr`,
       `thumbstickclick`
     - Default is `all` which displays all entries
+* `entryLayout` - type: STRING
+    - Controls the layout of the individual help element pairs. If set to `iconFirst` then the icon is shown to the left followed by the text, and if set to `textFirst` then the text is shown to the left followed by the icon.
+    - Valid values are `iconFirst` or `textFirst`
+    - Default is `iconFirst`
 * `entrySpacing` - type: FLOAT
     - Spacing between the help element pairs.
     - Minimum value is `0` and maximum value is `0.04`
     - Default is `0.00833`
 * `entrySpacingDimmed` - type: FLOAT
-    - Spacing between the help element pairs when a menu is open (background is dimmed).
+    - Spacing between the help element pairs when a menu is open (background is dimmed). This property mostly exists for backward compatibility purposes, the recommended approach is to setup a separate helpsystem element with `scope` set to `menu`
     - Minimum value is `0` and maximum value is `0.04`
     - Default is the same value as `entrySpacing`
 * `iconTextSpacing` - type: FLOAT
@@ -3507,7 +3512,7 @@ Properties:
     - Minimum value is `0` and maximum value is `0.04`
     - Default is `0.00416`
 * `iconTextSpacingDimmed` - type: FLOAT
-    - Spacing between the icon and text within a help element pair when a menu is open (background is dimmed).
+    - Spacing between the icon and text within a help element pair when a menu is open (background is dimmed). This property mostly exists for backward compatibility purposes, the recommended approach is to setup a separate helpsystem element with `scope` set to `menu`
     - Minimum value is `0` and maximum value is `0.04`
     - Default is the same value as `iconTextSpacing`
 * `letterCase` - type: STRING
@@ -3518,7 +3523,7 @@ Properties:
     - Minimum value is `0.2` and maximum value is `1`
     - Default is `1`
 * `opacityDimmed` - type: FLOAT
-    - Controls the level of transparency when a menu is open (background is dimmed).
+    - Controls the level of transparency when a menu is open (background is dimmed). This property mostly exists for backward compatibility purposes, the recommended approach is to setup a separate helpsystem element with `scope` set to `menu`
     - Minimum value is `0.2` and maximum value is `1`
     - Default is the same value as `opacity`
 * `customButtonIcon` - type: PATH
