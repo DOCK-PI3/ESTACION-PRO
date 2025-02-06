@@ -217,7 +217,7 @@ void VideoFFmpegComponent::render(const glm::mat4& parentTrans)
             mRenderer->setMatrix(parentTrans);
         }
 
-        if (!mScreensaverMode && !mMediaViewerMode) {
+        if (!mScreensaverMode && !mMediaViewerMode && mRenderBlackFrame) {
             mBlackFrame.setOpacity(mOpacity * mThemeOpacity);
             mBlackFrame.render(trans);
         }

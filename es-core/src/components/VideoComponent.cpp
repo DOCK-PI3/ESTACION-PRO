@@ -26,6 +26,7 @@ VideoComponent::VideoComponent()
     , mColorShiftEnd {0xFFFFFFFF}
     , mVideoCornerRadius {0.0f}
     , mColorGradientHorizontal {true}
+    , mRenderBlackFrame {true}
     , mTargetSize {0.0f, 0.0f}
     , mCropPos {0.5f, 0.5f}
     , mImageCropPos {0.5f, 0.5f}
@@ -327,6 +328,21 @@ void VideoComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
 
     if (mConfig.startDelay != 0)
         mConfig.showStaticImageDelay = true;
+
+    if (elem->has("fadeInType")) {
+        const std::string& fadeInType {elem->get<std::string>("fadeInType")};
+        if (fadeInType == "black") {
+            mRenderBlackFrame = true;
+        }
+        else if (fadeInType == "transparent") {
+            mRenderBlackFrame = false;
+        }
+        else {
+            LOG(LogWarning) << "VideoComponent: Invalid theme configuration, property "
+                               "\"fadeInType\" for element \""
+                            << element.substr(6) << "\" defined as \"" << fadeInType << "\"";
+        }
+    }
 
     if (properties && elem->has("fadeInTime"))
         mFadeInTime = glm::clamp(elem->get<float>("fadeInTime"), 0.0f, 8.0f) * 1000.0f;

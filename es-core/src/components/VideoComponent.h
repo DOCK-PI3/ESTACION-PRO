@@ -120,6 +120,7 @@ protected:
     unsigned int mColorShiftEnd;
     float mVideoCornerRadius;
     bool mColorGradientHorizontal;
+    bool mRenderBlackFrame;
     glm::vec2 mTargetSize;
     glm::vec2 mCropPos;
     glm::vec2 mImageCropPos;

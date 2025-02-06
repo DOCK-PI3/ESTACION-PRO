@@ -383,6 +383,7 @@ std::map<std::string, std::map<std::string, ThemeData::ElementPropertyType>>
        {"pillarboxThreshold", NORMALIZED_PAIR},
        {"scanlines", BOOLEAN},
        {"delay", FLOAT},
+       {"fadeInType", STRING},
        {"fadeInTime", FLOAT},
        {"scrollFadeIn", BOOLEAN},
        {"brightness", FLOAT},
