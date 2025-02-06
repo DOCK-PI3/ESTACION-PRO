@@ -30,6 +30,7 @@ HelpComponent::HelpComponent(std::shared_ptr<Font> font)
     , mStyleTextColorDimmed {0x777777FF}
     , mStyleIconColor {0x777777FF}
     , mStyleIconColorDimmed {0x777777FF}
+    , mStyleEntryLayout {EntryLayout::ICON_FIRST}
     , mStyleRotation {0.0f}
     , mStyleEntrySpacing {0.00833f}
     , mStyleEntrySpacingDimmed {mStyleEntrySpacing}
@@ -361,6 +362,21 @@ void HelpComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
         }
     }
 
+    if (elem->has("entryLayout")) {
+        const std::string& entryLayout {elem->get<std::string>("entryLayout")};
+        if (entryLayout == "iconFirst") {
+            mStyleEntryLayout = EntryLayout::ICON_FIRST;
+        }
+        else if (entryLayout == "textFirst") {
+            mStyleEntryLayout = EntryLayout::TEXT_FIRST;
+        }
+        else {
+            LOG(LogWarning) << "HelpComponent: Invalid theme configuration, property "
+                               "\"entryLayout\" for element \""
+                            << element.substr(11) << "\" defined as \"" << entryLayout << "\"";
+        }
+    }
+
     if (elem->has("entrySpacing"))
         mStyleEntrySpacing = glm::clamp(elem->get<float>("entrySpacing"), 0.0f, 0.04f);
 
@@ -552,21 +568,41 @@ void HelpComponent::updateGrid()
 
     mGrid->setSize(width, height);
 
-    for (int i {0}; i < static_cast<int>(icons.size()); ++i) {
-        const int col {i * 5};
-        mGrid->setColWidthPerc(col, icons.at(i)->getSize().x / width);
-        mGrid->setColWidthPerc(col + 1,
-                               ((isDimmed ? mStyleIconTextSpacingDimmed : mStyleIconTextSpacing) *
-                                mRenderer->getScreenWidth()) /
-                                   width);
-        mGrid->setColWidthPerc(col + 2, labels.at(i)->getSize().x / width);
-        mGrid->setColWidthPerc(col + 3,
-                               ((isDimmed ? mStyleEntrySpacingDimmed : mStyleEntrySpacing) *
-                                mRenderer->getScreenWidth()) /
-                                   width);
+    if (mStyleEntryLayout == EntryLayout::ICON_FIRST) {
+        for (int i {0}; i < static_cast<int>(icons.size()); ++i) {
+            const int col {i * 5};
+            mGrid->setColWidthPerc(col, icons.at(i)->getSize().x / width);
+            mGrid->setColWidthPerc(
+                col + 1, ((isDimmed ? mStyleIconTextSpacingDimmed : mStyleIconTextSpacing) *
+                          mRenderer->getScreenWidth()) /
+                             width);
+            mGrid->setColWidthPerc(col + 2, labels.at(i)->getSize().x / width);
+            mGrid->setColWidthPerc(col + 3,
+                                   ((isDimmed ? mStyleEntrySpacingDimmed : mStyleEntrySpacing) *
+                                    mRenderer->getScreenWidth()) /
+                                       width);
 
-        mGrid->setEntry(icons.at(i), glm::ivec2 {col, 0}, false, false);
-        mGrid->setEntry(labels.at(i), glm::ivec2 {col + 2, 0}, false, false);
+            mGrid->setEntry(icons.at(i), glm::ivec2 {col, 0}, false, false);
+            mGrid->setEntry(labels.at(i), glm::ivec2 {col + 2, 0}, false, false);
+        }
+    }
+    else {
+        for (int i {0}; i < static_cast<int>(icons.size()); ++i) {
+            const int col {i * 5};
+            mGrid->setColWidthPerc(col, labels.at(i)->getSize().x / width);
+            mGrid->setColWidthPerc(
+                col + 1, ((isDimmed ? mStyleIconTextSpacingDimmed : mStyleIconTextSpacing) *
+                          mRenderer->getScreenWidth()) /
+                             width);
+            mGrid->setColWidthPerc(col + 2, icons.at(i)->getSize().x / width);
+            mGrid->setColWidthPerc(col + 3,
+                                   ((isDimmed ? mStyleEntrySpacingDimmed : mStyleEntrySpacing) *
+                                    mRenderer->getScreenWidth()) /
+                                       width);
+
+            mGrid->setEntry(labels.at(i), glm::ivec2 {col, 0}, false, false);
+            mGrid->setEntry(icons.at(i), glm::ivec2 {col + 2, 0}, false, false);
+        }
     }
 
     if (isDimmed) {

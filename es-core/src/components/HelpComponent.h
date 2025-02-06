@@ -70,6 +70,11 @@ private:
                                                             "start",
                                                             "back"};
 
+    enum class EntryLayout {
+        ICON_FIRST,
+        TEXT_FIRST
+    };
+
     glm::vec2 mStylePosition;
     glm::vec2 mStylePositionDimmed;
     glm::vec2 mStyleOrigin;
@@ -79,6 +84,7 @@ private:
     unsigned int mStyleTextColorDimmed;
     unsigned int mStyleIconColor;
     unsigned int mStyleIconColorDimmed;
+    EntryLayout mStyleEntryLayout;
     float mStyleRotation;
     float mStyleEntrySpacing;
     float mStyleEntrySpacingDimmed;
