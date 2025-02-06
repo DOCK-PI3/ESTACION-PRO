@@ -41,6 +41,7 @@ VideoComponent::VideoComponent()
     , mIsPlaying {false}
     , mIsActuallyPlaying {false}
     , mPaused {false}
+    , mImageTypeNone {false}
     , mMediaViewerMode {false}
     , mScreensaverMode {false}
     , mTargetIsMax {false}
@@ -346,8 +347,8 @@ void VideoComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
         }
 
         for (std::string& type : mThemeImageTypes) {
-            if (std::find(supportedImageTypes.cbegin(), supportedImageTypes.cend(), type) ==
-                supportedImageTypes.cend()) {
+            if (std::find(sSupportedImageTypes.cbegin(), sSupportedImageTypes.cend(), type) ==
+                sSupportedImageTypes.cend()) {
                 LOG(LogError)
                     << "VideoComponent: Invalid theme configuration, property \"imageType\" "
                        "for element \""
@@ -355,6 +356,11 @@ void VideoComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
                 mThemeImageTypes.clear();
                 break;
             }
+        }
+
+        if (std::find(mThemeImageTypes.cbegin(), mThemeImageTypes.cend(), "none") !=
+            mThemeImageTypes.cend()) {
+            mImageTypeNone = true;
         }
 
         std::vector<std::string> sortedTypes {mThemeImageTypes};
@@ -460,7 +466,7 @@ void VideoComponent::update(int deltaTime)
     if (mWindow->getGameLaunchedState())
         return;
 
-    if (!mIsPlaying && (mConfig.startDelay == 0 || mStaticImagePath == "")) {
+    if (!mIsPlaying && (mConfig.startDelay == 0 || (mStaticImagePath == "" && !mImageTypeNone))) {
         startVideoStream();
     }
     else if (mStartTime == 0 || SDL_GetTicks() > mStartTime) {
@@ -501,6 +507,9 @@ void VideoComponent::startVideoPlayer()
     if (mConfig.showStaticImageDelay && mConfig.startDelay != 0 && mStaticImagePath != "") {
         mStartTime = SDL_GetTicks() + mConfig.startDelay;
         setImage(mStaticImagePath);
+    }
+    else if (mConfig.showStaticImageDelay && mConfig.startDelay != 0 && mImageTypeNone) {
+        mStartTime = SDL_GetTicks() + mConfig.startDelay;
     }
 
     mPaused = false;

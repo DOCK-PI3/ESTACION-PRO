@@ -134,9 +134,9 @@ protected:
     std::string mStaticImagePath;
     std::string mDefaultImagePath;
 
-    static inline std::vector<std::string> supportedImageTypes {
-        "image", "miximage",  "marquee", "screenshot",    "titlescreen",
-        "cover", "backcover", "3dbox",   "physicalmedia", "fanart"};
+    static inline std::vector<std::string> sSupportedImageTypes {
+        "image",     "miximage", "marquee",       "screenshot", "titlescreen", "cover",
+        "backcover", "3dbox",    "physicalmedia", "fanart",     "none"};
 
     std::string mVideoPath;
     OnIterationsDone mOnIterationsDone;
@@ -144,6 +144,7 @@ protected:
     std::atomic<bool> mIsPlaying;
     std::atomic<bool> mIsActuallyPlaying;
     std::atomic<bool> mPaused;
+    bool mImageTypeNone;
     bool mMediaViewerMode;
     bool mScreensaverMode;
     bool mTargetIsMax;
