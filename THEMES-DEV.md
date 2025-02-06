@@ -2671,8 +2671,9 @@ Properties:
     - Valid values are `horizontal` or `vertical`
     - Default is `horizontal`
 * `pillarboxes` - type: BOOLEAN
-    - Whether to render black pillarboxes (and to a lesses extent letterboxes) for videos with aspect ratios where this is applicable. This is for instance useful for arcade game videos in vertical orientation.
+    - Whether to render black pillarboxes (and to a lesser extent letterboxes) for videos with aspect ratios where this is applicable. This is for instance useful for arcade game videos in vertical orientation.
     - Default is `true`
+    - This property can only be used if `fadeInType` is set to `black`
 * `pillarboxThreshold` - type: NORMALIZED_PAIR
     - Normally it doesn't look very good to add really narrow pillarboxes or letterboxes, so by default they are skipped if the actual video size is not reaching a threshold value as compared to the overall defined video area size. By modifying this property it's possible to control that threshold, as for some theme designs it will look better with the consistency of always rendering the pillarboxes/letterboxes even if they are narrow. To clarify, the default X axis value of 0.85 means that if the video width is 85% or less as compared to the X axis defined by the `size` property, then pillarboxes will be rendered. So setting the `pillarboxThreshold` value to `1 1` will always apply pillarboxes/letterboxes regardless of the video file dimension.
     - Minimum value per axis is `0.2` and maximum value per axis is `1`
@@ -2684,8 +2685,12 @@ Properties:
     - Delay in seconds before video will start playing. During the delay period the game image defined via the `imageType` property will be displayed. If that property is not set, then the `delay` property will be ignored.
     - Minimum value is `0` and maximum value is `15`
     - Default is `1.5`
+* `fadeInType` - type: STRING
+    - The method to use when fading in the video. If set to `black` then a black frame is rendered behind the video and the video is faded in on top of this frame. If set to `transparent` then the video is faded in from transparency. The latter will however remove the black frame completely, which also disables the `pillarboxes` property.
+    - Valid values are `black` or `transparent`
+    - Default is `black`
 * `fadeInTime` - type: FLOAT
-    - Time in seconds to fade in the video from pure black. This is completely unrelated to the `scrollFadeIn` property. Note that if this is set to zero it may seem as if the property doesn't work correctly as many ScreenScraper videos have a fade-in baked into the actual video stream. Setting this property to lower than 0.3 seconds or so is generally a bad idea for videos that don't have a fade-in baked in as transitions from the static image will then look like a bad jump cut.
+    - Time in seconds to fade in the video from pure black, or from transparency depending on what value `fadeInType` is set to. This is completely unrelated to the `scrollFadeIn` property. Note that if this is set to zero it may seem as if the property doesn't work correctly as many ScreenScraper videos have a fade-in baked into the actual video stream. Setting this property to lower than 0.3 seconds or so is generally a bad idea for videos that don't have a fade-in baked in as transitions from the static image will then look like a bad jump cut.
     - Minimum value is `0` and maximum value is `8`
     - Default is `1`
 * `scrollFadeIn` - type: BOOLEAN

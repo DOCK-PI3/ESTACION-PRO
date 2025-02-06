@@ -19,6 +19,7 @@
 * Added an "entryLayout" property to the helpsystem element to control the display order for the icons and text
 * Added "rotation" and "rotationOrigin" properties to the helpsystem element
 * Added "imageSize", "imageMaxSize", "imageCropSize" and "imageCropPos" properties to the video element
+* Added a "fadeInType" property to the video element to fade in from black or from transparency
 * Added support for a "none" value to the video element imageType property
 * (macOS) Added a build script for cross-compiling for x86_64 when using an ARM processor
 * Added support for building against libgit2 v1.9.0 and later
