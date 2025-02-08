@@ -31,6 +31,7 @@
 Window::Window() noexcept
     : mRenderer {Renderer::getInstance()}
     , mHelpComponents {nullptr}
+    , mClockComponents {nullptr}
     , mSplashTextPositions {0.0f, 0.0f, 0.0f, 0.0f}
     , mBackgroundOverlayOpacity {1.0f}
     , mScreensaver {nullptr}
@@ -442,6 +443,11 @@ void Window::update(int deltaTime)
     if (mScreensaver && mRenderScreensaver)
         mScreensaver->update(deltaTime);
 
+    if (mClockComponents != nullptr) {
+        for (auto& clockComponent : *mClockComponents)
+            clockComponent->update(deltaTime);
+    }
+
 #if defined(__ANDROID__) || defined(__IOS__)
     if (Settings::getInstance()->getBool("InputTouchOverlay"))
         InputOverlay::getInstance().update(deltaTime);
@@ -628,6 +634,11 @@ void Window::render()
             mCachedBackground = false;
             mTopScale = 0.5f;
         }
+    }
+
+    if (mClockComponents != nullptr) {
+        for (auto& clockComponent : *mClockComponents)
+            clockComponent->render(trans);
     }
 
     // Render the quick list scrolling overlay, which is triggered in IList.

@@ -947,6 +947,17 @@ void GuiMenu::openUIOptions()
         }
     });
 
+    // Display clock.
+    auto displayClock = std::make_shared<SwitchComponent>();
+    displayClock->setState(Settings::getInstance()->getBool("DisplayClock"));
+    s->addWithLabel(_("DISPLAY CLOCK"), displayClock);
+    s->addSaveFunc([displayClock, s] {
+        if (displayClock->getState() != Settings::getInstance()->getBool("DisplayClock")) {
+            Settings::getInstance()->setBool("DisplayClock", displayClock->getState());
+            s->setNeedsSaving();
+        }
+    });
+
     // Blur background when the menu is open.
     auto menuBlurBackground = std::make_shared<SwitchComponent>();
     if (mRenderer->getScreenRotation() == 90 || mRenderer->getScreenRotation() == 270) {

@@ -138,6 +138,7 @@ private:
         std::vector<std::unique_ptr<DateTimeComponent>> dateTimeComponents;
         std::vector<std::unique_ptr<RatingComponent>> ratingComponents;
         std::vector<std::unique_ptr<HelpComponent>> helpComponents;
+        std::vector<std::unique_ptr<DateTimeComponent>> clockComponents;
     };
 
     Renderer* mRenderer;

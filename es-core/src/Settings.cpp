@@ -222,6 +222,7 @@ void Settings::setDefaults()
     mBoolMap["ScreensaverVideoBlur"] = {false, false};
 
     mBoolMap["ThemeVariantTriggers"] = {true, true};
+    mBoolMap["DisplayClock"] = {false, false};
     mBoolMap["MenuBlurBackground"] = {true, true};
     mBoolMap["FoldersOnTop"] = {true, true};
     mBoolMap["FavoritesFirst"] = {true, true};

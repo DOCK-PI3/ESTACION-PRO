@@ -135,6 +135,7 @@ private:
     std::vector<std::unique_ptr<TextComponent>> mContainerTextComponents;
     std::vector<std::unique_ptr<TextComponent>> mGamelistInfoComponents;
     std::vector<std::unique_ptr<HelpComponent>> mHelpComponents;
+    std::vector<std::unique_ptr<DateTimeComponent>> mClockComponents;
 };
 
 #endif // ES_APP_VIEWS_GAMELIST_VIEW_H

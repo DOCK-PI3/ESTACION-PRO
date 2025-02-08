@@ -16,7 +16,9 @@
 #include "utils/StringUtil.h"
 
 DateTimeComponent::DateTimeComponent()
-    : mDisplayRelative {false}
+    : mClockAccumulator {0}
+    , mClockMode {false}
+    , mDisplayRelative {false}
 {
     // ISO 8601 date format.
     setFormat("%Y-%m-%d");
@@ -32,6 +34,8 @@ DateTimeComponent::DateTimeComponent(const std::string& text,
     : TextComponent {text, font, color,  horizontalAlignment, ALIGN_CENTER, glm::vec2 {1, 0},
                      pos,  size, bgcolor}
     , mRenderer {Renderer::getInstance()}
+    , mClockAccumulator {0}
+    , mClockMode {false}
     , mDisplayRelative {false}
 {
     // ISO 8601 date format.
@@ -70,6 +74,10 @@ void DateTimeComponent::onTextChanged()
 
 std::string DateTimeComponent::getDisplayString() const
 {
+    if (mClockMode)
+        return (Utils::Time::timeToString(Utils::Time::DateTime {Utils::Time::now()}.getTime(),
+                                          mFormat));
+
     if (mDisplayRelative) {
         // Workaround to handle Unix epoch for different time zones.
         if (mTime.getTime() < 82800) {
@@ -116,8 +124,29 @@ std::string DateTimeComponent::getDisplayString() const
     return Utils::Time::timeToString(mTime.getTime(), mFormat);
 }
 
+void DateTimeComponent::update(int deltaTime)
+{
+    if (!mClockMode || (mClockMode && !Settings::getInstance()->getBool("DisplayClock")))
+        return;
+
+    mClockAccumulator += deltaTime;
+
+    if (mClockAccumulator >= 500) {
+        mClockAccumulator = 0;
+        mTime = Utils::Time::now();
+        const std::string newTime {Utils::Time::timeToString(mTime, mFormat)};
+        // The setValue() function with its text cache rebuild is an expensive operation so we only
+        // call this when the actual date/time string needs updating.
+        if (newTime != mText)
+            setValue(newTime);
+    }
+}
+
 void DateTimeComponent::render(const glm::mat4& parentTrans)
 {
+    if (mClockMode && !Settings::getInstance()->getBool("DisplayClock"))
+        return;
+
     // Render the component.
     TextComponent::render(parentTrans);
 }
@@ -130,7 +159,25 @@ void DateTimeComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
     using namespace ThemeFlags;
     GuiComponent::applyTheme(theme, view, element, properties);
 
-    const ThemeData::ThemeElement* elem {theme->getElement(view, element, "datetime")};
+    std::string elementType {"datetime"};
+    std::string componentName {"DateTimeComponent"};
+
+    if (element.substr(0, 6) == "clock_") {
+        mClockMode = true;
+        elementType = "clock";
+        componentName = "ClockComponent";
+        // Apply default clock settings as the theme may not define any configuration for it.
+        setFont(Font::get(FONT_SIZE_SMALL, FONT_PATH_LIGHT));
+        const glm::vec2 scale {
+            getParent() ? getParent()->getSize() :
+                          glm::vec2 {Renderer::getScreenWidth(), Renderer::getScreenHeight()}};
+        setPosition(0.008f * scale.x, 0.012f * scale.y);
+        mSize.y = mFont->getLetterHeight();
+        setColor(0xFFFFFFFF);
+        setFormat("%H:%M");
+    }
+
+    const ThemeData::ThemeElement* elem {theme->getElement(view, element, elementType)};
     if (!elem)
         return;
 
@@ -149,9 +196,6 @@ void DateTimeComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
                                "\"stationary\" for element \""
                             << element.substr(9) << "\" defined as \"" << stationary << "\"";
     }
-
-    if (elem->has("format"))
-        setFormat(elem->get<std::string>("format"));
 
     if (properties & COLOR && elem->has("color"))
         setColor(elem->get<unsigned int>("color"));
@@ -182,10 +226,11 @@ void DateTimeComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
         else if (horizontalAlignment == "right")
             setHorizontalAlignment(ALIGN_RIGHT);
         else
-            LOG(LogWarning) << "DateTimeComponent: Invalid theme configuration, property "
+            LOG(LogWarning) << componentName
+                            << ": Invalid theme configuration, property "
                                "\"horizontalAlignment\" for element \""
-                            << element.substr(9) << "\" defined as \"" << horizontalAlignment
-                            << "\"";
+                            << element.substr(elementType == "clock" ? 6 : 9) << "\" defined as \""
+                            << horizontalAlignment << "\"";
     }
 
     if (properties & ALIGNMENT && elem->has("verticalAlignment")) {
@@ -197,9 +242,11 @@ void DateTimeComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
         else if (verticalAlignment == "bottom")
             setVerticalAlignment(ALIGN_BOTTOM);
         else
-            LOG(LogWarning) << "DateTimeComponent: Invalid theme configuration, property "
+            LOG(LogWarning) << componentName
+                            << ": Invalid theme configuration, property "
                                "\"verticalAlignment\" for element \""
-                            << element.substr(9) << "\" defined as \"" << verticalAlignment << "\"";
+                            << element.substr(elementType == "clock" ? 6 : 9) << "\" defined as \""
+                            << verticalAlignment << "\"";
     }
 
     if (properties & METADATA && elem->has("metadata")) {
@@ -240,7 +287,8 @@ void DateTimeComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
             setCapitalize(true);
         }
         else if (letterCase != "none") {
-            LOG(LogWarning) << "DateTimeComponent: Invalid theme configuration, property "
+            LOG(LogWarning) << componentName
+                            << ": Invalid theme configuration, property "
                                "\"letterCase\" for element \""
                             << element.substr(9) << "\" defined as \"" << letterCase << "\"";
         }
@@ -265,4 +313,9 @@ void DateTimeComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
 
     setFont(Font::getFromTheme(elem, properties, mFont, maxHeight));
     mSize = glm::round(mSize);
+
+    if (elem->has("format"))
+        setFormat(elem->get<std::string>("format"));
+    else if (mClockMode)
+        setFormat("%H:%M");
 }

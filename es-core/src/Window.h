@@ -14,6 +14,7 @@
 #include "HelpPrompt.h"
 #include "InputConfig.h"
 #include "Settings.h"
+#include "components/DateTimeComponent.h"
 #include "components/HelpComponent.h"
 #include "components/ImageComponent.h"
 #include "components/TextComponent.h"
@@ -173,6 +174,11 @@ public:
         mHelpComponents = helpComponents;
     }
 
+    void passClockComponents(std::vector<std::unique_ptr<DateTimeComponent>>* clockComponents)
+    {
+        mClockComponents = clockComponents;
+    }
+
 private:
     Window() noexcept;
     ~Window();
@@ -191,6 +197,7 @@ private:
     Renderer* mRenderer;
     std::vector<std::unique_ptr<HelpComponent>>* mHelpComponents;
     std::unique_ptr<HelpComponent> mHelp;
+    std::vector<std::unique_ptr<DateTimeComponent>>* mClockComponents;
     std::unique_ptr<ImageComponent> mBackgroundOverlay;
     std::unique_ptr<ImageComponent> mSplash;
     std::unique_ptr<TextComponent> mSplashTextScanning;

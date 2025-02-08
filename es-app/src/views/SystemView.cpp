@@ -246,6 +246,10 @@ std::vector<HelpPrompt> SystemView::getHelpPrompts()
 void SystemView::onCursorChanged(const CursorState& state)
 {
     mWindow->passHelpComponents(nullptr);
+    mWindow->passClockComponents(&mSystemElements[mPrimary->getCursor()].clockComponents);
+
+    for (auto& clock : mSystemElements[mPrimary->getCursor()].clockComponents)
+        clock->update(1000);
 
     // Reset horizontally scrolling text.
     for (auto& text : mSystemElements[mPrimary->getCursor()].gameCountComponents)
@@ -727,7 +731,20 @@ void SystemView::populate()
                     elements.helpComponents.back()->applyTheme(theme, "system", element.first,
                                                                ThemeFlags::ALL);
                 }
+                else if (element.second.type == "clock") {
+                    elements.clockComponents.emplace_back(std::make_unique<DateTimeComponent>());
+                    elements.clockComponents.back()->applyTheme(theme, "system", element.first,
+                                                                ThemeFlags::ALL);
+                }
             }
+        }
+
+        if (elements.clockComponents.empty()) {
+            // Apply a default clock if the theme does not contain any configuration for it.
+            elements.clockComponents.emplace_back(std::make_unique<DateTimeComponent>());
+            elements.clockComponents.back()->applyTheme(theme, "system", "clock_default",
+                                                        ThemeFlags::ALL);
+            elements.clockComponents.back()->update(1000);
         }
 
         std::stable_sort(
@@ -893,6 +910,8 @@ void SystemView::populate()
         mWindow->passHelpComponents(nullptr);
     else
         mWindow->passHelpComponents(&mSystemElements[mPrimary->getCursor()].helpComponents);
+
+    mWindow->passClockComponents(&mSystemElements[mPrimary->getCursor()].clockComponents);
 
     mFadeTransitions = (static_cast<ViewTransitionAnimation>(Settings::getInstance()->getInt(
                             "TransitionsSystemToSystem")) == ViewTransitionAnimation::FADE);

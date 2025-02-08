@@ -88,6 +88,11 @@ void GamelistView::onShow()
     for (auto& video : mStaticVideoComponents)
         video->stopVideoPlayer();
 
+    mWindow->passClockComponents(&mClockComponents);
+
+    for (auto& clock : mClockComponents)
+        clock->update(500);
+
     mLastUpdated = nullptr;
     GuiComponent::onShow();
 
@@ -353,7 +358,18 @@ void GamelistView::onThemeChanged(const std::shared_ptr<ThemeData>& theme)
                 mHelpComponents.emplace_back(std::make_unique<HelpComponent>());
                 mHelpComponents.back()->applyTheme(theme, "gamelist", element.first, ALL);
             }
+            else if (element.second.type == "clock") {
+                mClockComponents.emplace_back(std::make_unique<DateTimeComponent>());
+                mClockComponents.back()->applyTheme(theme, "gamelist", element.first, ALL);
+            }
         }
+    }
+
+    if (mClockComponents.empty()) {
+        // Apply a default clock if the theme does not contain any configuration for it.
+        mClockComponents.emplace_back(std::make_unique<DateTimeComponent>());
+        mClockComponents.back()->applyTheme(theme, "gamelist", "clock_default", ThemeFlags::ALL);
+        mClockComponents.back()->update(1000);
     }
 
     if (mPrimary == nullptr) {
