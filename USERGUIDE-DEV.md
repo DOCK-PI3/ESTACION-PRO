@@ -3343,6 +3343,10 @@ Submenu containing all the settings for the screensaver. These are described in 
 
 Themes can optionally contain variant trigger configuration which changes the layout on a per-gamelist basis if there is no game media available, or if there is no game videos available. This option makes it possible to disable that functionality and always apply the default configuration for the selected variant. Disabling this option may speed up the application slightly.
 
+**Display clock**
+
+Displays a clock on screen at all times. By default it's located in the upper left corner and displays as hours and minutes, but themes can customize its layout and position.
+
 **Blur background when menu is open** _Always applied if screen is rotated 90 or 270 degrees_
 
 This option will blur the background behind the menu slightly. Normally this can be left enabled, but if you have a really slow GPU, disabling this option may make the application feel a bit more responsive. For technical reasons this setting is always enabled if the screen is rotated 90 or 270 degrees, and in this case the menu option will also be grayed out.

@@ -14,10 +14,12 @@
 * (Android) Added Pizza Boy SC standalone as an alternative emulator for the gamegear, genesis, mastersystem, megadrive and megadrivejp systems
 * (Android) Changed all RetroArch core entries to use absolute paths (this makes the ancient Play store release work correctly)
 * (Android) Changed the target SDK version to 35 (Android 15)
+* Added a "Display clock" setting to the UI settings menu to display an on screen clock (disabled by default)
 * Refactored the helpsystem code and added support for using an arbitrary amount of helpsystem elements
 * Added support for specifying which specific entries to display for the helpsystem elements
 * Added an "entryLayout" property to the helpsystem element to control the display order for the icons and text
 * Added "rotation" and "rotationOrigin" properties to the helpsystem element
+* Added a "clock" element to make it possible to customize the layout and position of the clock
 * Added "imageSize", "imageMaxSize", "imageCropSize" and "imageCropPos" properties to the video element
 * Added a "fadeInType" property to the video element to fade in from black or from transparency
 * Added support for a "none" value to the video element imageType property

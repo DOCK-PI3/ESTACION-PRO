@@ -3574,3 +3574,82 @@ Properties:
       `button_y_SNES`,
       `button_back_SNES`,
       `button_start_SNES`
+
+#### clock
+
+Displays the current time and/or date as a text string. The format is HH:MM by default, but this can be changed using the `format` property. It's strongly recommended to configure the clock identically for both the system and gamelist views to make the user experience coherent.
+
+Note that this element does not have a zIndex value, instead it's always rendered on top of all other elements and it's also rendered when the menu is open. In addition to this it's stationary and will not move during slide transitions or fade out during fade transitions.
+
+You can define multiple elements to for instance display the date on one side of the screen and the time on the other side of the screen.
+
+Supported views:
+* `system`
+* `gamelist`
+
+Instances per view:
+* `unlimited`
+
+Properties:
+* `pos` - type: NORMALIZED_PAIR
+    - Default is `0.008 0.012`
+* `size` - type: NORMALIZED_PAIR
+    - Possible combinations:
+    - `0 0` - automatically size so text fits on one line (expanding horizontally).
+    - `w 0` - automatically wrap text so it doesn't go beyond `w` (expanding vertically).
+    - `w h` - works like a "text box". If `h` is non-zero and `h` <= `fontSize` (implying it should be a single line of text), text that goes beyond `w` will be truncated with an ellipsis (...)
+* `origin` - type: NORMALIZED_PAIR
+    - Where on the element `pos` refers to. For example, an origin of `0.5 0.5` and a `pos` of `0.5 0.5` would place the element exactly in the middle of the screen. If the position and size attributes are themeable, origin is implied.
+    - Minimum value per axis is `0` and maximum value per axis is `1`
+    - Default is `0 0`
+* `rotation` - type: FLOAT
+    - Angle in degrees that the text should be rotated. Positive values will rotate clockwise, negative values will rotate counterclockwise.
+    - Default is `0`
+* `rotationOrigin` - type: NORMALIZED_PAIR
+    - Point around which the text will be rotated.
+    - Minimum value per axis is `0` and maximum value per axis is `1`
+    - Default is `0.5 0.5`.
+* `fontPath` - type: PATH
+    - Path to a TrueType font (.ttf).
+* `fontSize` - type: FLOAT
+    - Size of the font as a percentage of screen height for horizontally oriented screens or screen width for vertically oriented screens (e.g. for a value of `0.1`, the text's height would be 10% of the screen height). This calculation is based on the reference 'S' character so other glyphs may not fill this area, or they may exceed this area.
+    - Minimum value is `0.001` and maximum value is `1.5`. Note that when running at a really low resolution, the minimum value may get clamped to a larger relative size. The font is allowed to overflow the height of the element by 100%, i.e. `fontSize` can be set to twice that of the y axis of the `size` property. Any value above that will be clamped.
+    - Default is `0.035`
+* `horizontalAlignment` - type: STRING
+    - Controls alignment on the X axis.
+    - Valid values are `left`, `center` or `right`
+    - Default is `left`
+* `verticalAlignment` - type: STRING
+    - Controls alignment on the Y axis.
+    - Valid values are `top`, `center` or `bottom`
+    - Default is `center`
+* `color` - type: COLOR
+    - Default is `FFFFFFFF`
+* `backgroundColor` - type: COLOR
+    - Default is `00000000`
+* `backgroundMargins` - type: NORMALIZED_PAIR
+    - Adds margins to the text background, assuming it has a color set. The first value of the pair is the left margin and the second value is the right margin, which means it's possible to set these margins completely independently. Margins are applied after all other positioning and sizing calculations and they are rendered outside the text debug rectangle boundaries.
+    - Minimum value per axis is `0` and maximum value per axis is `0.5`
+    - Default is `0 0`
+    - This property can only be used if `backgroundColor` has a value defined.
+* `backgroundCornerRadius` - type: FLOAT
+    - Setting this property higher than zero applies rounded corners to the text background, assuming it has a color set. The radius is a percentage of the screen width. Note that the maximum allowed value is quite arbitrary as the renderer will in practice limit the maximum roundness so it can never go beyond half the text background height. It means that setting this property sufficiently high will produce perfectly rounded sides for the text background. You normally want to combine this property with `backgroundMargins` to add some extra margins.
+    - Minimum value is `0` and maximum value is `0.5`
+    - Default is `0` (corners are not rounded)
+    - This property can only be used if `backgroundColor` has a value defined.
+* `lineSpacing` - type: FLOAT
+    - Controls the space between lines (as a multiple of font height).
+    - Minimum value is `0.5` and maximum value is `3`
+    - Default is `1.5`
+* `format` - type: STRING
+    - %Y: The year, including the century (1900)
+    - %m: The month number [01,12]
+    - %d: The day of the month [01,31]
+    - %H: The hour (24-hour clock) [00,23]
+    - %M: The minute [00,59]
+    - %S: The second [00,59]
+    - Default is `%H:%M`
+* `opacity` - type: FLOAT
+    - Controls the level of transparency. If set to `0` the element will be disabled.
+    - Minimum value is `0` and maximum value is `1`
+    - Default is `1`
