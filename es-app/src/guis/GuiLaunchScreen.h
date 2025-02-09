@@ -45,6 +45,7 @@ private:
     std::string mImagePath;
 
     float mScaleUp;
+    int mScaleAccumulator;
 };
 
 #endif // ES_APP_GUIS_GUI_LAUNCH_SCREEN_H

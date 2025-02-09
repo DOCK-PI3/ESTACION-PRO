@@ -59,6 +59,7 @@ Window::Window() noexcept
     , mInvalidateCacheTimer {0}
     , mVideoPlayerCount {0}
     , mTopScale {0.5f}
+    , mScaleAccumulator {0}
     , mRenderedHelpPrompts {false}
     , mChangedTheme {false}
 {
@@ -180,8 +181,20 @@ bool Window::init(bool resized)
     mProgressBarRectangles.emplace_back(progressBarRect);
 
     mBackgroundOverlay->setResize(mRenderer->getScreenWidth(), mRenderer->getScreenHeight());
-
     mPostprocessedBackground = TextureResource::get("", false, false, false, false, false);
+
+    // This doesn't really do anything useful per se, but initializing the texture takes a bit
+    // longer the first time so doing it here even with null data avoids some potential stutter
+    // the first time the menu is opened.
+    const std::vector<unsigned char> processedTexture(
+        static_cast<size_t>(mRenderer->getScreenWidth()) *
+            static_cast<size_t>(mRenderer->getScreenHeight()) * 4,
+        0);
+    mPostprocessedBackground->initFromPixels(&processedTexture[0],
+                                             static_cast<size_t>(mRenderer->getScreenWidth()),
+                                             static_cast<size_t>(mRenderer->getScreenHeight()));
+
+    mScaleAccumulator = 0;
 
     mListScrollText = std::make_unique<TextComponent>("", Font::get(FONT_SIZE_LARGE));
     mGPUStatisticsText = std::make_unique<TextComponent>(
@@ -294,6 +307,7 @@ void Window::input(InputConfig* config, Input input)
         // up. So scale it to full size so it won't be stuck at a smaller size when returning
         // from the submenu.
         mTopScale = 1.0f;
+        mScaleAccumulator = 0;
         GuiComponent* menu {mGuiStack.back()};
         glm::vec2 menuCenter {menu->getCenter()};
         menu->setOrigin(0.5f, 0.5f);
@@ -362,6 +376,10 @@ void Window::update(int deltaTime)
         if (deltaTime > mAverageDeltaTime)
             deltaTime = mAverageDeltaTime;
     }
+
+    if (mGuiStack.size() > 1 && mTopScale < 1.0f &&
+        Settings::getInstance()->getString("MenuOpeningEffect") == "scale-up")
+        mScaleAccumulator += deltaTime;
 
     mFrameTimeElapsed += deltaTime;
     ++mFrameCountElapsed;
@@ -600,14 +618,17 @@ void Window::render()
             mBackgroundOverlay->render(trans);
 
             // Scale-up menu opening effect.
-            if (Settings::getInstance()->getString("MenuOpeningEffect") == "scale-up") {
-                if (mTopScale < 1.0f) {
-                    mTopScale = glm::clamp(mTopScale + 0.07f, 0.0f, 1.0f);
-                    glm::vec2 topCenter {top->getCenter()};
-                    top->setOrigin(0.5f, 0.5f);
-                    top->setPosition(topCenter.x, topCenter.y, 0.0f);
-                    top->setScale(mTopScale);
-                }
+            if (Settings::getInstance()->getString("MenuOpeningEffect") == "scale-up" &&
+                mTopScale < 1.0f) {
+                mTopScale =
+                    glm::clamp(glm::mix(0.5f, 1.0f, static_cast<float>(mScaleAccumulator) / 110.0f),
+                               0.5f, 1.0f);
+                glm::vec2 topCenter {top->getCenter()};
+                top->setOrigin(0.5f, 0.5f);
+                top->setPosition(topCenter.x, topCenter.y, 0.0f);
+                top->setScale(mTopScale);
+                if (mTopScale == 1.0f)
+                    mScaleAccumulator = 0;
             }
 
             if (!mRenderedHelpPrompts) {

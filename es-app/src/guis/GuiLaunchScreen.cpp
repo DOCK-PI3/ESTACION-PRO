@@ -45,6 +45,7 @@ void GuiLaunchScreen::displayLaunchScreen(FileData* game)
     }
 
     mScaleUp = 0.5f;
+    mScaleAccumulator = 0;
     const float titleFontSize {0.060f};
     const float gameNameFontSize {0.073f};
 
@@ -223,16 +224,17 @@ void GuiLaunchScreen::onSizeChanged()
 
 void GuiLaunchScreen::update(int deltaTime)
 {
-    if (Settings::getInstance()->getString("MenuOpeningEffect") == "none")
-        mScaleUp = 1.0f;
-    else if (mScaleUp < 1.0f)
-        mScaleUp = glm::clamp(mScaleUp + 0.07f, 0.0f, 1.0f);
+    if (Settings::getInstance()->getString("MenuOpeningEffect") == "scale-up")
+        mScaleAccumulator += deltaTime;
 }
 
-void GuiLaunchScreen::render(const glm::mat4& /*parentTrans*/)
+void GuiLaunchScreen::render(const glm::mat4&)
 {
-    // Scale up animation.
-    setScale(mScaleUp);
+    if (Settings::getInstance()->getString("MenuOpeningEffect") == "scale-up" && mScaleUp < 1.0f) {
+        mScaleUp = glm::clamp(glm::mix(0.5f, 1.0f, static_cast<float>(mScaleAccumulator) / 110.0f),
+                              0.5f, 1.0f);
+        setScale(mScaleUp);
+    }
 
     glm::mat4 trans {Renderer::getIdentity() * getTransform()};
     mRenderer->setMatrix(trans);

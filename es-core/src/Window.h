@@ -250,6 +250,7 @@ private:
     std::atomic<int> mVideoPlayerCount;
 
     float mTopScale;
+    int mScaleAccumulator;
     bool mRenderedHelpPrompts;
     bool mChangedTheme;
 };
