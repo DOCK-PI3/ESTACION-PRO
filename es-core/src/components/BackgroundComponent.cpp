@@ -13,7 +13,6 @@ BackgroundComponent::BackgroundComponent(const glm::vec2 cornerSize)
     : mRenderer {Renderer::getInstance()}
     , mCornerSize {cornerSize}
     , mFrameColor {mMenuColorFrame}
-    , mCornerAntialias {true}
 {
 }
 

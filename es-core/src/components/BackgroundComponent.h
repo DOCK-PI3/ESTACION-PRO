@@ -29,7 +29,6 @@ private:
     Renderer* mRenderer;
     glm::vec2 mCornerSize;
     unsigned int mFrameColor;
-    bool mCornerAntialias;
 };
 
 #endif // ES_CORE_COMPONENTS_BACKGROUND_COMPONENT_H
