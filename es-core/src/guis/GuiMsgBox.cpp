@@ -27,7 +27,6 @@ GuiMsgBox::GuiMsgBox(const std::string& text,
                      const bool deleteOnButtonPress,
                      const float maxWidthMultiplier)
     : mRenderer {Renderer::getInstance()}
-    , mBackground {":/graphics/frame.svg"}
     , mGrid {glm::ivec2 {1, 2}}
     , mBackFunc {backFunc}
     , mDisableBackButton {disableBackButton}

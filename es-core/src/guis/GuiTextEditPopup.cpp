@@ -26,8 +26,7 @@ GuiTextEditPopup::GuiTextEditPopup(const std::string& title,
                                    const std::string& loadBtnHelpText,
                                    const std::string& clearBtnHelpText,
                                    const std::string& cancelBtnHelpText)
-    : mBackground {":/graphics/frame.svg"}
-    , mGrid {glm::ivec2 {1, (infoString != "" && defaultValue != "" ? 5 : 3)}}
+    : mGrid {glm::ivec2 {1, (infoString != "" && defaultValue != "" ? 5 : 3)}}
     , mInitValue {initValue}
     , mAcceptBtnText {acceptBtnText}
     , mSaveConfirmationText {saveConfirmationText}

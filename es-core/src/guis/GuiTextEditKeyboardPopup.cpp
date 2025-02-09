@@ -54,7 +54,6 @@ GuiTextEditKeyboardPopup::GuiTextEditKeyboardPopup(
     const std::string& clearBtnHelpText,
     const std::string& cancelBtnHelpText)
     : mRenderer {Renderer::getInstance()}
-    , mBackground {":/graphics/frame.svg"}
     , mGrid {glm::ivec2 {1, (infoString != "" && defaultValue != "" ? 8 : 6)}}
     , mInitValue {initValue}
     , mAcceptBtnHelpText {acceptBtnHelpText}

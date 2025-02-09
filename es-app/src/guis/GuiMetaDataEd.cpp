@@ -44,7 +44,6 @@ GuiMetaDataEd::GuiMetaDataEd(MetaDataList* md,
                              std::function<void()> clearGameFunc,
                              std::function<void()> deleteGameFunc)
     : mRenderer {Renderer::getInstance()}
-    , mBackground {":/graphics/frame.svg"}
     , mGrid {glm::ivec2 {2, 6}}
     , mScraperParams {scraperParams}
     , mControllerBadges {BadgeComponent::getGameControllers()}

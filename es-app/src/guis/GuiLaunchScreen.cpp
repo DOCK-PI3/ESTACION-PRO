@@ -17,7 +17,6 @@
 
 GuiLaunchScreen::GuiLaunchScreen()
     : mRenderer {Renderer::getInstance()}
-    , mBackground {":/graphics/frame.svg"}
     , mGrid {nullptr}
     , mMarquee {nullptr}
 {

@@ -11,9 +11,9 @@
 
 #include "GuiComponent.h"
 #include "Window.h"
+#include "components/BackgroundComponent.h"
 #include "components/ComponentGrid.h"
 #include "components/ImageComponent.h"
-#include "components/NinePatchComponent.h"
 #include "components/TextComponent.h"
 
 class FileData;
@@ -34,7 +34,7 @@ public:
 
 private:
     Renderer* mRenderer;
-    NinePatchComponent mBackground;
+    BackgroundComponent mBackground;
     ComponentGrid* mGrid;
 
     std::shared_ptr<TextComponent> mTitle;

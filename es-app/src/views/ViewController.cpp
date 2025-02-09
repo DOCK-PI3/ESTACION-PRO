@@ -72,7 +72,7 @@ void ViewController::setMenuColors()
     if (Settings::getInstance()->getString("MenuColorScheme") == "light") {
         mMenuColorFrame = 0xEFEFEFFF;
         mMenuColorFrameLaunchScreen = 0xDFDFDFFF;
-        mMenuColorFrameBusyComponent = 0xFFFFFFFF;
+        mMenuColorFrameBusyComponent = 0xF5F5F5FF;
         mMenuColorPanelDimmed = 0x00000009;
 
         mMenuColorTitle = 0x555555FF;
@@ -109,7 +109,7 @@ void ViewController::setMenuColors()
     else if (Settings::getInstance()->getString("MenuColorScheme") == "darkred") {
         mMenuColorFrame = 0x191919FF;
         mMenuColorFrameLaunchScreen = 0x121212FF;
-        mMenuColorFrameBusyComponent = 0x090909FF;
+        mMenuColorFrameBusyComponent = 0x000000FF;
         mMenuColorPanelDimmed = 0x00000024;
 
         mMenuColorTitle = 0x909090FF;
@@ -146,7 +146,7 @@ void ViewController::setMenuColors()
     else {
         mMenuColorFrame = 0x191919FF;
         mMenuColorFrameLaunchScreen = 0x121212FF;
-        mMenuColorFrameBusyComponent = 0x090909FF;
+        mMenuColorFrameBusyComponent = 0x000000FF;
         mMenuColorPanelDimmed = 0x00000024;
 
         mMenuColorTitle = 0x909090FF;

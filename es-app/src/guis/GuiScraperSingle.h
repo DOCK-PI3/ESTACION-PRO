@@ -12,7 +12,7 @@
 #define ES_APP_GUIS_GUI_SCRAPER_SINGLE_H
 
 #include "GuiComponent.h"
-#include "components/NinePatchComponent.h"
+#include "components/BackgroundComponent.h"
 #include "components/ScrollIndicatorComponent.h"
 #include "guis/GuiScraperSearch.h"
 #include "views/ViewController.h"
@@ -36,7 +36,7 @@ private:
     void close();
 
     Renderer* mRenderer;
-    NinePatchComponent mBackground;
+    BackgroundComponent mBackground;
     ComponentGrid mGrid;
 
     std::shared_ptr<TextComponent> mGameName;

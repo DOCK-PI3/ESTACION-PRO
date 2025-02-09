@@ -11,6 +11,7 @@
 #define ES_CORE_GUIS_GUI_TEXT_EDIT_POPUP_H
 
 #include "GuiComponent.h"
+#include "components/BackgroundComponent.h"
 #include "components/ButtonComponent.h"
 #include "components/ComponentGrid.h"
 #include "components/TextComponent.h"
@@ -41,7 +42,7 @@ public:
 private:
     void updateDeleteRepeat(int deltaTime);
 
-    NinePatchComponent mBackground;
+    BackgroundComponent mBackground;
     ComponentGrid mGrid;
 
     std::shared_ptr<TextComponent> mTitle;

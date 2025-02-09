@@ -10,6 +10,7 @@
 #define ES_APP_GUIS_GUI_ORPHANED_DATA_CLEANUP_H
 
 #include "GuiComponent.h"
+#include "components/BackgroundComponent.h"
 #include "components/BusyComponent.h"
 #include "guis/GuiSettings.h"
 #include "views/ViewController.h"
@@ -38,7 +39,7 @@ private:
     std::vector<HelpPrompt> getHelpPrompts() override;
 
     Renderer* mRenderer;
-    NinePatchComponent mBackground;
+    BackgroundComponent mBackground;
     ComponentGrid mGrid;
     BusyComponent mBusyAnim;
     std::function<void()> mReloadCallback;

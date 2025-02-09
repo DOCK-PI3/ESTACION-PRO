@@ -42,7 +42,7 @@ private:
     Renderer* mRenderer;
     BusyComponent mBusyAnim;
 
-    NinePatchComponent mBackground;
+    BackgroundComponent mBackground;
     ComponentGrid mGrid;
     std::shared_ptr<ComponentGrid> mButtons;
     std::shared_ptr<ButtonComponent> mButton1;

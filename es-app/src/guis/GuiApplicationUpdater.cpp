@@ -21,7 +21,6 @@
 
 GuiApplicationUpdater::GuiApplicationUpdater()
     : mRenderer {Renderer::getInstance()}
-    , mBackground {":/graphics/frame.svg"}
     , mGrid {glm::ivec2 {4, 11}}
     , mDownloadPercentage {0}
     , mLinuxAppImage {false}

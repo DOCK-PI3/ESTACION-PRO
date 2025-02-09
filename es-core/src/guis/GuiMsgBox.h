@@ -11,8 +11,8 @@
 #define ES_CORE_GUIS_GUI_MSG_BOX_H
 
 #include "GuiComponent.h"
+#include "components/BackgroundComponent.h"
 #include "components/ComponentGrid.h"
-#include "components/NinePatchComponent.h"
 #include "utils/LocalizationUtil.h"
 
 class ButtonComponent;
@@ -46,7 +46,7 @@ private:
     void deleteMeAndCall(const std::function<void()>& func);
 
     Renderer* mRenderer;
-    NinePatchComponent mBackground;
+    BackgroundComponent mBackground;
     ComponentGrid mGrid;
 
     std::shared_ptr<TextComponent> mMsg;

@@ -179,7 +179,6 @@ bool Window::init(bool resized)
     progressBarRect.color = 0x79010FFF;
     mProgressBarRectangles.emplace_back(progressBarRect);
 
-    mBackgroundOverlay->setImage(":/graphics/frame.png");
     mBackgroundOverlay->setResize(mRenderer->getScreenWidth(), mRenderer->getScreenHeight());
 
     mPostprocessedBackground = TextureResource::get("", false, false, false, false, false);

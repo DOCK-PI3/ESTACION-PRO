@@ -13,9 +13,9 @@
 
 #include "GuiComponent.h"
 #include "MetaData.h"
+#include "components/BackgroundComponent.h"
 #include "components/BadgeComponent.h"
 #include "components/ComponentGrid.h"
-#include "components/NinePatchComponent.h"
 #include "components/ScrollIndicatorComponent.h"
 #include "guis/GuiSettings.h"
 #include "scrapers/Scraper.h"
@@ -46,7 +46,7 @@ private:
     void close();
 
     Renderer* mRenderer;
-    NinePatchComponent mBackground;
+    BackgroundComponent mBackground;
     ComponentGrid mGrid;
 
     std::shared_ptr<TextComponent> mTitle;

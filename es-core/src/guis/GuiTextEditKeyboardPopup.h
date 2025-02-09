@@ -11,6 +11,7 @@
 #define ES_CORE_GUIS_GUI_TEXT_EDIT_KEYBOARD_POPUP_H
 
 #include "GuiComponent.h"
+#include "components/BackgroundComponent.h"
 #include "components/ButtonComponent.h"
 #include "components/ComponentGrid.h"
 #include "components/TextComponent.h"
@@ -77,7 +78,7 @@ private:
     std::shared_ptr<ButtonComponent> mAltButton;
 
     Renderer* mRenderer;
-    NinePatchComponent mBackground;
+    BackgroundComponent mBackground;
     ComponentGrid mGrid;
 
     std::shared_ptr<TextComponent> mTitle;

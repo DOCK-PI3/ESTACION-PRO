@@ -28,7 +28,6 @@
 
 GuiThemeDownloader::GuiThemeDownloader(std::function<void()> updateCallback)
     : mRenderer {Renderer::getInstance()}
-    , mBackground {":/graphics/frame.svg"}
     , mGrid {glm::ivec2 {2, 4}}
     , mUpdateCallback(updateCallback)
     , mRepositoryError {RepositoryError::NO_REPO_ERROR}

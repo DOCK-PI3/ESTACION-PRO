@@ -375,7 +375,7 @@ protected:
     // Default values are for the "light" color scheme.
     static inline unsigned int mMenuColorFrame {0xEFEFEFFF};
     static inline unsigned int mMenuColorFrameLaunchScreen {0xDFDFDFFF};
-    static inline unsigned int mMenuColorFrameBusyComponent {0xFFFFFFFF};
+    static inline unsigned int mMenuColorFrameBusyComponent {0xF5F5F5FF};
     static inline unsigned int mMenuColorPanelDimmed {0x00000009};
 
     static inline unsigned int mMenuColorTitle {0x555555FF};
