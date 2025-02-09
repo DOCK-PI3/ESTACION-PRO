@@ -695,7 +695,7 @@
         <name>flash</name>
         <fullname>Adobe Flash</fullname>
         <path>%ROMPATH%\flash</path>
-        <extension>.swf .SWF</extension>
+        <extension>.ruf .RUF .swf .SWF</extension>
         <command label="Ruffle (Standalone)">%EMULATOR_RUFFLE% --fullscreen %ROM%</command>
         <command label="ArcadeFlashWeb (Standalone)">%EMULATOR_ARCADEFLASHWEB% -fullscreen -source:%ROM%</command>
         <platform>flash</platform>

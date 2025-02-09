@@ -628,7 +628,7 @@
         <name>flash</name>
         <fullname>Adobe Flash</fullname>
         <path>%ROMPATH%/flash</path>
-        <extension>.swf .SWF</extension>
+        <extension>.ruf .RUF .swf .SWF</extension>
         <command label="Ruffle (Standalone)">%EMULATOR_RUFFLE% %ACTION%=android.intent.action.VIEW %DATA%=%ROMPROVIDER%</command>
         <command label="SWF Player (Standalone)">%EMULATOR_SWF-PLAYER% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %ACTION%=android.intent.action.VIEW %DATA%=%ROMPROVIDER%</command>
         <platform>flash</platform>
