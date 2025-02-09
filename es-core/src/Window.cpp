@@ -532,7 +532,7 @@ void Window::render()
 
                     // We run two passes to make the blur smoother.
                     backgroundParameters.blurPasses = 2;
-                    backgroundParameters.blurStrength = 1.35f;
+                    backgroundParameters.blurStrength = 1.75f;
 
                     // Also dim the background slightly.
                     if (Settings::getInstance()->getString("MenuColorScheme") == "light")
