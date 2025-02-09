@@ -20,7 +20,7 @@ GuiInfoPopup::GuiInfoPopup(std::string message, int duration)
     , mAlpha {1.0f}
     , mRunning {true}
 {
-    mBackground = new BackgroundComponent(glm::vec2 {22.0f, 22.0f});
+    mBackground = new BackgroundComponent(glm::vec2 {24.0f, 24.0f});
     float maxWidth {Renderer::getScreenWidth() * 0.9f};
     float maxHeight {Renderer::getScreenHeight() * 0.2f};
 
