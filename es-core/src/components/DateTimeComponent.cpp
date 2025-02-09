@@ -171,7 +171,7 @@ void DateTimeComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
         const glm::vec2 scale {
             getParent() ? getParent()->getSize() :
                           glm::vec2 {Renderer::getScreenWidth(), Renderer::getScreenHeight()}};
-        setPosition(0.008f * scale.x, 0.012f * scale.y);
+        setPosition(0.018f * scale.x, 0.016f * scale.y);
         mSize.y = mFont->getLetterHeight();
         setColor(0xFFFFFFFF);
         setFormat("%H:%M");
