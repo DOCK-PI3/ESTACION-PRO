@@ -9,6 +9,9 @@
 ### Detailed list of changes
 
 * Added translations for Traditional Chinese (zh_TW)
+* Increased the roundness for all corners in the menu system and for the notification popups
+* Increased the background blur slightly when a menu is open
+* Made the menu and launch screen scale up at the same speed regardless of the display refresh rate
 * Added the NooDS RetroArch core as an alternative emulator for the gba and nds systems
 * Added the Holani RetroArch core as an alternative emulator for the atarilynx system
 * (Android) Added Pizza Boy SC standalone as an alternative emulator for the gamegear, genesis, mastersystem, megadrive and megadrivejp systems
@@ -23,6 +26,7 @@
 * Added "imageSize", "imageMaxSize", "imageCropSize" and "imageCropPos" properties to the video element
 * Added a "fadeInType" property to the video element to fade in from black or from transparency
 * Added support for a "none" value to the video element imageType property
+* Added a BackgroundComponent to replace NinePatchComponent for rendering menu and popup backgrounds
 * (macOS) Added a build script for cross-compiling for x86_64 when using an ARM processor
 * Added support for building against libgit2 v1.9.0 and later
 
@@ -31,6 +35,7 @@
 * The text element containerStartDelay timer was sometimes not reset which made vertical text scrolling start too early under some circumstances
 * The selectedItemOffset property did not work correctly for carousels with a single item
 * Returning from a game when running in the background ignored the video element delay property for the first playback
+* Applying rounded corners caused rendering artfifacts if the texture did not use premultiplied alpha
 
 ## Version 3.1.1 / 3.1.1-39
 

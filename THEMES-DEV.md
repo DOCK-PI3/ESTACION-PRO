@@ -3592,7 +3592,7 @@ Instances per view:
 
 Properties:
 * `pos` - type: NORMALIZED_PAIR
-    - Default is `0.008 0.012`
+    - Default is `0.018 0.016`
 * `size` - type: NORMALIZED_PAIR
     - Possible combinations:
     - `0 0` - automatically size so text fits on one line (expanding horizontally).
