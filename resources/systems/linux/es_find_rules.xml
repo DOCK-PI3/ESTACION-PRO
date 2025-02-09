@@ -884,6 +884,8 @@
             <entry>~/.local/share/applications/ruffle/ruffle</entry>
             <entry>~/.local/bin/ruffle/ruffle</entry>
             <entry>~/bin/ruffle/ruffle</entry>
+            <entry>/var/lib/flatpak/exports/bin/rs.ruffle.Ruffle</entry>
+            <entry>~/.local/share/flatpak/exports/bin/rs.ruffle.Ruffle</entry>
         </rule>
     </emulator>
     <emulator name="RYUJINX">
