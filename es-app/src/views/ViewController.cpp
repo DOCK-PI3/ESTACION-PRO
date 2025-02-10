@@ -1022,11 +1022,10 @@ void ViewController::launch(FileData* game)
     mWindow->stopInfoPopup(); // Make sure we disable any existing info popup.
 
     int duration {0};
-    std::string durationString {Settings::getInstance()->getString("LaunchScreenDuration")};
+    const std::string durationString {Settings::getInstance()->getString("LaunchScreenDuration")};
 
-    if (durationString == "disabled") {
-        // If the game launch screen has been set as disabled, show a simple info popup
-        // notification instead.
+    if (durationString == "popup") {
+        // Show a simple info popup notification instead of the launch screen.
         mWindow->queueInfoPopup(
             Utils::String::format(_("LAUNCHING GAME '%s'"),
                                   Utils::String::toUpper(game->metadata.get("name")).c_str()),
@@ -1039,12 +1038,15 @@ void ViewController::launch(FileData* game)
     else if (durationString == "long") {
         duration = 4500;
     }
+    else if (durationString == "disabled") {
+        duration = 0;
+    }
     else {
         // Normal duration.
         duration = 3000;
     }
 
-    if (durationString != "disabled")
+    if (durationString != "disabled" && durationString != "popup")
         mWindow->displayLaunchScreen(game->getSourceFileData());
 
     NavigationSounds::getInstance().playThemeNavigationSound(LAUNCHSOUND);

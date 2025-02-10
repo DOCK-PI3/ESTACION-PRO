@@ -779,6 +779,7 @@ void GuiMenu::openUIOptions()
     launchScreenDuration->add(_("NORMAL"), "normal", selectedDuration == "normal");
     launchScreenDuration->add(_("BRIEF"), "brief", selectedDuration == "brief");
     launchScreenDuration->add(_("LONG"), "long", selectedDuration == "long");
+    launchScreenDuration->add(_("POPUP"), "popup", selectedDuration == "popup");
     launchScreenDuration->add(_("DISABLED"), "disabled", selectedDuration == "disabled");
     // If there are no objects returned, then there must be a manually modified entry in the
     // configuration file. Simply set the duration to "normal" in this case.
