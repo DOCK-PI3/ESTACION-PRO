@@ -9,6 +9,7 @@
 #include "views/GamelistView.h"
 
 #include "CollectionSystemsManager.h"
+#include "Scripting.h"
 #include "UIModeController.h"
 #include "animations/LambdaAnimation.h"
 #include "utils/LocalizationUtil.h"
@@ -20,6 +21,8 @@ GamelistView::GamelistView(FileData* root)
     : GamelistBase {root}
     , mRenderer {Renderer::getInstance()}
     , mStaticVideoAudio {false}
+    , mTriggerEvent {false}
+    , mTriggeredEventFastScroll {false}
 {
 }
 
@@ -424,6 +427,17 @@ void GamelistView::update(int deltaTime)
             anim->advanceAnimation(0, deltaTime);
     }
 
+    if (mTriggerEvent) {
+        mTriggerEvent = false;
+        FileData* file {mPrimary->size() > 0 ? mPrimary->getSelected() : nullptr};
+        if (file) {
+            Scripting::fireEvent("game-select", file->getPath(),
+                                 file->getSourceFileData()->metadata.get("name"),
+                                 file->getSourceFileData()->getSystem()->getName(),
+                                 file->getSourceFileData()->getSystem()->getFullName());
+        }
+    }
+
     updateChildren(deltaTime);
 }
 
@@ -595,6 +609,7 @@ std::vector<HelpPrompt> GamelistView::getHelpPrompts()
 void GamelistView::updateView(const CursorState& state)
 {
     bool loadedTexture {false};
+    mTriggerEvent = false;
 
     if (mPrimary->isScrolling()) {
         onDemandTextureLoad();
@@ -607,8 +622,21 @@ void GamelistView::updateView(const CursorState& state)
 
     // If the game data has already been rendered to the view, then skip it this time.
     // This also happens when fast-scrolling.
-    if (file == mLastUpdated)
+    if (file == mLastUpdated) {
+        if (!mTriggeredEventFastScroll && state == CursorState::CURSOR_SCROLLING &&
+            Settings::getInstance()->getBool("CustomEventScripts") &&
+            Settings::getInstance()->getBool("CustomEventScriptsBrowsing")) {
+            mTriggeredEventFastScroll = true;
+            Scripting::fireEvent("game-select");
+        }
         return;
+    }
+
+    if (Settings::getInstance()->getBool("CustomEventScripts") &&
+        Settings::getInstance()->getBool("CustomEventScriptsBrowsing")) {
+        mTriggerEvent = true;
+        mTriggeredEventFastScroll = false;
+    }
 
     if (!loadedTexture)
         onDemandTextureLoad();

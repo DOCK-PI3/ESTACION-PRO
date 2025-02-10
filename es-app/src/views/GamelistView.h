@@ -118,6 +118,8 @@ private:
 
     Renderer* mRenderer;
     bool mStaticVideoAudio;
+    bool mTriggerEvent;
+    bool mTriggeredEventFastScroll;
 
     std::shared_ptr<ThemeData> mTheme;
     std::vector<GuiComponent*> mThemeExtras;

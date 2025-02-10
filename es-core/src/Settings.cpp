@@ -311,6 +311,7 @@ void Settings::setDefaults()
     mBoolMap["ShowHiddenGames"] = {true, true};
 #if !defined(__IOS__)
     mBoolMap["CustomEventScripts"] = {false, false};
+    mBoolMap["CustomEventScriptsBrowsing"] = {false, false};
 #endif
     mBoolMap["ParseGamelistOnly"] = {false, false};
     mBoolMap["MAMENameStripExtraInfo"] = {true, true};

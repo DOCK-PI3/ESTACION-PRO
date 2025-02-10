@@ -1946,6 +1946,29 @@ void GuiMenu::openOtherOptions()
             s->setNeedsSaving();
         }
     });
+
+    // Custom event scripts when browsing games and systems, fired using Scripting::fireEvent().
+    auto customEventScriptsBrowsing = std::make_shared<SwitchComponent>();
+    customEventScriptsBrowsing->setState(
+        Settings::getInstance()->getBool("CustomEventScriptsBrowsing"));
+    s->addWithLabel(_("BROWSING CUSTOM EVENTS"), customEventScriptsBrowsing);
+    s->addSaveFunc([customEventScriptsBrowsing, s] {
+        if (customEventScriptsBrowsing->getState() !=
+            Settings::getInstance()->getBool("CustomEventScriptsBrowsing")) {
+            Settings::getInstance()->setBool("CustomEventScriptsBrowsing",
+                                             customEventScriptsBrowsing->getState());
+            s->setNeedsSaving();
+        }
+    });
+
+    // If custom event scripts are disabled, then gray out this option.
+    if (!Settings::getInstance()->getBool("CustomEventScripts")) {
+        customEventScriptsBrowsing->setEnabled(false);
+        customEventScriptsBrowsing->setOpacity(DISABLED_OPACITY);
+        customEventScriptsBrowsing->getParent()
+            ->getChild(customEventScriptsBrowsing->getChildIndex() - 1)
+            ->setOpacity(DISABLED_OPACITY);
+    }
 #endif
 
     // Only show games included in the gamelist.xml files.
@@ -2113,6 +2136,25 @@ void GuiMenu::openOtherOptions()
     applicationUpdaterFrequencyFunc(applicationUpdaterFrequency->getSelected());
     applicationUpdaterFrequency->setCallback(applicationUpdaterFrequencyFunc);
 #endif
+
+    auto browsingEventsToggleFunc = [customEventScriptsBrowsing]() {
+        if (customEventScriptsBrowsing->getEnabled()) {
+            customEventScriptsBrowsing->setEnabled(false);
+            customEventScriptsBrowsing->setOpacity(DISABLED_OPACITY);
+            customEventScriptsBrowsing->getParent()
+                ->getChild(customEventScriptsBrowsing->getChildIndex() - 1)
+                ->setOpacity(DISABLED_OPACITY);
+        }
+        else {
+            customEventScriptsBrowsing->setEnabled(true);
+            customEventScriptsBrowsing->setOpacity(1.0f);
+            customEventScriptsBrowsing->getParent()
+                ->getChild(customEventScriptsBrowsing->getChildIndex() - 1)
+                ->setOpacity(1.0f);
+        }
+    };
+
+    customEventScripts->setCallback(browsingEventsToggleFunc);
 
     s->setSize(mSize);
     mWindow->pushGui(s);

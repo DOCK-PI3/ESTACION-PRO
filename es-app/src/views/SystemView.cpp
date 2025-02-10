@@ -9,6 +9,7 @@
 #include "views/SystemView.h"
 
 #include "Log.h"
+#include "Scripting.h"
 #include "Settings.h"
 #include "Sound.h"
 #include "UIModeController.h"
@@ -247,6 +248,14 @@ void SystemView::onCursorChanged(const CursorState& state)
 {
     mWindow->passHelpComponents(nullptr);
     mWindow->passClockComponents(&mSystemElements[mPrimary->getCursor()].clockComponents);
+
+    if (Settings::getInstance()->getBool("CustomEventScripts") &&
+        Settings::getInstance()->getBool("CustomEventScriptsBrowsing")) {
+        Scripting::fireEvent(
+            "system-select", mSystemElements[mPrimary->getCursor()].system->getName(),
+            mSystemElements[mPrimary->getCursor()].system->getFullName(),
+            mSystemElements[mPrimary->getCursor()].system->getRootFolder()->getFullPath());
+    }
 
     for (auto& clock : mSystemElements[mPrimary->getCursor()].clockComponents)
         clock->update(1000);
