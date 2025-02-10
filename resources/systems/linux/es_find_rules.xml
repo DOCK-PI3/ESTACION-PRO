@@ -589,10 +589,10 @@
             <entry>mandarine-qt</entry>
         </rule>
         <rule type="staticpath">
-            <entry>~/Applications/mandarine-qt.AppImage</entry>
-            <entry>~/.local/share/applications/mandarine-qt.AppImage</entry>
-            <entry>~/.local/bin/mandarine-qt.AppImage</entry>
-            <entry>~/bin/mandarine-qt.AppImage</entry>
+            <entry>~/Applications/mandarine-qt*.AppImage</entry>
+            <entry>~/.local/share/applications/mandarine-qt*.AppImage</entry>
+            <entry>~/.local/bin/mandarine-qt*.AppImage</entry>
+            <entry>~/bin/mandarine-qt*.AppImage</entry>
         </rule>
     </emulator>
     <emulator name="MEDNAFEN">
