@@ -656,11 +656,6 @@ void Window::render()
         }
     }
 
-    if (mClockComponents != nullptr) {
-        for (auto& clockComponent : *mClockComponents)
-            clockComponent->render(trans);
-    }
-
     // Render the quick list scrolling overlay, which is triggered in IList.
     if (mListScrollOpacity != 0.0f) {
         mRenderer->setMatrix(mRenderer->getIdentity());
@@ -690,6 +685,11 @@ void Window::render()
             mTimeSinceLastInput = 0;
         else if (!isProcessing() && !mScreensaver->isScreensaverActive())
             startScreensaver(true);
+    }
+
+    if (mClockComponents != nullptr) {
+        for (auto& clockComponent : *mClockComponents)
+            clockComponent->render(trans);
     }
 
     if (mInfoPopup)
