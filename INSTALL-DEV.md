@@ -2171,22 +2171,29 @@ On Windows it's also possible to place .lnk shortcut files in the event director
 
 There are up to four parameters that will be passed to these scripts, as detailed below:
 
-| Event                    | Parameters*                                        | Description                                                                 |
-| :----------------------- | :------------------------------------------------- | :-------------------------------------------------------------------------- |
-| startup                  |                                                    | Application startup                                                         |
-| quit                     |                                                    | Application quit/shutdown                                                   |
-| reboot                   |                                                    | System reboot (quit event triggered as well)                                |
-| poweroff                 |                                                    | System power off (quit event triggered as well)                             |
-| config-changed           |                                                    | On saving application settings or controller configuration                  |
-| settings-changed         |                                                    | On saving application settings (config-changed event triggered as well)     |
-| controls-changed         |                                                    | On saving controller configuration (config-changed event triggered as well) |
-| theme-changed            | New theme name, old theme name                     | When manually changing themes in the UI Settings menu                       |
-| game-start               | ROM path, game name, system name, system full name | On game launch                                                              |
-| game-end                 | ROM path, game name, system name, system full name | On game end (or on application wakeup if running in the background)         |
-| screensaver-start        | _timer_ or _manual_                                | Screensaver started via timer or manually                                   |
-| screensaver-end          | _cancel_ or _game-jump_ or _game-start_            | Screensaver ended via cancellation, jump to game or start/launch of game    |
+| Event                    | Parameters*                                        | Description                                                                                       |
+| :----------------------- | :------------------------------------------------- | :------------------------------------------------------------------------------------------------ |
+| startup                  |                                                    | Application startup                                                                               |
+| quit                     |                                                    | Application quit/shutdown                                                                         |
+| reboot                   |                                                    | System reboot (quit event triggered as well)                                                      |
+| poweroff                 |                                                    | System power off (quit event triggered as well)                                                   |
+| config-changed           |                                                    | On saving application settings or controller configuration                                        |
+| settings-changed         |                                                    | On saving application settings (config-changed event triggered as well)                           |
+| controls-changed         |                                                    | On saving controller configuration (config-changed event triggered as well)                       |
+| theme-changed            | New theme name, old theme name                     | When manually changing themes in the UI Settings menu                                             |
+| game-start               | ROM path, game name, system name, system full name | On game launch                                                                                    |
+| game-end                 | ROM path, game name, system name, system full name | On game end (or on application wakeup if running in the background)                               |
+| screensaver-start        | _timer_ or _manual_                                | Screensaver started via timer or manually                                                         |
+| screensaver-end          | _cancel_ or _game-jump_ or _game-start_            | Screensaver ended via cancellation, jump to game or start/launch of game                          |
+| screensaver-game-select  | ROM path, game name, system name, system full name | Screensaver selected a new random game                                                            |
+| game-select              | ROM path, game name, system name, system full name | On browsing games in the gamelist view, requires enabling of the _Browsing custom events_ setting |
+| system-select            | System name, system full name, system     ROM path | On browsing systems in the system view, requires enabling of the _Browsing custom events_ setting |
 
 ***)** Parameters in _italics_ are literal strings.
+
+Note that the _game-select_ and _system-select_ events require that the _Browsing custom events_ option in the Other settings menu is enabled. Also note that enabling this could lead to a lot of latency in the application as the event is triggered so frequently. So only enable these events if you really need them. And if you do, then make sure to execute scripts that run their activities in the background and immediately return to ES-DE, rather than blocking ES-DE during the script execution.
+
+For the _game-select_ event, when starting to fast scroll in the gamelist view, an event containing blank parameters will be triggered so that you can detect this state.
 
 We'll go through two examples:
 * Creating a log file that will record the start and end time for each game we play, letting us see how much time we spend on retro-gaming

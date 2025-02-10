@@ -721,7 +721,7 @@ The following emulators are supported in AppImage format when using the bundled 
 | macintosh     | SheepShaver         | SheepShaver*.AppImage          |
 | n3ds          | Citra               | citra-qt*.AppImage             |
 | n3ds          | Lime3DS             | lime3ds.AppImage               |
-| n3ds          | Mandarine           | mandarine-qt.AppImage          |
+| n3ds          | Mandarine           | mandarine-qt*.AppImage         |
 | n3ds          | Panda3DS            | Alber-*.AppImage               |
 | n64/n64dd     | Rosalie's Mupen GUI | RMG*.AppImage                  |
 | nds           | melonDS             | melonDS*.AppImage              |
@@ -3321,7 +3321,7 @@ Animation to play when opening the main menu or the gamelist options menu. Also 
 
 **Launch screen duration**
 
-This configures for how long to display the game launch screen when starting a game. The options are _Normal_, _Brief_, _Long_ and _Disabled_. If set to _Disabled_, a simple notification popup will be displayed instead.
+This configures for how long to display the game launch screen when starting a game. The options are _Normal_, _Brief_, _Long_, _Popup_ and _Disabled_. If set to _Popup_, a simple notification popup will be displayed instead of the launch screen and if set to _Disabled_ then game launching will be instantaneous.
 
 **UI mode**
 
@@ -3685,6 +3685,10 @@ You can mark games as hidden in the metadata editor, which is useful for instanc
 **Enable custom event scripts**
 
 It's possible to trigger custom scripts for a number of actions in ES-DE, as is discussed [below](USERGUIDE-DEV.md#custom-event-scripts), and this setting decides whether this functionality is enabled.
+
+**Browsing custom events**
+
+This option, which depends on _Enable custom event scripts_ being activated, will also generate custom events when navigating the system and gamelist views. Note that this could introduce a lot of latency into the application so only enable it if you absolutely need it.
 
 **Only show games from gamelist.xml files**
 

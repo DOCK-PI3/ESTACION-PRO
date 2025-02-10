@@ -11,12 +11,18 @@
 * Added translations for Traditional Chinese (zh_TW)
 * Increased the roundness for all corners in the menu system and for the notification popups
 * Increased the background blur slightly when a menu is open
+* Added an option to completely disable the game launch screen (via the UI settings menu)
 * Made the menu and launch screen scale up at the same speed regardless of the display refresh rate
+* Added a screensaver-game-select custom event
+* Added game-select and system-select custom events and a corresponding "Browsing custom events" menu option
 * Added the NooDS RetroArch core as an alternative emulator for the gba and nds systems
 * Added the Holani RetroArch core as an alternative emulator for the atarilynx system
 * (Android) Added Pizza Boy SC standalone as an alternative emulator for the gamegear, genesis, mastersystem, megadrive and megadrivejp systems
 * (Android) Changed all RetroArch core entries to use absolute paths (this makes the ancient Play store release work correctly)
 * (Android) Changed the target SDK version to 35 (Android 15)
+* (Linux) Added support for the Flatpak release of Ruffle
+* (Linux) Changed the AppImage find rule for Mandarine to mandarine-qt*.AppImage
+* Added the .ruf file extension to the flash system
 * Added a "Display clock" setting to the UI settings menu to display an on screen clock (disabled by default)
 * Refactored the helpsystem code and added support for using an arbitrary amount of helpsystem elements
 * Added support for specifying which specific entries to display for the helpsystem elements
