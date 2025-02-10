@@ -126,6 +126,8 @@ std::string DateTimeComponent::getDisplayString() const
 
 void DateTimeComponent::update(int deltaTime)
 {
+    updateSelf(deltaTime);
+
     if (!mClockMode || (mClockMode && !Settings::getInstance()->getBool("DisplayClock")))
         return;
 
