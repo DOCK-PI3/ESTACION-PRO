@@ -45,198 +45,6 @@ HelpComponent::HelpComponent(std::shared_ptr<Font> font)
     updateGrid();
 }
 
-void HelpComponent::assignIcons()
-{
-    std::string controllerType {Settings::getInstance()->getString("InputControllerType")};
-
-    mIconPathMap.clear();
-
-    std::string buttonA {"a"};
-    std::string buttonB {"b"};
-    std::string buttonX {"x"};
-    std::string buttonY {"y"};
-
-    if (Settings::getInstance()->getBool("InputSwapButtons")) {
-        buttonA = "b";
-        buttonB = "a";
-        buttonX = "y";
-        buttonY = "x";
-    }
-
-    // These graphics files are common between all controller types.
-    mIconPathMap["up/down"] = mCustomButtons.dpad_updown.empty() ?
-                                  ":/graphics/help/dpad_updown.svg" :
-                                  mCustomButtons.dpad_updown;
-    mIconPathMap["up"] =
-        mCustomButtons.dpad_up.empty() ? ":/graphics/help/dpad_up.svg" : mCustomButtons.dpad_up;
-    mIconPathMap["down"] = mCustomButtons.dpad_down.empty() ? ":/graphics/help/dpad_down.svg" :
-                                                              mCustomButtons.dpad_down;
-    mIconPathMap["left/right"] = mCustomButtons.dpad_leftright.empty() ?
-                                     ":/graphics/help/dpad_leftright.svg" :
-                                     mCustomButtons.dpad_leftright;
-    mIconPathMap["up/down/left/right"] =
-        mCustomButtons.dpad_all.empty() ? ":/graphics/help/dpad_all.svg" : mCustomButtons.dpad_all;
-    mIconPathMap["thumbstickclick"] = mCustomButtons.thumbstick_click.empty() ?
-                                          ":/graphics/help/thumbstick_click.svg" :
-                                          mCustomButtons.thumbstick_click;
-    mIconPathMap["l"] =
-        mCustomButtons.button_l.empty() ? ":/graphics/help/button_l.svg" : mCustomButtons.button_l;
-    mIconPathMap["r"] =
-        mCustomButtons.button_r.empty() ? ":/graphics/help/button_r.svg" : mCustomButtons.button_r;
-    mIconPathMap["lr"] = mCustomButtons.button_lr.empty() ? ":/graphics/help/button_lr.svg" :
-                                                            mCustomButtons.button_lr;
-    mIconPathMap["lt"] = mCustomButtons.button_lt.empty() ? ":/graphics/help/button_lt.svg" :
-                                                            mCustomButtons.button_lt;
-    mIconPathMap["rt"] = mCustomButtons.button_rt.empty() ? ":/graphics/help/button_rt.svg" :
-                                                            mCustomButtons.button_rt;
-    mIconPathMap["ltrt"] = mCustomButtons.button_ltrt.empty() ? ":/graphics/help/button_ltrt.svg" :
-                                                                mCustomButtons.button_ltrt;
-
-    // These graphics files are custom per controller type.
-    if (controllerType == "snes") {
-        mIconPathMap[buttonA] = mCustomButtons.button_a_SNES.empty() ?
-                                    ":/graphics/help/button_a_SNES.svg" :
-                                    mCustomButtons.button_a_SNES;
-        mIconPathMap[buttonB] = mCustomButtons.button_b_SNES.empty() ?
-                                    ":/graphics/help/button_b_SNES.svg" :
-                                    mCustomButtons.button_b_SNES;
-        mIconPathMap[buttonX] = mCustomButtons.button_x_SNES.empty() ?
-                                    ":/graphics/help/button_x_SNES.svg" :
-                                    mCustomButtons.button_x_SNES;
-        mIconPathMap[buttonY] = mCustomButtons.button_y_SNES.empty() ?
-                                    ":/graphics/help/button_y_SNES.svg" :
-                                    mCustomButtons.button_y_SNES;
-        mIconPathMap["back"] = mCustomButtons.button_back_SNES.empty() ?
-                                   ":/graphics/help/button_back_SNES.svg" :
-                                   mCustomButtons.button_back_SNES;
-        mIconPathMap["start"] = mCustomButtons.button_start_SNES.empty() ?
-                                    ":/graphics/help/button_start_SNES.svg" :
-                                    mCustomButtons.button_start_SNES;
-    }
-    else if (controllerType == "switchpro") {
-        mIconPathMap[buttonA] = mCustomButtons.button_a_switch.empty() ?
-                                    ":/graphics/help/button_a_switch.svg" :
-                                    mCustomButtons.button_a_switch;
-        mIconPathMap[buttonB] = mCustomButtons.button_b_switch.empty() ?
-                                    ":/graphics/help/button_b_switch.svg" :
-                                    mCustomButtons.button_b_switch;
-        mIconPathMap[buttonX] = mCustomButtons.button_x_switch.empty() ?
-                                    ":/graphics/help/button_x_switch.svg" :
-                                    mCustomButtons.button_x_switch;
-        mIconPathMap[buttonY] = mCustomButtons.button_y_switch.empty() ?
-                                    ":/graphics/help/button_y_switch.svg" :
-                                    mCustomButtons.button_y_switch;
-        mIconPathMap["back"] = mCustomButtons.button_back_switch.empty() ?
-                                   ":/graphics/help/button_back_switch.svg" :
-                                   mCustomButtons.button_back_switch;
-        mIconPathMap["start"] = mCustomButtons.button_start_switch.empty() ?
-                                    ":/graphics/help/button_start_switch.svg" :
-                                    mCustomButtons.button_start_switch;
-    }
-    else if (controllerType == "ps123") {
-        mIconPathMap[buttonA] = mCustomButtons.button_a_PS.empty() ?
-                                    ":/graphics/help/button_a_PS.svg" :
-                                    mCustomButtons.button_a_PS;
-        mIconPathMap[buttonB] = mCustomButtons.button_b_PS.empty() ?
-                                    ":/graphics/help/button_b_PS.svg" :
-                                    mCustomButtons.button_b_PS;
-        mIconPathMap[buttonX] = mCustomButtons.button_x_PS.empty() ?
-                                    ":/graphics/help/button_x_PS.svg" :
-                                    mCustomButtons.button_x_PS;
-        mIconPathMap[buttonY] = mCustomButtons.button_y_PS.empty() ?
-                                    ":/graphics/help/button_y_PS.svg" :
-                                    mCustomButtons.button_y_PS;
-        mIconPathMap["back"] = mCustomButtons.button_back_PS123.empty() ?
-                                   ":/graphics/help/button_back_PS123.svg" :
-                                   mCustomButtons.button_back_PS123;
-        mIconPathMap["start"] = mCustomButtons.button_start_PS123.empty() ?
-                                    ":/graphics/help/button_start_PS123.svg" :
-                                    mCustomButtons.button_start_PS123;
-    }
-    else if (controllerType == "ps4") {
-        mIconPathMap[buttonA] = mCustomButtons.button_a_PS.empty() ?
-                                    ":/graphics/help/button_a_PS.svg" :
-                                    mCustomButtons.button_a_PS;
-        mIconPathMap[buttonB] = mCustomButtons.button_b_PS.empty() ?
-                                    ":/graphics/help/button_b_PS.svg" :
-                                    mCustomButtons.button_b_PS;
-        mIconPathMap[buttonX] = mCustomButtons.button_x_PS.empty() ?
-                                    ":/graphics/help/button_x_PS.svg" :
-                                    mCustomButtons.button_x_PS;
-        mIconPathMap[buttonY] = mCustomButtons.button_y_PS.empty() ?
-                                    ":/graphics/help/button_y_PS.svg" :
-                                    mCustomButtons.button_y_PS;
-        mIconPathMap["back"] = mCustomButtons.button_back_PS4.empty() ?
-                                   ":/graphics/help/button_back_PS4.svg" :
-                                   mCustomButtons.button_back_PS4;
-        mIconPathMap["start"] = mCustomButtons.button_start_PS4.empty() ?
-                                    ":/graphics/help/button_start_PS4.svg" :
-                                    mCustomButtons.button_start_PS4;
-    }
-    else if (controllerType == "ps5") {
-        mIconPathMap[buttonA] = mCustomButtons.button_a_PS.empty() ?
-                                    ":/graphics/help/button_a_PS.svg" :
-                                    mCustomButtons.button_a_PS;
-        mIconPathMap[buttonB] = mCustomButtons.button_b_PS.empty() ?
-                                    ":/graphics/help/button_b_PS.svg" :
-                                    mCustomButtons.button_b_PS;
-        mIconPathMap[buttonX] = mCustomButtons.button_x_PS.empty() ?
-                                    ":/graphics/help/button_x_PS.svg" :
-                                    mCustomButtons.button_x_PS;
-        mIconPathMap[buttonY] = mCustomButtons.button_y_PS.empty() ?
-                                    ":/graphics/help/button_y_PS.svg" :
-                                    mCustomButtons.button_y_PS;
-        mIconPathMap["back"] = mCustomButtons.button_back_PS5.empty() ?
-                                   ":/graphics/help/button_back_PS5.svg" :
-                                   mCustomButtons.button_back_PS5;
-        mIconPathMap["start"] = mCustomButtons.button_start_PS5.empty() ?
-                                    ":/graphics/help/button_start_PS5.svg" :
-                                    mCustomButtons.button_start_PS5;
-    }
-    else if (controllerType == "xbox360") {
-
-        mIconPathMap[buttonA] = mCustomButtons.button_a_XBOX.empty() ?
-                                    ":/graphics/help/button_a_XBOX.svg" :
-                                    mCustomButtons.button_a_XBOX;
-        mIconPathMap[buttonB] = mCustomButtons.button_b_XBOX.empty() ?
-                                    ":/graphics/help/button_b_XBOX.svg" :
-                                    mCustomButtons.button_b_XBOX;
-        mIconPathMap[buttonX] = mCustomButtons.button_x_XBOX.empty() ?
-                                    ":/graphics/help/button_x_XBOX.svg" :
-                                    mCustomButtons.button_x_XBOX;
-        mIconPathMap[buttonY] = mCustomButtons.button_y_XBOX.empty() ?
-                                    ":/graphics/help/button_y_XBOX.svg" :
-                                    mCustomButtons.button_y_XBOX;
-        mIconPathMap["back"] = mCustomButtons.button_back_XBOX360.empty() ?
-                                   ":/graphics/help/button_back_XBOX360.svg" :
-                                   mCustomButtons.button_back_XBOX360;
-        mIconPathMap["start"] = mCustomButtons.button_start_XBOX360.empty() ?
-                                    ":/graphics/help/button_start_XBOX360.svg" :
-                                    mCustomButtons.button_start_XBOX360;
-    }
-    else {
-        // Xbox One and later.
-        mIconPathMap[buttonA] = mCustomButtons.button_a_XBOX.empty() ?
-                                    ":/graphics/help/button_a_XBOX.svg" :
-                                    mCustomButtons.button_a_XBOX;
-        mIconPathMap[buttonB] = mCustomButtons.button_b_XBOX.empty() ?
-                                    ":/graphics/help/button_b_XBOX.svg" :
-                                    mCustomButtons.button_b_XBOX;
-        mIconPathMap[buttonX] = mCustomButtons.button_x_XBOX.empty() ?
-                                    ":/graphics/help/button_x_XBOX.svg" :
-                                    mCustomButtons.button_x_XBOX;
-        mIconPathMap[buttonY] = mCustomButtons.button_y_XBOX.empty() ?
-                                    ":/graphics/help/button_y_XBOX.svg" :
-                                    mCustomButtons.button_y_XBOX;
-        mIconPathMap["back"] = mCustomButtons.button_back_XBOX.empty() ?
-                                   ":/graphics/help/button_back_XBOX.svg" :
-                                   mCustomButtons.button_back_XBOX;
-        mIconPathMap["start"] = mCustomButtons.button_start_XBOX.empty() ?
-                                    ":/graphics/help/button_start_XBOX.svg" :
-                                    mCustomButtons.button_start_XBOX;
-    }
-}
-
 void HelpComponent::clearPrompts()
 {
     mPrompts.clear();
@@ -513,6 +321,198 @@ void HelpComponent::render(const glm::mat4& parentTrans)
         mGrid->setRotationOrigin(mStyleRotationOrigin);
         mGrid->setRotation(mStyleRotation);
         mGrid->render(trans);
+    }
+}
+
+void HelpComponent::assignIcons()
+{
+    std::string controllerType {Settings::getInstance()->getString("InputControllerType")};
+
+    mIconPathMap.clear();
+
+    std::string buttonA {"a"};
+    std::string buttonB {"b"};
+    std::string buttonX {"x"};
+    std::string buttonY {"y"};
+
+    if (Settings::getInstance()->getBool("InputSwapButtons")) {
+        buttonA = "b";
+        buttonB = "a";
+        buttonX = "y";
+        buttonY = "x";
+    }
+
+    // These graphics files are common between all controller types.
+    mIconPathMap["up/down"] = mCustomButtons.dpad_updown.empty() ?
+                                  ":/graphics/help/dpad_updown.svg" :
+                                  mCustomButtons.dpad_updown;
+    mIconPathMap["up"] =
+        mCustomButtons.dpad_up.empty() ? ":/graphics/help/dpad_up.svg" : mCustomButtons.dpad_up;
+    mIconPathMap["down"] = mCustomButtons.dpad_down.empty() ? ":/graphics/help/dpad_down.svg" :
+                                                              mCustomButtons.dpad_down;
+    mIconPathMap["left/right"] = mCustomButtons.dpad_leftright.empty() ?
+                                     ":/graphics/help/dpad_leftright.svg" :
+                                     mCustomButtons.dpad_leftright;
+    mIconPathMap["up/down/left/right"] =
+        mCustomButtons.dpad_all.empty() ? ":/graphics/help/dpad_all.svg" : mCustomButtons.dpad_all;
+    mIconPathMap["thumbstickclick"] = mCustomButtons.thumbstick_click.empty() ?
+                                          ":/graphics/help/thumbstick_click.svg" :
+                                          mCustomButtons.thumbstick_click;
+    mIconPathMap["l"] =
+        mCustomButtons.button_l.empty() ? ":/graphics/help/button_l.svg" : mCustomButtons.button_l;
+    mIconPathMap["r"] =
+        mCustomButtons.button_r.empty() ? ":/graphics/help/button_r.svg" : mCustomButtons.button_r;
+    mIconPathMap["lr"] = mCustomButtons.button_lr.empty() ? ":/graphics/help/button_lr.svg" :
+                                                            mCustomButtons.button_lr;
+    mIconPathMap["lt"] = mCustomButtons.button_lt.empty() ? ":/graphics/help/button_lt.svg" :
+                                                            mCustomButtons.button_lt;
+    mIconPathMap["rt"] = mCustomButtons.button_rt.empty() ? ":/graphics/help/button_rt.svg" :
+                                                            mCustomButtons.button_rt;
+    mIconPathMap["ltrt"] = mCustomButtons.button_ltrt.empty() ? ":/graphics/help/button_ltrt.svg" :
+                                                                mCustomButtons.button_ltrt;
+
+    // These graphics files are custom per controller type.
+    if (controllerType == "snes") {
+        mIconPathMap[buttonA] = mCustomButtons.button_a_SNES.empty() ?
+                                    ":/graphics/help/button_a_SNES.svg" :
+                                    mCustomButtons.button_a_SNES;
+        mIconPathMap[buttonB] = mCustomButtons.button_b_SNES.empty() ?
+                                    ":/graphics/help/button_b_SNES.svg" :
+                                    mCustomButtons.button_b_SNES;
+        mIconPathMap[buttonX] = mCustomButtons.button_x_SNES.empty() ?
+                                    ":/graphics/help/button_x_SNES.svg" :
+                                    mCustomButtons.button_x_SNES;
+        mIconPathMap[buttonY] = mCustomButtons.button_y_SNES.empty() ?
+                                    ":/graphics/help/button_y_SNES.svg" :
+                                    mCustomButtons.button_y_SNES;
+        mIconPathMap["back"] = mCustomButtons.button_back_SNES.empty() ?
+                                   ":/graphics/help/button_back_SNES.svg" :
+                                   mCustomButtons.button_back_SNES;
+        mIconPathMap["start"] = mCustomButtons.button_start_SNES.empty() ?
+                                    ":/graphics/help/button_start_SNES.svg" :
+                                    mCustomButtons.button_start_SNES;
+    }
+    else if (controllerType == "switchpro") {
+        mIconPathMap[buttonA] = mCustomButtons.button_a_switch.empty() ?
+                                    ":/graphics/help/button_a_switch.svg" :
+                                    mCustomButtons.button_a_switch;
+        mIconPathMap[buttonB] = mCustomButtons.button_b_switch.empty() ?
+                                    ":/graphics/help/button_b_switch.svg" :
+                                    mCustomButtons.button_b_switch;
+        mIconPathMap[buttonX] = mCustomButtons.button_x_switch.empty() ?
+                                    ":/graphics/help/button_x_switch.svg" :
+                                    mCustomButtons.button_x_switch;
+        mIconPathMap[buttonY] = mCustomButtons.button_y_switch.empty() ?
+                                    ":/graphics/help/button_y_switch.svg" :
+                                    mCustomButtons.button_y_switch;
+        mIconPathMap["back"] = mCustomButtons.button_back_switch.empty() ?
+                                   ":/graphics/help/button_back_switch.svg" :
+                                   mCustomButtons.button_back_switch;
+        mIconPathMap["start"] = mCustomButtons.button_start_switch.empty() ?
+                                    ":/graphics/help/button_start_switch.svg" :
+                                    mCustomButtons.button_start_switch;
+    }
+    else if (controllerType == "ps123") {
+        mIconPathMap[buttonA] = mCustomButtons.button_a_PS.empty() ?
+                                    ":/graphics/help/button_a_PS.svg" :
+                                    mCustomButtons.button_a_PS;
+        mIconPathMap[buttonB] = mCustomButtons.button_b_PS.empty() ?
+                                    ":/graphics/help/button_b_PS.svg" :
+                                    mCustomButtons.button_b_PS;
+        mIconPathMap[buttonX] = mCustomButtons.button_x_PS.empty() ?
+                                    ":/graphics/help/button_x_PS.svg" :
+                                    mCustomButtons.button_x_PS;
+        mIconPathMap[buttonY] = mCustomButtons.button_y_PS.empty() ?
+                                    ":/graphics/help/button_y_PS.svg" :
+                                    mCustomButtons.button_y_PS;
+        mIconPathMap["back"] = mCustomButtons.button_back_PS123.empty() ?
+                                   ":/graphics/help/button_back_PS123.svg" :
+                                   mCustomButtons.button_back_PS123;
+        mIconPathMap["start"] = mCustomButtons.button_start_PS123.empty() ?
+                                    ":/graphics/help/button_start_PS123.svg" :
+                                    mCustomButtons.button_start_PS123;
+    }
+    else if (controllerType == "ps4") {
+        mIconPathMap[buttonA] = mCustomButtons.button_a_PS.empty() ?
+                                    ":/graphics/help/button_a_PS.svg" :
+                                    mCustomButtons.button_a_PS;
+        mIconPathMap[buttonB] = mCustomButtons.button_b_PS.empty() ?
+                                    ":/graphics/help/button_b_PS.svg" :
+                                    mCustomButtons.button_b_PS;
+        mIconPathMap[buttonX] = mCustomButtons.button_x_PS.empty() ?
+                                    ":/graphics/help/button_x_PS.svg" :
+                                    mCustomButtons.button_x_PS;
+        mIconPathMap[buttonY] = mCustomButtons.button_y_PS.empty() ?
+                                    ":/graphics/help/button_y_PS.svg" :
+                                    mCustomButtons.button_y_PS;
+        mIconPathMap["back"] = mCustomButtons.button_back_PS4.empty() ?
+                                   ":/graphics/help/button_back_PS4.svg" :
+                                   mCustomButtons.button_back_PS4;
+        mIconPathMap["start"] = mCustomButtons.button_start_PS4.empty() ?
+                                    ":/graphics/help/button_start_PS4.svg" :
+                                    mCustomButtons.button_start_PS4;
+    }
+    else if (controllerType == "ps5") {
+        mIconPathMap[buttonA] = mCustomButtons.button_a_PS.empty() ?
+                                    ":/graphics/help/button_a_PS.svg" :
+                                    mCustomButtons.button_a_PS;
+        mIconPathMap[buttonB] = mCustomButtons.button_b_PS.empty() ?
+                                    ":/graphics/help/button_b_PS.svg" :
+                                    mCustomButtons.button_b_PS;
+        mIconPathMap[buttonX] = mCustomButtons.button_x_PS.empty() ?
+                                    ":/graphics/help/button_x_PS.svg" :
+                                    mCustomButtons.button_x_PS;
+        mIconPathMap[buttonY] = mCustomButtons.button_y_PS.empty() ?
+                                    ":/graphics/help/button_y_PS.svg" :
+                                    mCustomButtons.button_y_PS;
+        mIconPathMap["back"] = mCustomButtons.button_back_PS5.empty() ?
+                                   ":/graphics/help/button_back_PS5.svg" :
+                                   mCustomButtons.button_back_PS5;
+        mIconPathMap["start"] = mCustomButtons.button_start_PS5.empty() ?
+                                    ":/graphics/help/button_start_PS5.svg" :
+                                    mCustomButtons.button_start_PS5;
+    }
+    else if (controllerType == "xbox360") {
+
+        mIconPathMap[buttonA] = mCustomButtons.button_a_XBOX.empty() ?
+                                    ":/graphics/help/button_a_XBOX.svg" :
+                                    mCustomButtons.button_a_XBOX;
+        mIconPathMap[buttonB] = mCustomButtons.button_b_XBOX.empty() ?
+                                    ":/graphics/help/button_b_XBOX.svg" :
+                                    mCustomButtons.button_b_XBOX;
+        mIconPathMap[buttonX] = mCustomButtons.button_x_XBOX.empty() ?
+                                    ":/graphics/help/button_x_XBOX.svg" :
+                                    mCustomButtons.button_x_XBOX;
+        mIconPathMap[buttonY] = mCustomButtons.button_y_XBOX.empty() ?
+                                    ":/graphics/help/button_y_XBOX.svg" :
+                                    mCustomButtons.button_y_XBOX;
+        mIconPathMap["back"] = mCustomButtons.button_back_XBOX360.empty() ?
+                                   ":/graphics/help/button_back_XBOX360.svg" :
+                                   mCustomButtons.button_back_XBOX360;
+        mIconPathMap["start"] = mCustomButtons.button_start_XBOX360.empty() ?
+                                    ":/graphics/help/button_start_XBOX360.svg" :
+                                    mCustomButtons.button_start_XBOX360;
+    }
+    else {
+        // Xbox One and later.
+        mIconPathMap[buttonA] = mCustomButtons.button_a_XBOX.empty() ?
+                                    ":/graphics/help/button_a_XBOX.svg" :
+                                    mCustomButtons.button_a_XBOX;
+        mIconPathMap[buttonB] = mCustomButtons.button_b_XBOX.empty() ?
+                                    ":/graphics/help/button_b_XBOX.svg" :
+                                    mCustomButtons.button_b_XBOX;
+        mIconPathMap[buttonX] = mCustomButtons.button_x_XBOX.empty() ?
+                                    ":/graphics/help/button_x_XBOX.svg" :
+                                    mCustomButtons.button_x_XBOX;
+        mIconPathMap[buttonY] = mCustomButtons.button_y_XBOX.empty() ?
+                                    ":/graphics/help/button_y_XBOX.svg" :
+                                    mCustomButtons.button_y_XBOX;
+        mIconPathMap["back"] = mCustomButtons.button_back_XBOX.empty() ?
+                                   ":/graphics/help/button_back_XBOX.svg" :
+                                   mCustomButtons.button_back_XBOX;
+        mIconPathMap["start"] = mCustomButtons.button_start_XBOX.empty() ?
+                                    ":/graphics/help/button_start_XBOX.svg" :
+                                    mCustomButtons.button_start_XBOX;
     }
 }
 

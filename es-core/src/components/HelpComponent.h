@@ -21,7 +21,6 @@ public:
                                                    Font::get(0.025f * Renderer::getScreenWidth()) :
                                                    Font::get(FONT_SIZE_SMALL));
 
-    void assignIcons();
     void clearPrompts();
     void setPrompts(const std::vector<HelpPrompt>& prompts);
 
@@ -39,10 +38,12 @@ public:
     void render(const glm::mat4& parent) override;
 
 private:
+    void assignIcons();
+    void updateGrid();
+
     Renderer* mRenderer;
 
     std::shared_ptr<ComponentGrid> mGrid;
-    void updateGrid();
 
     std::vector<HelpPrompt> mPrompts;
     std::map<std::string, std::string> mIconPathMap;
