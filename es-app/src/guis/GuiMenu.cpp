@@ -2137,6 +2137,7 @@ void GuiMenu::openOtherOptions()
     applicationUpdaterFrequency->setCallback(applicationUpdaterFrequencyFunc);
 #endif
 
+#if !defined(__IOS__)
     auto browsingEventsToggleFunc = [customEventScriptsBrowsing]() {
         if (customEventScriptsBrowsing->getEnabled()) {
             customEventScriptsBrowsing->setEnabled(false);
@@ -2155,6 +2156,7 @@ void GuiMenu::openOtherOptions()
     };
 
     customEventScripts->setCallback(browsingEventsToggleFunc);
+#endif
 
     s->setSize(mSize);
     mWindow->pushGui(s);
