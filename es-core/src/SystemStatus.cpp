@@ -122,7 +122,7 @@ void SystemStatus::pollStatus()
         std::string status {"Bluetooth "};
         status.append(mHasBluetooth ? "enabled" : "disabled")
             .append(", Wi-Fi ")
-            .append(mHasBluetooth ? "enabled" : "disabled")
+            .append(mHasWifi ? "enabled" : "disabled")
             .append(", cellular ")
             .append(mHasCellular ? "enabled" : "disabled")
             .append(", battery ")
