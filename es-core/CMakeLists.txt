@@ -22,6 +22,7 @@ set(CORE_HEADERS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/MameNames.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Settings.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Sound.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/SystemStatus.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ThemeData.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Window.h
 
@@ -110,6 +111,7 @@ set(CORE_SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Scripting.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Settings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Sound.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/SystemStatus.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ThemeData.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Window.cpp
 
@@ -177,6 +179,10 @@ if(ANDROID)
     set(CORE_HEADERS ${CORE_HEADERS} ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/PlatformUtilAndroid.h)
     set(CORE_HEADERS ${CORE_HEADERS} ${CMAKE_CURRENT_SOURCE_DIR}/src/InputOverlay.cpp)
     set(CORE_SOURCES ${CORE_SOURCES} ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/PlatformUtilAndroid.cpp)
+endif()
+
+if(APPLE AND NOT IOS)
+    set(CORE_HEADERS ${CORE_HEADERS} ${CMAKE_CURRENT_SOURCE_DIR}/src/BluetoothStatusApple.m)
 endif()
 
 if(IOS)

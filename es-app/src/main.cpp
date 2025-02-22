@@ -26,6 +26,7 @@
 #include "Settings.h"
 #include "Sound.h"
 #include "SystemData.h"
+#include "SystemStatus.h"
 #include "guis/GuiDetectDevice.h"
 #include "guis/GuiLaunchScreen.h"
 #include "utils/FileSystemUtil.h"
@@ -1165,6 +1166,7 @@ int main(int argc, char* argv[])
     }
 #endif
 
+    SystemStatus::getInstance();
     MameNames::getInstance();
     ThemeData::populateThemes();
     loadSystemsReturnCode loadSystemsStatus {loadSystemConfigFile()};

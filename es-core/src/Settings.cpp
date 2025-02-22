@@ -221,6 +221,12 @@ void Settings::setDefaults()
 #endif
     mBoolMap["ScreensaverVideoBlur"] = {false, false};
 
+    mBoolMap["SystemStatusDisplayAll"] = {false, false};
+    mBoolMap["SystemStatusBluetooth"] = {true, true};
+    mBoolMap["SystemStatusWifi"] = {true, true};
+    mBoolMap["SystemStatusCellular"] = {true, true};
+    mBoolMap["SystemStatusBattery"] = {true, true};
+    mBoolMap["SystemStatusBatteryPercentage"] = {true, true};
     mBoolMap["ThemeVariantTriggers"] = {true, true};
     mBoolMap["DisplayClock"] = {false, false};
     mBoolMap["MenuBlurBackground"] = {true, true};
