@@ -435,6 +435,8 @@ void SystemStatus::getStatusBattery()
     else if (std::find(entries.cbegin(), entries.cend(), sysEntry + "/battery") != entries.cend())
         batteryDir = sysEntry + "/battery";
 
+    hasBattery = true;
+
     if (!Utils::FileSystem::exists(batteryDir + "/status"))
         hasBattery = false;
     if (!Utils::FileSystem::exists(batteryDir + "/capacity"))
