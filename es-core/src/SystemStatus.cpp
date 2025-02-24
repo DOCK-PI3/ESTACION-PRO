@@ -18,6 +18,12 @@
 
 #include <algorithm>
 
+#if defined(__linux__) && !defined(__ANDROID__)
+#include <bluetooth/bluetooth.h>
+#include <bluetooth/hci.h>
+#include <bluetooth/hci_lib.h>
+#endif
+
 #if defined(__APPLE__) && !defined(__IOS__)
 #include "BluetoothStatusApple.h"
 #include <IOKit/ps/IOPSKeys.h>
@@ -195,26 +201,8 @@ void SystemStatus::getStatusBluetooth()
         hasBluetooth = true;
 
 #elif defined(__linux__)
-    const std::string sysEntry {"/sys/class/rfkill"};
-    auto entries {Utils::FileSystem::getDirContent(sysEntry, false)};
-    for (auto& entry : entries) {
-        if (Utils::FileSystem::exists(entry + "/type")) {
-            std::string type;
-            std::ifstream fileStream;
-            fileStream.open(entry + "/type");
-            getline(fileStream, type);
-            fileStream.close();
-            if (Utils::String::toLower(type) == "bluetooth") {
-                std::string state;
-                fileStream.open(entry + "/state");
-                getline(fileStream, state);
-                fileStream.close();
-                if (std::stoi(state) == 1)
-                    hasBluetooth = true;
-                break;
-            }
-        }
-    }
+    if (hci_get_route(nullptr) == 0)
+        hasBluetooth = true;
 #endif
 
     mHasBluetooth = hasBluetooth;
