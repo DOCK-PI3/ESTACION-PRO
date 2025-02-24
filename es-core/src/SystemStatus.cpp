@@ -201,7 +201,7 @@ void SystemStatus::getStatusBluetooth()
         hasBluetooth = true;
 
 #elif defined(__linux__)
-    if (hci_get_route(nullptr) == 0)
+    if (hci_get_route(nullptr) != -1)
         hasBluetooth = true;
 #endif
 
