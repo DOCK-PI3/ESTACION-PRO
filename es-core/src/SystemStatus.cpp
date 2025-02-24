@@ -400,7 +400,7 @@ void SystemStatus::getStatusBattery()
             hasBattery = true;
 
             if (powerStatus.ACLineStatus == 1)
-                atteryCharging = true;
+                batteryCharging = true;
 
             batteryCapacity = powerStatus.BatteryLifePercent;
         }
