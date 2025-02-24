@@ -65,14 +65,14 @@ SystemStatus::SystemStatus() noexcept
     getStatusWifi();
     getStatusCellular();
     getStatusBattery();
-#else
+#elif !defined(__FreeBSD__) && !defined(__HAIKU__)
     mPollThread = std::make_unique<std::thread>(&SystemStatus::pollStatus, this);
 #endif
 }
 
 SystemStatus::~SystemStatus()
 {
-#if !defined(__ANDROID__)
+#if !defined(__ANDROID__) && !defined(__FreeBSD__) && !defined(__HAIKU__)
     mExitPolling = true;
 
     if (mPollThread != nullptr && mPollThread->joinable()) {
