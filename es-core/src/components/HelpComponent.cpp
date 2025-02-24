@@ -39,7 +39,6 @@ HelpComponent::HelpComponent(std::shared_ptr<Font> font)
     , mStyleOpacity {1.0f}
     , mStyleOpacityDimmed {mStyleOpacity}
     , mStyleLetterCase {"uppercase"}
-
 {
     assignIcons();
     updateGrid();
