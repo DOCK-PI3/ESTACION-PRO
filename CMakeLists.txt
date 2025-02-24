@@ -162,7 +162,7 @@ if(CEC)
     find_package(libCEC REQUIRED)
 endif()
 
-# Add ALSA for Linux.
+# Add ALSA and BlueZ for Linux.
 if(CMAKE_SYSTEM_NAME MATCHES Linux)
     find_package(ALSA REQUIRED)
     find_package(Bluez REQUIRED)
