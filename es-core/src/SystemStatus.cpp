@@ -382,8 +382,10 @@ void SystemStatus::getStatusBattery()
                 static_cast<CFNumberRef>(CFDictionaryGetValue(source, CFSTR(kIOPSMaxCapacityKey)))};
             CFNumberGetValue(maxCapacityNum, kCFNumberIntType, &maxCapacity);
 
-            if (maxCapacity > 0)
-                batteryCapacity = curCapacity / maxCapacity * 100;
+            if (maxCapacity > 0) {
+                batteryCapacity =
+                    static_cast<float>(curCapacity) / static_cast<float>(maxCapacity) * 100.0f;
+            }
         }
     }
 
