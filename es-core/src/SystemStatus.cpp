@@ -49,20 +49,31 @@ SystemStatus::SystemStatus() noexcept
     , mHasBattery {false}
     , mBatteryCharging {false}
     , mBatteryCapacity {0}
-
 {
     setCheckFlags();
+
+#if defined(__ANDROID__)
+    // Polling the device status is very fast on Android and it's quite problematic to run
+    // these calls in a separate thread anyway.
+    getStatusBluetooth();
+    getStatusWifi();
+    getStatusCellular();
+    getStatusBattery();
+#else
     mPollThread = std::make_unique<std::thread>(&SystemStatus::pollStatus, this);
+#endif
 }
 
 SystemStatus::~SystemStatus()
 {
+#if !defined(__ANDROID__)
     mExitPolling = true;
 
     if (mPollThread != nullptr && mPollThread->joinable()) {
         mPollThread->join();
         mPollThread.reset();
     }
+#endif
 }
 
 SystemStatus& SystemStatus::getInstance()
@@ -82,6 +93,10 @@ void SystemStatus::setCheckFlags()
 
 void SystemStatus::setPolling(const bool state)
 {
+#if defined(__ANDROID__)
+    return;
+#endif
+
     if (state == false) {
         mExitPolling = true;
         if (mPollThread != nullptr && mPollThread->joinable()) {
@@ -97,6 +112,13 @@ void SystemStatus::setPolling(const bool state)
 
 SystemStatus::Status SystemStatus::getStatus()
 {
+#if defined(__ANDROID__)
+    getStatusBluetooth();
+    getStatusWifi();
+    getStatusCellular();
+    getStatusBattery();
+#endif
+
     mStatus.hasBluetooth = mHasBluetooth;
     mStatus.hasWifi = mHasWifi;
     mStatus.hasCellular = mHasCellular;
