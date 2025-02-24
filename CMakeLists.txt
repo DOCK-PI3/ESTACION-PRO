@@ -625,6 +625,8 @@ elseif(WIN32)
                             ${PROJECT_SOURCE_DIR}/rlottie.lib
                             ${PROJECT_SOURCE_DIR}/SDL2main.lib
                             ${PROJECT_SOURCE_DIR}/SDL2.lib
+                            iphlpapi.dll
+                            bthprops.lib
                             Winmm.dll)
 elseif(ANDROID)
     set(COMMON_LIBRARIES ${COMMON_LIBRARIES}
