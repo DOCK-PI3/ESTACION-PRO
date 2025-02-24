@@ -145,6 +145,7 @@ elseif(WIN32)
         message(FATAL_ERROR "-- You need to build the dependencies in ./external first")
     endif()
 elseif(NOT EMSCRIPTEN AND NOT ANDROID AND NOT IOS)
+    find_package(BlueZ REQUIRED)
     find_package(CURL REQUIRED)
     find_package(FFmpeg REQUIRED)
     find_package(FreeImage REQUIRED)
@@ -531,6 +532,7 @@ elseif(ANDROID)
                             ${CMAKE_CURRENT_SOURCE_DIR}/external/SDL_Android)
 else()
     set(COMMON_INCLUDE_DIRS ${COMMON_INCLUDE_DIRS}
+                            ${BLUEZ_INCLUDE_DIRS}
                             ${FFMPEG_INCLUDE_DIRS}
                             ${FreeImage_INCLUDE_DIRS}
                             ${FREETYPE_INCLUDE_DIRS}
@@ -687,7 +689,8 @@ elseif(EMSCRIPTEN)
                          ${PROJECT_SOURCE_DIR}/libfreetype.a
                          ${PROJECT_SOURCE_DIR}/libpugixml.a)
 else()
-    set(COMMON_LIBRARIES ${CURL_LIBRARIES}
+    set(COMMON_LIBRARIES ${BLUEZ_LIBRARIES}
+                         ${CURL_LIBRARIES}
                          ${FFMPEG_LIBRARIES}
                          ${FreeImage_LIBRARIES}
                          ${FREETYPE_LIBRARIES}
