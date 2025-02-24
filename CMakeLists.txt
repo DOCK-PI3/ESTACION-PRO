@@ -145,7 +145,6 @@ elseif(WIN32)
         message(FATAL_ERROR "-- You need to build the dependencies in ./external first")
     endif()
 elseif(NOT EMSCRIPTEN AND NOT ANDROID AND NOT IOS)
-    find_package(Bluez REQUIRED)
     find_package(CURL REQUIRED)
     find_package(FFmpeg REQUIRED)
     find_package(FreeImage REQUIRED)
@@ -166,6 +165,7 @@ endif()
 # Add ALSA for Linux.
 if(CMAKE_SYSTEM_NAME MATCHES Linux)
     find_package(ALSA REQUIRED)
+    find_package(Bluez REQUIRED)
 endif()
 
 #---------------------------------------------------------------------------------------------------
