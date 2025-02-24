@@ -452,6 +452,11 @@ void SystemStatus::getStatusBattery()
     }
 #endif
 
+    if (batteryCapacity < 0)
+        batteryCapacity = 0;
+    if (batteryCapacity > 100)
+        batteryCapacity = 100;
+
     mHasBattery = hasBattery;
     mBatteryCharging = batteryCharging;
     mBatteryCapacity = batteryCapacity;
