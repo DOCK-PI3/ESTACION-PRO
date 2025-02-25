@@ -19,6 +19,7 @@
 #include "components/LottieAnimComponent.h"
 #include "components/RatingComponent.h"
 #include "components/ScrollableContainer.h"
+#include "components/SystemStatusComponent.h"
 #include "components/TextComponent.h"
 #include "components/VideoFFmpegComponent.h"
 #include "components/primary/CarouselComponent.h"
@@ -139,6 +140,7 @@ private:
         std::vector<std::unique_ptr<RatingComponent>> ratingComponents;
         std::vector<std::unique_ptr<HelpComponent>> helpComponents;
         std::vector<std::unique_ptr<DateTimeComponent>> clockComponents;
+        std::vector<std::unique_ptr<SystemStatusComponent>> systemStatusComponents;
     };
 
     Renderer* mRenderer;

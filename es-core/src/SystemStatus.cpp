@@ -95,6 +95,15 @@ void SystemStatus::setCheckFlags()
     mCheckWifi = Settings::getInstance()->getBool("SystemStatusWifi");
     mCheckCellular = Settings::getInstance()->getBool("SystemStatusCellular");
     mCheckBattery = Settings::getInstance()->getBool("SystemStatusBattery");
+
+    if (!mCheckBluetooth)
+        mHasBluetooth = false;
+    if (!mCheckWifi)
+        mHasWifi = false;
+    if (!mCheckCellular)
+        mHasCellular = false;
+    if (!mCheckBattery)
+        mHasBattery = false;
 }
 
 void SystemStatus::setPolling(const bool state)
@@ -116,13 +125,33 @@ void SystemStatus::setPolling(const bool state)
     }
 }
 
-SystemStatus::Status SystemStatus::getStatus()
+SystemStatus::Status SystemStatus::getStatus(const bool update)
 {
 #if defined(__ANDROID__)
-    getStatusBluetooth();
-    getStatusWifi();
-    getStatusCellular();
-    getStatusBattery();
+    if (update) {
+        getStatusBluetooth();
+        getStatusWifi();
+        getStatusCellular();
+        getStatusBattery();
+#if (DEBUG_SYSTEM_STATUS)
+        std::string status {"Bluetooth "};
+        status.append(mHasBluetooth ? "enabled" : "disabled")
+            .append(", Wi-Fi ")
+            .append(mHasWifi ? "enabled" : "disabled")
+            .append(", cellular ")
+            .append(mHasCellular ? "enabled" : "disabled")
+            .append(", battery ")
+            .append(mHasBattery ? "enabled" : "disabled");
+        if (mHasBattery) {
+            status.append(" (")
+                .append(mBatteryCharging ? "charging" : "not charging")
+                .append(" and at ")
+                .append(std::to_string(mBatteryCapacity))
+                .append("% capacity)");
+        }
+        LOG(LogDebug) << "SystemStatus::getStatus(): " << status;
+#endif
+    }
 #endif
 
     mStatus.hasBluetooth = mHasBluetooth;
@@ -166,7 +195,7 @@ void SystemStatus::pollStatus()
 #endif
 
         int delayValue {0};
-        while (!mPollImmediately && !mExitPolling && delayValue < 3000) {
+        while (!mPollImmediately && !mExitPolling && delayValue < pollingTime) {
             delayValue += 100;
             SDL_Delay(100);
         }

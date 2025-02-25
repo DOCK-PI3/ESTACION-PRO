@@ -23,6 +23,7 @@ public:
     void setCheckFlags();
     void setPolling(const bool state);
     void pollImmediately() { mPollImmediately = true; }
+    const bool getPollImmediately() { return mPollImmediately; }
 
     struct Status {
         bool hasBluetooth;
@@ -42,7 +43,10 @@ public:
         }
     };
 
-    Status getStatus();
+    Status getStatus(const bool update = true);
+
+    static constexpr int updateTime {300};
+    static constexpr int pollingTime {2500};
 
 private:
     SystemStatus() noexcept;

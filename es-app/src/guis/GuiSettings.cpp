@@ -14,6 +14,7 @@
 #include "FileFilterIndex.h"
 #include "Settings.h"
 #include "SystemData.h"
+#include "SystemStatus.h"
 #include "Window.h"
 #include "components/HelpComponent.h"
 #include "guis/GuiTextEditKeyboardPopup.h"
@@ -36,6 +37,7 @@ GuiSettings::GuiSettings(std::string title)
     , mNeedsGoToStart {false}
     , mNeedsGoToSystem {false}
     , mNeedsGoToGroupedCollections {false}
+    , mNeedsUpdateStatusComponents {false}
     , mInvalidateCachedBackground {false}
 {
     addChild(&mMenu);
@@ -141,6 +143,15 @@ void GuiSettings::save()
         if (!groupedSystemExists)
             // No grouped custom collection system exists, so go to the first system instead.
             ViewController::getInstance()->goToSystem(SystemData::sSystemVector.front(), false);
+    }
+
+    if (mNeedsUpdateStatusComponents) {
+        SystemStatus::getInstance().setCheckFlags();
+        SystemStatus::getInstance().pollImmediately();
+        // If we're not done within this time window it's not the end of the world,
+        // the indicators will still get updated during the next poll.
+        SDL_Delay(100);
+        mWindow->updateSystemStatusComponents();
     }
 
     if (mNeedsCollectionsUpdate) {

@@ -248,6 +248,8 @@ void SystemView::onCursorChanged(const CursorState& state)
 {
     mWindow->passHelpComponents(nullptr);
     mWindow->passClockComponents(&mSystemElements[mPrimary->getCursor()].clockComponents);
+    mWindow->passSystemStatusComponents(
+        &mSystemElements[mPrimary->getCursor()].systemStatusComponents);
 
     if (Settings::getInstance()->getBool("CustomEventScripts") &&
         Settings::getInstance()->getBool("CustomEventScriptsBrowsing")) {
@@ -259,6 +261,9 @@ void SystemView::onCursorChanged(const CursorState& state)
 
     for (auto& clock : mSystemElements[mPrimary->getCursor()].clockComponents)
         clock->update(1000);
+
+    for (auto& systemstatus : mSystemElements[mPrimary->getCursor()].systemStatusComponents)
+        systemstatus->update(SystemStatus::updateTime);
 
     // Reset horizontally scrolling text.
     for (auto& text : mSystemElements[mPrimary->getCursor()].gameCountComponents)
@@ -745,6 +750,13 @@ void SystemView::populate()
                     elements.clockComponents.back()->applyTheme(theme, "system", element.first,
                                                                 ThemeFlags::ALL);
                 }
+                else if (element.second.type == "systemstatus") {
+                    elements.systemStatusComponents.emplace_back(
+                        std::make_unique<SystemStatusComponent>());
+                    elements.systemStatusComponents.back()->applyTheme(
+                        theme, "system", element.first, ThemeFlags::ALL);
+                    elements.systemStatusComponents.back()->updateGrid();
+                }
             }
         }
 
@@ -754,6 +766,14 @@ void SystemView::populate()
             elements.clockComponents.back()->applyTheme(theme, "system", "clock_default",
                                                         ThemeFlags::ALL);
             elements.clockComponents.back()->update(1000);
+        }
+
+        if (elements.systemStatusComponents.empty()) {
+            // Apply a default systemstatus if the theme does not contain any configuration for it.
+            elements.systemStatusComponents.emplace_back(std::make_unique<SystemStatusComponent>());
+            elements.systemStatusComponents.back()->applyTheme(
+                theme, "system", "systemstatus_default", ThemeFlags::ALL);
+            elements.systemStatusComponents.back()->updateGrid();
         }
 
         std::stable_sort(
@@ -921,6 +941,8 @@ void SystemView::populate()
         mWindow->passHelpComponents(&mSystemElements[mPrimary->getCursor()].helpComponents);
 
     mWindow->passClockComponents(&mSystemElements[mPrimary->getCursor()].clockComponents);
+    mWindow->passSystemStatusComponents(
+        &mSystemElements[mPrimary->getCursor()].systemStatusComponents);
 
     mFadeTransitions = (static_cast<ViewTransitionAnimation>(Settings::getInstance()->getInt(
                             "TransitionsSystemToSystem")) == ViewTransitionAnimation::FADE);

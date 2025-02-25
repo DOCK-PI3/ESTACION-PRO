@@ -14,9 +14,11 @@
 #include "HelpPrompt.h"
 #include "InputConfig.h"
 #include "Settings.h"
+#include "SystemStatus.h"
 #include "components/DateTimeComponent.h"
 #include "components/HelpComponent.h"
 #include "components/ImageComponent.h"
+#include "components/SystemStatusComponent.h"
 #include "components/TextComponent.h"
 #include "guis/GuiInfoPopup.h"
 #include "resources/Font.h"
@@ -179,6 +181,20 @@ public:
         mClockComponents = clockComponents;
     }
 
+    void passSystemStatusComponents(
+        std::vector<std::unique_ptr<SystemStatusComponent>>* systemstatusComponents)
+    {
+        mSystemStatusComponents = systemstatusComponents;
+    }
+
+    void updateSystemStatusComponents()
+    {
+        if (mSystemStatusComponents != nullptr) {
+            for (auto& systemStatusComponent : *mSystemStatusComponents)
+                systemStatusComponent->update(SystemStatus::pollingTime);
+        }
+    }
+
 private:
     Window() noexcept;
     ~Window();
@@ -198,6 +214,7 @@ private:
     std::vector<std::unique_ptr<HelpComponent>>* mHelpComponents;
     std::unique_ptr<HelpComponent> mHelp;
     std::vector<std::unique_ptr<DateTimeComponent>>* mClockComponents;
+    std::vector<std::unique_ptr<SystemStatusComponent>>* mSystemStatusComponents;
     std::unique_ptr<ImageComponent> mBackgroundOverlay;
     std::unique_ptr<ImageComponent> mSplash;
     std::unique_ptr<TextComponent> mSplashTextScanning;

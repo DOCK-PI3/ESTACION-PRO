@@ -92,9 +92,13 @@ void GamelistView::onShow()
         video->stopVideoPlayer();
 
     mWindow->passClockComponents(&mClockComponents);
+    mWindow->passSystemStatusComponents(&mSystemStatusComponents);
 
     for (auto& clock : mClockComponents)
         clock->update(500);
+
+    for (auto& systemstatus : mSystemStatusComponents)
+        systemstatus->update(SystemStatus::updateTime);
 
     mLastUpdated = nullptr;
     GuiComponent::onShow();
@@ -365,6 +369,11 @@ void GamelistView::onThemeChanged(const std::shared_ptr<ThemeData>& theme)
                 mClockComponents.emplace_back(std::make_unique<DateTimeComponent>());
                 mClockComponents.back()->applyTheme(theme, "gamelist", element.first, ALL);
             }
+            else if (element.second.type == "systemstatus") {
+                mSystemStatusComponents.emplace_back(std::make_unique<SystemStatusComponent>());
+                mSystemStatusComponents.back()->applyTheme(theme, "gamelist", element.first, ALL);
+                mSystemStatusComponents.back()->updateGrid();
+            }
         }
     }
 
@@ -373,6 +382,14 @@ void GamelistView::onThemeChanged(const std::shared_ptr<ThemeData>& theme)
         mClockComponents.emplace_back(std::make_unique<DateTimeComponent>());
         mClockComponents.back()->applyTheme(theme, "gamelist", "clock_default", ThemeFlags::ALL);
         mClockComponents.back()->update(1000);
+    }
+
+    if (mSystemStatusComponents.empty()) {
+        // Apply a default systemstatus if the theme does not contain any configuration for it.
+        mSystemStatusComponents.emplace_back(std::make_unique<SystemStatusComponent>());
+        mSystemStatusComponents.back()->applyTheme(theme, "gamelist", "systemstatus_default",
+                                                   ThemeFlags::ALL);
+        mSystemStatusComponents.back()->updateGrid();
     }
 
     if (mPrimary == nullptr) {

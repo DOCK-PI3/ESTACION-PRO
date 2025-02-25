@@ -18,6 +18,7 @@
 #include "MameNames.h"
 #include "Scripting.h"
 #include "SystemData.h"
+#include "SystemStatus.h"
 #include "UIModeController.h"
 #include "Window.h"
 #include "utils/FileSystemUtil.h"
@@ -2103,10 +2104,12 @@ returnValue = Utils::Platform::launchGameUnix(command, startDirectory, runInBack
     }
 
     // Unless we're running in the background while the game is launched, re-enable the text
-    // scrolling that was disabled in ViewController.
+    // scrolling that was disabled in ViewController. Also poll the system status immediately
+    // in case something changed while the game was running.
     if (!runInBackground) {
         window->setAllowTextScrolling(true);
         window->setAllowFileAnimation(true);
+        SystemStatus::getInstance().pollImmediately();
     }
 
     // Update number of times the game has been launched.

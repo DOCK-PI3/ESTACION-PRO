@@ -134,6 +134,8 @@ std::map<std::string, std::map<std::string, std::string>> ThemeData::sPropertyAt
        {"customControllerIcon", "controller"}}},
      {"helpsystem",
       {{"customButtonIcon", "button"}}},
+     {"systemstatus",
+      {{"customIcon", "icon"}}},
     };
 
 std::map<std::string, std::map<std::string, ThemeData::ElementPropertyType>>
@@ -588,6 +590,22 @@ std::map<std::string, std::map<std::string, ThemeData::ElementPropertyType>>
        {"backgroundCornerRadius", FLOAT},
        {"lineSpacing", FLOAT},
        {"format", STRING},
+       {"opacity", FLOAT}}},
+     {"systemstatus",
+      {{"pos", NORMALIZED_PAIR},
+       {"size", NORMALIZED_PAIR},
+       {"origin", NORMALIZED_PAIR},
+       {"fontPath", PATH},
+       {"textRelativeScale", FLOAT},
+       {"color", COLOR},
+       {"backgroundColor", COLOR},
+       {"backgroundColorEnd", COLOR},
+       {"backgroundGradientType", STRING},
+       {"backgroundPadding", NORMALIZED_PAIR},
+       {"backgroundCornerRadius", FLOAT},
+       {"entries", STRING},
+       {"entrySpacing", FLOAT},
+       {"customIcon", PATH},
        {"opacity", FLOAT}}},
      {"sound",
       {{"path", PATH}}}};

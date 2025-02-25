@@ -58,6 +58,7 @@ public:
         mGoToSystem = goToSystem;
     };
     void setNeedsGoToGroupedCollections() { mNeedsGoToGroupedCollections = true; }
+    void setNeedsUpdateStatusComponents() { mNeedsUpdateStatusComponents = true; }
     void setNeedsCloseMenu(std::function<void()> closeFunction)
     {
         mCloseMenuFunction = closeFunction;
@@ -84,6 +85,7 @@ private:
     bool mNeedsGoToStart;
     bool mNeedsGoToSystem;
     bool mNeedsGoToGroupedCollections;
+    bool mNeedsUpdateStatusComponents;
     bool mInvalidateCachedBackground;
 };
 
