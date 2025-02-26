@@ -120,7 +120,9 @@ void SystemStatusComponent::updateGrid()
         }
     }
 
-    if (mHasBattery && mBatteryText) {
+    if (mHasBattery && mBatteryText &&
+        std::find(mDisplayEntries.cbegin(), mDisplayEntries.cend(), "battery") !=
+            mDisplayEntries.cend()) {
         // We set the initial value to "100%" to calculate the cell size based on this, as this
         // will be the longest text that will ever be displayed for the battery capacity.
         mBatteryPercentage = std::make_shared<TextComponent>(
