@@ -158,9 +158,10 @@ void SystemStatusComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
                                        unsigned int properties)
 {
     // Apply default settings as the theme may not define any configuration.
-    const glm::vec2 scale {glm::vec2 {Renderer::getScreenWidth(), Renderer::getScreenHeight()}};
-    mPosition = glm::vec3 {0.982f * scale.x, 0.016f * scale.y, 0.0f};
-    mSize = glm::vec2 {0.0f, 0.035f} * scale;
+    const float scale {mRenderer->getIsVerticalOrientation() ? mRenderer->getScreenWidth() :
+                                                               mRenderer->getScreenHeight()};
+    mPosition = glm::vec3 {0.982f * mRenderer->getScreenWidth(),
+                           0.016f * mRenderer->getScreenHeight(), 0.0f};
     mOrigin = glm::vec2 {1.0f, 0.0f};
     mColor = 0xFFFFFFFF;
 
@@ -178,17 +179,18 @@ void SystemStatusComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
 
     const ThemeData::ThemeElement* elem {theme->getElement(view, element, "systemstatus")};
 
+    mSize = glm::vec2 {0.0f, std::round(0.035f * scale)};
     float textRelativeScale {0.9f};
 
     if (!elem) {
-        mSize = glm::round(mSize);
         mFont = {Font::get(mSize.y * textRelativeScale, FONT_PATH_LIGHT)};
         return;
     }
 
-    mSize.x = 0.0f;
-    mSize.y = glm::clamp(mSize.y, 0.01f * scale.y, 0.5f * scale.y);
-    mSize = glm::round(mSize);
+    if (elem->has("height")) {
+        mSize.y =
+            std::round(glm::clamp(elem->get<float>("height") * scale, 0.01f * scale, 0.5f * scale));
+    }
 
     if (elem->has("textRelativeScale"))
         textRelativeScale = glm::clamp(elem->get<float>("textRelativeScale"), 0.5f, 1.0f);

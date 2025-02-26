@@ -576,7 +576,7 @@ std::map<std::string, std::map<std::string, ThemeData::ElementPropertyType>>
        {"customButtonIcon", PATH}}},
      {"systemstatus",
       {{"pos", NORMALIZED_PAIR},
-       {"size", NORMALIZED_PAIR},
+       {"height", FLOAT},
        {"origin", NORMALIZED_PAIR},
        {"fontPath", PATH},
        {"textRelativeScale", FLOAT},
