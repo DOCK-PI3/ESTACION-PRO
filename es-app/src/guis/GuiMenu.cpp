@@ -33,6 +33,7 @@
 #include "guis/GuiOrphanedDataCleanup.h"
 #include "guis/GuiScraperMenu.h"
 #include "guis/GuiScreensaverOptions.h"
+#include "guis/GuiSystemStatusOptions.h"
 #include "guis/GuiTextEditKeyboardPopup.h"
 #include "guis/GuiTextEditPopup.h"
 #include "guis/GuiThemeDownloader.h"
@@ -910,6 +911,19 @@ void GuiMenu::openUIOptions()
             s->setNeedsSaving();
         }
     });
+
+#if !defined(__FreeBSD__) && !defined(__HAIKU__)
+    // System status.
+    ComponentListRow systemStatusRow;
+    systemStatusRow.elements.clear();
+    systemStatusRow.addElement(std::make_shared<TextComponent>(_("SYSTEM STATUS SETTINGS"),
+                                                               Font::get(FONT_SIZE_MEDIUM),
+                                                               mMenuColorPrimary),
+                               true);
+    systemStatusRow.addElement(mMenu.makeArrow(), false);
+    systemStatusRow.makeAcceptInputHandler(std::bind(&GuiMenu::openSystemStatusOptions, this));
+    s->addRow(systemStatusRow);
+#endif
 
     // Media viewer.
     ComponentListRow mediaViewerRow;
@@ -2386,6 +2400,11 @@ void GuiMenu::openThemeDownloader(GuiSettings* settings)
     };
 
     mWindow->pushGui(new GuiThemeDownloader(updateFunc));
+}
+
+void GuiMenu::openSystemStatusOptions()
+{
+    mWindow->pushGui(new GuiSystemStatusOptions(_p("short", "SYSTEM STATUS SETTINGS")));
 }
 
 void GuiMenu::openMediaViewerOptions()

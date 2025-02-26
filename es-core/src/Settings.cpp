@@ -181,6 +181,13 @@ void Settings::setDefaults()
     mStringMap["UIMode"] = {"full", "full"};
     mStringMap["RandomEntryButton"] = {"games", "games"};
 
+    // UI settings -> system status settings.
+    mBoolMap["SystemStatusBluetooth"] = {true, true};
+    mBoolMap["SystemStatusWifi"] = {true, true};
+    mBoolMap["SystemStatusCellular"] = {true, true};
+    mBoolMap["SystemStatusBattery"] = {true, true};
+    mBoolMap["SystemStatusBatteryPercentage"] = {true, true};
+
     // UI settings -> media viewer settings.
     mStringMap["MediaViewerHelpPrompts"] = {"top", "top"};
     mBoolMap["MediaViewerShowTypes"] = {false, false};
@@ -221,12 +228,6 @@ void Settings::setDefaults()
 #endif
     mBoolMap["ScreensaverVideoBlur"] = {false, false};
 
-    mBoolMap["SystemStatusDisplayAll"] = {false, false};
-    mBoolMap["SystemStatusBluetooth"] = {true, true};
-    mBoolMap["SystemStatusWifi"] = {true, true};
-    mBoolMap["SystemStatusCellular"] = {true, true};
-    mBoolMap["SystemStatusBattery"] = {true, true};
-    mBoolMap["SystemStatusBatteryPercentage"] = {true, true};
     mBoolMap["ThemeVariantTriggers"] = {true, true};
     mBoolMap["DisplayClock"] = {false, false};
     mBoolMap["MenuBlurBackground"] = {true, true};
@@ -364,6 +365,7 @@ void Settings::setDefaults()
     mBoolMap["DebugSkipMissingThemeFilesCustomCollections"] = {true, true};
     mBoolMap["LegacyGamelistFileLocation"] = {false, false};
     mBoolMap["CreatePlaceholderSystemDirectories"] = {false, false};
+    mBoolMap["SystemStatusDisplayAll"] = {false, false};
     mStringMap["OpenGLVersion"] = {"", ""};
 #if !defined(__ANDROID__) && !defined(__IOS__)
     mStringMap["ROMDirectory"] = {"", ""};

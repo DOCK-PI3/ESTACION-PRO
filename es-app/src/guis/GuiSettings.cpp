@@ -149,7 +149,7 @@ void GuiSettings::save()
         SystemStatus::getInstance().setCheckFlags();
         SystemStatus::getInstance().pollImmediately();
         // If we're not done within this time window it's not the end of the world,
-        // the indicators will still get updated during the next poll.
+        // the indicators will still get updated shortly.
         SDL_Delay(100);
         mWindow->updateSystemStatusComponents();
     }

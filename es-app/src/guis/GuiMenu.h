@@ -36,6 +36,7 @@ private:
     void openScraperOptions();
     void openUIOptions();
     void openThemeDownloader(GuiSettings* settings);
+    void openSystemStatusOptions();
     void openMediaViewerOptions();
     void openScreensaverOptions();
     void openSoundOptions();
