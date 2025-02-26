@@ -96,6 +96,22 @@
                 <fontPath>${primaryFont}</fontPath>
                 <letterCase>capitalize</letterCase>
             </helpsystem>
+            <systemstatus name="systemStatus">
+                <pos>0.985 0.014</pos>
+                <height>0.035</height>
+                <fontPath>${primaryFont}</fontPath>
+                <textRelativeScale>0.8</textRelativeScale>
+                <color>${primaryColor}</color>
+                <entrySpacing>0.005</entrySpacing>
+            </systemstatus>
+            <clock name="clock">
+                <pos>0.018 0.014</pos>
+                <fontPath>${primaryFont}</fontPath>
+                <fontSize>0.029</fontSize>
+                <color>${primaryColor}</color>
+                <lineSpacing>1</lineSpacing>
+                <format>%H:%M</format>
+            </clock>
         </view>
 
         <view name="system">
@@ -248,27 +264,6 @@
                 <color>${backgroundColor}</color>
                 <zIndex>12</zIndex>
             </image>
-        </view>
-    </variant>
-
-    <variant name="all">
-        <view name="system, gamelist">
-            <systemstatus name="systemStatus">
-                <pos>0.985 0.014</pos>
-                <height>0.035</height>
-                <fontPath>${primaryFont}</fontPath>
-                <textRelativeScale>0.8</textRelativeScale>
-                <color>${primaryColor}</color>
-                <entrySpacing>0.005</entrySpacing>
-            </systemstatus>
-            <clock name="clock">
-                <pos>0.018 0.014</pos>
-                <fontPath>${primaryFont}</fontPath>
-                <fontSize>0.029</fontSize>
-                <color>${primaryColor}</color>
-                <lineSpacing>1</lineSpacing>
-                <format>%H:%M</format>
-            </clock>
         </view>
     </variant>
 
