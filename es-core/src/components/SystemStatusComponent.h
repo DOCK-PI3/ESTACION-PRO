@@ -43,6 +43,7 @@ private:
     bool mHasCellular;
     bool mHasBattery;
     bool mBatteryCharging;
+    bool mBatteryText;
     int mBatteryCapacity;
 
     std::vector<std::string> mEntries;

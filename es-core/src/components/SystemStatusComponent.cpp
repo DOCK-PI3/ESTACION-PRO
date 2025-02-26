@@ -21,6 +21,8 @@ SystemStatusComponent::SystemStatusComponent()
     , mHasCellular {false}
     , mHasBattery {false}
     , mBatteryCharging {false}
+    , mBatteryText {Settings::getInstance()->getBool("SystemStatusBattery") &&
+                    Settings::getInstance()->getBool("SystemStatusBatteryPercentage")}
     , mBatteryCapacity {100}
     , mEntries {sAllowedEntries}
     , mColorShift {0xFFFFFFFF}
@@ -64,13 +66,13 @@ void SystemStatusComponent::updateGrid()
     if (mDisplayEntries.empty())
         return;
 
-    const bool batteryText {Settings::getInstance()->getBool("SystemStatusBattery") &&
-                            Settings::getInstance()->getBool("SystemStatusBatteryPercentage")};
+    mBatteryText = Settings::getInstance()->getBool("SystemStatusBattery") &&
+                   Settings::getInstance()->getBool("SystemStatusBatteryPercentage");
 
     int numEntries {static_cast<int>(mDisplayEntries.size())};
     if (mEntrySpacing != 0.0f)
         numEntries += numEntries - 1;
-    if (mHasBattery && batteryText)
+    if (mHasBattery && mBatteryText)
         ++numEntries;
 
     mGrid = std::make_shared<ComponentGrid>(glm::ivec2 {numEntries, 1});
@@ -118,7 +120,7 @@ void SystemStatusComponent::updateGrid()
         }
     }
 
-    if (mHasBattery && batteryText) {
+    if (mHasBattery && mBatteryText) {
         // We set the initial value to "100%" to calculate the cell size based on this, as this
         // will be the longest text that will ever be displayed for the battery capacity.
         mBatteryPercentage = std::make_shared<TextComponent>(
@@ -134,7 +136,7 @@ void SystemStatusComponent::updateGrid()
 
     for (int i {0}; i < static_cast<int>(mGrid->getChildCount()); ++i) {
         mGrid->setColWidthPerc(i, mGrid->getChild(i)->getSize().x / width);
-        if (mHasBattery && batteryText && i == static_cast<int>(mGrid->getChildCount()) - 2)
+        if (mHasBattery && mBatteryText && i == static_cast<int>(mGrid->getChildCount()) - 2)
             continue;
 
         if (mEntrySpacing != 0.0f && i != static_cast<int>(mGrid->getChildCount()) - 1) {
@@ -335,13 +337,20 @@ void SystemStatusComponent::update(int deltaTime)
             statusChanged = true;
             batteryStatusChanged = true;
         }
-        if (mHasBattery && mBatteryCharging != status.batteryCharging) {
-            mBatteryCharging = status.batteryCharging;
-            batteryStatusChanged = true;
-        }
-        if (mHasBattery && mBatteryCapacity != status.batteryCapacity) {
-            mBatteryCapacity = status.batteryCapacity;
-            batteryStatusChanged = true;
+        if (mHasBattery) {
+            if (mBatteryCharging != status.batteryCharging) {
+                mBatteryCharging = status.batteryCharging;
+                batteryStatusChanged = true;
+            }
+            if (mBatteryCapacity != status.batteryCapacity) {
+                mBatteryCapacity = status.batteryCapacity;
+                batteryStatusChanged = true;
+            }
+            if ((Settings::getInstance()->getBool("SystemStatusBattery") &&
+                 Settings::getInstance()->getBool("SystemStatusBatteryPercentage")) !=
+                mBatteryText) {
+                statusChanged = true;
+            }
         }
 
         if (statusChanged) {
