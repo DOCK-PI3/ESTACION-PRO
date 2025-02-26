@@ -297,8 +297,6 @@ There is a very annoying default configuration when using Sony controllers like 
 
 One macOS-specific requirement is that the RetroArch setting _Start in Fullscreen mode_ is enabled or ES-DE will not be able to switch to the emulator window when launching games. As a workaround you can switch to the window manually using Command + Tab but it probably doesn't make sense to run emulators in windowed mode anyway. This issue has not been observed with any other emulators.
 
-At the time of writing there is an additional issue with the ARM release of RetroArch where ES-DE will not be able to consistently switch to its window on game launch if the setting _Close windows when quitting an application_ under the _Desktop & Dock_ entry in the macOS _System Settings_ has been set to disabled. This error does not occur for the Intel/x86 release of RetroArch or with any other standalone emulators (including those built specifically for the ARM architecture).
-
 The first time you launch a RetroArch-emulated game from within ES-DE the operating system will present you with a security option with the following description:
 
 `"ES-DE" would like to access files in your Documents folder.`
@@ -2410,7 +2408,7 @@ vkquake_arcane_dimensions.sh:
 
 You don't need to set execution permissions for these scripts, ES-DE will run them anyway.
 
-**Method 3, AppImages** _Linux only_
+**Method 3, AppImages** _(Linux only)_
 
 On Linux it's also possible to launch AppImages directly without having to call them from a shell script. For emulators it's generally required to keep their AppImages in the `~/Applications/` directory and symlink them into the ROMs directory tree, but for other applications and games it may be fine to store them directly in the ROMs tree. In order for this to work you need to use one of the alternative emulator entries that enable AppImages to be launched. It will not work if attempting to use the emulator entries that run scripts and shortcuts. You can set the alternative emulator per game/file from the metadata editor.
 
@@ -3331,6 +3329,10 @@ Sets the user interface mode for the application to _Full, Kiosk_ or _Kid_. See 
 
 Whether to enable the selection of a random entry in the system or gamelist view via a button press, by default mapped to the click button of either thumbstick. The options are _Games only, Games and systems_ or _Disabled_. The help system will also visually indicate the status of this setting.
 
+**System status settings** _(Not available on FreeBSD and Haiku)_
+
+Submenu containing all the settings for the system status indicators. These are described in detail below.
+
 **Media viewer settings**
 
 Submenu containing all the settings for the media viewer. These are described in detail below.
@@ -3347,7 +3349,7 @@ Themes can optionally contain variant trigger configuration which changes the la
 
 Displays a clock on screen at all times. By default it's located in the upper left corner and displays as hours and minutes, but themes can customize its layout and position.
 
-**Blur background when menu is open** _Always applied if screen is rotated 90 or 270 degrees_
+**Blur background when menu is open** _(Always applied if screen is rotated 90 or 270 degrees)_
 
 This option will blur the background behind the menu slightly. Normally this can be left enabled, but if you have a really slow GPU, disabling this option may make the application feel a bit more responsive. For technical reasons this setting is always enabled if the screen is rotated 90 or 270 degrees, and in this case the menu option will also be grayed out.
 
@@ -3382,6 +3384,30 @@ Activating or deactivating the ability to filter your gamelists. This can normal
 **Display on-screen help**
 
 Activates or deactivates the built-in help system that provides contextual information regarding button usage.
+
+#### System status settings
+
+This menu makes it possible to enable or disable various system indicators. Just be aware that these options have no effect if there are no such hardware devices present.
+
+**Display Bluetooth status indicator**
+
+Indicates whether there's a Bluetooth adapter enabled on the device.
+
+**Display Wi-Fi status indicator**
+
+Indicates whether Wi-Fi is enabled on the device.
+
+**Display cellular status indicator** _(Android only)_
+
+Indicates whether cellular traffic is enabled on the device.
+
+**Display battery status indicator**
+
+Indicates whether there's a battery available in the device, in which case different icons will be displayed if the battery is charging or not, and if not charging there are discreet icons for different capacity levels (low, medium, high and full).
+
+**Display battery charge percentage**
+
+If there's a battery in the device, then this setting controls whether to display the charge/capacity percentage text next to the battery icon.
 
 #### Media viewer settings
 
@@ -3650,11 +3676,11 @@ This gives the choice of which key combination to use to quit the application. T
 
 The metadata for a game is updated by scraping or by manual editing it using the metadata editor, but also when launching it as this updates the _Times played_ counter and the _Last played_ timestamp. This setting enables you to define when to write such metadata changes to the gamelist.xml files. Setting the option to _Never_ will disable writing to these files altogether, except for some special conditions such as when a game is manually deleted using the metadata editor, when scraping using the multi-scraper (the multi-scraper will always save any updates immediately to the gamelist.xml files) or when changing the system-wide alternative emulator. In theory _On exit_ will give some small performance gains, but it's normally recommended to leave the setting at its default value which is _Always_. Note that with the option set to _Never_, any updates such as the _Last played_ date will still be shown on screen, but during the next application startup any values previously saved to the gamelist.xml files will be read in again. As well, when changing this setting to _Always_ from either of the two other options, any pending changes will be immediately written to the gamelist.xml files.
 
-**Check for application updates** _Not available for some builds_
+**Check for application updates** _(Not available for some builds)_
 
 By default a check for new ES-DE versions will be done on every application startup and a notification will be displayed if there is a new release available for download. Using this option the frequency of these checks can be set to _Always_, _Daily_, _Weekly_, _Monthly_ or _Never_. This setting is not available on some platforms and package formats such as the Android app store releases, the Linux AUR release and the semi-official FreeBSD and Raspberry Pi releases where pre-built packages are not provided.
 
-**Include prereleases in update checks** _Always enabled for prereleases_
+**Include prereleases in update checks** _(Always enabled for prereleases)_
 
 For platforms and package formats where the previous setting above is available there is also the option of whether to include prereleases when checking for application updates. Note that this is always enabled when running an ES-DE prerelease so in this case the setting will be grayed out.
 
@@ -3817,13 +3843,13 @@ The following filters can be applied:
 
 **Kidgame**
 
-**Hidden** _If the "Show hidden games" option is enabled_
+**Hidden** _(If the "Show hidden games" option is enabled)_
 
 **Broken**
 
 **Controller**
 
-**Alternative emulator** _If the "Enable alternative emulators per game" option is enabled_
+**Alternative emulator** _(If the "Enable alternative emulators per game" option is enabled)_
 
 With the exception of the game name text filter, all available filter values are assembled from metadata from the actual gamelist, so if there is no data to filter for the specific field, the text _Nothing to filter_ will be displayed. This for example happens for the _Completed_ filter if there are no games marked as having been completed in the current gamelist. The same happens if a metadata setting is identical for all games, such as all games being flagged as favorites.
 

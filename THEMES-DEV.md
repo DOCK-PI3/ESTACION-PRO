@@ -1956,7 +1956,7 @@ Properties:
     - Default is `1.5`
     - This property can only be used when `textHorizontalScrolling` has been set to `true`
 * `fontPath` - type: PATH
-    - Path to a TrueType font (.ttf) used as fallback if there is no `staticImage` / `imageType` image defined or found, and if `defaultImage` has not been defined.
+    - Path to a TrueType or OpenType font (.ttf or .otf) used as fallback if there is no `staticImage` / `imageType` image defined or found, and if `defaultImage` has not been defined.
 * `fontSize` - type: FLOAT
     - Size of the font as a percentage of screen height for horizontally oriented screens or screen width for vertically oriented screens (e.g. for a value of `0.1`, the text's height would be 10% of the screen height). This calculation is based on the reference 'S' character so other glyphs may not fill this area, or they may exceed this area. This property value is effectively multiplied by the `itemScale` value for the currently selected item (but if this property is omitted then the default value will not get multiplied by `itemScale`).
     - Minimum value is `0.001` and maximum value is `1.5`. Note that when running at a really low resolution, the minimum value may get clamped to a larger relative size.
@@ -2210,7 +2210,7 @@ Properties:
     - Default is `1.5`
     - This property can only be used when `textHorizontalScrolling` has been set to `true`
 * `fontPath` - type: PATH
-    - Path to a TrueType font (.ttf) used as fallback if there is no `staticImage` / `imageType` image defined or found, and if `defaultImage` has not been defined.
+    - Path to a TrueType or OpenType font (.ttf or .otf) used as fallback if there is no `staticImage` / `imageType` image defined or found, and if `defaultImage` has not been defined.
 * `fontSize` - type: FLOAT
     - Size of the font as a percentage of screen height for horizontally oriented screens or screen width for vertically oriented screens (e.g. for a value of `0.1`, the text's height would be 10% of the screen height). This calculation is based on the reference 'S' character so other glyphs may not fill this area, or they may exceed this area.
     - Minimum value is `0.001` and maximum value is `1.5`. Note that when running at a really low resolution, the minimum value may get clamped to a larger relative size.
@@ -2315,7 +2315,7 @@ Properties:
     - Default is the same value as `selectedColor`
 * `selectedBackgroundColor` - type: COLOR
     - Background color of the highlighted entry for the primary entry type. This follows the sizing of the selector bar and is expanded downwards so you'll probably want to adjust its position using `selectorVerticalOffset` if you have defined a custom selector height using `selectorHeight`
-    - Default is `00000000`
+    - Default is `00000000` (no background is drawn)
 * `selectedSecondaryBackgroundColor` - type: COLOR
     - Background color of the highlighted entry for the secondary entry type. This follows the sizing of the selector bar and is expanded downwards so you'll probably want to adjust its position using `selectorVerticalOffset` if you have defined a custom selector height using `selectorHeight`
     - Default is the same value as `selectedBackgroundColor`
@@ -2881,9 +2881,10 @@ Properties:
     - Minimum value is `0.1` and maximum value is `2`
     - Default is `0.5`
 * `customBadgeIcon` - type: PATH
-    - A badge icon override. Specify the badge type in the attribute `badge`. The available badges are the ones listed above.
+    - A badge icon override. Specify the badge type using the `badge` attribute, such as `<customBadgeIcon badge="favorite">./assets/favorite.svg</customBadgeIcon>`
+    - The available badges are the ones listed above.
 * `customControllerIcon` - type: PATH
-    - A controller icon override. Specify the controller type in the attribute `controller`.
+    - A controller icon override. Specify the controller type using the `controller` attribute, such as `<customControllerIcon controller="gamepad_xbox">./assets/gamepad_xbox.svg</customControllerIcon>`
     - These are the available types:
     - `gamepad_generic`,
     `gamepad_nintendo_nes`,
@@ -3104,7 +3105,7 @@ Properties:
     - Default is `1.5`
     - This property can only be used when `containerType` is `horizontal`
 * `fontPath` - type: PATH
-    - Path to a TrueType font (.ttf).
+    - Path to a TrueType or OpenType font (.ttf or .otf)
 * `fontSize` - type: FLOAT
     - Size of the font as a percentage of screen height for horizontally oriented screens or screen width for vertically oriented screens (e.g. for a value of `0.1`, the text's height would be 10% of the screen height). This calculation is based on the reference 'S' character so other glyphs may not fill this area, or they may exceed this area.
     - Minimum value is `0.001` and maximum value is `1.5`. Note that when running at a really low resolution, the minimum value may get clamped to a larger relative size. The font is allowed to overflow the height of the element by 100%, i.e. `fontSize` can be set to twice that of the y axis of the `size` property. Any value above that will be clamped.
@@ -3121,7 +3122,7 @@ Properties:
 * `color` - type: COLOR
     - Default is `000000FF`
 * `backgroundColor` - type: COLOR
-    - Default is `00000000`
+    - Default is `00000000` (no background is drawn)
 * `backgroundMargins` - type: NORMALIZED_PAIR
     - Adds margins to the text background, assuming it has a color set. The first value of the pair is the left margin and the second value is the right margin, which means it's possible to set these margins completely independently. Margins are applied after all other positioning and sizing calculations and they are rendered outside the text debug rectangle boundaries.
     - Minimum value per axis is `0` and maximum value per axis is `0.5`
@@ -3200,7 +3201,7 @@ Properties:
     - Minimum value is `0` and maximum value is the value of the `gameselector` element property `gameCount` minus 1. If a value outside this range is defined, then it will be automatically clamped to a valid value.
     - Default is `0`
 * `fontPath` - type: PATH
-    - Path to a TrueType font (.ttf).
+    - Path to a TrueType or OpenType font (.ttf or .otf)
 * `fontSize` - type: FLOAT
     - Size of the font as a percentage of screen height for horizontally oriented screens or screen width for vertically oriented screens (e.g. for a value of `0.1`, the text's height would be 10% of the screen height). This calculation is based on the reference 'S' character so other glyphs may not fill this area, or they may exceed this area.
     - Minimum value is `0.001` and maximum value is `1.5`. Note that when running at a really low resolution, the minimum value may get clamped to a larger relative size. The font is allowed to overflow the height of the element by 100%, i.e. `fontSize` can be set to twice that of the y axis of the `size` property. Any value above that will be clamped.
@@ -3291,7 +3292,7 @@ Properties:
     - `never` - Don't set element as stationary during any transitions.
     - Default is `never`
 * `fontPath` - type: PATH
-    - Path to a TrueType font (.ttf).
+    - Path to a TrueType or OpenType font (.ttf or .otf)
 * `fontSize` - type: FLOAT
     - Size of the font as a percentage of screen height for horizontally oriented screens or screen width for vertically oriented screens (e.g. for a value of `0.1`, the text's height would be 10% of the screen height). This calculation is based on the reference 'S' character so other glyphs may not fill this area, or they may exceed this area.
     - Minimum value is `0.001` and maximum value is `1.5`. Note that when running at a really low resolution, the minimum value may get clamped to a larger relative size. The font is allowed to overflow the height of the element by 100%, i.e. `fontSize` can be set to twice that of the y axis of the `size` property. Any value above that will be clamped.
@@ -3532,7 +3533,7 @@ Properties:
     - Minimum value is `0.2` and maximum value is `1`
     - Default is the same value as `opacity`
 * `customButtonIcon` - type: PATH
-    - A button icon override. Specify the button type in the attribute `button`.
+    - A button icon override. Specify the button type using the `button` attribute, such as `<customButtonIcon button="button_a_XBOX">./assets/button_a_XBOX.svg</customButtonIcon>`
     - The available buttons are: \
       `dpad_updown`,
       `dpad_leftright`,
@@ -3575,6 +3576,91 @@ Properties:
       `button_back_SNES`,
       `button_start_SNES`
 
+#### systemstatus
+
+Displays system status indicators, more specifically Bluetooth, Wi-Fi, cellular and battery status.
+
+Note that this element does not have a zIndex value, instead it's always rendered on top of all other elements and it's also rendered when the menu is open. In addition to this it's stationary and will not move during slide transitions or fade out during fade transitions.
+
+You can define multiple elements to split up the indicators.
+
+During theme development you can force-enable all the system indicators by setting SystemStatusDisplayAll to true in es_settings.xml, you can read more about this option in the [INSTALL-DEV.md](INSTALL-DEV.md#settings-not-configurable-via-the-gui) document.
+
+Supported views:
+* `system`
+* `gamelist`
+
+Instances per view:
+* `unlimited`
+
+Properties:
+* `pos` - type: NORMALIZED_PAIR
+    - Default is `0.984 0.016`
+* `size` - type: NORMALIZED_PAIR
+    - The size property works a bit different for this element compared to all other elements as only the height is considered. The width is automatically calculated based on the aspect ratio of the indicator icons plus the value set for the `entrySpacing` property. So it's recommended to just set the width to `0`
+    - Minimum value is `0 0.01` and maximum value is `0 0.5`
+    - Default is `0 0.035`
+* `origin` - type: NORMALIZED_PAIR
+    - Where on the element `pos` refers to. For example, an origin of `0.5 0.5` and a `pos` of `0.5 0.5` would place the element exactly in the middle of the screen. If the position and size attributes are themeable, origin is implied.
+    - Minimum value per axis is `0` and maximum value per axis is `1`
+    - Default is `1 0`
+* `fontPath` - type: PATH
+    - Path to a TrueType or OpenType font (.ttf or .otf) which is used for the battery percentage indicator.
+* `textRelativeScale` - type: FLOAT.
+    - This property makes it possible to size the battery percentage text relative to the overall element height, or in other words relative to the height of the indicator icons.
+    - Minimum value is `0.5` and maximum value is `1`
+    - Default is `0.9`
+* `color` - type: COLOR
+    - Color of the icons and battery percentage text.
+    - Default is `FFFFFFFF`
+* `backgroundColor` - type: COLOR
+    - If this property is defined then a colored rectangle is drawn behind the entire element.
+    - Default is `00000000` (no background is drawn)
+* `backgroundColorEnd` - type: COLOR
+    - Works in the exact same way as `backgroundColor` but can be set as the end color to apply a color gradient.
+    - Default is the same value as `backgroundColor`
+* `backgroundGradientType` - type: STRING
+    - The direction to apply the color gradient if both `backgroundColor` and `backgroundColorEnd` have been defined.
+    - Valid values are `horizontal` or `vertical`
+    - Default is `horizontal`
+* `backgroundPadding` - type: NORMALIZED_PAIR
+    - This property makes it possible to apply a padding around the element if `backgroundColor` has been defined. Note that this additional sizing will not have any effect on the `pos` and `origin` properties, these will remain constant. Or in other words, changing the `backgroundPadding` property value will not change the position of the overall element. An identical padding is applied to the left/right and top/bottom of the element.
+    - Minimum value per axis is `0` and maximum value per axis is `0.2`
+    - Default is `0 0`
+    - This property can only be used if `backgroundColor` has a value defined.
+* `backgroundCornerRadius` - type: FLOAT
+    - Setting this property higher than zero applies rounded corners to the element background, assuming `backgroundColor` has been defined. The radius is a percentage of the screen width. Note that the maximum allowed value is quite arbitrary as the renderer will in practice limit the maximum roundness so it can never go beyond half the background height. It means that setting this property sufficiently high will produce perfectly rounded sides for the element background. You normally want to combine this property with `backgroundPadding` to add some extra space around the system indicators.
+    - Minimum value is `0` and maximum value is `0.5`
+    - Default is `0` (corners are not rounded)
+    - This property can only be used if `backgroundColor` has a value defined.
+* `entries` - type: STRING
+    - The system indicators that should be displayed. Make sure to always display all entries as it's up to the user to disable any unwanted indicators from the UI settings menu. The sole purpose of this property is to be able to split up the indicators across multiple elements. The entries are specified as a list of strings delimited by commas or by whitespace characters (tabs, spaces or line breaks). The order in which the entries are defined has no effect as they will always be displayed in the default order. Available values are:
+    - `bluetooth` - Indicates whether there's a Bluetooth adapter enabled on the device
+    - `wifi` - Indicates whether Wi-Fi is enabled on the device
+    - `cellular` - Indicates whether cellular traffic is enabled on the device (Android only)
+    - `battery` - Indicates whether there's a battery available in the device, in which case different icons will be displayed if the battery is charging or not, and if not charging there are discreet icons for different capacity levels (low, medium, high and full). A capacity percentage text is also displayed next to the battery icon unless the user has disabled this in the UI settings menu.
+    - `all` - Including this value will enable all system indicators.
+    - Default is `all`
+* `entrySpacing` - type: FLOAT
+    - Spacing between the system indicators. Note that this spacing is not applied between the battery icon and the battery percentage text.
+    - Minimum value is `0` and maximum value is `0.04`
+    - Default is `0.005`
+ * `customIcon` - type: PATH
+    - An icon override. Specify the icon type using the `icon` attribute, such as `<customIcon icon="icon_wifi">./assets/wifi.svg</customIcon>`
+    - The available icons are: \
+      `icon_bluetooth`,
+      `icon_wifi`,
+      `icon_cellular`,
+      `icon_battery_charging`,
+      `icon_battery_low`,
+      `icon_battery_medium`,
+      `icon_battery_high`,
+      `icon_battery_full`
+* `opacity` - type: FLOAT
+    - Controls the level of transparency.
+    - Minimum value is `0` and maximum value is `1`
+    - Default is `1`
+
 #### clock
 
 Displays the current time and/or date as a text string. The format is HH:MM by default, but this can be changed using the `format` property. It's strongly recommended to configure the clock identically for both the system and gamelist views to make the user experience coherent.
@@ -3610,7 +3696,7 @@ Properties:
     - Minimum value per axis is `0` and maximum value per axis is `1`
     - Default is `0.5 0.5`.
 * `fontPath` - type: PATH
-    - Path to a TrueType font (.ttf).
+    - Path to a TrueType or OpenType font (.ttf or .otf)
 * `fontSize` - type: FLOAT
     - Size of the font as a percentage of screen height for horizontally oriented screens or screen width for vertically oriented screens (e.g. for a value of `0.1`, the text's height would be 10% of the screen height). This calculation is based on the reference 'S' character so other glyphs may not fill this area, or they may exceed this area.
     - Minimum value is `0.001` and maximum value is `1.5`. Note that when running at a really low resolution, the minimum value may get clamped to a larger relative size. The font is allowed to overflow the height of the element by 100%, i.e. `fontSize` can be set to twice that of the y axis of the `size` property. Any value above that will be clamped.
@@ -3626,7 +3712,7 @@ Properties:
 * `color` - type: COLOR
     - Default is `FFFFFFFF`
 * `backgroundColor` - type: COLOR
-    - Default is `00000000`
+    - Default is `00000000` (no background is drawn)
 * `backgroundMargins` - type: NORMALIZED_PAIR
     - Adds margins to the text background, assuming it has a color set. The first value of the pair is the left margin and the second value is the right margin, which means it's possible to set these margins completely independently. Margins are applied after all other positioning and sizing calculations and they are rendered outside the text debug rectangle boundaries.
     - Minimum value per axis is `0` and maximum value per axis is `0.5`

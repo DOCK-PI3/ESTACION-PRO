@@ -25,7 +25,7 @@ There are some dependencies that need to be fulfilled in order to build ES-DE. T
 All of the required packages can be installed with apt-get:
 
 ```
-sudo apt-get install build-essential clang-format git cmake gettext libharfbuzz-dev libicu-dev libsdl2-dev libavcodec-dev libavfilter-dev libavformat-dev libavutil-dev libfreeimage-dev libfreetype6-dev libgit2-dev libcurl4-openssl-dev libpugixml-dev libasound2-dev libgl1-mesa-dev libpoppler-cpp-dev
+sudo apt-get install build-essential clang-format git cmake gettext libharfbuzz-dev libicu-dev libsdl2-dev libavcodec-dev libavfilter-dev libavformat-dev libavutil-dev libfreeimage-dev libfreetype6-dev libgit2-dev libcurl4-openssl-dev libpugixml-dev libasound2-dev libbluetooth-dev libgl1-mesa-dev libpoppler-cpp-dev
 ```
 
 **Fedora**
@@ -40,7 +40,7 @@ https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -
 
 Then you can use dnf to install all the required packages:
 ```
-sudo dnf install gcc-c++ clang-tools-extra cmake gettext harfbuzz-devel libicu-devel libasan rpm-build SDL2-devel ffmpeg-devel freeimage-devel freetype-devel libgit2-devel curl-devel pugixml-devel alsa-lib-devel mesa-libGL-devel poppler-cpp-devel
+sudo dnf install gcc-c++ clang-tools-extra cmake gettext harfbuzz-devel libicu-devel libasan rpm-build SDL2-devel ffmpeg-devel freeimage-devel freetype-devel libgit2-devel curl-devel pugixml-devel alsa-lib-devel bluez-libs-devel mesa-libGL-devel poppler-cpp-devel
 ```
 
 **Manjaro**
@@ -55,7 +55,7 @@ sudo pacman -S gcc clang make cmake gettext harfbuzz icu pkgconf sdl2 ffmpeg fre
 
 All of the required packages can be installed with apt-get:
 ```
-sudo apt-get install clang-format cmake gettext libharfbuzz-dev libicu-dev libraspberrypi-dev libsdl2-dev libavcodec-dev libavfilter-dev libavformat-dev libavutil-dev libfreeimage-dev libfreetype6-dev libgit2-dev libcurl4-gnutls-dev libpugixml-dev libpoppler-cpp-dev
+sudo apt-get install clang-format cmake gettext libharfbuzz-dev libicu-dev libraspberrypi-dev libsdl2-dev libavcodec-dev libavfilter-dev libavformat-dev libavutil-dev libfreeimage-dev libfreetype6-dev libgit2-dev libcurl4-gnutls-dev libpugixml-dev libbluetooth-dev libpoppler-cpp-dev
 ```
 
 For a 64-bit build it's very important that you include libraspberrypi-dev because if this package is not installed then the file /usr/include/bcm_host.h is not present on the filesystem. This leads to CMake not detecting that it's indeed a Raspberry Pi and it will attempt to make a regular Linux build instead.
@@ -1165,6 +1165,10 @@ Sets the transfer timeout per HTTPS request. Minimum value is 0 seconds (infinit
 **ScraperIgnoreHTTP404Errors**
 
 Normally the scraper will stop whenever an HTTP error code with value 400 or above is returned from the scraper service, but by default there is an exception for 404 errors (resource not found). Changing this setting to _false_ will make the scraper handle 404 errors as all other error codes, meaning it will run through the configured retry attempts and then display an error notification dialog if the resource could not be retrieved.
+
+**SystemStatusDisplayAll**
+
+If setting this to true then all system status indicators (Bluetooth icon, Wi-Fi icon, cellular icon, battery icon and battery percentage indicator) will always be displayed, assuming they have been enabled in the _UI settings_ menu and via the `entries` property for the `systemstatus` element. The only purpose of this setting is for theme developers to be able to see all indicators when working on their theme design.
 
 **UIMode_passkey**
 

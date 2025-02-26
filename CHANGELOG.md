@@ -8,6 +8,7 @@
 
 ### Detailed list of changes
 
+* Added a system status element showing the Blueooth, Wi-Fi, cellular and battery status on screen
 * Added translations for Traditional Chinese (zh_TW)
 * Increased the roundness for all corners in the menu system and for the notification popups
 * Increased the background blur slightly when a menu is open
@@ -34,7 +35,9 @@
 * Added support for a "none" value to the video element imageType property
 * Added a BackgroundComponent to replace NinePatchComponent for rendering menu and popup backgrounds
 * (macOS) Added a build script for cross-compiling for x86_64 when using an ARM processor
+* (Linux) Added the BlueZ library as a dependency
 * Added support for building against libgit2 v1.9.0 and later
+* Added support for building against ICU 76.1 and later
 
 ### Bug fixes
 
@@ -42,6 +45,7 @@
 * The selectedItemOffset property did not work correctly for carousels with a single item
 * Returning from a game when running in the background ignored the video element delay property for the first playback
 * Applying rounded corners caused rendering artfifacts if the texture did not use premultiplied alpha
+* (Android) There was a PLACEHOLDER entry present for the consolearcade system in the es_systems.xml file
 
 ## Version 3.1.1 / 3.1.1-39
 

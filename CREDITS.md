@@ -58,6 +58,9 @@ Please find the individual license files inside the [licenses](https://gitlab.co
 
 # Libraries
 
+BlueZ \
+https://github.com/bluez/bluez
+
 CImg \
 https://www.cimg.eu
 
@@ -132,6 +135,9 @@ https://batocera.org
 The MD5 hash functions were adapted from code by the BZFlag project \
 https://www.bzflag.org
 
+Some battery detection functionality for macOS was based on code from Battery Percentage Notifier \
+https://github.com/Abhigyan126/Custom_Low_Battery_Warning
+
 The scanline GLSL shader was adapted from code by the RetroArch project \
 https://www.retroarch.com
 
@@ -163,6 +169,9 @@ https://fonts.google.com/noto/specimen/Noto+Emoji
 
 Ubuntu font \
 https://design.ubuntu.com/font
+
+System status icons (some customizations have been made) \
+https://phosphoricons.com
 
 MAME ROM information \
 https://www.mamedev.org
