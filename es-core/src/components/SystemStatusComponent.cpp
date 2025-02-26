@@ -82,7 +82,16 @@ void SystemStatusComponent::updateGrid()
     for (auto it = mDisplayEntries.cbegin(); it != mDisplayEntries.cend(); ++it) {
         if (*it == "battery") {
             mBattery = std::make_shared<ImageComponent>(false, true);
-            mBattery->setImage(mIconPathMap["battery_full"]);
+            if (mBatteryCharging)
+                mBattery->setImage(mIconPathMap["battery_charging"]);
+            else if (mBatteryCapacity >= 0 && mBatteryCapacity <= 25)
+                mBattery->setImage(mIconPathMap["battery_low"]);
+            else if (mBatteryCapacity >= 26 && mBatteryCapacity <= 60)
+                mBattery->setImage(mIconPathMap["battery_medium"]);
+            else if (mBatteryCapacity >= 61 && mBatteryCapacity <= 90)
+                mBattery->setImage(mIconPathMap["battery_high"]);
+            else
+                mBattery->setImage(mIconPathMap["battery_full"]);
             mBattery->setColorShift(mColorShift);
             mBattery->setResize(0, mSize.y);
             mBattery->setOpacity(mThemeOpacity);
@@ -120,6 +129,7 @@ void SystemStatusComponent::updateGrid()
         width += mBatteryPercentage->getSize().x;
         mEntryMap["batteryText"] = i;
         mGrid->setEntry(mBatteryPercentage, glm::ivec2 {i, 0}, false, false);
+        mBatteryPercentage->setValue(std::to_string(mBatteryCapacity) + "%");
     }
 
     for (int i {0}; i < static_cast<int>(mGrid->getChildCount()); ++i) {
@@ -290,10 +300,12 @@ void SystemStatusComponent::update(int deltaTime)
 #if defined(__ANDROID__)
         // For Android we poll on the main thread instead of in a separate thread.
         SystemStatus::Status status;
-        if (mAccumulatorAndroid >= SystemStatus::pollingTime ||
-            SystemStatus::getInstance().getPollImmediately()) {
+        const bool pollImmediately {SystemStatus::getInstance().getPollImmediately()};
+        if (mAccumulatorAndroid >= SystemStatus::pollingTime || pollImmediately) {
             status = SystemStatus::getInstance().getStatus(true);
             mAccumulatorAndroid = 0;
+            if (pollImmediately)
+                SystemStatus::getInstance().setPollImmediately(false);
         }
         else {
             status = SystemStatus::getInstance().getStatus(false);
@@ -332,10 +344,13 @@ void SystemStatusComponent::update(int deltaTime)
             batteryStatusChanged = true;
         }
 
-        if (statusChanged)
+        if (statusChanged) {
             updateGrid();
-
-        if (mHasBattery && batteryStatusChanged) {
+        }
+        else if (mHasBattery && batteryStatusChanged) {
+            // Slight optimization, just update the battery charge percentage and icon in
+            // case only the battery status has changed, instead of having to recreate the
+            // entire grid when this happens.
             if (mBatteryPercentage != nullptr)
                 mBatteryPercentage->setValue(std::to_string(mBatteryCapacity) + "%");
 

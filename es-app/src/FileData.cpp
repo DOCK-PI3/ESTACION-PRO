@@ -2109,7 +2109,7 @@ returnValue = Utils::Platform::launchGameUnix(command, startDirectory, runInBack
     if (!runInBackground) {
         window->setAllowTextScrolling(true);
         window->setAllowFileAnimation(true);
-        SystemStatus::getInstance().pollImmediately();
+        SystemStatus::getInstance().setPollImmediately(true);
     }
 
     // Update number of times the game has been launched.

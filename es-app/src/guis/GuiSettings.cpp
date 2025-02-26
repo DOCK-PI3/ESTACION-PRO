@@ -147,7 +147,7 @@ void GuiSettings::save()
 
     if (mNeedsUpdateStatusComponents) {
         SystemStatus::getInstance().setCheckFlags();
-        SystemStatus::getInstance().pollImmediately();
+        SystemStatus::getInstance().setPollImmediately(true);
         // If we're not done within this time window it's not the end of the world,
         // the indicators will still get updated shortly.
         SDL_Delay(100);

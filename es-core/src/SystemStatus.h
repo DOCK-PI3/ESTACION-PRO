@@ -22,7 +22,7 @@ public:
 
     void setCheckFlags();
     void setPolling(const bool state);
-    void pollImmediately() { mPollImmediately = true; }
+    void setPollImmediately(const bool state) { mPollImmediately = state; }
     const bool getPollImmediately() { return mPollImmediately; }
 
     struct Status {
