@@ -255,7 +255,7 @@
         <view name="system, gamelist">
             <systemstatus name="systemStatus">
                 <pos>0.985 0.014</pos>
-                <size>0 0.035</size>
+                <height>0.035</height>
                 <fontPath>${primaryFont}</fontPath>
                 <textRelativeScale>0.8</textRelativeScale>
                 <color>${primaryColor}</color>
