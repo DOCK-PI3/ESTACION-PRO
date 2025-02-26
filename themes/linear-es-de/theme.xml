@@ -254,7 +254,7 @@
     <variant name="all">
         <view name="system, gamelist">
             <systemstatus name="systemStatus">
-                <pos>0.98 0.014</pos>
+                <pos>0.985 0.014</pos>
                 <size>0 0.035</size>
                 <fontPath>${primaryFont}</fontPath>
                 <textRelativeScale>0.8</textRelativeScale>
