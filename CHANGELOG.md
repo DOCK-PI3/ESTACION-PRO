@@ -9,6 +9,7 @@
 ### Detailed list of changes
 
 * Added a system status element showing the Blueooth, Wi-Fi, cellular and battery status on screen
+* Added a "Display clock" setting to the UI settings menu to display an on screen clock (disabled by default)
 * Added translations for Traditional Chinese (zh_TW)
 * Increased the roundness for all corners in the menu system and for the notification popups
 * Increased the background blur slightly when a menu is open
@@ -24,7 +25,6 @@
 * (Linux) Added support for the Flatpak release of Ruffle
 * (Linux) Changed the AppImage find rule for Mandarine to mandarine-qt*.AppImage
 * Added the .ruf file extension to the flash system
-* Added a "Display clock" setting to the UI settings menu to display an on screen clock (disabled by default)
 * Refactored the helpsystem code and added support for using an arbitrary amount of helpsystem elements
 * Added support for specifying which specific entries to display for the helpsystem elements
 * Added an "entryLayout" property to the helpsystem element to control the display order for the icons and text

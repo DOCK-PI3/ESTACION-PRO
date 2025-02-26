@@ -3595,13 +3595,13 @@ Instances per view:
 
 Properties:
 * `pos` - type: NORMALIZED_PAIR
-    - Default is `0.984 0.016`
-* `size` - type: NORMALIZED_PAIR
-    - The size property works a bit different for this element compared to all other elements as only the height is considered. The width is automatically calculated based on the aspect ratio of the indicator icons plus the value set for the `entrySpacing` property. So it's recommended to just set the width to `0`
-    - Minimum value is `0 0.01` and maximum value is `0 0.5`
-    - Default is `0 0.035`
+    - Default is `0.982 0.016`
+* `height` - type: FLOAT
+    - The sizing for this element works a bit different compared to most other elements as the width is automatically calculated based on the aspect ratio of the indicator icons plus the value set for the `entrySpacing` property. In order to keep sizing consistent across horizontal and vertical screen orientations and to also align with the sizing logic used by the `helpsystem` and `clock` elements, the `height` property works similarly to the `fontSize` property used by those elements. This means the actual height calculation in pixels is made as a percentage of the screen height for horizontally oriented screens or the screen width for vertically oriented screens.
+    - Minimum value is `0.01` and maximum value is `0.5`
+    - Default is `0.035`
 * `origin` - type: NORMALIZED_PAIR
-    - Where on the element `pos` refers to. For example, an origin of `0.5 0.5` and a `pos` of `0.5 0.5` would place the element exactly in the middle of the screen. If the position and size attributes are themeable, origin is implied.
+    - Where on the element `pos` refers to. For example, an origin of `0.5 0.5` and a `pos` of `0.5 0.5` would place the element exactly in the middle of the screen.
     - Minimum value per axis is `0` and maximum value per axis is `1`
     - Default is `1 0`
 * `fontPath` - type: PATH
