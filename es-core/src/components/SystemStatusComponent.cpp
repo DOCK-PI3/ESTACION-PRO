@@ -159,7 +159,7 @@ void SystemStatusComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
 {
     // Apply default settings as the theme may not define any configuration.
     const glm::vec2 scale {glm::vec2 {Renderer::getScreenWidth(), Renderer::getScreenHeight()}};
-    mPosition = glm::vec3 {0.984f * scale.x, 0.016f * scale.y, 0.0f};
+    mPosition = glm::vec3 {0.982f * scale.x, 0.016f * scale.y, 0.0f};
     mSize = glm::vec2 {0.0f, 0.035f} * scale;
     mOrigin = glm::vec2 {1.0f, 0.0f};
     mColor = 0xFFFFFFFF;
