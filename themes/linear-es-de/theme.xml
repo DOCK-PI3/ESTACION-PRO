@@ -109,7 +109,6 @@
                 <fontPath>${primaryFont}</fontPath>
                 <fontSize>0.029</fontSize>
                 <color>${primaryColor}</color>
-                <lineSpacing>1</lineSpacing>
                 <format>%H:%M</format>
             </clock>
         </view>
