@@ -373,9 +373,11 @@ void HelpComponent::render(const glm::mat4& parentTrans)
         mRenderer->setMatrix(trans);
 
         mRenderer->drawRect(
-            0.0f, 0.0f, mSize.x + mStyleBackgroundPadding.x, mSize.y + mStyleBackgroundPadding.y,
-            mStyleBackgroundColor, mStyleBackgroundColorEnd, mStyleColorGradientHorizontal,
-            mThemeOpacity, 1.0f, Renderer::BlendFactor::SRC_ALPHA,
+            0.0f, 0.0f,
+            mSize.x + mStyleBackgroundPadding.x -
+                (mStyleEntrySpacing * mRenderer->getScreenWidth()),
+            mSize.y + mStyleBackgroundPadding.y, mStyleBackgroundColor, mStyleBackgroundColorEnd,
+            mStyleColorGradientHorizontal, mThemeOpacity, 1.0f, Renderer::BlendFactor::SRC_ALPHA,
             Renderer::BlendFactor::ONE_MINUS_SRC_ALPHA, mStyleBackgroundCornerRadius);
 
         mPosition = {0.0f, 0.0f, 0.0f};
