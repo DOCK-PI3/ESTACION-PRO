@@ -3524,6 +3524,25 @@ Properties:
 * `letterCase` - type: STRING
     - Valid values are `uppercase`, `lowercase` or `capitalize`
     - Default is `uppercase`
+* `backgroundColor` - type: COLOR
+    - Default is `00000000` (no background is drawn)
+* `backgroundColorEnd` - type: COLOR
+    - Works in the exact same way as `backgroundColor` but can be set as the end color to apply a color gradient.
+    - Default is the same value as `backgroundColor`
+* `backgroundGradientType` - type: STRING
+    - The direction to apply the color gradient if both `backgroundColor` and `backgroundColorEnd` have been defined.
+    - Valid values are `horizontal` or `vertical`
+    - Default is `horizontal`
+* `backgroundPadding` - type: NORMALIZED_PAIR
+    - This property makes it possible to apply a padding around the element if `backgroundColor` has been defined. Note that this additional sizing will not have any effect on the `pos` and `origin` properties, these will remain constant. Or in other words, changing the `backgroundPadding` property value will not change the position of the overall element. An identical padding is applied to the left/right and top/bottom of the element.
+    - Minimum value per axis is `0` and maximum value per axis is `0.2`
+    - Default is `0 0`
+    - This property can only be used if `backgroundColor` has a value defined.
+* `backgroundCornerRadius` - type: FLOAT
+    - Setting this property higher than zero applies rounded corners to the element background, assuming it has a color set. The radius is a percentage of the screen width. Note that the maximum allowed value is quite arbitrary as the renderer will in practice limit the maximum roundness so it can never go beyond half the background height. It means that setting this property sufficiently high will produce perfectly rounded sides for the background. You normally want to combine this property with `backgroundPadding` to add some extra space around the helpsystem.
+    - Minimum value is `0` and maximum value is `0.5`
+    - Default is `0` (corners are not rounded)
+    - This property can only be used if `backgroundColor` has a value defined.
 * `opacity` - type: FLOAT
     - Controls the level of transparency.
     - Minimum value is `0.2` and maximum value is `1`
@@ -3597,13 +3616,20 @@ Properties:
 * `pos` - type: NORMALIZED_PAIR
     - Default is `0.982 0.016`
 * `height` - type: FLOAT
-    - The sizing for this element works a bit different compared to most other elements as the width is automatically calculated based on the aspect ratio of the indicator icons plus the value set for the `entrySpacing` property. In order to keep sizing consistent across horizontal and vertical screen orientations and to also align with the sizing logic used by the `helpsystem` and `clock` elements, the `height` property works similarly to the `fontSize` property used by those elements. This means the actual height calculation in pixels is made as a percentage of the screen height for horizontally oriented screens or the screen width for vertically oriented screens.
+    - The sizing for this element works a bit different compared to most other elements as the width is automatically calculated based on the aspect ratio of the indicator icons plus the value set for the `entrySpacing` property. And in order to keep sizing consistent across horizontal and vertical screen orientations and to also align with the sizing logic used by the `helpsystem` and `clock` elements, the `height` property works similarly to the `fontSize` property used by those elements. This means the actual height calculation in pixels is made as a percentage of the screen height for horizontally oriented screens or the screen width for vertically oriented screens.
     - Minimum value is `0.01` and maximum value is `0.5`
     - Default is `0.035`
 * `origin` - type: NORMALIZED_PAIR
     - Where on the element `pos` refers to. For example, an origin of `0.5 0.5` and a `pos` of `0.5 0.5` would place the element exactly in the middle of the screen.
     - Minimum value per axis is `0` and maximum value per axis is `1`
     - Default is `1 0`
+* `rotation` - type: FLOAT
+    - Angle in degrees that the element should be rotated. Positive values will rotate clockwise, negative values will rotate counterclockwise.
+    - Default is `0`
+* `rotationOrigin` - type: NORMALIZED_PAIR
+    - Point around which the element will be rotated.
+    - Minimum value per axis is `0` and maximum value per axis is `1`
+    - Default is `0.5 0.5`.
 * `fontPath` - type: PATH
     - Path to a TrueType or OpenType font (.ttf or .otf) which is used for the battery percentage indicator.
 * `textRelativeScale` - type: FLOAT.
@@ -3689,10 +3715,10 @@ Properties:
     - Minimum value per axis is `0` and maximum value per axis is `1`
     - Default is `0 0`
 * `rotation` - type: FLOAT
-    - Angle in degrees that the text should be rotated. Positive values will rotate clockwise, negative values will rotate counterclockwise.
+    - Angle in degrees that the element should be rotated. Positive values will rotate clockwise, negative values will rotate counterclockwise.
     - Default is `0`
 * `rotationOrigin` - type: NORMALIZED_PAIR
-    - Point around which the text will be rotated.
+    - Point around which the element will be rotated.
     - Minimum value per axis is `0` and maximum value per axis is `1`
     - Default is `0.5 0.5`.
 * `fontPath` - type: PATH
@@ -3713,20 +3739,23 @@ Properties:
     - Default is `FFFFFFFF`
 * `backgroundColor` - type: COLOR
     - Default is `00000000` (no background is drawn)
-* `backgroundMargins` - type: NORMALIZED_PAIR
-    - Adds margins to the text background, assuming it has a color set. The first value of the pair is the left margin and the second value is the right margin, which means it's possible to set these margins completely independently. Margins are applied after all other positioning and sizing calculations and they are rendered outside the text debug rectangle boundaries.
-    - Minimum value per axis is `0` and maximum value per axis is `0.5`
+* `backgroundColorEnd` - type: COLOR
+    - Works in the exact same way as `backgroundColor` but can be set as the end color to apply a color gradient.
+    - Default is the same value as `backgroundColor`
+* `backgroundGradientType` - type: STRING
+    - The direction to apply the color gradient if both `backgroundColor` and `backgroundColorEnd` have been defined.
+    - Valid values are `horizontal` or `vertical`
+    - Default is `horizontal`
+* `backgroundPadding` - type: NORMALIZED_PAIR
+    - This property makes it possible to apply a padding around the element if `backgroundColor` has been defined. Note that this additional sizing will not have any effect on the `pos` and `origin` properties, these will remain constant. Or in other words, changing the `backgroundPadding` property value will not change the position of the overall element. An identical padding is applied to the left/right and top/bottom of the element.
+    - Minimum value per axis is `0` and maximum value per axis is `0.2`
     - Default is `0 0`
     - This property can only be used if `backgroundColor` has a value defined.
 * `backgroundCornerRadius` - type: FLOAT
-    - Setting this property higher than zero applies rounded corners to the text background, assuming it has a color set. The radius is a percentage of the screen width. Note that the maximum allowed value is quite arbitrary as the renderer will in practice limit the maximum roundness so it can never go beyond half the text background height. It means that setting this property sufficiently high will produce perfectly rounded sides for the text background. You normally want to combine this property with `backgroundMargins` to add some extra margins.
+    - Setting this property higher than zero applies rounded corners to the element background, assuming it has a color set. The radius is a percentage of the screen width. Note that the maximum allowed value is quite arbitrary as the renderer will in practice limit the maximum roundness so it can never go beyond half the background height. It means that setting this property sufficiently high will produce perfectly rounded sides for the background. You normally want to combine this property with `backgroundPadding` to add some extra space around the clock.
     - Minimum value is `0` and maximum value is `0.5`
     - Default is `0` (corners are not rounded)
     - This property can only be used if `backgroundColor` has a value defined.
-* `lineSpacing` - type: FLOAT
-    - Controls the space between lines (as a multiple of font height).
-    - Minimum value is `0.5` and maximum value is `3`
-    - Default is `1.5`
 * `format` - type: STRING
     - %Y: The year, including the century (1900)
     - %m: The month number [01,12]

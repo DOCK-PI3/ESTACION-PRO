@@ -28,7 +28,8 @@
 * Refactored the helpsystem code and added support for using an arbitrary amount of helpsystem elements
 * Added support for specifying which specific entries to display for the helpsystem elements
 * Added an "entryLayout" property to the helpsystem element to control the display order for the icons and text
-* Added "rotation" and "rotationOrigin" properties to the helpsystem element
+* Added "rotation", "rotationOrigin", "backgroundColor" and "backgroundColorEnd" properties to the helpsystem element
+* Added "backgroundGradientType", "backgroundPadding" and "backgroundCornerRadius" properties to the helpsystem element
 * Added a "clock" element to make it possible to customize the layout and position of the clock
 * Added "imageSize", "imageMaxSize", "imageCropSize" and "imageCropPos" properties to the video element
 * Added a "fadeInType" property to the video element to fade in from black or from transparency
