@@ -85,6 +85,11 @@ private:
     unsigned int mStyleTextColorDimmed;
     unsigned int mStyleIconColor;
     unsigned int mStyleIconColorDimmed;
+    unsigned int mStyleBackgroundColor;
+    unsigned int mStyleBackgroundColorEnd;
+    glm::vec2 mStyleBackgroundPadding;
+    float mStyleBackgroundCornerRadius;
+    bool mStyleColorGradientHorizontal;
     EntryLayout mStyleEntryLayout;
     float mStyleRotation;
     float mStyleEntrySpacing;

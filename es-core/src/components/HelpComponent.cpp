@@ -12,6 +12,7 @@
 #include "Window.h"
 #include "components/ImageComponent.h"
 #include "components/TextComponent.h"
+#include "utils/MathUtil.h"
 
 #define PREFIX "button_"
 
@@ -30,6 +31,11 @@ HelpComponent::HelpComponent(std::shared_ptr<Font> font)
     , mStyleTextColorDimmed {0x777777FF}
     , mStyleIconColor {0x777777FF}
     , mStyleIconColorDimmed {0x777777FF}
+    , mStyleBackgroundColor {0x00000000}
+    , mStyleBackgroundColorEnd {0x00000000}
+    , mStyleBackgroundPadding {0.0f, 0.0f}
+    , mStyleBackgroundCornerRadius {0.0f}
+    , mStyleColorGradientHorizontal {true}
     , mStyleEntryLayout {EntryLayout::ICON_FIRST}
     , mStyleRotation {0.0f}
     , mStyleEntrySpacing {0.00833f}
@@ -119,6 +125,46 @@ void HelpComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
         mStyleIconColorDimmed = elem->get<unsigned int>("iconColorDimmed");
     else
         mStyleIconColorDimmed = mStyleIconColor;
+
+    if (elem->has("backgroundColor")) {
+        mStyleBackgroundColor = elem->get<unsigned int>("backgroundColor");
+
+        if (elem->has("backgroundColorEnd"))
+            mStyleBackgroundColorEnd = elem->get<unsigned int>("backgroundColorEnd");
+        else
+            mStyleBackgroundColorEnd = mStyleBackgroundColor;
+
+        if (elem->has("backgroundGradientType")) {
+            const std::string& backgroundGradientType {
+                elem->get<std::string>("backgroundGradientType")};
+            if (backgroundGradientType == "horizontal") {
+                mStyleColorGradientHorizontal = true;
+            }
+            else if (backgroundGradientType == "vertical") {
+                mStyleColorGradientHorizontal = false;
+            }
+            else {
+                mStyleColorGradientHorizontal = true;
+                LOG(LogWarning) << "HelpComponent: Invalid theme configuration, property "
+                                   "\"backgroundGradientType\" for element \""
+                                << element.substr(11) << "\" defined as \""
+                                << backgroundGradientType << "\"";
+            }
+        }
+    }
+
+    if (elem->has("backgroundPadding")) {
+        const glm::vec2 backgroundPadding {
+            glm::clamp(elem->get<glm::vec2>("backgroundPadding"), 0.0f, 0.2f)};
+        mStyleBackgroundPadding.x = backgroundPadding.x * mRenderer->getScreenWidth();
+        mStyleBackgroundPadding.y = backgroundPadding.y * mRenderer->getScreenHeight();
+    }
+
+    if (elem->has("backgroundCornerRadius")) {
+        mStyleBackgroundCornerRadius =
+            glm::clamp(elem->get<float>("backgroundCornerRadius"), 0.0f, 0.5f) *
+            mRenderer->getScreenWidth();
+    }
 
     if (elem->has("fontPath") || elem->has("fontSize")) {
         mStyleFont = Font::getFromTheme(elem, ThemeFlags::ALL, mStyleFont);
@@ -313,6 +359,31 @@ void HelpComponent::render(const glm::mat4& parentTrans)
 {
     if (!mVisible)
         return;
+
+    if (mStyleBackgroundColor != 0x00000000) {
+        mPosition = mGrid->getPosition();
+        mSize = mGrid->getSize();
+        mOrigin = mGrid->getOrigin();
+        mRotation = mStyleRotation;
+        mRotationOrigin = mStyleRotationOrigin;
+
+        glm::mat4 trans {parentTrans * getTransform()};
+        trans = glm::translate(trans, glm::vec3 {-mStyleBackgroundPadding.x / 2.0f,
+                                                 -mStyleBackgroundPadding.y / 2.0f, 0.0f});
+        mRenderer->setMatrix(trans);
+
+        mRenderer->drawRect(
+            0.0f, 0.0f, mSize.x + mStyleBackgroundPadding.x, mSize.y + mStyleBackgroundPadding.y,
+            mStyleBackgroundColor, mStyleBackgroundColorEnd, mStyleColorGradientHorizontal,
+            mThemeOpacity, 1.0f, Renderer::BlendFactor::SRC_ALPHA,
+            Renderer::BlendFactor::ONE_MINUS_SRC_ALPHA, mStyleBackgroundCornerRadius);
+
+        mPosition = {0.0f, 0.0f, 0.0f};
+        mSize = {0.0f, 0.0f};
+        mOrigin = {0.0f, 0.0f};
+        mRotation = 0.0f;
+        mRotationOrigin = {0.5f, 0.5f};
+    }
 
     const glm::mat4 trans {parentTrans * getTransform()};
 
