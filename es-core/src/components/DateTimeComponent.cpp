@@ -159,11 +159,9 @@ void DateTimeComponent::render(const glm::mat4& parentTrans)
         return;
 
     if (mClockMode && mClockBgColor != 0x00000000) {
-        const glm::vec3 positionTemp {mPosition};
-        mPosition.x -= mBackgroundPadding.x / 2.0f;
-        mPosition.y -= mBackgroundPadding.y / 2.0f;
-
-        const glm::mat4 trans {parentTrans * getTransform()};
+        glm::mat4 trans {parentTrans * getTransform()};
+        trans = glm::translate(
+            trans, glm::vec3 {-mBackgroundPadding.x / 2.0f, -mBackgroundPadding.y / 2.0f, 0.0f});
         mRenderer->setMatrix(trans);
 
         mRenderer->drawRect(0.0f, 0.0f, mSize.x + mBackgroundPadding.x,
@@ -171,8 +169,6 @@ void DateTimeComponent::render(const glm::mat4& parentTrans)
                             mClockColorGradientHorizontal, mThemeOpacity, 1.0f,
                             Renderer::BlendFactor::SRC_ALPHA,
                             Renderer::BlendFactor::ONE_MINUS_SRC_ALPHA, mBackgroundCornerRadius);
-
-        mPosition = positionTemp;
     }
 
     // Render the component.
