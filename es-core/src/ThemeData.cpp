@@ -583,6 +583,8 @@ std::map<std::string, std::map<std::string, ThemeData::ElementPropertyType>>
       {{"pos", NORMALIZED_PAIR},
        {"height", FLOAT},
        {"origin", NORMALIZED_PAIR},
+       {"rotation", FLOAT},
+       {"rotationOrigin", NORMALIZED_PAIR},
        {"fontPath", PATH},
        {"textRelativeScale", FLOAT},
        {"color", COLOR},

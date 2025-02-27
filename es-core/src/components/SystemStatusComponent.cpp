@@ -386,23 +386,6 @@ void SystemStatusComponent::render(const glm::mat4& parentTrans)
     if (mDisplayEntries.empty())
         return;
 
-    if (mBackgroundColor != 0x00000000) {
-        const glm::vec3 positionTemp {mPosition};
-        mPosition.x -= mBackgroundPadding.x / 2.0f;
-        mPosition.y -= mBackgroundPadding.y / 2.0f;
-
-        const glm::mat4 trans {parentTrans * getTransform()};
-        mRenderer->setMatrix(trans);
-
-        mRenderer->drawRect(0.0f, 0.0f, mSize.x + mBackgroundPadding.x,
-                            mSize.y + mBackgroundPadding.y, mBackgroundColor, mBackgroundColorEnd,
-                            mColorGradientHorizontal, mThemeOpacity, 1.0f,
-                            Renderer::BlendFactor::SRC_ALPHA,
-                            Renderer::BlendFactor::ONE_MINUS_SRC_ALPHA, mBackgroundCornerRadius);
-
-        mPosition = positionTemp;
-    }
-
     if (mGrid) {
         mGrid->setPosition(mPosition);
         mGrid->setRotationOrigin(mRotationOrigin);
@@ -412,6 +395,37 @@ void SystemStatusComponent::render(const glm::mat4& parentTrans)
             const glm::mat4 trans {parentTrans * getTransform()};
             mRenderer->setMatrix(trans);
             mRenderer->drawRect(0.0f, 0.0f, mSize.x, mSize.y, 0xFF000033, 0xFF000033);
+        }
+
+        if (mBackgroundColor != 0x00000000) {
+            glm::vec3 positionTemp {mPosition};
+            glm::vec2 sizeTemp {mSize};
+            glm::vec2 originTemp {mOrigin};
+            float rotationTemp {mRotation};
+            glm::vec2 rotationOriginTemp {mRotationOrigin};
+
+            mPosition = mGrid->getPosition();
+            mSize = mGrid->getSize();
+            mOrigin = mGrid->getOrigin();
+            mRotation = mRotation;
+            mRotationOrigin = mRotationOrigin;
+
+            glm::mat4 trans {parentTrans * getTransform()};
+            trans = glm::translate(trans, glm::vec3 {-mBackgroundPadding.x / 2.0f,
+                                                     -mBackgroundPadding.y / 2.0f, 0.0f});
+            mRenderer->setMatrix(trans);
+
+            mRenderer->drawRect(
+                0.0f, 0.0f, mSize.x + mBackgroundPadding.x, mSize.y + mBackgroundPadding.y,
+                mBackgroundColor, mBackgroundColorEnd, mColorGradientHorizontal, mThemeOpacity,
+                1.0f, Renderer::BlendFactor::SRC_ALPHA, Renderer::BlendFactor::ONE_MINUS_SRC_ALPHA,
+                mBackgroundCornerRadius);
+
+            mPosition = positionTemp;
+            mSize = sizeTemp;
+            mOrigin = originTemp;
+            mRotation = rotationTemp;
+            mRotationOrigin = rotationOriginTemp;
         }
 
         mGrid->render(parentTrans);
