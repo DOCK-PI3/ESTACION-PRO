@@ -16,9 +16,14 @@
 #include "utils/StringUtil.h"
 
 DateTimeComponent::DateTimeComponent()
-    : mClockAccumulator {0}
+    : mRenderer {Renderer::getInstance()}
+    , mClockAccumulator {0}
     , mClockMode {false}
     , mDisplayRelative {false}
+    , mBackgroundPadding {0.0f, 0.0f}
+    , mClockBgColor {0x00000000}
+    , mClockBgColorEnd {0x00000000}
+    , mClockColorGradientHorizontal {true}
 {
     // ISO 8601 date format.
     setFormat("%Y-%m-%d");
@@ -37,6 +42,10 @@ DateTimeComponent::DateTimeComponent(const std::string& text,
     , mClockAccumulator {0}
     , mClockMode {false}
     , mDisplayRelative {false}
+    , mBackgroundPadding {0.0f, 0.0f}
+    , mClockBgColor {0x00000000}
+    , mClockBgColorEnd {0x00000000}
+    , mClockColorGradientHorizontal {true}
 {
     // ISO 8601 date format.
     setFormat("%Y-%m-%d");
@@ -149,6 +158,23 @@ void DateTimeComponent::render(const glm::mat4& parentTrans)
     if (mClockMode && !Settings::getInstance()->getBool("DisplayClock"))
         return;
 
+    if (mClockMode && mClockBgColor != 0x00000000) {
+        const glm::vec3 positionTemp {mPosition};
+        mPosition.x -= mBackgroundPadding.x / 2.0f;
+        mPosition.y -= mBackgroundPadding.y / 2.0f;
+
+        const glm::mat4 trans {parentTrans * getTransform()};
+        mRenderer->setMatrix(trans);
+
+        mRenderer->drawRect(0.0f, 0.0f, mSize.x + mBackgroundPadding.x,
+                            mSize.y + mBackgroundPadding.y, mClockBgColor, mClockBgColorEnd,
+                            mClockColorGradientHorizontal, mThemeOpacity, 1.0f,
+                            Renderer::BlendFactor::SRC_ALPHA,
+                            Renderer::BlendFactor::ONE_MINUS_SRC_ALPHA, mBackgroundCornerRadius);
+
+        mPosition = positionTemp;
+    }
+
     // Render the component.
     TextComponent::render(parentTrans);
 }
@@ -169,9 +195,10 @@ void DateTimeComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
         componentName = "ClockComponent";
         // Apply default clock settings as the theme may not define any configuration for it.
         setFont(Font::get(FONT_SIZE_SMALL, FONT_PATH_LIGHT));
+        setLineSpacing(1.0f);
         const glm::vec2 scale {
             getParent() ? getParent()->getSize() :
-                          glm::vec2 {Renderer::getScreenWidth(), Renderer::getScreenHeight()}};
+                          glm::vec2 {mRenderer->getScreenWidth(), mRenderer->getScreenHeight()}};
         setPosition(0.018f * scale.x, 0.016f * scale.y);
         mSize.y = mFont->getLetterHeight();
         setColor(0xFFFFFFFF);
@@ -205,13 +232,49 @@ void DateTimeComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
 
     setRenderBackground(false);
     if (properties & COLOR && elem->has("backgroundColor")) {
-        setBackgroundColor(elem->get<unsigned int>("backgroundColor"));
-        setRenderBackground(true);
+        if (mClockMode) {
+            mClockBgColor = elem->get<unsigned int>("backgroundColor");
+
+            if (elem->has("backgroundColorEnd"))
+                mClockBgColorEnd = elem->get<unsigned int>("backgroundColorEnd");
+            else
+                mClockBgColorEnd = mClockBgColor;
+
+            if (elem->has("backgroundGradientType")) {
+                const std::string& backgroundGradientType {
+                    elem->get<std::string>("backgroundGradientType")};
+                if (backgroundGradientType == "horizontal") {
+                    mClockColorGradientHorizontal = true;
+                }
+                else if (backgroundGradientType == "vertical") {
+                    mClockColorGradientHorizontal = false;
+                }
+                else {
+                    mClockColorGradientHorizontal = true;
+                    LOG(LogWarning) << componentName
+                                    << ": Invalid theme configuration, property "
+                                       "\"backgroundGradientType\" for element \""
+                                    << element.substr(6) << "\" defined as \""
+                                    << backgroundGradientType << "\"";
+                }
+            }
+        }
+        else {
+            setBackgroundColor(elem->get<unsigned int>("backgroundColor"));
+            setRenderBackground(true);
+        }
     }
 
-    if (elem->has("backgroundMargins")) {
+    if (!mClockMode && elem->has("backgroundMargins")) {
         setBackgroundMargins(glm::clamp(elem->get<glm::vec2>("backgroundMargins"), 0.0f, 0.5f) *
                              mRenderer->getScreenWidth());
+    }
+
+    if (mClockMode && elem->has("backgroundPadding")) {
+        const glm::vec2 backgroundPadding {
+            glm::clamp(elem->get<glm::vec2>("backgroundPadding"), 0.0f, 0.2f)};
+        mBackgroundPadding.x = backgroundPadding.x * mRenderer->getScreenWidth();
+        mBackgroundPadding.y = backgroundPadding.y * mRenderer->getScreenHeight();
     }
 
     if (elem->has("backgroundCornerRadius")) {

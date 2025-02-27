@@ -56,6 +56,10 @@ private:
     std::string mFormat;
     bool mClockMode;
     bool mDisplayRelative;
+    glm::vec2 mBackgroundPadding;
+    unsigned int mClockBgColor;
+    unsigned int mClockBgColorEnd;
+    bool mClockColorGradientHorizontal;
 };
 
 #endif // ES_CORE_COMPONENTS_DATE_TIME_COMPONENT_H
