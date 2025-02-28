@@ -285,7 +285,7 @@ void SystemStatusComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
     if (elem->has(PREFIX "icon_battery_charging"))
         mIconPathMap["battery_charging"] = elem->get<std::string>(PREFIX "icon_battery_charging");
     if (elem->has(PREFIX "icon_battery_low"))
-        mIconPathMap["icon_battery_low"] = elem->get<std::string>(PREFIX "icon_battery_low");
+        mIconPathMap["battery_low"] = elem->get<std::string>(PREFIX "icon_battery_low");
     if (elem->has(PREFIX "icon_battery_medium"))
         mIconPathMap["battery_medium"] = elem->get<std::string>(PREFIX "icon_battery_medium");
     if (elem->has(PREFIX "icon_battery_high"))
