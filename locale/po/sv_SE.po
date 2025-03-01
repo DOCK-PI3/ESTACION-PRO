@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2024-11-24 17:33+0100\n"
+"POT-Creation-Date: 2025-03-01 09:47+0100\n"
 "PO-Revision-Date: 2024-11-24 17:37+0100\n"
 "Last-Translator: Northwestern Software <info@es-de.org>\n"
 "Language-Team: Swedish <info@es-de.org>\n"
@@ -758,6 +758,9 @@ msgstr "KORT"
 msgid "LONG"
 msgstr "LÅNG"
 
+msgid "POPUP"
+msgstr ""
+
 msgid "UI MODE"
 msgstr "UI-LÄGE"
 
@@ -819,6 +822,9 @@ msgstr "ENBART SPEL"
 msgid "GAMES AND SYSTEMS"
 msgstr "SPEL OCH SYSTEM"
 
+msgid "SYSTEM STATUS SETTINGS"
+msgstr ""
+
 msgid "MEDIA VIEWER SETTINGS"
 msgstr "INSTÄLLNINGAR FÖR MEDIAVISARE"
 
@@ -827,6 +833,9 @@ msgstr "INSTÄLLNINGAR FÖR SKÄRMSLÄCKARE"
 
 msgid "ENABLE THEME VARIANT TRIGGERS"
 msgstr "AKTIVERA VARIANTTRIGGERS FÖR TEMAN"
+
+msgid "DISPLAY CLOCK"
+msgstr ""
 
 msgid "BLUR BACKGROUND WHEN MENU IS OPEN"
 msgstr "RENDERA OSKARP BAKGRUND NÄR MENYN VISAS"
@@ -1062,6 +1071,9 @@ msgstr "VISA DOLDA SPEL"
 msgid "ENABLE CUSTOM EVENT SCRIPTS"
 msgstr "AKTIVERA ANPASSADE EVENT-SCRIPT"
 
+msgid "BROWSING CUSTOM EVENTS"
+msgstr ""
+
 msgid "ONLY SHOW GAMES FROM GAMELIST.XML FILES"
 msgstr "VISA BARA SPEL FRÅN GAMELIST.XML FILERNA"
 
@@ -1139,6 +1151,10 @@ msgstr "VERKLIGEN STÄNGA AV?"
 
 msgid "POWER OFF SYSTEM"
 msgstr "STÄNG AV SYSTEMET"
+
+msgctxt "short"
+msgid "SYSTEM STATUS SETTINGS"
+msgstr ""
 
 msgctxt "short"
 msgid "MEDIA VIEWER SETTINGS"
@@ -1856,6 +1872,21 @@ msgstr "BYT VIDEOR EFTER (SEKUNDER)"
 
 msgid "RENDER BLUR"
 msgstr "RENDERA OSKÄRPA"
+
+msgid "DISPLAY BLUETOOTH STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY WI-FI STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY CELLULAR STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY BATTERY STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY BATTERY CHARGE PERCENTAGE"
+msgstr ""
 
 msgid "DOWNLOADING THEMES LIST 100%"
 msgstr "LADDAR NER TEMALISTAN 100%"

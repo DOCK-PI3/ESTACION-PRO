@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2024-11-24 17:33+0100\n"
+"POT-Creation-Date: 2025-03-01 09:47+0100\n"
 "PO-Revision-Date: 2024-11-30 15:24+0100\n"
 "Last-Translator: Stefan <s.vandenbroekprive@gmail.com>\n"
 "Language-Team: Nederlands <info@es-de.org>\n"
@@ -761,6 +761,9 @@ msgstr "KORT"
 msgid "LONG"
 msgstr "LANG"
 
+msgid "POPUP"
+msgstr ""
+
 msgid "UI MODE"
 msgstr "UI-MODUS"
 
@@ -822,6 +825,9 @@ msgstr "ALLEEN SPELLETJES"
 msgid "GAMES AND SYSTEMS"
 msgstr "SPELLEN EN SYSTEMEN"
 
+msgid "SYSTEM STATUS SETTINGS"
+msgstr ""
+
 msgid "MEDIA VIEWER SETTINGS"
 msgstr "MEDIA VIEWER-INSTELLINGEN"
 
@@ -830,6 +836,9 @@ msgstr "SCREENSAVER-INSTELLINGEN"
 
 msgid "ENABLE THEME VARIANT TRIGGERS"
 msgstr "THEMA VARIANT TRIGGERS INSCHAKELEN"
+
+msgid "DISPLAY CLOCK"
+msgstr ""
 
 msgid "BLUR BACKGROUND WHEN MENU IS OPEN"
 msgstr "ACHTERGROND VERVAGEN ALS HET MENU GEOPEND IS"
@@ -1065,6 +1074,9 @@ msgstr "VERBORGEN SPELLETJES TONEN"
 msgid "ENABLE CUSTOM EVENT SCRIPTS"
 msgstr "AANGEPASTE EVENEMENTEN-SCRIPTS INSCHAKELEN"
 
+msgid "BROWSING CUSTOM EVENTS"
+msgstr ""
+
 msgid "ONLY SHOW GAMES FROM GAMELIST.XML FILES"
 msgstr "ALLEEN GAMES UIT GAMELIST.XML-BESTANDEN TONEN"
 
@@ -1142,6 +1154,10 @@ msgstr "ECHT UITSCHAKELEN?"
 
 msgid "POWER OFF SYSTEM"
 msgstr "SCHAKEL SYSTEEM UIT"
+
+msgctxt "short"
+msgid "SYSTEM STATUS SETTINGS"
+msgstr ""
 
 msgctxt "short"
 msgid "MEDIA VIEWER SETTINGS"
@@ -1870,6 +1886,21 @@ msgstr "VIDEO'S WISSELEN NA (SECONDEN)"
 
 msgid "RENDER BLUR"
 msgstr "WISSEN WISSEN"
+
+msgid "DISPLAY BLUETOOTH STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY WI-FI STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY CELLULAR STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY BATTERY STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY BATTERY CHARGE PERCENTAGE"
+msgstr ""
 
 msgid "DOWNLOADING THEMES LIST 100%"
 msgstr "DOWNLOAD THEMA LIJST 100%"

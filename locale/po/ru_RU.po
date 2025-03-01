@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2024-11-24 17:33+0100\n"
+"POT-Creation-Date: 2025-03-01 09:47+0100\n"
 "PO-Revision-Date: 2024-12-02 17:56+0400\n"
 "Last-Translator: Northwestern Software <info@es-de.org>\n"
 "Language-Team: Русский <info@es-de.org>\n"
@@ -762,6 +762,9 @@ msgstr "КОРОТКАЯ"
 msgid "LONG"
 msgstr "ДЛИННАЯ"
 
+msgid "POPUP"
+msgstr ""
+
 msgid "UI MODE"
 msgstr "РЕЖИМ ИНТЕРФЕЙСА"
 
@@ -821,6 +824,9 @@ msgstr "ТОЛЬКО ИГРЫ"
 msgid "GAMES AND SYSTEMS"
 msgstr "ИГРЫ И СИСТЕМЫ"
 
+msgid "SYSTEM STATUS SETTINGS"
+msgstr ""
+
 msgid "MEDIA VIEWER SETTINGS"
 msgstr "НАСТРОЙКИ ПРОСМОТРЩИКА МЕДИА"
 
@@ -829,6 +835,9 @@ msgstr "НАСТРОЙКИ ЗАСТАВКИ"
 
 msgid "ENABLE THEME VARIANT TRIGGERS"
 msgstr "РАЗРЕШИТЬ СМЕНУ ВАРИАНТОВ ТЕМ ТРИГГЕРАМИ"
+
+msgid "DISPLAY CLOCK"
+msgstr ""
 
 msgid "BLUR BACKGROUND WHEN MENU IS OPEN"
 msgstr "РАЗМЫТИЕ ФОНА ПРИ ОТКРЫТИИ МЕНЮ"
@@ -1064,6 +1073,9 @@ msgstr "ПОКАЗЫВАТЬ СКРЫТЫЕ ИГРЫ"
 msgid "ENABLE CUSTOM EVENT SCRIPTS"
 msgstr "РАЗРЕШИТЬ ПОЛЬЗ. СЦЕНАРИИ СОБЫТИЙ"
 
+msgid "BROWSING CUSTOM EVENTS"
+msgstr ""
+
 msgid "ONLY SHOW GAMES FROM GAMELIST.XML FILES"
 msgstr "ПОКАЗЫВАТЬ  ИГРЫ ТОЛЬКО ИЗ GAMELIST.XML"
 
@@ -1141,6 +1153,10 @@ msgstr "ДЕЙСТВИТЕЛЬНО ЗАВЕРШИТЬ РАБОТУ СИСТЕМ�
 
 msgid "POWER OFF SYSTEM"
 msgstr "ВЫКЛЮЧИТЬ ПИТАНИЕ СИСТЕМЫ"
+
+msgctxt "short"
+msgid "SYSTEM STATUS SETTINGS"
+msgstr ""
 
 msgctxt "short"
 msgid "MEDIA VIEWER SETTINGS"
@@ -1867,6 +1883,21 @@ msgstr "СМЕНА ВИДЕО ЧЕРЕЗ (В СЕКУНДАХ)"
 
 msgid "RENDER BLUR"
 msgstr "РЕНДЕРИНГ РАЗМЫТИЯ"
+
+msgid "DISPLAY BLUETOOTH STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY WI-FI STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY CELLULAR STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY BATTERY STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY BATTERY CHARGE PERCENTAGE"
+msgstr ""
 
 msgid "DOWNLOADING THEMES LIST 100%"
 msgstr "ЗАГРУЗКА СПИСКА ТЕМ 100%"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2024-11-24 17:33+0100\n"
+"POT-Creation-Date: 2025-03-01 09:47+0100\n"
 "PO-Revision-Date: 2024-12-03 23:46+0200\n"
 "Last-Translator: Lorenzo Castelletta <lorenzo.castelletta@gmail.com>\n"
 "Language-Team: Italiano <info@es-de.org>\n"
@@ -771,6 +771,9 @@ msgstr "BREVE"
 msgid "LONG"
 msgstr "LUNGA"
 
+msgid "POPUP"
+msgstr ""
+
 msgid "UI MODE"
 msgstr "MODALITÀ INTERFACCIA UTENTE"
 
@@ -831,6 +834,9 @@ msgstr "SOLO GIOCHI"
 msgid "GAMES AND SYSTEMS"
 msgstr "GIOCHI E SISTEMI"
 
+msgid "SYSTEM STATUS SETTINGS"
+msgstr ""
+
 msgid "MEDIA VIEWER SETTINGS"
 msgstr "IMPOSTAZIONI VISUALIZZIAZIONE MEDIA"
 
@@ -839,6 +845,9 @@ msgstr "IMPOSTAZIONI SCREENSAVER"
 
 msgid "ENABLE THEME VARIANT TRIGGERS"
 msgstr "ABILITA GLI ATTIVATORI DELLE VARIANTI DEL TEMA"
+
+msgid "DISPLAY CLOCK"
+msgstr ""
 
 msgid "BLUR BACKGROUND WHEN MENU IS OPEN"
 msgstr "OFFUSCA LO SFONDO QUANDO IL MENÙ È APERTO"
@@ -1074,6 +1083,9 @@ msgstr "MOSTRA GIOCHI NASCOSTI"
 msgid "ENABLE CUSTOM EVENT SCRIPTS"
 msgstr "ABILITA GLI SCRIPT DEGLI EVENTI PERSONALIZZATI"
 
+msgid "BROWSING CUSTOM EVENTS"
+msgstr ""
+
 msgid "ONLY SHOW GAMES FROM GAMELIST.XML FILES"
 msgstr "MOSTRA SOLO GIOCHI PRESENTI NEI GAMELIST.XML"
 
@@ -1152,6 +1164,10 @@ msgstr "VUOI DAVVERO SPEGNERE?"
 
 msgid "POWER OFF SYSTEM"
 msgstr "SPEGNI IL SISTEMA"
+
+msgctxt "short"
+msgid "SYSTEM STATUS SETTINGS"
+msgstr ""
 
 msgctxt "short"
 msgid "MEDIA VIEWER SETTINGS"
@@ -1886,6 +1902,21 @@ msgstr "CAMBIA VIDEO DOPO (SECONDI)"
 
 msgid "RENDER BLUR"
 msgstr "RENDERIZZA L'OFFUSCAMENTO"
+
+msgid "DISPLAY BLUETOOTH STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY WI-FI STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY CELLULAR STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY BATTERY STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY BATTERY CHARGE PERCENTAGE"
+msgstr ""
 
 msgid "DOWNLOADING THEMES LIST 100%"
 msgstr "STO SCARICANDO LA LISTA DEI TEMI 100%"

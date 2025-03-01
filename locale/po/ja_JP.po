@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2024-11-24 17:33+0100\n"
+"POT-Creation-Date: 2025-03-01 09:47+0100\n"
 "PO-Revision-Date: 2024-11-26 21:59+0800\n"
 "Last-Translator: ice <natsumekyousuke211314@gmail.com>\n"
 "Language-Team: 日本語 <info@es-de.org>\n"
@@ -769,6 +769,9 @@ msgstr "簡単"
 msgid "LONG"
 msgstr "長い"
 
+msgid "POPUP"
+msgstr ""
+
 msgid "UI MODE"
 msgstr "UIモード"
 
@@ -828,6 +831,9 @@ msgstr "ゲームのみ"
 msgid "GAMES AND SYSTEMS"
 msgstr "ゲームとシステム"
 
+msgid "SYSTEM STATUS SETTINGS"
+msgstr ""
+
 msgid "MEDIA VIEWER SETTINGS"
 msgstr "メディアビューアー設定"
 
@@ -836,6 +842,9 @@ msgstr "スクリーンセーバー設定"
 
 msgid "ENABLE THEME VARIANT TRIGGERS"
 msgstr "テーマバリエーショントリガーを有効に"
+
+msgid "DISPLAY CLOCK"
+msgstr ""
 
 msgid "BLUR BACKGROUND WHEN MENU IS OPEN"
 msgstr "メニューが開いているときに背景をぼかす"
@@ -1070,6 +1079,9 @@ msgstr "非表示中のゲームを表示"
 msgid "ENABLE CUSTOM EVENT SCRIPTS"
 msgstr "カスタムイベントスクリプトを有効に"
 
+msgid "BROWSING CUSTOM EVENTS"
+msgstr ""
+
 msgid "ONLY SHOW GAMES FROM GAMELIST.XML FILES"
 msgstr "GAMELIST.XML ファイルにあるゲームのみを表示"
 
@@ -1148,6 +1160,10 @@ msgstr "本当に電源を切りますか？"
 
 msgid "POWER OFF SYSTEM"
 msgstr "電源を切る"
+
+msgctxt "short"
+msgid "SYSTEM STATUS SETTINGS"
+msgstr ""
 
 msgctxt "short"
 msgid "MEDIA VIEWER SETTINGS"
@@ -1881,6 +1897,21 @@ msgstr "（秒）経過後にビデオを交換"
 
 msgid "RENDER BLUR"
 msgstr "ぼかしをレンダリング"
+
+msgid "DISPLAY BLUETOOTH STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY WI-FI STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY CELLULAR STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY BATTERY STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY BATTERY CHARGE PERCENTAGE"
+msgstr ""
 
 msgid "DOWNLOADING THEMES LIST 100%"
 msgstr "テーマリストのダウンロードが100% 完了しました"

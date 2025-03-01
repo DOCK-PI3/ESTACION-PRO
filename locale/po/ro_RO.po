@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2024-11-24 17:33+0100\n"
+"POT-Creation-Date: 2025-03-01 09:47+0100\n"
 "PO-Revision-Date: 2024-11-25 23:56+0200\n"
 "Last-Translator: Mihai Vasiliu <mihai.vasiliu.93@gmail.com>\n"
 "Language-Team: Română <info@es-de.org>\n"
@@ -767,6 +767,9 @@ msgstr "SCURTĂ"
 msgid "LONG"
 msgstr "LUNGĂ"
 
+msgid "POPUP"
+msgstr ""
+
 msgid "UI MODE"
 msgstr "MOD INTERFAȚĂ"
 
@@ -826,6 +829,9 @@ msgstr "DOAR JOCURI"
 msgid "GAMES AND SYSTEMS"
 msgstr "JOCURI ȘI SISTEME"
 
+msgid "SYSTEM STATUS SETTINGS"
+msgstr ""
+
 msgid "MEDIA VIEWER SETTINGS"
 msgstr "SETĂRI VIZUALIZATOR MEDIA"
 
@@ -834,6 +840,9 @@ msgstr "SETĂRI ECONOMIZOR DE ECRAN"
 
 msgid "ENABLE THEME VARIANT TRIGGERS"
 msgstr "ACTIVEAZĂ DECLANȘATORI VARIANTE TEMĂ"
+
+msgid "DISPLAY CLOCK"
+msgstr ""
 
 msgid "BLUR BACKGROUND WHEN MENU IS OPEN"
 msgstr "BLUREAZĂ FUNDALUL CÂND MENIUL ESTE DESCHIS"
@@ -1068,6 +1077,9 @@ msgstr "AFIȘEAZĂ JOCURILE ASCUNSE"
 msgid "ENABLE CUSTOM EVENT SCRIPTS"
 msgstr "ACTIVEAZĂ SCRIPTURI EVENIMENTE PERSONALIZATE"
 
+msgid "BROWSING CUSTOM EVENTS"
+msgstr ""
+
 msgid "ONLY SHOW GAMES FROM GAMELIST.XML FILES"
 msgstr "AFIȘEAZĂ DOAR JOCURILE DIN FIȘIERELE GAMELIST.XML"
 
@@ -1145,6 +1157,10 @@ msgstr "CHIAR ÎNCHIZI?"
 
 msgid "POWER OFF SYSTEM"
 msgstr "ÎNCHIDE SISTEMUL"
+
+msgctxt "short"
+msgid "SYSTEM STATUS SETTINGS"
+msgstr ""
 
 msgctxt "short"
 msgid "MEDIA VIEWER SETTINGS"
@@ -1874,6 +1890,21 @@ msgstr "SCHIMBĂ VIDEOCLIPUL DUPĂ"
 
 msgid "RENDER BLUR"
 msgstr "REDĂ BLUR"
+
+msgid "DISPLAY BLUETOOTH STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY WI-FI STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY CELLULAR STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY BATTERY STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY BATTERY CHARGE PERCENTAGE"
+msgstr ""
 
 msgid "DOWNLOADING THEMES LIST 100%"
 msgstr "SE DESCARCĂ LISTA DE TEME 100%"

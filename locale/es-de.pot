@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2024-11-24 17:33+0100\n"
+"POT-Creation-Date: 2025-03-01 09:47+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <info@es-de.org>\n"
@@ -745,6 +745,9 @@ msgstr ""
 msgid "LONG"
 msgstr ""
 
+msgid "POPUP"
+msgstr ""
+
 msgid "UI MODE"
 msgstr ""
 
@@ -789,6 +792,9 @@ msgstr ""
 msgid "GAMES AND SYSTEMS"
 msgstr ""
 
+msgid "SYSTEM STATUS SETTINGS"
+msgstr ""
+
 msgid "MEDIA VIEWER SETTINGS"
 msgstr ""
 
@@ -796,6 +802,9 @@ msgid "SCREENSAVER SETTINGS"
 msgstr ""
 
 msgid "ENABLE THEME VARIANT TRIGGERS"
+msgstr ""
+
+msgid "DISPLAY CLOCK"
 msgstr ""
 
 msgid "BLUR BACKGROUND WHEN MENU IS OPEN"
@@ -1023,6 +1032,9 @@ msgstr ""
 msgid "ENABLE CUSTOM EVENT SCRIPTS"
 msgstr ""
 
+msgid "BROWSING CUSTOM EVENTS"
+msgstr ""
+
 msgid "ONLY SHOW GAMES FROM GAMELIST.XML FILES"
 msgstr ""
 
@@ -1090,6 +1102,10 @@ msgid "REALLY POWER OFF?"
 msgstr ""
 
 msgid "POWER OFF SYSTEM"
+msgstr ""
+
+msgctxt "short"
+msgid "SYSTEM STATUS SETTINGS"
 msgstr ""
 
 msgctxt "short"
@@ -1781,6 +1797,21 @@ msgid "SWAP VIDEOS AFTER (SECONDS)"
 msgstr ""
 
 msgid "RENDER BLUR"
+msgstr ""
+
+msgid "DISPLAY BLUETOOTH STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY WI-FI STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY CELLULAR STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY BATTERY STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY BATTERY CHARGE PERCENTAGE"
 msgstr ""
 
 msgid "DOWNLOADING THEMES LIST 100%"

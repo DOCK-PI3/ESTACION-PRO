@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2024-11-24 17:33+0100\n"
+"POT-Creation-Date: 2025-03-01 09:47+0100\n"
 "PO-Revision-Date: 2024-12-02 10:11+0100\n"
 "Last-Translator: Josep M <johnnydement@duck.com>\n"
 "Language-Team: Català <info@es-de.org>\n"
@@ -759,6 +759,9 @@ msgstr "BREU"
 msgid "LONG"
 msgstr "LLARGA"
 
+msgid "POPUP"
+msgstr ""
+
 msgid "UI MODE"
 msgstr "MODE D'INTERFÍCIE"
 
@@ -816,6 +819,9 @@ msgstr "NOMÉS JOCS"
 msgid "GAMES AND SYSTEMS"
 msgstr "JOCS I SISTEMES"
 
+msgid "SYSTEM STATUS SETTINGS"
+msgstr ""
+
 msgid "MEDIA VIEWER SETTINGS"
 msgstr "OPCIONS DEL VISUALITZADOR MULTIMÈDIA"
 
@@ -824,6 +830,9 @@ msgstr "OPCIONS DEL SALVAPANTALLES"
 
 msgid "ENABLE THEME VARIANT TRIGGERS"
 msgstr "HABILITAR ELS DISPARADORS DE LES VARIANTS DEL TEMA"
+
+msgid "DISPLAY CLOCK"
+msgstr ""
 
 msgid "BLUR BACKGROUND WHEN MENU IS OPEN"
 msgstr "DESENFOCA EL FONS QUAN S'OBRE EL MENÚ"
@@ -1058,6 +1067,9 @@ msgstr "MOSTRAR JOCS OCULTS"
 msgid "ENABLE CUSTOM EVENT SCRIPTS"
 msgstr "HABILITAR SCRIPTS PERSONALITZATS D'ESDEVENIMENT"
 
+msgid "BROWSING CUSTOM EVENTS"
+msgstr ""
+
 msgid "ONLY SHOW GAMES FROM GAMELIST.XML FILES"
 msgstr "MOSTRAR NOMÉS JOCS DELS ARXIUS GAMELIST.XML"
 
@@ -1135,6 +1147,10 @@ msgstr "APAGAR, SEGUR?"
 
 msgid "POWER OFF SYSTEM"
 msgstr "APAGAR EL SISTEMA"
+
+msgctxt "short"
+msgid "SYSTEM STATUS SETTINGS"
+msgstr ""
 
 msgctxt "short"
 msgid "MEDIA VIEWER SETTINGS"
@@ -1863,6 +1879,21 @@ msgstr ""
 
 msgid "RENDER BLUR"
 msgstr "RENDERITZAR DIFUMINAT"
+
+msgid "DISPLAY BLUETOOTH STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY WI-FI STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY CELLULAR STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY BATTERY STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY BATTERY CHARGE PERCENTAGE"
+msgstr ""
 
 msgid "DOWNLOADING THEMES LIST 100%"
 msgstr "DESCARREGANT EL LLISTAT DE TEMES 100%"

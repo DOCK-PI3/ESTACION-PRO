@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2024-11-24 17:33+0100\n"
+"POT-Creation-Date: 2025-03-01 09:47+0100\n"
 "PO-Revision-Date: 2024-11-29 19:08+0100\n"
 "Last-Translator: Northwestern Software <info@es-de.org>\n"
 "Language-Team: Español (España) <info@es-de.org>\n"
@@ -771,6 +771,9 @@ msgstr "BREVE"
 msgid "LONG"
 msgstr "LARGO"
 
+msgid "POPUP"
+msgstr ""
+
 msgid "UI MODE"
 msgstr "MODO INTERFAZ"
 
@@ -832,6 +835,9 @@ msgstr "SOLO JUEGOS"
 msgid "GAMES AND SYSTEMS"
 msgstr "JUEGOS Y SISTEMAS"
 
+msgid "SYSTEM STATUS SETTINGS"
+msgstr ""
+
 msgid "MEDIA VIEWER SETTINGS"
 msgstr "CONFIGURACION DEL VISOR DE MEDIOS"
 
@@ -840,6 +846,9 @@ msgstr "CONFIGURACION DEL SALVAPANTALLAS"
 
 msgid "ENABLE THEME VARIANT TRIGGERS"
 msgstr "ACTIVAR VARIANTES DE TEMA"
+
+msgid "DISPLAY CLOCK"
+msgstr ""
 
 msgid "BLUR BACKGROUND WHEN MENU IS OPEN"
 msgstr "DIFUMINAR EL FONDO CUANDO EL MENÚ ESTÁ ABIERTO"
@@ -1074,6 +1083,9 @@ msgstr "MOSTRAR JUEGOS OCULTOS"
 msgid "ENABLE CUSTOM EVENT SCRIPTS"
 msgstr "ACTIVAR SCRIPTS DE EVENTO PERSONALIZADOS"
 
+msgid "BROWSING CUSTOM EVENTS"
+msgstr ""
+
 msgid "ONLY SHOW GAMES FROM GAMELIST.XML FILES"
 msgstr "SOLO MOSTRAR JUEGOS DE LOS FICHEROS GAMELIST.XML"
 
@@ -1151,6 +1163,10 @@ msgstr "¿APAGAR?"
 
 msgid "POWER OFF SYSTEM"
 msgstr "APAGAR SISTEMA"
+
+msgctxt "short"
+msgid "SYSTEM STATUS SETTINGS"
+msgstr ""
 
 msgctxt "short"
 msgid "MEDIA VIEWER SETTINGS"
@@ -1892,6 +1908,21 @@ msgstr "CAMBIAR VIDEOS DESPUES DE (SEGUNDOS)"
 
 msgid "RENDER BLUR"
 msgstr "RENDERIZAR DIFUMINADO"
+
+msgid "DISPLAY BLUETOOTH STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY WI-FI STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY CELLULAR STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY BATTERY STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY BATTERY CHARGE PERCENTAGE"
+msgstr ""
 
 msgid "DOWNLOADING THEMES LIST 100%"
 msgstr "DESCARGANDO LISTA DE TEMAS 100%"
