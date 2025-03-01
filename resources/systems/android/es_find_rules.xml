@@ -197,6 +197,12 @@
             <entry>org.mupen64plusae.v3.fzurita/paulscode.android.mupen64plusae.SplashActivity</entry>
         </rule>
     </emulator>
+    <emulator name="MAME4DROID-CURRENT">
+        <!-- Arcade emulator MAME4droid Current -->
+        <rule type="androidpackage">
+            <entry>com.seleuco.mame4d2024/com.seleuco.mame4droid.MAME4droid</entry>
+        </rule>
+    </emulator>
     <emulator name="MAME4DROID">
         <!-- Arcade emulator MAME4droid -->
         <rule type="androidpackage">
