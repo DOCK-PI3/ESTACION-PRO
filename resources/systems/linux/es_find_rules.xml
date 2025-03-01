@@ -309,6 +309,7 @@
         <rule type="systempath">
             <entry>duckstation-nogui</entry>
             <entry>duckstation-qt</entry>
+            <entry>duckstation</entry>
             <entry>org.duckstation.DuckStation</entry>
         </rule>
         <rule type="staticpath">

@@ -144,6 +144,7 @@
         <rule type="systempath">
             <entry>duckstation-nogui</entry>
             <entry>duckstation-qt</entry>
+            <entry>duckstation</entry>
         </rule>
     </emulator>
     <emulator name="EASYRPG">
