@@ -120,3 +120,4 @@ CPackSourceConfig.cmake
 
 # VSCode
 .vscode/
+.continueignore
