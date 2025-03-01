@@ -328,6 +328,7 @@
         <path>%ROMPATH%/bbcmicro</path>
         <extension>.dsd .DSD .img .IMG .ssd .SSD .7z .7Z .zip .ZIP</extension>
         <command label="MAME (Standalone)">%STARTDIR%=~/.mame %EMULATOR_MAME% -rompath %GAMEDIR%\;%ROMPATH%/bbcmicro bbcb -autoboot_delay "2" -autoboot_command "*cat\n\n*exec !boot\n" -analogue acornjoy -flop1 %ROM%</command>
+        <command label="b2">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/b2_libretro.so %ROM%</command>
         <platform>bbcmicro</platform>
         <theme>bbcmicro</theme>
     </system>
