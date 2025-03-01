@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
 "POT-Creation-Date: 2025-03-01 09:47+0100\n"
-"PO-Revision-Date: 2024-11-24 17:37+0100\n"
+"PO-Revision-Date: 2025-03-01 10:11+0100\n"
 "Last-Translator: Northwestern Software <info@es-de.org>\n"
 "Language-Team: Swedish <info@es-de.org>\n"
 "Language: sv_SE\n"
@@ -759,7 +759,7 @@ msgid "LONG"
 msgstr "LÅNG"
 
 msgid "POPUP"
-msgstr ""
+msgstr "POPUP"
 
 msgid "UI MODE"
 msgstr "UI-LÄGE"
@@ -823,7 +823,7 @@ msgid "GAMES AND SYSTEMS"
 msgstr "SPEL OCH SYSTEM"
 
 msgid "SYSTEM STATUS SETTINGS"
-msgstr ""
+msgstr "INSTÄLLNINGAR FÖR SYSTEMSTATUS"
 
 msgid "MEDIA VIEWER SETTINGS"
 msgstr "INSTÄLLNINGAR FÖR MEDIAVISARE"
@@ -835,7 +835,7 @@ msgid "ENABLE THEME VARIANT TRIGGERS"
 msgstr "AKTIVERA VARIANTTRIGGERS FÖR TEMAN"
 
 msgid "DISPLAY CLOCK"
-msgstr ""
+msgstr "VISA KLOCKAN"
 
 msgid "BLUR BACKGROUND WHEN MENU IS OPEN"
 msgstr "RENDERA OSKARP BAKGRUND NÄR MENYN VISAS"
@@ -1072,7 +1072,7 @@ msgid "ENABLE CUSTOM EVENT SCRIPTS"
 msgstr "AKTIVERA ANPASSADE EVENT-SCRIPT"
 
 msgid "BROWSING CUSTOM EVENTS"
-msgstr ""
+msgstr "ANPASSAT EVENT VID BLÄDDRING"
 
 msgid "ONLY SHOW GAMES FROM GAMELIST.XML FILES"
 msgstr "VISA BARA SPEL FRÅN GAMELIST.XML FILERNA"
@@ -1154,7 +1154,7 @@ msgstr "STÄNG AV SYSTEMET"
 
 msgctxt "short"
 msgid "SYSTEM STATUS SETTINGS"
-msgstr ""
+msgstr "INSTÄLLNINGAR SYSTEMSTATUS"
 
 msgctxt "short"
 msgid "MEDIA VIEWER SETTINGS"
@@ -1874,19 +1874,19 @@ msgid "RENDER BLUR"
 msgstr "RENDERA OSKÄRPA"
 
 msgid "DISPLAY BLUETOOTH STATUS INDICATOR"
-msgstr ""
+msgstr "VISA BLUETOOTH STATUSINDIKATOR"
 
 msgid "DISPLAY WI-FI STATUS INDICATOR"
-msgstr ""
+msgstr "VISA WI-FI STATUSINDIKATOR"
 
 msgid "DISPLAY CELLULAR STATUS INDICATOR"
-msgstr ""
+msgstr "VISA MOBILTRAFIK STATUSINDIKATOR"
 
 msgid "DISPLAY BATTERY STATUS INDICATOR"
-msgstr ""
+msgstr "VISA BATTERI STATUSINDIKATOR"
 
 msgid "DISPLAY BATTERY CHARGE PERCENTAGE"
-msgstr ""
+msgstr "VISA BATTERIETS LADDNIVÅ I PROCENT"
 
 msgid "DOWNLOADING THEMES LIST 100%"
 msgstr "LADDAR NER TEMALISTAN 100%"
