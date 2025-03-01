@@ -19,9 +19,14 @@
 * Added game-select and system-select custom events and a corresponding "Browsing custom events" menu option
 * Added the NooDS RetroArch core as an alternative emulator for the gba and nds systems
 * Added the Holani RetroArch core as an alternative emulator for the atarilynx system
+* Added the b2 RetroArch core as an alternative emulator for the bbcmicro system
+* (Android) Changed from MAME4droid 2024 to MAME4droid Current for all systems where only this emulator was supported
+* (Android) Added MAME4droid Current emulator entries for all systems where MAME4droid 2024 was supported
 * (Android) Added Pizza Boy SC standalone as an alternative emulator for the gamegear, genesis, mastersystem, megadrive and megadrivejp systems
 * (Android) Changed all RetroArch core entries to use absolute paths (this makes the ancient Play store release work correctly)
 * (Android) Changed the target SDK version to 35 (Android 15)
+* (Linux) Added a find rule entry for the new PCSX2 binary name (pcsx2)
+* (Linux) Added a find rule entry for the new DuckStation binary name (duckstation)
 * (Linux) Added support for the Flatpak release of Ruffle
 * (Linux) Changed the AppImage find rule for Mandarine to mandarine-qt*.AppImage
 * Added the .ruf file extension to the flash system
