@@ -33,7 +33,7 @@ sed -i "s/Language-Team: LANGUAGE <LL@li.org>/Language-Team: LANGUAGE <info@es-d
 
 for language in $(cat ../locale/languages); do
   echo Merging strings for locale $language
-  msgmerge ../locale/po/${language}.po ../locale/es-de.pot -o ../locale/po/${language}.po
+  msgmerge -N ../locale/po/${language}.po ../locale/es-de.pot -o ../locale/po/${language}.po
   echo Compiling message catalog for locale $language
   mkdir -p ../resources/locale/${language}/LC_MESSAGES
   msgfmt -c --statistics -o ../resources/locale/${language}/LC_MESSAGES/${language}.mo ../locale/po/${language}.po
