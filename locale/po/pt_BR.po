@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
 "POT-Creation-Date: 2025-03-01 09:47+0100\n"
-"PO-Revision-Date: 2024-11-25 09:36-0300\n"
+"PO-Revision-Date: 2025-03-03 18:27-0300\n"
 "Last-Translator: Northwestern Software <info@es-de.org>\n"
 "Language-Team: Português (Brasil) <info@es-de.org>\n"
 "Language: pt_BR\n"
@@ -16,10 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.5\n"
 
 msgid "Network error (status:"
-msgstr "Erro de rede (status:"
+msgstr "Erro de rede (estado:"
 
 msgid "New prerelease available:"
 msgstr "Nova versão prévia disponível:"
@@ -352,7 +352,7 @@ msgid "QUIT AND MANUALLY UPGRADE ES-DE"
 msgstr "SAIR E ATUALIZAR MANUALMENTE O ES-DE"
 
 msgid "STATUS MESSAGE:"
-msgstr "MENSAGEM DE STATUS:"
+msgstr "MENSAGEM DE ESTADO:"
 
 msgid "DOWNLOAD"
 msgstr "BAIXAR"
@@ -762,7 +762,7 @@ msgid "LONG"
 msgstr "DEMORADO"
 
 msgid "POPUP"
-msgstr ""
+msgstr "POPUP"
 
 msgid "UI MODE"
 msgstr "MODO DA INTERFACE"
@@ -824,7 +824,7 @@ msgid "GAMES AND SYSTEMS"
 msgstr "JOGOS E SISTEMAS"
 
 msgid "SYSTEM STATUS SETTINGS"
-msgstr ""
+msgstr "AJUSTES DOS ESTADOS DO SISTEMA"
 
 msgid "MEDIA VIEWER SETTINGS"
 msgstr "AJUSTES DO VISUALIZADOR DE MÍDIAS"
@@ -836,7 +836,7 @@ msgid "ENABLE THEME VARIANT TRIGGERS"
 msgstr "ATIVAR ACIONADORES DAS VARIANTES DO TEMA"
 
 msgid "DISPLAY CLOCK"
-msgstr ""
+msgstr "MOSTRAR O RELÓGIO"
 
 msgid "BLUR BACKGROUND WHEN MENU IS OPEN"
 msgstr "DESFOCAR O FUNDO AO ABRIR O MENU"
@@ -1072,7 +1072,7 @@ msgid "ENABLE CUSTOM EVENT SCRIPTS"
 msgstr "ATIVAR SCRIPTS DE EVENTOS ADAPTADOS"
 
 msgid "BROWSING CUSTOM EVENTS"
-msgstr ""
+msgstr "PESQUISANDO EVENTOS ADAPTADOS"
 
 msgid "ONLY SHOW GAMES FROM GAMELIST.XML FILES"
 msgstr "EXIBIR APENAS OS JOGOS NOS ARQUIVOS GAMELIST.XML"
@@ -1154,7 +1154,7 @@ msgstr "DESLIGAR O SISTEMA"
 
 msgctxt "short"
 msgid "SYSTEM STATUS SETTINGS"
-msgstr ""
+msgstr "CONFIG. DOS EST. DO SISTEMA"
 
 msgctxt "short"
 msgid "MEDIA VIEWER SETTINGS"
@@ -1887,19 +1887,19 @@ msgid "RENDER BLUR"
 msgstr "RENDERIZAR DESFOQUE"
 
 msgid "DISPLAY BLUETOOTH STATUS INDICATOR"
-msgstr ""
+msgstr "EXIBIR INDICADOR DE ESTADO DO BLUETOOTH"
 
 msgid "DISPLAY WI-FI STATUS INDICATOR"
-msgstr ""
+msgstr "EXIBIR INDICADOR DE ESTADO DO WI-FI"
 
 msgid "DISPLAY CELLULAR STATUS INDICATOR"
-msgstr ""
+msgstr "EXIBIR INDICADOR DE ESTADO DA REDE MÓVEL"
 
 msgid "DISPLAY BATTERY STATUS INDICATOR"
-msgstr ""
+msgstr "EXIBIR INDICADOR DE ESTADO DA BATERIA"
 
 msgid "DISPLAY BATTERY CHARGE PERCENTAGE"
-msgstr ""
+msgstr "EXIBIR PORCENTAGEM DA CARGA DA BATERIA"
 
 msgid "DOWNLOADING THEMES LIST 100%"
 msgstr "BAIXANDO LISTA DE TEMAS 100%"
