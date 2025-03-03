@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
 "POT-Creation-Date: 2025-03-01 09:47+0100\n"
-"PO-Revision-Date: 2024-11-30 15:24+0100\n"
+"PO-Revision-Date: 2025-03-03 20:53+0100\n"
 "Last-Translator: Stefan <s.vandenbroekprive@gmail.com>\n"
 "Language-Team: Nederlands <info@es-de.org>\n"
 "Language: nl_NL\n"
@@ -762,7 +762,7 @@ msgid "LONG"
 msgstr "LANG"
 
 msgid "POPUP"
-msgstr ""
+msgstr "POPUP"
 
 msgid "UI MODE"
 msgstr "UI-MODUS"
@@ -826,7 +826,7 @@ msgid "GAMES AND SYSTEMS"
 msgstr "SPELLEN EN SYSTEMEN"
 
 msgid "SYSTEM STATUS SETTINGS"
-msgstr ""
+msgstr "INSTELLINGEN SYSTEEMSTATUS"
 
 msgid "MEDIA VIEWER SETTINGS"
 msgstr "MEDIA VIEWER-INSTELLINGEN"
@@ -838,7 +838,7 @@ msgid "ENABLE THEME VARIANT TRIGGERS"
 msgstr "THEMA VARIANT TRIGGERS INSCHAKELEN"
 
 msgid "DISPLAY CLOCK"
-msgstr ""
+msgstr "KLOK WEERGEVEN"
 
 msgid "BLUR BACKGROUND WHEN MENU IS OPEN"
 msgstr "ACHTERGROND VERVAGEN ALS HET MENU GEOPEND IS"
@@ -1075,7 +1075,7 @@ msgid "ENABLE CUSTOM EVENT SCRIPTS"
 msgstr "AANGEPASTE EVENEMENTEN-SCRIPTS INSCHAKELEN"
 
 msgid "BROWSING CUSTOM EVENTS"
-msgstr ""
+msgstr "BLADEREN DOOR AANGEPASTE EVENEMENTEN"
 
 msgid "ONLY SHOW GAMES FROM GAMELIST.XML FILES"
 msgstr "ALLEEN GAMES UIT GAMELIST.XML-BESTANDEN TONEN"
@@ -1157,7 +1157,7 @@ msgstr "SCHAKEL SYSTEEM UIT"
 
 msgctxt "short"
 msgid "SYSTEM STATUS SETTINGS"
-msgstr ""
+msgstr "INSTELLINGEN SYSTEEMSTATUS"
 
 msgctxt "short"
 msgid "MEDIA VIEWER SETTINGS"
@@ -1888,19 +1888,19 @@ msgid "RENDER BLUR"
 msgstr "WISSEN WISSEN"
 
 msgid "DISPLAY BLUETOOTH STATUS INDICATOR"
-msgstr ""
+msgstr "BLUETOOTH-STATUSINDICATOR WEERGEVEN"
 
 msgid "DISPLAY WI-FI STATUS INDICATOR"
-msgstr ""
+msgstr "WI-FI STATUSINDICATOR WEERGEVEN"
 
 msgid "DISPLAY CELLULAR STATUS INDICATOR"
-msgstr ""
+msgstr "CELLULAIRE STATUSINDICATOR WEERGEVEN"
 
 msgid "DISPLAY BATTERY STATUS INDICATOR"
-msgstr ""
+msgstr "WEERGAVE BATTERIJSTATUSINDICATOR"
 
 msgid "DISPLAY BATTERY CHARGE PERCENTAGE"
-msgstr ""
+msgstr "PERCENTAGE BATTERIJLADING WEERGEVEN"
 
 msgid "DOWNLOADING THEMES LIST 100%"
 msgstr "DOWNLOAD THEMA LIJST 100%"
@@ -2065,7 +2065,7 @@ msgid "THEME WAS DELETED"
 msgstr "THEMA IS VERWIJDERD"
 
 msgid "view screenshots"
-msgstr "bekijk screenshots "
+msgstr "bekijk screenshots"
 
 msgid "fetch updates"
 msgstr "updates ophalen"
@@ -2610,7 +2610,7 @@ msgstr ""
 
 #, c-format
 msgid "LAUNCHING GAME '%s'"
-msgstr "SPEL '%s' STARTEN"
+msgstr "SPEL '%s' OPSTARTEN"
 
 msgid "menu"
 msgstr "menu"
