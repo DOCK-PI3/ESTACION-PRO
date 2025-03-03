@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
 "POT-Creation-Date: 2025-03-01 09:47+0100\n"
-"PO-Revision-Date: 2024-11-25 23:56+0200\n"
+"PO-Revision-Date: 2025-03-03 22:12+0200\n"
 "Last-Translator: Mihai Vasiliu <mihai.vasiliu.93@gmail.com>\n"
 "Language-Team: Română <info@es-de.org>\n"
 "Language: ro_RO\n"
@@ -768,7 +768,7 @@ msgid "LONG"
 msgstr "LUNGĂ"
 
 msgid "POPUP"
-msgstr ""
+msgstr "POPUP"
 
 msgid "UI MODE"
 msgstr "MOD INTERFAȚĂ"
@@ -830,7 +830,7 @@ msgid "GAMES AND SYSTEMS"
 msgstr "JOCURI ȘI SISTEME"
 
 msgid "SYSTEM STATUS SETTINGS"
-msgstr ""
+msgstr "SETĂRI INDICATORI SISTEM"
 
 msgid "MEDIA VIEWER SETTINGS"
 msgstr "SETĂRI VIZUALIZATOR MEDIA"
@@ -842,7 +842,7 @@ msgid "ENABLE THEME VARIANT TRIGGERS"
 msgstr "ACTIVEAZĂ DECLANȘATORI VARIANTE TEMĂ"
 
 msgid "DISPLAY CLOCK"
-msgstr ""
+msgstr "AFIȘEAZĂ CEASUL"
 
 msgid "BLUR BACKGROUND WHEN MENU IS OPEN"
 msgstr "BLUREAZĂ FUNDALUL CÂND MENIUL ESTE DESCHIS"
@@ -1075,10 +1075,10 @@ msgid "SHOW HIDDEN GAMES"
 msgstr "AFIȘEAZĂ JOCURILE ASCUNSE"
 
 msgid "ENABLE CUSTOM EVENT SCRIPTS"
-msgstr "ACTIVEAZĂ SCRIPTURI EVENIMENTE PERSONALIZATE"
+msgstr "ACTIVEAZĂ SCRIPT EVENIMENTE PERSONALIZATE"
 
 msgid "BROWSING CUSTOM EVENTS"
-msgstr ""
+msgstr "EVENIMENTE PERSONALIZATE LA NAVIGARE"
 
 msgid "ONLY SHOW GAMES FROM GAMELIST.XML FILES"
 msgstr "AFIȘEAZĂ DOAR JOCURILE DIN FIȘIERELE GAMELIST.XML"
@@ -1160,7 +1160,7 @@ msgstr "ÎNCHIDE SISTEMUL"
 
 msgctxt "short"
 msgid "SYSTEM STATUS SETTINGS"
-msgstr ""
+msgstr "SETĂRI INDICATORI SISTEM"
 
 msgctxt "short"
 msgid "MEDIA VIEWER SETTINGS"
@@ -1892,19 +1892,19 @@ msgid "RENDER BLUR"
 msgstr "REDĂ BLUR"
 
 msgid "DISPLAY BLUETOOTH STATUS INDICATOR"
-msgstr ""
+msgstr "AFIȘEAZĂ INDICATOR STARE BLUETOOTH"
 
 msgid "DISPLAY WI-FI STATUS INDICATOR"
-msgstr ""
+msgstr "AFIȘEAZĂ INDICATOR STARE WI-FI"
 
 msgid "DISPLAY CELLULAR STATUS INDICATOR"
-msgstr ""
+msgstr "AFIȘEAZĂ INDICATOR STARE DATE MOBILE"
 
 msgid "DISPLAY BATTERY STATUS INDICATOR"
-msgstr ""
+msgstr "AFIȘEAZĂ INDICATOR STARE BATERIE"
 
 msgid "DISPLAY BATTERY CHARGE PERCENTAGE"
-msgstr ""
+msgstr "AFIȘEAZĂ PROCENT ÎNCĂRCARE BATERIE"
 
 msgid "DOWNLOADING THEMES LIST 100%"
 msgstr "SE DESCARCĂ LISTA DE TEME 100%"
