@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
 "POT-Creation-Date: 2025-03-01 09:47+0100\n"
-"PO-Revision-Date: 2024-12-03 23:46+0200\n"
+"PO-Revision-Date: 2025-03-03 23:16+0200\n"
 "Last-Translator: Lorenzo Castelletta <lorenzo.castelletta@gmail.com>\n"
 "Language-Team: Italiano <info@es-de.org>\n"
 "Language: it_IT\n"
@@ -772,7 +772,7 @@ msgid "LONG"
 msgstr "LUNGA"
 
 msgid "POPUP"
-msgstr ""
+msgstr "POPUP"
 
 msgid "UI MODE"
 msgstr "MODALITÀ INTERFACCIA UTENTE"
@@ -835,7 +835,7 @@ msgid "GAMES AND SYSTEMS"
 msgstr "GIOCHI E SISTEMI"
 
 msgid "SYSTEM STATUS SETTINGS"
-msgstr ""
+msgstr "IMPOSTAZIONI STATO SISTEMA"
 
 msgid "MEDIA VIEWER SETTINGS"
 msgstr "IMPOSTAZIONI VISUALIZZIAZIONE MEDIA"
@@ -847,7 +847,7 @@ msgid "ENABLE THEME VARIANT TRIGGERS"
 msgstr "ABILITA GLI ATTIVATORI DELLE VARIANTI DEL TEMA"
 
 msgid "DISPLAY CLOCK"
-msgstr ""
+msgstr "OROLOGIO"
 
 msgid "BLUR BACKGROUND WHEN MENU IS OPEN"
 msgstr "OFFUSCA LO SFONDO QUANDO IL MENÙ È APERTO"
@@ -1084,7 +1084,7 @@ msgid "ENABLE CUSTOM EVENT SCRIPTS"
 msgstr "ABILITA GLI SCRIPT DEGLI EVENTI PERSONALIZZATI"
 
 msgid "BROWSING CUSTOM EVENTS"
-msgstr ""
+msgstr "SCORRIMENTO EVENTI PERS."
 
 msgid "ONLY SHOW GAMES FROM GAMELIST.XML FILES"
 msgstr "MOSTRA SOLO GIOCHI PRESENTI NEI GAMELIST.XML"
@@ -1167,7 +1167,7 @@ msgstr "SPEGNI IL SISTEMA"
 
 msgctxt "short"
 msgid "SYSTEM STATUS SETTINGS"
-msgstr ""
+msgstr "IMPOSTAZIONI STATO SISTEMA"
 
 msgctxt "short"
 msgid "MEDIA VIEWER SETTINGS"
@@ -1904,19 +1904,19 @@ msgid "RENDER BLUR"
 msgstr "RENDERIZZA L'OFFUSCAMENTO"
 
 msgid "DISPLAY BLUETOOTH STATUS INDICATOR"
-msgstr ""
+msgstr "MOSTRA INDICATORE STATO BLUETOOTH"
 
 msgid "DISPLAY WI-FI STATUS INDICATOR"
-msgstr ""
+msgstr "MOSTRA INDICATORE STATO WI-FI"
 
 msgid "DISPLAY CELLULAR STATUS INDICATOR"
-msgstr ""
+msgstr "MOSTRA INDICATORE STATO CELLULARE"
 
 msgid "DISPLAY BATTERY STATUS INDICATOR"
-msgstr ""
+msgstr "MOSTRA INDICATORE STATO BATTERIA"
 
 msgid "DISPLAY BATTERY CHARGE PERCENTAGE"
-msgstr ""
+msgstr "MOSTRA PERCENTUALE CARICA BATTERIA"
 
 msgid "DOWNLOADING THEMES LIST 100%"
 msgstr "STO SCARICANDO LA LISTA DEI TEMI 100%"
