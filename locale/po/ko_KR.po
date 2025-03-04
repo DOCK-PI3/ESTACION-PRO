@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
 "POT-Creation-Date: 2025-03-01 09:47+0100\n"
-"PO-Revision-Date: 2024-11-25 18:29+0900\n"
+"PO-Revision-Date: 2025-03-04 11:39+0900\n"
 "Last-Translator: wakeboxer <ljhmd0825@gmail.com>\n"
 "Language-Team: 한국어 <info@es-de.org>\n"
 "Language: ko_KR\n"
@@ -752,7 +752,7 @@ msgid "LONG"
 msgstr "길게"
 
 msgid "POPUP"
-msgstr ""
+msgstr "팝업"
 
 msgid "UI MODE"
 msgstr "UI 모드"
@@ -814,7 +814,7 @@ msgid "GAMES AND SYSTEMS"
 msgstr "게임과 시스템"
 
 msgid "SYSTEM STATUS SETTINGS"
-msgstr ""
+msgstr "시스템 상태 설정"
 
 msgid "MEDIA VIEWER SETTINGS"
 msgstr "미디어 뷰어 설정"
@@ -826,7 +826,7 @@ msgid "ENABLE THEME VARIANT TRIGGERS"
 msgstr "테마 변형 트리거 활성화"
 
 msgid "DISPLAY CLOCK"
-msgstr ""
+msgstr "시계 표시"
 
 msgid "BLUR BACKGROUND WHEN MENU IS OPEN"
 msgstr "메뉴 오픈시 배경 흐려짐 효과"
@@ -1048,7 +1048,7 @@ msgid "UPSCALE VIDEO FRAME RATE TO 60 FPS"
 msgstr "60FPS까지 비디오 프레임 레이트 업스케일링"
 
 msgid "ENABLE ALTERNATIVE EMULATORS PER GAME"
-msgstr "게임별 대체 에뮬레이터 사용가능"
+msgstr "게임별 대체 에뮬레이터 사용 가능"
 
 msgid "SHOW HIDDEN FILES AND FOLDERS"
 msgstr "숨긴 파일 및 폴더 보이기"
@@ -1057,10 +1057,10 @@ msgid "SHOW HIDDEN GAMES"
 msgstr "숨긴 게임 보이기"
 
 msgid "ENABLE CUSTOM EVENT SCRIPTS"
-msgstr "커스텀 이벤트 스크립트 사용가능"
+msgstr "커스텀 이벤트 스크립트 사용 가능"
 
 msgid "BROWSING CUSTOM EVENTS"
-msgstr ""
+msgstr "커스텀 이벤트 탐색"
 
 msgid "ONLY SHOW GAMES FROM GAMELIST.XML FILES"
 msgstr "GAMELIST.XML 파일에 있는 게임만 보이기"
@@ -1081,7 +1081,7 @@ msgid "DISPLAY GPU STATISTICS OVERLAY"
 msgstr "GPU 통계 오버레이 표시"
 
 msgid "ENABLE MENU IN KID MODE"
-msgstr "아동용 모드에서 메뉴 사용가능"
+msgstr "아동용 모드에서 메뉴 사용 가능"
 
 msgid "SHOW QUIT MENU (REBOOT AND POWER OFF ENTRIES)"
 msgstr "종료 메뉴에 리부트와 전원오프 엔트리 보이기"
@@ -1141,7 +1141,7 @@ msgstr "시스템 전원 오프"
 
 msgctxt "short"
 msgid "SYSTEM STATUS SETTINGS"
-msgstr ""
+msgstr "시스템 상태 설정"
 
 msgctxt "short"
 msgid "MEDIA VIEWER SETTINGS"
@@ -1853,19 +1853,19 @@ msgid "RENDER BLUR"
 msgstr "블러 랜더링 적용"
 
 msgid "DISPLAY BLUETOOTH STATUS INDICATOR"
-msgstr ""
+msgstr "블루투스 상태 표시"
 
 msgid "DISPLAY WI-FI STATUS INDICATOR"
-msgstr ""
+msgstr "와이파이 상태 표시"
 
 msgid "DISPLAY CELLULAR STATUS INDICATOR"
-msgstr ""
+msgstr "셀룰러 상태 표시"
 
 msgid "DISPLAY BATTERY STATUS INDICATOR"
-msgstr ""
+msgstr "배터리 상태 표시"
 
 msgid "DISPLAY BATTERY CHARGE PERCENTAGE"
-msgstr ""
+msgstr "배터리 충전 상태 표시"
 
 msgid "DOWNLOADING THEMES LIST 100%"
 msgstr "테마 리스트 다운로드 중 100%"
