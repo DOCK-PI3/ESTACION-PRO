@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
 "POT-Creation-Date: 2025-03-01 09:47+0100\n"
-"PO-Revision-Date: 2024-12-05 20:20+0100\n"
+"PO-Revision-Date: 2025-03-04 21:21+0100\n"
 "Last-Translator: Northwestern Software <info@es-de.org>\n"
 "Language-Team: Deutsch <info@es-de.org>\n"
 "Language: de_DE\n"
@@ -772,7 +772,7 @@ msgid "LONG"
 msgstr "LANG"
 
 msgid "POPUP"
-msgstr ""
+msgstr "POPUP"
 
 msgid "UI MODE"
 msgstr "UI MODUS"
@@ -834,7 +834,7 @@ msgid "GAMES AND SYSTEMS"
 msgstr "SPIELE UND PLATTFORMEN"
 
 msgid "SYSTEM STATUS SETTINGS"
-msgstr ""
+msgstr "SYSTEMSTATUS-EINSTELLUNGEN"
 
 msgid "MEDIA VIEWER SETTINGS"
 msgstr "MEDIENBETRACHTER-EINSTELLUNGEN"
@@ -846,7 +846,7 @@ msgid "ENABLE THEME VARIANT TRIGGERS"
 msgstr "THEMEN-VARIANTEN-TRIGGER AKTIVIEREN"
 
 msgid "DISPLAY CLOCK"
-msgstr ""
+msgstr "UHR ANZEIGEN"
 
 msgid "BLUR BACKGROUND WHEN MENU IS OPEN"
 msgstr "HINTERGRUND TRÜBEN WENN MENÜ GEÖFFNET IST"
@@ -1082,7 +1082,7 @@ msgid "ENABLE CUSTOM EVENT SCRIPTS"
 msgstr "BENUTZERDEFINIERTE EREIGNIS-SKRIPTE AKTIVIEREN"
 
 msgid "BROWSING CUSTOM EVENTS"
-msgstr ""
+msgstr "BENUTZERDEFINIERTE EVENTS DURCSUCHEN"
 
 msgid "ONLY SHOW GAMES FROM GAMELIST.XML FILES"
 msgstr "NUR SPIELE AUS DER GAMELIST.XML-DATEI ANZEIGEN"
@@ -1164,7 +1164,7 @@ msgstr "SYSTEM HERUNTERFAHREN"
 
 msgctxt "short"
 msgid "SYSTEM STATUS SETTINGS"
-msgstr ""
+msgstr "SYSTEMSTATUS-EINSTELLUNGEN"
 
 msgctxt "short"
 msgid "MEDIA VIEWER SETTINGS"
@@ -1905,19 +1905,19 @@ msgid "RENDER BLUR"
 msgstr "RENDER BLUR"
 
 msgid "DISPLAY BLUETOOTH STATUS INDICATOR"
-msgstr ""
+msgstr "ANZEIGE DES BT STATUS"
 
 msgid "DISPLAY WI-FI STATUS INDICATOR"
-msgstr ""
+msgstr "ANZEIGE DES WIFI STATUS"
 
 msgid "DISPLAY CELLULAR STATUS INDICATOR"
-msgstr ""
+msgstr "ANZEIGE DES MOBILFUNKSTATUS"
 
 msgid "DISPLAY BATTERY STATUS INDICATOR"
-msgstr ""
+msgstr "ANZEIGE DES AKKUSTATUS"
 
 msgid "DISPLAY BATTERY CHARGE PERCENTAGE"
-msgstr ""
+msgstr "ANZEIGE DER AKKULADUNG IN PROZENT"
 
 msgid "DOWNLOADING THEMES LIST 100%"
 msgstr "HERUNTERLADEN DER THEMELISTE 100%"
