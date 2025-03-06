@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
 "POT-Creation-Date: 2025-03-01 09:47+0100\n"
-"PO-Revision-Date: 2024-11-26 15:50+0800\n"
+"PO-Revision-Date: 2025-03-06 23:50+0800\n"
 "Last-Translator: Northwestern Software <info@es-de.org>\n"
 "Language-Team: 简体中文 <info@es-de.org>\n"
 "Language: zh_CN\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.5\n"
 
 msgid "Network error (status:"
 msgstr "网络错误（状态："
@@ -747,7 +747,7 @@ msgid "LONG"
 msgstr "长"
 
 msgid "POPUP"
-msgstr ""
+msgstr "弹窗"
 
 msgid "UI MODE"
 msgstr "界面显示模式"
@@ -808,7 +808,7 @@ msgid "GAMES AND SYSTEMS"
 msgstr "游戏和平台"
 
 msgid "SYSTEM STATUS SETTINGS"
-msgstr ""
+msgstr "系统状态设定"
 
 msgid "MEDIA VIEWER SETTINGS"
 msgstr "媒体播放器设置"
@@ -820,7 +820,7 @@ msgid "ENABLE THEME VARIANT TRIGGERS"
 msgstr "启用主题变体触发器"
 
 msgid "DISPLAY CLOCK"
-msgstr ""
+msgstr "显示时钟"
 
 msgid "BLUR BACKGROUND WHEN MENU IS OPEN"
 msgstr "当菜单打开时模糊背景"
@@ -1053,7 +1053,7 @@ msgid "ENABLE CUSTOM EVENT SCRIPTS"
 msgstr "启用自定义事件脚本"
 
 msgid "BROWSING CUSTOM EVENTS"
-msgstr ""
+msgstr "浏览自定义事件"
 
 msgid "ONLY SHOW GAMES FROM GAMELIST.XML FILES"
 msgstr "仅显示 gamelist.xml 文件中的游戏"
@@ -1131,7 +1131,7 @@ msgstr "关机"
 
 msgctxt "short"
 msgid "SYSTEM STATUS SETTINGS"
-msgstr ""
+msgstr "系统状态设定"
 
 msgctxt "short"
 msgid "MEDIA VIEWER SETTINGS"
@@ -1837,19 +1837,19 @@ msgid "RENDER BLUR"
 msgstr "渲染模糊"
 
 msgid "DISPLAY BLUETOOTH STATUS INDICATOR"
-msgstr ""
+msgstr "显示蓝牙状态图标"
 
 msgid "DISPLAY WI-FI STATUS INDICATOR"
-msgstr ""
+msgstr "显示WI-FI状态图标"
 
 msgid "DISPLAY CELLULAR STATUS INDICATOR"
-msgstr ""
+msgstr "显示移动网络状态图标"
 
 msgid "DISPLAY BATTERY STATUS INDICATOR"
-msgstr ""
+msgstr "显示电池状态图标"
 
 msgid "DISPLAY BATTERY CHARGE PERCENTAGE"
-msgstr ""
+msgstr "显示电量百分比"
 
 msgid "DOWNLOADING THEMES LIST 100%"
 msgstr "正在下载主题列表 100%"
