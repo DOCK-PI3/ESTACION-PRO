@@ -47,6 +47,7 @@
 * Updated SDL to 2.32.2 on Android, Windows, macOS and the Linux AppImage builds
 * Updated the MAME index files to include ROMs up to MAME version 0.275
 * Bundled the February 2025 release of the Mozilla TLS/SSL certificates
+* Translation updates for multiple languages
 
 ### Bug fixes
 

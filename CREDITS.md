@@ -42,6 +42,7 @@ SilverGreen93 \
 Lulzee \
 **Swedish** \
 Leon Styhre \
+Daniel Nylander \
 **Japanese** \
 冰棍 \
 **Korean** \

@@ -3630,6 +3630,10 @@ Properties:
     - Point around which the element will be rotated.
     - Minimum value per axis is `0` and maximum value per axis is `1`
     - Default is `0.5 0.5`.
+* `scope` - type: STRING
+    - This property makes it possible to specify when the systemstatus element should be displayed. If it's set to `view` then it will only be displayed in the system and gamelist views and will be hidden when the menu is open. The opposite is true if it's set to `menu`, in this case the element will only be shown when the menu is open. Setting the property to `shared` will display the element both in the system and gamelist views and when the menu is open. Finally, setting it to `none` will not display the element at all, which is useful for special cases where there is shared configuration between multiple elements and you wish to disable one or more of these elements per view.
+    - Valid values are `shared`, `view`, `menu` or `none`
+    - Default is `shared`
 * `fontPath` - type: PATH
     - Path to a TrueType or OpenType font (.ttf or .otf) which is used for the battery percentage indicator.
 * `textRelativeScale` - type: FLOAT.
@@ -3721,6 +3725,10 @@ Properties:
     - Point around which the element will be rotated.
     - Minimum value per axis is `0` and maximum value per axis is `1`
     - Default is `0.5 0.5`.
+* `scope` - type: STRING
+    - This property makes it possible to specify when the clock element should be displayed. If it's set to `view` then it will only be displayed in the system and gamelist views and will be hidden when the menu is open. The opposite is true if it's set to `menu`, in this case the element will only be shown when the menu is open. Setting the property to `shared` will display the element both in the system and gamelist views and when the menu is open. Finally, setting it to `none` will not display the element at all, which is useful for special cases where there is shared configuration between multiple elements and you wish to disable one or more of these elements per view.
+    - Valid values are `shared`, `view`, `menu` or `none`
+    - Default is `shared`
 * `fontPath` - type: PATH
     - Path to a TrueType or OpenType font (.ttf or .otf)
 * `fontSize` - type: FLOAT
