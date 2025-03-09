@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
 "POT-Creation-Date: 2025-03-01 09:47+0100\n"
-"PO-Revision-Date: 2024-11-25 18:12+0100\n"
+"PO-Revision-Date: 2025-03-09 20:06+0100\n"
 "Last-Translator: Northwestern Software <info@es-de.org>\n"
 "Language-Team: Polski <info@es-de.org>\n"
 "Language: pl_PL\n"
@@ -772,7 +772,7 @@ msgid "LONG"
 msgstr "DŁUGO"
 
 msgid "POPUP"
-msgstr ""
+msgstr "POP-UP"
 
 msgid "UI MODE"
 msgstr "TRYB INTERFEJSU"
@@ -834,7 +834,7 @@ msgid "GAMES AND SYSTEMS"
 msgstr "GRY I SYSTEMY"
 
 msgid "SYSTEM STATUS SETTINGS"
-msgstr ""
+msgstr "USTAWIENIA STANU SYSTEMU"
 
 msgid "MEDIA VIEWER SETTINGS"
 msgstr "USTAWIENIA PRZEGLĄDARKI MULTIMEDIÓW"
@@ -846,7 +846,7 @@ msgid "ENABLE THEME VARIANT TRIGGERS"
 msgstr "WŁĄCZ WYZWALANIE WARIANTÓW MOTYWU"
 
 msgid "DISPLAY CLOCK"
-msgstr ""
+msgstr "POKAŻ ZEGAR"
 
 msgid "BLUR BACKGROUND WHEN MENU IS OPEN"
 msgstr "ROZMYJ TŁO PO OTWARCIU MENU"
@@ -1079,10 +1079,10 @@ msgid "SHOW HIDDEN GAMES"
 msgstr "POKAŻ UKRYTE GRY"
 
 msgid "ENABLE CUSTOM EVENT SCRIPTS"
-msgstr "WŁĄCZ WŁASNE SKRYPTY ZDARZEŃ"
+msgstr "WŁĄCZ SKRYPTY ZDARZEŃ"
 
 msgid "BROWSING CUSTOM EVENTS"
-msgstr ""
+msgstr "PRZEGLĄDANIE ZDARZEŃ WŁASNYCH"
 
 msgid "ONLY SHOW GAMES FROM GAMELIST.XML FILES"
 msgstr "POKAŻ TYLKO GRY Z PLIKÓW GAMELIST.XML"
@@ -1100,7 +1100,7 @@ msgid "DEBUG MODE"
 msgstr "TRYB DEBUG"
 
 msgid "DISPLAY GPU STATISTICS OVERLAY"
-msgstr "WYŚWIETL NAKŁADKĘ STATYSTYK GPU"
+msgstr "POKAŻ NAKŁADKĘ STATYSTYK GPU"
 
 msgid "ENABLE MENU IN KID MODE"
 msgstr "WŁĄCZ MENU W TRYBIE DZIECKA"
@@ -1164,7 +1164,7 @@ msgstr "WYŁĄCZ SYSTEM"
 
 msgctxt "short"
 msgid "SYSTEM STATUS SETTINGS"
-msgstr ""
+msgstr "USTAWIENIA STANU SYSTEMU"
 
 msgctxt "short"
 msgid "MEDIA VIEWER SETTINGS"
@@ -1895,19 +1895,19 @@ msgid "RENDER BLUR"
 msgstr "RENDERUJ ROZMYCIE"
 
 msgid "DISPLAY BLUETOOTH STATUS INDICATOR"
-msgstr ""
+msgstr "POKAŻ WSKAŹNIK STANU BLUETOOTH"
 
 msgid "DISPLAY WI-FI STATUS INDICATOR"
-msgstr ""
+msgstr "POKAŻ WSKAŹNIK STANU WIFI"
 
 msgid "DISPLAY CELLULAR STATUS INDICATOR"
-msgstr ""
+msgstr "POKAŻ WSKAŹNIK STANU SIECI KOMÓRKOWEJ"
 
 msgid "DISPLAY BATTERY STATUS INDICATOR"
-msgstr ""
+msgstr "POKAŻ WSKAŹNIK STANU BATERII"
 
 msgid "DISPLAY BATTERY CHARGE PERCENTAGE"
-msgstr ""
+msgstr "POKAŻ PROCENT NAŁADOWANIA BATERII"
 
 msgid "DOWNLOADING THEMES LIST 100%"
 msgstr "POBIERANIE LISTY MOTYWÓW 100%"
