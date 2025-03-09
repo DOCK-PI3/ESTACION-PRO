@@ -65,7 +65,7 @@ enum class Stationary {
     BETWEEN_VIEWS
 };
 
-enum class HelpComponentScope {
+enum class ComponentScope {
     SHARED,
     VIEW,
     MENU,
@@ -125,7 +125,7 @@ public:
     void setRotationOrigin(glm::vec2 origin) { setRotationOrigin(origin.x, origin.y); }
 
     const Stationary getStationary() const { return mStationary; }
-    const HelpComponentScope getHelpComponentScope() const { return mHelpComponentScope; }
+    const ComponentScope getComponentScope() const { return mComponentScope; }
     const bool getRenderDuringTransitions() const { return mRenderDuringTransitions; }
 
     virtual glm::vec2 getSize() const { return mSize; }
@@ -414,7 +414,7 @@ protected:
     glm::vec2 mRotationOrigin;
     glm::vec2 mSize;
     Stationary mStationary;
-    HelpComponentScope mHelpComponentScope;
+    ComponentScope mComponentScope;
     bool mRenderDuringTransitions;
 
     float mBrightness;

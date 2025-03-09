@@ -494,6 +494,7 @@ void Window::render()
     glm::mat4 trans {mRenderer->getIdentity()};
 
     mRenderedHelpPrompts = false;
+    bool menuIsOpen {false};
 
     // Draw only bottom and top of GuiStack (if they are different).
     if (!mGuiStack.empty()) {
@@ -534,6 +535,8 @@ void Window::render()
             bottom->render(trans);
 
         if (bottom != top || mRenderLaunchScreen) {
+            if (!mRenderLaunchScreen)
+                menuIsOpen = true;
             if (!mCachedBackground && mInvalidateCacheTimer == 0) {
                 // Generate a cache texture of the shaded background when opening the menu, which
                 // will remain valid until the menu is closed. This is way faster than having to
@@ -640,9 +643,9 @@ void Window::render()
             if (!mRenderedHelpPrompts) {
                 if (mHelpComponents != nullptr) {
                     for (auto& helpComponent : *mHelpComponents) {
-                        if (helpComponent->getHelpComponentScope() == HelpComponentScope::NONE)
+                        if (helpComponent->getComponentScope() == ComponentScope::NONE)
                             continue;
-                        if (helpComponent->getHelpComponentScope() != HelpComponentScope::VIEW) {
+                        if (helpComponent->getComponentScope() != ComponentScope::VIEW) {
                             helpComponent->setVisible(true);
                             helpComponent->render(trans);
                         }
@@ -694,13 +697,27 @@ void Window::render()
     }
 
     if (mClockComponents != nullptr) {
-        for (auto& clockComponent : *mClockComponents)
+        for (auto& clockComponent : *mClockComponents) {
+            if (clockComponent->getComponentScope() == ComponentScope::NONE)
+                continue;
+            if (menuIsOpen && clockComponent->getComponentScope() == ComponentScope::VIEW)
+                continue;
+            if (!menuIsOpen && clockComponent->getComponentScope() == ComponentScope::MENU)
+                continue;
             clockComponent->render(trans);
+        }
     }
 
     if (mSystemStatusComponents != nullptr) {
-        for (auto& systemStatusComponent : *mSystemStatusComponents)
+        for (auto& systemStatusComponent : *mSystemStatusComponents) {
+            if (systemStatusComponent->getComponentScope() == ComponentScope::NONE)
+                continue;
+            if (menuIsOpen && systemStatusComponent->getComponentScope() == ComponentScope::VIEW)
+                continue;
+            if (!menuIsOpen && systemStatusComponent->getComponentScope() == ComponentScope::MENU)
+                continue;
             systemStatusComponent->render(trans);
+        }
     }
 
     if (mInfoPopup)
@@ -817,9 +834,9 @@ void Window::renderHelpPromptsEarly()
 {
     if (mHelpComponents != nullptr) {
         for (auto& helpComponent : *mHelpComponents) {
-            if (helpComponent->getHelpComponentScope() == HelpComponentScope::NONE)
+            if (helpComponent->getComponentScope() == ComponentScope::NONE)
                 continue;
-            if (helpComponent->getHelpComponentScope() != HelpComponentScope::MENU) {
+            if (helpComponent->getComponentScope() != ComponentScope::MENU) {
                 helpComponent->setVisible(true);
                 helpComponent->render(mRenderer->getIdentity());
             }
@@ -901,13 +918,11 @@ void Window::setHelpPrompts(const std::vector<HelpPrompt>& prompts)
 
     if (mHelpComponents != nullptr) {
         for (auto& helpComponent : *mHelpComponents) {
-            if (helpComponent->getHelpComponentScope() == HelpComponentScope::NONE)
+            if (helpComponent->getComponentScope() == ComponentScope::NONE)
                 continue;
-            if (mGuiStack.size() == 1 &&
-                helpComponent->getHelpComponentScope() == HelpComponentScope::MENU)
+            if (mGuiStack.size() == 1 && helpComponent->getComponentScope() == ComponentScope::MENU)
                 continue;
-            if (mGuiStack.size() > 1 &&
-                helpComponent->getHelpComponentScope() == HelpComponentScope::VIEW)
+            if (mGuiStack.size() > 1 && helpComponent->getComponentScope() == ComponentScope::VIEW)
                 continue;
             helpComponent->clearPrompts();
             helpComponent->setPrompts(addPrompts);

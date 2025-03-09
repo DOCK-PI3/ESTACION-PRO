@@ -178,16 +178,16 @@ void HelpComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
     if (elem->has("scope")) {
         const std::string& scope {elem->get<std::string>("scope")};
         if (scope == "shared") {
-            mHelpComponentScope = HelpComponentScope::SHARED;
+            mComponentScope = ComponentScope::SHARED;
         }
         else if (scope == "view") {
-            mHelpComponentScope = HelpComponentScope::VIEW;
+            mComponentScope = ComponentScope::VIEW;
         }
         else if (scope == "menu") {
-            mHelpComponentScope = HelpComponentScope::MENU;
+            mComponentScope = ComponentScope::MENU;
         }
         else if (scope == "none") {
-            mHelpComponentScope = HelpComponentScope::NONE;
+            mComponentScope = ComponentScope::NONE;
         }
         else {
             LOG(LogWarning) << "HelpComponent: Invalid theme configuration, property "

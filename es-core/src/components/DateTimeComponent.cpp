@@ -207,6 +207,28 @@ void DateTimeComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
     if (!elem)
         return;
 
+    if (mClockMode && elem->has("scope")) {
+        const std::string& scope {elem->get<std::string>("scope")};
+        if (scope == "shared") {
+            mComponentScope = ComponentScope::SHARED;
+        }
+        else if (scope == "view") {
+            mComponentScope = ComponentScope::VIEW;
+        }
+        else if (scope == "menu") {
+            mComponentScope = ComponentScope::MENU;
+        }
+        else if (scope == "none") {
+            mComponentScope = ComponentScope::NONE;
+        }
+        else {
+            LOG(LogWarning) << componentName
+                            << ": Invalid theme configuration, property "
+                               "\"scope\" for element \""
+                            << element.substr(6) << "\" defined as \"" << scope << "\"";
+        }
+    }
+
     if (properties & ThemeFlags::POSITION && elem->has("stationary")) {
         const std::string& stationary {elem->get<std::string>("stationary")};
         if (stationary == "never")

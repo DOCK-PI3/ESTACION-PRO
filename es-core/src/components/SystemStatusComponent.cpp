@@ -192,6 +192,27 @@ void SystemStatusComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
             std::round(glm::clamp(elem->get<float>("height") * scale, 0.01f * scale, 0.5f * scale));
     }
 
+    if (elem->has("scope")) {
+        const std::string& scope {elem->get<std::string>("scope")};
+        if (scope == "shared") {
+            mComponentScope = ComponentScope::SHARED;
+        }
+        else if (scope == "view") {
+            mComponentScope = ComponentScope::VIEW;
+        }
+        else if (scope == "menu") {
+            mComponentScope = ComponentScope::MENU;
+        }
+        else if (scope == "none") {
+            mComponentScope = ComponentScope::NONE;
+        }
+        else {
+            LOG(LogWarning) << "SystemStatusComponent: Invalid theme configuration, property "
+                               "\"scope\" for element \""
+                            << element.substr(13) << "\" defined as \"" << scope << "\"";
+        }
+    }
+
     if (elem->has("textRelativeScale"))
         textRelativeScale = glm::clamp(elem->get<float>("textRelativeScale"), 0.5f, 1.0f);
 

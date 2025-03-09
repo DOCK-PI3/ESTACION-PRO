@@ -31,7 +31,7 @@ GuiComponent::GuiComponent()
     , mRotationOrigin {0.5f, 0.5f}
     , mSize {0.0f, 0.0f}
     , mStationary {Stationary::NEVER}
-    , mHelpComponentScope {HelpComponentScope::SHARED}
+    , mComponentScope {ComponentScope::SHARED}
     , mRenderDuringTransitions {true}
     , mBrightness {0.0f}
     , mOpacity {1.0f}
