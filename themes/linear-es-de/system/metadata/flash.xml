@@ -1,4 +1,4 @@
-<theme>
+﻿<theme>
     <variables>
         <systemName>Adobe Flash</systemName>
         <systemDescription>Adobe Flash (formerly Macromedia Flash and FutureSplash) was a multimedia software platform used for production of animations, rich web applications, desktop applications, mobile apps, mobile games, and embedded web browser video players. Flash displays text, vector graphics, and raster graphics to provide animations, video games, and applications. It allows streaming of audio and video, and can capture mouse, keyboard, microphone, and camera input.</systemDescription>
@@ -13,10 +13,90 @@
         <systemColorPalette2>4A0000</systemColorPalette2>
         <systemColorPalette3>B11313</systemColorPalette3>
         <systemColorPalette4>710000</systemColorPalette4>
+        <systemCartSize>1-1</systemCartSize>
     </variables>
+    <language name="ca_ES">
+        <variables>
+            <systemDescription>Adobe Flash (abans Macromedia Flash i FuturesPlash) va ser una plataforma de programari multimèdia usada per a la producció d’animacions, aplicacions web riques, aplicacions d’escriptori, aplicacions mòbils, jocs mòbils i reproductors de vídeo del navegador web incrustats. Flash mostra text, gràfics vectorials i gràfics de ràster per proporcionar animacions, videojocs i aplicacions. Permet la transmissió d’àudio i vídeo i pot capturar l’entrada de ratolí, teclat, micròfon i càmera.</systemDescription>
+            <systemHardwareType>Engine</systemHardwareType>
+        </variables>
+    </language>
+    <language name="de_DE">
+        <variables>
+            <systemDescription>Adobe Flash (früher Macromedia Flash und FutureSplash) war eine Multimedia-Softwareplattform, die für die Erstellung von Animationen, Rich-Web-Anwendungen, Desktop-Anwendungen, mobilen Anwendungen, mobilen Spielen und eingebetteten Webbrowser-Videoplayern verwendet wurde. Flash zeigt Text, Vektorgrafiken und Rastergrafiken an, um Animationen, Videospiele und Anwendungen zu erstellen. Es ermöglicht das Streaming von Audio und Video und kann Maus-, Tastatur-, Mikrofon- und Kameraeingaben erfassen.</systemDescription>
+            <systemHardwareType>Motor</systemHardwareType>
+        </variables>
+    </language>
+    <language name="es_ES">
+        <variables>
+            <systemDescription>Adobe Flash (anteriormente Macromedia Flash y FutureSplash) era una plataforma de software multimedia utilizada para la producción de animaciones, aplicaciones web sofisticadas, aplicaciones de escritorio, aplicaciones para móviles, juegos para móviles y reproductores de vídeo integrados en navegadores web. Flash muestra texto, gráficos vectoriales y gráficos de trama para ofrecer animaciones, videojuegos y aplicaciones. Permite la transmisión de audio y vídeo, y puede capturar entradas de ratón, teclado, micrófono y cámara.</systemDescription>
+            <systemHardwareType>Motor</systemHardwareType>
+        </variables>
+    </language>
+    <language name="fr_FR">
+        <variables>
+            <systemDescription>Adobe Flash (anciennement Macromedia Flash et FutureSplash) était une plateforme logicielle multimédia utilisée pour la production d'animations, d'applications web riches, d'applications de bureau, d'applications mobiles, de jeux mobiles et de lecteurs vidéo intégrés dans les navigateurs web. Flash affiche du texte, des graphiques vectoriels et des graphiques tramés pour produire des animations, des jeux vidéo et des applications. Il permet la diffusion en continu d'audio et de vidéo, et peut capturer les entrées de la souris, du clavier, du microphone et de la caméra.</systemDescription>
+            <systemHardwareType>Moteur</systemHardwareType>
+        </variables>
+    </language>
+    <language name="it_IT">
+        <variables>
+            <systemDescription>Adobe Flash (precedentemente Macromedia Flash e FutureSplash) è una piattaforma software multimediale utilizzata per la produzione di animazioni, applicazioni web ricche, applicazioni desktop, applicazioni mobili, giochi mobili e lettori video incorporati nei browser web. Flash visualizza testo, grafica vettoriale e grafica raster per fornire animazioni, videogiochi e applicazioni. Consente lo streaming di audio e video e può acquisire input da mouse, tastiera, microfono e fotocamera.</systemDescription>
+            <systemHardwareType>Motore</systemHardwareType>
+        </variables>
+    </language>
+    <language name="nl_NL">
+        <variables>
+            <systemDescription>Adobe Flash (voorheen Macromedia Flash en FutureSplash) was een multimediasoftwareplatform dat werd gebruikt voor de productie van animaties, rijke webtoepassingen, desktoptoepassingen, mobiele apps, mobiele games en ingebedde videospelers voor webbrowsers. Flash geeft tekst, vectorafbeeldingen en rastergrafieken weer om animaties, videogames en toepassingen te maken. Het kan audio en video streamen en muis-, toetsenbord-, microfoon- en camera-invoer vastleggen.</systemDescription>
+            <systemHardwareType>Motor</systemHardwareType>
+        </variables>
+    </language>
+    <language name="pl_PL">
+        <variables>
+            <systemDescription>Adobe Flash (wcześniej Macromedia Flash i FutureSplash) to platforma oprogramowania multimedialnego wykorzystywana do produkcji animacji, rozbudowanych aplikacji internetowych, aplikacji desktopowych, aplikacji mobilnych, gier mobilnych i wbudowanych odtwarzaczy wideo w przeglądarkach internetowych. Flash wyświetla tekst, grafikę wektorową i rastrową w celu tworzenia animacji, gier wideo i aplikacji. Umożliwia strumieniowanie audio i wideo oraz przechwytywanie danych wejściowych z myszy, klawiatury, mikrofonu i kamery.</systemDescription>
+            <systemHardwareType>Silnik</systemHardwareType>
+        </variables>
+    </language>
+    <language name="pt_BR">
+        <variables>
+            <systemDescription>O Adobe Flash (anteriormente Macromedia Flash e FutureSplash) foi uma plataforma de software multimídia usada para a produção de animações, aplicativos avançados da Web, aplicativos de desktop, aplicativos móveis, jogos móveis e players de vídeo incorporados ao navegador da Web. O Flash exibe texto, gráficos vetoriais e gráficos rasterizados para fornecer animações, videogames e aplicativos. Ele permite o streaming de áudio e vídeo e pode capturar entradas de mouse, teclado, microfone e câmera.</systemDescription>
+            <systemHardwareType>Motor</systemHardwareType>
+        </variables>
+    </language>
+    <language name="ro_RO">
+        <variables>
+            <systemDescription>Adobe Flash (anterior Macromedia Flash și FutureSplash) a fost o platformă software multimedia utilizată pentru producția de animații, aplicații web bogate, aplicații desktop, aplicații mobile, jocuri mobile și playere video încorporate în browserul web. Flash afișează text, grafică vectorială și grafică raster pentru a furniza animații, jocuri video și aplicații. Acesta permite streamingul audio și video și poate capta intrările de la mouse, tastatură, microfon și cameră.</systemDescription>
+            <systemHardwareType>Motor</systemHardwareType>
+        </variables>
+    </language>
+    <language name="ru_RU">
+        <variables>
+            <systemDescription>Adobe Flash (ранее Macromedia Flash и FutureSplash) - мультимедийная программная платформа, используемая для создания анимации, насыщенных веб-приложений, настольных приложений, мобильных приложений, мобильных игр и встроенных в веб-браузер видеоплееров. Flash отображает текст, векторную и растровую графику для создания анимации, видеоигр и приложений. Он позволяет передавать потоковое аудио и видео, а также захватывать ввод с мыши, клавиатуры, микрофона и камеры.</systemDescription>
+            <systemHardwareType>Двигатель</systemHardwareType>
+        </variables>
+    </language>
     <language name="sv_SE">
         <variables>
-            <systemHardwareType>Spelmotor</systemHardwareType>
+            <systemDescription>Adobe Flash (tidigare Macromedia Flash och FutureSplash) var en programvaruplattform för multimedia som användes för att skapa animationer, rika webbapplikationer, skrivbordsapplikationer, mobilappar, mobilspel och inbäddade videospelare för webbläsare. Flash visar text, vektorgrafik och rastergrafik för att skapa animationer, videospel och applikationer. Det möjliggör streaming av ljud och video och kan fånga in mus-, tangentbords-, mikrofon- och kamerainmatning.</systemDescription>
+            <systemHardwareType>Motor</systemHardwareType>
+        </variables>
+    </language>
+    <language name="ja_JP">
+        <variables>
+            <systemDescription>Adobe Flash（旧Macromedia FlashおよびFutureSplash）は、アニメーション、リッチWebアプリケーション、デスクトップアプリケーション、モバイルアプリケーション、モバイルゲーム、組み込みWebブラウザビデオプレーヤーの制作に使用されるマルチメディアソフトウェアプラットフォームである。Flashはテキスト、ベクターグラフィックス、ラスターグラフィックスを表示し、アニメーション、ビデオゲーム、アプリケーションを提供する。音声やビデオのストリーミングが可能で、マウス、キーボード、マイク、カメラからの入力を取り込むことができます。</systemDescription>
+            <systemHardwareType>エンジン</systemHardwareType>
+        </variables>
+    </language>
+    <language name="ko_KR">
+        <variables>
+            <systemDescription>Adobe Flash(이전의 Macromedia Flash 및 FutureSplash)는 애니메이션, 리치 웹 애플리케이션, 데스크톱 애플리케이션, 모바일 앱, 모바일 게임 및 임베디드 웹 브라우저 비디오 플레이어 제작에 사용되는 멀티미디어 소프트웨어 플랫폼입니다. 플래시는 텍스트, 벡터 그래픽, 래스터 그래픽을 표시하여 애니메이션, 비디오 게임, 애플리케이션을 제공합니다. 오디오 및 비디오 스트리밍이 가능하며 마우스, 키보드, 마이크 및 카메라 입력을 캡처할 수 있습니다.</systemDescription>
+            <systemHardwareType>엔진</systemHardwareType>
+        </variables>
+    </language>
+    <language name="zh_CN">
+        <variables>
+            <systemDescription>Adobe Flash（前身为 Macromedia Flash 和 FutureSplash）是一个多媒体软件平台，用于制作动画、丰富的网络应用程序、桌面应用程序、移动应用程序、移动游戏和嵌入式网络浏览器视频播放器。Flash 可显示文本、矢量图形和光栅图形，提供动画、视频游戏和应用程序。它允许音频和视频流，并能捕捉鼠标、键盘、麦克风和摄像头输入。</systemDescription>
+            <systemHardwareType>发动机</systemHardwareType>
         </variables>
     </language>
 </theme>
