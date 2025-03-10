@@ -899,6 +899,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | vectrex               | GCE Vectrex                                    | vecx                              | MAME4droid Current **(Standalone)**  | Yes for MAME4droid Current | Single archive or ROM file           |
 | vic20                 | Commodore VIC-20                               | VICE xvic                         |                                   | No           | Single archive or tape, cartridge or diskette image file |
 | videopac              | Philips Videopac G7000                         | O2EM                              | MAME4droid Current **(Standalone)**  | Yes          | Single archive or ROM file           |
+| vircon32              | Vircon32 Virtual Console                       | Vircon32                          |                                   | No           | Single archive or ROM file           |
 | virtualboy            | Nintendo Virtual Boy                           | Beetle VB                         | Virtual Virtual Boy **(Standalone)** | No           | Single archive or ROM file           |
 | vpinball              | Visual Pinball                                 | Visual Pinball **(Standalone)**   |                                   | No           | See the specific _Visual Pinball_ section in the user guide |
 | vsmile                | VTech V.Smile                                  | MAME4droid Current **(Standalone)**  |                                   | Yes          | Single archive or ROM file           |
