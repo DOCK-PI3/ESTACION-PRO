@@ -1987,6 +1987,15 @@
         <theme>videopac</theme>
     </system>
     <system>
+        <name>vircon32</name>
+        <fullname>Vircon32 Virtual Console</fullname>
+        <path>%ROMPATH%/vircon32</path>
+        <extension>.v32 .V32 .7z .7Z .zip .ZIP</extension>
+        <command label="Vircon32">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/vircon32_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <platform>vircon32</platform>
+        <theme>vircon32</theme>
+    </system>
+    <system>
         <name>virtualboy</name>
         <fullname>Nintendo Virtual Boy</fullname>
         <path>%ROMPATH%/virtualboy</path>

@@ -142,6 +142,7 @@ namespace PlatformIds
         UZEBOX,
         VECTREX,
         COMMODORE_VIC20,
+        VIRCON32,
         NINTENDO_VIRTUAL_BOY,
         VISUAL_PINBALL,
         VTECH_VSMILE,

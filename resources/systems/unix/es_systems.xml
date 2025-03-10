@@ -2085,6 +2085,16 @@
         <theme>videopac</theme>
     </system>
     <system>
+        <name>vircon32</name>
+        <fullname>Vircon32 Virtual Console</fullname>
+        <path>%ROMPATH%/vircon32</path>
+        <extension>.v32 .V32 .7z .7Z .zip .ZIP</extension>
+        <command label="Vircon32">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/vircon32_libretro.so %ROM%</command>
+        <command label="Vircon32 (Standalone)">%EMULATOR_VIRCON32% %ROM%</command>
+        <platform>vircon32</platform>
+        <theme>vircon32</theme>
+    </system>
+    <system>
         <name>virtualboy</name>
         <fullname>Nintendo Virtual Boy</fullname>
         <path>%ROMPATH%/virtualboy</path>

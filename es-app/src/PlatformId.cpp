@@ -143,6 +143,7 @@ namespace PlatformIds
         "uzebox",               // Uzebox Open Source Console
         "vectrex",              // GCE Vectrex
         "vic20",                // Commodore VIC-20
+        "vircon32",             // Vircon32 Virtual Console
         "virtualboy",           // Nintendo Virtual Boy
         "vpinball",             // Visual Pinball
         "vsmile",               // VTech V.Smile

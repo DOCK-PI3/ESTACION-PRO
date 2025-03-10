@@ -619,6 +619,12 @@
             <entry>xvic</entry>
         </rule>
     </emulator>
+    <emulator name="VIRCON32">
+        <!-- Vircon32 Virtual Console -->
+        <rule type="systempath">
+            <entry>Vircon32</entry>
+        </rule>
+    </emulator>
     <emulator name="VISUAL-PINBALL">
         <!-- Pinball simulator Visual Pinball -->
         <rule type="systempath">

@@ -1002,6 +1002,16 @@
             <entry>%ESPATH%\..\Emulators\VICE\bin\xvic.exe</entry>
         </rule>
     </emulator>
+    <emulator name="VIRCON32">
+        <!-- Vircon32 Virtual Console -->
+        <rule type="systempath">
+            <entry>Vircon32.exe</entry>
+        </rule>
+        <rule type="staticpath">
+            <entry>%ESPATH%\Emulators\Vircon32\Emulator\Vircon32.exe</entry>
+            <entry>%ESPATH%\..\Emulators\Vircon32\Emulator\Vircon32.exe</entry>
+        </rule>
+    </emulator>
     <emulator name="VISUAL-PINBALL">
         <!-- Pinball simulator Visual Pinball -->
         <rule type="systempath">
