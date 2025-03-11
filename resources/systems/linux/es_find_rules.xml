@@ -52,6 +52,15 @@
             <entry>~/bin/3dSen/3dSen.exe</entry>
         </rule>
     </emulator>
+    <emulator name="A7800">
+        <!-- Atari 7800 emulator A7800 -->
+        <rule type="staticpath">
+            <entry>~/Applications/a7800-linux/a7800</entry>
+            <entry>~/.local/share/applications/a7800-linux/a7800</entry>
+            <entry>~/.local/bin/a7800-linux/a7800</entry>
+            <entry>~/bin/a7800-linux/a7800</entry>
+        </rule>
+    </emulator>
     <emulator name="ACE-DL">
         <!-- Amstrad CPC emulator ACE-DL -->
         <rule type="systempath">

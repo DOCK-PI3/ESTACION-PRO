@@ -28,6 +28,13 @@
             <entry>%ESPATH%\..\Emulators\3dSen\3dSen.exe</entry>
         </rule>
     </emulator>
+    <emulator name="A7800">
+        <!-- Atari 7800 emulator A7800 -->
+        <rule type="staticpath">
+            <entry>%ESPATH%\Emulators\a7800\a7800.exe</entry>
+            <entry>%ESPATH%\..\Emulators\a7800\a7800.exe</entry>
+        </rule>
+    </emulator>
     <emulator name="ACE-DL">
         <!-- Amstrad CPC emulator ACE-DL -->
         <rule type="staticpath">
