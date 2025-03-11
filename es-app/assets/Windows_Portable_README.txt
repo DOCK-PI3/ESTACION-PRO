@@ -148,6 +148,7 @@ Emulators\xemu\xemu.exe
 Emulators\xenia\xenia.exe
 Emulators\xenia_canary\xenia_canary.exe
 Emulators\XM6 Pro-68k\XM6.exe
+Emulators\xm6_typeg\xm6g.exe
 Emulators\xroar\xroar.exe
 Emulators\yabasanshiro\yabasanshiro.exe
 Emulators\ZEsarUX\zesarux.exe

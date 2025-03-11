@@ -1216,6 +1216,15 @@
             <entry>~/bin/XM6 Pro-68k/XM6.exe</entry>
         </rule>
     </emulator>
+    <emulator name="XM6TYPEG-WINDOWS">
+        <!-- Sharp X68000 emulator XM6 TypeG -->
+        <rule type="staticpath">
+            <entry>~/Applications/xm6_typeg/xm6g.exe</entry>
+            <entry>~/.local/share/applications/xm6_typeg/xm6g.exe</entry>
+            <entry>~/.local/bin/xm6_typeg/xm6g.exe</entry>
+            <entry>~/bin/xm6_typeg/xm6g.exe</entry>
+        </rule>
+    </emulator>
     <emulator name="XROAR">
         <!-- Dragon and Tandy 8-bit computer emulator XRoar -->
         <rule type="systempath">

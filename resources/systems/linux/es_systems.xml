@@ -2290,6 +2290,8 @@
         <command label="MAME (Standalone)">%STARTDIR%=~/.mame %EMULATOR_MAME% -rompath %GAMEDIR%\;%ROMPATH%/x68000 x68000 -flop1 %ROM%</command>
         <command label="XM6 Pro-68k (Wine)">%STARTDIR%=%GAMEDIR% %PRECOMMAND_WINE% %EMULATOR_XM6PRO68K-WINDOWS% "%FILENAME%"</command>
         <command label="XM6 Pro-68k (Proton)">%STARTDIR%=%GAMEDIR% %PRECOMMAND_PROTON% %EMULATOR_XM6PRO68K-WINDOWS% "%FILENAME%"</command>
+        <command label="XM6 TypeG (Wine)">%STARTDIR%=%GAMEDIR% %PRECOMMAND_WINE% %EMULATOR_XM6TYPEG-WINDOWS% "%FILENAME%"</command>
+        <command label="XM6 TypeG (Proton)">%STARTDIR%=%GAMEDIR% %PRECOMMAND_PROTON% %EMULATOR_XM6TYPEG-WINDOWS% "%FILENAME%"</command>
         <platform>x68000</platform>
         <theme>x68000</theme>
     </system>

@@ -2273,6 +2273,7 @@
         <command label="PX68k">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\px68k_libretro.dll %ROM%</command>
         <command label="MAME (Standalone)">%HIDEWINDOW% %STARTDIR%=%EMUDIR% %EMULATOR_MAME% -rompath %GAMEDIR%\;%ROMPATH%\x68000 x68000 -flop1 %ROM%</command>
         <command label="XM6 Pro-68k (Standalone)">%STARTDIR%=%EMUDIR% %EMULATOR_XM6PRO68K% %ROM%</command>
+        <command label="XM6 TypeG (Standalone)">%STARTDIR%=%EMUDIR% %EMULATOR_XM6TYPEG% %ROM%</command>
         <platform>x68000</platform>
         <theme>x68000</theme>
     </system>
