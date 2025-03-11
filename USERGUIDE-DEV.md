@@ -810,6 +810,7 @@ The following manually downloaded emulators are supported when using the bundled
 | amstradcpc                              | CPCemu           | cpcemu/cpcemu                     |
 | apple2                                  | LinApple         | linapple/linapple                 |
 | atari2600                               | Gopher2600       | gopher2600/gopher2600_linux_amd64 |
+| atari7800                               | A7800            | a7800-linux/a7800                 |
 | atarijaguar/atarijaguarcd               | BigPEmu          | bigpemu/bigpemu                   |
 | coco/dragon32/tanodragon                | XRoar            | xroar/xroar                       |
 | daphne                                  | Hypseus Singe    | hypseus-singe/hypseus.bin         |
@@ -928,6 +929,7 @@ The following Windows emulators are supported, and the setup for most of these i
 | famicom/nes               | 3dSen            | 3dSen/3dSen.exe         |
 | model2                    | Model 2 Emulator | m2emulator/EMULATOR.EXE |
 | x68000                    | XM6 Pro-68k      | XM6 Pro-68k/XM6.exe     |
+| x68000                    | XM6 TypeG        | xm6_typeg/xm6g.exe      |
 | xbox360                   | xenia            | xenia/xenia.exe         |
 | xbox360                   | xenia            | xenia/xenia_canary.exe  |
 
@@ -4176,7 +4178,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | astrocde              | Bally Astrocade                                | MAME - Current                    | MAME **(Standalone)**             | Yes          | Single archive or ROM file           |
 | atari2600             | Atari 2600                                     | Stella                            | Stella 2014,<br>Stella 2023,<br>Stella **(Standalone)**,<br>Gopher2600 **(Standalone)** [LW],<br>ares **(Standalone)** | No           | Single archive or ROM file |
 | atari5200             | Atari 5200                                     | a5200                             | Atari800,<br>Atari800 **(Standalone)**,<br>Altirra **(Standalone)** [W] | Yes except for Altirra | Single archive or ROM file |
-| atari7800             | Atari 7800 ProSystem                           | ProSystem                         | MAME - Current,<br>MAME **(Standalone)** | Yes          | Single archive or ROM file |
+| atari7800             | Atari 7800 ProSystem                           | ProSystem                         | MAME - Current,<br>MAME **(Standalone)**,<br>A7800 **(Standalone)** [LW] | Yes          | Single archive or ROM file |
 | atari800              | Atari 800                                      | Atari800                          | Atari800 **(Standalone)**,<br>Altirra **(Standalone)** [W] | Yes except for Altirra |                                      |
 | atarijaguar           | Atari Jaguar                                   | Virtual Jaguar                    | BigPEmu **(Standalone)** [LW],<br>BigPEmu **(Wine)** [L],<br>BigPEmu **(Proton)** [L],<br>MAME **(Standalone)** | Yes for MAME | See the specific _Atari Jaguar and Atari Jaguar CD_ section elsewhere in this guide |
 | atarijaguarcd         | Atari Jaguar CD                                | BigPEmu **(Standalone)** [LW]     | BigPEmu **(Wine)** [L],<br>BigPEmu **(Proton)** [L]   | No           | See the specific _Atari Jaguar and Atari Jaguar CD_ section elsewhere in this guide |
@@ -4342,7 +4344,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | wonderswan            | Bandai WonderSwan                              | Beetle Cygne                      | Mednafen **(Standalone)**,<br>ares **(Standalone)**,<br>ares [Benesse Pocket Challenge V2] **(Standalone)** | No           | Single archive or ROM file    |
 | wonderswancolor       | Bandai WonderSwan Color                        | Beetle Cygne                      | Mednafen **(Standalone)**,<br>ares **(Standalone)** | No           | Single archive or ROM file    |
 | x1                    | Sharp X1                                       | X Millennium                      | MAME [Diskette] **(Standalone)**,<br>MAME [Tape] **(Standalone)** | Yes for MAME | Single archive or diskette/tape file |
-| x68000                | Sharp X68000                                   | PX68k                             | MAME **(Standalone)**,<br>XM6 Pro-68k **(Standalone)** [W],<br>XM6 Pro-68k **(Wine)** [L],<br>XM6 Pro-68k **(Proton)** [L] | Yes except for XM6 Pro-68k |                                      |
+| x68000                | Sharp X68000                                   | PX68k                             | MAME **(Standalone)**,<br>XM6 Pro-68k **(Standalone)** [W],<br>XM6 TypeG **(Standalone**) [W],<br>XM6 Pro-68k **(Wine)** [L],<br>XM6 Pro-68k **(Proton)** [L],<br>XM6 TypeG **(Wine)** [L],<br>XM6 TypeG **(Proton)** [L] | Yes for PX68k and MAME |                                      |
 | xbox                  | Microsoft Xbox                                 | xemu **(Standalone)**             | Cxbx-Reloaded **(Standalone)** [W] | Yes for xemu | Single .iso file for xemu or unpacked .iso directory for Cxbx-Reloaded |
 | xbox360               | Microsoft Xbox 360                             | xenia **(Standalone)** [W],<br>xenia **(Wine)** [L] | xenia **(Proton)** [L],<br> _Shortcut or script_ [L]          | No           | See the specific _Microsoft Xbox 360_ section elsewhere in this guide |
 | zmachine              | Infocom Z-machine                              | MojoZork                          | Gargoyle **(Standalone)**         | No           |                                      |

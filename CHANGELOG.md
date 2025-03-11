@@ -21,15 +21,20 @@
 * Added the NooDS RetroArch core as an alternative emulator for the gba and nds systems
 * Added the Holani RetroArch core as an alternative emulator for the atarilynx system
 * Added the b2 RetroArch core as an alternative emulator for the bbcmicro system
+* Added A7800 standalone as an alternative emulator for the atari7800 system on Linux and Windows
 * (Android) Changed from MAME4droid 2024 to MAME4droid Current for all systems where only this emulator was supported
+* (Android) Added a find rule entry for the new Cemu package name
 * (Android) Added MAME4droid Current emulator entries for all systems where MAME4droid 2024 was supported
+* (Android) Added Azahar standalone as an alternative emulator for the n3ds system
 * (Android) Added Pizza Boy SC standalone as an alternative emulator for the gamegear, genesis, mastersystem, megadrive and megadrivejp systems
 * (Android) Changed all RetroArch core entries to use absolute paths (this makes the ancient Play store release work correctly)
-* (Android) Changed the target SDK version to 35 (Android 15)
+* (Windows) Added XM6 TypeG standalone as an alternative emulator for the x68000 system
+* (Linux) Added XM6 TypeG Wine and XM6 TypeG Proton as alternative emulators for the x68000 system
 * (Linux) Added a find rule entry for the new PCSX2 binary name (pcsx2)
 * (Linux) Added a find rule entry for the new DuckStation binary name (duckstation)
 * (Linux) Added support for the Flatpak release of Ruffle
 * (Linux) Changed the AppImage find rule for Mandarine to mandarine-qt*.AppImage
+* Added the .m3u file extension to the sega32x, sega32xjp and sega32xna systems
 * Added the .ruf file extension to the flash system
 * Refactored the helpsystem code and added support for using an arbitrary amount of helpsystem elements
 * Added support for specifying which specific entries to display for the helpsystem elements
@@ -41,6 +46,7 @@
 * Added a "fadeInType" property to the video element to fade in from black or from transparency
 * Added support for a "none" value to the video element imageType property
 * Added a BackgroundComponent to replace NinePatchComponent for rendering menu and popup backgrounds
+* (Android) Changed the target SDK version to 35 (Android 15)
 * (macOS) Added a build script for cross-compiling for x86_64 when using an ARM processor
 * (Linux) Added the BlueZ library as a dependency
 * Added support for building against libgit2 v1.9.0 and later

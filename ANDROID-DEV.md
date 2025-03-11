@@ -232,6 +232,12 @@ If you prefer to apply the NetherSX2 patch yourself (i.e. build the APK) then yo
 
 https://github.com/Trixarian/NetherSX2-patch
 
+### Azahar
+
+This emulator which is forked from Citra and Lime3DS can be downloaded from their GitHub site.
+
+https://github.com/azahar-emu/azahar
+
 ### Cemu
 
 This emulator can be downloaded from the following GitHub site. Note that this repository is not from the official Cemu project, we consider Cemu as experimental on Android for the time being.
@@ -827,7 +833,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | naomi                 | Sega NAOMI                                     | Flycast                           | Flycast **(Standalone)**          | Yes          | Single archive file + .chd file in subdirectory if GD-ROM game |
 | naomi2                | Sega NAOMI 2                                   | Flycast                           | Flycast **(Standalone)**          | Yes          | Single archive file + .chd file in subdirectory if GD-ROM game |
 | naomigd               | Sega NAOMI GD-ROM                              | Flycast                           | Flycast **(Standalone)**          | Yes          | Single archive file + .chd file in subdirectory if GD-ROM game |
-| n3ds                  | Nintendo 3DS                                   | Citra                             | Citra **(Standalone)**,<br>Citra Canary **(Standalone)**,<br>Citra MMJ **(Standalone)**,<br>Mandarine **(Standalone)**,<br>Lime3DS **(Standalone)**,<br>Panda3DS **(Standalone)**  | No           | Single ROM file       |
+| n3ds                  | Nintendo 3DS                                   | Citra                             | Citra **(Standalone)**,<br>Citra Canary **(Standalone)**,<br>Citra MMJ **(Standalone)**,<br>Azahar **(Standalone)**,<br>Mandarine **(Standalone)**,<br>Lime3DS **(Standalone)**,<br>Panda3DS **(Standalone)**  | No           | Single ROM file       |
 | n64                   | Nintendo 64                                    | Mupen64Plus-Next                  | M64Plus FZ **(Standalone)**,<br>Mupen64Plus AE **(Standalone)**,<br>ParaLLEl N64 | No           | Single archive or ROM file |
 | n64dd                 | Nintendo 64DD                                  | Mupen64Plus-Next                  | M64Plus FZ **(Standalone)**,<br>Mupen64Plus AE **(Standalone)**,<br>ParaLLEl N64 | Yes          |                                      |
 | nds                   | Nintendo DS                                    | melonDS DS                        | melonDS,<br>melonDS **(Standalone)**,<br>melonDS Nightly **(Standalone)**,<br>DeSmuME,<br>DeSmuME 2015,<br>NooDS,<br>NooDS **(Standalone)**,<br>DraStic **(Standalone)** | No           | Single archive or ROM file |
