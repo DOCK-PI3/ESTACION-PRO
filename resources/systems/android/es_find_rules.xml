@@ -31,6 +31,7 @@
     <emulator name="CEMU">
         <!-- Nintendo Wii U emulator Cemu -->
         <rule type="androidpackage">
+            <entry>info.cemu.cemu/info.cemu.cemu.emulation.EmulationActivity</entry>
             <entry>info.cemu.Cemu/info.cemu.Cemu.emulation.EmulationActivity</entry>
         </rule>
     </emulator>
