@@ -22,6 +22,12 @@
             <entry>xyz.aethersx2.android/.EmulationActivity</entry>
         </rule>
     </emulator>
+    <emulator name="AZAHAR">
+        <!-- Nintendo 3DS emulator Azahar -->
+        <rule type="androidpackage">
+            <entry>io.github.lime3ds.android/org.citra.citra_emu.activities.EmulationActivity</entry>
+        </rule>
+    </emulator>
     <emulator name="C64-EMU">
         <!-- Commodore 8-bit computer emulator C64.emu -->
         <rule type="androidpackage">
