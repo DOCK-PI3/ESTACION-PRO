@@ -641,6 +641,10 @@
             <entry>~/.local/share/applications/Mesen*.AppImage</entry>
             <entry>~/.local/bin/Mesen*.AppImage</entry>
             <entry>~/bin/Mesen*.AppImage</entry>
+            <entry>~/Applications/Mesen/Mesen</entry>
+            <entry>~/.local/share/applications/Mesen/Mesen</entry>
+            <entry>~/.local/bin/Mesen/Mesen</entry>
+            <entry>~/bin/Mesen/Mesen</entry>
         </rule>
     </emulator>
     <emulator name="MFME-WINDOWS">
