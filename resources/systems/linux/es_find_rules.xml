@@ -643,6 +643,15 @@
             <entry>~/bin/Mesen*.AppImage</entry>
         </rule>
     </emulator>
+    <emulator name="MFME-WINDOWS">
+        <!-- Fruit machine emulator MFME -->
+        <rule type="staticpath">
+            <entry>~/Applications/MFME/MFME.exe</entry>
+            <entry>~/.local/share/applications/MFME/MFME.exe</entry>
+            <entry>~/.local/bin/MFME/MFME.exe</entry>
+            <entry>~/bin/MFME/MFME.exe</entry>
+        </rule>
+    </emulator>
     <emulator name="MGBA">
         <!-- Nintendo Game Boy Advance emulator mGBA -->
         <rule type="systempath">

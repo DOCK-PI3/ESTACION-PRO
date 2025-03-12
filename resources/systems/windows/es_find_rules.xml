@@ -561,6 +561,16 @@
             <entry>%ESPATH%\..\Emulators\Mesen\Mesen.exe</entry>
         </rule>
     </emulator>
+    <emulator name="MFME">
+        <!-- Fruit machine emulator MFME -->
+        <rule type="systempath">
+            <entry>MFME.exe</entry>
+        </rule>
+        <rule type="staticpath">
+            <entry>%ESPATH%\Emulators\MFME\MFME.exe</entry>
+            <entry>%ESPATH%\..\Emulators\MFME\MFME.exe</entry>
+        </rule>
+    </emulator>
     <emulator name="MGBA">
         <!-- Nintendo Game Boy Advance emulator mGBA -->
         <rule type="winregistryvalue">

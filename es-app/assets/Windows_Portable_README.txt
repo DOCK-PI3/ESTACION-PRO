@@ -95,6 +95,7 @@ Emulators\mandarine\mandarine-qt.exe
 Emulators\mednafen\mednafen.exe
 Emulators\melonDS\melonDS.exe
 Emulators\Mesen\Mesen.exe
+Emulators\MFME\MFME.exe
 Emulators\mGBA\mGBA.exe
 Emulators\mupen64plus\mupen64plus-ui-console.exe
 Emulators\noods\noods.exe
