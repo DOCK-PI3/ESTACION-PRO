@@ -21,21 +21,27 @@
 * Added the NooDS RetroArch core as an alternative emulator for the gba and nds systems
 * Added the Holani RetroArch core as an alternative emulator for the atarilynx system
 * Added the b2 RetroArch core as an alternative emulator for the bbcmicro system
+* Added Mesen standalone as an alternative emulator for the colecovision, wonderswan and wonderswancolor systems on Linux and Windows
+* Added Azahar standalone as an alternative emulator for the n3ds system
 * Added A7800 standalone as an alternative emulator for the atari7800 system on Linux and Windows
 * (Android) Changed from MAME4droid 2024 to MAME4droid Current for all systems where only this emulator was supported
 * (Android) Added a find rule entry for the new Cemu package name
 * (Android) Added MAME4droid Current emulator entries for all systems where MAME4droid 2024 was supported
-* (Android) Added Azahar standalone as an alternative emulator for the n3ds system
 * (Android) Added Pizza Boy SC standalone as an alternative emulator for the gamegear, genesis, mastersystem, megadrive and megadrivejp systems
 * (Android) Changed all RetroArch core entries to use absolute paths (this makes the ancient Play store release work correctly)
+* (Windows) Added MFME standalone (fruit machine emulator) as an alternative emulator for the arcade system
 * (Windows) Added XM6 TypeG standalone as an alternative emulator for the x68000 system
+* (Linux) Added MFME Wine and MFME Proton as alternative emulators for the arcade system
 * (Linux) Added XM6 TypeG Wine and XM6 TypeG Proton as alternative emulators for the x68000 system
 * (Linux) Added a find rule entry for the new PCSX2 binary name (pcsx2)
 * (Linux) Added a find rule entry for the new DuckStation binary name (duckstation)
 * (Linux) Added support for the Flatpak release of Ruffle
+* (Linux) Added support for the manually downloaded release of Mesen
 * (Linux) Changed the AppImage find rule for Mandarine to mandarine-qt*.AppImage
+* Added the .gam file extension to the arcade system on Linux and Windows
 * Added the .m3u file extension to the sega32x, sega32xjp and sega32xna systems
 * Added the .ruf file extension to the flash system
+* Added a %ROMRAWWIN% variable to pass the game ROM path with Windows-style backslash directory separators
 * Refactored the helpsystem code and added support for using an arbitrary amount of helpsystem elements
 * Added support for specifying which specific entries to display for the helpsystem elements
 * Added an "entryLayout" property to the helpsystem element to control the display order for the icons and text
