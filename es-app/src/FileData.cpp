@@ -904,6 +904,10 @@ void FileData::launchGame()
     std::string romPath {Utils::FileSystem::getEscapedPath(mPath)};
     std::string baseName {Utils::FileSystem::getStem(mPath)};
     std::string romRaw {Utils::FileSystem::getPreferredPath(mPath)};
+#if !defined(_WIN64)
+    std::string romRawWindows {
+        Utils::String::replace(Utils::FileSystem::getPreferredPath(mPath), "/", "\\")};
+#endif
 
     // For the special case where a directory has a supported file extension and is therefore
     // interpreted as a file, check if there is a matching filename inside the directory.
@@ -1780,6 +1784,9 @@ void FileData::launchGame()
     command = Utils::String::replace(command, "%BASENAME%", baseName);
     command = Utils::String::replace(command, "%FILENAME%", fileName);
     command = Utils::String::replace(command, "%ROMRAW%", romRaw);
+#if !defined(_WIN64)
+    command = Utils::String::replace(command, "%ROMRAWWIN%", romRawWindows);
+#endif
     command = Utils::String::replace(command, "%ROMPATH%",
                                      Utils::FileSystem::getEscapedPath(getROMDirectory()));
 #else
@@ -1909,6 +1916,8 @@ void FileData::launchGame()
                         extraValue =
                             Utils::String::replace(extraValue, "%ROMPATHRAW%", getROMDirectory());
                         extraValue = Utils::String::replace(extraValue, "%ROMRAW%", romRaw);
+                        extraValue =
+                            Utils::String::replace(extraValue, "%ROMRAWWIN%", romRawWindows);
                         extraValue = Utils::String::replace(extraValue, "%BASENAME%", baseName);
                         extraValue = Utils::String::replace(extraValue, "//", "/");
 
