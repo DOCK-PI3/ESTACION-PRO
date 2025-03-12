@@ -411,6 +411,7 @@
         <command label="Gearcoleco">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\gearcoleco_libretro.dll %ROM%</command>
         <command label="openMSX (Standalone)">%EMULATOR_OPENMSX% -machine ColecoVision_SGM %INJECT%=%BASENAME%.commands -cart %ROM%</command>
         <command label="ares (Standalone)">%EMULATOR_ARES% --fullscreen --system "ColecoVision" %ROM%</command>
+        <command label="Mesen (Standalone)">%EMULATOR_MESEN% --fullscreen %ROM%</command>
         <command label="ColEm (Standalone)">%EMULATOR_COLEM% %INJECT%=%BASENAME%.commands -cv %ROM%</command>
         <platform>colecovision</platform>
         <theme>colecovision</theme>
@@ -2241,6 +2242,7 @@
         <command label="Mednafen (Standalone)">%EMULATOR_MEDNAFEN% -force_module wswan %ROM%</command>
         <command label="ares (Standalone)">%EMULATOR_ARES% --fullscreen --system "WonderSwan" %ROM%</command>
         <command label="ares [Benesse Pocket Challenge V2] (Standalone)">%EMULATOR_ARES% --fullscreen --system "Pocket Challenge V2" %ROM%</command>
+        <command label="Mesen (Standalone)">%EMULATOR_MESEN% --fullscreen %ROM%</command>
         <platform>wonderswan</platform>
         <theme>wonderswan</theme>
     </system>
@@ -2252,6 +2254,7 @@
         <command label="Beetle Cygne">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\mednafen_wswan_libretro.dll %ROM%</command>
         <command label="Mednafen (Standalone)">%EMULATOR_MEDNAFEN% -force_module wswan %ROM%</command>
         <command label="ares (Standalone)">%EMULATOR_ARES% --fullscreen --system "WonderSwan Color" %ROM%</command>
+        <command label="Mesen (Standalone)">%EMULATOR_MESEN% --fullscreen %ROM%</command>
         <platform>wonderswancolor</platform>
         <theme>wonderswancolor</theme>
     </system>
