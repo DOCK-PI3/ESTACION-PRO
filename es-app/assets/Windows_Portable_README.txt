@@ -51,6 +51,7 @@ Emulators\AppleWin\AppleWin.exe
 Emulators\ArcadeFlashWeb\ArcadeFlashWeb.exe
 Emulators\ares\ares.exe
 Emulators\atari800\atari800.exe
+Emulators\azahar\azahar.exe
 Emulators\BasiliskII\BasiliskII.exe
 Emulators\BeebEm\BeebEm.exe
 Emulators\BigPEmu\BigPEmu.exe

@@ -86,6 +86,13 @@
             <entry>%ESPATH%\..\Emulators\atari800\atari800.exe</entry>
         </rule>
     </emulator>
+    <emulator name="AZAHAR">
+        <!-- Nintendo 3DS emulator Azahar -->
+        <rule type="staticpath">
+            <entry>%ESPATH%\Emulators\azahar\azahar.exe</entry>
+            <entry>%ESPATH%\..\Emulators\azahar\azahar.exe</entry>
+        </rule>
+    </emulator>
     <emulator name="BASILISKII">
         <!-- Macintosh 68k emulator Basilisk II -->
         <rule type="staticpath">

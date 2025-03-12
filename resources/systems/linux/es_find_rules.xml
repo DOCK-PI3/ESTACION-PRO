@@ -115,6 +115,15 @@
             <entry>atari800-jz.atari800</entry>
         </rule>
     </emulator>
+    <emulator name="AZAHAR">
+        <!-- Nintendo 3DS emulator Azahar -->
+        <rule type="staticpath">
+            <entry>~/Applications/azahar*.AppImage</entry>
+            <entry>~/.local/share/applications/azahar*.AppImage</entry>
+            <entry>~/.local/bin/azahar*.AppImage</entry>
+            <entry>~/bin/azahar*.AppImage</entry>
+        </rule>
+    </emulator>
     <emulator name="BASILISKII">
         <!-- Macintosh 68k emulator Basilisk II -->
         <rule type="systempath">
