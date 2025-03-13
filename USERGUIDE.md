@@ -265,6 +265,10 @@ On some GPUs with buggy drivers, ES-DE may only display a black screen on startu
 ES-DE.exe --resolution 1281 800
 ```
 
+Another potential workaround for some buggy drivers is to set ES-DE to compatibility mode and/or select _Disable full-screen optimizations_. These options are available when right-clicking on ES-DE.exe in the file manager and chosing _Properties_ and then selecting the _Compatibility_ tab.
+
+Yet another issue with buggy GPU drivers is that for computers with multiple GPUs such as gaming laptops with integrated Intel graphics in addition to a discrete GPU (e.g. from Nvidia) there may be issues when window switching between ES-DE and other applications. In such cases severe screen flickering may get introduced. This is normally worked around by explicitly setting ES-DE to use the discrete GPU in the Windows graphics settings.
+
 Some computers using Intel Iris Xe GPUs refuse to start ES-DE or display excessive graphics corruption. These problems are seemingly caused by driver bugs and do not occur when using Linux with the same hardware. There is no known solution or workaround to this issue other than switching to Linux or waiting for Intel to resolve the problem with a driver update.
 
 Some older games (and possibly emulators too) may not work correctly or even start at all if ES-DE is set to run in the background while a game is launched. So if you experience strange issues with some games, make sure that the setting _Run in background (while game is launched)_ is disabled. If launching any of these problematic games from the _desktop_ system, also make sure to use the default emulator entry _Suspend ES-DE_ and not the alternative emulator _Keep ES-DE running_.
@@ -638,12 +642,12 @@ If ES-DE is unable to find an emulator when a game is launched, a notification p
 
 ## Using the Steam release of RetroArch
 
-As this release of RetroArch is executed via the Steam application it's behaving a bit glitchy and strange with ES-DE (which is due to the nature of Steam). In addition to this there seem to be some bugs in either Steam or RetroArch, or both. The following issues have been observed:
+As this release of RetroArch is executed via the Steam application it's behaving a bit glitchy and strange with ES-DE (which is due to the nature of Steam). The following issues have been observed:
 
 * ES-DE will continue to run in the background due to the way that Steam works
-* Game launching is not seamless and there will be some flickering
-* If the Steam GUI is visible, focus may not return to ES-DE when exiting a game. Minimizing Steam increases the chances of this working properly but it's not guaranteed to completely fix the problem
-* Filenames containing apostrophes do not work, you need to rename these game files to be able to launch them
+* Game launching may not be seamless, with screen flickering and similar on some devices and operating systems
+* If the Steam GUI is visible, focus may not return to ES-DE when exiting a game (this seems to be caused by the Steam overlay)
+* There may be additional focusing and window switching issues caused by the Steam overlay
 * Core searches will not work, if an emulator core is missing there will be no error notification inside ES-DE and game launching will just silently fail
 * Logging output from emulators is not possible due to ES-DE running in the background
 
@@ -654,7 +658,7 @@ Simply add alternative emulator entries such as the following example (which ena
 <command label="Nestopia UE (Steam)">%RUNINBACKGROUND% %EMULATOR_STEAM% -applaunch 1118310 -L nestopia_libretro %ROM%</command>
 ```
 
-This will work on both Linux and Windows.
+This will work on both Linux and Windows (and possibly macOS too).
 
 A complete entry for the nes system could look like the following:
 ```xml

@@ -362,7 +362,7 @@ This PICO-8 game engine/emulator can be installed from the Play store.
 
 https://play.google.com/store/apps/details?id=me.dt2dev.infinity
 
-Note that this emulator has a strange behavior where it will return to the home app whenever you exit a game, so unless ES-DE is set as your home app you'll need to manually switch back to it after exiting Infinity.
+Note that since a recent emulator update it seems like individual games can no longer be launched from ES-DE, instead you'll just see the list of carts and you need to manually start the game from inside Infinity.
 
 ### IrataJaguar
 
