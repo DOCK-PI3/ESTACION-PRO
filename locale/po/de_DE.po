@@ -2967,7 +2967,7 @@ msgid "Copying resources..."
 msgstr "Quellen kopieren..."
 
 msgid "Creating system directories..."
-msgstr "Erzeuge system serzeichnisse..."
+msgstr "Erzeuge system verzeichnisse..."
 
 msgid "ERROR: COULDN'T RENDER PDF FILE"
 msgstr "FEHLER: PDF NICHT DARSTELLBAR"
