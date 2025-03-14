@@ -217,6 +217,13 @@ void Window::deinit()
         (*it)->onHide();
 
     mPostprocessedBackground.reset();
+    mHelp.reset();
+    mHelpComponents->clear();
+    mHelpComponents = nullptr;
+    mClockComponents->clear();
+    mClockComponents = nullptr;
+    mSystemStatusComponents->clear();
+    mSystemStatusComponents = nullptr;
 
     InputManager::getInstance().deinit();
     ResourceManager::getInstance().unloadAll();
@@ -928,7 +935,7 @@ void Window::setHelpPrompts(const std::vector<HelpPrompt>& prompts)
             helpComponent->setPrompts(addPrompts);
         }
     }
-    else {
+    else if (mHelp != nullptr) {
         mHelp->setPrompts(addPrompts);
     }
 }
