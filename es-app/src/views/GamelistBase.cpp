@@ -513,6 +513,7 @@ bool GamelistBase::input(InputConfig* config, Input input)
              (SDL_GetModState() & (KMOD_LCTRL | KMOD_RCTRL)) && input.id == SDLK_r &&
              input.value != 0) {
         LOG(LogDebug) << "GamelistView::input(): Reloading view";
+        mWindow->clearHelpPromptsImageCache();
         ViewController::getInstance()->reloadGamelistView(this->mRoot->getSystem(), true);
         return true;
     }
