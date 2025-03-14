@@ -1659,6 +1659,9 @@ void ViewController::rescanROMDirectory()
         // It's possible that there are no longer any games.
         mWindow->setBlockInput(false);
         mWindow->invalidateCachedBackground();
+        mWindow->passHelpComponents(nullptr);
+        mWindow->passClockComponents(nullptr);
+        mWindow->passSystemStatusComponents(nullptr);
         noGamesDialog();
     }
     else {
