@@ -611,8 +611,18 @@ void HelpComponent::updateGrid()
             std::find(mEntries.cbegin(), mEntries.cend(), (*it).first) == mEntries.cend())
             continue;
 
-        std::shared_ptr<ImageComponent> icon {std::make_shared<ImageComponent>(false, true)};
-        icon->setImage(mIconPathMap[it->first]);
+        std::shared_ptr<ImageComponent> icon;
+        auto& imageCache = mWindow->getHelpPromptsImageCache();
+
+        if (imageCache.find(mIconPathMap[it->first]) != imageCache.end()) {
+            icon = imageCache[mIconPathMap[it->first]];
+        }
+        else {
+            icon = std::make_shared<ImageComponent>(false, true);
+            icon->setImage(mIconPathMap[it->first]);
+            imageCache[mIconPathMap[it->first]] = icon;
+        }
+
         icon->setColorShift(isDimmed ? mStyleIconColorDimmed : mStyleIconColor);
         icon->setResize(0, height);
         icon->setOpacity(isDimmed ? mStyleOpacityDimmed : mStyleOpacity);

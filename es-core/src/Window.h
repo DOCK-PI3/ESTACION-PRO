@@ -123,6 +123,12 @@ public:
     void renderHelpPromptsEarly(); // Used to render HelpPrompts before a fade.
     void setHelpPrompts(const std::vector<HelpPrompt>& prompts);
 
+    std::map<std::string, std::shared_ptr<ImageComponent>>& getHelpPromptsImageCache()
+    {
+        return sHelpPromptsImageCache;
+    }
+    void clearHelpPromptsImageCache() { sHelpPromptsImageCache.clear(); }
+
     // GuiInfoPopup notifications.
     void queueInfoPopup(const std::string& message, const int& duration)
     {
@@ -209,6 +215,8 @@ private:
         float barPosY;
         unsigned int color;
     };
+
+    static inline std::map<std::string, std::shared_ptr<ImageComponent>> sHelpPromptsImageCache;
 
     Renderer* mRenderer;
     std::vector<std::unique_ptr<HelpComponent>>* mHelpComponents;

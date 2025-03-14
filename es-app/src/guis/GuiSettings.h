@@ -59,6 +59,7 @@ public:
     };
     void setNeedsGoToGroupedCollections() { mNeedsGoToGroupedCollections = true; }
     void setNeedsUpdateStatusComponents() { mNeedsUpdateStatusComponents = true; }
+    void setNeedsClearHelpPromptsImageCache() { mNeedsClearHelpPromptsImageCache = true; }
     void setNeedsCloseMenu(std::function<void()> closeFunction)
     {
         mCloseMenuFunction = closeFunction;
@@ -86,6 +87,7 @@ private:
     bool mNeedsGoToSystem;
     bool mNeedsGoToGroupedCollections;
     bool mNeedsUpdateStatusComponents;
+    bool mNeedsClearHelpPromptsImageCache;
     bool mInvalidateCachedBackground;
 };
 

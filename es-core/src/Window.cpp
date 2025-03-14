@@ -217,6 +217,7 @@ void Window::deinit()
         (*it)->onHide();
 
     mPostprocessedBackground.reset();
+    sHelpPromptsImageCache.clear();
     mHelp.reset();
     if (mHelpComponents != nullptr) {
         mHelpComponents->clear();

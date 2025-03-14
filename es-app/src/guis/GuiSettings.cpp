@@ -38,6 +38,7 @@ GuiSettings::GuiSettings(std::string title)
     , mNeedsGoToSystem {false}
     , mNeedsGoToGroupedCollections {false}
     , mNeedsUpdateStatusComponents {false}
+    , mNeedsClearHelpPromptsImageCache {false}
     , mInvalidateCachedBackground {false}
 {
     addChild(&mMenu);
@@ -153,6 +154,9 @@ void GuiSettings::save()
         SDL_Delay(100);
         mWindow->updateSystemStatusComponents();
     }
+
+    if (mNeedsClearHelpPromptsImageCache)
+        mWindow->clearHelpPromptsImageCache();
 
     if (mNeedsCollectionsUpdate) {
         auto state = ViewController::getInstance()->getState();

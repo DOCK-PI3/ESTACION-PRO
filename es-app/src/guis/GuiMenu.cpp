@@ -197,6 +197,7 @@ void GuiMenu::openUIOptions()
                 s->setNeedsReloading();
                 s->setNeedsGoToStart();
                 s->setNeedsCollectionsUpdate();
+                s->setNeedsClearHelpPromptsImageCache();
                 s->setInvalidateCachedBackground();
             }
         });
@@ -211,6 +212,7 @@ void GuiMenu::openUIOptions()
             Settings::getInstance()->setString("ThemeVariant", themeVariant->getSelected());
             s->setNeedsSaving();
             s->setNeedsReloading();
+            s->setNeedsClearHelpPromptsImageCache();
             s->setInvalidateCachedBackground();
         }
     });
@@ -271,6 +273,7 @@ void GuiMenu::openUIOptions()
             Settings::getInstance()->setString("ThemeColorScheme", themeColorScheme->getSelected());
             s->setNeedsSaving();
             s->setNeedsReloading();
+            s->setNeedsClearHelpPromptsImageCache();
             s->setInvalidateCachedBackground();
         }
     });
@@ -323,6 +326,7 @@ void GuiMenu::openUIOptions()
             Settings::getInstance()->setString("ThemeFontSize", themeFontSize->getSelected());
             s->setNeedsSaving();
             s->setNeedsReloading();
+            s->setNeedsClearHelpPromptsImageCache();
             s->setInvalidateCachedBackground();
         }
     });
@@ -366,6 +370,7 @@ void GuiMenu::openUIOptions()
             Settings::getInstance()->setString("ThemeAspectRatio", themeAspectRatio->getSelected());
             s->setNeedsSaving();
             s->setNeedsReloading();
+            s->setNeedsClearHelpPromptsImageCache();
             s->setInvalidateCachedBackground();
         }
     });
@@ -524,6 +529,7 @@ void GuiMenu::openUIOptions()
             Settings::getInstance()->setString("ThemeLanguage", themeLanguage->getSelected());
             s->setNeedsSaving();
             s->setNeedsReloading();
+            s->setNeedsClearHelpPromptsImageCache();
             s->setInvalidateCachedBackground();
         }
     });
@@ -601,6 +607,7 @@ void GuiMenu::openUIOptions()
             s->setNeedsRescanROMDirectory();
             s->setNeedsReloading();
             s->setNeedsCollectionsUpdate();
+            s->setNeedsClearHelpPromptsImageCache();
         }
     });
 
@@ -1356,6 +1363,7 @@ void GuiMenu::openInputDeviceOptions()
             Settings::getInstance()->setString("InputControllerType",
                                                inputControllerType->getSelected());
             s->setNeedsSaving();
+            s->setNeedsClearHelpPromptsImageCache();
         }
     });
 
@@ -2395,6 +2403,7 @@ void GuiMenu::openThemeDownloader(GuiSettings* settings)
         }
         else {
             openUIOptions();
+            mWindow->clearHelpPromptsImageCache();
             mWindow->invalidateCachedBackground();
         }
     };
