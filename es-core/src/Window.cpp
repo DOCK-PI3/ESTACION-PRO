@@ -218,12 +218,18 @@ void Window::deinit()
 
     mPostprocessedBackground.reset();
     mHelp.reset();
-    mHelpComponents->clear();
-    mHelpComponents = nullptr;
-    mClockComponents->clear();
-    mClockComponents = nullptr;
-    mSystemStatusComponents->clear();
-    mSystemStatusComponents = nullptr;
+    if (mHelpComponents != nullptr) {
+        mHelpComponents->clear();
+        mHelpComponents = nullptr;
+    }
+    if (mClockComponents != nullptr) {
+        mClockComponents->clear();
+        mClockComponents = nullptr;
+    }
+    if (mSystemStatusComponents != nullptr) {
+        mSystemStatusComponents->clear();
+        mSystemStatusComponents = nullptr;
+    }
 
     InputManager::getInstance().deinit();
     ResourceManager::getInstance().unloadAll();
