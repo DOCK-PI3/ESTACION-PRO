@@ -387,6 +387,9 @@ namespace Utils
             LOG(LogError) << "Critical - Performing emergency shutdown...";
             Scripting::fireEvent("quit");
 
+            while (Window::getInstance()->getGuiStackSize() > 1 &&
+                   Window::getInstance()->peekGui() != nullptr)
+                delete Window::getInstance()->peekGui();
             Window::getInstance()->deinit();
             Log::flush();
 
