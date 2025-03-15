@@ -448,7 +448,7 @@ msgstr "avsluta applikationen"
 
 #, c-format
 msgid "FINISH EDITING '%s' COLLECTION"
-msgstr "AVSLUTA REDIGERING AV '%s'-SAMLINGEN"
+msgstr "AVSLUTA REDIGERING AV '%s'"
 
 msgid "SELECT COLLECTIONS"
 msgstr "VÄLJ SAMLINGAR"
