@@ -45,6 +45,7 @@
 * Refactored the helpsystem code and added support for using an arbitrary amount of helpsystem elements
 * Added support for specifying which specific entries to display for the helpsystem elements
 * Added an "entryLayout" property to the helpsystem element to control the display order for the icons and text
+* Added an "entryRelativeScale" property to the helpsystem element to control the relative scale between the icons and text
 * Added "rotation", "rotationOrigin", "backgroundColor" and "backgroundColorEnd" properties to the helpsystem element
 * Added "backgroundGradientType", "backgroundPadding" and "backgroundCornerRadius" properties to the helpsystem element
 * Added a "clock" element to make it possible to customize the layout and position of the clock

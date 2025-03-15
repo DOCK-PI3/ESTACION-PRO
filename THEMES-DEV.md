@@ -3468,7 +3468,7 @@ Properties:
     - Default is the same value as `iconColor`
 * `fontPath` - type: PATH
 * `fontSize` - type: FLOAT
-    - This property implicitly sets the icon size and is therefore the means to change the overall size of the helpsystem element. This calculation is based on the reference 'S' character so other glyphs may not fill this area, or they may exceed this area.
+    - This property implicitly sets the text and icon size and is therefore the means to change the overall size of the helpsystem element. This calculation is based on the reference 'S' character so other glyphs may not fill this area, or they may exceed this area.
     - Minimum value is `0.001` and maximum value is `1.5`. Note that when running at a really low resolution, the minimum value may get clamped to a larger relative size.
     - Default is `0.035` for horizontally oriented screens and `0.025` for vertically oriented screens
 * `fontSizeDimmed` - type: FLOAT
@@ -3505,6 +3505,10 @@ Properties:
     - Controls the layout of the individual help element pairs. If set to `iconFirst` then the icon is shown to the left followed by the text, and if set to `textFirst` then the text is shown to the left followed by the icon.
     - Valid values are `iconFirst` or `textFirst`
     - Default is `iconFirst`
+* `entryRelativeScale` - type: FLOAT
+    - Defines the relative scale between the text and icons. If set to a value higher than `1` then the text will maintain its default size and the icons will be scaled down, and if set to a value lower than `1` then the icons will maintain their default size and the text will be scaled down. Note that regardless of what value this property is set to, the overall height of the element will always be defined by the `fontSize` property.
+    - Minimum value is `0.2` and maximum value is `3`
+    - Default is `1` (text and icons are set to the same scale)
 * `entrySpacing` - type: FLOAT
     - Spacing between the help element pairs.
     - Minimum value is `0` and maximum value is `0.04`
