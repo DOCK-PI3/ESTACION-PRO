@@ -1704,7 +1704,7 @@ void CarouselComponent<T>::applyTheme(const std::shared_ptr<ThemeData>& theme,
     if (elem->has("fastScrolling") && elem->get<bool>("fastScrolling"))
         List::mTierList = IList<CarouselEntry, T>::LIST_SCROLL_STYLE_MEDIUM;
 
-    // Ccale the font size with the itemScale property value.
+    // Scale the font size with the itemScale property value.
     mFont =
         Font::getFromTheme(elem, properties, mFont, 0.0f, (mItemScale >= 1.0f ? mItemScale : 1.0f));
 
