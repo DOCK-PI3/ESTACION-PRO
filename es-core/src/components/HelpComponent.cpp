@@ -37,6 +37,9 @@ HelpComponent::HelpComponent(std::shared_ptr<Font> font)
     , mStyleBackgroundCornerRadius {0.0f}
     , mStyleColorGradientHorizontal {true}
     , mStyleEntryLayout {EntryLayout::ICON_FIRST}
+    , mEntryRelativeScale {1.0f}
+    , mLetterHeight {mStyleFont->getLetterHeight() * 1.25f}
+    , mLetterHeightDimmed {mLetterHeight}
     , mStyleRotation {0.0f}
     , mStyleEntrySpacing {0.00833f}
     , mStyleEntrySpacingDimmed {mStyleEntrySpacing}
@@ -166,14 +169,38 @@ void HelpComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
             mRenderer->getScreenWidth();
     }
 
+    if (elem->has("entryRelativeScale"))
+        mEntryRelativeScale = glm::clamp(elem->get<float>("entryRelativeScale"), 0.2f, 3.0f);
+
     if (elem->has("fontPath") || elem->has("fontSize")) {
-        mStyleFont = Font::getFromTheme(elem, ThemeFlags::ALL, mStyleFont);
-        if (!elem->has("fontSizeDimmed"))
-            mStyleFontDimmed = Font::getFromTheme(elem, ThemeFlags::ALL, mStyleFont);
+        mStyleFont = Font::getFromTheme(elem, ThemeFlags::ALL, mStyleFont, 0.0f, 1.0f, false, true);
+        mLetterHeight = mStyleFont->getLetterHeight() * 1.25f;
+        if (!elem->has("fontSizeDimmed")) {
+            mStyleFontDimmed = Font::getFromTheme(
+                elem, ThemeFlags::ALL, mStyleFont, 0.0f,
+                (mEntryRelativeScale < 1.0f ? mEntryRelativeScale : 1.0f), true, true);
+            mLetterHeightDimmed = mLetterHeight;
+        }
+        if (mEntryRelativeScale < 1.0f)
+            mStyleFont = Font::getFromTheme(elem, ThemeFlags::ALL, mStyleFont, 0.0f,
+                                            mEntryRelativeScale, false, true);
+    }
+    else if (mEntryRelativeScale < 1.0f) {
+        mStyleFont = Font::getFromTheme(elem, ThemeFlags::ALL, mStyleFont, 0.0f,
+                                        mEntryRelativeScale, false, true);
     }
 
-    if (elem->has("fontSizeDimmed"))
-        mStyleFontDimmed = Font::getFromTheme(elem, ThemeFlags::ALL, mStyleFont, 0.0f, 1.0f, true);
+    if (elem->has("fontSizeDimmed")) {
+        mStyleFontDimmed =
+            Font::getFromTheme(elem, ThemeFlags::ALL, mStyleFont, 0.0f, 1.0f, true, true);
+        mLetterHeightDimmed = mStyleFontDimmed->getLetterHeight() * 1.25f;
+        if (mEntryRelativeScale < 1.0f)
+            mStyleFontDimmed = Font::getFromTheme(elem, ThemeFlags::ALL, mStyleFont, 0.0f,
+                                                  mEntryRelativeScale, true, true);
+    }
+    else if (mEntryRelativeScale < 1.0f && !elem->has("fontPath") && !elem->has("fontSize")) {
+        mStyleFontDimmed = mStyleFont;
+    }
 
     if (elem->has("scope")) {
         const std::string& scope {elem->get<std::string>("scope")};
@@ -604,7 +631,7 @@ void HelpComponent::updateGrid()
     std::vector<std::shared_ptr<TextComponent>> labels;
 
     float width {0.0f};
-    float height {font->getLetterHeight() * 1.25f};
+    const float height {isDimmed ? mLetterHeightDimmed : mLetterHeight};
 
     for (auto it = mPrompts.cbegin(); it != mPrompts.cend(); ++it) {
         if (!mEntries.empty() &&
@@ -624,7 +651,12 @@ void HelpComponent::updateGrid()
         }
 
         icon->setColorShift(isDimmed ? mStyleIconColorDimmed : mStyleIconColor);
-        icon->setResize(0, height);
+
+        if (mEntryRelativeScale < 1.0f)
+            icon->setResize(0, height);
+        else
+            icon->setResize(0, height / mEntryRelativeScale);
+
         icon->setOpacity(isDimmed ? mStyleOpacityDimmed : mStyleOpacity);
         icons.push_back(icon);
 

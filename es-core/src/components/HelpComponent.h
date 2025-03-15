@@ -91,6 +91,9 @@ private:
     float mStyleBackgroundCornerRadius;
     bool mStyleColorGradientHorizontal;
     EntryLayout mStyleEntryLayout;
+    float mEntryRelativeScale;
+    float mLetterHeight;
+    float mLetterHeightDimmed;
     float mStyleRotation;
     float mStyleEntrySpacing;
     float mStyleEntrySpacingDimmed;

@@ -566,6 +566,7 @@ std::map<std::string, std::map<std::string, ThemeData::ElementPropertyType>>
        {"scope", STRING},
        {"entries", STRING},
        {"entryLayout", STRING},
+       {"entryRelativeScale", FLOAT},
        {"entrySpacing", FLOAT},
        {"entrySpacingDimmed", FLOAT},
        {"iconTextSpacing", FLOAT},
