@@ -94,6 +94,7 @@
                 <textColor>${primaryColor}</textColor>
                 <iconColor>${primaryColor}</iconColor>
                 <fontPath>${primaryFont}</fontPath>
+                <entryRelativeScale>0.9</entryRelativeScale>
                 <letterCase>capitalize</letterCase>
             </helpsystem>
             <systemstatus name="systemStatus">
