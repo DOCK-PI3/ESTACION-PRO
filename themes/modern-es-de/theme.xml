@@ -115,6 +115,7 @@
                 <iconColor>${secondaryColor}</iconColor>
                 <iconColorDimmed>${secondaryColor}</iconColorDimmed>
                 <fontPath>${mainFont}</fontPath>
+                <entryRelativeScale>0.9</entryRelativeScale>
                 <letterCase>capitalize</letterCase>
             </helpsystem>
             <systemstatus name="systemStatus">
