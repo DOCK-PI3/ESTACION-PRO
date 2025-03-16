@@ -47,7 +47,8 @@
 * Added an "entryLayout" property to the helpsystem element to control the display order for the icons and text
 * Added an "entryRelativeScale" property to the helpsystem element to control the relative scale between the icons and text
 * Added "rotation", "rotationOrigin", "backgroundColor" and "backgroundColorEnd" properties to the helpsystem element
-* Added "backgroundGradientType", "backgroundPadding" and "backgroundCornerRadius" properties to the helpsystem element
+* Added "backgroundHorizontalPadding" and "backgroundVerticalPadding properties to the helpsystem element
+* Added "backgroundGradientType" and "backgroundCornerRadius" properties to the helpsystem element
 * Added a "clock" element to make it possible to customize the layout and position of the clock
 * Added "imageSize", "imageMaxSize", "imageCropSize" and "imageCropPos" properties to the video element
 * Added a "fadeInType" property to the video element to fade in from black or from transparency

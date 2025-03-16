@@ -3537,13 +3537,18 @@ Properties:
     - The direction to apply the color gradient if both `backgroundColor` and `backgroundColorEnd` have been defined.
     - Valid values are `horizontal` or `vertical`
     - Default is `horizontal`
-* `backgroundPadding` - type: NORMALIZED_PAIR
-    - This property makes it possible to apply a padding around the element if `backgroundColor` has been defined. Note that this additional sizing will not have any effect on the `pos` and `origin` properties, these will remain constant. Or in other words, changing the `backgroundPadding` property value will not change the position of the overall element. An identical padding is applied to the left/right and top/bottom of the element.
+* `backgroundHorizontalPadding` - type: NORMALIZED_PAIR
+    - This property makes it possible to apply a horizontal padding around the element if `backgroundColor` has been defined. Note that this additional sizing will not have any effect on the `pos` and `origin` properties, these will remain constant. Or in other words, changing the `backgroundHorizontalPadding` property value will not change the position of the overall element. The first value of the pair is the padding to the left of the element and the second value of the pair is the padding to the right of the element.
+    - Minimum value per axis is `0` and maximum value per axis is `0.2`
+    - Default is `0 0`
+    - This property can only be used if `backgroundColor` has a value defined.
+* `backgroundVerticalPadding` - type: NORMALIZED_PAIR
+    - This property makes it possible to apply a vertical padding around the element if `backgroundColor` has been defined. Note that this additional sizing will not have any effect on the `pos` and `origin` properties, these will remain constant. Or in other words, changing the `backgroundVerticalPadding` property value will not change the position of the overall element. The first value of the pair is the padding at the top of the element and the second value of the pair is the padding at the bottom of the element.
     - Minimum value per axis is `0` and maximum value per axis is `0.2`
     - Default is `0 0`
     - This property can only be used if `backgroundColor` has a value defined.
 * `backgroundCornerRadius` - type: FLOAT
-    - Setting this property higher than zero applies rounded corners to the element background, assuming it has a color set. The radius is a percentage of the screen width. Note that the maximum allowed value is quite arbitrary as the renderer will in practice limit the maximum roundness so it can never go beyond half the background height. It means that setting this property sufficiently high will produce perfectly rounded sides for the background. You normally want to combine this property with `backgroundPadding` to add some extra space around the helpsystem.
+    - Setting this property higher than zero applies rounded corners to the element background, assuming it has a color set. The radius is a percentage of the screen width. Note that the maximum allowed value is quite arbitrary as the renderer will in practice limit the maximum roundness so it can never go beyond half the background height. It means that setting this property sufficiently high will produce perfectly rounded sides for the background. You normally want to combine this property with `backgroundHorizontalPadding` and `backgroundVerticalPadding` to first add some extra space around the helpsystem.
     - Minimum value is `0` and maximum value is `0.5`
     - Default is `0` (corners are not rounded)
     - This property can only be used if `backgroundColor` has a value defined.
@@ -3657,13 +3662,18 @@ Properties:
     - The direction to apply the color gradient if both `backgroundColor` and `backgroundColorEnd` have been defined.
     - Valid values are `horizontal` or `vertical`
     - Default is `horizontal`
-* `backgroundPadding` - type: NORMALIZED_PAIR
-    - This property makes it possible to apply a padding around the element if `backgroundColor` has been defined. Note that this additional sizing will not have any effect on the `pos` and `origin` properties, these will remain constant. Or in other words, changing the `backgroundPadding` property value will not change the position of the overall element. An identical padding is applied to the left/right and top/bottom of the element.
+* `backgroundHorizontalPadding` - type: NORMALIZED_PAIR
+    - This property makes it possible to apply a horizontal padding around the element if `backgroundColor` has been defined. Note that this additional sizing will not have any effect on the `pos` and `origin` properties, these will remain constant. Or in other words, changing the `backgroundHorizontalPadding` property value will not change the position of the overall element. The first value of the pair is the padding to the left of the element and the second value of the pair is the padding to the right of the element.
+    - Minimum value per axis is `0` and maximum value per axis is `0.2`
+    - Default is `0 0`
+    - This property can only be used if `backgroundColor` has a value defined.
+* `backgroundVerticalPadding` - type: NORMALIZED_PAIR
+    - This property makes it possible to apply a vertical padding around the element if `backgroundColor` has been defined. Note that this additional sizing will not have any effect on the `pos` and `origin` properties, these will remain constant. Or in other words, changing the `backgroundVerticalPadding` property value will not change the position of the overall element. The first value of the pair is the padding at the top of the element and the second value of the pair is the padding at the bottom of the element.
     - Minimum value per axis is `0` and maximum value per axis is `0.2`
     - Default is `0 0`
     - This property can only be used if `backgroundColor` has a value defined.
 * `backgroundCornerRadius` - type: FLOAT
-    - Setting this property higher than zero applies rounded corners to the element background, assuming `backgroundColor` has been defined. The radius is a percentage of the screen width. Note that the maximum allowed value is quite arbitrary as the renderer will in practice limit the maximum roundness so it can never go beyond half the background height. It means that setting this property sufficiently high will produce perfectly rounded sides for the element background. You normally want to combine this property with `backgroundPadding` to add some extra space around the system indicators.
+    - Setting this property higher than zero applies rounded corners to the element background, assuming `backgroundColor` has been defined. The radius is a percentage of the screen width. Note that the maximum allowed value is quite arbitrary as the renderer will in practice limit the maximum roundness so it can never go beyond half the background height. It means that setting this property sufficiently high will produce perfectly rounded sides for the element background. You normally want to combine this property with `backgroundHorizontalPadding` and `backgroundVerticalPadding` to first add some extra space around the system indicators.
     - Minimum value is `0` and maximum value is `0.5`
     - Default is `0` (corners are not rounded)
     - This property can only be used if `backgroundColor` has a value defined.
@@ -3758,13 +3768,18 @@ Properties:
     - The direction to apply the color gradient if both `backgroundColor` and `backgroundColorEnd` have been defined.
     - Valid values are `horizontal` or `vertical`
     - Default is `horizontal`
-* `backgroundPadding` - type: NORMALIZED_PAIR
-    - This property makes it possible to apply a padding around the element if `backgroundColor` has been defined. Note that this additional sizing will not have any effect on the `pos` and `origin` properties, these will remain constant. Or in other words, changing the `backgroundPadding` property value will not change the position of the overall element. An identical padding is applied to the left/right and top/bottom of the element.
+* `backgroundHorizontalPadding` - type: NORMALIZED_PAIR
+    - This property makes it possible to apply a horizontal padding around the element if `backgroundColor` has been defined. Note that this additional sizing will not have any effect on the `pos` and `origin` properties, these will remain constant. Or in other words, changing the `backgroundHorizontalPadding` property value will not change the position of the overall element. The first value of the pair is the padding to the left of the element and the second value of the pair is the padding to the right of the element.
+    - Minimum value per axis is `0` and maximum value per axis is `0.2`
+    - Default is `0 0`
+    - This property can only be used if `backgroundColor` has a value defined.
+* `backgroundVerticalPadding` - type: NORMALIZED_PAIR
+    - This property makes it possible to apply a vertical padding around the element if `backgroundColor` has been defined. Note that this additional sizing will not have any effect on the `pos` and `origin` properties, these will remain constant. Or in other words, changing the `backgroundVerticalPadding` property value will not change the position of the overall element. The first value of the pair is the padding at the top of the element and the second value of the pair is the padding at the bottom of the element.
     - Minimum value per axis is `0` and maximum value per axis is `0.2`
     - Default is `0 0`
     - This property can only be used if `backgroundColor` has a value defined.
 * `backgroundCornerRadius` - type: FLOAT
-    - Setting this property higher than zero applies rounded corners to the element background, assuming it has a color set. The radius is a percentage of the screen width. Note that the maximum allowed value is quite arbitrary as the renderer will in practice limit the maximum roundness so it can never go beyond half the background height. It means that setting this property sufficiently high will produce perfectly rounded sides for the background. You normally want to combine this property with `backgroundPadding` to add some extra space around the clock.
+    - Setting this property higher than zero applies rounded corners to the element background, assuming it has a color set. The radius is a percentage of the screen width. Note that the maximum allowed value is quite arbitrary as the renderer will in practice limit the maximum roundness so it can never go beyond half the background height. It means that setting this property sufficiently high will produce perfectly rounded sides for the background. You normally want to combine this property with `backgroundHorizontalPadding` and `backgroundVerticalPadding` to first add some extra space around the clock.
     - Minimum value is `0` and maximum value is `0.5`
     - Default is `0` (corners are not rounded)
     - This property can only be used if `backgroundColor` has a value defined.
