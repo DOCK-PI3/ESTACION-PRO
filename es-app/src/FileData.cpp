@@ -1944,7 +1944,10 @@ void FileData::launchGame()
 
 #if defined(_WIN64)
     // Hack to remove double quotation marks as these can occur under some special circumstances.
-    command = Utils::String::replace(command, "\"\"", "\"");
+    const int quotationCount {static_cast<int>(
+        std::count_if(command.cbegin(), command.cend(), [](char c) { return c == '\"'; }))};
+    if (quotationCount % 2 != 0)
+        command = Utils::String::replace(command, "\"\"", "\"");
 
     command = Utils::String::replace(
         command, "%ESPATH%", Utils::String::replace(Utils::FileSystem::getExePath(), "/", "\\"));
