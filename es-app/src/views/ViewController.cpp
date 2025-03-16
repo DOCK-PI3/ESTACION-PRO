@@ -1049,7 +1049,12 @@ void ViewController::launch(FileData* game)
     if (durationString != "disabled" && durationString != "popup")
         mWindow->displayLaunchScreen(game->getSourceFileData());
 
+#if defined(__ANDROID__)
+    if (durationString != "disabled")
+        NavigationSounds::getInstance().playThemeNavigationSound(LAUNCHSOUND);
+#else
     NavigationSounds::getInstance().playThemeNavigationSound(LAUNCHSOUND);
+#endif
 
     // This is just a dummy animation in order for the launch screen or notification popup
     // to be displayed briefly, and for the navigation sound playing to be able to complete.
