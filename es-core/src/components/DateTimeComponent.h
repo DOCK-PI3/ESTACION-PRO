@@ -56,7 +56,8 @@ private:
     std::string mFormat;
     bool mClockMode;
     bool mDisplayRelative;
-    glm::vec2 mBackgroundPadding;
+    glm::vec2 mBackgroundHorizontalPadding;
+    glm::vec2 mBackgroundVerticalPadding;
     unsigned int mClockBgColor;
     unsigned int mClockBgColorEnd;
     bool mClockColorGradientHorizontal;

@@ -59,7 +59,8 @@ private:
     unsigned int mBackgroundColorEnd;
     int mAccumulator;
     int mAccumulatorAndroid;
-    glm::vec2 mBackgroundPadding;
+    glm::vec2 mBackgroundHorizontalPadding;
+    glm::vec2 mBackgroundVerticalPadding;
     float mBackgroundCornerRadius;
     bool mColorGradientHorizontal;
     float mEntrySpacing;

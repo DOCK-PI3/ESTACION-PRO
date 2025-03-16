@@ -20,7 +20,8 @@ DateTimeComponent::DateTimeComponent()
     , mClockAccumulator {0}
     , mClockMode {false}
     , mDisplayRelative {false}
-    , mBackgroundPadding {0.0f, 0.0f}
+    , mBackgroundHorizontalPadding {0.0f, 0.0f}
+    , mBackgroundVerticalPadding {0.0f, 0.0f}
     , mClockBgColor {0x00000000}
     , mClockBgColorEnd {0x00000000}
     , mClockColorGradientHorizontal {true}
@@ -42,7 +43,8 @@ DateTimeComponent::DateTimeComponent(const std::string& text,
     , mClockAccumulator {0}
     , mClockMode {false}
     , mDisplayRelative {false}
-    , mBackgroundPadding {0.0f, 0.0f}
+    , mBackgroundHorizontalPadding {0.0f, 0.0f}
+    , mBackgroundVerticalPadding {0.0f, 0.0f}
     , mClockBgColor {0x00000000}
     , mClockBgColorEnd {0x00000000}
     , mClockColorGradientHorizontal {true}
@@ -160,15 +162,16 @@ void DateTimeComponent::render(const glm::mat4& parentTrans)
 
     if (mClockMode && mClockBgColor != 0x00000000) {
         glm::mat4 trans {parentTrans * getTransform()};
-        trans = glm::translate(
-            trans, glm::vec3 {-mBackgroundPadding.x / 2.0f, -mBackgroundPadding.y / 2.0f, 0.0f});
+        trans = glm::translate(trans, glm::vec3 {-mBackgroundHorizontalPadding.x,
+                                                 -mBackgroundVerticalPadding.x, 0.0f});
         mRenderer->setMatrix(trans);
 
-        mRenderer->drawRect(0.0f, 0.0f, mSize.x + mBackgroundPadding.x,
-                            mSize.y + mBackgroundPadding.y, mClockBgColor, mClockBgColorEnd,
-                            mClockColorGradientHorizontal, mThemeOpacity, 1.0f,
-                            Renderer::BlendFactor::SRC_ALPHA,
-                            Renderer::BlendFactor::ONE_MINUS_SRC_ALPHA, mBackgroundCornerRadius);
+        mRenderer->drawRect(
+            0.0f, 0.0f, mSize.x + mBackgroundHorizontalPadding.x + mBackgroundHorizontalPadding.y,
+            mSize.y + mBackgroundVerticalPadding.x + mBackgroundVerticalPadding.y, mClockBgColor,
+            mClockBgColorEnd, mClockColorGradientHorizontal, mThemeOpacity, 1.0f,
+            Renderer::BlendFactor::SRC_ALPHA, Renderer::BlendFactor::ONE_MINUS_SRC_ALPHA,
+            mBackgroundCornerRadius);
     }
 
     // Render the component.
@@ -288,11 +291,20 @@ void DateTimeComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
                              mRenderer->getScreenWidth());
     }
 
-    if (mClockMode && elem->has("backgroundPadding")) {
-        const glm::vec2 backgroundPadding {
-            glm::clamp(elem->get<glm::vec2>("backgroundPadding"), 0.0f, 0.2f)};
-        mBackgroundPadding.x = backgroundPadding.x * mRenderer->getScreenWidth();
-        mBackgroundPadding.y = backgroundPadding.y * mRenderer->getScreenHeight();
+    if (mClockMode && elem->has("backgroundHorizontalPadding")) {
+        const glm::vec2 backgroundHorizontalPadding {
+            glm::clamp(elem->get<glm::vec2>("backgroundHorizontalPadding"), 0.0f, 0.2f)};
+        mBackgroundHorizontalPadding.x =
+            backgroundHorizontalPadding.x * mRenderer->getScreenWidth();
+        mBackgroundHorizontalPadding.y =
+            backgroundHorizontalPadding.y * mRenderer->getScreenWidth();
+    }
+
+    if (mClockMode && elem->has("backgroundVerticalPadding")) {
+        const glm::vec2 backgroundVerticalPadding {
+            glm::clamp(elem->get<glm::vec2>("backgroundVerticalPadding"), 0.0f, 0.2f)};
+        mBackgroundVerticalPadding.x = backgroundVerticalPadding.x * mRenderer->getScreenHeight();
+        mBackgroundVerticalPadding.y = backgroundVerticalPadding.y * mRenderer->getScreenHeight();
     }
 
     if (elem->has("backgroundCornerRadius")) {

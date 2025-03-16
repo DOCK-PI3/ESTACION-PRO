@@ -33,7 +33,8 @@ HelpComponent::HelpComponent(std::shared_ptr<Font> font)
     , mStyleIconColorDimmed {0x777777FF}
     , mStyleBackgroundColor {0x00000000}
     , mStyleBackgroundColorEnd {0x00000000}
-    , mStyleBackgroundPadding {0.0f, 0.0f}
+    , mStyleBackgroundHorizontalPadding {0.0f, 0.0f}
+    , mStyleBackgroundVerticalPadding {0.0f, 0.0f}
     , mStyleBackgroundCornerRadius {0.0f}
     , mStyleColorGradientHorizontal {true}
     , mStyleEntryLayout {EntryLayout::ICON_FIRST}
@@ -156,11 +157,22 @@ void HelpComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
         }
     }
 
-    if (elem->has("backgroundPadding")) {
-        const glm::vec2 backgroundPadding {
-            glm::clamp(elem->get<glm::vec2>("backgroundPadding"), 0.0f, 0.2f)};
-        mStyleBackgroundPadding.x = backgroundPadding.x * mRenderer->getScreenWidth();
-        mStyleBackgroundPadding.y = backgroundPadding.y * mRenderer->getScreenHeight();
+    if (elem->has("backgroundHorizontalPadding")) {
+        const glm::vec2 backgroundHorizontalPadding {
+            glm::clamp(elem->get<glm::vec2>("backgroundHorizontalPadding"), 0.0f, 0.2f)};
+        mStyleBackgroundHorizontalPadding.x =
+            backgroundHorizontalPadding.x * mRenderer->getScreenWidth();
+        mStyleBackgroundHorizontalPadding.y =
+            backgroundHorizontalPadding.y * mRenderer->getScreenWidth();
+    }
+
+    if (elem->has("backgroundVerticalPadding")) {
+        const glm::vec2 backgroundVerticalPadding {
+            glm::clamp(elem->get<glm::vec2>("backgroundVerticalPadding"), 0.0f, 0.2f)};
+        mStyleBackgroundVerticalPadding.x =
+            backgroundVerticalPadding.x * mRenderer->getScreenHeight();
+        mStyleBackgroundVerticalPadding.y =
+            backgroundVerticalPadding.y * mRenderer->getScreenHeight();
     }
 
     if (elem->has("backgroundCornerRadius")) {
@@ -395,16 +407,17 @@ void HelpComponent::render(const glm::mat4& parentTrans)
         mRotationOrigin = mStyleRotationOrigin;
 
         glm::mat4 trans {parentTrans * getTransform()};
-        trans = glm::translate(trans, glm::vec3 {-mStyleBackgroundPadding.x / 2.0f,
-                                                 -mStyleBackgroundPadding.y / 2.0f, 0.0f});
+        trans = glm::translate(trans, glm::vec3 {-mStyleBackgroundHorizontalPadding.x,
+                                                 -mStyleBackgroundVerticalPadding.x, 0.0f});
         mRenderer->setMatrix(trans);
 
         mRenderer->drawRect(
             0.0f, 0.0f,
-            mSize.x + mStyleBackgroundPadding.x -
+            mSize.x + mStyleBackgroundHorizontalPadding.x + mStyleBackgroundHorizontalPadding.y -
                 (mStyleEntrySpacing * mRenderer->getScreenWidth()),
-            mSize.y + mStyleBackgroundPadding.y, mStyleBackgroundColor, mStyleBackgroundColorEnd,
-            mStyleColorGradientHorizontal, mThemeOpacity, 1.0f, Renderer::BlendFactor::SRC_ALPHA,
+            mSize.y + mStyleBackgroundVerticalPadding.x + mStyleBackgroundVerticalPadding.y,
+            mStyleBackgroundColor, mStyleBackgroundColorEnd, mStyleColorGradientHorizontal,
+            mThemeOpacity, 1.0f, Renderer::BlendFactor::SRC_ALPHA,
             Renderer::BlendFactor::ONE_MINUS_SRC_ALPHA, mStyleBackgroundCornerRadius);
 
         mPosition = {0.0f, 0.0f, 0.0f};

@@ -87,7 +87,8 @@ private:
     unsigned int mStyleIconColorDimmed;
     unsigned int mStyleBackgroundColor;
     unsigned int mStyleBackgroundColorEnd;
-    glm::vec2 mStyleBackgroundPadding;
+    glm::vec2 mStyleBackgroundHorizontalPadding;
+    glm::vec2 mStyleBackgroundVerticalPadding;
     float mStyleBackgroundCornerRadius;
     bool mStyleColorGradientHorizontal;
     EntryLayout mStyleEntryLayout;
