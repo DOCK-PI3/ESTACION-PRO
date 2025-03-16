@@ -1943,6 +1943,9 @@ void FileData::launchGame()
 #endif
 
 #if defined(_WIN64)
+    // Hack to remove double quotation marks as these can occur under some special circumstances.
+    command = Utils::String::replace(command, "\"\"", "\"");
+
     command = Utils::String::replace(
         command, "%ESPATH%", Utils::String::replace(Utils::FileSystem::getExePath(), "/", "\\"));
     command = Utils::String::replace(command, "%EMUDIR%",
