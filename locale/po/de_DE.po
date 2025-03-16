@@ -2955,10 +2955,10 @@ msgid "32:9 vertical"
 msgstr "32:9 vertikal"
 
 msgid "Searching for games..."
-msgstr "Suche nach spielen.."
+msgstr "Suche nach Spielen.."
 
 msgid "Loading systems..."
-msgstr "Lade systeme..."
+msgstr "Lade Systeme..."
 
 msgid "Reloading..."
 msgstr "Lade neu..."
@@ -2967,7 +2967,7 @@ msgid "Copying resources..."
 msgstr "Quellen kopieren..."
 
 msgid "Creating system directories..."
-msgstr "Erzeuge system verzeichnisse..."
+msgstr "Erzeuge System Verzeichnisse..."
 
 msgid "ERROR: COULDN'T RENDER PDF FILE"
 msgstr "FEHLER: PDF NICHT DARSTELLBAR"
