@@ -177,9 +177,9 @@ bool PDFViewer::startPDFViewer(FileData* game)
         mFrameHeight = Font::get(FONT_SIZE_MINI)->getLetterHeight() * 1.9f;
 
     mHelp = std::make_unique<HelpComponent>(Font::get(FONT_SIZE_MINI));
-    mHelp->setStyleOrigin(glm::vec2 {0.5, 0.5f});
-    mHelp->setStyleTextColor(0xAAAAAAFF);
-    mHelp->setStyleIconColor(0xAAAAAAFF);
+    mHelp->setHelpOrigin(glm::vec2 {0.5, 0.5f});
+    mHelp->setHelpTextColor(0xAAAAAAFF);
+    mHelp->setHelpIconColor(0xAAAAAAFF);
 
     mEntryCount = std::to_string(mPages.size());
 
@@ -190,14 +190,13 @@ bool PDFViewer::startPDFViewer(FileData* game)
 
     if (mHelpInfoPosition == HelpInfoPosition::TOP) {
         mEntryNumText->setPosition(mRenderer->getScreenWidth() * 0.01f, mFrameHeight / 2.0f);
-        mHelp->setStylePosition(
-            glm::vec2 {mRenderer->getScreenWidth() / 2.0f, mFrameHeight / 2.0f});
+        mHelp->setHelpPosition(glm::vec2 {mRenderer->getScreenWidth() / 2.0f, mFrameHeight / 2.0f});
     }
     else if (mHelpInfoPosition == HelpInfoPosition::BOTTOM) {
         mEntryNumText->setPosition(mRenderer->getScreenWidth() * 0.01f,
                                    mRenderer->getScreenHeight() - (mFrameHeight / 2.0f));
-        mHelp->setStylePosition(glm::vec2 {mRenderer->getScreenWidth() / 2.0f,
-                                           mRenderer->getScreenHeight() - (mFrameHeight / 2.0f)});
+        mHelp->setHelpPosition(glm::vec2 {mRenderer->getScreenWidth() / 2.0f,
+                                          mRenderer->getScreenHeight() - (mFrameHeight / 2.0f)});
     }
 
     mHelp->setPrompts(getHelpPrompts());

@@ -25,10 +25,10 @@ public:
     void setPrompts(const std::vector<HelpPrompt>& prompts);
 
     void setOpacity(float opacity) override;
-    void setStylePosition(const glm::vec2 position) { mStylePosition = position; }
-    void setStyleOrigin(const glm::vec2 origin) { mStyleOrigin = origin; }
-    void setStyleTextColor(const unsigned int textColor) { mStyleTextColor = textColor; }
-    void setStyleIconColor(const unsigned int iconColor) { mStyleIconColor = iconColor; }
+    void setHelpPosition(const glm::vec2 position) { mHelpPosition = position; }
+    void setHelpOrigin(const glm::vec2 origin) { mHelpOrigin = origin; }
+    void setHelpTextColor(const unsigned int textColor) { mTextColor = textColor; }
+    void setHelpIconColor(const unsigned int iconColor) { mIconColor = iconColor; }
 
     void applyTheme(const std::shared_ptr<ThemeData>& theme,
                     const std::string& view,
@@ -48,8 +48,8 @@ private:
     std::vector<HelpPrompt> mPrompts;
     std::map<std::string, std::string> mIconPathMap;
 
-    std::shared_ptr<Font> mStyleFont;
-    std::shared_ptr<Font> mStyleFontDimmed;
+    std::shared_ptr<Font> mFont;
+    std::shared_ptr<Font> mFontDimmed;
 
     std::vector<std::string> mEntries;
     static inline std::vector<std::string> sAllowedEntries {"thumbstickclick",
@@ -76,33 +76,33 @@ private:
         TEXT_FIRST
     };
 
-    glm::vec2 mStylePosition;
-    glm::vec2 mStylePositionDimmed;
-    glm::vec2 mStyleOrigin;
-    glm::vec2 mStyleOriginDimmed;
-    glm::vec2 mStyleRotationOrigin;
-    unsigned int mStyleTextColor;
-    unsigned int mStyleTextColorDimmed;
-    unsigned int mStyleIconColor;
-    unsigned int mStyleIconColorDimmed;
-    unsigned int mStyleBackgroundColor;
-    unsigned int mStyleBackgroundColorEnd;
-    glm::vec2 mStyleBackgroundHorizontalPadding;
-    glm::vec2 mStyleBackgroundVerticalPadding;
-    float mStyleBackgroundCornerRadius;
-    bool mStyleColorGradientHorizontal;
-    EntryLayout mStyleEntryLayout;
+    glm::vec2 mHelpPosition;
+    glm::vec2 mHelpPositionDimmed;
+    glm::vec2 mHelpOrigin;
+    glm::vec2 mHelpOriginDimmed;
+    glm::vec2 mHelpRotationOrigin;
+    unsigned int mTextColor;
+    unsigned int mTextColorDimmed;
+    unsigned int mIconColor;
+    unsigned int mIconColorDimmed;
+    unsigned int mBackgroundColor;
+    unsigned int mBackgroundColorEnd;
+    glm::vec2 mBackgroundHorizontalPadding;
+    glm::vec2 mBackgroundVerticalPadding;
+    float mBackgroundCornerRadius;
+    bool mColorGradientHorizontal;
+    EntryLayout mEntryLayout;
     float mEntryRelativeScale;
     float mLetterHeight;
     float mLetterHeightDimmed;
-    float mStyleRotation;
-    float mStyleEntrySpacing;
-    float mStyleEntrySpacingDimmed;
-    float mStyleIconTextSpacing;
-    float mStyleIconTextSpacingDimmed;
-    float mStyleOpacity;
-    float mStyleOpacityDimmed;
-    std::string mStyleLetterCase;
+    float mHelpRotation;
+    float mEntrySpacing;
+    float mEntrySpacingDimmed;
+    float mIconTextSpacing;
+    float mIconTextSpacingDimmed;
+    float mHelpOpacity;
+    float mHelpOpacityDimmed;
+    std::string mLetterCase;
 
     struct CustomButtonIcons {
         // Generic

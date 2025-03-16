@@ -18,37 +18,37 @@
 
 HelpComponent::HelpComponent(std::shared_ptr<Font> font)
     : mRenderer {Renderer::getInstance()}
-    , mStyleFont {font}
-    , mStyleFontDimmed {font}
-    , mStylePosition {glm::vec2 {Renderer::getScreenWidth() * 0.012f,
-                                 Renderer::getScreenHeight() *
-                                     (Renderer::getIsVerticalOrientation() ? 0.975f : 0.9515f)}}
-    , mStylePositionDimmed {mStylePosition}
-    , mStyleOrigin {glm::vec2 {0.0f, 0.0f}}
-    , mStyleOriginDimmed {mStyleOrigin}
-    , mStyleRotationOrigin {0.5f, 0.5f}
-    , mStyleTextColor {0x777777FF}
-    , mStyleTextColorDimmed {0x777777FF}
-    , mStyleIconColor {0x777777FF}
-    , mStyleIconColorDimmed {0x777777FF}
-    , mStyleBackgroundColor {0x00000000}
-    , mStyleBackgroundColorEnd {0x00000000}
-    , mStyleBackgroundHorizontalPadding {0.0f, 0.0f}
-    , mStyleBackgroundVerticalPadding {0.0f, 0.0f}
-    , mStyleBackgroundCornerRadius {0.0f}
-    , mStyleColorGradientHorizontal {true}
-    , mStyleEntryLayout {EntryLayout::ICON_FIRST}
+    , mFont {font}
+    , mFontDimmed {font}
+    , mHelpPosition {glm::vec2 {Renderer::getScreenWidth() * 0.012f,
+                                Renderer::getScreenHeight() *
+                                    (Renderer::getIsVerticalOrientation() ? 0.975f : 0.9515f)}}
+    , mHelpPositionDimmed {mHelpPosition}
+    , mHelpOrigin {glm::vec2 {0.0f, 0.0f}}
+    , mHelpOriginDimmed {mHelpOrigin}
+    , mHelpRotationOrigin {0.5f, 0.5f}
+    , mTextColor {0x777777FF}
+    , mTextColorDimmed {0x777777FF}
+    , mIconColor {0x777777FF}
+    , mIconColorDimmed {0x777777FF}
+    , mBackgroundColor {0x00000000}
+    , mBackgroundColorEnd {0x00000000}
+    , mBackgroundHorizontalPadding {0.0f, 0.0f}
+    , mBackgroundVerticalPadding {0.0f, 0.0f}
+    , mBackgroundCornerRadius {0.0f}
+    , mColorGradientHorizontal {true}
+    , mEntryLayout {EntryLayout::ICON_FIRST}
     , mEntryRelativeScale {1.0f}
-    , mLetterHeight {mStyleFont->getLetterHeight() * 1.25f}
+    , mLetterHeight {mFont->getLetterHeight() * 1.25f}
     , mLetterHeightDimmed {mLetterHeight}
-    , mStyleRotation {0.0f}
-    , mStyleEntrySpacing {0.00833f}
-    , mStyleEntrySpacingDimmed {mStyleEntrySpacing}
-    , mStyleIconTextSpacing {0.00416f}
-    , mStyleIconTextSpacingDimmed {mStyleIconTextSpacing}
-    , mStyleOpacity {1.0f}
-    , mStyleOpacityDimmed {mStyleOpacity}
-    , mStyleLetterCase {"uppercase"}
+    , mHelpRotation {0.0f}
+    , mEntrySpacing {0.00833f}
+    , mEntrySpacingDimmed {mEntrySpacing}
+    , mIconTextSpacing {0.00416f}
+    , mIconTextSpacingDimmed {mIconTextSpacing}
+    , mHelpOpacity {1.0f}
+    , mHelpOpacityDimmed {mHelpOpacity}
+    , mLetterCase {"uppercase"}
 {
     assignIcons();
     updateGrid();
@@ -73,11 +73,11 @@ void HelpComponent::setOpacity(float opacity)
         return;
 
     GuiComponent::setOpacity(opacity *
-                             (mWindow->isBackgroundDimmed() ? mStyleOpacityDimmed : mStyleOpacity));
+                             (mWindow->isBackgroundDimmed() ? mHelpOpacityDimmed : mHelpOpacity));
 
     for (unsigned int i {0}; i < mGrid->getChildCount(); ++i)
         mGrid->getChild(i)->setOpacity(
-            opacity * (mWindow->isBackgroundDimmed() ? mStyleOpacityDimmed : mStyleOpacity));
+            opacity * (mWindow->isBackgroundDimmed() ? mHelpOpacityDimmed : mHelpOpacity));
 }
 
 void HelpComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
@@ -91,64 +91,64 @@ void HelpComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
         return;
 
     if (elem->has("pos"))
-        mStylePosition = elem->get<glm::vec2>("pos") *
-                         glm::vec2 {Renderer::getScreenWidth(), Renderer::getScreenHeight()};
+        mHelpPosition = elem->get<glm::vec2>("pos") *
+                        glm::vec2 {Renderer::getScreenWidth(), Renderer::getScreenHeight()};
 
     if (elem->has("posDimmed"))
-        mStylePositionDimmed = elem->get<glm::vec2>("posDimmed") *
-                               glm::vec2 {Renderer::getScreenWidth(), Renderer::getScreenHeight()};
+        mHelpPositionDimmed = elem->get<glm::vec2>("posDimmed") *
+                              glm::vec2 {Renderer::getScreenWidth(), Renderer::getScreenHeight()};
     else
-        mStylePositionDimmed = mStylePosition;
+        mHelpPositionDimmed = mHelpPosition;
 
     if (elem->has("origin"))
-        mStyleOrigin = elem->get<glm::vec2>("origin");
+        mHelpOrigin = elem->get<glm::vec2>("origin");
 
     if (elem->has("originDimmed"))
-        mStyleOriginDimmed = elem->get<glm::vec2>("originDimmed");
+        mHelpOriginDimmed = elem->get<glm::vec2>("originDimmed");
     else
-        mStyleOriginDimmed = mStyleOrigin;
+        mHelpOriginDimmed = mHelpOrigin;
 
     if (elem->has("rotation"))
-        mStyleRotation = static_cast<float>(glm::radians(elem->get<float>("rotation")));
+        mHelpRotation = static_cast<float>(glm::radians(elem->get<float>("rotation")));
 
     if (elem->has("rotationOrigin"))
-        mStyleRotationOrigin = glm::clamp(elem->get<glm::vec2>("rotationOrigin"), 0.0f, 1.0f);
+        mHelpRotationOrigin = glm::clamp(elem->get<glm::vec2>("rotationOrigin"), 0.0f, 1.0f);
 
     if (elem->has("textColor"))
-        mStyleTextColor = elem->get<unsigned int>("textColor");
+        mTextColor = elem->get<unsigned int>("textColor");
 
     if (elem->has("textColorDimmed"))
-        mStyleTextColorDimmed = elem->get<unsigned int>("textColorDimmed");
+        mTextColorDimmed = elem->get<unsigned int>("textColorDimmed");
     else
-        mStyleTextColorDimmed = mStyleTextColor;
+        mTextColorDimmed = mTextColor;
 
     if (elem->has("iconColor"))
-        mStyleIconColor = elem->get<unsigned int>("iconColor");
+        mIconColor = elem->get<unsigned int>("iconColor");
 
     if (elem->has("iconColorDimmed"))
-        mStyleIconColorDimmed = elem->get<unsigned int>("iconColorDimmed");
+        mIconColorDimmed = elem->get<unsigned int>("iconColorDimmed");
     else
-        mStyleIconColorDimmed = mStyleIconColor;
+        mIconColorDimmed = mIconColor;
 
     if (elem->has("backgroundColor")) {
-        mStyleBackgroundColor = elem->get<unsigned int>("backgroundColor");
+        mBackgroundColor = elem->get<unsigned int>("backgroundColor");
 
         if (elem->has("backgroundColorEnd"))
-            mStyleBackgroundColorEnd = elem->get<unsigned int>("backgroundColorEnd");
+            mBackgroundColorEnd = elem->get<unsigned int>("backgroundColorEnd");
         else
-            mStyleBackgroundColorEnd = mStyleBackgroundColor;
+            mBackgroundColorEnd = mBackgroundColor;
 
         if (elem->has("backgroundGradientType")) {
             const std::string& backgroundGradientType {
                 elem->get<std::string>("backgroundGradientType")};
             if (backgroundGradientType == "horizontal") {
-                mStyleColorGradientHorizontal = true;
+                mColorGradientHorizontal = true;
             }
             else if (backgroundGradientType == "vertical") {
-                mStyleColorGradientHorizontal = false;
+                mColorGradientHorizontal = false;
             }
             else {
-                mStyleColorGradientHorizontal = true;
+                mColorGradientHorizontal = true;
                 LOG(LogWarning) << "HelpComponent: Invalid theme configuration, property "
                                    "\"backgroundGradientType\" for element \""
                                 << element.substr(11) << "\" defined as \""
@@ -160,23 +160,21 @@ void HelpComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
     if (elem->has("backgroundHorizontalPadding")) {
         const glm::vec2 backgroundHorizontalPadding {
             glm::clamp(elem->get<glm::vec2>("backgroundHorizontalPadding"), 0.0f, 0.2f)};
-        mStyleBackgroundHorizontalPadding.x =
+        mBackgroundHorizontalPadding.x =
             backgroundHorizontalPadding.x * mRenderer->getScreenWidth();
-        mStyleBackgroundHorizontalPadding.y =
+        mBackgroundHorizontalPadding.y =
             backgroundHorizontalPadding.y * mRenderer->getScreenWidth();
     }
 
     if (elem->has("backgroundVerticalPadding")) {
         const glm::vec2 backgroundVerticalPadding {
             glm::clamp(elem->get<glm::vec2>("backgroundVerticalPadding"), 0.0f, 0.2f)};
-        mStyleBackgroundVerticalPadding.x =
-            backgroundVerticalPadding.x * mRenderer->getScreenHeight();
-        mStyleBackgroundVerticalPadding.y =
-            backgroundVerticalPadding.y * mRenderer->getScreenHeight();
+        mBackgroundVerticalPadding.x = backgroundVerticalPadding.x * mRenderer->getScreenHeight();
+        mBackgroundVerticalPadding.y = backgroundVerticalPadding.y * mRenderer->getScreenHeight();
     }
 
     if (elem->has("backgroundCornerRadius")) {
-        mStyleBackgroundCornerRadius =
+        mBackgroundCornerRadius =
             glm::clamp(elem->get<float>("backgroundCornerRadius"), 0.0f, 0.5f) *
             mRenderer->getScreenWidth();
     }
@@ -185,33 +183,32 @@ void HelpComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
         mEntryRelativeScale = glm::clamp(elem->get<float>("entryRelativeScale"), 0.2f, 3.0f);
 
     if (elem->has("fontPath") || elem->has("fontSize")) {
-        mStyleFont = Font::getFromTheme(elem, ThemeFlags::ALL, mStyleFont, 0.0f, 1.0f, false, true);
-        mLetterHeight = mStyleFont->getLetterHeight() * 1.25f;
+        mFont = Font::getFromTheme(elem, ThemeFlags::ALL, mFont, 0.0f, 1.0f, false, true);
+        mLetterHeight = mFont->getLetterHeight() * 1.25f;
         if (!elem->has("fontSizeDimmed")) {
-            mStyleFontDimmed = Font::getFromTheme(
-                elem, ThemeFlags::ALL, mStyleFont, 0.0f,
+            mFontDimmed = Font::getFromTheme(
+                elem, ThemeFlags::ALL, mFont, 0.0f,
                 (mEntryRelativeScale < 1.0f ? mEntryRelativeScale : 1.0f), true, true);
             mLetterHeightDimmed = mLetterHeight;
         }
         if (mEntryRelativeScale < 1.0f)
-            mStyleFont = Font::getFromTheme(elem, ThemeFlags::ALL, mStyleFont, 0.0f,
-                                            mEntryRelativeScale, false, true);
+            mFont = Font::getFromTheme(elem, ThemeFlags::ALL, mFont, 0.0f, mEntryRelativeScale,
+                                       false, true);
     }
     else if (mEntryRelativeScale < 1.0f) {
-        mStyleFont = Font::getFromTheme(elem, ThemeFlags::ALL, mStyleFont, 0.0f,
-                                        mEntryRelativeScale, false, true);
+        mFont = Font::getFromTheme(elem, ThemeFlags::ALL, mFont, 0.0f, mEntryRelativeScale, false,
+                                   true);
     }
 
     if (elem->has("fontSizeDimmed")) {
-        mStyleFontDimmed =
-            Font::getFromTheme(elem, ThemeFlags::ALL, mStyleFont, 0.0f, 1.0f, true, true);
-        mLetterHeightDimmed = mStyleFontDimmed->getLetterHeight() * 1.25f;
+        mFontDimmed = Font::getFromTheme(elem, ThemeFlags::ALL, mFont, 0.0f, 1.0f, true, true);
+        mLetterHeightDimmed = mFontDimmed->getLetterHeight() * 1.25f;
         if (mEntryRelativeScale < 1.0f)
-            mStyleFontDimmed = Font::getFromTheme(elem, ThemeFlags::ALL, mStyleFont, 0.0f,
-                                                  mEntryRelativeScale, true, true);
+            mFontDimmed = Font::getFromTheme(elem, ThemeFlags::ALL, mFont, 0.0f,
+                                             mEntryRelativeScale, true, true);
     }
     else if (mEntryRelativeScale < 1.0f && !elem->has("fontPath") && !elem->has("fontSize")) {
-        mStyleFontDimmed = mStyleFont;
+        mFontDimmed = mFont;
     }
 
     if (elem->has("scope")) {
@@ -257,10 +254,10 @@ void HelpComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
     if (elem->has("entryLayout")) {
         const std::string& entryLayout {elem->get<std::string>("entryLayout")};
         if (entryLayout == "iconFirst") {
-            mStyleEntryLayout = EntryLayout::ICON_FIRST;
+            mEntryLayout = EntryLayout::ICON_FIRST;
         }
         else if (entryLayout == "textFirst") {
-            mStyleEntryLayout = EntryLayout::TEXT_FIRST;
+            mEntryLayout = EntryLayout::TEXT_FIRST;
         }
         else {
             LOG(LogWarning) << "HelpComponent: Invalid theme configuration, property "
@@ -270,32 +267,31 @@ void HelpComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
     }
 
     if (elem->has("entrySpacing"))
-        mStyleEntrySpacing = glm::clamp(elem->get<float>("entrySpacing"), 0.0f, 0.04f);
+        mEntrySpacing = glm::clamp(elem->get<float>("entrySpacing"), 0.0f, 0.04f);
 
     if (elem->has("entrySpacingDimmed"))
-        mStyleEntrySpacingDimmed = glm::clamp(elem->get<float>("entrySpacingDimmed"), 0.0f, 0.04f);
+        mEntrySpacingDimmed = glm::clamp(elem->get<float>("entrySpacingDimmed"), 0.0f, 0.04f);
     else
-        mStyleEntrySpacingDimmed = mStyleEntrySpacing;
+        mEntrySpacingDimmed = mEntrySpacing;
 
     if (elem->has("iconTextSpacing"))
-        mStyleIconTextSpacing = glm::clamp(elem->get<float>("iconTextSpacing"), 0.0f, 0.04f);
+        mIconTextSpacing = glm::clamp(elem->get<float>("iconTextSpacing"), 0.0f, 0.04f);
 
     if (elem->has("iconTextSpacingDimmed"))
-        mStyleIconTextSpacingDimmed =
-            glm::clamp(elem->get<float>("iconTextSpacingDimmed"), 0.0f, 0.04f);
+        mIconTextSpacingDimmed = glm::clamp(elem->get<float>("iconTextSpacingDimmed"), 0.0f, 0.04f);
     else
-        mStyleIconTextSpacingDimmed = mStyleIconTextSpacing;
+        mIconTextSpacingDimmed = mIconTextSpacing;
 
     if (elem->has("letterCase"))
-        mStyleLetterCase = elem->get<std::string>("letterCase");
+        mLetterCase = elem->get<std::string>("letterCase");
 
     if (elem->has("opacity"))
-        mStyleOpacity = glm::clamp(elem->get<float>("opacity"), 0.2f, 1.0f);
+        mHelpOpacity = glm::clamp(elem->get<float>("opacity"), 0.2f, 1.0f);
 
     if (elem->has("opacityDimmed"))
-        mStyleOpacityDimmed = glm::clamp(elem->get<float>("opacityDimmed"), 0.2f, 1.0f);
+        mHelpOpacityDimmed = glm::clamp(elem->get<float>("opacityDimmed"), 0.2f, 1.0f);
     else
-        mStyleOpacityDimmed = mStyleOpacity;
+        mHelpOpacityDimmed = mHelpOpacity;
 
     // Load custom button icons.
     // The names may look a bit strange when combined with the PREFIX string "button_" but it's
@@ -399,26 +395,26 @@ void HelpComponent::render(const glm::mat4& parentTrans)
     if (!mVisible)
         return;
 
-    if (mStyleBackgroundColor != 0x00000000) {
+    if (mBackgroundColor != 0x00000000) {
         mPosition = mGrid->getPosition();
         mSize = mGrid->getSize();
         mOrigin = mGrid->getOrigin();
-        mRotation = mStyleRotation;
-        mRotationOrigin = mStyleRotationOrigin;
+        mRotation = mHelpRotation;
+        mRotationOrigin = mHelpRotationOrigin;
 
         glm::mat4 trans {parentTrans * getTransform()};
-        trans = glm::translate(trans, glm::vec3 {-mStyleBackgroundHorizontalPadding.x,
-                                                 -mStyleBackgroundVerticalPadding.x, 0.0f});
+        trans = glm::translate(trans, glm::vec3 {-mBackgroundHorizontalPadding.x,
+                                                 -mBackgroundVerticalPadding.x, 0.0f});
         mRenderer->setMatrix(trans);
 
-        mRenderer->drawRect(
-            0.0f, 0.0f,
-            mSize.x + mStyleBackgroundHorizontalPadding.x + mStyleBackgroundHorizontalPadding.y -
-                (mStyleEntrySpacing * mRenderer->getScreenWidth()),
-            mSize.y + mStyleBackgroundVerticalPadding.x + mStyleBackgroundVerticalPadding.y,
-            mStyleBackgroundColor, mStyleBackgroundColorEnd, mStyleColorGradientHorizontal,
-            mThemeOpacity, 1.0f, Renderer::BlendFactor::SRC_ALPHA,
-            Renderer::BlendFactor::ONE_MINUS_SRC_ALPHA, mStyleBackgroundCornerRadius);
+        mRenderer->drawRect(0.0f, 0.0f,
+                            mSize.x + mBackgroundHorizontalPadding.x +
+                                mBackgroundHorizontalPadding.y -
+                                (mEntrySpacing * mRenderer->getScreenWidth()),
+                            mSize.y + mBackgroundVerticalPadding.x + mBackgroundVerticalPadding.y,
+                            mBackgroundColor, mBackgroundColorEnd, mColorGradientHorizontal,
+                            mThemeOpacity, 1.0f, Renderer::BlendFactor::SRC_ALPHA,
+                            Renderer::BlendFactor::ONE_MINUS_SRC_ALPHA, mBackgroundCornerRadius);
 
         mPosition = {0.0f, 0.0f, 0.0f};
         mSize = {0.0f, 0.0f};
@@ -430,8 +426,8 @@ void HelpComponent::render(const glm::mat4& parentTrans)
     const glm::mat4 trans {parentTrans * getTransform()};
 
     if (mGrid) {
-        mGrid->setRotationOrigin(mStyleRotationOrigin);
-        mGrid->setRotation(mStyleRotation);
+        mGrid->setRotationOrigin(mHelpRotationOrigin);
+        mGrid->setRotation(mHelpRotation);
         mGrid->render(trans);
     }
 }
@@ -637,7 +633,7 @@ void HelpComponent::updateGrid()
 
     const bool isDimmed {mWindow->isBackgroundDimmed()};
 
-    std::shared_ptr<Font>& font {isDimmed ? mStyleFontDimmed : mStyleFont};
+    std::shared_ptr<Font>& font {isDimmed ? mFontDimmed : mFont};
     mGrid = std::make_shared<ComponentGrid>(glm::ivec2 {static_cast<int>(mPrompts.size()) * 5, 1});
 
     std::vector<std::shared_ptr<ImageComponent>> icons;
@@ -663,51 +659,49 @@ void HelpComponent::updateGrid()
             imageCache[mIconPathMap[it->first]] = icon;
         }
 
-        icon->setColorShift(isDimmed ? mStyleIconColorDimmed : mStyleIconColor);
+        icon->setColorShift(isDimmed ? mIconColorDimmed : mIconColor);
 
         if (mEntryRelativeScale < 1.0f)
             icon->setResize(0, height);
         else
             icon->setResize(0, height / mEntryRelativeScale);
 
-        icon->setOpacity(isDimmed ? mStyleOpacityDimmed : mStyleOpacity);
+        icon->setOpacity(isDimmed ? mHelpOpacityDimmed : mHelpOpacity);
         icons.push_back(icon);
 
         // Apply text style and color from the theme to the label and add it to the label list.
         std::string lblInput {it->second};
-        if (mStyleLetterCase == "lowercase")
+        if (mLetterCase == "lowercase")
             lblInput = Utils::String::toLower(lblInput);
-        else if (mStyleLetterCase == "capitalize")
+        else if (mLetterCase == "capitalize")
             lblInput = Utils::String::toCapitalized(lblInput);
         else
             lblInput = Utils::String::toUpper(lblInput);
-        auto lbl = std::make_shared<TextComponent>(
-            lblInput, font, isDimmed ? mStyleTextColorDimmed : mStyleTextColor);
-        lbl->setOpacity(isDimmed ? mStyleOpacityDimmed : mStyleOpacity);
+        auto lbl = std::make_shared<TextComponent>(lblInput, font,
+                                                   isDimmed ? mTextColorDimmed : mTextColor);
+        lbl->setOpacity(isDimmed ? mHelpOpacityDimmed : mHelpOpacity);
         labels.push_back(lbl);
 
-        width += icon->getSize().x + lbl->getSize().x +
-                 (((isDimmed ? mStyleIconTextSpacingDimmed : mStyleIconTextSpacing) *
-                       mRenderer->getScreenWidth() +
-                   (isDimmed ? mStyleEntrySpacingDimmed : mStyleEntrySpacing) *
-                       mRenderer->getScreenWidth()));
+        width +=
+            icon->getSize().x + lbl->getSize().x +
+            (((isDimmed ? mIconTextSpacingDimmed : mIconTextSpacing) * mRenderer->getScreenWidth() +
+              (isDimmed ? mEntrySpacingDimmed : mEntrySpacing) * mRenderer->getScreenWidth()));
     }
 
     mGrid->setSize(width, height);
 
-    if (mStyleEntryLayout == EntryLayout::ICON_FIRST) {
+    if (mEntryLayout == EntryLayout::ICON_FIRST) {
         for (int i {0}; i < static_cast<int>(icons.size()); ++i) {
             const int col {i * 5};
             mGrid->setColWidthPerc(col, icons.at(i)->getSize().x / width);
-            mGrid->setColWidthPerc(
-                col + 1, ((isDimmed ? mStyleIconTextSpacingDimmed : mStyleIconTextSpacing) *
-                          mRenderer->getScreenWidth()) /
-                             width);
-            mGrid->setColWidthPerc(col + 2, labels.at(i)->getSize().x / width);
-            mGrid->setColWidthPerc(col + 3,
-                                   ((isDimmed ? mStyleEntrySpacingDimmed : mStyleEntrySpacing) *
+            mGrid->setColWidthPerc(col + 1,
+                                   ((isDimmed ? mIconTextSpacingDimmed : mIconTextSpacing) *
                                     mRenderer->getScreenWidth()) /
                                        width);
+            mGrid->setColWidthPerc(col + 2, labels.at(i)->getSize().x / width);
+            mGrid->setColWidthPerc(col + 3, ((isDimmed ? mEntrySpacingDimmed : mEntrySpacing) *
+                                             mRenderer->getScreenWidth()) /
+                                                width);
 
             mGrid->setEntry(icons.at(i), glm::ivec2 {col, 0}, false, false);
             mGrid->setEntry(labels.at(i), glm::ivec2 {col + 2, 0}, false, false);
@@ -717,15 +711,14 @@ void HelpComponent::updateGrid()
         for (int i {0}; i < static_cast<int>(icons.size()); ++i) {
             const int col {i * 5};
             mGrid->setColWidthPerc(col, labels.at(i)->getSize().x / width);
-            mGrid->setColWidthPerc(
-                col + 1, ((isDimmed ? mStyleIconTextSpacingDimmed : mStyleIconTextSpacing) *
-                          mRenderer->getScreenWidth()) /
-                             width);
-            mGrid->setColWidthPerc(col + 2, icons.at(i)->getSize().x / width);
-            mGrid->setColWidthPerc(col + 3,
-                                   ((isDimmed ? mStyleEntrySpacingDimmed : mStyleEntrySpacing) *
+            mGrid->setColWidthPerc(col + 1,
+                                   ((isDimmed ? mIconTextSpacingDimmed : mIconTextSpacing) *
                                     mRenderer->getScreenWidth()) /
                                        width);
+            mGrid->setColWidthPerc(col + 2, icons.at(i)->getSize().x / width);
+            mGrid->setColWidthPerc(col + 3, ((isDimmed ? mEntrySpacingDimmed : mEntrySpacing) *
+                                             mRenderer->getScreenWidth()) /
+                                                width);
 
             mGrid->setEntry(labels.at(i), glm::ivec2 {col, 0}, false, false);
             mGrid->setEntry(icons.at(i), glm::ivec2 {col + 2, 0}, false, false);
@@ -734,15 +727,15 @@ void HelpComponent::updateGrid()
 
     if (isDimmed) {
         mGrid->setPosition(
-            {mStylePositionDimmed.x +
-                 ((mStyleEntrySpacingDimmed * mRenderer->getScreenWidth()) * mStyleOriginDimmed.x),
-             mStylePositionDimmed.y, 0.0f});
+            {mHelpPositionDimmed.x +
+                 ((mEntrySpacingDimmed * mRenderer->getScreenWidth()) * mHelpOriginDimmed.x),
+             mHelpPositionDimmed.y, 0.0f});
     }
     else {
-        mGrid->setPosition({mStylePosition.x + ((mStyleEntrySpacing * mRenderer->getScreenWidth()) *
-                                                mStyleOrigin.x),
-                            mStylePosition.y, 0.0f});
+        mGrid->setPosition(
+            {mHelpPosition.x + ((mEntrySpacing * mRenderer->getScreenWidth()) * mHelpOrigin.x),
+             mHelpPosition.y, 0.0f});
     }
 
-    mGrid->setOrigin(isDimmed ? mStyleOriginDimmed : mStyleOrigin);
+    mGrid->setOrigin(isDimmed ? mHelpOriginDimmed : mHelpOrigin);
 }
