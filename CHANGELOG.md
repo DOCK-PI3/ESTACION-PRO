@@ -19,6 +19,7 @@
 * Added a screensaver-game-select custom event
 * Added game-select and system-select custom events and a corresponding "Browsing custom events" menu option
 * Added the NooDS RetroArch core as an alternative emulator for the gba and nds systems
+* Added the bsnes-jg RetroArch core as an alternative emulator for the satellaview, sfc, snes, snesna and sufami systems
 * Added the Holani RetroArch core as an alternative emulator for the atarilynx system
 * Added the b2 RetroArch core as an alternative emulator for the bbcmicro system
 * Added Mesen standalone as an alternative emulator for the colecovision, wonderswan and wonderswancolor systems on Linux and Windows
@@ -38,6 +39,7 @@
 * (Linux) Added support for the Flatpak release of Ruffle
 * (Linux) Added support for the manually downloaded release of Mesen
 * (Linux) Changed the AppImage find rule for Mandarine to mandarine-qt*.AppImage
+* Enabled directories interpreted as files with MAME RetroArch for the apple2, apple2gs and fmtowns systems on Linux, macOS and Windows
 * Added the .gam file extension to the arcade system on Linux and Windows
 * Added the .m3u file extension to the sega32x, sega32xjp and sega32xna systems
 * Added the .ruf file extension to the flash system
@@ -55,6 +57,7 @@
 * Added support for a "none" value to the video element imageType property
 * Added a BackgroundComponent to replace NinePatchComponent for rendering menu and popup backgrounds
 * (Android) Changed the target SDK version to 35 (Android 15)
+* The LANG and LANGUAGE variables are now set explicitly to the UTF-8 character encoding on Linux, macOS and Android
 * (macOS) Added a build script for cross-compiling for x86_64 when using an ARM processor
 * (Linux) Added the BlueZ library as a dependency
 * Added support for building against libgit2 v1.9.0 and later
@@ -71,6 +74,7 @@
 * The selectedItemOffset property did not work correctly for carousels with a single item
 * Returning from a game when running in the background ignored the video element delay property for the first playback
 * Applying rounded corners caused rendering artfifacts if the texture did not use premultiplied alpha
+* (Windows) There could be double quotation marks added to the launch command under some special circumstances
 * (Android) There was a PLACEHOLDER entry present for the consolearcade system in the es_systems.xml file
 
 ## Version 3.1.1 / 3.1.1-39
