@@ -1589,6 +1589,7 @@
         <command label="Snes9x EX+ (Standalone)">%EMULATOR_SNES9X-EXPLUS% %DATA%=%ROMSAF%</command>
         <command label="bsnes">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/bsnes_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="bsnes-hd">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/bsnes_hd_beta_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="bsnes-jg">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/bsnes-jg_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="bsnes-mercury Accuracy">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/bsnes_mercury_accuracy_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="Mesen-S">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/mesen-s_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <platform>satellaview</platform>
@@ -1689,6 +1690,7 @@
         <command label="Snes9x EX+ (Standalone)">%EMULATOR_SNES9X-EXPLUS% %DATA%=%ROMSAF%</command>
         <command label="bsnes">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/bsnes_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="bsnes-hd">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/bsnes_hd_beta_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="bsnes-jg">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/bsnes-jg_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="bsnes-mercury Accuracy">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/bsnes_mercury_accuracy_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="Beetle Supafaust">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/mednafen_supafaust_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="Mesen-S">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/mesen-s_libretro_android.so %EXTRA_ROM%=%ROM%</command>
@@ -1730,6 +1732,7 @@
         <command label="Snes9x EX+ (Standalone)">%EMULATOR_SNES9X-EXPLUS% %DATA%=%ROMSAF%</command>
         <command label="bsnes">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/bsnes_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="bsnes-hd">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/bsnes_hd_beta_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="bsnes-jg">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/bsnes-jg_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="bsnes-mercury Accuracy">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/bsnes_mercury_accuracy_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="Beetle Supafaust">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/mednafen_supafaust_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="Mesen-S">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/mesen-s_libretro_android.so %EXTRA_ROM%=%ROM%</command>
@@ -1747,6 +1750,7 @@
         <command label="Snes9x EX+ (Standalone)">%EMULATOR_SNES9X-EXPLUS% %DATA%=%ROMSAF%</command>
         <command label="bsnes">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/bsnes_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="bsnes-hd">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/bsnes_hd_beta_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="bsnes-jg">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/bsnes-jg_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="bsnes-mercury Accuracy">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/bsnes_mercury_accuracy_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="Beetle Supafaust">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/mednafen_supafaust_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="Mesen-S">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/mesen-s_libretro_android.so %EXTRA_ROM%=%ROM%</command>
@@ -1803,6 +1807,7 @@
         <command label="Snes9x EX+ (Standalone)">%EMULATOR_SNES9X-EXPLUS% %DATA%=%ROMSAF%</command>
         <command label="bsnes">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/bsnes_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="bsnes-hd">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/bsnes_hd_beta_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="bsnes-jg">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/bsnes-jg_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="bsnes-mercury Accuracy">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/bsnes_mercury_accuracy_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <platform>sufami</platform>
         <theme>sufami</theme>
