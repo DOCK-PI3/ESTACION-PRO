@@ -1049,7 +1049,7 @@ void ViewController::launch(FileData* game)
     if (durationString != "disabled" && durationString != "popup")
         mWindow->displayLaunchScreen(game->getSourceFileData());
 
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) || defined(DEINIT_ON_LAUNCH)
     if (durationString != "disabled")
         NavigationSounds::getInstance().playThemeNavigationSound(LAUNCHSOUND);
 #else
