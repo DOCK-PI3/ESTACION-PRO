@@ -1061,6 +1061,7 @@ void ViewController::launch(FileData* game)
     // During this time period, all user input is blocked.
     setAnimation(new LambdaAnimation([](float t) {}, duration), 0, [this, game] {
         game->launchGame();
+        AudioManager::getInstance().stop();
         // If the launch screen is disabled then this will do nothing.
         mWindow->closeLaunchScreen();
         onFileChanged(game, true);
