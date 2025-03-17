@@ -388,6 +388,12 @@
             <entry>org.scummvm.scummvm/org.scummvm.scummvm.SplashActivity</entry>
         </rule>
     </emulator>
+    <emulator name="SKYEMU">
+        <!-- Nintendo Game Boy, Game Boy Color, Game Boy Advance and DS emulator SkyEmu -->
+        <rule type="androidpackage">
+            <entry>com.sky.SkyEmu/.EnhancedNativeActivity</entry>
+        </rule>
+    </emulator>
     <emulator name="SKYLINE">
         <!-- Nintendo Switch emulator Skyline -->
         <rule type="androidpackage">
