@@ -72,6 +72,7 @@ The following emulators are configured for FileProvider access:
 * Panda3DS
 * PCE.emu (pcengine, supergrafx and tg16 systems)
 * Ruffle
+* SkyEmu
 * Skyline
 * Swan.emu
 * SWF Player
@@ -534,6 +535,14 @@ ScummVM can be installed from the Play store. There are also daily builds availa
 https://play.google.com/store/apps/details?id=org.scummvm.scummvm\
 https://buildbot.scummvm.org/#/dailybuilds
 
+### SkyEmu
+
+Note that frontend support was added to SkyEmu in version 4 so you need that to be able to use it with ES-DE.
+
+At the time of writing this version can only be downloaded from their GitHub automatic build system.
+
+https://github.com/skylersaleh/SkyEmu/actions
+
 ### Skyline
 
 This emulator is not in active development any longer, but the latest release can be found on archive.org.
@@ -796,9 +805,9 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | gameandwatch          | Nintendo Game and Watch                        | Multi (MESS)                      | MAME4droid Current Local Artwork **(Standalone)**,<br>MAME4droid Current **(Standalone)**,<br>Handheld Electronic (GW) | No           | See the specific _LCD handheld games_ section in the user guide |
 | gamecom               | Tiger Electronics Game.com                     | MAME4droid Current **(Standalone)**  |                                   | Yes          | Single archive or ROM file           |
 | gamegear              | Sega Game Gear                                 | Genesis Plus GX                   | Genesis Plus GX Wide,<br>Gearsystem,<br>SMS Plus GX,<br>PicoDrive,<br>Pizza Boy SC **(Standalone)**,<br>MasterGear **(Standalone)** | No           | Single archive or ROM file |
-| gb                    | Nintendo Game Boy                              | Gambatte                          | SameBoy,<br>Gearboy,<br>TGB Dual,<br>DoubleCherryGB,<br>Mesen-S,<br>bsnes,<br>mGBA,<br>VBA-M,<br>GBC.emu **(Standalone)**,<br>My OldBoy! **(Standalone**),<br>Pizza Boy GBC **(Standalone)** | No           | Single archive or ROM file |
-| gba                   | Nintendo Game Boy Advance                      | mGBA                              | VBA-M,<br>VBA Next,<br>gpSP,<br>NooDS,<br>NooDS **(Standalone)**,<br>GBA.emu **(Standalone)**,<br>My Boy! **(Standalone)**,<br>Pizza Boy GBA **(Standalone)** | No          | Single archive or ROM file |
-| gbc                   | Nintendo Game Boy Color                        | Gambatte                          | SameBoy,<br>Gearboy,<br>TGB Dual,<br>DoubleCherryGB,<br>Mesen-S,<br>bsnes,<br>mGBA,<br>VBA-M,<br>GBC.emu **(Standalone)**,<br>My OldBoy! **(Standalone**),<br>Pizza Boy GBC **(Standalone)** | No           | Single archive or ROM file |
+| gb                    | Nintendo Game Boy                              | Gambatte                          | SameBoy,<br>Gearboy,<br>TGB Dual,<br>DoubleCherryGB,<br>Mesen-S,<br>bsnes,<br>mGBA,<br>VBA-M,<br>GBC.emu **(Standalone)**,<br>SkyEmu **(Standalone)**,<br>My OldBoy! **(Standalone**),<br>Pizza Boy GBC **(Standalone)** | No           | Single archive or ROM file |
+| gba                   | Nintendo Game Boy Advance                      | mGBA                              | VBA-M,<br>VBA Next,<br>gpSP,<br>NooDS,<br>NooDS **(Standalone)**,<br>GBA.emu **(Standalone)**,<br>SkyEmu **(Standalone)**,<br>My Boy! **(Standalone)**,<br>Pizza Boy GBA **(Standalone)** | No          | Single archive or ROM file |
+| gbc                   | Nintendo Game Boy Color                        | Gambatte                          | SameBoy,<br>Gearboy,<br>TGB Dual,<br>DoubleCherryGB,<br>Mesen-S,<br>bsnes,<br>mGBA,<br>VBA-M,<br>GBC.emu **(Standalone)**,<br>SkyEmu **(Standalone)**,<br>My OldBoy! **(Standalone**),<br>Pizza Boy GBC **(Standalone)** | No           | Single archive or ROM file |
 | gc                    | Nintendo GameCube                              | Dolphin                           | Dolphin **(Standalone)**,<br>Dolphin MMJR **(Standalone)**,<br>Dolphin MMJR2 **(Standalone)** | No           | Disc image file for single-disc games, .m3u playlist for multi-disc games |
 | genesis               | Sega Genesis                                   | Genesis Plus GX                   | Genesis Plus GX Wide,<br>PicoDrive,<br>MD.emu **(Standalone)**,<br>Pizza Boy SC **(Standalone)** | No           | Single archive or ROM file |
 | gmaster               | Hartung Game Master                            | MAME4droid Current **(Standalone)**  |                                   | Yes          | Single archive or ROM file           |
@@ -836,7 +845,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | n3ds                  | Nintendo 3DS                                   | Citra                             | Citra **(Standalone)**,<br>Citra Canary **(Standalone)**,<br>Citra MMJ **(Standalone)**,<br>Azahar **(Standalone)**,<br>Mandarine **(Standalone)**,<br>Lime3DS **(Standalone)**,<br>Panda3DS **(Standalone)**  | No           | Single ROM file       |
 | n64                   | Nintendo 64                                    | Mupen64Plus-Next                  | M64Plus FZ **(Standalone)**,<br>Mupen64Plus AE **(Standalone)**,<br>ParaLLEl N64 | No           | Single archive or ROM file |
 | n64dd                 | Nintendo 64DD                                  | Mupen64Plus-Next                  | M64Plus FZ **(Standalone)**,<br>Mupen64Plus AE **(Standalone)**,<br>ParaLLEl N64 | Yes          |                                      |
-| nds                   | Nintendo DS                                    | melonDS DS                        | melonDS,<br>melonDS **(Standalone)**,<br>melonDS Nightly **(Standalone)**,<br>DeSmuME,<br>DeSmuME 2015,<br>NooDS,<br>NooDS **(Standalone)**,<br>DraStic **(Standalone)** | No           | Single archive or ROM file |
+| nds                   | Nintendo DS                                    | melonDS DS                        | melonDS,<br>melonDS **(Standalone)**,<br>melonDS Nightly **(Standalone)**,<br>DeSmuME,<br>DeSmuME 2015,<br>NooDS,<br>NooDS **(Standalone)**,<br>DraStic **(Standalone)**,<br>SkyEmu **(Standalone)** | No           | Single archive or ROM file |
 | neogeo                | SNK Neo Geo                                    | FinalBurn Neo                     | Geolith,<br>NEO.emu **(Standalone)**,<br>MAME4droid Current **(Standalone)**,<br>MAME4droid **(Standalone)** | Yes          | See the specific _Arcade and Neo Geo_ section in the user guide |
 | neogeocd              | SNK Neo Geo CD                                 | NeoCD                             | MAME4droid Current **(Standalone)**  | Yes          | .chd (NeoCD and MAME4droid Current only) or .cue file |
 | neogeocdjp            | SNK Neo Geo CD [Japan]                         | NeoCD                             | MAME4droid Current **(Standalone)**  | Yes          | .chd (NeoCD and MAME4droid Current only) or .cue file |

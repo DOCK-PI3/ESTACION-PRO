@@ -28,6 +28,7 @@
 * (Android) Changed from MAME4droid 2024 to MAME4droid Current for all systems where only this emulator was supported
 * (Android) Added a find rule entry for the new Cemu package name
 * (Android) Added MAME4droid Current emulator entries for all systems where MAME4droid 2024 was supported
+* (Android) Added SkyEmu standalone as an alternative emulator for the gb, gba, gbc and nds systems
 * (Android) Added Pizza Boy SC standalone as an alternative emulator for the gamegear, genesis, mastersystem, megadrive and megadrivejp systems
 * (Android) Changed all RetroArch core entries to use absolute paths (this makes the ancient Play store release work correctly)
 * (Windows) Added MFME standalone (fruit machine emulator) as an alternative emulator for the arcade system
@@ -74,6 +75,7 @@
 * The selectedItemOffset property did not work correctly for carousels with a single item
 * Returning from a game when running in the background ignored the video element delay property for the first playback
 * Applying rounded corners caused rendering artfifacts if the texture did not use premultiplied alpha
+* The menus would sometimes contain fractional rows at extreme resolutions such as 1080x1920
 * (Windows) There could be double quotation marks added to the launch command under some special circumstances
 * (Android) There was a PLACEHOLDER entry present for the consolearcade system in the es_systems.xml file
 
