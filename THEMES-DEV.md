@@ -1209,6 +1209,7 @@ Unlike the types just mentioned, aspectRatio entries can not be set to arbitrary
 | 3:2              | 3:2_vertical    | 2160x1440                                      |
 | 4:3              | 4:3_vertical    | 320x240, 640x480, 800x600, 1024x768, 1600x1200 |
 | 5:4              | 5:4_vertical    | 1280x1024                                      |
+| 8:7              | 8:7_vertical    | 1240x1080                                      |
 | 19.5:9           | 19.5:9_vertical | 2340x1080, 2532x1170                           |
 | 20:9             | 20:9_vertical   | 2400x1080, 1600x720                            |
 | 21:9             | 21:9_vertical   | 2560x1080, 3840x1600, 5120x2160                |

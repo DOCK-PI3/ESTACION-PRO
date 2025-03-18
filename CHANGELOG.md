@@ -59,6 +59,7 @@
 * Added a BackgroundComponent to replace NinePatchComponent for rendering menu and popup backgrounds
 * (Android) Changed the target SDK version to 35 (Android 15)
 * The LANG and LANGUAGE variables are now set explicitly to the UTF-8 character encoding on Linux, macOS and Android
+* Added support for the 8:7 display aspect ratio
 * (macOS) Added a build script for cross-compiling for x86_64 when using an ARM processor
 * (Linux) Added the BlueZ library as a dependency
 * Added support for building against libgit2 v1.9.0 and later
