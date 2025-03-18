@@ -75,6 +75,8 @@ std::vector<std::pair<std::string, std::string>> ThemeData::sSupportedAspectRati
     {"4:3_vertical", "4:3 vertical"},
     {"5:4", "5:4"},
     {"5:4_vertical", "5:4 vertical"},
+    {"8:7", "8:7"},
+    {"8:7_vertical", "8:7 vertical"},
     {"19.5:9", "19.5:9"},
     {"19.5:9_vertical", "19.5:9 vertical"},
     {"20:9", "20:9"},
@@ -96,6 +98,8 @@ std::map<std::string, float> ThemeData::sAspectRatioMap {
     {"4:3_vertical", 0.75f},
     {"5:4", 1.25f},
     {"5:4_vertical", 0.8f},
+    {"8:7", 1.1429f},
+    {"8:7_vertical", 0.875f},
     {"19.5:9", 2.1667f},
     {"19.5:9_vertical", 0.4615f},
     {"20:9", 2.2222f},
@@ -2411,6 +2415,7 @@ void ThemeData::gettextMessageCatalogEntries()
     _("3:2 vertical");
     _("4:3 vertical");
     _("5:4 vertical");
+    _("8:7 vertical");
     _("19.5:9 vertical");
     _("20:9 vertical");
     _("21:9 vertical");
