@@ -297,11 +297,10 @@ https://play.google.com/store/apps/details?id=com.github.stenzek.duckstation
 
 ### EKA2L1
 
-This emulator can be downloaded from their GitHub site.
+This emulator can be installed from the Play store or it can be downloaded from their GitHub site.
 
+https://play.google.com/store/apps/details?id=com.github.eka2l1 \
 https://github.com/EKA2L1/EKA2L1/releases
-
-There does not seem to be a way to launch individual EKA2L1 games from a frontend application on Android, instead ES-DE will simply launch the EKA2L1 user interface and you'll have to manually start your game from there.
 
 ### ePSXe
 
