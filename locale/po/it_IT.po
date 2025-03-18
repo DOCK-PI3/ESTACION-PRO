@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-03-01 09:47+0100\n"
+"POT-Creation-Date: 2025-03-18 18:28+0100\n"
 "PO-Revision-Date: 2025-03-03 23:16+0200\n"
 "Last-Translator: Lorenzo Castelletta <lorenzo.castelletta@gmail.com>\n"
 "Language-Team: Italiano <info@es-de.org>\n"
@@ -2942,6 +2942,9 @@ msgstr "4:3 verticale"
 
 msgid "5:4 vertical"
 msgstr "5:4 verticale"
+
+msgid "8:7 vertical"
+msgstr "8:7 verticale"
 
 msgid "19.5:9 vertical"
 msgstr "19.5:9 verticale"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-03-01 09:47+0100\n"
+"POT-Creation-Date: 2025-03-18 18:28+0100\n"
 "PO-Revision-Date: 2025-03-07 00:41+0100\n"
 "Last-Translator: Josep M <johnnydement@duck.com>\n"
 "Language-Team: Català <info@es-de.org>\n"
@@ -2907,6 +2907,9 @@ msgstr "4:3 vertical"
 
 msgid "5:4 vertical"
 msgstr "5:4 vertical"
+
+msgid "8:7 vertical"
+msgstr "8:7 vertical"
 
 msgid "19.5:9 vertical"
 msgstr "19.5:9 vertical"

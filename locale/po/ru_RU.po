@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-03-01 09:47+0100\n"
+"POT-Creation-Date: 2025-03-18 18:28+0100\n"
 "PO-Revision-Date: 2025-03-05 19:28+0400\n"
 "Last-Translator: Northwestern Software <info@es-de.org>\n"
 "Language-Team: Русский <info@es-de.org>\n"
@@ -2926,6 +2926,9 @@ msgstr "4:3 вертикальный"
 
 msgid "5:4 vertical"
 msgstr "5:4 вертикальный"
+
+msgid "8:7 vertical"
+msgstr "8:7 вертикальный"
 
 msgid "19.5:9 vertical"
 msgstr "19.5:9 вертикальный"
