@@ -582,6 +582,21 @@
             <entry>~/bin/linapple/linapple</entry>
         </rule>
     </emulator>
+    <emulator name="LINDBERGH-LOADER">
+        <!-- Sega Lindbergh emulator Lindbergh Loader -->
+        <rule type="systempath">
+            <entry>lindbergh</entry>
+            <entry>com.github.lindberghloader</entry>
+        </rule>
+        <rule type="staticpath">
+            <entry>~/Applications/lindbergh/lindbergh</entry>
+            <entry>~/.local/share/applications/lindbergh/lindbergh</entry>
+            <entry>~/.local/bin/lindbergh/lindbergh</entry>
+            <entry>~/bin/lindbergh/lindbergh</entry>
+            <entry>/var/lib/flatpak/exports/bin/com.github.lindberghloader</entry>
+            <entry>~/.local/share/flatpak/exports/bin/com.github.lindberghloader</entry>
+        </rule>
+    </emulator>
     <emulator name="M2EMULATOR-WINDOWS">
         <!-- Sega Model 2 Emulator -->
         <rule type="staticpath">
