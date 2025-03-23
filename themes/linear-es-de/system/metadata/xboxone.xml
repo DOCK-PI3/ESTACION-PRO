@@ -1,0 +1,90 @@
+﻿<theme>
+    <variables>
+        <systemName>Xbox One</systemName>
+        <systemDescription>The Xbox One is an eighth-generation home video game console developed by Microsoft. It was released in 2013 as the successor to the Xbox 360, and while initial marketing was focused on its multimedia features rather than its gaming capabilities, this changed throughout the lifetime of the console.
+
+        It's notable that there are few exclusives on this console as Microsoft had started to focus increasingly on providing most games also on their Windows operating system.</systemDescription>
+        <systemManufacturer>Microsoft</systemManufacturer>
+        <systemReleaseYear>2013</systemReleaseYear>
+        <systemReleaseDate>2013-11-22</systemReleaseDate>
+        <systemReleaseDateFormated>November 22, 2013</systemReleaseDateFormated>
+        <systemHardwareType>Console</systemHardwareType>
+        <systemCoverSize>243-340</systemCoverSize>
+        <systemColor>0099D7</systemColor>
+        <systemColorPalette1>F5F8F8</systemColorPalette1>
+        <systemColorPalette2>CECECE</systemColorPalette2>
+        <systemColorPalette3>107C10</systemColorPalette3>
+        <systemColorPalette4>7CB74E</systemColorPalette4>
+        <systemCartSize>1-1</systemCartSize>
+    </variables>
+    <language name="ca_ES">
+        <variables>
+            <systemHardwareType>Console</systemHardwareType>
+        </variables>
+    </language>
+    <language name="de_DE">
+        <variables>
+            <systemHardwareType>Konsole</systemHardwareType>
+        </variables>
+    </language>
+    <language name="es_ES">
+        <variables>
+            <systemHardwareType>Consola</systemHardwareType>
+        </variables>
+    </language>
+    <language name="fr_FR">
+        <variables>
+            <systemHardwareType>Console</systemHardwareType>
+        </variables>
+    </language>
+    <language name="it_IT">
+        <variables>
+            <systemHardwareType>Console</systemHardwareType>
+        </variables>
+    </language>
+    <language name="nl_NL">
+        <variables>
+            <systemHardwareType>Console</systemHardwareType>
+        </variables>
+    </language>
+    <language name="pl_PL">
+        <variables>
+            <systemHardwareType>Konsola</systemHardwareType>
+        </variables>
+    </language>
+    <language name="pt_BR">
+        <variables>
+            <systemHardwareType>Console</systemHardwareType>
+        </variables>
+    </language>
+    <language name="ro_RO">
+        <variables>
+            <systemHardwareType>Consolă</systemHardwareType>
+        </variables>
+    </language>
+    <language name="ru_RU">
+        <variables>
+            <systemHardwareType>Консоль</systemHardwareType>
+        </variables>
+    </language>
+    <language name="sv_SE">
+        <variables>
+            <systemHardwareType>Konsol</systemHardwareType>
+        </variables>
+    </language>
+    <language name="ja_JP">
+        <variables>
+            <systemHardwareType>コンソール</systemHardwareType>
+        </variables>
+    </language>
+    <language name="ko_KR">
+        <variables>
+            <systemHardwareType>콘솔</systemHardwareType>
+        </variables>
+    </language>
+    <language name="zh_CN">
+        <variables>
+            <systemHardwareType>控制台</systemHardwareType>
+        </variables>
+    </language>
+</theme>
