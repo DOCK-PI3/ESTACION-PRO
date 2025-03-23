@@ -3421,13 +3421,15 @@ Properties:
 
 #### helpsystem
 
-The helpsystem is a special element that displays a context-sensitive list of actions the user can take at any time. You should try and keep the position constant throughout every screen. Note that this element does not have a zIndex value, instead it's always rendered on top of all other elements.
+The helpsystem is a special element that displays a context-sensitive list of actions the user can take at any time. You should try and keep the position constant throughout every screen. Note that this element does not have a zIndex value, instead it's always rendered on top of all other elements (but below the menu).
 
 It's possible to set this element as right-aligned or center-aligned using a combination of the `pos` and `origin` properties. For example `<pos>1 1</pos>` and `<origin>1 1</origin>` will place it in the lower right corner of the screen.
 
 Keep in mind that the width of this element can vary depending on a number of factors, for example the _Toggle favorites_ and _Random system or game_ buttons can be enabled or disabled via the _UI Settings_ menu. Test extensively with the menu system as well, especially the virtual keyboard which displays a number of helpsystem entries.
 
 Using the `entries` property it's possible to restrict which help entries to display, and it's also possible to create multiple helpsystem elements and split up the entries between them.
+
+Note however that you can't display the same icon file for multiple elements, if you attempt to do this then the icon will only be shown for one of the elements. This is due to internal optimizations to reduce latency when updating the helpsystem. But there is a workaround available by using separate icon files and loading them via the `customButtonIcon` property. As long as they are separate files it will be possible to load them and make it seem like the same icon file is displayed for multiple elements.
 
 Supported views:
 * `system`

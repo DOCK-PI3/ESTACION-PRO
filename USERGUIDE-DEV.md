@@ -815,6 +815,7 @@ The following manually downloaded emulators are supported when using the bundled
 | amstradcpc                              | ACE-DL           | AceDL/AceDL                       |
 | amstradcpc                              | CPCemu           | cpcemu/cpcemu                     |
 | apple2                                  | LinApple         | linapple/linapple                 |
+| arcade/mame/model3                      | Supermodel       | Supermodel/supermodel             |
 | atari2600                               | Gopher2600       | gopher2600/gopher2600_linux_amd64 |
 | atari7800                               | A7800            | a7800-linux/a7800                 |
 | atarijaguar/atarijaguarcd               | BigPEmu          | bigpemu/bigpemu                   |
@@ -828,7 +829,6 @@ The following manually downloaded emulators are supported when using the bundled
 | fmtowns                                 | Tsugaru          | tsugaru/Tsugaru_CUI               |
 | gb/gba/gbc/nds                          | SkyEmu           | SkyEmu/SkyEmu                     |
 | gb/gbc                                  | Gearboy          | gearboy/gearboy                   |
-| model3                                  | Supermodel       | Supermodel/supermodel             |
 | famicom/nes                             | puNES            | punes/punes                       |
 | mame-advmame                            | AdvanceMAME      | advancemame/advmame               |
 | oric                                    | Oricutron        | oricutron/Oricutron               |
@@ -931,7 +931,7 @@ The following Windows emulators are supported, and the setup for most of these i
 
 | System name               | Emulator         | Filename                |
 | :------------------------ | :--------------- | :-----------------------|
-| arcade                    | MFME             | MFME/MFME.exe           |
+| arcade/mame               | MFME             | MFME/MFME.exe           |
 | atarijaguar/atarijaguarcd | BigPEmu          | BigPEmu/BigPEmu.exe     |
 | famicom/nes               | 3dSen            | 3dSen/3dSen.exe         |
 | model2                    | Model 2 Emulator | m2emulator/EMULATOR.EXE |
@@ -4245,7 +4245,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | lutris                | Lutris Open Gaming Platform                    | Lutris **(Standalone)** [L]       |                                   | No           | See the specific _Lutris_ section elsewhere in this guide |
 | lutro                 | Lutro Game Engine                              | Lutro                             |                                   |              |                                      |
 | macintosh             | Apple Macintosh                                | MAME Mac SE Bootable **(Standalone)** | MAME Mac SE Boot Disk **(Standalone)**,<br>MAME Mac Plus Bootable **(Standalone)**,<br>MAME Mac Plus Boot Disk **(Standalone)**,<br>Basilisk II **(Standalone)**,<br>SheepShaver **(Standalone)** | Yes          | See the specific _Apple Macintosh_ section elsewhere in this guide |
-| mame                  | Multiple Arcade Machine Emulator               | MAME - Current                    | MAME 2010,<br>MAME 2003-Plus,<br>MAME 2003,<br>MAME 2000,<br>MAME **(Standalone)**,<br>FinalBurn Neo,<br>FinalBurn Neo **(Standalone)** [LW],<br>FB Alpha 2012,<br>Geolith,<br>Flycast,<br>Flycast **(Standalone)**,<br>Flycast Dojo **(Standalone)**,<br>Kronos [LW],<br>Model 2 Emulator **(Standalone)** [W],<br>Model 2 Emulator [Suspend ES-DE] **(Standalone)** [W],<br>Supermodel **(Standalone)** [LW],<br> _Shortcut or script_ | Depends      | See the specific _Arcade and Neo Geo_ section elsewhere in this guide |
+| mame                  | Multiple Arcade Machine Emulator               | MAME - Current                    | MAME 2010,<br>MAME 2003-Plus,<br>MAME 2003,<br>MAME 2000,<br>MAME **(Standalone)**,<br>FinalBurn Neo,<br>FinalBurn Neo **(Standalone)** [LW],<br>FB Alpha 2012,<br>Geolith,<br>Flycast,<br>Flycast **(Standalone)**,<br>Flycast Dojo **(Standalone)**,<br>Kronos [LW],<br>Model 2 Emulator **(Standalone)** [W],<br>Model 2 Emulator [Suspend ES-DE] **(Standalone)** [W],<br>Supermodel **(Standalone)** [LW],<br>MFME **(Standalone)** [LW],<br> _Shortcut or script_ | Depends      | See the specific _Arcade and Neo Geo_ section elsewhere in this guide |
 | mame-advmame          | AdvanceMAME                                    | AdvanceMAME **(Standalone)** [LW] |                                   | Depends      | See the specific _Arcade and Neo Geo_ section elsewhere in this guide |
 | mastersystem          | Sega Master System                             | Genesis Plus GX                   | Genesis Plus GX Wide,<br>SMS Plus GX,<br>Gearsystem,<br>PicoDrive,<br>Mednafen **(Standalone)**,<br>Mesen **(Standalone)** [LW],<br>ares **(Standalone)**,<br>jgenesis **(Standalone)** [LW] | No           | Single archive or ROM file |
 | megacd                | Sega Mega-CD                                   | Genesis Plus GX                   | Genesis Plus GX Wide,<br>PicoDrive,<br>ares **(Standalone)**,<br>jgenesis **(Standalone)** [LW] | Yes          |                                      |
@@ -4354,6 +4354,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | x68000                | Sharp X68000                                   | PX68k                             | MAME **(Standalone)**,<br>XM6 Pro-68k **(Standalone)** [W],<br>XM6 TypeG **(Standalone**) [W],<br>XM6 Pro-68k **(Wine)** [L],<br>XM6 Pro-68k **(Proton)** [L],<br>XM6 TypeG **(Wine)** [L],<br>XM6 TypeG **(Proton)** [L] | Yes for PX68k and MAME |                                      |
 | xbox                  | Microsoft Xbox                                 | xemu **(Standalone)**             | Cxbx-Reloaded **(Standalone)** [W] | Yes for xemu | Single .iso file for xemu or unpacked .iso directory for Cxbx-Reloaded |
 | xbox360               | Microsoft Xbox 360                             | xenia **(Standalone)** [W],<br>xenia **(Wine)** [L] | xenia **(Proton)** [L],<br> _Shortcut or script_ [L]          | No           | See the specific _Microsoft Xbox 360_ section elsewhere in this guide |
+| xboxone               | Microsoft Xbox One                             | _Placeholder_                     |                                   |              |                                      |
 | zmachine              | Infocom Z-machine                              | MojoZork                          | Gargoyle **(Standalone)**         | No           |                                      |
 | zx81                  | Sinclair ZX81                                  | EightyOne                         |                                   | No           |                                      |
 | zxnext                | Sinclair ZX Spectrum Next                      | #CSpect **(Standalone)** [LW],<br>ZEsarUX **(Standalone)** [M] | ZEsarUX **(Standalone)** [LW] | No           | In separate folder interpreted as a file |

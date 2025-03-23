@@ -235,9 +235,9 @@ https://github.com/Trixarian/NetherSX2-patch
 
 ### Azahar
 
-This emulator which is forked from Citra and Lime3DS can be downloaded from their GitHub site.
+This emulator can be downloaded from their GitHub site.
 
-https://github.com/azahar-emu/azahar
+https://github.com/azahar-emu/azahar/releases
 
 ### Cemu
 
@@ -929,6 +929,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | x68000                | Sharp X68000                                   | PX68k                             | MAME4droid Current **(Standalone)**  | Yes          |                                      |
 | xbox                  | Microsoft Xbox                                 | _Placeholder_                     |                                   |              |                                      |
 | xbox360               | Microsoft Xbox 360                             | _Placeholder_                     |                                   |              |                                      |
+| xboxone               | Microsoft Xbox One                             | _Placeholder_                     |                                   |              |                                      |
 | zmachine              | Infocom Z-machine                              | MojoZork                          |                                   | No           |                                      |
 | zx81                  | Sinclair ZX81                                  | EightyOne                         |                                   | No           |                                      |
 | zxnext                | Sinclair ZX Spectrum Next                      | _Placeholder_                     |                                   |              |                                      |

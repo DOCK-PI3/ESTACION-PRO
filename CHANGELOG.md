@@ -31,9 +31,9 @@
 * (Android) Added SkyEmu standalone as an alternative emulator for the gb, gba, gbc and nds systems
 * (Android) Added Pizza Boy SC standalone as an alternative emulator for the gamegear, genesis, mastersystem, megadrive and megadrivejp systems
 * (Android) Changed all RetroArch core entries to use absolute paths (this makes the ancient Play store release work correctly)
-* (Windows) Added MFME standalone (fruit machine emulator) as an alternative emulator for the arcade system
+* (Windows) Added MFME standalone (fruit machine emulator) as an alternative emulator for the arcade and mame systems
 * (Windows) Added XM6 TypeG standalone as an alternative emulator for the x68000 system
-* (Linux) Added MFME Wine and MFME Proton as alternative emulators for the arcade system
+* (Linux) Added MFME Wine and MFME Proton as alternative emulators for the arcade and mame systems
 * (Linux) Added XM6 TypeG Wine and XM6 TypeG Proton as alternative emulators for the x68000 system
 * (Linux) Added a find rule entry for the new PCSX2 binary name (pcsx2)
 * (Linux) Added a find rule entry for the new DuckStation binary name (duckstation)
@@ -44,6 +44,7 @@
 * Added the .gam file extension to the arcade system on Linux and Windows
 * Added the .m3u file extension to the sega32x, sega32xjp and sega32xna systems
 * Added the .ruf file extension to the flash system
+* Added initial support for the Microsoft Xbox One (xboxone) game system (still awaiting emulator support)
 * Added a %ROMRAWWIN% variable to pass the game ROM path with Windows-style backslash directory separators
 * Refactored the helpsystem code and added support for using an arbitrary amount of helpsystem elements
 * Added support for specifying which specific entries to display for the helpsystem elements
@@ -75,6 +76,7 @@
 * The text element containerStartDelay timer was sometimes not reset which made vertical text scrolling start too early under some circumstances
 * The selectedItemOffset property did not work correctly for carousels with a single item
 * Returning from a game when running in the background ignored the video element delay property for the first playback
+* A double free in GuiLaunchScreen could cause an unclean application shutdown
 * Applying rounded corners caused rendering artfifacts if the texture did not use premultiplied alpha
 * The menus would sometimes contain fractional rows at extreme resolutions such as 1080x1920
 * (Windows) There could be double quotation marks added to the launch command under some special circumstances
