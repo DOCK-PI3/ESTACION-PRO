@@ -157,6 +157,7 @@ namespace PlatformIds
         "x68000",               // Sharp X68000
         "xbox",                 // Microsoft Xbox
         "xbox360",              // Microsoft Xbox 360
+        "xboxone",              // Microsoft Xbox One
         "zmachine",             // Infocom Z-machine
         "zx81",                 // Sinclair ZX81
         "zxnext",               // Sinclair ZX Spectrum Next

@@ -2329,6 +2329,15 @@
         <theme>xbox360</theme>
     </system>
     <system>
+        <name>xboxone</name>
+        <fullname>Microsoft Xbox One</fullname>
+        <path>%ROMPATH%/xboxone</path>
+        <extension>.7z .7Z .zip .ZIP</extension>
+        <command>PLACEHOLDER %ROM%</command>
+        <platform>xboxone</platform>
+        <theme>xboxone</theme>
+    </system>
+    <system>
         <name>zmachine</name>
         <fullname>Infocom Z-machine</fullname>
         <path>%ROMPATH%/zmachine</path>

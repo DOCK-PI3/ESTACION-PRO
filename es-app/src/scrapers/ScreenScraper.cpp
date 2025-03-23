@@ -79,6 +79,7 @@ namespace
         {LCD_GAMES, 75},
         {MICROSOFT_XBOX, 32},
         {MICROSOFT_XBOX_360, 33},
+        {MICROSOFT_XBOX_ONE, 34},
         {MSX, 113},
         {MSX2, 116},
         {MSX_TURBO_R, 118},
