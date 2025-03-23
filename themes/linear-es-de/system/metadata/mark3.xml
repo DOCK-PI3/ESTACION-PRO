@@ -1,0 +1,88 @@
+﻿<theme>
+    <variables>
+        <systemName>Mark III</systemName>
+        <systemDescription>The Sega Mark III is a third-generation 8-bit home video game console manufactured by Sega, as the third iteration of the SG-1000 series of consoles. It was released in Japan in 1985 and featured enhanced graphical capabilities over its predecessors. Outside of Japan it was branded as the Sega Master System.</systemDescription>
+        <systemManufacturer>Sega</systemManufacturer>
+        <systemReleaseYear>1985</systemReleaseYear>
+        <systemReleaseDate>1985-10-20</systemReleaseDate>
+        <systemReleaseDateFormated>October 20, 1985</systemReleaseDateFormated>
+        <systemHardwareType>Console</systemHardwareType>
+        <systemCoverSize>243-340</systemCoverSize>
+        <systemColor>198AC8</systemColor>
+        <systemColorPalette1>95897A</systemColorPalette1>
+        <systemColorPalette2>D8B945</systemColorPalette2>
+        <systemColorPalette3>447094</systemColorPalette3>
+        <systemColorPalette4>CBCBCB</systemColorPalette4>
+        <systemCartSize>112-67</systemCartSize>
+    </variables>
+    <language name="ca_ES">
+        <variables>
+            <systemHardwareType>Console</systemHardwareType>
+        </variables>
+    </language>
+    <language name="de_DE">
+        <variables>
+            <systemHardwareType>Konsole</systemHardwareType>
+        </variables>
+    </language>
+    <language name="es_ES">
+        <variables>
+            <systemHardwareType>Consola</systemHardwareType>
+        </variables>
+    </language>
+    <language name="fr_FR">
+        <variables>
+            <systemHardwareType>Console</systemHardwareType>
+        </variables>
+    </language>
+    <language name="it_IT">
+        <variables>
+            <systemHardwareType>Console</systemHardwareType>
+        </variables>
+    </language>
+    <language name="nl_NL">
+        <variables>
+            <systemHardwareType>Console</systemHardwareType>
+        </variables>
+    </language>
+    <language name="pl_PL">
+        <variables>
+            <systemHardwareType>Konsola</systemHardwareType>
+        </variables>
+    </language>
+    <language name="pt_BR">
+        <variables>
+            <systemHardwareType>Console</systemHardwareType>
+        </variables>
+    </language>
+    <language name="ro_RO">
+        <variables>
+            <systemHardwareType>Consolă</systemHardwareType>
+        </variables>
+    </language>
+    <language name="ru_RU">
+        <variables>
+            <systemHardwareType>Консоль</systemHardwareType>
+        </variables>
+    </language>
+    <language name="sv_SE">
+        <variables>
+            <systemHardwareType>Konsol</systemHardwareType>
+        </variables>
+    </language>
+    <language name="ja_JP">
+        <variables>
+            <systemHardwareType>コンソール</systemHardwareType>
+        </variables>
+    </language>
+    <language name="ko_KR">
+        <variables>
+            <systemHardwareType>콘솔</systemHardwareType>
+        </variables>
+    </language>
+    <language name="zh_CN">
+        <variables>
+            <systemHardwareType>控制台</systemHardwareType>
+        </variables>
+    </language>
+</theme>
