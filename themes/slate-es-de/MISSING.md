@@ -108,6 +108,7 @@
 * uzebox: Uzebox Open Source Console - consolegame.svg
 * vectrex: GCE Vectrex - consolegame.svg (needs simplification as it takes a long time to rasterize)
 * videopac: Philips Videopac G7000 - update all info and graphics to differentiate European version from USA version
+* vircon32: Vircon32 Virtual Console - consolegame.svg, controller.svg
 * virtualboy: Nintendo Virtual Boy - consolegame.svg (needs simplification as it takes a long time to rasterize)
 * vpinball: Visual Pinball - consolegame.svg, controller.svg
 * vsmile: VTech V.Smile - consolegame.svg, controller.svg
@@ -117,5 +118,6 @@
 * windows9x: Microsoft Windows 9x - consolegame.svg, controller.svg
 * x1:  Sharp X1 - consolegame.svg
 * x68000: Sharp X68000 - consolegame.svg (image of actual console)
+* xboxone: Microsoft Xbox One - consolegame.svg, controller.svg
 * zmachine: Infocom Z-machine - consolegame.svg
 * zxnext: Sinclair ZX Spectrum Next - consolegame.svg, controller.svg
