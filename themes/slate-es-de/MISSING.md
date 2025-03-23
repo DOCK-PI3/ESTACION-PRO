@@ -57,6 +57,7 @@
 * lowresnx: LowRes NX Fantasy Console - consolegame.svg
 * lutris: Lutris Open Gaming Platform - consolegame.svg, controller.svg
 * macintosh: Apple Macintosh - consolegame.svg, controller.svg
+* mark3: Sega Mark III - consolegame.svg, controller.svg
 * megaduck: Creatronic Mega Duck - consolegame.svg
 * mess: Multi Emulator Super System - consolegame.svg, controller.svg
 * model2: Sega Model 2 - consolegame.svg, controller.svg
