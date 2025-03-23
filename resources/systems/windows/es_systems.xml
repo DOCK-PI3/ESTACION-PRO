@@ -1040,6 +1040,23 @@
         <theme>mame-advmame</theme>
     </system>
     <system>
+        <name>mark3</name>
+        <fullname>Sega Mark III</fullname>
+        <path>%ROMPATH%\mark3</path>
+        <extension>.68k .68K .bin .BIN .bms .BMS .chd .CHD .col .COL .cue .CUE .gen .GEN .gg .GG .iso .ISO .m3u .M3U .md .MD .mdx .MDX .rom .ROM .sg .SG .sgd .SGD .smd .SMD .sms .SMS .7z .7Z .zip .ZIP</extension>
+        <command label="Genesis Plus GX">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\genesis_plus_gx_libretro.dll %ROM%</command>
+        <command label="Genesis Plus GX Wide">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\genesis_plus_gx_wide_libretro.dll %ROM%</command>
+        <command label="SMS Plus GX">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\smsplus_libretro.dll %ROM%</command>
+        <command label="Gearsystem">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\gearsystem_libretro.dll %ROM%</command>
+        <command label="PicoDrive">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\picodrive_libretro.dll %ROM%</command>
+        <command label="Mednafen (Standalone)">%EMULATOR_MEDNAFEN% -force_module sms %ROM%</command>
+        <command label="Mesen (Standalone)">%EMULATOR_MESEN% --fullscreen %ROM%</command>
+        <command label="ares (Standalone)">%EMULATOR_ARES% --fullscreen --system "Master System" %ROM%</command>
+        <command label="jgenesis (Standalone)">%EMULATOR_JGENESIS% --file-path %ROM%</command>
+        <platform>mastersystem</platform>
+        <theme>mark3</theme>
+    </system>
+    <system>
         <name>mastersystem</name>
         <fullname>Sega Master System</fullname>
         <path>%ROMPATH%\mastersystem</path>
