@@ -66,7 +66,7 @@ The following emulators are configured for FileProvider access:
 * Lynx.emu
 * MAME4droid Current (for most systems)
 * MAME4droid
-* MD.emu (genesis, mastersystem, megadrive, megadrivejp)
+* MD.emu (genesis, mark3, mastersystem, megadrive, megadrivejp)
 * NES.emu
 * NGP.emu
 * Panda3DS
@@ -822,6 +822,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | macintosh             | Apple Macintosh                                | MAME4droid Current Mac SE Bootable **(Standalone)** | MAME4droid Current Mac SE Boot Disk **(Standalone)**,<br>MAME4droid Current Mac Plus Bootable **(Standalone)**,<br>MAME4droid Current Mac Plus Boot Disk **(Standalone)** | Yes          | See the specific _Apple Macintosh_ section in the user guide |
 | mame                  | Multiple Arcade Machine Emulator               | MAME - Current                    | MAME 2010,<br>MAME 2003-Plus,<br>MAME 2003,<br>MAME 2000,<br>MAME4droid Current **(Standalone)**,<br>MAME4droid **(Standalone)**,<br>NEO.emu **(Standalone)**,<br>FinalBurn Neo,<br>FB Alpha 2012,<br>Geolith,<br>Flycast,<br>Flycast **(Standalone)** | Depends      | See the specific _Arcade and Neo Geo_ section in the user guide |
 | mame-advmame          | AdvanceMAME                                    | _Placeholder_                     |                                   |              |                                      |
+| mark3                 | Sega Mark III                                  | Genesis Plus GX                   | Genesis Plus GX Wide,<br>SMS Plus GX,<br>Gearsystem,<br>PicoDrive,<br>MD.emu **(Standalone)**,<br>Pizza Boy SC **(Standalone)**,<br>MasterGear **(Standalone)** | No           | Single archive or ROM file |
 | mastersystem          | Sega Master System                             | Genesis Plus GX                   | Genesis Plus GX Wide,<br>SMS Plus GX,<br>Gearsystem,<br>PicoDrive,<br>MD.emu **(Standalone)**,<br>Pizza Boy SC **(Standalone)**,<br>MasterGear **(Standalone)** | No           | Single archive or ROM file |
 | megacd                | Sega Mega-CD                                   | Genesis Plus GX                   | Genesis Plus GX Wide,<br>PicoDrive,<br>MD.emu **(Standalone)** | Yes          |                                      |
 | megacdjp              | Sega Mega-CD [Japan]                           | Genesis Plus GX                   | Genesis Plus GX Wide,<br>PicoDrive,<br>MD.emu **(Standalone)** | Yes          |                                      |

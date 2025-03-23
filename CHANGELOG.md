@@ -12,6 +12,7 @@
 * Added a "Display clock" setting to the UI settings menu to display an on screen clock (disabled by default)
 * Added translations for Traditional Chinese (zh_TW)
 * Added support for the Vircon32 Virtual Console (vircon32) game system
+* Added support for the Sega Mark III (mark3) game system
 * Increased the roundness for all corners in the menu system and for the notification popups
 * Increased the background blur slightly when a menu is open
 * Added an option to completely disable the game launch screen (via the UI settings menu)
