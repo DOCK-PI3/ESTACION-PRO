@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-03-19 10:50+0100\n"
-"PO-Revision-Date: 2025-03-19 11:38+0200\n"
+"POT-Creation-Date: 2025-03-24 14:18+0100\n"
+"PO-Revision-Date: 2025-03-24 15:12+0200\n"
 "Last-Translator: Northwestern Software <info@es-de.org>\n"
 "Language-Team: Ελληνικά <info@es-de.org>\n"
 "Language: el_GR\n"
@@ -361,7 +361,7 @@ msgid "download new release"
 msgstr "λήψη νέας έκδοσης"
 
 msgid "Download directory does not exist"
-msgstr " Κατάλογος λήψης δεν υπάρχει"
+msgstr "Κατάλογος λήψης δεν υπάρχει"
 
 msgid "CHANGE DIRECTORY"
 msgstr "ΑΛΛΑΓΗ ΦΑΚΕΛΟΥ"
@@ -1152,9 +1152,8 @@ msgstr "κλείσιμο μενού"
 msgid "EDIT METADATA"
 msgstr "ΕΠΕΞΕΡΓΑΣΙΑ ΜΕΤΑΔΕΔΟΜΕΝΩΝ"
 
-#, fuzzy
 msgid "CLEAR ENTRY"
-msgstr "ΚΑΘΑΡΙΣΜΟΣ "
+msgstr "ΚΑΘΑΡΙΣΜΟΣ ΕΙΣΑΓΩΓΗΣ"
 
 msgid "SELECT EMULATOR"
 msgstr "ΕΠΙΛΕΞΕΤΕ ΕΞΟΜΟΙΩΤΗ"
@@ -1270,7 +1269,7 @@ msgid "DONE"
 msgstr "ΟΛΟΚΛΗΡΏΘΗΚΕ"
 
 msgid "done (close)"
-msgstr "ΤΕΛΟΣ"
+msgstr "τέλος (κλείσιμο)"
 
 msgid ""
 "THIS WILL REMOVE ALL MEDIA FILES WHERE NO MATCHING GAME FILES CAN BE FOUND. "
@@ -1296,12 +1295,11 @@ msgstr ""
 msgid "DESCRIPTION:"
 msgstr "ΠΕΡΙΓΡΑΦΗ:"
 
-#, fuzzy
 msgid "TOTAL ENTRIES REMOVED:"
-msgstr "ΣΥΝΟΛΟ ... ΠΟΥ ΑΦΕΡΕΘΗΚΑΝ"
+msgstr "ΣΥΝΟΛΟ ΕΙΣΑΓΩΓΩΝ ΠΟΥ ΑΦΕΡΕΘΗΚΑΝ:"
 
 msgid "LAST PROCESSED SYSTEM:"
-msgstr "ΤΕΛΕΥΤΑΙΟ ΣΥΣΤΗΜΑ ΠΟΥ ΕΠΕΞΕΡΓΑΣΤΙΚΕ"
+msgstr "ΤΕΛΕΥΤΑΙΟ ΕΠΕΞΕΡΓΑΣΜΕΝΟ ΣΥΣΤΗΜΑ:"
 
 msgid "LAST ERROR MESSAGE:"
 msgstr "ΤΕΛΕΥΤΑΙΟ ΜΗΝΥΜΑ ΣΦΑΛΜΑΤΟΣ:"
@@ -1739,7 +1737,7 @@ msgid "RELEASED:"
 msgstr "ΚΥΚΛΟΦΟΡΗΣΕ:"
 
 msgid "DEVELOPER:"
-msgstr "ΠΡΟΓΡΑΜΜΑΤΙΣΤΗΣ;"
+msgstr "ΠΡΟΓΡΑΜΜΑΤΙΣΤΗΣ:"
 
 msgid "PUBLISHER:"
 msgstr "ΕΚΔΟΤΗΣ:"
@@ -2247,7 +2245,7 @@ msgid "reset"
 msgstr "επαναφορά"
 
 msgid "game media"
-msgstr "ΠΟΛΥΜΕΣΑ ΠΑΙΧΝΙΔΙΩΝ"
+msgstr "πολυμέσα παιχνιδιών"
 
 msgid "zoom"
 msgstr "zoom"
