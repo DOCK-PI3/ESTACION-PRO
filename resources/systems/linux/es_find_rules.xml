@@ -995,6 +995,26 @@
             <entry>~/bin/sdl2trs/sdl2trs</entry>
         </rule>
     </emulator>
+    <emulator name="SHADPS4">
+        <!-- Sony PlayStation 4 emulator shadPS4 -->
+        <rule type="systempath">
+            <entry>shadps4</entry>
+        </rule>
+        <rule type="staticpath">
+            <entry>~/Applications/Shadps4-qt*.AppImage</entry>
+            <entry>~/.local/share/applications/Shadps4-qt*.AppImage</entry>
+            <entry>~/.local/bin/Shadps4-qt*.AppImage</entry>
+            <entry>~/bin/Shadps4-qt*.AppImage</entry>
+            <entry>~/Applications/Shadps4-sdl*.AppImage</entry>
+            <entry>~/.local/share/applications/Shadps4-sdl*.AppImage</entry>
+            <entry>~/.local/bin/Shadps4-sdl*.AppImage</entry>
+            <entry>~/bin/Shadps4-sdl*.AppImage</entry>
+            <entry>~/Applications/shadps4/shadps4</entry>
+            <entry>~/.local/share/applications/shadps4/shadps4</entry>
+            <entry>~/.local/bin/shadps4/shadps4</entry>
+            <entry>~/bin/shadps4/shadps4</entry>
+        </rule>
+    </emulator>
     <emulator name="SHEEPSHAVER">
         <!-- Apple Macintosh PowerPC emulator SheepShaver -->
         <rule type="systempath">

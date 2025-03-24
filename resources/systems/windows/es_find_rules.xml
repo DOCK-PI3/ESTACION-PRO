@@ -850,6 +850,16 @@
             <entry>%ESPATH%\..\Emulators\sdl2trs\sdl2trs64.exe</entry>
         </rule>
     </emulator>
+    <emulator name="SHADPS4">
+        <!-- Sony PlayStation 4 emulator shadPS4 -->
+        <rule type="systempath">
+            <entry>shadPS4.exe</entry>
+        </rule>
+        <rule type="staticpath">
+            <entry>%ESPATH%\Emulators\shadPS4\shadPS4.exe</entry>
+            <entry>%ESPATH%\..\Emulators\shadPS4\shadPS4.exe</entry>
+        </rule>
+    </emulator>
     <emulator name="SHEEPSHAVER">
         <!-- Apple Macintosh PowerPC emulator SheepShaver -->
         <rule type="systempath">

@@ -1635,8 +1635,10 @@
         <name>ps4</name>
         <fullname>Sony PlayStation 4</fullname>
         <path>%ROMPATH%/ps4</path>
-        <extension>.7z .7Z .zip .ZIP</extension>
-        <command>PLACEHOLDER %ROM%</command>
+        <extension>.bin .BIN .desktop .ps4 .PS4</extension>
+        <command label="shadPS4 Shortcut (Standalone)">%ENABLESHORTCUTS% %EMULATOR_OS-SHELL% %ROM%</command>
+        <command label="shadPS4 Game Serial (Standalone)">%EMULATOR_SHADPS4% -g %INJECT%=%BASENAME%.ps4</command>
+        <command label="shadPS4 eboot.bin (Standalone)">%EMULATOR_SHADPS4% %ROM%</command>
         <platform>ps4</platform>
         <theme>ps4</theme>
     </system>

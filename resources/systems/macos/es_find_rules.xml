@@ -330,6 +330,12 @@
             <entry>/usr/local/bin/scummvm</entry>
         </rule>
     </emulator>
+    <emulator name="SHADPS4">
+        <!-- Sony PlayStation 4 emulator shadPS4 -->
+        <rule type="staticpath">
+            <entry>/Applications/shadps4.app/Contents/MacOS/shadps4</entry>
+        </rule>
+    </emulator>
     <emulator name="SHEEPSHAVER">
         <!-- Apple Macintosh PowerPC emulator SheepShaver -->
         <rule type="staticpath">

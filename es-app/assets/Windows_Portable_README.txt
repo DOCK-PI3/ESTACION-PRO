@@ -122,6 +122,7 @@ Emulators\ryujinx\Ryujinx.Ava.exe
 Emulators\sameboy\sameboy.exe
 Emulators\scummvm\scummvm.exe
 Emulators\sdl2trs\sdl2trs64.exe
+Emulators\shadPS4\shadPS4.exe
 Emulators\SheepShaver\SheepShaver.exe
 Emulators\SimCoupe\SimCoupe.exe
 Emulators\simple64\simple64-gui.exe
