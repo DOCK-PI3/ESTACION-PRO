@@ -732,6 +732,8 @@ The following emulators are supported in AppImage format when using the bundled 
 | ps2           | PCSX2               | pcsx2*.AppImage                |
 | ps2           | Play!               | Play!*.AppImage                |
 | ps3           | RPCS3               | rpcs3*.AppImage                |
+| ps4           | shadPS4             | Shadps4-qt*.AppImage           |
+| ps4           | shadPS4             | Shadps4-sdl*.AppImage          |
 | psvita        | Vita3K              | Vita3K*.AppImage               |
 | psx           | DuckStation         | DuckStation*.AppImage          |
 | snes          | Snes9x              | Snes9x*.AppImage               |
@@ -834,6 +836,7 @@ The following manually downloaded emulators are supported when using the bundled
 | oric                                    | Oricutron        | oricutron/Oricutron               |
 | pc88                                    | QUASI88          | quasi88/quasi88                   |
 | pico8                                   | PICO-8           | pico-8/pico8                      |
+| ps4                                     | shadPS4          | shadps4/shadps4                   |
 | psvita                                  | Vita3K           | Vita3K/Vita3K                     |
 | samcoupe                                | SimCoupé         | simcoupe/simcoupe                 |
 | saturn/saturnjp                         | Kronos           | kronos/kronos                     |
@@ -2042,7 +2045,7 @@ These games are shipped as self-contained units with the game engine binary incl
 
 For this example we'll go with the game _Ultimate Sonic Mugen_.
 
-On Windows, go into the game directory, right click on the `Ikemen_GO.exe` file, select _Create Shortcut_ followed by _Create Desktop Shortcut_. This will create a file with the .lnk extension. Rename the file to `Ultimate Sonic Mugen.lnk` and try to run this file to make sure that the game starts and runs correctly. Note that this setup is not portable, if you move your game files somewhere else you will need to manually update your shortcuts as these contain absolute paths.
+On Windows, go into the game directory, right click on the `Ikemen_GO.exe` file, select _Create Shortcut_ followed by _Create Desktop Shortcut_. This will create a file with the .lnk extension. Rename the file to `Ultimate Sonic Mugen.lnk` and try to run this file to make sure that the game starts and runs correctly. Note that this setup is not portable, if you move your game files somewhere else you will need to manually update your shortcut files as these contain absolute paths.
 
 On Linux and macOS, go into the game directory and rename the `Ikemen_GO_Linux` or `Ikemen_GO_MacOS` binary to the name of the game and add the .mugen extension to the filename, for example `Ultimate Sonic Mugen.mugen`. Try to run this file to make sure that the game starts and runs correctly.
 
@@ -2274,7 +2277,7 @@ The second option on Windows is to unpack the game somewhere outside the ROMs di
 ~\ROMs\openbor\The Endless Quest.lnk
 ```
 
-The drawback to using shortcuts is that they're not portable, if you change the location of your games, you will need to manually update the shortcuts as well.
+The drawback to using shortcuts is that they're not portable, if you change the location of your games, you will need to manually update the shortcut files as well.
 
 **Linux:**
 
@@ -2466,7 +2469,7 @@ For Linux, macOS and Windows there's an alternative to using ScummVM for a limit
 
 ### Sony PlayStation 3
 
-There are two ways to add PS3 games to ES-DE, by using shortcuts or by adding game directories directly to the ~/ROMs/ps3 folder and interpreting these as files. Shortcuts is generally the way to go as it's easier to setup and for HDD/pkg games it's the only way to make it work unless you manually create symlinks to the internal RPCS3 directory structure. So another benefit with shortcuts is consistency as both HDD/pkg games and disc-based games will be setup in the same manner. This also means that the same RPCS3 emulator entry can be used to launch every game. The drawback to using shortcuts is that they're not portable, if you change the location of RPCS3 or your games, you need to manually update the shortcuts as well.
+There are two ways to add PS3 games to ES-DE, by using shortcuts or by adding game directories directly to the ~/ROMs/ps3 folder and interpreting these as files. Shortcuts is generally the way to go as it's easier to setup and for HDD/pkg games it's the only way to make it work unless you manually create symlinks to the internal RPCS3 directory structure. So another benefit with shortcuts is consistency as both HDD/pkg games and disc-based games will be setup in the same manner. This also means that the same RPCS3 emulator entry can be used to launch every game. The drawback to using shortcuts is that they're not portable, if you change the location of RPCS3 or your games, you need to manually update the shortcut files as well.
 
 Be aware that if you still want to have games installed using the directory method, then you will need to change to the alternative emulator _RPCS3 Directory (Standalone)_ or you won't be able to launch these games. As is the case for all alternative emulator entries, this can be configured system-wide or on a per-game basis.
 
@@ -2510,6 +2513,56 @@ Here's an example of what a game entry could look like:
 It's possible to create a symlink instead, and in this case only the symlink needs to have the .ps3 extension. But if you want to locate your games outside the ~/ROMs/ps3 directory anyway, then it's probably easier to just use shortcuts.
 
 When using this setup method you need to set the alternative emulator to _RPCS3 Directory (Standalone)_ or game launching will not work.
+
+### Sony PlayStation 4
+
+There are three ways to add PS4 games to ES-DE, by using shortcuts, by adding game serial files and by running the eboot.bin files directly. Running eboot.bin files is not really recommended though and it's better to go for one of the other alternatives.
+
+The drawback to using shortcuts is that they're not portable, if you change the location of shadPS4, you need to manually update the shortcut files as well.
+
+Unless you want to run eboot.bin files directly from inside ES-DE it's recommended to install the games outside of the ROMs directory tree so they don't need to be scanned on startup. This could take quite some time as these games may contain many thousands of files each. An alternative would be to place a `noload.txt` file inside each game directory but it's easier to just install the games elsewhere.
+
+_On macOS you need to configure shadPS4 to run in fullscreen mode or otherwise window switching will not work when launching games from ES-DE._
+
+**Method 1, shortcuts**
+
+_Note that this option is not currently available on macOS due to shadPS4 not exporting proper shortcuts files on this operating system at the time of writing._
+
+First install your games inside shadPS4, then right click on each entry and select _Create Shortcut_. On Windows this will create shortcuts with the .lnk extension and on Linux they will have the .desktop extension.
+
+Then simply move these files from your desktop to your ~/ROMs/ps4 directory and you're done. Here's an example of what this could look like on Linux:
+```
+~/ROMs/ps4/Bloodborne™.desktop
+~/ROMs/ps4/Sonic Mania.desktop
+```
+
+Note that if using the AppImage release of shadPS4 there is currently a bug where the .desktop files will include the wrong path to the emulator binary. The Exec key will look something like this:
+```
+Exec=/tmp/.mount_ShadpsjENLoI/usr/bin/shadps4 "/home/myusername/ROMs/ps4/CUSA00900/eboot.bin"
+```
+
+You need to change this to the full path of the AppImage file, such as:
+```
+Exec=/home/myusername/Applications/Shadps4-qt.AppImage "/home/myusername/ROMs/ps4/CUSA00900/eboot.bin"
+```
+Regardless of how you've installed shadPS4, make sure to always test the shortcuts outside ES-DE first, because if they don't work from the desktop, then they will not work from inside ES-DE either.
+
+**Method 2, game serial**
+
+First install your games inside shadPS4, then create an empty file in `~/ROMs/ps4` and name it as the game name followed by the .ps4 file extension, such as the following:
+```
+~/ROMs/ps4/Sonic Mania.ps4
+```
+
+Then add the game serial to this file. This ID can be found inside the shadPS4 GUI, in the _Serial_ column. For example the game _Sonic Mania_ has a serial that is CUSA07010. So simply add the string CUSA07010 to the `Sonic Mania.ps4` file using a text editor or similar and the setup for this game is complete.
+
+Be aware that you need to change to the alternative emulator entry _shadPS4 Game Serial (Standalone)_ for this to work.
+
+**Method 3, eboot.bin**
+
+This method which is not really recommended requires that you install the games directly to the `~/ROMs/ps4` directory and browse to the eboot.bin file for each game to launch it. You can optionally use the _Folder link_ functionality to launch the games directly from the main gamelist view however, as explained elsewhere in this guide.
+
+Be aware that you need to change to the alternative emulator entry _shadPS4 eboot.bin (Standalone)_ for this to work.
 
 ### Sony PlayStation Vita
 
@@ -4295,7 +4348,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | ports                 | Ports                                          | _Shortcut or script_              | _AppImage_ [L],<br>ECWolf (Wolfenstein 3D),<br>NXEngine (Cave Story),<br>OpenLara (Tomb Raider) [LW],<br>Super Bros War | Yes for ECWolf | See the specific _Ports and desktop applications_ section elsewhere in this guide |
 | ps2                   | Sony PlayStation 2                             | LRPS2 [LW],<br>PCSX2 **(Standalone)** [M] | PCSX2 [LW] @,<br>PCSX2 **(Standalone)** [LW],<br>PCSX2 Legacy **(Standalone)** @,<br>Play! **(Standalone)**,<br>AetherSX2 **(Standalone)** [M] | Yes except for Play! |                                      |
 | ps3                   | Sony PlayStation 3                             | RPCS3 Shortcut **(Standalone)**   | RPCS3 Directory **(Standalone)** | Yes    | See the specific _Sony PlayStation 3_ section elsewhere in this guide |
-| ps4                   | Sony PlayStation 4                             | _Placeholder_                     |                                   |              |                                      |
+| ps4                   | Sony PlayStation 4                             | shadPS4 Shortcut **(Standalone)** [LW],<br>shadPS4 Game Serial **(Standalone)** [M] | shadPS4 Game Serial **(Standalone)** [LW],<br>shadPS4 eboot.bin **(Standalone)** | No           | See the specific _Sony PlayStation 4_ section elsewhere in this guide |
 | psp                   | Sony PlayStation Portable                      | PPSSPP                            | PPSSPP **(Standalone)**           | No           | Single disc image file      |
 | psvita                | Sony PlayStation Vita                          | Vita3K **(Standalone)**           |                                   | Yes          | See the specific _Sony PlayStation Vita_ section elsewhere in this guide |
 | psx                   | Sony PlayStation                               | Beetle PSX                        | Beetle PSX HW,<br>PCSX ReARMed,<br>SwanStation,<br>DuckStation **(Standalone)**,<br>Mednafen **(Standalone)** | Yes          | .chd file for single-disc games, .m3u playlist for multi-disc games |
