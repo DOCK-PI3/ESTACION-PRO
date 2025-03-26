@@ -1498,6 +1498,8 @@
         <path>%ROMPATH%/ports</path>
         <extension>.exe .EXE .game .GAME .phd .PHD .psx .PSX</extension>
         <command label="ECWolf (Wolfenstein 3D)">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/ecwolf_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="CannonBall (OutRun)">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/cannonball_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="Mr.Boom (Bomberman)">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/mrboom_libretro_android.so</command>
         <command label="NXEngine (Cave Story)">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/nxengine_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="OpenLara (Tomb Raider)">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/openlara_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="Super Bros War">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/superbroswar_libretro_android.so %EXTRA_ROM%=%ROM%</command>
