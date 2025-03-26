@@ -1227,6 +1227,15 @@
             <entry>~/bin/Vita3K/Vita3K</entry>
         </rule>
     </emulator>
+    <emulator name="WINE">
+        <!-- Microsoft Windows compatibility layer Wine -->
+        <rule type="staticpath">
+            <entry>~/Applications/Wine/wine*.AppImage</entry>
+            <entry>~/.local/share/applications/Wine/wine*.AppImage</entry>
+            <entry>~/.local/bin/Wine/wine*.AppImage</entry>
+            <entry>~/bin/Wine/wine*.AppImage</entry>
+        </rule>
+    </emulator>
     <emulator name="XEMU">
         <!-- Microsoft Xbox emulator xemu -->
         <rule type="systempath">
@@ -1240,15 +1249,6 @@
             <entry>~/bin/xemu*.AppImage</entry>
             <entry>/var/lib/flatpak/exports/bin/app.xemu.xemu</entry>
             <entry>~/.local/share/flatpak/exports/bin/app.xemu.xemu</entry>
-        </rule>
-    </emulator>
-    <emulator name="WINE">
-        <!-- Microsoft Windows compatibility layer Wine -->
-        <rule type="staticpath">
-            <entry>~/Applications/Wine/wine*.AppImage</entry>
-            <entry>~/.local/share/applications/Wine/wine*.AppImage</entry>
-            <entry>~/.local/bin/Wine/wine*.AppImage</entry>
-            <entry>~/bin/Wine/wine*.AppImage</entry>
         </rule>
     </emulator>
     <emulator name="XENIA-WINDOWS">
