@@ -2526,7 +2526,7 @@ _On macOS you need to configure shadPS4 to run in fullscreen mode or otherwise w
 
 **Method 1, shortcuts**
 
-_Note that this option is not currently available on macOS due to shadPS4 not exporting proper shortcuts files on this operating system at the time of writing._
+_Note that this option is not currently available on macOS due to shadPS4 not exporting proper shortcut files on this operating system at the time of writing._
 
 First install your games inside shadPS4, then right click on each entry and select _Create Shortcut_. On Windows this will create shortcuts with the .lnk extension and on Linux they will have the .desktop extension.
 
@@ -2560,7 +2560,7 @@ Be aware that you need to change to the alternative emulator entry _shadPS4 Game
 
 **Method 3, eboot.bin**
 
-This method which is not really recommended requires that you install the games directly to the `~/ROMs/ps4` directory and browse to the eboot.bin file for each game to launch it. You can optionally use the _Folder link_ functionality to launch the games directly from the main gamelist view however, as explained elsewhere in this guide.
+This method which is not really recommended requires that you install the games directly to the `~/ROMs/ps4` directory and browse to the eboot.bin file for each game to launch it. You can optionally use the _Folder link_ functionality to launch the games directly from the main gamelist view, as explained elsewhere in this guide.
 
 Be aware that you need to change to the alternative emulator entry _shadPS4 eboot.bin (Standalone)_ for this to work.
 
@@ -4345,7 +4345,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | pico8                 | PICO-8 Fantasy Console                         | PICO-8 **(Standalone)**           | PICO-8 Splore **(Standalone)**,<br>Retro8 | No           | See the specific _PICO-8_ section elsewhere in this guide |
 | plus4                 | Commodore Plus/4                               | VICE xplus4                       | VICE xplus4 **(Standalone)**      | No           | Single archive or image file for tape, cartridge or single-diskette games, .m3u playlist for multi-diskette games |
 | pokemini              | Nintendo Pokémon Mini                          | PokeMini                          |                                   | No           |                                      |
-| ports                 | Ports                                          | _Shortcut or script_              | _AppImage_ [L],<br>ECWolf (Wolfenstein 3D),<br>NXEngine (Cave Story),<br>OpenLara (Tomb Raider) [LW],<br>Super Bros War | Yes for ECWolf | See the specific _Ports and desktop applications_ section elsewhere in this guide |
+| ports                 | Ports                                          | _Shortcut or script_              | _AppImage_ [L],<br>ECWolf (Wolfenstein 3D),<br>CannonBall (OutRun),<br>Mr.Boom (Bomberman),<br>NXEngine (Cave Story),<br>OpenLara (Tomb Raider) [LW],<br>Super Bros War | Yes for ECWolf | See the specific _Ports and desktop applications_ section elsewhere in this guide |
 | ps2                   | Sony PlayStation 2                             | LRPS2 [LW],<br>PCSX2 **(Standalone)** [M] | PCSX2 [LW] @,<br>PCSX2 **(Standalone)** [LW],<br>PCSX2 Legacy **(Standalone)** @,<br>Play! **(Standalone)**,<br>AetherSX2 **(Standalone)** [M] | Yes except for Play! |                                      |
 | ps3                   | Sony PlayStation 3                             | RPCS3 Shortcut **(Standalone)**   | RPCS3 Directory **(Standalone)** | Yes    | See the specific _Sony PlayStation 3_ section elsewhere in this guide |
 | ps4                   | Sony PlayStation 4                             | shadPS4 Shortcut **(Standalone)** [LW],<br>shadPS4 Game Serial **(Standalone)** [M] | shadPS4 Game Serial **(Standalone)** [LW],<br>shadPS4 eboot.bin **(Standalone)** | No           | See the specific _Sony PlayStation 4_ section elsewhere in this guide |

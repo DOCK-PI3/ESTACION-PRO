@@ -479,15 +479,14 @@ https://github.com/wheremyfoodat/Panda3DS/releases
 
 ### Pizza Boy emulators
 
-The Pizza Boy GBA/A and Pizza Boy GBC/C emulators can be installed from the Play store. There are Basic (free) versions and Pro (paid) versions available.
-As of writing this, the Basic version of the GBA emulator does not seem to be able to launch games from ES-DE, but the Pro version is working fine. Both the Basic and Pro versions of the GBC emulator are working correctly.
-
-Pizza Boy SC Pro can also be installed from the Play store.
+The Pizza Boy GBA/A, Pizza Boy GBC/C and Pizza Boy SC emulators can be installed from the Play store. There are Basic (free) versions and Pro (paid) versions available.
+At the time of writing the Basic version of the GBA/A emulator does not seem to be able to launch zipped games, but both the Basic and Pro versions of the GBC/C and SC emulators are working correctly.
 
 https://play.google.com/store/apps/details?id=it.dbtecno.pizzaboygba \
 https://play.google.com/store/apps/details?id=it.dbtecno.pizzaboygbapro \
 https://play.google.com/store/apps/details?id=it.dbtecno.pizzaboy \
 https://play.google.com/store/apps/details?id=it.dbtecno.pizzaboypro \
+https://play.google.com/store/apps/details?id=it.dbtecno.pizzaboyscbasic \
 https://play.google.com/store/apps/details?id=it.dbtecno.pizzaboyscpro
 
 ### Play!
@@ -867,7 +866,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | pico8                 | PICO-8 Fantasy Console                         | Fake-08                           | Retro8,<br>Infinity **(Standalone)** | No           | See the specific _PICO-8_ section in the User guide |
 | plus4                 | Commodore Plus/4                               | VICE xplus4                       |                                   | No           | Single archive or image file for tape, cartridge or single-diskette games, .m3u playlist for multi-diskette games |
 | pokemini              | Nintendo Pokémon Mini                          | PokeMini                          |                                   | No           |                                      |
-| ports                 | Ports                                          | ECWolf (Wolfenstein 3D)           | NXEngine (Cave Story),<br>OpenLara (Tomb Raider),<br>Super Bros War | Yes for ECWolf |                                      |
+| ports                 | Ports                                          | ECWolf (Wolfenstein 3D)           | CannonBall (OutRun),<br>Mr.Boom (Bomberman),<br>NXEngine (Cave Story),<br>OpenLara (Tomb Raider),<br>Super Bros War | Yes for ECWolf |                                      |
 | ps2                   | Sony PlayStation 2                             | AetherSX2 **(Standalone)**        | Play! **(Standalone)**            | Yes for AetherSX2 |                                      |
 | ps3                   | Sony PlayStation 3                             | _Placeholder_                     |                                   |              |                                      |
 | ps4                   | Sony PlayStation 4                             | _Placeholder_                     |                                   |              |                                      |

@@ -24,6 +24,8 @@
 * Added the bsnes-jg RetroArch core as an alternative emulator for the satellaview, sfc, snes, snesna and sufami systems
 * Added the Holani RetroArch core as an alternative emulator for the atarilynx system
 * Added the b2 RetroArch core as an alternative emulator for the bbcmicro system
+* Added the CannonBall RetroArch core as an alternative emulator for the ports system
+* Added the Mr.Boom RetroArch core as an alternative emulator for the ports system
 * Added Mesen standalone as an alternative emulator for the colecovision, wonderswan and wonderswancolor systems on Linux and Windows
 * Added Azahar standalone as an alternative emulator for the n3ds system
 * Added A7800 standalone as an alternative emulator for the atari7800 system on Linux and Windows
