@@ -342,6 +342,7 @@
         <!-- Sega multi-system emulator Pizza Boy SC -->
         <rule type="androidpackage">
             <entry>it.dbtecno.pizzaboyscpro/.MainActivity</entry>
+            <entry>it.dbtecno.pizzaboyscbasic/.MainActivity</entry>
         </rule>
     </emulator>
     <emulator name="PLAY!">
