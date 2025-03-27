@@ -1,6 +1,6 @@
 # ES-DE Frontend - Changelog
 
-## Version 3.2.0 (in development)
+## Version 3.2.0 / 3.2.0-xx (in development)
 
 **Release date:** TBD
 
@@ -20,6 +20,7 @@
 * Made the menu and launch screen scale up at the same speed regardless of the display refresh rate
 * Added a screensaver-game-select custom event
 * Added game-select and system-select custom events and a corresponding "Browsing custom events" menu option
+* Added RPCS3 Game Serial as an alternative emulator for the consolearcade and ps3 systems on Linux, macOS and Windows
 * Added the NooDS RetroArch core as an alternative emulator for the gba and nds systems
 * Added the bsnes-jg RetroArch core as an alternative emulator for the satellaview, sfc, snes, snesna and sufami systems
 * Added the Holani RetroArch core as an alternative emulator for the atarilynx system
