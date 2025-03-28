@@ -1,4 +1,4 @@
-<theme>
+﻿<theme>
     <variables>
         <systemName>Xbox One</systemName>
         <systemDescription>The Xbox One is an eighth-generation home video game console developed by Microsoft. It was released in 2013 as the successor to the Xbox 360, and while initial marketing was focused on its multimedia features rather than its gaming capabilities, this changed throughout the lifetime of the console.
@@ -126,6 +126,14 @@
             <systemDescription>Xbox One 是微软公司开发的第八代家用视频游戏机。它作为 Xbox 360 的后继机于 2013 年发布，虽然最初的营销重点是其多媒体功能而非游戏功能，但在游戏机的整个生命周期中，这种情况发生了变化。
 
         值得注意的是，由于微软开始越来越重视在其 Windows 操作系统上提供大多数游戏，因此这款游戏机几乎没有独占游戏。</systemDescription>
+            <systemHardwareType>控制台</systemHardwareType>
+        </variables>
+    </language>
+    <language name="zh_TW">
+        <variables>
+            <systemDescription>Xbox One 是 Microsoft 開發的第八代家用視訊遊戲主機。Xbox One 於 2013 年推出，是 Xbox 360 的後繼機種，雖然最初的行銷重點在於其多媒體功能而非遊戲功能，但這一點在控制台的整個生命週期中都有所改變。
+
+        值得注意的是，由於微軟已開始越來越專注於在其 Windows 作業系統上提供大多數遊戲，因此這款主機上幾乎沒有獨家遊戲。</systemDescription>
             <systemHardwareType>控制台</systemHardwareType>
         </variables>
     </language>

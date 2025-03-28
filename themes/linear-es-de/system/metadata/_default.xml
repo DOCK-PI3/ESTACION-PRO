@@ -1,4 +1,4 @@
-<theme>
+﻿<theme>
     <variables>
         <systemName>${system.fullName}</systemName>
         <systemDescription>View and play the ${system.fullName}</systemDescription>
@@ -97,6 +97,12 @@
         <variables>
             <systemDescription>查看并播放 ${system.fullName}</systemDescription>
             <systemHardwareType>系统</systemHardwareType>
+        </variables>
+    </language>
+    <language name="zh_TW">
+        <variables>
+            <systemDescription>檢視並播放  ${system.fullName}</systemDescription>
+            <systemHardwareType>系統</systemHardwareType>
         </variables>
     </language>
 </theme>
