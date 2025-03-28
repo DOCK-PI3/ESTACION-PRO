@@ -1,4 +1,4 @@
-﻿<theme>
+<theme>
     <variables>
         <systemName>${system.fullName}</systemName>
         <systemDescription>View and play the ${system.fullName}</systemDescription>

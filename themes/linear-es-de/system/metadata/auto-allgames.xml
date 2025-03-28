@@ -1,4 +1,4 @@
-﻿<theme>
+<theme>
     <variables>
         <systemName>All Games</systemName>
         <systemDescription>View and play every game across your entire library.</systemDescription>
@@ -92,6 +92,12 @@
         <variables>
             <systemDescription>查看并玩遍整个游戏库中的每款游戏。</systemDescription>
             <systemHardwareType>全部</systemHardwareType>
+        </variables>
+    </language>
+    <language name="zh_TW">
+        <variables>
+            <systemDescription>檢視和玩整個圖書館中的每個遊戲。</systemDescription>
+            <systemHardwareType>系列</systemHardwareType>
         </variables>
     </language>
 </theme>

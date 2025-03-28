@@ -1,4 +1,4 @@
-﻿<theme>
+<theme>
     <variables>
         <systemName>Last Played</systemName>
         <systemDescription>View your recently played games across the entire library.</systemDescription>
@@ -93,6 +93,12 @@
         <variables>
             <systemDescription>在整个游戏库中查看最近玩过的游戏。</systemDescription>
             <systemHardwareType>最近</systemHardwareType>
+        </variables>
+    </language>
+    <language name="zh_TW">
+        <variables>
+            <systemDescription>在整個圖書館檢視您最近玩過的遊戲。</systemDescription>
+            <systemHardwareType>系列</systemHardwareType>
         </variables>
     </language>
 </theme>
