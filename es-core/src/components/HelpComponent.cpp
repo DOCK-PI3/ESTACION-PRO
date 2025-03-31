@@ -392,7 +392,7 @@ void HelpComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
 
 void HelpComponent::render(const glm::mat4& parentTrans)
 {
-    if (!mVisible)
+    if (!mVisible || mGrid == nullptr)
         return;
 
     if (mBackgroundColor != 0x00000000) {
