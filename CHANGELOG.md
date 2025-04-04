@@ -1,8 +1,8 @@
 # ES-DE Frontend - Changelog
 
-## Version 3.2.0 / 3.2.0-45 (in development)
+## Version 3.2.0 / 3.2.0-45
 
-**Release date:** TBD
+**Release date:** 2025-04-04
 
 ### Release overview
 
@@ -12,7 +12,7 @@ There is also support for a lot of new emulators, both standalone and RetroArch 
 
 There are large internal changes to the application to improve the theme engine, most notably for the helpsystem element which has been largely rewritten. This leads to much more granular control by the theme developers, and together with numerous other theme engine improvements this opens up more flexibility as far as theme design is concerned.
 
-The launch screen can also be completely disabled as of this release, and there are a couple of new custom events that could be useful for arcade cabinets, virtual pinball tables and such. Additionally there are a number of minor improvements and bug fixes, see the full list below for all details.
+The game launch screen can also be completely disabled as of this release, and there are a couple of new custom events that could be useful for arcade cabinets, virtual pinball tables and such. Additionally there are a number of minor improvements and bug fixes, see the full list below for all details.
 
 ### Detailed list of changes
 
