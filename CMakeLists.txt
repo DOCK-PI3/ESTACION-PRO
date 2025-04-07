@@ -589,19 +589,19 @@ if(IOS)
 elseif(APPLE)
     set(COMMON_LIBRARIES ${COMMON_LIBRARIES}
                          ${CURL_LIBRARIES}
-                         ${PROJECT_SOURCE_DIR}/libavcodec.60.dylib
-                         ${PROJECT_SOURCE_DIR}/libavfilter.9.dylib
-                         ${PROJECT_SOURCE_DIR}/libavformat.60.dylib
-                         ${PROJECT_SOURCE_DIR}/libavutil.58.dylib
-                         ${PROJECT_SOURCE_DIR}/libswresample.4.dylib
-                         ${PROJECT_SOURCE_DIR}/libswscale.7.dylib
+                         ${PROJECT_SOURCE_DIR}/libavcodec.61.dylib
+                         ${PROJECT_SOURCE_DIR}/libavfilter.10.dylib
+                         ${PROJECT_SOURCE_DIR}/libavformat.61.dylib
+                         ${PROJECT_SOURCE_DIR}/libavutil.59.dylib
+                         ${PROJECT_SOURCE_DIR}/libswresample.5.dylib
+                         ${PROJECT_SOURCE_DIR}/libswscale.8.dylib
                          ${PROJECT_SOURCE_DIR}/libfreeimage.a
                          ${PROJECT_SOURCE_DIR}/libfreetype.6.dylib
-                         ${PROJECT_SOURCE_DIR}/libgit2.1.7.dylib
+                         ${PROJECT_SOURCE_DIR}/libgit2.1.9.dylib
                          ${PROJECT_SOURCE_DIR}/libharfbuzz.dylib
-                         ${PROJECT_SOURCE_DIR}/libicudata.75.dylib
-                         ${PROJECT_SOURCE_DIR}/libicui18n.75.dylib
-                         ${PROJECT_SOURCE_DIR}/libicuuc.75.dylib
+                         ${PROJECT_SOURCE_DIR}/libicudata.77.dylib
+                         ${PROJECT_SOURCE_DIR}/libicui18n.77.dylib
+                         ${PROJECT_SOURCE_DIR}/libicuuc.77.dylib
                          ${PROJECT_SOURCE_DIR}/libintl.8.dylib
                          ${PROJECT_SOURCE_DIR}/libpugixml.a
                          ${PROJECT_SOURCE_DIR}/libSDL2-2.0.0.dylib)

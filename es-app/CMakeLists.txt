@@ -224,19 +224,19 @@ elseif(APPLE AND NOT IOS)
                                 GROUP_READ GROUP_EXECUTE
                                 WORLD_READ WORLD_EXECUTE)
 
-    install(FILES ${CMAKE_SOURCE_DIR}/libavcodec.60.dylib
+    install(FILES ${CMAKE_SOURCE_DIR}/libavcodec.61.dylib
         PERMISSIONS ${APPLE_DYLIB_PERMISSIONS} DESTINATION ../MacOS)
-    install(FILES ${CMAKE_SOURCE_DIR}/libavfilter.9.dylib
+    install(FILES ${CMAKE_SOURCE_DIR}/libavfilter.10.dylib
         PERMISSIONS ${APPLE_DYLIB_PERMISSIONS} DESTINATION ../MacOS)
-    install(FILES ${CMAKE_SOURCE_DIR}/libavformat.60.dylib
+    install(FILES ${CMAKE_SOURCE_DIR}/libavformat.61.dylib
         PERMISSIONS ${APPLE_DYLIB_PERMISSIONS} DESTINATION ../MacOS)
-    install(FILES ${CMAKE_SOURCE_DIR}/libavutil.58.dylib
+    install(FILES ${CMAKE_SOURCE_DIR}/libavutil.59.dylib
         PERMISSIONS ${APPLE_DYLIB_PERMISSIONS} DESTINATION ../MacOS)
-    install(FILES ${CMAKE_SOURCE_DIR}/libpostproc.57.dylib
+    install(FILES ${CMAKE_SOURCE_DIR}/libpostproc.58.dylib
         PERMISSIONS ${APPLE_DYLIB_PERMISSIONS} DESTINATION ../MacOS)
-    install(FILES ${CMAKE_SOURCE_DIR}/libswresample.4.dylib
+    install(FILES ${CMAKE_SOURCE_DIR}/libswresample.5.dylib
         PERMISSIONS ${APPLE_DYLIB_PERMISSIONS} DESTINATION ../MacOS)
-    install(FILES ${CMAKE_SOURCE_DIR}/libswscale.7.dylib
+    install(FILES ${CMAKE_SOURCE_DIR}/libswscale.8.dylib
         PERMISSIONS ${APPLE_DYLIB_PERMISSIONS} DESTINATION ../MacOS)
     install(FILES ${CMAKE_SOURCE_DIR}/libvorbis.0.4.9.dylib
         PERMISSIONS ${APPLE_DYLIB_PERMISSIONS} DESTINATION ../MacOS)
@@ -246,15 +246,15 @@ elseif(APPLE AND NOT IOS)
         PERMISSIONS ${APPLE_DYLIB_PERMISSIONS} DESTINATION ../MacOS)
     install(FILES ${CMAKE_SOURCE_DIR}/libfreetype.6.dylib
         PERMISSIONS ${APPLE_DYLIB_PERMISSIONS} DESTINATION ../MacOS)
-    install(FILES ${CMAKE_SOURCE_DIR}/libgit2.1.7.dylib
+    install(FILES ${CMAKE_SOURCE_DIR}/libgit2.1.9.dylib
         PERMISSIONS ${APPLE_DYLIB_PERMISSIONS} DESTINATION ../MacOS)
     install(FILES ${CMAKE_SOURCE_DIR}/libharfbuzz.dylib
         PERMISSIONS ${APPLE_DYLIB_PERMISSIONS} DESTINATION ../MacOS)
-    install(FILES ${CMAKE_SOURCE_DIR}/libicudata.75.dylib
+    install(FILES ${CMAKE_SOURCE_DIR}/libicudata.77.dylib
         PERMISSIONS ${APPLE_DYLIB_PERMISSIONS} DESTINATION ../MacOS)
-    install(FILES ${CMAKE_SOURCE_DIR}/libicui18n.75.dylib
+    install(FILES ${CMAKE_SOURCE_DIR}/libicui18n.77.dylib
         PERMISSIONS ${APPLE_DYLIB_PERMISSIONS} DESTINATION ../MacOS)
-    install(FILES ${CMAKE_SOURCE_DIR}/libicuuc.75.dylib
+    install(FILES ${CMAKE_SOURCE_DIR}/libicuuc.77.dylib
         PERMISSIONS ${APPLE_DYLIB_PERMISSIONS} DESTINATION ../MacOS)
     install(FILES ${CMAKE_SOURCE_DIR}/libintl.8.dylib
         PERMISSIONS ${APPLE_DYLIB_PERMISSIONS} DESTINATION ../MacOS)
@@ -262,9 +262,9 @@ elseif(APPLE AND NOT IOS)
         PERMISSIONS ${APPLE_DYLIB_PERMISSIONS} DESTINATION ../MacOS)
     install(FILES ${CMAKE_SOURCE_DIR}/libopenjp2.7.dylib
         PERMISSIONS ${APPLE_DYLIB_PERMISSIONS} DESTINATION ../MacOS)
-    install(FILES ${CMAKE_SOURCE_DIR}/libpoppler-cpp.0.dylib
+    install(FILES ${CMAKE_SOURCE_DIR}/libpoppler-cpp.2.dylib
         PERMISSIONS ${APPLE_DYLIB_PERMISSIONS} DESTINATION ../MacOS)
-    install(FILES ${CMAKE_SOURCE_DIR}/libpoppler.129.dylib
+    install(FILES ${CMAKE_SOURCE_DIR}/libpoppler.148.dylib
         PERMISSIONS ${APPLE_DYLIB_PERMISSIONS} DESTINATION ../MacOS)
     install(FILES ${CMAKE_SOURCE_DIR}/libtiff.6.dylib
         PERMISSIONS ${APPLE_DYLIB_PERMISSIONS} DESTINATION ../MacOS)
