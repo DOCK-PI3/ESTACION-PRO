@@ -298,13 +298,20 @@ LAPACK_CFLAGS = $(LAPACK_DEFINE) $(LAPACK_INCDIR)
 LAPACK_LIBS = -lblas -llapack
 
 # Flags to enable the use of the Board library
-# ( https://github.com/c-koi/libboard )
+# ( https://github.com/GreycLab/libboard )
 BOARD_DEFINE = -Dcimg_use_board
 BOARD_INCDIR = -I/usr/include/board
 BOARD_CFLAGS = $(BOARD_DEFINE) $(BOARD_INCDIR)
 BOARD_LIBS = -lboard
 
-# Flags to compile GIMP plug-ins.
+# Enable native support of WebP image files, using the WebP library.
+# (https://chromium.googlesource.com/webm/libwebp/)
+WEBP_DEFINE = -Dcimg_use_webp
+WEBP_INCDIR = $(shell pkg-config --cflags libwebp)
+WEBP_CFLAGS = $(WEBP_DEFINE) $(WEBP_INCDIR)
+WEBP_LIBS = $(shell pkg-config --libs libwep || echo -lwebp)
+
+# Flags to compile executable on Windows.
 ifeq ($(MSYSTEM),MINGW32)
 GIMP_CFLAGS = -mwindows
 endif
