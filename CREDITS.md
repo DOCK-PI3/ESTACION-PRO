@@ -71,6 +71,9 @@ https://curl.se
 FFmpeg \
 https://ffmpeg.org
 
+Fontconfig \
+https://www.freedesktop.org/wiki/Software/fontconfig
+
 FreeImage \
 http://www.freeimage.sourceforge.net
 
@@ -92,8 +95,20 @@ https://icu.unicode.org
 libgit2 \
 https://libgit2.org
 
+libiconv \
+https://www.gnu.org/software/libiconv
+
 libintl (gettext) \
 https://www.gnu.org/software/gettext
+
+libjpeg-turbo \
+https://www.libjpeg-turbo.org
+
+libpng \
+http://www.libpng.org
+
+LibTIFF \
+https://libtiff.gitlab.io/libtiff
 
 libvpx \
 https://github.com/webmproject/libvpx
@@ -103,6 +118,12 @@ https://github.com/sammycage/lunasvg
 
 Ogg \
 https://github.com/xiph/ogg
+
+OpenJPEG \
+https://www.openjpeg.org
+
+OpenSSL \
+https://www.openssl.org
 
 Opus \
 https://gitlab.xiph.org/xiph/opus

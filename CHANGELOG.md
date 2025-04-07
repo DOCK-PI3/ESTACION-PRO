@@ -1,12 +1,38 @@
 # ES-DE Frontend - Changelog
 
+## Version 3.3.0 / 3.3.0-xx (in development)
+
+**Release date:** TBD
+
+### Release overview
+
+### Detailed list of changes
+
+* Changed the max value for the backgroundHorizontalPadding and backgroundVerticalPadding properties to 1 for the helpsystem, systemstatus and clock elements
+* (Android) Updated libiconv to 1.18, gettext/libintl to 0.24, ICU to 77.1, libpng to 1.6.47, LibTIFF to 4.7.0 and HarfBuzz to 11.0.1
+* (Android) Updated FreeType to 2.13.3, Poppler to 24.08.0, OpenSSL to 3.4.1, libgit2 to 1.9.0 and pugixml to 1.15
+* (macOS) Updated libiconv to 1.18, gettext/libintl to 0.24, ICU to 77.1, libpng to 1.6.47, HarfBuzz to 11.0.1 and FreeType to 2.13.3
+* (macOS) Updated fontconfig to 2.16.1, libjpeg-turbo to 3.1.0, LibTIFF to 4.7.0, OpenJPEG to 2.5.3 and Poppler to 25.04.0
+* (macOS) Updated libgit2 to 1.9.0, pugixml to 1.15, libvpx to 1.14.1, Opus to 1.5.2 and FFmpeg to 7.1
+* (Windows) Updated gettext/linbintl to 0.23.1, ICU to 77.1, curl to 8.13.0, GLEW to 2.2.0, HarfBuzz to 11.0.1, FreeType to 2.13.3
+* (Windows) Updated libgit2 to 1.9.0, Poppler to 24.08.0, pugixml to 1.15 and FFmpeg to 7.1
+* Updated CImg to 3.5.3
+* Updated GLM to 1.0.0
+* Updated RapidJSON to commit 24b5e7a8b27f42fa16b96fc70aade9106cf7102f
+* Updated rlottie to commit e3026b1e1a516fff3c22d2b1b9f26ec864f89a82
+* Updated UTF8-CPP to 4.0.6
+
+### Bug fixes
+
+* Sorting configuration was missing for the mark3 and vircon32 systems
+
 ## Version 3.2.0 / 3.2.0-45
 
 **Release date:** 2025-04-04
 
 ### Release overview
 
-This release brings support for themeable system status indicators showing the Bluetooth, Wi-Fi, cellular and battery status for devices where such hardware is available. There is also a themeable clock added which can be enabled from the UI settings menu. For all platforms the game systems  Vircon32 Virtual Console (vircon32) and Sega Mark III (mark3) have been added, and for Linux, macOS and Windows support has also been added for the Sony PlayStation 4 (ps4) system using the shadPS4 emulator.
+This release brings support for themeable system status indicators showing the Bluetooth, Wi-Fi, cellular and battery status for devices where such hardware is available. There is also a themeable clock added which can be enabled from the UI settings menu. For all platforms the game systems Vircon32 Virtual Console (vircon32) and Sega Mark III (mark3) have been added, and for Linux, macOS and Windows, support has also been added for the Sony PlayStation 4 (ps4) system using the shadPS4 emulator.
 
 There is also support for a lot of new emulators, both standalone and RetroArch cores, and some find rules have been added or updated to enable additional package formats and binary names for some previously supported emulators.
 
