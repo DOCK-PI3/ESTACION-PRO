@@ -135,7 +135,7 @@ elseif(APPLE)
 elseif(WIN32)
     include_directories(${COMMON_INCLUDE_DIRS} ${CMAKE_CURRENT_SOURCE_DIR}/src)
     add_executable(ES-DE WIN32 ${ES_SOURCES} ${ES_HEADERS})
-    target_link_libraries(ES-DE ${COMMON_LIBRARIES} es-core)
+    target_link_libraries(ES-DE ${COMMON_LIBRARIES} es-core lunasvg::lunasvg)
     set_target_properties(ES-DE PROPERTIES INSTALL_RPATH_USE_LINK_PATH TRUE)
 elseif(ANDROID)
     include_directories(${COMMON_INCLUDE_DIRS} ${CMAKE_CURRENT_SOURCE_DIR}/src)
@@ -178,6 +178,7 @@ if(WIN32)
                   ../libintl-8.dll
                   ../libssl-3-x64.dll
                   ../lunasvg.dll
+                  ../plutovg.dll
                   ../pugixml.dll
                   ../rlottie.dll
                   ../SDL2.dll
