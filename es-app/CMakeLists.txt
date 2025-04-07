@@ -127,7 +127,7 @@ elseif(APPLE)
     add_executable(ES-DE ${ES_SOURCES} ${ES_HEADERS})
     target_link_libraries(ES-DE ${COMMON_LIBRARIES} "-framework CoreFoundation -framework IOKit"
                                                     "-framework SystemConfiguration"
-                                                    "-framework IOBluetooth" es-core)
+                                                    "-framework IOBluetooth" es-core lunasvg::lunasvg)
     set_target_properties(ES-DE PROPERTIES INSTALL_RPATH_USE_LINK_PATH TRUE)
     if(CMAKE_CXX_COMPILER_VERSION GREATER_EQUAL 15.0.0)
         target_link_options(ES-DE PRIVATE LINKER:-no_warn_duplicate_libraries)
@@ -140,7 +140,8 @@ elseif(WIN32)
 elseif(ANDROID)
     include_directories(${COMMON_INCLUDE_DIRS} ${CMAKE_CURRENT_SOURCE_DIR}/src)
     add_library(main MODULE ${ES_SOURCES} ${ES_HEADERS})
-    target_link_libraries(main PRIVATE ${COMMON_LIBRARIES} ${CMAKE_DL_LIBS} es-core es-pdf-convert)
+    target_link_libraries(main PRIVATE ${COMMON_LIBRARIES} ${CMAKE_DL_LIBS}
+                          es-core es-pdf-convert lunasvg::lunasvg)
 else()
     include_directories(${COMMON_INCLUDE_DIRS} ${CMAKE_CURRENT_SOURCE_DIR}/src)
     add_executable(es-de ${ES_SOURCES} ${ES_HEADERS})
