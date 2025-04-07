@@ -156,21 +156,21 @@ if(WIN32)
     if(CMAKE_BUILD_TYPE MATCHES Debug)
         set(CMAKE_INSTALL_DEBUG_LIBRARIES TRUE)
     endif()
-    install(FILES ../avcodec-60.dll
-                  ../avfilter-9.dll
-                  ../avformat-60.dll
-                  ../avutil-58.dll
-                  ../postproc-57.dll
-                  ../swresample-4.dll
-                  ../swscale-7.dll
+    install(FILES ../avcodec-61.dll
+                  ../avfilter-10.dll
+                  ../avformat-61.dll
+                  ../avutil-59.dll
+                  ../postproc-58.dll
+                  ../swresample-5.dll
+                  ../swscale-8.dll
                   ../FreeImage.dll
                   ../freetype.dll
                   ../git2.dll
                   ../glew32.dll
                   ../harfbuzz.dll
-                  ../icudt75.dll
-                  ../icuin75.dll
-                  ../icuuc75.dll
+                  ../icudt77.dll
+                  ../icuin77.dll
+                  ../icuuc77.dll
                   ../libcrypto-3-x64.dll
                   ../libcurl-x64.dll
                   ../libiconv-2.dll
