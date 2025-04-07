@@ -72,4 +72,5 @@ if(ANDROID)
 endif()
 
 # Build LunaSVG before rlottie.
+add_dependencies(plutovg lunasvg)
 add_dependencies(rlottie lunasvg)
