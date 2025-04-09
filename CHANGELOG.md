@@ -8,6 +8,8 @@
 
 ### Detailed list of changes
 
+* (Android) Removed all MAME4droid 2024 emulator entries (MAME4droid Current entries were added in ES-DE 3.2.0-45)
+* (Linux) Added Lindbergh Loader standalone as an alternative emulator for the arcade, mame and pcarcade systems
 * Changed the max value for the backgroundHorizontalPadding and backgroundVerticalPadding properties to 1 for the helpsystem, systemstatus and clock elements
 * (Android) Updated libiconv to 1.18, gettext/libintl to 0.24, ICU to 77.1, libpng to 1.6.47, LibTIFF to 4.7.0 and HarfBuzz to 11.0.1
 * (Android) Updated FreeType to 2.13.3, Poppler to 24.08.0, OpenSSL to 3.4.1, libgit2 to 1.9.0 and pugixml to 1.15
@@ -16,6 +18,7 @@
 * (macOS) Updated libgit2 to 1.9.0, pugixml to 1.15, libvpx to 1.14.1, Opus to 1.5.2 and FFmpeg to 7.1
 * (Windows) Updated gettext/linbintl to 0.23.1, ICU to 77.1, curl to 8.13.0, GLEW to 2.2.0, HarfBuzz to 11.0.1, FreeType to 2.13.3
 * (Windows) Updated libgit2 to 1.9.0, Poppler to 24.08.0, pugixml to 1.15 and FFmpeg to 7.1
+* Updated LunaSVG to commit 84c71c543dde471e349a0fc33d9610a5e0a4eaf0
 * Updated CImg to 3.5.3
 * Updated GLM to 1.0.0
 * Updated RapidJSON to commit 24b5e7a8b27f42fa16b96fc70aade9106cf7102f

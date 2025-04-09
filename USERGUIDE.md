@@ -1601,7 +1601,7 @@ If using Android then make sure you've read the _MAME4droid 2024 and MAME4droid_
 
 When using MAME only CD-ROM games are supported and the .chd format is recommended. It's not adviced to go for game files using MAME software list names as these can't be scraped by either ScreenScraper or TheGames DB. It's instead better to use files with full game names.
 
-You also need the `fmtowns.zip` BIOS archive placed in ~/ROMs/fmtowns/ for the games to run.
+You also need the `fmtowns.zip` and/or `fmtownshr.zip` BIOS archive placed in ~/ROMs/fmtowns/ for the games to run.
 
 Here's an example setup:
 ```
@@ -1609,6 +1609,7 @@ Here's an example setup:
 ~/ROMs/fmtowns/Shadow of the Beast (1994)(Psygnosis)(Jp-En).bin
 ~/ROMs/fmtowns/Shadow of the Beast (1994)(Psygnosis)(Jp-En).cue
 ~/ROMs/fmtowns/fmtowns.zip
+~/ROMs/fmtowns/fmtownshr.zip
 ```
 
 Note that if you're using MAME standalone you will need to enable UI controls to be able to exit the emulator via the normal exit key. The following page documents the default keys for exiting and toggling UI mode:\
