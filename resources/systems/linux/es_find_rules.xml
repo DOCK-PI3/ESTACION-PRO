@@ -26,6 +26,8 @@
         <rule type="corepath">
             <!-- Non-portable AppImage and compiled from source -->
             <entry>~/.config/retroarch/cores</entry>
+            <!-- Alternative location used on some distributions such as Debian -->
+            <entry>~/.config/retroarch/libretro</entry>
             <!-- Portable AppImage -->
             <entry>~/Applications/RetroArch-Linux-x86_64.AppImage.home/.config/retroarch/cores</entry>
             <entry>~/.local/share/applications/RetroArch-Linux-x86_64.AppImage.home/.config/retroarch/cores</entry>
