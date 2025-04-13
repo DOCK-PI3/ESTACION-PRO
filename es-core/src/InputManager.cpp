@@ -190,27 +190,14 @@ void InputManager::writeDeviceConfig(InputConfig* config)
             // Successfully loaded, delete the old entry if it exists.
             pugi::xml_node root {doc.child("inputList")};
             if (root) {
-                // If inputAction @type=onfinish is set, let doOnFinish command take care of
-                // creating input configuration. We just put the input configuration into a
-                // temporary input config file.
-                pugi::xml_node actionnode {
-                    root.find_child_by_attribute("inputAction", "type", "onfinish")};
-                if (actionnode) {
-                    path = getTemporaryConfigPath();
-                    doc.reset();
-                    root = doc.append_child("inputList");
-                    root.append_copy(actionnode);
-                }
-                else {
-                    pugi::xml_node oldEntry {root.find_child_by_attribute(
-                        "inputConfig", "deviceGUID", config->getDeviceGUIDString().c_str())};
-                    if (oldEntry)
-                        root.remove_child(oldEntry);
-                    oldEntry = root.find_child_by_attribute("inputConfig", "deviceName",
-                                                            config->getDeviceName().c_str());
-                    if (oldEntry)
-                        root.remove_child(oldEntry);
-                }
+                pugi::xml_node oldEntry {root.find_child_by_attribute(
+                    "inputConfig", "deviceGUID", config->getDeviceGUIDString().c_str())};
+                if (oldEntry)
+                    root.remove_child(oldEntry);
+                oldEntry = root.find_child_by_attribute("inputConfig", "deviceName",
+                                                        config->getDeviceName().c_str());
+                if (oldEntry)
+                    root.remove_child(oldEntry);
             }
         }
     }
@@ -230,53 +217,8 @@ void InputManager::writeDeviceConfig(InputConfig* config)
     Scripting::fireEvent("config-changed");
     Scripting::fireEvent("controls-changed");
 
-    // Execute any doOnFinish commands and reload the config for changes.
-    doOnFinish();
     mConfigFileExists = true;
     loadInputConfig(config);
-}
-
-void InputManager::doOnFinish()
-{
-    assert(initialized());
-    std::string path {getConfigPath()};
-    pugi::xml_document doc;
-
-    if (Utils::FileSystem::exists(path)) {
-#if defined(_WIN64)
-        pugi::xml_parse_result result {
-            doc.load_file(Utils::String::stringToWideString(path).c_str())};
-#else
-        pugi::xml_parse_result result {doc.load_file(path.c_str())};
-#endif
-
-        if (!result) {
-            LOG(LogError) << "Couldn't parse input configuration file: " << result.description();
-        }
-        else {
-            pugi::xml_node root {doc.child("inputList")};
-            if (root) {
-                root = root.find_child_by_attribute("inputAction", "type", "onfinish");
-                if (root) {
-                    for (pugi::xml_node command {root.child("command")}; command;
-                         command = command.next_sibling("command")) {
-                        std::string tocall {command.text().get()};
-
-                        LOG(LogInfo) << "	" << tocall;
-                        std::cout << "==============================================\n"
-                                     "input config finish command:\n";
-                        int exitCode = Utils::Platform::runSystemCommand(tocall);
-                        std::cout << "==============================================\n";
-
-                        if (exitCode != 0) {
-                            LOG(LogWarning) << "...launch terminated with nonzero exit code "
-                                            << exitCode << "!";
-                        }
-                    }
-                }
-            }
-        }
-    }
 }
 
 std::string InputManager::getConfigPath()
@@ -285,14 +227,6 @@ std::string InputManager::getConfigPath()
         return Utils::FileSystem::getAppDataDirectory() + "/es_input.xml";
     else
         return Utils::FileSystem::getAppDataDirectory() + "/settings/es_input.xml";
-}
-
-std::string InputManager::getTemporaryConfigPath()
-{
-    if (Settings::getInstance()->getBool("LegacyAppDataDirectory"))
-        return Utils::FileSystem::getAppDataDirectory() + "/es_temporaryinput.xml";
-    else
-        return Utils::FileSystem::getAppDataDirectory() + "/settings/es_temporaryinput.xml";
 }
 
 int InputManager::getNumConfiguredDevices()
