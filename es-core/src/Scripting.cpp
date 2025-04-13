@@ -94,6 +94,8 @@ namespace Scripting
                 LOG(LogDebug) << "Executing: " << script;
 #if defined(__ANDROID__)
                 Utils::Platform::runSystemCommand("sh " + script);
+#elif defined(_WIN64)
+                Utils::Platform::runSystemCommand(Utils::String::stringToWideString(script));
 #else
                 Utils::Platform::runSystemCommand(script);
 #endif
