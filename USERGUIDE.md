@@ -1601,7 +1601,7 @@ If using Android then make sure you've read the _MAME4droid 2024 and MAME4droid_
 
 When using MAME only CD-ROM games are supported and the .chd format is recommended. It's not adviced to go for game files using MAME software list names as these can't be scraped by either ScreenScraper or TheGames DB. It's instead better to use files with full game names.
 
-You also need the `fmtowns.zip` and/or `fmtownshr.zip` BIOS archive placed in ~/ROMs/fmtowns/ for the games to run.
+You also need the `fmtowns.zip` and/or `fmtownshr.zip` BIOS archives placed in ~/ROMs/fmtowns/ for the games to run.
 
 Here's an example setup:
 ```

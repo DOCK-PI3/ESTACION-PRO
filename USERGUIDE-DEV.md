@@ -709,39 +709,40 @@ chmod +x rpcs3*.AppImage
 
 The following emulators are supported in AppImage format when using the bundled configuration:
 
-| System name   | Emulator            | Filename configuration         |
-| :------------ | :------------------ | :----------------------------- |
-| _Multiple_    | RetroArch           | RetroArch-Linux*.AppImage      |
-| _Multiple_    | jgenesis            | jgenesis-cli*.AppImage         |
-| _Multiple_    | Mesen               | Mesen*.AppImage                |
-| dreamcast     | Flycast             | flycast-x86*.AppImage          |
-| dreamcast     | Flycast Dojo        | flycast-dojo*.AppImage         |
-| gba           | mGBA                | mGBA*.AppImage                 |
-| gc            | Dolphin             | Dolphin_Emulator*.AppImage     |
-| gc            | Triforce            | dolphin-emu-triforce*.AppImage |
-| macintosh     | Basilisk II         | BasiliskII*.AppImage           |
-| macintosh     | SheepShaver         | SheepShaver*.AppImage          |
-| n3ds          | Azahar              | azahar*.AppImage               |
-| n3ds          | Citra               | citra-qt*.AppImage             |
-| n3ds          | Lime3DS             | lime3ds.AppImage               |
-| n3ds          | Mandarine           | mandarine-qt*.AppImage         |
-| n3ds          | Panda3DS            | Alber-*.AppImage               |
-| n64/n64dd     | Rosalie's Mupen GUI | RMG*.AppImage                  |
-| nds           | melonDS             | melonDS*.AppImage              |
-| ngage/symbian | EKA2L1              | EKA2L1*.AppImage               |
-| ps2           | PCSX2               | pcsx2*.AppImage                |
-| ps2           | Play!               | Play!*.AppImage                |
-| ps3           | RPCS3               | rpcs3*.AppImage                |
-| ps4           | shadPS4             | Shadps4-qt*.AppImage           |
-| ps4           | shadPS4             | Shadps4-sdl*.AppImage          |
-| psvita        | Vita3K              | Vita3K*.AppImage               |
-| psx           | DuckStation         | DuckStation*.AppImage          |
-| snes          | Snes9x              | Snes9x*.AppImage               |
-| switch        | Ryujinx             | \*yujinx\*.AppImage            |
-| xbox          | xemu                | xemu*.AppImage                 |
-| wii           | Dolphin             | Dolphin_Emulator*.AppImage     |
-| wiiu          | Cemu                | Cemu*.AppImage                 |
-| zmachine      | Gargoyle            | Gargoyle*.AppImage             |
+| System name          | Emulator            | Filename configuration         |
+| :------------------- | :------------------ | :----------------------------- |
+| _Multiple_           | RetroArch           | RetroArch-Linux*.AppImage      |
+| _Multiple_           | jgenesis            | jgenesis-cli*.AppImage         |
+| _Multiple_           | Mesen               | Mesen*.AppImage                |
+| arcade/mame/pcarcade | Lindbergh Loader    | lindbergh-loader*.AppImage     |
+| dreamcast            | Flycast             | flycast-x86*.AppImage          |
+| dreamcast            | Flycast Dojo        | flycast-dojo*.AppImage         |
+| gba                  | mGBA                | mGBA*.AppImage                 |
+| gc                   | Dolphin             | Dolphin_Emulator*.AppImage     |
+| gc                   | Triforce            | dolphin-emu-triforce*.AppImage |
+| macintosh            | Basilisk II         | BasiliskII*.AppImage           |
+| macintosh            | SheepShaver         | SheepShaver*.AppImage          |
+| n3ds                 | Azahar              | azahar*.AppImage               |
+| n3ds                 | Citra               | citra-qt*.AppImage             |
+| n3ds                 | Lime3DS             | lime3ds.AppImage               |
+| n3ds                 | Mandarine           | mandarine-qt*.AppImage         |
+| n3ds                 | Panda3DS            | Alber-*.AppImage               |
+| n64/n64dd            | Rosalie's Mupen GUI | RMG*.AppImage                  |
+| nds                  | melonDS             | melonDS*.AppImage              |
+| ngage/symbian        | EKA2L1              | EKA2L1*.AppImage               |
+| ps2                  | PCSX2               | pcsx2*.AppImage                |
+| ps2                  | Play!               | Play!*.AppImage                |
+| ps3                  | RPCS3               | rpcs3*.AppImage                |
+| ps4                  | shadPS4             | Shadps4-qt*.AppImage           |
+| ps4                  | shadPS4             | Shadps4-sdl*.AppImage          |
+| psvita               | Vita3K              | Vita3K*.AppImage               |
+| psx                  | DuckStation         | DuckStation*.AppImage          |
+| snes                 | Snes9x              | Snes9x*.AppImage               |
+| switch               | Ryujinx             | \*yujinx\*.AppImage            |
+| xbox                 | xemu                | xemu*.AppImage                 |
+| wii                  | Dolphin             | Dolphin_Emulator*.AppImage     |
+| wiiu                 | Cemu                | Cemu*.AppImage                 |
+| zmachine             | Gargoyle            | Gargoyle*.AppImage             |
 
 ## Using AppImageLauncher on Linux
 
@@ -1341,10 +1342,10 @@ Although there is a Homebrew release of Supermodel for macOS this seems to be qu
 
 **Sega Lindbergh**
 
-On Linux _Lindbergh Loader_ can be used to run these games. It's easiest to download the Flatpak package from their GitHub site: \
+On Linux _Lindbergh Loader_ can be used to run these games. It's easiest to download the AppImage from their GitHub site, although they also have a Flatpak release: \
 https://github.com/lindbergh-loader/lindbergh-loader/releases
 
-Here are the Flatpak installation instructions: \
+If using the Flatpak then you can find the installation instructions here: \
 https://github.com/lindbergh-loader/lindbergh-loader/blob/master/docs/guide.md#installing-and-running-the-flatpak
 
 By default this Flatpak does not have the necessary permissions to run games from the ROMs directory tree. Use [Flatseal](https://flathub.org/apps/details/com.github.tchx84.Flatseal) to fix this. The option you need to enable is _All system files_ in the _Filesystem_ section.
@@ -1397,7 +1398,7 @@ Note that you may need to set the ELF/game file as executable or Lindbergh Loade
 chmod +x ~/ROMs/arcade/2spicy.lindbergh/disk0/elf/apacheM.elf
 ```
 
-Finally you can add a configuration file for each game. In there you can set things like fullscreen mode, resolution, controller mappings etc. The file needs to be named `lindbergh.conf`and it has to be placed in the same directory as the ELF/game file, for example:
+Finally you may add a configuration file for each game. In there you can set things like fullscreen mode, resolution, controller mappings etc. This file needs to be named `lindbergh.conf`and it has to be placed in the same directory as the ELF/game file, for example:
 ```
 ~/ROMs/arcade/2spicy.lindbergh/disk0/elf/lindbergh.conf
 ```
@@ -1670,7 +1671,7 @@ If using Android then make sure you've read the _MAME4droid 2024 and MAME4droid_
 
 When using MAME only CD-ROM games are supported and the .chd format is recommended. It's not adviced to go for game files using MAME software list names as these can't be scraped by either ScreenScraper or TheGames DB. It's instead better to use files with full game names.
 
-You also need the `fmtowns.zip` and/or `fmtownshr.zip` BIOS archive placed in ~/ROMs/fmtowns/ for the games to run.
+You also need the `fmtowns.zip` and/or `fmtownshr.zip` BIOS archives placed in ~/ROMs/fmtowns/ for the games to run.
 
 Here's an example setup:
 ```
