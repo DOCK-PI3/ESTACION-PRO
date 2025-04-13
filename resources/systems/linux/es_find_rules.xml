@@ -591,6 +591,10 @@
             <entry>com.github.lindberghloader</entry>
         </rule>
         <rule type="staticpath">
+            <entry>~/Applications/lindbergh-loader*.AppImage</entry>
+            <entry>~/.local/share/applications/lindbergh-loader*.AppImage</entry>
+            <entry>~/.local/bin/lindbergh-loader*.AppImage</entry>
+            <entry>~/bin/lindbergh-loader*.AppImage</entry>
             <entry>~/Applications/lindbergh/lindbergh</entry>
             <entry>~/.local/share/applications/lindbergh/lindbergh</entry>
             <entry>~/.local/bin/lindbergh/lindbergh</entry>
