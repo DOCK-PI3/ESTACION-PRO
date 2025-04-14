@@ -115,6 +115,9 @@ namespace Utils
                 &pi);                            // Pointer to the PROCESS_INFORMATION structure.
             // clang-format on
 
+            // We always wait forever for the script to finish its execution.
+            WaitForSingleObject(pi.hProcess, INFINITE);
+
             // If the return value is false, then something failed.
             if (!processReturnValue) {
                 LPWSTR pBuffer {nullptr};
