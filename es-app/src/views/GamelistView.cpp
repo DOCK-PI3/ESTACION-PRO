@@ -448,7 +448,11 @@ void GamelistView::update(int deltaTime)
         mTriggerEvent = false;
         FileData* file {mPrimary->size() > 0 ? mPrimary->getSelected() : nullptr};
         if (file) {
+#if defined(_WIN64)
+            Scripting::fireEvent("game-select", Utils::String::replace(file->getPath(), "/", "\\"),
+#else
             Scripting::fireEvent("game-select", file->getPath(),
+#endif
                                  file->getSourceFileData()->metadata.get("name"),
                                  file->getSourceFileData()->getSystem()->getName(),
                                  file->getSourceFileData()->getSystem()->getFullName());

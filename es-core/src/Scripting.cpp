@@ -91,7 +91,11 @@ namespace Scripting
                     .append(arg4Quotation)
                     .append(arg4)
                     .append(arg4Quotation);
+#if defined(_WIN64)
+                LOG(LogDebug) << "Executing: " << Utils::String::replace(script, "/", "\\");
+#else
                 LOG(LogDebug) << "Executing: " << script;
+#endif
 #if defined(__ANDROID__)
                 Utils::Platform::runSystemCommand("sh " + script);
 #elif defined(_WIN64)

@@ -263,7 +263,13 @@ void SystemView::onCursorChanged(const CursorState& state)
             Scripting::fireEvent(
                 "system-select", mSystemElements[mPrimary->getCursor()].system->getName(),
                 mSystemElements[mPrimary->getCursor()].system->getFullName(),
+#if defined(_WIN64)
+                Utils::String::replace(
+                    mSystemElements[mPrimary->getCursor()].system->getRootFolder()->getFullPath(),
+                    "/", "\\"));
+#else
                 mSystemElements[mPrimary->getCursor()].system->getRootFolder()->getFullPath());
+#endif
             mPreviousSelectEvent = mPrimary->getCursor();
         }
     }
