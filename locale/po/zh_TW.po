@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.5\n"
 
 msgid "Network error (status:"
 msgstr "網路錯誤（狀態："
@@ -814,7 +814,7 @@ msgid "MEDIA VIEWER SETTINGS"
 msgstr "媒體播放器設定"
 
 msgid "SCREENSAVER SETTINGS"
-msgstr "屏保設定"
+msgstr "螢幕保護設定"
 
 msgid "ENABLE THEME VARIANT TRIGGERS"
 msgstr "啟用主題變體觸發器"
@@ -871,7 +871,7 @@ msgid "PLAY AUDIO FOR MEDIA VIEWER VIDEOS"
 msgstr "播放媒體檢視器影片的音訊"
 
 msgid "PLAY AUDIO FOR SCREENSAVER VIDEOS"
-msgstr "播放屏保影片的音訊"
+msgstr "播放螢幕保護影片的音訊"
 
 msgid "ENABLE NAVIGATION SOUNDS"
 msgstr "啟用導航聲音"
@@ -1053,7 +1053,7 @@ msgid "ENABLE CUSTOM EVENT SCRIPTS"
 msgstr "啟用自定義事件指令碼"
 
 msgid "BROWSING CUSTOM EVENTS"
-msgstr "瀏覽自訂事件"
+msgstr "瀏覽自定義事件"
 
 msgid "ONLY SHOW GAMES FROM GAMELIST.XML FILES"
 msgstr "僅顯示 gamelist.xml 檔案中的遊戲"
@@ -1139,7 +1139,7 @@ msgstr "媒體播放器設定"
 
 msgctxt "short"
 msgid "SCREENSAVER SETTINGS"
-msgstr "屏保設定"
+msgstr "螢幕保護設定"
 
 msgid "choose"
 msgstr "選擇"
@@ -1777,10 +1777,10 @@ msgid "back (cancel)"
 msgstr "返回（取消）"
 
 msgid "START SCREENSAVER AFTER (MINUTES)"
-msgstr "屏保啟動時間（分鐘）"
+msgstr "螢幕保護啟動時間（分鐘）"
 
 msgid "SCREENSAVER TYPE"
-msgstr "屏保型別"
+msgstr "螢幕保護型別"
 
 msgid "DIM"
 msgstr "暗淡"
@@ -1792,16 +1792,16 @@ msgid "VIDEO"
 msgstr "影片"
 
 msgid "ENABLE SCREENSAVER CONTROLS"
-msgstr "啟用屏保控制"
+msgstr "啟用螢幕保護控制"
 
 msgid "SLIDESHOW SCREENSAVER SETTINGS"
-msgstr "幻燈片屏保設定"
+msgstr "幻燈片螢幕保護設定"
 
 msgid "VIDEO SCREENSAVER SETTINGS"
-msgstr "影片屏保設定"
+msgstr "影片螢幕保護設定"
 
 msgid "SLIDESHOW SCREENSAVER"
-msgstr "幻燈片屏保"
+msgstr "幻燈片螢幕保護"
 
 msgid "SWAP IMAGES AFTER (SECONDS)"
 msgstr "幾秒後更換影象"
@@ -1828,7 +1828,7 @@ msgid "CUSTOM IMAGE DIRECTORY"
 msgstr "自定義影象目錄"
 
 msgid "VIDEO SCREENSAVER"
-msgstr "影片屏保"
+msgstr "影片螢幕保護"
 
 msgid "SWAP VIDEOS AFTER (SECONDS)"
 msgstr "幾秒後更換影片"
@@ -1837,10 +1837,10 @@ msgid "RENDER BLUR"
 msgstr "渲染模糊"
 
 msgid "DISPLAY BLUETOOTH STATUS INDICATOR"
-msgstr "顯示藍牙狀態圖示"
+msgstr "顯示藍芽狀態圖示"
 
 msgid "DISPLAY WI-FI STATUS INDICATOR"
-msgstr "顯示WI-FI狀態圖標"
+msgstr "顯示WI-FI狀態圖示"
 
 msgid "DISPLAY CELLULAR STATUS INDICATOR"
 msgstr "顯示行動網路狀態圖示"
@@ -2358,7 +2358,7 @@ msgid "no"
 msgstr "否"
 
 msgid "screensaver"
-msgstr "屏保"
+msgstr "螢幕保護"
 
 #, c-format
 msgctxt "theme"
