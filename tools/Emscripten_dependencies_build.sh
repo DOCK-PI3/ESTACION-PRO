@@ -59,7 +59,7 @@ fi
 
 cd libiconv
 
-emconfigure ./configure --enable-shared=no --enable-static=yes
+emconfigure ./configure --host=wasm32-unknown-emscripten --enable-shared=no --enable-static=yes
 make clean
 make -j${JOBS}
 cp lib/.libs/libiconv.a ../..
