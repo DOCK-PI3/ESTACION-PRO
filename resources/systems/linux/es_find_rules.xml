@@ -1257,6 +1257,19 @@
             <entry>~/.local/share/flatpak/exports/bin/app.xemu.xemu</entry>
         </rule>
     </emulator>
+    <emulator name="XENIA">
+        <!-- Microsoft Xbox 360 emulator xenia -->
+        <rule type="staticpath">
+            <entry>~/Applications/xenia/xenia</entry>
+            <entry>~/.local/share/applications/xenia/xenia</entry>
+            <entry>~/.local/bin/xenia/xenia</entry>
+            <entry>~/bin/xenia/xenia</entry>
+            <entry>~/Applications/xenia/xenia_canary</entry>
+            <entry>~/.local/share/applications/xenia/xenia_canary</entry>
+            <entry>~/.local/bin/xenia/xenia_canary</entry>
+            <entry>~/bin/xenia/xenia_canary</entry>
+        </rule>
+    </emulator>
     <emulator name="XENIA-WINDOWS">
         <!-- Microsoft Xbox 360 emulator xenia -->
         <rule type="staticpath">
