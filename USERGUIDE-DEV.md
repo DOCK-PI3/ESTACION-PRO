@@ -848,6 +848,8 @@ The following manually downloaded emulators are supported when using the bundled
 | trs-80                                  | sdl2trs          | sdl2trs/sdl2trs                   |
 | vpinball                                | Visual Pinball X | VPinballX/VPinballX_GL            |
 | wiiu                                    | Cemu             | Cemu/Cemu                         |
+| xbox360                                 | xenia            | xenia/xenia                       |
+| xbox360                                 | xenia            | xenia/xenia_canary                |
 | zxnext                                  | #CSpect          | CSpect/CSpect.exe                 |
 | zxnext                                  | ZEsarUX          | ZEsarUX/zesarux                   |
 
@@ -2070,7 +2072,7 @@ https://github.com/cmclark00/XBLA-Automation
 
 **Running xenia on Linux**
 
-Although xenia is officially only available for the Windows operating system it's still possible to run it on Linux. To accomplish this you need to run it via the Wine (or Proton) translation layer.
+There's a native Linux build of xenia that can be used, or you can use the Windows release of this emulator. To use the latter you need to run it via the Wine (or Proton) translation layer.
 
 How to setup Wine is covered in the [Running Windows emulators on Linux using Wine or Proton](USERGUIDE-DEV.md#running-windows-emulators-on-linux-using-wine-or-proton) section.
 
@@ -4313,7 +4315,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | androidapps           | Android Apps                                   | _Placeholder_                     |                                   |              |                                      |
 | androidgames          | Android Games                                  | _Placeholder_                     |                                   |              |                                      |
 | apple2                | Apple II                                       | LinApple **(Standalone)** [L],<br>Mednafen **(Standalone)** [M],<br>AppleWin **(Standalone)** [W] | Mednafen **(Standalone)** [LW],<br>MAME - Current,<br>MAME **(Standalone)**,<br>izapple2 **(Standalone)** [LW] | Yes for Mednafen and MAME | See the specific _Apple II_ section elsewhere in this guide |
-| apple2gs              | Apple IIGS                                     | MAME - Current                    | MAME **(Standalone)**             | Yes          | See the specific _Apple IIGS_ section elsewhere in this guide |
+| apple2gs              | Apple IIGS                                     | MAME - Current                    | MAME - Current [Software list],<br>MAME **(Standalone)**,<br>MAME [Software list] **(Standalone)** | Yes          | See the specific _Apple IIGS_ section elsewhere in this guide |
 | arcade                | Arcade                                         | MAME - Current                    | MAME 2010,<br>MAME 2003-Plus,<br>MAME 2003,<br>MAME 2000,<br>MAME **(Standalone)**,<br>FinalBurn Neo,<br>FinalBurn Neo **(Standalone)** [LW],<br>FB Alpha 2012,<br>Geolith,<br>Flycast,<br>Flycast **(Standalone)**,<br>Flycast Dojo **(Standalone)**,<br>Kronos [LW],<br>Model 2 Emulator **(Standalone)** [W],<br>Model 2 Emulator [Suspend ES-DE] **(Standalone)** [W],<br>Supermodel **(Standalone)** [LW],<br>Lindbergh Loader **(Standalone)** [L],<br>MFME **(Standalone)** [LW],<br> _Shortcut or script_ | Depends      | See the specific _Arcade and Neo Geo_ section elsewhere in this guide |
 | arcadia               | Emerson Arcadia 2001                           | MAME - Current                    | MAME **(Standalone)**,<br>WinArcadia **(Standalone)** | No           | Single archive or ROM file           |
 | archimedes            | Acorn Archimedes                               | MAME [Model A440/1] **(Standalone)** | MAME [Model A3000] **(Standalone)**,<br>MAME [Model A310] **(Standalone)**,<br>MAME [Model A540] **(Standalone)** | Yes          |                                      |
@@ -4490,7 +4492,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | x1                    | Sharp X1                                       | X Millennium                      | MAME [Diskette] **(Standalone)**,<br>MAME [Tape] **(Standalone)** | Yes for MAME | Single archive or diskette/tape file |
 | x68000                | Sharp X68000                                   | PX68k                             | MAME **(Standalone)**,<br>XM6 Pro-68k **(Standalone)** [W],<br>XM6 TypeG **(Standalone**) [W],<br>XM6 Pro-68k **(Wine)** [L],<br>XM6 Pro-68k **(Proton)** [L],<br>XM6 TypeG **(Wine)** [L],<br>XM6 TypeG **(Proton)** [L] | Yes for PX68k and MAME |                                      |
 | xbox                  | Microsoft Xbox                                 | xemu **(Standalone)**             | Cxbx-Reloaded **(Standalone)** [W] | Yes for xemu | Single .iso file for xemu or unpacked .iso directory for Cxbx-Reloaded |
-| xbox360               | Microsoft Xbox 360                             | xenia **(Standalone)** [W],<br>xenia **(Wine)** [L] | xenia **(Proton)** [L],<br> _Shortcut or script_ [L]          | No           | See the specific _Microsoft Xbox 360_ section elsewhere in this guide |
+| xbox360               | Microsoft Xbox 360                             | xenia **(Standalone)** [LW]       | xenia **(Wine)** [L],<br>xenia **(Proton)** [L],<br> _Shortcut or script_ [L]          | No           | See the specific _Microsoft Xbox 360_ section elsewhere in this guide |
 | xboxone               | Microsoft Xbox One                             | _Placeholder_                     |                                   |              |                                      |
 | zmachine              | Infocom Z-machine                              | MojoZork                          | Gargoyle **(Standalone)**         | No           |                                      |
 | zx81                  | Sinclair ZX81                                  | EightyOne                         |                                   | No           |                                      |

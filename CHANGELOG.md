@@ -9,13 +9,16 @@
 ### Detailed list of changes
 
 * (Android) Removed all MAME4droid 2024 emulator entries (replacement MAME4droid Current entries were added in ES-DE 3.2.0-45)
+* (Linux) Added the native xenia release as the default emulator for the xbox360 system
 * (Linux) Added Lindbergh Loader standalone as an alternative emulator for the arcade, mame and pcarcade systems
 * (Linux) Added a RetroArch core find rule entry for ~/.config/retroarch/libretro
+* Added MAME - Current [Software list] and MAME [Software list] (Standalone) as alternative emulators for the apple2gs on Linux, macOS and Windows
 * Added an %INJECT% variable for A7800 standalone for the atari7800 system on Linux and Windows
 * Changed the max value for the backgroundHorizontalPadding and backgroundVerticalPadding properties to 1 for the helpsystem, systemstatus and clock elements
 * Removed the obsolete InputManager::doOnFinish() and InputManager::getTemporaryConfigPath() functions
 * (Windows) Worked around an OS glitch by changing PlatformUtil::runSystemCommand() to use CreateProcessW() instead of _wsystem()
 * (Windows) Converted to backslashes instead of forward slashes as directory separators for the screensaver-game-select, game-select and system-select events
+* Updated the logo and carousel icons for the Sega Mark III (mark3) system
 * (Android) Updated libiconv to 1.18, gettext/libintl to 0.24, ICU to 77.1, libpng to 1.6.47, LibTIFF to 4.7.0 and HarfBuzz to 11.0.1
 * (Android) Updated FreeType to 2.13.3, Poppler to 24.08.0, OpenSSL to 3.4.1, libgit2 to 1.9.0 and pugixml to 1.15
 * (macOS) Updated libiconv to 1.18, gettext/libintl to 0.24, ICU to 77.1, libpng to 1.6.47, HarfBuzz to 11.0.1 and FreeType to 2.13.3
@@ -30,6 +33,7 @@
 * Updated rlottie to commit e3026b1e1a516fff3c22d2b1b9f26ec864f89a82
 * Manually updated the rlottie CMake configuration to be able to build with CMake 4.0
 * Updated UTF8-CPP to 4.0.6
+* Translation updates for multiple languages
 
 ### Bug fixes
 
