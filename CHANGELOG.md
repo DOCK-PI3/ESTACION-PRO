@@ -12,8 +12,12 @@
 * (Linux) Added the native xenia release as the default emulator for the xbox360 system
 * (Linux) Added Lindbergh Loader standalone as an alternative emulator for the arcade, mame and pcarcade systems
 * (Linux) Added a RetroArch core find rule entry for ~/.config/retroarch/libretro
+* (Linux) Added support for the manually downloaded release of BlastEm
+* (Windows) Added BlastEm standalone as an alternative emulator for the genesis, megadrive and megadrivejp systems
+* (Windows) Added Supermodel Dojo standalone as an alternative emulator for the arcade, mame and model3 systems
 * Added MAME - Current [Software list] and MAME [Software list] (Standalone) as alternative emulators for the apple2gs on Linux, macOS and Windows
 * Added an %INJECT% variable for A7800 standalone for the atari7800 system on Linux and Windows
+* Added an %INJECT% variable for xenia standalone for the xbox360 system on Linux and Windows
 * Changed the max value for the backgroundHorizontalPadding and backgroundVerticalPadding properties to 1 for the helpsystem, systemstatus and clock elements
 * Removed the obsolete InputManager::doOnFinish() and InputManager::getTemporaryConfigPath() functions
 * (Windows) Worked around an OS glitch by changing PlatformUtil::runSystemCommand() to use CreateProcessW() instead of _wsystem()
