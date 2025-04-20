@@ -169,6 +169,10 @@
             <entry>com.retrodev.blastem</entry>
         </rule>
         <rule type="staticpath">
+            <entry>~/Applications/blastem/blastem</entry>
+            <entry>~/.local/share/applications/blastem/blastem</entry>
+            <entry>~/.local/bin/blastem/blastem</entry>
+            <entry>~/bin/blastem/blastem</entry>
             <entry>/var/lib/flatpak/exports/bin/com.retrodev.blastem</entry>
             <entry>~/.local/share/flatpak/exports/bin/com.retrodev.blastem</entry>
         </rule>
