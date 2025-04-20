@@ -55,6 +55,7 @@ Emulators\azahar\azahar.exe
 Emulators\BasiliskII\BasiliskII.exe
 Emulators\BeebEm\BeebEm.exe
 Emulators\BigPEmu\BigPEmu.exe
+Emulators\blastem\blastem.exe
 Emulators\bsnes\bsnes.exe
 Emulators\cemu\Cemu.exe
 Emulators\Citra\canary-mingw\citra-qt.exe

@@ -175,6 +175,16 @@
             <entry>%ESPATH%\..\Emulators\BigPEmu\BigPEmu.exe</entry>
         </rule>
     </emulator>
+    <emulator name="BLASTEM">
+        <!-- Sega Mega Drive/Genesis emulator BlastEm -->
+        <rule type="systempath">
+            <entry>blastem.exe</entry>
+        </rule>
+        <rule type="staticpath">
+            <entry>%ESPATH%\Emulators\blastem\blastem.exe</entry>
+            <entry>%ESPATH%\..\Emulators\blastem\blastem.exe</entry>
+        </rule>
+    </emulator>
     <emulator name="BSNES">
         <!-- Super Nintendo/Super Famicom emulator bsnes -->
         <rule type="systempath">
