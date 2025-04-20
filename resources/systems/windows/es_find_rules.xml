@@ -976,6 +976,16 @@
             <entry>%ESPATH%\..\Emulators\Supermodel\Supermodel.exe</entry>
         </rule>
     </emulator>
+    <emulator name="SUPERMODEL-DOJO">
+        <!-- Sega Model 3 emulator Supermodel Dojo -->
+        <rule type="systempath">
+            <entry>supermodel.exe</entry>
+        </rule>
+        <rule type="staticpath">
+            <entry>%ESPATH%\Emulators\Supermodel-Dojo\supermodel.exe</entry>
+            <entry>%ESPATH%\..\Emulators\Supermodel-Dojo\supermodel.exe</entry>
+        </rule>
+    </emulator>
     <emulator name="TIC-80">
         <!-- TIC-80 Fantasy Computer (game engine) -->
         <rule type="systempath">
