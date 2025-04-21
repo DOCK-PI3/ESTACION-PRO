@@ -124,6 +124,8 @@
             <entry>~/.local/share/applications/azahar*.AppImage</entry>
             <entry>~/.local/bin/azahar*.AppImage</entry>
             <entry>~/bin/azahar*.AppImage</entry>
+            <entry>/var/lib/flatpak/exports/bin/org.azahar_emu.Azahar</entry>
+            <entry>~/.local/share/flatpak/exports/bin/org.azahar_emu.Azahar</entry>
         </rule>
     </emulator>
     <emulator name="BASILISKII">
