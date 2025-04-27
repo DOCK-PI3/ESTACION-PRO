@@ -2542,6 +2542,9 @@ A final alternative is to use _folder links_ to keep the directory structure int
 
 If you're using the Flatpak release of ScummVM on Linux then you need to manually grant the application the necessary permissions using Flatseal or similar, otherwise you won't be able to launch any games.
 
+There's also an unofficial Python script available that can help with automating the ScummVM game setup for ES-DE, you can find it here:\
+https://gist.github.com/ssokolow/3fd6744f6af428c477b0f1b11b35cdac
+
 **DREAMM**
 
 For Linux, macOS and Windows there's an alternative to using ScummVM for a limited set of games, more specifically those from LucasArts. For these games [DREAMM](https://aarongiles.com/dreamm) can be used instead. It works a bit differently than ScummVM in that games will be autodetected based on the content of the game directory. So the way ES-DE launches these games is to pass the directory of the launched game file to DREAMM which will then autodetect which game it is. This means the ScummVM setup described above can be used without any extra configuration. Here's an example setup of two games, one using a game file inside a normal folder, and one using the _directories interpreted as a files_ approach:
