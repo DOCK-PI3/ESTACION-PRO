@@ -366,11 +366,13 @@ While the es_systems.xml and es_find_rules.xml files for Android in principle wo
 
 ## Migrating from EmulationStation
 
-**IMPORTANT!!! IMPORTANT!!! IMPORTANT!!!**
+Although ES-DE is partially compatible with EmulationStation as both frontends originally shared the same source code it's actually quite different now as ES-DE has evolved substantially. So don't expect data, system names, directory structures and similar to be identical or transferable between ES-DE and legacy EmulationStation.
 
-ES-DE is partially compatible with EmulationStation as both frontends originally shared the same source code. That is, ES-DE should generally be able to read data from EmulationStation. But the opposite is not true and it's a one-way ticket for your gamelist.xml files and your custom collection files when migrating to ES-DE as they will be modified in ways that EmulationStation will see as data loss. For instance ES-DE does not use tags inside the gamelist.xml files to find game media but instead matches the media to the names of the game/ROM files. So it will not save any such tags back to the gamelist files during updates, effectively disabling the game media if the files are opened in EmulationStation.
+ES-DE also has its own theme engine so only themes made specifically for ES-DE will work. The way that downloaded media is handled is very different too as ES-DE does not use tags inside the gamelist.xml files to find game media but instead matches the media to the names of the game/ROM files.
 
-Another potential issue when migrating gamelist.xml files from EmulationStation is that the path tag requires a leading ./ in ES-DE while that may not be present in files coming from EmulationStation. If you don't see any metadata for your games inside ES-DE, then simply add the ./ characters to each path tag and it should hopefully work.
+It's not a goal for ES-DE to be compatible with EmulationStation and although you may be able to transfer some data from a legacy installation to ES-DE, the opposite is often not true and it's for example a one-way ticket for your gamelist.xml files and your custom collection files when migrating to ES-DE as they will be modified in ways that EmulationStation will see as data loss.
+
+One potential issue when migrating gamelist.xml files from EmulationStation is that the path tag requires a leading ./ in ES-DE while that may not be present in files coming from EmulationStation. If you don't see any metadata for your games inside ES-DE, then simply add the ./ characters to each path tag and it should hopefully work.
 
 Example of an unreadable path tag:
 ```
@@ -386,6 +388,7 @@ And if you have gamelist.xml files in your ROMs directory tree then ES-DE will i
 
 If migrating from Batocera, RetroBat or Recalbox, be aware that ES-DE does not always use the same system names as those frontends. This means that your game files may not be found unless the folders are renamed accordingly. Such an example is the Sega SG-1000 system which in Batocera, RetroBat and Recalbox has the _sg1000_ system name, but is _sg-1000_ in ES-DE. See the [Supported game systems](USERGUIDE.md#supported-game-systems) table at the bottom of this guide for the correct system names in ES-DE.
 
+The list goes on as there are many other differences in addition to those just mentioned.
 
 ## Removing orphaned data
 
