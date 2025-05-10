@@ -126,6 +126,7 @@ std::vector<std::pair<std::string, std::string>> ThemeData::sSupportedLanguages 
     {"pt_BR", "PORTUGUÊS (BRASIL)"},
     {"ro_RO", "ROMÂNĂ"},
     {"ru_RU", "РУССКИЙ"},
+    {"sr_RS", "SRPSKI"},
     {"sv_SE", "SVENSKA"},
     {"ja_JP", "日本語"},
     {"ko_KR", "한국어"},
