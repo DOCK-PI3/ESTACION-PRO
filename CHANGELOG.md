@@ -20,6 +20,7 @@
 * Added an %INJECT% variable for A7800 standalone for the atari7800 system on Linux and Windows
 * Added an %INJECT% variable for xenia standalone for the xbox360 system on Linux and Windows
 * Updated the logo and carousel icons for the Sega Mark III (mark3) system
+* Added a "mipmap" property to the image element to allow for higher quality texture scale-down
 * Changed the max value for the backgroundHorizontalPadding and backgroundVerticalPadding properties to 1 for the helpsystem, systemstatus and clock elements
 * Removed the obsolete InputManager::doOnFinish() and InputManager::getTemporaryConfigPath() functions
 * (Windows) Worked around an OS glitch by changing PlatformUtil::runSystemCommand() to use CreateProcessW() instead of _wsystem()
