@@ -345,6 +345,7 @@ std::map<std::string, std::map<std::string, ThemeData::ElementPropertyType>>
        {"tileHorizontalAlignment", STRING},
        {"tileVerticalAlignment", STRING},
        {"interpolation", STRING},
+       {"mipmap", BOOLEAN},
        {"cornerRadius", FLOAT},
        {"color", COLOR},
        {"colorEnd", COLOR},

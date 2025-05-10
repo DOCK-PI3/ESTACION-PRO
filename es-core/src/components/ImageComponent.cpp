@@ -597,6 +597,9 @@ void ImageComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
         }
     }
 
+    if (elem->has("mipmap"))
+        mMipmapping = elem->get<bool>("mipmap");
+
     if (elem->has("cornerRadius"))
         mCornerRadius =
             glm::clamp(elem->get<float>("cornerRadius"), 0.0f, 0.5f) * mRenderer->getScreenWidth();
