@@ -31,6 +31,7 @@ namespace Utils
         // When adding a new locale, then make sure to also update ThemeData::sSupportedLanguages.
         const std::vector<std::pair<std::string, std::string>> sSupportedLocales {{{"en"}, {"US"}},
                                                                                   {{"en"}, {"GB"}},
+                                                                                  {{"bs"}, {"BA"}},
                                                                                   {{"ca"}, {"ES"}},
                                                                                   {{"de"}, {"DE"}},
                                                                                   {{"es"}, {"ES"}},
@@ -193,6 +194,8 @@ namespace Utils
 
             // Language-specific menu title scale factor.
             if (localePair.first == "ca")
+                sMenuTitleScaleFactor = 0.92f;
+            else if (localePair.first == "bs")
                 sMenuTitleScaleFactor = 0.92f;
             else if (localePair.first == "de")
                 sMenuTitleScaleFactor = 0.92f;
