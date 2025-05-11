@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
 "POT-Creation-Date: 2025-05-10 14:25+0200\n"
-"PO-Revision-Date: 2025-05-02 17:05+0200\n"
+"PO-Revision-Date: 2025-05-11 14:46+0200\n"
 "Last-Translator: SecularSteve <info@es-de.org>\n"
 "Language-Team: Serbian (Latin, Serbia) <info@es-de.org>\n"
 "Language: sr_RS\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.4.4\n"
 
 msgid "Network error (status:"
 msgstr "Greška mreže (status:"
@@ -49,7 +49,7 @@ msgstr "ONEMOGUĆENO '%s' U '%s'"
 
 #, c-format
 msgid "EDITING '%s' COLLECTION, ADD/REMOVE GAMES WITH %s"
-msgstr "UREDITE KOLEKCIJU '%s', DODAJTE / UKLONITE IGRE IZ %s"
+msgstr "UREDITE KOLEKCIJU '%s', DODAJTE/UKLONITE IGRE IZ %s"
 
 #, c-format
 msgid "FINISHED EDITING '%s' COLLECTION"
@@ -220,7 +220,7 @@ msgid "GENRE"
 msgstr "ŽANR"
 
 msgid "PLAYERS"
-msgstr "IGRAИI"
+msgstr "IGRAČI"
 
 msgid "FAVORITE"
 msgstr "OMILJENI"
@@ -247,7 +247,7 @@ msgid "FALSE"
 msgstr "NETAČNO"
 
 msgid "TRUE"
-msgstr "TAИNO"
+msgstr "TAČNO"
 
 msgid "UNKNOWN"
 msgstr "NEPOZNAT"
@@ -636,7 +636,7 @@ msgid "SCRAPER"
 msgstr "STRUGAČ"
 
 msgid "UI SETTINGS"
-msgstr "PODEŠAVANJA KORISNIČKOG INTERFEJSA"
+msgstr "PODEŠAVANJA UI-ja"
 
 msgid "SOUND SETTINGS"
 msgstr "PODEŠAVANJA ZVUKA"
@@ -705,10 +705,10 @@ msgid "QUICK SYSTEM SELECT"
 msgstr "BRZI IZBOR SISTEMA"
 
 msgid "LEFT/RIGHT OR SHOULDERS"
-msgstr "LEVO / DESNO ILI RAMENA"
+msgstr "LEVO/DESNO ILI RAMENA"
 
 msgid "LEFT/RIGHT OR TRIGGERS"
-msgstr "LEVO / DESNO ILI OKIDAČI"
+msgstr "LEVO/DESNO ILI OKIDAČI"
 
 msgid "SHOULDERS"
 msgstr "RAMENA"
@@ -717,7 +717,7 @@ msgid "TRIGGERS"
 msgstr "OKIDAČI"
 
 msgid "LEFT/RIGHT"
-msgstr "LEVO / DESNO"
+msgstr "LEVO/DESNO"
 
 msgid "GAMELIST ON STARTUP"
 msgstr "LISTA IGARA NA START-U"
@@ -741,7 +741,7 @@ msgid "HW TYPE, RELEASE YEAR"
 msgstr "TIP UREĐAJA, GODINA IZDAVANJA"
 
 msgid "MANUFACTURER, HW TYPE, REL. YEAR"
-msgstr "PROIZVOĐAČ, VRSTA OPREME, GODINA PROIZVODNJE"
+msgstr "PROIZVOĐAČ, VRS. OPREME, GOD. PROIZ"
 
 msgctxt "short"
 msgid "GAMES DEFAULT SORT ORDER"
@@ -754,7 +754,7 @@ msgid "MENU COLOR SCHEME"
 msgstr "ŠEMA BOJA MENIJA"
 
 msgid "DARK"
-msgstr "MRAИNO"
+msgstr "MRAČNO"
 
 msgid "DARK AND RED"
 msgstr "TAMNO I CRVENO"
@@ -781,16 +781,16 @@ msgid "LONG"
 msgstr "DUGO"
 
 msgid "POPUP"
-msgstr "Pop-up prozor"
+msgstr "ISKOČNI PROZOR"
 
 msgid "UI MODE"
 msgstr "REŽIM INTERFEJSA RAČUNA"
 
 msgid "FULL"
-msgstr "Mnogo"
+msgstr "PUN"
 
 msgid "KIOSK"
-msgstr "TERMINALU"
+msgstr "KIOSK"
 
 msgid "KID"
 msgstr "DETE"
@@ -961,7 +961,7 @@ msgid "ONLY ACCEPT INPUT FROM FIRST CONTROLLER"
 msgstr "PRIHVATITE SAMO ULAZ IZ PRVOG KONTROLERA"
 
 msgid "SWAP THE A/B AND X/Y BUTTONS"
-msgstr "ZAMENITE A / B I KS / I TASTERE"
+msgstr "ZAMENITE A/B I X/Y TASTERE"
 
 msgid "IGNORE KEYBOARD INPUT"
 msgstr "IGNORIŠI UNOS SA TASTATURE"
@@ -1015,10 +1015,10 @@ msgid "ANTI-ALIASING (MSAA) (REQUIRES RESTART)"
 msgstr "ANTI-ALIASING (MSAA) (PONOVO POTREBNO)"
 
 msgid "DISPLAY/MONITOR INDEX"
-msgstr "INDEKS EKRANA / MONITORA"
+msgstr "INDEKS EKRANA/MONITORA"
 
 msgid "DISPLAY/MONITOR INDEX (REQUIRES RESTART)"
-msgstr "INDEKS EKRANA / MONITORA (POTREBNO JE PONOVNO POKRETANJE)"
+msgstr "INDEKS EKRANA/MONITORA (POTREBNO JE PONOVNO POKRETANJE)"
 
 msgid "ROTATE SCREEN"
 msgstr "ROTIRAJ EKRAN"
@@ -1103,7 +1103,7 @@ msgid "DISABLE DESKTOP COMPOSITION (REQUIRES RESTART)"
 msgstr "ISKLJUČITE DESKTOP SASTAV (RESTART POTREBNO)"
 
 msgid "BACK BUTTON/BACK SWIPE EXITS APP"
-msgstr "NAZAD / PREVUCITE DUGME NAZAD IZAĐITE IZ APLIKACIJE"
+msgstr "NAZAD/PREVUCITE DUGME NAZAD IZAĐITE IZ APLIKACIJE"
 
 msgid "DEBUG MODE"
 msgstr "KAKO OTKLANJATI GREŠKE"
@@ -1205,7 +1205,7 @@ msgid "unknown"
 msgstr "nepoznat"
 
 msgid "SCRAPE"
-msgstr "TELUGU"
+msgstr "STRUŽI"
 
 msgid "scrape"
 msgstr "stružnite"
@@ -1614,7 +1614,7 @@ msgid "SCREENSHOT SCALING METHOD"
 msgstr "METODA SKALIRANJA EKRANA"
 
 msgid "SHARP"
-msgstr "OЉTAR"
+msgstr "OŠTAR"
 
 msgid "SMOOTH"
 msgstr "GLATKO"
@@ -1632,7 +1632,7 @@ msgid "GENERATE MIXIMAGES WHEN SCRAPING"
 msgstr "GENERIŠITE MIKIMAGES PRILIKOM STRUGANJA"
 
 msgid "OVERWRITE MIXIMAGES (SCRAPER/OFFLINE GENERATOR)"
-msgstr "PREPIŠITE MIKIMAGES (STRUGAČ / IZVAN GENERATORA TRAKE)"
+msgstr "PREPIŠITE MIKIMAGES (STRUGAČ/IZVAN GENERATORA TRAKE)"
 
 msgid "REMOVE LETTERBOXES FROM SCREENSHOTS"
 msgstr "UKLONI POŠTANSKE SANDUČIĆE IZ EKRANA"
@@ -1778,7 +1778,7 @@ msgid "GAME %i OF %i"
 msgstr "IGRA %i %i"
 
 msgid "NO GAMES WERE SCRAPED"
-msgstr "NIJEDNA UTAKMICA NIJE OTKAZANA"
+msgstr "NIJEDNA IGRA NIJE OTKAZANA"
 
 #, c-format
 msgid "%i GAME SUCCESSFULLY SCRAPED"
@@ -1810,7 +1810,7 @@ msgid "GENRE:"
 msgstr "ŽANR:"
 
 msgid "PLAYERS:"
-msgstr "IGRAИI:"
+msgstr "IGRAČI:"
 
 msgid "NO GAMES FOUND"
 msgstr "NEMA IGARA PRONAĐENIH"
@@ -1843,7 +1843,7 @@ msgid "SCREENSAVER TYPE"
 msgstr "TIP ZATVARAČA GARDA"
 
 msgid "DIM"
-msgstr "PUЉIЉ"
+msgstr "ZATAMLJEN"
 
 msgid "SLIDESHOW"
 msgstr "SLAJDOVA"
@@ -1870,7 +1870,7 @@ msgid "ONLY INCLUDE FAVORITE GAMES"
 msgstr "UKLJUČITE SAMO SVOJE OMILJENE IGRE"
 
 msgid "STRETCH IMAGES TO SCREEN RESOLUTION"
-msgstr "STRETCH SLIKE U REZOLUCIJI EKRANA"
+msgstr "RASTEGNITE SLIKE NA REZOLUCIJU EKRANA"
 
 msgid "DISPLAY GAME INFO OVERLAY"
 msgstr "PRIKAZIVANJE PREKRIVAČA INFORMACIJA O IGRI"
@@ -1947,7 +1947,7 @@ msgstr ""
 "VERZIJOM"
 
 msgid "and"
-msgstr "I"
+msgstr "i"
 
 #, c-format
 msgid ""
@@ -1994,7 +1994,7 @@ msgid ""
 msgstr ""
 "LOKALNO KLONIRANO SPREMIŠTE SADRŽI POGREŠAN URL, ŠTO NORMALNO ZNAČI DA JE "
 "TEMA PREMEŠTENA NA NOVU GIT STRANICU. POTREBNO JE NOVO PREUZIMANJE I STARI "
-"DIREKTOR TEME \"%s\" ĆE BITI PREIMENOVAN U \"%s_POGREŠAN_URL_ONEMOGUĆEN\""
+"DIREKTOR TEME \"%s\" ĆE BITI PREIMENOVAN U \"%s_WRONG_URL_DISABLED\""
 
 #, c-format
 msgid ""
@@ -2093,7 +2093,7 @@ msgstr ""
 "IZGLEDA DA JE SPREMIŠTE LISTE TEMA OŠTEĆENO, ŠTO MOŽE BITI UZROKOVANO "
 "PREKIDOM PRETHODNOG PREUZIMANJA ILI OBNAVLJANJA, NA PRIMER AKO JE ES-DE "
 "PROCES ZAUSTAVLJEN. NOVO PREUZIMANJE JE POTREBNO I STARI DIREKTOR \"themes-"
-"list\" će biti preimenovan u \"themes-list_CORRUPT_DISABLED\""
+"list\" ĆE BITI PREIMENOVAN U \"themes-list_CORRUPT_DISABLED\""
 
 msgid "UPDATING THEMES LIST"
 msgstr "AŽURIRANjE LISTE TEMA"
@@ -2212,7 +2212,7 @@ msgstr "UNESITE ŽANR"
 
 msgctxt "metadata"
 msgid "PLAYERS"
-msgstr "IGRAИI"
+msgstr "IGRAČI"
 
 msgctxt "metadata"
 msgid "ENTER NUMBER OF PLAYERS"
@@ -2240,7 +2240,7 @@ msgstr "SKRIVENE"
 
 msgctxt "metadata"
 msgid "BROKEN/NOT WORKING"
-msgstr "SLOMLJENA / NE RADI"
+msgstr "SLOMLJENA/NE RADI"
 
 msgctxt "metadata"
 msgid "EXCLUDE FROM GAME COUNTER"
@@ -2416,7 +2416,7 @@ msgid "view media"
 msgstr "prikaz medija"
 
 msgid "options"
-msgstr "Opcije"
+msgstr "opcije"
 
 msgid "random"
 msgstr "nasumično"
