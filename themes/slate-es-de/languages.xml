@@ -128,6 +128,16 @@
             <langLabelLastPlayed>Последняя Игра</langLabelLastPlayed>
         </variables>
     </language>
+    <language name="sr_RS">
+        <variables>
+            <langLabelReleasedate>Objavljeno</langLabelReleasedate>
+            <langLabelDeveloper>Programer</langLabelDeveloper>
+            <langLabelPublisher>Izdavač</langLabelPublisher>
+            <langLabelGenre>Žanr</langLabelGenre>
+            <langLabelPlayers>Igrači</langLabelPlayers>
+            <langLabelLastPlayed>Poslednje igrano</langLabelLastPlayed>
+        </variables>
+    </language>
     <language name="sv_SE">
         <variables>
             <langLabelReleasedate>Utgivet</langLabelReleasedate>
