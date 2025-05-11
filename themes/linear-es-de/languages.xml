@@ -168,6 +168,19 @@
             <langYourCollections>Ваши Коллекции</langYourCollections>
         </variables>
     </language>
+    <language name="sr_RS">
+        <variables>
+            <langLabelRating>Ocena</langLabelRating>
+            <langLabelReleasedate>Objavljeno</langLabelReleasedate>
+            <langLabelPlayers>Igrači</langLabelPlayers>
+            <langLabelGenre>Žanr</langLabelGenre>
+            <langLabelDeveloper>Programer</langLabelDeveloper>
+            <langLabelPublisher>Izdavač</langLabelPublisher>
+            <langLabelLastPlayed>Poslednje igrano</langLabelLastPlayed>
+            <langCustomCollections>Prilagođene kolekcije</langCustomCollections>
+            <langYourCollections>Vaše kolekcije</langYourCollections>
+        </variables>
+    </language>
     <language name="sv_SE">
         <variables>
             <langLabelRating>Betyg</langLabelRating>
