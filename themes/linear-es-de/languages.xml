@@ -11,6 +11,19 @@
         <langCustomCollections>Custom Collections</langCustomCollections>
         <langYourCollections>Your Collections</langYourCollections>
     </variables>
+    <language name="bs_BA">
+        <variables>
+            <langLabelRating>Ocjena</langLabelRating>
+            <langLabelReleasedate>Objavljeno</langLabelReleasedate>
+            <langLabelPlayers>Igrači</langLabelPlayers>
+            <langLabelGenre>Žanr</langLabelGenre>
+            <langLabelDeveloper>Programer</langLabelDeveloper>
+            <langLabelPublisher>Izdavač</langLabelPublisher>
+            <langLabelLastPlayed>Posljednje igrano</langLabelLastPlayed>
+            <langCustomCollections>Prilagođene kolekcije</langCustomCollections>
+            <langYourCollections>Vaše kolekcije</langYourCollections>
+        </variables>
+    </language>
     <language name="ca_ES">
         <variables>
             <langLabelRating>Valoració</langLabelRating>
