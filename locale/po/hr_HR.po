@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
 "POT-Creation-Date: 2025-05-10 13:54+0200\n"
-"PO-Revision-Date: 2025-05-02 16:41+0200\n"
+"PO-Revision-Date: 2025-05-11 14:43+0200\n"
 "Last-Translator: SecularSteve <info@es-de.org>\n"
 "Language-Team: Croatian (Croatia) <info@es-de.org>\n"
 "Language: hr_HR\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.4.4\n"
 
 msgid "Network error (status:"
 msgstr "Mrežna pogreška (status:"
@@ -718,7 +718,7 @@ msgid "LEFT/RIGHT"
 msgstr "LIJEVO/DESNO"
 
 msgid "GAMELIST ON STARTUP"
-msgstr "POPIS IGRA PRI POKRETANJU"
+msgstr "POPIS IGARA PRI POKRETANJU"
 
 msgid "NONE"
 msgstr "NIJEDAN"
@@ -739,7 +739,7 @@ msgid "HW TYPE, RELEASE YEAR"
 msgstr "VRSTA UREĐAJA, GODINA IZLASKA"
 
 msgid "MANUFACTURER, HW TYPE, REL. YEAR"
-msgstr "PROIZVOĐAČ, VRSTA OPREME, GODINA PROIZVODNJE"
+msgstr "PROIZVOĐAČ, VRS. OPREME, GOD. PROIZ"
 
 msgctxt "short"
 msgid "GAMES DEFAULT SORT ORDER"
@@ -752,13 +752,13 @@ msgid "MENU COLOR SCHEME"
 msgstr "ŠEMA BOJA IZBORNIKA"
 
 msgid "DARK"
-msgstr "TAMNO"
+msgstr "TAMNA"
 
 msgid "DARK AND RED"
-msgstr "TAMNO I CRVENO"
+msgstr "TAMNA I CRVENA"
 
 msgid "LIGHT"
-msgstr "SVJETLO"
+msgstr "SVJETLA"
 
 msgid "MENU OPENING ANIMATION"
 msgstr "ANIMACIJA OTVARANJA IZBORNIKA"
@@ -770,22 +770,22 @@ msgid "LAUNCH SCREEN DURATION"
 msgstr "TRAJANJE POKRETNOG ZASLONKA"
 
 msgid "NORMAL"
-msgstr "NORMALAN"
+msgstr "NORMALNO"
 
 msgid "BRIEF"
-msgstr "KRATAK"
+msgstr "KRATKO"
 
 msgid "LONG"
 msgstr "DUGO"
 
 msgid "POPUP"
-msgstr "Skočni prozor"
+msgstr "SKOČNI PROZOR"
 
 msgid "UI MODE"
 msgstr "NAČIN SUČELJSKOG RAČUNA"
 
 msgid "FULL"
-msgstr "PUNO"
+msgstr "PUNI"
 
 msgid "KIOSK"
 msgstr "KIOSK"
@@ -883,7 +883,7 @@ msgid "DISPLAY ON-SCREEN HELP"
 msgstr "PRIKAZ POMOĆI NA ZASLONU"
 
 msgid "AUDIO DRIVER"
-msgstr "AUDIO DRAJVER"
+msgstr "AUDIO UPRAVLJAČ"
 
 msgid "AUDIO DRIVER (REQUIRES RESTART)"
 msgstr "AUDIO UPRAVLJAČKI PROGRAM (POTREBNO PONOVNO POKRETANJE)"
@@ -898,13 +898,13 @@ msgid "VIDEO PLAYER VOLUME"
 msgstr "GLASNOĆA VIDEO PLAYERA"
 
 msgid "PLAY AUDIO FOR GAMELIST AND SYSTEM VIEW VIDEOS"
-msgstr "REPRODUCIRAJ ZVUK ZA POPISE IGRAČA I VIDEO ZAPISE SUSTAVA"
+msgstr "REPRODUCIRAJ ZVUK ZA POPISE IGARA I VIDEO ZAPISE SUSTAVA"
 
 msgid "PLAY AUDIO FOR MEDIA VIEWER VIDEOS"
-msgstr "REPRODUCIRAJ ZVUK ZA VIDEOZAPISE U PROGRAMU MEDIA GLAVLJENJA"
+msgstr "REPRODUCIRAJ ZVUK ZA SNIMKE GLAVLJENJA"
 
 msgid "PLAY AUDIO FOR SCREENSAVER VIDEOS"
-msgstr "REPRODUKCIJA ZVUKA ZA VIDEO ZAPISE ČUVARA ZASLONA"
+msgstr "REPRODUCIRAJ ZVUK ZA SNIMKE ČUVARA ZASLONA"
 
 msgid "ENABLE NAVIGATION SOUNDS"
 msgstr "OMOGUĆI ZVUKOVE NAVIGACIJE"
@@ -928,7 +928,7 @@ msgid "EXTRA SMALL"
 msgstr "IZUZETNO MALO"
 
 msgid "TOUCH OVERLAY OPACITY"
-msgstr "NEPROZIRNOST PREKRIVAJUĆEG DODIRNOG PLOŠČA"
+msgstr "NEPROZIRNOST PREKRIVAČA PLOŠČA"
 
 msgid "LOW"
 msgstr "NISKA"
@@ -1155,19 +1155,19 @@ msgstr ""
 "UKLONJENI IGRE I SUSTAVI"
 
 msgid "REALLY QUIT?"
-msgstr "STVARNO ODUSTAO?"
+msgstr "STVARNO ODUSTAJETE?"
 
 msgid "REALLY REBOOT?"
-msgstr "STVARNO PONOVNO POKRETANJE?"
+msgstr "STVARNO PONOVNO POKREČETE?"
 
 msgid "REBOOT SYSTEM"
 msgstr "PONOVNO POKRETANJE SUSTAVA"
 
 msgid "REALLY POWER OFF?"
-msgstr "STVARNO ISKLJUČITI?"
+msgstr "STVARNO ISKLJUČUJETE?"
 
 msgid "POWER OFF SYSTEM"
-msgstr "SUSTAV ISKLJUČIVANJA"
+msgstr "ISKLJUČIVANJE SUSTAVA"
 
 msgctxt "short"
 msgid "SYSTEM STATUS SETTINGS"
@@ -1206,7 +1206,7 @@ msgid "SCRAPE"
 msgstr "STRUGNI"
 
 msgid "scrape"
-msgstr "strugni"
+msgstr "strugnite"
 
 msgid "save metadata"
 msgstr "spremi metapodatke"
@@ -1848,10 +1848,10 @@ msgid "SCREENSAVER TYPE"
 msgstr "VRSTA ČUVARA ZASLONKA"
 
 msgid "DIM"
-msgstr "DIM"
+msgstr "ZATAMLJEN"
 
 msgid "SLIDESHOW"
-msgstr "SLIDESHOW"
+msgstr "SLAJDOVI"
 
 msgid "VIDEO"
 msgstr "VIDEO"
@@ -1999,8 +1999,7 @@ msgid ""
 msgstr ""
 "LOKALNO KLONIRANI REPOZITORIJ SADRŽI POGREŠAN URL ŠTO NORMALNO ZNAČI DA JE "
 "TEMA PREMJEŠTENA NA NOVU GIT STRANICU. POTREBNO JE SVJEŽE PREUZIMANJE I "
-"STARI DIREKTOR TEME \"%s\" BIT ĆE PREIMENOVAN U "
-"\"%s_POGREŠAN_URL_ONEMOGUĆEN\""
+"STARI DIREKTOR TEME \"%s\" BIT ĆE PREIMENOVAN U \"%s_WRONG_URL_DISABLED\""
 
 #, c-format
 msgid ""
@@ -2968,4 +2967,4 @@ msgid "Creating system directories..."
 msgstr "Izrada sistemskih direktorija..."
 
 msgid "ERROR: COULDN'T RENDER PDF FILE"
-msgstr "POGREŠKA: NIJE MOGAO PRIKAZ PDF DATOTEKE"
+msgstr "POGREŠKA: NIJE MOGUĆE PRIKAZATI PDF DATOTEKU"
