@@ -12,6 +12,7 @@
     <language>de_DE</language>
     <language>es_ES</language>
     <language>fr_FR</language>
+    <language>hr_HR</language>
     <language>it_IT</language>
     <language>nl_NL</language>
     <language>pl_PL</language>
@@ -40,6 +41,7 @@
         <label language="de_DE">Dunkel</label>
         <label language="es_ES">Oscuro</label>
         <label language="fr_FR">Foncé</label>
+        <label language="hr_HR">Tamna</label>
         <label language="it_IT">Scuro</label>
         <label language="nl_NL">Donker</label>
         <label language="pl_PL">Ciemna</label>
@@ -61,6 +63,7 @@
         <label language="de_DE">Hell</label>
         <label language="es_ES">Claro</label>
         <label language="fr_FR">Clair</label>
+        <label language="hr_HR">Svjetla</label>
         <label language="it_IT">Chiaro</label>
         <label language="nl_NL">Licht</label>
         <label language="pl_PL">Jasna</label>
@@ -94,6 +97,7 @@
         <label language="de_DE">Liste</label>
         <label language="es_ES">Lista</label>
         <label language="fr_FR">Liste</label>
+        <label language="hr_HR">Tekstlista</label>
         <label language="it_IT">Lista testi</label>
         <label language="nl_NL">Tekstlijst</label>
         <label language="pl_PL">Lista tekstowa</label>
@@ -116,6 +120,7 @@
         <label language="de_DE">Liste ohne videos</label>
         <label language="es_ES">Lista sin videos</label>
         <label language="fr_FR">Liste sans vidéos</label>
+        <label language="hr_HR">Tekstlista bez videa</label>
         <label language="it_IT">Lista testi, no video</label>
         <label language="nl_NL">Tekstlijst zonder video's</label>
         <label language="pl_PL">Lista tekstowa bez wideo</label>
@@ -138,6 +143,7 @@
         <label language="de_DE">Einfache liste</label>
         <label language="es_ES">Lista simple</label>
         <label language="fr_FR">Simple liste</label>
+        <label language="hr_HR">Jednostavna tekstlista</label>
         <label language="it_IT">Lista testi semplice</label>
         <label language="nl_NL">Simpele tekstlijst</label>
         <label language="pl_PL">Prosta lista tekstowa</label>
@@ -160,6 +166,7 @@
         <label language="de_DE">Einfache liste ohne videos</label>
         <label language="es_ES">Lista simple sin videos</label>
         <label language="fr_FR">Simple liste sans vidéos</label>
+        <label language="hr_HR">Jednostavna tekstlista bez videa</label>
         <label language="it_IT">Lista testi semplice, no video</label>
         <label language="nl_NL">Simpele tekstlijst zonder video's</label>
         <label language="pl_PL">Prosta lista tekstowa bez wideo</label>
@@ -182,6 +189,7 @@
         <label language="de_DE">Karussell</label>
         <label language="es_ES">Carrusel</label>
         <label language="fr_FR">Carrousel</label>
+        <label language="hr_HR">Vrtuljak</label>
         <label language="it_IT">Carosello</label>
         <label language="nl_NL">Carousel</label>
         <label language="pl_PL">Karuzela</label>
@@ -204,6 +212,7 @@
         <label language="de_DE">Einfaches karussell</label>
         <label language="es_ES">Carrusel simple</label>
         <label language="fr_FR">Simple carrousel</label>
+        <label language="hr_HR">Jednostavan vrtuljak</label>
         <label language="it_IT">Carosello semplice</label>
         <label language="nl_NL">Simpel carousel</label>
         <label language="pl_PL">Prosta karuzela</label>
@@ -226,6 +235,7 @@
         <label language="de_DE">Sofort und gleiten</label>
         <label language="es_ES">Instantanea y deslizante</label>
         <label language="fr_FR">Instantané et glissement</label>
+        <label language="hr_HR">Instantno i klizivo</label>
         <label language="it_IT">Istantanea e scorri</label>
         <label language="nl_NL">Direct en glijd</label>
         <label language="pl_PL">Momentalne przesunięcie</label>
@@ -254,6 +264,7 @@
         <label language="de_DE">Sofort</label>
         <label language="es_ES">Instantanea</label>
         <label language="fr_FR">Instantané</label>
+        <label language="hr_HR">Instantno</label>
         <label language="it_IT">Istantanea</label>
         <label language="nl_NL">Direct</label>
         <label language="pl_PL">Natychmiastowe</label>
@@ -282,6 +293,7 @@
         <label language="de_DE">Überblendung</label>
         <label language="es_ES">Fundido</label>
         <label language="fr_FR">Fondu</label>
+        <label language="hr_HR">Blijed</label>
         <label language="it_IT">Dissolvi</label>
         <label language="nl_NL">Fade</label>
         <label language="pl_PL">Zanikanie</label>
