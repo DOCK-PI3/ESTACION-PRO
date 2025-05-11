@@ -19,6 +19,8 @@ Nils Bonenberger
 
 **English (United Kingdom)** \
 Weestuarty \
+**Bosnian** \
+SecularSteve \
 **Catalan** \
 Johnnydement \
 **German** \
@@ -28,6 +30,8 @@ Pest \
 Dani (stshunz) \
 **French** \
 Fredy27 (neuromancer974) \
+**Croatian** \
+SecularSteve \
 **Italian** \
 Viler \
 **Dutch**\
@@ -40,6 +44,8 @@ MrVictorFull \
 SilverGreen93 \
 **Russian** \
 Lulzee \
+**Serbian** \
+SecularSteve \
 **Swedish** \
 Leon Styhre \
 Daniel Nylander \

@@ -8,6 +8,9 @@
 
 ### Detailed list of changes
 
+* Added translations for Bosnian (bs_BA)
+* Added translations for Croatian (hr_HR)
+* Added translations for Serbian (sr_RS)
 * (Android) Removed all MAME4droid 2024 emulator entries (replacement MAME4droid Current entries were added in ES-DE 3.2.0-45)
 * (Linux) Added the native xenia release as the default emulator for the xbox360 system
 * (Linux) Added Lindbergh Loader standalone as an alternative emulator for the arcade, mame and pcarcade systems

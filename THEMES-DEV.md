@@ -777,16 +777,19 @@ The following languages are supported:
 | :------------ | :----------------------- | :----------------------- |
 | en_US         | English (United States)  | English (United States)  |
 | en_GB         | English (United Kingdom) | English (United Kingdom) |
+| bs_BA         | Bosnian                  | Bosanski                 |
 | ca_ES         | Catalan                  | Català                   |
 | de_DE         | German                   | Deutsch                  |
 | es_ES         | Spanish (Spain)          | Español (España)         |
 | fr_FR         | French                   | Français                 |
+| hr_HR         | Croatian                 | Hrvatski                 |
 | it_IT         | Italian                  | Italiano                 |
 | nl_NL         | Dutch                    | Nederlands               |
 | pl_PL         | Polish                   | Polski                   |
 | pt_BR         | Portuguese (Brazil)      | Português (Brasil)       |
 | ro_RO         | Romanian                 | Română                   |
 | ru_RU         | Russian                  | Русский                  |
+| sr_RS         | Serbian                  | Srpski                   |
 | sv_SE         | Swedish                  | Svenska                  |
 | ja_JP         | Japanese                 | 日本語                   |
 | ko_KR         | Korean                   | 한국어                   |
