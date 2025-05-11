@@ -8,6 +8,16 @@
         <langLabelPlayers>Players</langLabelPlayers>
         <langLabelLastPlayed>Last Played</langLabelLastPlayed>
     </variables>
+    <language name="bs_BA">
+        <variables>
+            <langLabelReleasedate>Objavljeno</langLabelReleasedate>
+            <langLabelDeveloper>Programer</langLabelDeveloper>
+            <langLabelPublisher>Izdavač</langLabelPublisher>
+            <langLabelGenre>Žanr</langLabelGenre>
+            <langLabelPlayers>Igrači</langLabelPlayers>
+            <langLabelLastPlayed>Posljednje igrano</langLabelLastPlayed>
+        </variables>
+    </language>
     <language name="ca_ES">
         <variables>
             <langLabelReleasedate>Llançament</langLabelReleasedate>
