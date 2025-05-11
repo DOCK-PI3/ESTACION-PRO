@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
 "POT-Creation-Date: 2025-05-04 23:15+0200\n"
-"PO-Revision-Date: 2025-05-02 16:42+0200\n"
+"PO-Revision-Date: 2025-05-11 14:41+0200\n"
 "Last-Translator: SecularSteve <info@es-de.org>\n"
 "Language-Team: Bosnian (Bosnia & Herzegovina) <info@es-de.org>\n"
 "Language: bs_BA\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.4.4\n"
 
 msgid "Network error (status:"
 msgstr "Greška mreže (status:"
@@ -702,7 +702,7 @@ msgid "QUICK SYSTEM SELECT"
 msgstr "BRZI IZBOR SISTEMA"
 
 msgid "LEFT/RIGHT OR SHOULDERS"
-msgstr "LIJEVO/DESNO ILI RAME"
+msgstr "LIJEVO/DESNO ILI RAMENA"
 
 msgid "LEFT/RIGHT OR TRIGGERS"
 msgstr "LIJEVO/DESNO ILI OKIDAČI"
@@ -720,7 +720,7 @@ msgid "GAMELIST ON STARTUP"
 msgstr "LISTA IGARA PRI STARTUP-u"
 
 msgid "NONE"
-msgstr "NIJEDAN"
+msgstr "NIJEDNA"
 
 msgid "SYSTEMS SORTING"
 msgstr "SISTEM ZA SORTIRANJE"
@@ -738,7 +738,7 @@ msgid "HW TYPE, RELEASE YEAR"
 msgstr "VRSTA UREĐAJA, GODINA IZLASKA"
 
 msgid "MANUFACTURER, HW TYPE, REL. YEAR"
-msgstr "PROIZVOĐAČ, VRSTA OPREME, GODINA PROIZVODNJE"
+msgstr "PROIZVOĐAČ, VRS. OPREME, GOD. PROIZ"
 
 msgctxt "short"
 msgid "GAMES DEFAULT SORT ORDER"
@@ -751,13 +751,13 @@ msgid "MENU COLOR SCHEME"
 msgstr "ŠEMA BOJA MENIJA"
 
 msgid "DARK"
-msgstr "TAMO"
+msgstr "TAMNA"
 
 msgid "DARK AND RED"
-msgstr "TAMNO I CRVENO"
+msgstr "TAMNA I CRVENA"
 
 msgid "LIGHT"
-msgstr "SVJETLO"
+msgstr "SVJETLA"
 
 msgid "MENU OPENING ANIMATION"
 msgstr "ANIMACIJA OTVARANJA MENIJA"
@@ -778,13 +778,13 @@ msgid "LONG"
 msgstr "DUGO"
 
 msgid "POPUP"
-msgstr "Iskačući prozor"
+msgstr "ISKAČUĆI PROZOR"
 
 msgid "UI MODE"
 msgstr "METODA RAČUNA INTERFEJSA"
 
 msgid "FULL"
-msgstr "MNOGO"
+msgstr "PUNA"
 
 msgid "KIOSK"
 msgstr "KIOSK"
@@ -900,10 +900,10 @@ msgid "PLAY AUDIO FOR GAMELIST AND SYSTEM VIEW VIDEOS"
 msgstr "REPRODUKCIJA ZVUKA ZA LISTE IGRAČA I SISTEMSKE VIDEO ZAPISE"
 
 msgid "PLAY AUDIO FOR MEDIA VIEWER VIDEOS"
-msgstr "REPRODUKCIJA ZVUKA ZA VIDEO ZAPISE U PROGRAMU MEDIA PLAYER"
+msgstr "REPRODUKCIJA ZVUKA ZA VIDEO ZAPISE U MEDIJIMA"
 
 msgid "PLAY AUDIO FOR SCREENSAVER VIDEOS"
-msgstr "REPRODUKCIJA ZVUKA ZA VIDEO ZAPISE ČUVARA EKRANA"
+msgstr "REPRODUKCIJA ZVUKA ZA ZAPISE SLIKARA EKRANA"
 
 msgid "ENABLE NAVIGATION SOUNDS"
 msgstr "OMOGUĆI ZVUKOVNU NAVIGACIJU"
@@ -1150,23 +1150,23 @@ msgid ""
 "THIS WILL RESCAN YOUR ROM DIRECTORY FOR CHANGES SUCH AS ADDED OR REMOVED "
 "GAMES AND SYSTEMS"
 msgstr ""
-"OVO ĆE PONOVNO SKENIRATI VAŠ ROM DIREKTORIJ ZA PROMJENE KAO ŠTO SU IGRE I "
+"OVO ĆE PONOVO SKENIRATI VAŠ ROM DIREKTORIJ ZA PROMJENE KAO ŠTO SU IGRE I "
 "SISTEMI DODANI ILI UKLONJENI"
 
 msgid "REALLY QUIT?"
-msgstr "ZAISTA ODUSTAJEŠ?"
+msgstr "ZAISTA ODUSTAJETE?"
 
 msgid "REALLY REBOOT?"
-msgstr "PRAVO RESTARTOVANJE?"
+msgstr "SIGURNO RESTARTUJETE?"
 
 msgid "REBOOT SYSTEM"
-msgstr "RESTARTOVANJE SISTEMA"
+msgstr "RESTARTUJ SISTEM"
 
 msgid "REALLY POWER OFF?"
 msgstr "ZAISTA ISKLJUČITI?"
 
 msgid "POWER OFF SYSTEM"
-msgstr "SISTEM ISKLJUČENJA"
+msgstr "ISKLJUČI SISTEM"
 
 msgctxt "short"
 msgid "SYSTEM STATUS SETTINGS"
@@ -1202,10 +1202,10 @@ msgid "unknown"
 msgstr "nepoznato"
 
 msgid "SCRAPE"
-msgstr "STROJNI MAŠINE"
+msgstr "STRUŽI"
 
 msgid "scrape"
-msgstr "tokarski stroj"
+msgstr "stružnite"
 
 msgid "save metadata"
 msgstr "sačuvaj metapodatke"
@@ -1371,7 +1371,7 @@ msgid "stop processing"
 msgstr "zaustavi obradu"
 
 msgid "GAMELISTS"
-msgstr "LISTE UTAKMICA"
+msgstr "LISTE IGARA"
 
 msgid "RUNNING GAMELISTS CLEANUP"
 msgstr "ČIŠĆENJE IGRALNOG LISTIĆA"
@@ -1777,10 +1777,10 @@ msgstr[2] "IGARA"
 
 #, c-format
 msgid "GAME %i OF %i"
-msgstr "UTAKMICA %i OD %i"
+msgstr "IGRA %i OD %i"
 
 msgid "NO GAMES WERE SCRAPED"
-msgstr "NIJEDNA UTAKMICA NIJE OTKAZANA"
+msgstr "NIJEDNA IGRA NIJE OTKAZANA"
 
 #, c-format
 msgid "%i GAME SUCCESSFULLY SCRAPED"
@@ -1845,7 +1845,7 @@ msgid "SCREENSAVER TYPE"
 msgstr "VRSTA ZAŠTITNE FOLIJE ZA EKRAN"
 
 msgid "DIM"
-msgstr "DIM"
+msgstr "ZATAMLJENA"
 
 msgid "SLIDESHOW"
 msgstr "SLAJDŠO"
