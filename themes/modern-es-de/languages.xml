@@ -64,6 +64,17 @@
             <langUnknown>Inconnu</langUnknown>
         </variables>
     </language>
+    <language name="hr_HR">
+        <variables>
+            <langLabelRating>Ocjena</langLabelRating>
+            <langLabelReleasedate>Objavljeno</langLabelReleasedate>
+            <langLabelPlayers>Igrači</langLabelPlayers>
+            <langLabelGenre>Žanr</langLabelGenre>
+            <langLabelDeveloper>Programer</langLabelDeveloper>
+            <langLabelPublisher>Izdavač</langLabelPublisher>
+            <langUnknown>Nepoznato</langUnknown>
+        </variables>
+    </language>
     <language name="it_IT">
         <variables>
             <langLabelRating>Valutazione</langLabelRating>
