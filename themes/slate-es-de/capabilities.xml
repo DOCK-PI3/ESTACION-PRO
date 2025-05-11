@@ -12,6 +12,7 @@
     <language>de_DE</language>
     <language>es_ES</language>
     <language>fr_FR</language>
+    <language>hr_HR</language>
     <language>it_IT</language>
     <language>nl_NL</language>
     <language>pl_PL</language>
@@ -40,6 +41,7 @@
         <label language="de_DE">Dunkel</label>
         <label language="es_ES">Oscuro</label>
         <label language="fr_FR">Foncé</label>
+        <label language="hr_HR">Tamna</label>
         <label language="it_IT">Scuro</label>
         <label language="nl_NL">Donker</label>
         <label language="pl_PL">Ciemna</label>
@@ -61,6 +63,7 @@
         <label language="de_DE">Hell</label>
         <label language="es_ES">Claro</label>
         <label language="fr_FR">Clair</label>
+        <label language="hr_HR">Svjetla</label>
         <label language="it_IT">Chiaro</label>
         <label language="nl_NL">Licht</label>
         <label language="pl_PL">Jasna</label>
@@ -82,6 +85,7 @@
         <label language="de_DE">Gleiten</label>
         <label language="es_ES">Deslizante</label>
         <label language="fr_FR">Glissement</label>
+        <label language="hr_HR">Klizivo</label>
         <label language="it_IT">Scorri</label>
         <label language="nl_NL">Glijden</label>
         <label language="pl_PL">Przesunięcie</label>
@@ -108,6 +112,7 @@
         <label language="de_DE">Sofort</label>
         <label language="es_ES">Instantanea</label>
         <label language="fr_FR">Instantané</label>
+        <label language="hr_HR">Instantno</label>
         <label language="it_IT">Istantanea</label>
         <label language="nl_NL">Direct</label>
         <label language="pl_PL">Natychmiastowe</label>
@@ -136,6 +141,7 @@
         <label language="de_DE">Überblendung</label>
         <label language="es_ES">Fundido</label>
         <label language="fr_FR">Fondu</label>
+        <label language="hr_HR">Blijed</label>
         <label language="it_IT">Dissolvi</label>
         <label language="nl_NL">Faseren</label>
         <label language="pl_PL">Zanikanie</label>
@@ -170,6 +176,7 @@
         <label language="de_DE">Liste mit videos</label>
         <label language="es_ES">Lista con videos</label>
         <label language="fr_FR">Liste avec vidéos</label>
+        <label language="hr_HR">Tekstlista s videima</label>
         <label language="it_IT">Lista testi con video</label>
         <label language="nl_NL">Tekstlijst met video's</label>
         <label language="pl_PL">Lista tekstowa z wideo</label>
@@ -197,6 +204,7 @@
         <label language="de_DE">Liste ohne videos</label>
         <label language="es_ES">Lista sin videos</label>
         <label language="fr_FR">Liste sans vidéos</label>
+        <label language="hr_HR">Tekstlista bez videa</label>
         <label language="it_IT">Lista testi, no video</label>
         <label language="nl_NL">Tekstlijst zonder video's</label>
         <label language="pl_PL">Lista tekstowa bez wideo</label>

@@ -58,6 +58,16 @@
             <langLabelLastPlayed>Dernier Joué</langLabelLastPlayed>
         </variables>
     </language>
+    <language name="hr_HR">
+        <variables>
+            <langLabelReleasedate>Objavljeno</langLabelReleasedate>
+            <langLabelDeveloper>Programer</langLabelDeveloper>
+            <langLabelPublisher>Izdavač</langLabelPublisher>
+            <langLabelGenre>Žanr</langLabelGenre>
+            <langLabelPlayers>Igrači</langLabelPlayers>
+            <langLabelLastPlayed>Zadnje igrano</langLabelLastPlayed>
+        </variables>
+    </language>
     <language name="it_IT">
         <variables>
             <langLabelReleasedate>Data Uscita</langLabelReleasedate>
