@@ -1536,10 +1536,11 @@
         <name>pcengine</name>
         <fullname>NEC PC Engine</fullname>
         <path>%ROMPATH%/pcengine</path>
-        <extension>.ccd .CCD .chd .CHD .cue .CUE .img .IMG .iso .ISO .m3u .M3U .pce .PCE .sgx .SGX .toc .TOC .7z .7Z .zip .ZIP</extension>
+        <extension>.ccd .CCD .chd .CHD .cue .CUE .img .IMG .iso .ISO .m3u .M3U .pce .PCE .rom .ROM .sgx .SGX .toc .TOC .7z .7Z .zip .ZIP</extension>
         <command label="Beetle PCE">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/mednafen_pce_libretro.so %ROM%</command>
         <command label="Beetle PCE FAST">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/mednafen_pce_fast_libretro.so %ROM%</command>
         <command label="Beetle SuperGrafx">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/mednafen_supergrafx_libretro.so %ROM%</command>
+        <command label="Geargrafx">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/geargrafx_libretro.so %ROM%</command>
         <command label="Mednafen (Standalone)">%EMULATOR_MEDNAFEN% -force_module pce %ROM%</command>
         <command label="Mesen (Standalone)">%EMULATOR_MESEN% --fullscreen %ROM%</command>
         <command label="ares (Standalone)">%EMULATOR_ARES% --fullscreen --system "PC Engine" %ROM%</command>
@@ -1989,9 +1990,10 @@
         <name>supergrafx</name>
         <fullname>NEC SuperGrafx</fullname>
         <path>%ROMPATH%/supergrafx</path>
-        <extension>.ccd .CCD .chd .CHD .cue .CUE .pce .PCE .sgx .SGX .7z .7Z .zip .ZIP</extension>
+        <extension>.ccd .CCD .chd .CHD .cue .CUE .pce .PCE .rom .ROM .sgx .SGX .7z .7Z .zip .ZIP</extension>
         <command label="Beetle SuperGrafx">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/mednafen_supergrafx_libretro.so %ROM%</command>
         <command label="Beetle PCE">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/mednafen_pce_libretro.so %ROM%</command>
+        <command label="Geargrafx">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/geargrafx_libretro.so %ROM%</command>
         <command label="Mednafen (Standalone)">%EMULATOR_MEDNAFEN% -force_module pce %ROM%</command>
         <command label="Mesen (Standalone)">%EMULATOR_MESEN% --fullscreen %ROM%</command>
         <command label="ares (Standalone)">%EMULATOR_ARES% --fullscreen --system "SuperGrafx" %ROM%</command>
@@ -2055,10 +2057,11 @@
         <name>tg16</name>
         <fullname>NEC TurboGrafx-16</fullname>
         <path>%ROMPATH%/tg16</path>
-        <extension>.ccd .CCD .chd .CHD .cue .CUE .img .IMG .iso .ISO .m3u .M3U .pce .PCE .sgx .SGX .toc .TOC .7z .7Z .zip .ZIP</extension>
+        <extension>.ccd .CCD .chd .CHD .cue .CUE .img .IMG .iso .ISO .m3u .M3U .pce .PCE .rom .ROM .sgx .SGX .toc .TOC .7z .7Z .zip .ZIP</extension>
         <command label="Beetle PCE">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/mednafen_pce_libretro.so %ROM%</command>
         <command label="Beetle PCE FAST">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/mednafen_pce_fast_libretro.so %ROM%</command>
         <command label="Beetle SuperGrafx">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/mednafen_supergrafx_libretro.so %ROM%</command>
+        <command label="Geargrafx">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/geargrafx_libretro.so %ROM%</command>
         <command label="Mednafen (Standalone)">%EMULATOR_MEDNAFEN% -force_module pce %ROM%</command>
         <command label="Mesen (Standalone)">%EMULATOR_MESEN% --fullscreen %ROM%</command>
         <command label="ares (Standalone)">%EMULATOR_ARES% --fullscreen --system "PC Engine" %ROM%</command>

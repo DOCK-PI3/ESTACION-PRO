@@ -1380,10 +1380,11 @@
         <name>pcengine</name>
         <fullname>NEC PC Engine</fullname>
         <path>%ROMPATH%/pcengine</path>
-        <extension>.ccd .CCD .chd .CHD .cue .CUE .img .IMG .iso .ISO .m3u .M3U .pce .PCE .sgx .SGX .toc .TOC .7z .7Z .zip .ZIP</extension>
+        <extension>.ccd .CCD .chd .CHD .cue .CUE .img .IMG .iso .ISO .m3u .M3U .pce .PCE .rom .ROM .sgx .SGX .toc .TOC .7z .7Z .zip .ZIP</extension>
         <command label="Beetle PCE">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/mednafen_pce_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="Beetle PCE FAST">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/mednafen_pce_fast_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="Beetle SuperGrafx">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/mednafen_supergrafx_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="Geargrafx">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/geargrafx_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="PCE.emu (Standalone)">%EMULATOR_PCE-EMU% %DATA%=%ROMPROVIDER%</command>
         <platform>pcengine</platform>
         <theme>pcengine</theme>
@@ -1783,9 +1784,10 @@
         <name>supergrafx</name>
         <fullname>NEC SuperGrafx</fullname>
         <path>%ROMPATH%/supergrafx</path>
-        <extension>.ccd .CCD .chd .CHD .cue .CUE .pce .PCE .sgx .SGX .7z .7Z .zip .ZIP</extension>
+        <extension>.ccd .CCD .chd .CHD .cue .CUE .pce .PCE .rom .ROM .sgx .SGX .7z .7Z .zip .ZIP</extension>
         <command label="Beetle SuperGrafx">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/mednafen_supergrafx_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="Beetle PCE">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/mednafen_pce_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="Geargrafx">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/geargrafx_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="PCE.emu (Standalone)">%EMULATOR_PCE-EMU% %DATA%=%ROMPROVIDER%</command>
         <platform>supergrafx</platform>
         <theme>supergrafx</theme>
@@ -1841,10 +1843,11 @@
         <name>tg16</name>
         <fullname>NEC TurboGrafx-16</fullname>
         <path>%ROMPATH%/tg16</path>
-        <extension>.ccd .CCD .chd .CHD .cue .CUE .img .IMG .iso .ISO .m3u .M3U .pce .PCE .sgx .SGX .toc .TOC .7z .7Z .zip .ZIP</extension>
+        <extension>.ccd .CCD .chd .CHD .cue .CUE .img .IMG .iso .ISO .m3u .M3U .pce .PCE .rom .ROM .sgx .SGX .toc .TOC .7z .7Z .zip .ZIP</extension>
         <command label="Beetle PCE">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/mednafen_pce_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="Beetle PCE FAST">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/mednafen_pce_fast_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="Beetle SuperGrafx">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/mednafen_supergrafx_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="Geargrafx">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/geargrafx_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="PCE.emu (Standalone)">%EMULATOR_PCE-EMU% %DATA%=%ROMPROVIDER%</command>
         <platform>pcengine</platform>
         <theme>tg16</theme>
