@@ -49,6 +49,8 @@ SecularSteve \
 **Swedish** \
 Leon Styhre \
 Daniel Nylander \
+**Vietnamese** \
+dungtrinh25 \
 **Japanese** \
 冰棍 \
 **Korean** \
