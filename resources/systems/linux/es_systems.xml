@@ -1748,6 +1748,7 @@
         <command label="Kronos (Standalone)">%EMULATOR_KRONOS% %ROM%</command>
         <command label="YabaSanshiro">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/yabasanshiro_libretro.so %ROM%</command>
         <command label="Yabause">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/yabause_libretro.so %ROM%</command>
+        <command label="Ymir (Standalone)">%STARTDIR%=~/.ymir %EMULATOR_YMIR% %ROM%</command>
         <command label="Mednafen (Standalone)">%EMULATOR_MEDNAFEN% -force_module ss %ROM%</command>
         <platform>saturn</platform>
         <theme>saturn</theme>
@@ -1762,6 +1763,7 @@
         <command label="Kronos (Standalone)">%EMULATOR_KRONOS% %ROM%</command>
         <command label="YabaSanshiro">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/yabasanshiro_libretro.so %ROM%</command>
         <command label="Yabause">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/yabause_libretro.so %ROM%</command>
+        <command label="Ymir (Standalone)">%STARTDIR%=~/.ymir %EMULATOR_YMIR% %ROM%</command>
         <command label="Mednafen (Standalone)">%EMULATOR_MEDNAFEN% -force_module ss %ROM%</command>
         <platform>saturn</platform>
         <theme>saturnjp</theme>

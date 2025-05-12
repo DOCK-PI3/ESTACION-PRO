@@ -156,4 +156,5 @@ Emulators\XM6 Pro-68k\XM6.exe
 Emulators\xm6_typeg\xm6g.exe
 Emulators\xroar\xroar.exe
 Emulators\yabasanshiro\yabasanshiro.exe
+Emulators\ymir\ymir-sdl3.exe
 Emulators\ZEsarUX\zesarux.exe

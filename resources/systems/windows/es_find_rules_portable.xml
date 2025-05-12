@@ -790,6 +790,13 @@
             <entry>%ESPATH%\..\Emulators\yabasanshiro\yabasanshiro.exe</entry>
         </rule>
     </emulator>
+    <emulator name="YMIR">
+        <!-- Sega Saturn emulator Ymir -->
+        <rule type="staticpath">
+            <entry>%ESPATH%\Emulators\ymir\ymir-sdl3.exe</entry>
+            <entry>%ESPATH%\..\Emulators\ymir\ymir-sdl3.exe</entry>
+        </rule>
+    </emulator>
     <emulator name="ZESARUX">
         <!-- Sinclair ZX Spectrum emulator ZEsarUX -->
         <rule type="staticpath">
