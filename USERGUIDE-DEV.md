@@ -814,50 +814,50 @@ So placing a manually downloaded emulator binary in either of these directories 
 
 The following manually downloaded emulators are supported when using the bundled configuration:
 
-| System name                             | Emulator         | Filename                          |
-| :-------------------------------------- | :--------------- | :-------------------------------- |
-| _Multiple_                              | Mesen            | Mesen/Mesen                       |
-| adam/colecovision                       | ColEm            | colem/colem                       |
-| amiga/amiga1200/amiga600/amigacd32/cdtv | Amiberry         | amiberry/amiberry                 |
-| amstradcpc                              | ACE-DL           | AceDL/AceDL                       |
-| amstradcpc                              | CPCemu           | cpcemu/cpcemu                     |
-| apple2                                  | LinApple         | linapple/linapple                 |
-| arcade/mame/model3                      | Supermodel       | Supermodel/supermodel             |
-| arcade/mame/pcarcade                    | Lindbergh Loader | lindbergh/lindbergh               |
-| atari2600                               | Gopher2600       | gopher2600/gopher2600_linux_amd64 |
-| atari7800                               | A7800            | a7800-linux/a7800                 |
-| atarijaguar/atarijaguarcd               | BigPEmu          | bigpemu/bigpemu                   |
-| coco/dragon32/tanodragon                | XRoar            | xroar/xroar                       |
-| daphne                                  | Hypseus Singe    | hypseus-singe/hypseus.bin         |
-| dreamcast                               | Redream          | redream/redream                   |
-| easyrpg                                 | EasyRPG          | easyrpg/easyrpg-player            |
-| fbneo/neogeo/neogeocd/neogeocdjp        | FinalBurn Neo    | fbneo/fbneo                       |
-| flash                                   | Lightspark       | lightspark/lightspark             |
-| flash                                   | Ruffle           | ruffle/ruffle                     |
-| fmtowns                                 | Tsugaru          | tsugaru/Tsugaru_CUI               |
-| gb/gba/gbc/nds                          | SkyEmu           | SkyEmu/SkyEmu                     |
-| gb/gbc                                  | Gearboy          | gearboy/gearboy                   |
-| genesis/megadrive/megadrivejp           | BlastEm          | blastem/blastem                   |
-| famicom/nes                             | puNES            | punes/punes                       |
-| mame-advmame                            | AdvanceMAME      | advancemame/advmame               |
-| oric                                    | Oricutron        | oricutron/Oricutron               |
-| pc88                                    | QUASI88          | quasi88/quasi88                   |
-| pico8                                   | PICO-8           | pico-8/pico8                      |
-| ps4                                     | shadPS4          | shadps4/shadps4                   |
-| psvita                                  | Vita3K           | Vita3K/Vita3K                     |
-| samcoupe                                | SimCoupé         | simcoupe/simcoupe                 |
-| saturn/saturnjp                         | Kronos           | kronos/kronos                     |
-| saturn/saturnjp                         | Ymir             | ymir/ymir-sdl3                    |
-| scummvm                                 | DREAMM           | dreamm/dreamm                     |
-| switch                                  | Ryujinx          | publish/Ryujinx                   |
-| switch                                  | Ryujinx          | publish/Ryujinx.Ava               |
-| trs-80                                  | sdl2trs          | sdl2trs/sdl2trs                   |
-| vpinball                                | Visual Pinball X | VPinballX/VPinballX_GL            |
-| wiiu                                    | Cemu             | Cemu/Cemu                         |
-| xbox360                                 | xenia            | xenia/xenia                       |
-| xbox360                                 | xenia            | xenia/xenia_canary                |
-| zxnext                                  | #CSpect          | CSpect/CSpect.exe                 |
-| zxnext                                  | ZEsarUX          | ZEsarUX/zesarux                   |
+| System name                                   | Emulator         | Filename                          |
+| :-------------------------------------------- | :--------------- | :-------------------------------- |
+| _Multiple_                                    | Mesen            | Mesen/Mesen                       |
+| adam/colecovision                             | ColEm            | colem/colem                       |
+| amiga/amiga1200/amiga600/amigacd32/cdtv       | Amiberry         | amiberry/amiberry                 |
+| amstradcpc                                    | ACE-DL           | AceDL/AceDL                       |
+| amstradcpc                                    | CPCemu           | cpcemu/cpcemu                     |
+| apple2                                        | LinApple         | linapple/linapple                 |
+| arcade/consolearcade/mame/saturn/saturnjp/stv | Kronos           | kronos/kronos                     |
+| arcade/mame/model3                            | Supermodel       | Supermodel/supermodel             |
+| arcade/mame/pcarcade                          | Lindbergh Loader | lindbergh/lindbergh               |
+| atari2600                                     | Gopher2600       | gopher2600/gopher2600_linux_amd64 |
+| atari7800                                     | A7800            | a7800-linux/a7800                 |
+| atarijaguar/atarijaguarcd                     | BigPEmu          | bigpemu/bigpemu                   |
+| coco/dragon32/tanodragon                      | XRoar            | xroar/xroar                       |
+| daphne                                        | Hypseus Singe    | hypseus-singe/hypseus.bin         |
+| dreamcast                                     | Redream          | redream/redream                   |
+| easyrpg                                       | EasyRPG          | easyrpg/easyrpg-player            |
+| fbneo/neogeo/neogeocd/neogeocdjp              | FinalBurn Neo    | fbneo/fbneo                       |
+| flash                                         | Lightspark       | lightspark/lightspark             |
+| flash                                         | Ruffle           | ruffle/ruffle                     |
+| fmtowns                                       | Tsugaru          | tsugaru/Tsugaru_CUI               |
+| gb/gba/gbc/nds                                | SkyEmu           | SkyEmu/SkyEmu                     |
+| gb/gbc                                        | Gearboy          | gearboy/gearboy                   |
+| genesis/megadrive/megadrivejp                 | BlastEm          | blastem/blastem                   |
+| famicom/nes                                   | puNES            | punes/punes                       |
+| mame-advmame                                  | AdvanceMAME      | advancemame/advmame               |
+| oric                                          | Oricutron        | oricutron/Oricutron               |
+| pc88                                          | QUASI88          | quasi88/quasi88                   |
+| pico8                                         | PICO-8           | pico-8/pico8                      |
+| ps4                                           | shadPS4          | shadps4/shadps4                   |
+| psvita                                        | Vita3K           | Vita3K/Vita3K                     |
+| samcoupe                                      | SimCoupé         | simcoupe/simcoupe                 |
+| saturn/saturnjp                               | Ymir             | ymir/ymir-sdl3                    |
+| scummvm                                       | DREAMM           | dreamm/dreamm                     |
+| switch                                        | Ryujinx          | publish/Ryujinx                   |
+| switch                                        | Ryujinx          | publish/Ryujinx.Ava               |
+| trs-80                                        | sdl2trs          | sdl2trs/sdl2trs                   |
+| vpinball                                      | Visual Pinball X | VPinballX/VPinballX_GL            |
+| wiiu                                          | Cemu             | Cemu/Cemu                         |
+| xbox360                                       | xenia            | xenia/xenia                       |
+| xbox360                                       | xenia            | xenia/xenia_canary                |
+| zxnext                                        | #CSpect          | CSpect/CSpect.exe                 |
+| zxnext                                        | ZEsarUX          | ZEsarUX/zesarux                   |
 
 #CSpect requires the Mono .NET framework to run, hence the .exe extension.
 
@@ -4336,7 +4336,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | androidgames          | Android Games                                  | _Placeholder_                     |                                   |              |                                      |
 | apple2                | Apple II                                       | LinApple **(Standalone)** [L],<br>Mednafen **(Standalone)** [M],<br>AppleWin **(Standalone)** [W] | Mednafen **(Standalone)** [LW],<br>MAME - Current,<br>MAME **(Standalone)**,<br>izapple2 **(Standalone)** [LW] | Yes for Mednafen and MAME | See the specific _Apple II_ section elsewhere in this guide |
 | apple2gs              | Apple IIGS                                     | MAME - Current                    | MAME - Current [Software list],<br>MAME **(Standalone)**,<br>MAME [Software list] **(Standalone)** | Yes          | See the specific _Apple IIGS_ section elsewhere in this guide |
-| arcade                | Arcade                                         | MAME - Current                    | MAME 2010,<br>MAME 2003-Plus,<br>MAME 2003,<br>MAME 2000,<br>MAME **(Standalone)**,<br>FinalBurn Neo,<br>FinalBurn Neo **(Standalone)** [LW],<br>FB Alpha 2012,<br>Geolith,<br>Flycast,<br>Flycast **(Standalone)**,<br>Flycast Dojo **(Standalone)**,<br>Kronos [LW],<br>Model 2 Emulator **(Standalone)** [W],<br>Model 2 Emulator [Suspend ES-DE] **(Standalone)** [W],<br>Supermodel **(Standalone)** [LW],<br>Supermodel Dojo **(Standalone)** [W],<br>Lindbergh Loader **(Standalone)** [L],<br>MFME **(Standalone)** [LW],<br> _Shortcut or script_ | Depends      | See the specific _Arcade and Neo Geo_ section elsewhere in this guide |
+| arcade                | Arcade                                         | MAME - Current                    | MAME 2010,<br>MAME 2003-Plus,<br>MAME 2003,<br>MAME 2000,<br>MAME **(Standalone)**,<br>FinalBurn Neo,<br>FinalBurn Neo **(Standalone)** [LW],<br>FB Alpha 2012,<br>Geolith,<br>Flycast,<br>Flycast **(Standalone)**,<br>Flycast Dojo **(Standalone)**,<br>Kronos [LW],<br>DICE,<br>Model 2 Emulator **(Standalone)** [W],<br>Model 2 Emulator [Suspend ES-DE] **(Standalone)** [W],<br>Supermodel **(Standalone)** [LW],<br>Supermodel Dojo **(Standalone)** [W],<br>Lindbergh Loader **(Standalone)** [L],<br>MFME **(Standalone)** [LW],<br> _Shortcut or script_ | Depends      | See the specific _Arcade and Neo Geo_ section elsewhere in this guide |
 | arcadia               | Emerson Arcadia 2001                           | MAME - Current                    | MAME **(Standalone)**,<br>WinArcadia **(Standalone)** | No           | Single archive or ROM file           |
 | archimedes            | Acorn Archimedes                               | MAME [Model A440/1] **(Standalone)** | MAME [Model A3000] **(Standalone)**,<br>MAME [Model A310] **(Standalone)**,<br>MAME [Model A540] **(Standalone)** | Yes          |                                      |
 | arduboy               | Arduboy Miniature Game System                  | Arduous                           | Ardens                            | No           | Single archive or .hex file          |
@@ -4403,7 +4403,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | lutris                | Lutris Open Gaming Platform                    | Lutris **(Standalone)** [L]       |                                   | No           | See the specific _Lutris_ section elsewhere in this guide |
 | lutro                 | Lutro Game Engine                              | Lutro                             |                                   |              |                                      |
 | macintosh             | Apple Macintosh                                | MAME Mac SE Bootable **(Standalone)** | MAME Mac SE Boot Disk **(Standalone)**,<br>MAME Mac Plus Bootable **(Standalone)**,<br>MAME Mac Plus Boot Disk **(Standalone)**,<br>Basilisk II **(Standalone)**,<br>SheepShaver **(Standalone)** | Yes          | See the specific _Apple Macintosh_ section elsewhere in this guide |
-| mame                  | Multiple Arcade Machine Emulator               | MAME - Current                    | MAME 2010,<br>MAME 2003-Plus,<br>MAME 2003,<br>MAME 2000,<br>MAME **(Standalone)**,<br>FinalBurn Neo,<br>FinalBurn Neo **(Standalone)** [LW],<br>FB Alpha 2012,<br>Geolith,<br>Flycast,<br>Flycast **(Standalone)**,<br>Flycast Dojo **(Standalone)**,<br>Kronos [LW],<br>Model 2 Emulator **(Standalone)** [W],<br>Model 2 Emulator [Suspend ES-DE] **(Standalone)** [W],<br>Supermodel **(Standalone)** [LW],<br>Supermodel Dojo **(Standalone)** [W],<br>Lindbergh Loader **(Standalone)** [L],<br>MFME **(Standalone)** [LW],<br> _Shortcut or script_ | Depends      | See the specific _Arcade and Neo Geo_ section elsewhere in this guide |
+| mame                  | Multiple Arcade Machine Emulator               | MAME - Current                    | MAME 2010,<br>MAME 2003-Plus,<br>MAME 2003,<br>MAME 2000,<br>MAME **(Standalone)**,<br>FinalBurn Neo,<br>FinalBurn Neo **(Standalone)** [LW],<br>FB Alpha 2012,<br>Geolith,<br>Flycast,<br>Flycast **(Standalone)**,<br>Flycast Dojo **(Standalone)**,<br>Kronos [LW],<br>DICE,<br>Model 2 Emulator **(Standalone)** [W],<br>Model 2 Emulator [Suspend ES-DE] **(Standalone)** [W],<br>Supermodel **(Standalone)** [LW],<br>Supermodel Dojo **(Standalone)** [W],<br>Lindbergh Loader **(Standalone)** [L],<br>MFME **(Standalone)** [LW],<br> _Shortcut or script_ | Depends      | See the specific _Arcade and Neo Geo_ section elsewhere in this guide |
 | mame-advmame          | AdvanceMAME                                    | AdvanceMAME **(Standalone)** [LW] |                                   | Depends      | See the specific _Arcade and Neo Geo_ section elsewhere in this guide |
 | mark3                 | Sega Mark III                                  | Genesis Plus GX                   | Genesis Plus GX Wide,<br>SMS Plus GX,<br>Gearsystem,<br>PicoDrive,<br>Mednafen **(Standalone)**,<br>Mesen **(Standalone)** [LW],<br>ares **(Standalone)**,<br>jgenesis **(Standalone)** [LW] | No           | Single archive or ROM file |
 | mastersystem          | Sega Master System                             | Genesis Plus GX                   | Genesis Plus GX Wide,<br>SMS Plus GX,<br>Gearsystem,<br>PicoDrive,<br>Mednafen **(Standalone)**,<br>Mesen **(Standalone)** [LW],<br>ares **(Standalone)**,<br>jgenesis **(Standalone)** [LW] | No           | Single archive or ROM file |

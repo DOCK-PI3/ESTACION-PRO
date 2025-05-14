@@ -12,6 +12,7 @@
 * Added translations for Croatian (hr_HR)
 * Added translations for Serbian (sr_RS)
 * Added the Geargrafx RetroArch core as an alternative emulator for the pcengine, supergrafx and tg16 systems
+* Added the DICE RetroArch core as an alternative emulator for the arcade and mame systems
 * Added the .rom file extension to the pcengine, supergrafx and tg16 systems
 * Added Ymir standalone as an alternative emulator for the saturn and saturnjp systems on Linux and Windows
 * (Android) Removed all MAME4droid 2024 emulator entries (replacement MAME4droid Current entries were added in ES-DE 3.2.0-45)
@@ -26,6 +27,7 @@
 * Added an %INJECT% variable for A7800 standalone for the atari7800 system on Linux and Windows
 * Added an %INJECT% variable for xenia standalone for the xbox360 system on Linux and Windows
 * Updated the logo and carousel icons for the Sega Mark III (mark3) system
+* Added support to the theme downloader for detecting and handling diverged repositories
 * Added a "mipmap" property to the image element to allow for higher quality texture scale-down
 * Changed the max value for the backgroundHorizontalPadding and backgroundVerticalPadding properties to 1 for the helpsystem, systemstatus and clock elements
 * Removed the obsolete InputManager::doOnFinish() and InputManager::getTemporaryConfigPath() functions
