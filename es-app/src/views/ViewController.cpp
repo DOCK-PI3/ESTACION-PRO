@@ -199,7 +199,8 @@ void ViewController::legacyAppDataDialog()
 #endif
 
     mWindow->pushGui(new GuiMsgBox(
-        upgradeMessage.c_str(), _("OK"), [] {}, "", nullptr, "", nullptr, nullptr, true, true,
+        upgradeMessage.c_str(), _("OK"), [] {}, "", nullptr, "", nullptr, "", nullptr, nullptr,
+        true, true,
         (mRenderer->getIsVerticalOrientation() ?
              0.85f :
              0.55f * (1.778f / mRenderer->getScreenAspectRatio()))));
@@ -218,7 +219,7 @@ void ViewController::migratedAppDataFilesDialog()
             quit.type = SDL_QUIT;
             SDL_PushEvent(&quit);
         },
-        "", nullptr, "", nullptr, nullptr, true, true,
+        "", nullptr, "", nullptr, "", nullptr, nullptr, true, true,
         (mRenderer->getIsVerticalOrientation() ?
              0.65f :
              0.55f * (1.778f / mRenderer->getScreenAspectRatio()))));
@@ -234,7 +235,8 @@ void ViewController::unsafeUpgradeDialog()
           "README.TXT FILE THAT CAN BE FOUND IN THE ES-DE DIRECTORY.")};
 
     mWindow->pushGui(new GuiMsgBox(
-        upgradeMessage.c_str(), _("OK"), [] {}, "", nullptr, "", nullptr, nullptr, true, true,
+        upgradeMessage.c_str(), _("OK"), [] {}, "", nullptr, "", nullptr, "", nullptr, nullptr,
+        true, true,
         (mRenderer->getIsVerticalOrientation() ?
              0.85f :
              0.55f * (1.778f / mRenderer->getScreenAspectRatio()))));
@@ -256,7 +258,7 @@ void ViewController::invalidSystemsFileDialog()
             quit.type = SDL_QUIT;
             SDL_PushEvent(&quit);
         },
-        "", nullptr, "", nullptr, nullptr, true, true,
+        "", nullptr, "", nullptr, "", nullptr, nullptr, true, true,
         (mRenderer->getIsVerticalOrientation() ?
              0.85f :
              0.55f * (1.778f / mRenderer->getScreenAspectRatio()))));
@@ -318,7 +320,8 @@ void ViewController::noGamesDialog()
                             mWindow->pushGui(new GuiMsgBox(
                                 _("ROM DIRECTORY SETTING SAVED, RESTART "
                                   "THE APPLICATION TO RESCAN THE SYSTEMS"),
-                                _("OK"), nullptr, "", nullptr, "", nullptr, nullptr, true, true,
+                                _("OK"), nullptr, "", nullptr, "", nullptr, "", nullptr, nullptr,
+                                true, true,
                                 (mRenderer->getIsVerticalOrientation() ?
                                      0.66f :
                                      0.42f * (1.778f / mRenderer->getScreenAspectRatio()))));
@@ -345,7 +348,8 @@ void ViewController::noGamesDialog()
                         mWindow->pushGui(new GuiMsgBox(
                             _("ROM DIRECTORY SETTING SAVED, RESTART "
                               "THE APPLICATION TO RESCAN THE SYSTEMS"),
-                            _("OK"), nullptr, "", nullptr, "", nullptr, nullptr, true, true,
+                            _("OK"), nullptr, "", nullptr, "", nullptr, "", nullptr, nullptr, true,
+                            true,
                             (mRenderer->getIsVerticalOrientation() ?
                                  0.66f :
                                  0.42f * (1.778f / mRenderer->getScreenAspectRatio()))));
@@ -370,7 +374,8 @@ void ViewController::noGamesDialog()
                             _("THE SYSTEM DIRECTORIES WERE SUCCESSFULLY "
                               "GENERATED, EXIT THE APPLICATION AND PLACE "
                               "YOUR GAMES IN THE NEW FOLDERS"),
-                            _("OK"), nullptr, "", nullptr, "", nullptr, nullptr, true, true,
+                            _("OK"), nullptr, "", nullptr, "", nullptr, "", nullptr, nullptr, true,
+                            true,
                             (mRenderer->getIsVerticalOrientation() ?
                                  0.74f :
                                  0.46f * (1.778f / mRenderer->getScreenAspectRatio()))));
@@ -380,13 +385,14 @@ void ViewController::noGamesDialog()
                             _("ERROR CREATING THE SYSTEM DIRECTORIES, "
                               "PERMISSION PROBLEMS OR DISK FULL?\n\n"
                               "SEE THE LOG FILE FOR MORE DETAILS"),
-                            _("OK"), nullptr, "", nullptr, "", nullptr, nullptr, true, true,
+                            _("OK"), nullptr, "", nullptr, "", nullptr, "", nullptr, nullptr, true,
+                            true,
                             (mRenderer->getIsVerticalOrientation() ?
                                  0.75f :
                                  0.47f * (1.778f / mRenderer->getScreenAspectRatio()))));
                     }
                 },
-                _("CANCEL"), nullptr, "", nullptr, nullptr, false, true,
+                _("CANCEL"), nullptr, "", nullptr, "", nullptr, nullptr, false, true,
                 (mRenderer->getIsVerticalOrientation() ?
                      0.78f :
                      0.50f * (1.778f / mRenderer->getScreenAspectRatio()))));
@@ -403,7 +409,7 @@ void ViewController::noGamesDialog()
              0.90f :
              0.58f * (1.778f / mRenderer->getScreenAspectRatio())));
 #else
-        nullptr, true, false,
+        "", nullptr, nullptr, true, false,
         (mRenderer->getIsVerticalOrientation() ?
              0.90f :
              0.62f * (1.778f / mRenderer->getScreenAspectRatio())));
@@ -421,7 +427,8 @@ void ViewController::invalidAlternativeEmulatorDialog()
                                      "CONFIGURATION FILE, PLEASE REVIEW YOUR "
                                      "SETUP USING THE 'ALTERNATIVE EMULATORS' "
                                      "INTERFACE IN THE 'OTHER SETTINGS' MENU"),
-                                   _("OK"), nullptr, "", nullptr, "", nullptr, nullptr, true, true,
+                                   _("OK"), nullptr, "", nullptr, "", nullptr, "", nullptr, nullptr,
+                                   true, true,
                                    (mRenderer->getIsVerticalOrientation() ?
                                         0.70f :
                                         0.45f * (1.778f / mRenderer->getScreenAspectRatio()))));
@@ -473,8 +480,8 @@ void ViewController::updateAvailableDialog()
                               "THE UPGRADE.");
                     }
                     mWindow->pushGui(new GuiMsgBox(
-                        upgradeMessage.c_str(), _("OK"), [] {}, "", nullptr, "", nullptr, nullptr,
-                        true, true,
+                        upgradeMessage.c_str(), _("OK"), [] {}, "", nullptr, "", nullptr, "",
+                        nullptr, nullptr, true, true,
                         (mRenderer->getIsVerticalOrientation() ?
                              0.85f :
                              0.535f * (1.778f / mRenderer->getScreenAspectRatio()))));
@@ -485,14 +492,14 @@ void ViewController::updateAvailableDialog()
                 HttpReq::cleanupCurlMulti();
                 return;
             },
-            "", nullptr, nullptr, true, true,
+            "", nullptr, "", nullptr, nullptr, true, true,
             (mRenderer->getIsVerticalOrientation() ?
                  0.70f :
                  0.45f * (1.778f / mRenderer->getScreenAspectRatio()))));
     }
     else {
-        mWindow->pushGui(new GuiMsgBox(results, _("OK"), nullptr, "", nullptr, "", nullptr, nullptr,
-                                       true, true,
+        mWindow->pushGui(new GuiMsgBox(results, _("OK"), nullptr, "", nullptr, "", nullptr, "",
+                                       nullptr, nullptr, true, true,
                                        (mRenderer->getIsVerticalOrientation() ?
                                             0.70f :
                                             0.45f * (1.778f / mRenderer->getScreenAspectRatio()))));

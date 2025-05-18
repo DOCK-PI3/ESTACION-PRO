@@ -655,7 +655,7 @@ bool GuiThemeDownloader::renameDirectory(const std::string& path, const std::str
         mWindow->pushGui(new GuiMsgBox(
             Utils::String::format(_("COULDN'T RENAME DIRECTORY \"%s\"\nPERMISSION PROBLEMS?"),
                                   path.c_str()),
-            _("OK"), [] { return; }, "", nullptr, "", nullptr, nullptr, true));
+            _("OK"), [] { return; }, "", nullptr, "", nullptr, "", nullptr, nullptr, true));
         return true;
     }
     else {
@@ -677,7 +677,7 @@ void GuiThemeDownloader::parseThemesList()
         LOG(LogError) << "GuiThemeDownloader: No themes.json file found";
         mWindow->pushGui(new GuiMsgBox(
             _("COULDN'T FIND THE THEMES LIST CONFIGURATION FILE"), _("OK"), [] { return; }, "",
-            nullptr, "", nullptr, nullptr, true));
+            nullptr, "", nullptr, "", nullptr, nullptr, true));
         mGrid.removeEntry(mCenterGrid);
         mGrid.setCursorTo(mButtons);
         return;
@@ -692,7 +692,7 @@ void GuiThemeDownloader::parseThemesList()
         mWindow->pushGui(new GuiMsgBox(
             _("COULDN'T PARSE THE THEMES LIST CONFIGURATION FILE, MAYBE THE LOCAL REPOSITORY IS "
               "CORRUPT?"),
-            _("OK"), [] { return; }, "", nullptr, "", nullptr, nullptr, true));
+            _("OK"), [] { return; }, "", nullptr, "", nullptr, "", nullptr, nullptr, true));
         mGrid.removeEntry(mCenterGrid);
         mGrid.setCursorTo(mButtons);
         return;
@@ -706,7 +706,7 @@ void GuiThemeDownloader::parseThemesList()
             mWindow->pushGui(new GuiMsgBox(
                 _("IT SEEMS AS IF YOU'RE NOT RUNNING THE LATEST ES-DE RELEASE, PLEASE UPGRADE "
                   "BEFORE PROCEEDING AS THESE THEMES MAY NOT BE COMPATIBLE WITH YOUR VERSION"),
-                _("OK"), [] { return; }, "", nullptr, "", nullptr, nullptr, true));
+                _("OK"), [] { return; }, "", nullptr, "", nullptr, "", nullptr, nullptr, true));
         }
     }
 
@@ -863,7 +863,7 @@ void GuiThemeDownloader::populateGUI()
                         mStatusType = StatusType::STATUS_DOWNLOADING;
                         mStatusText = _("DOWNLOADING THEME");
                     },
-                    _("CANCEL"), [] { return; }, "", nullptr, nullptr, false, true,
+                    _("CANCEL"), [] { return; }, "", nullptr, "", nullptr, nullptr, false, true,
                     (mRenderer->getIsVerticalOrientation() ?
                          0.75f :
                          0.46f * (1.778f / mRenderer->getScreenAspectRatio()))));
@@ -891,7 +891,7 @@ void GuiThemeDownloader::populateGUI()
                         mStatusType = StatusType::STATUS_DOWNLOADING;
                         mStatusText = _("DOWNLOADING THEME");
                     },
-                    _("CANCEL"), [] { return; }, "", nullptr, nullptr, false, true,
+                    _("CANCEL"), [] { return; }, "", nullptr, "", nullptr, nullptr, false, true,
                     (mRenderer->getIsVerticalOrientation() ?
                          0.75f :
                          0.46f * (1.778f / mRenderer->getScreenAspectRatio()))));
@@ -919,7 +919,7 @@ void GuiThemeDownloader::populateGUI()
                         mStatusType = StatusType::STATUS_DOWNLOADING;
                         mStatusText = _("DOWNLOADING THEME");
                     },
-                    _("CANCEL"), [] { return; }, "", nullptr, nullptr, false, true,
+                    _("CANCEL"), [] { return; }, "", nullptr, "", nullptr, nullptr, false, true,
                     (mRenderer->getIsVerticalOrientation() ?
                          0.75f :
                          0.46f * (1.778f / mRenderer->getScreenAspectRatio()))));
@@ -947,7 +947,7 @@ void GuiThemeDownloader::populateGUI()
                         mStatusType = StatusType::STATUS_DOWNLOADING;
                         mStatusText = _("DOWNLOADING THEME");
                     },
-                    _("CANCEL"), [] { return; }, "", nullptr, nullptr, false, true,
+                    _("CANCEL"), [] { return; }, "", nullptr, "", nullptr, nullptr, false, true,
                     (mRenderer->getIsVerticalOrientation() ?
                          0.75f :
                          0.46f * (1.778f / mRenderer->getScreenAspectRatio()))));
@@ -975,7 +975,7 @@ void GuiThemeDownloader::populateGUI()
                         mStatusType = StatusType::STATUS_DOWNLOADING;
                         mStatusText = _("DOWNLOADING THEME");
                     },
-                    _("CANCEL"), [] { return; }, "", nullptr, nullptr, false, true,
+                    _("CANCEL"), [] { return; }, "", nullptr, "", nullptr, nullptr, false, true,
                     (mRenderer->getIsVerticalOrientation() ?
                          0.75f :
                          0.46f * (1.778f / mRenderer->getScreenAspectRatio()))));
@@ -995,7 +995,7 @@ void GuiThemeDownloader::populateGUI()
                         mStatusType = StatusType::STATUS_UPDATING;
                         mStatusText = _("UPDATING THEME");
                     },
-                    _("CANCEL"), [] { return; }, "", nullptr, nullptr, false, true,
+                    _("CANCEL"), [] { return; }, "", nullptr, "", nullptr, nullptr, false, true,
                     (mRenderer->getIsVerticalOrientation() ?
                          0.75f :
                          0.45f * (1.778f / mRenderer->getScreenAspectRatio()))));
@@ -1203,8 +1203,8 @@ void GuiThemeDownloader::update(int deltaTime)
                     }
                     errorMessage.append(" ").append(Utils::String::toUpper(mMessage));
                     mWindow->pushGui(new GuiMsgBox(
-                        errorMessage, _("OK"), [] { return; }, "", nullptr, "", nullptr, nullptr,
-                        true));
+                        errorMessage, _("OK"), [] { return; }, "", nullptr, "", nullptr, "",
+                        nullptr, nullptr, true));
                     mRepositoryError = RepositoryError::NO_REPO_ERROR;
                     mMessage = "";
                     getHelpPrompts();
@@ -1409,7 +1409,7 @@ bool GuiThemeDownloader::input(InputConfig* config, Input input)
                 if (!Utils::FileSystem::removeDirectory(themeDirectory, true)) {
                     mWindow->pushGui(new GuiMsgBox(
                         _("COULDN'T DELETE THEME, PERMISSION PROBLEMS?"), _("OK"), [] { return; },
-                        "", nullptr, "", nullptr, nullptr, true));
+                        "", nullptr, "", nullptr, "", nullptr, nullptr, true));
                 }
                 else {
                     mMessage = _("THEME WAS DELETED");
@@ -1418,7 +1418,7 @@ bool GuiThemeDownloader::input(InputConfig* config, Input input)
                 makeInventory();
                 updateGUI();
             },
-            _("CANCEL"), nullptr, "", nullptr, nullptr, false, true,
+            _("CANCEL"), nullptr, "", nullptr, "", nullptr, nullptr, false, true,
             (mRenderer->getIsVerticalOrientation() ?
                  0.70f :
                  0.44f * (1.778f / mRenderer->getScreenAspectRatio()))));
@@ -1517,7 +1517,7 @@ bool GuiThemeDownloader::fetchThemesList()
                     delete this;
                     return false;
                 },
-                "", nullptr, nullptr, true, true,
+                "", nullptr, "", nullptr, nullptr, true, true,
                 (mRenderer->getIsVerticalOrientation() ?
                      0.75f :
                      0.50f * (1.778f / mRenderer->getScreenAspectRatio()))));
@@ -1554,7 +1554,7 @@ bool GuiThemeDownloader::fetchThemesList()
                 delete this;
                 return false;
             },
-            "", nullptr, nullptr, true, true,
+            "", nullptr, "", nullptr, nullptr, true, true,
             (mRenderer->getIsVerticalOrientation() ?
                  0.85f :
                  0.54f * (1.778f / mRenderer->getScreenAspectRatio()))));

@@ -879,7 +879,7 @@ void GuiMenu::openUIOptions()
                                                               false);
                     mWindow->invalidateCachedBackground();
                 },
-                _("NO"), nullptr, "", nullptr, nullptr, true));
+                _("NO"), nullptr, "", nullptr, "", nullptr, nullptr, true));
         }
         else {
             LOG(LogDebug) << "GuiMenu::openUISettings(): Setting UI mode to '" << selectedMode
@@ -1600,7 +1600,7 @@ void GuiMenu::openConfigInput(GuiSettings* settings)
     window->pushGui(new GuiMsgBox(
         message, _("PROCEED"),
         [window] { window->pushGui(new GuiDetectDevice(false, false, nullptr)); }, _("CANCEL"),
-        nullptr, "", nullptr, nullptr, false, true,
+        nullptr, "", nullptr, "", nullptr, nullptr, false, true,
         (mRenderer->getIsVerticalOrientation() ?
              0.84f :
              0.54f * (1.778f / mRenderer->getScreenAspectRatio()))));
@@ -2234,19 +2234,20 @@ void GuiMenu::openUtilities()
                             }
                             ViewController::getInstance()->rescanROMDirectory();
                         },
-                        "", nullptr, "", nullptr, nullptr, true));
+                        "", nullptr, "", nullptr, "", nullptr, nullptr, true));
                 }
                 else {
-                    mWindow->pushGui(new GuiMsgBox(
-                        _("ERROR CREATING SYSTEM DIRECTORIES, PERMISSION PROBLEMS OR "
-                          "DISK FULL? SEE THE LOG FILE FOR MORE DETAILS"),
-                        _("OK"), nullptr, "", nullptr, "", nullptr, nullptr, true, true,
-                        (mRenderer->getIsVerticalOrientation() ?
-                             0.70f :
-                             0.44f * (1.778f / mRenderer->getScreenAspectRatio()))));
+                    mWindow->pushGui(
+                        new GuiMsgBox(_("ERROR CREATING SYSTEM DIRECTORIES, PERMISSION PROBLEMS OR "
+                                        "DISK FULL? SEE THE LOG FILE FOR MORE DETAILS"),
+                                      _("OK"), nullptr, "", nullptr, "", nullptr, "", nullptr,
+                                      nullptr, true, true,
+                                      (mRenderer->getIsVerticalOrientation() ?
+                                           0.70f :
+                                           0.44f * (1.778f / mRenderer->getScreenAspectRatio()))));
                 }
             },
-            _("CANCEL"), nullptr, "", nullptr, nullptr, false, true,
+            _("CANCEL"), nullptr, "", nullptr, "", nullptr, nullptr, false, true,
             (mRenderer->getIsVerticalOrientation() ?
                  0.80f :
                  0.52f * (1.778f / mRenderer->getScreenAspectRatio()))));
@@ -2279,7 +2280,7 @@ void GuiMenu::openUtilities()
                 }
                 ViewController::getInstance()->rescanROMDirectory();
             },
-            _("CANCEL"), nullptr, "", nullptr, nullptr, false, true,
+            _("CANCEL"), nullptr, "", nullptr, "", nullptr, nullptr, false, true,
             (mRenderer->getIsVerticalOrientation() ?
                  0.76f :
                  0.52f * (1.778f / mRenderer->getScreenAspectRatio()))));

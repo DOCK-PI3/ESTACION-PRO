@@ -687,15 +687,16 @@ GuiMetaDataEd::GuiMetaDataEd(MetaDataList* md,
                 delete this;
             };
             auto clearSelfBtnFunc = [this, clearSelf] {
-                mWindow->pushGui(new GuiMsgBox(
-                    _("THIS WILL DELETE ANY MEDIA FILES AND "
-                      "THE GAMELIST.XML ENTRY FOR THIS FOLDER, "
-                      "BUT NEITHER THE DIRECTORY ITSELF OR ANY "
-                      "CONTENT INSIDE IT WILL BE REMOVED\nARE YOU SURE?"),
-                    _("YES"), clearSelf, _("NO"), nullptr, "", nullptr, nullptr, false, true,
-                    (mRenderer->getIsVerticalOrientation() ?
-                         0.70f :
-                         0.46f * (1.778f / mRenderer->getScreenAspectRatio()))));
+                mWindow->pushGui(
+                    new GuiMsgBox(_("THIS WILL DELETE ANY MEDIA FILES AND "
+                                    "THE GAMELIST.XML ENTRY FOR THIS FOLDER, "
+                                    "BUT NEITHER THE DIRECTORY ITSELF OR ANY "
+                                    "CONTENT INSIDE IT WILL BE REMOVED\nARE YOU SURE?"),
+                                  _("YES"), clearSelf, _("NO"), nullptr, "", nullptr, "", nullptr,
+                                  nullptr, false, true,
+                                  (mRenderer->getIsVerticalOrientation() ?
+                                       0.70f :
+                                       0.46f * (1.778f / mRenderer->getScreenAspectRatio()))));
             };
             buttons.push_back(
                 std::make_shared<ButtonComponent>(_("CLEAR"), _("clear folder"), clearSelfBtnFunc));
@@ -708,15 +709,16 @@ GuiMetaDataEd::GuiMetaDataEd(MetaDataList* md,
                 delete this;
             };
             auto clearSelfBtnFunc = [this, clearSelf] {
-                mWindow->pushGui(new GuiMsgBox(
-                    _("THIS WILL DELETE ANY MEDIA FILES "
-                      "AND THE GAMELIST.XML ENTRY FOR "
-                      "THIS GAME, BUT THE GAME FILE "
-                      "ITSELF WILL NOT BE REMOVED\nARE YOU SURE?"),
-                    _("YES"), clearSelf, _("NO"), nullptr, "", nullptr, nullptr, false, true,
-                    (mRenderer->getIsVerticalOrientation() ?
-                         0.70f :
-                         0.46f * (1.778f / mRenderer->getScreenAspectRatio()))));
+                mWindow->pushGui(
+                    new GuiMsgBox(_("THIS WILL DELETE ANY MEDIA FILES "
+                                    "AND THE GAMELIST.XML ENTRY FOR "
+                                    "THIS GAME, BUT THE GAME FILE "
+                                    "ITSELF WILL NOT BE REMOVED\nARE YOU SURE?"),
+                                  _("YES"), clearSelf, _("NO"), nullptr, "", nullptr, "", nullptr,
+                                  nullptr, false, true,
+                                  (mRenderer->getIsVerticalOrientation() ?
+                                       0.70f :
+                                       0.46f * (1.778f / mRenderer->getScreenAspectRatio()))));
             };
             buttons.push_back(
                 std::make_shared<ButtonComponent>(_("CLEAR"), _("clear file"), clearSelfBtnFunc));
@@ -734,8 +736,8 @@ GuiMetaDataEd::GuiMetaDataEd(MetaDataList* md,
                     new GuiMsgBox(_("THIS WILL DELETE THE GAME "
                                     "FILE, ANY MEDIA FILES AND "
                                     "THE GAMELIST.XML ENTRY\nARE YOU SURE?"),
-                                  _("YES"), deleteFilesAndSelf, _("NO"), nullptr, "", nullptr,
-                                  nullptr, false, true,
+                                  _("YES"), deleteFilesAndSelf, _("NO"), nullptr, "", nullptr, "",
+                                  nullptr, nullptr, false, true,
                                   (mRenderer->getIsVerticalOrientation() ?
                                        0.70f :
                                        0.46f * (1.778f / mRenderer->getScreenAspectRatio()))));
@@ -1040,7 +1042,7 @@ void GuiMetaDataEd::close()
                 save();
                 closeFunc();
             },
-            _("NO"), closeFunc, "", nullptr, nullptr, true));
+            _("NO"), closeFunc, "", nullptr, "", nullptr, nullptr, true));
     }
     else {
         // Always save if the media files have been changed (i.e. newly scraped images).

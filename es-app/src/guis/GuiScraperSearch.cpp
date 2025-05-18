@@ -559,7 +559,7 @@ void GuiScraperSearch::onSearchError(const std::string& error,
     if (fatalError) {
         LOG(LogWarning) << "GuiScraperSearch: " << Utils::String::replace(error, "\n", "");
         mWindow->pushGui(new GuiMsgBox(Utils::String::toUpper(error), _("OK"), mCancelCallback, "",
-                                       nullptr, "", nullptr, nullptr, true));
+                                       nullptr, "", nullptr, "", nullptr, nullptr, true));
         return;
     }
 
@@ -581,14 +581,15 @@ void GuiScraperSearch::onSearchError(const std::string& error,
         LOG(LogError) << "GuiScraperSearch: " << Utils::String::replace(error, "\n", "");
         mWindow->pushGui(new GuiMsgBox(Utils::String::toUpper(error), _("RETRY"),
                                        std::bind(&GuiScraperSearch::search, this, mLastSearch),
-                                       _("SKIP"), mSkipCallback, _("CANCEL"), mCancelCallback,
-                                       nullptr, true));
+                                       _("SKIP"), mSkipCallback, _("CANCEL"), mCancelCallback, "",
+                                       nullptr, nullptr, true));
     }
     else {
         LOG(LogError) << "GuiScraperSearch: " << Utils::String::replace(error, "\n", "");
         mWindow->pushGui(new GuiMsgBox(Utils::String::toUpper(error), _("RETRY"),
                                        std::bind(&GuiScraperSearch::search, this, mLastSearch),
-                                       _("CANCEL"), mCancelCallback, "", nullptr, nullptr, true));
+                                       _("CANCEL"), mCancelCallback, "", nullptr, "", nullptr,
+                                       nullptr, true));
     }
 }
 

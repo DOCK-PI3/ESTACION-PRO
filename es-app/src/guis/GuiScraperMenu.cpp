@@ -765,8 +765,8 @@ void GuiScraperMenu::openOfflineGenerator(GuiSettings* settings)
         mWindow->pushGui(new GuiMsgBox(_("THE OFFLINE GENERATOR USES THE SAME SYSTEM "
                                          "SELECTIONS AS THE SCRAPER, SO PLEASE SELECT "
                                          "AT LEAST ONE SYSTEM TO GENERATE IMAGES FOR"),
-                                       _("OK"), nullptr, "", nullptr, "", nullptr, nullptr, false,
-                                       true,
+                                       _("OK"), nullptr, "", nullptr, "", nullptr, "", nullptr,
+                                       nullptr, false, true,
                                        (mRenderer->getIsVerticalOrientation() ?
                                             0.80f :
                                             0.50f * (1.778f / mRenderer->getScreenAspectRatio()))));
@@ -1239,7 +1239,7 @@ void GuiScraperMenu::pressedStart()
             mWindow->pushGui(
                 new GuiMsgBox(Utils::String::toUpper(warningString), _("PROCEED"),
                               std::bind(&GuiScraperMenu::start, this), _("CANCEL"), nullptr, "",
-                              nullptr, nullptr, false, true,
+                              nullptr, "", nullptr, nullptr, false, true,
                               (mRenderer->getIsVerticalOrientation() ?
                                    0.80f :
                                    0.50f * (1.778f / mRenderer->getScreenAspectRatio()))));
