@@ -1479,11 +1479,12 @@ void GuiMenu::openInputDeviceOptions()
                   "CONFIGURATOR TO RUN ON NEXT STARTUP")};
 
             Window* window {mWindow};
-            window->pushGui(new GuiMsgBox(
-                message, _("OK"), nullptr, "", nullptr, "", nullptr, nullptr, true, true,
-                (mRenderer->getIsVerticalOrientation() ?
-                     0.84f :
-                     0.54f * (1.778f / mRenderer->getScreenAspectRatio()))));
+            window->pushGui(
+                new GuiMsgBox(message, _("OK"), nullptr, "", nullptr, "", nullptr, "", nullptr,
+                              nullptr, true, true,
+                              (mRenderer->getIsVerticalOrientation() ?
+                                   0.84f :
+                                   0.54f * (1.778f / mRenderer->getScreenAspectRatio()))));
         }
 
         if (touchOverlaySize->getEnabled()) {
