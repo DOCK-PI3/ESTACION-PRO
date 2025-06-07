@@ -29,6 +29,7 @@
 #include "animations/LambdaAnimation.h"
 #include "animations/MoveCameraAnimation.h"
 #include "guis/GuiApplicationUpdater.h"
+#include "guis/GuiGameImporter.h"
 #include "guis/GuiMenu.h"
 #include "guis/GuiTextEditKeyboardPopup.h"
 #include "guis/GuiTextEditPopup.h"
@@ -291,10 +292,12 @@ void ViewController::noGamesDialog()
 
 #if defined(__ANDROID__) || defined(__IOS__)
     mNoGamesMessageBox = new GuiMsgBox(
-        mNoGamesErrorMessage + mRomDirectory,
+        mNoGamesErrorMessage + mRomDirectory, _("IMPORT"),
+        [this] { mWindow->pushGui(new GuiGameImporter(_("GAME IMPORTER"))); },
 #else
     mNoGamesMessageBox = new GuiMsgBox(
-        mNoGamesErrorMessage + mRomDirectory, _("CHANGE ROM DIRECTORY"),
+        mNoGamesErrorMessage + mRomDirectory, _("IMPORT"),
+        [this] { mWindow->pushGui(new GuiGameImporter(_("GAME IMPORTER"))); }, _("CHANGE"),
         [this] {
             std::string currentROMDirectory;
 #if defined(_WIN64)
@@ -360,7 +363,7 @@ void ViewController::noGamesDialog()
             }
         },
 #endif // __ANDROID__
-        _("CREATE DIRECTORIES"),
+        _("CREATE"),
         [this] {
             mWindow->pushGui(new GuiMsgBox(
                 _("THIS WILL CREATE DIRECTORIES FOR ALL THE "
@@ -409,7 +412,7 @@ void ViewController::noGamesDialog()
              0.90f :
              0.58f * (1.778f / mRenderer->getScreenAspectRatio())));
 #else
-        "", nullptr, nullptr, true, false,
+        nullptr, true, false,
         (mRenderer->getIsVerticalOrientation() ?
              0.90f :
              0.62f * (1.778f / mRenderer->getScreenAspectRatio())));
