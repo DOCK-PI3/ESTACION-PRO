@@ -337,6 +337,14 @@ void Settings::setDefaults()
     mBoolMap["ShowQuitMenu"] = {false, false};
 #endif
 
+    // Utilities -> Game Importer.
+    mStringMap["ImporterTargetSystem"] = {"", ""};
+    mStringMap["ImporterRemoveEntries"] = {"never", "never"};
+    mStringMap["ImporterMediaTarget"] = {"screenshots", "screenshots"};
+    mBoolMap["ImporterImportMedia"] = {false, false};
+    mBoolMap["ImporterImportMediaAdditional"] = {true, true};
+    mBoolMap["ImporterGamesOnly"] = {false, false};
+
     //
     // Settings configured via command-line arguments.
     //

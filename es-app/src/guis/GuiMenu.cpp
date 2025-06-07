@@ -28,6 +28,7 @@
 #include "guis/GuiAlternativeEmulators.h"
 #include "guis/GuiCollectionSystemsOptions.h"
 #include "guis/GuiDetectDevice.h"
+#include "guis/GuiGameImporter.h"
 #include "guis/GuiMediaViewerOptions.h"
 #include "guis/GuiMsgBox.h"
 #include "guis/GuiOrphanedDataCleanup.h"
@@ -2193,6 +2194,15 @@ void GuiMenu::openUtilities()
     auto s = new GuiSettings(_("UTILITIES"));
 
     ComponentListRow row;
+    row.addElement(std::make_shared<TextComponent>(_("GAME IMPORTER"), Font::get(FONT_SIZE_MEDIUM),
+                                                   mMenuColorPrimary),
+                   true);
+    row.addElement(mMenu.makeArrow(), false);
+    row.makeAcceptInputHandler(
+        std::bind([this] { mWindow->pushGui(new GuiGameImporter(_("GAME IMPORTER"))); }));
+    s->addRow(row);
+
+    row.elements.clear();
     row.addElement(std::make_shared<TextComponent>(_("ORPHANED DATA CLEANUP"),
                                                    Font::get(FONT_SIZE_MEDIUM), mMenuColorPrimary),
                    true);
