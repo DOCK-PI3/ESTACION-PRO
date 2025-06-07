@@ -41,6 +41,7 @@ ImageComponent::ImageComponent(bool forceLoad, bool dynamic)
     , mRotateByTargetSize {false}
     , mLinearInterpolation {false}
     , mMipmapping {false}
+    , mInvertInMenus {true}
     , mTileHorizontalAlignment {ALIGN_LEFT}
     , mTileVerticalAlignment {ALIGN_BOTTOM}
     , mTopLeftCrop {0.0f, 0.0f}

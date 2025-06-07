@@ -105,6 +105,9 @@ public:
     void setLinearInterpolation(bool state) { mLinearInterpolation = state; }
     // Whether to use mipmapping and trilinear filtering.
     void setMipmapping(bool state) { mMipmapping = state; }
+    // Whether to invert this image in menus when the row is selected (light color scheme only).
+    void setInvertInMenus(bool state) override { mInvertInMenus = state; }
+    const bool getInvertInMenus() const override { return mInvertInMenus; }
 
     // Returns the size of the current texture, or (0, 0) if none is loaded.
     // This may be different than the rendered size so use getSize() for that.
@@ -175,6 +178,7 @@ private:
     bool mRotateByTargetSize;
     bool mLinearInterpolation;
     bool mMipmapping;
+    bool mInvertInMenus;
 
     Alignment mTileHorizontalAlignment;
     Alignment mTileVerticalAlignment;
