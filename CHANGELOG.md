@@ -30,6 +30,8 @@
 * Added support to the theme downloader for detecting and handling diverged repositories
 * Added a "mipmap" property to the image element to allow for higher quality texture scale-down
 * Changed the max value for the backgroundHorizontalPadding and backgroundVerticalPadding properties to 1 for the helpsystem, systemstatus and clock elements
+* Added support for the 5:3 display aspect ratio
+* Added support for a fourth button to GuiMsgBox
 * Removed the obsolete InputManager::doOnFinish() and InputManager::getTemporaryConfigPath() functions
 * (Windows) Worked around an OS glitch by changing PlatformUtil::runSystemCommand() to use CreateProcessW() instead of _wsystem()
 * (Windows) Converted to backslashes instead of forward slashes as directory separators for the screensaver-game-select, game-select and system-select events
