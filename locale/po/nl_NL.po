@@ -2914,6 +2914,9 @@ msgstr "3:2 verticaal"
 msgid "4:3 vertical"
 msgstr "4:3 verticaal"
 
+msgid "5:3 vertical"
+msgstr "5:3 verticaal"
+
 msgid "5:4 vertical"
 msgstr "5:4 verticaal"
 

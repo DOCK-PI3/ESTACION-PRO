@@ -2806,6 +2806,9 @@ msgstr "垂直方向 3:2"
 msgid "4:3 vertical"
 msgstr "垂直方向 4:3"
 
+msgid "5:3 vertical"
+msgstr "垂直方向 5:3"
+
 msgid "5:4 vertical"
 msgstr "垂直方向 5:4"
 
