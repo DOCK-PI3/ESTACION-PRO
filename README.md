@@ -1,4 +1,4 @@
-[![Releases](https://img.shields.io/badge/Version-3.2.1-orange.svg)](https://github.com/sammycage/lunasvg/releases)
+[![Releases](https://img.shields.io/badge/Version-3.3.0-orange.svg)](https://github.com/sammycage/lunasvg/releases)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/sammycage/lunasvg/blob/master/LICENSE)
 [![Build Status](https://github.com/sammycage/lunasvg/actions/workflows/main.yml/badge.svg)](https://github.com/sammycage/lunasvg/actions)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.me/sammycage)
@@ -141,6 +141,17 @@ target_link_libraries(your_target_name PRIVATE lunasvg::lunasvg)
 ```
 
 Replace `your_target_name` with the name of your executable or library target.
+
+Build Options
+LunaSVG provides several build options that can be configured using -D flags when running cmake. Below is a list of available options:
+
+USE_SYSTEM_PLUTOVG (default: OFF): Use the system-installed plutovg library (version 1.0.0 or higher) instead of the bundled submodule. If the system library is not found, the build will fall back to using the submodule.
+Example:
+
+```bash
+cmake -B build -DUSE_SYSTEM_PLUTOVG=ON .
+cmake --build build
+```
 
 ### Using Meson
 
