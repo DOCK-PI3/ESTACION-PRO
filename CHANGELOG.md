@@ -15,11 +15,14 @@
 * Added the DICE RetroArch core as an alternative emulator for the arcade and mame systems
 * Added the .rom file extension to the pcengine, supergrafx and tg16 systems
 * Added Ymir standalone as an alternative emulator for the saturn and saturnjp systems on Linux and Windows
+* Changed the MAME "speech" parameter to "speechadapter" for the ti99 system due to changes introduced in MAME 0.276
+* Added MAME Legacy (Standalone) as an alternative emulator for the ti99 system on Linux, macOS and Windows
 * (Android) Removed all MAME4droid 2024 emulator entries (replacement MAME4droid Current entries were added in ES-DE 3.2.0-45)
 * (Linux) Added the native xenia release as the default emulator for the xbox360 system
 * (Linux) Added Lindbergh Loader standalone as an alternative emulator for the arcade, mame and pcarcade systems
 * (Linux) Added a RetroArch core find rule entry for ~/.config/retroarch/libretro
 * (Linux) Added support for the Flatpak release of Azahar
+* (Linux) Added support for the AppImage release of PPSSPP
 * (Linux) Added support for the manually downloaded release of BlastEm
 * (Windows) Added BlastEm standalone as an alternative emulator for the genesis, megadrive and megadrivejp systems
 * (Windows) Added Supermodel Dojo standalone as an alternative emulator for the arcade, mame and model3 systems
@@ -42,7 +45,7 @@
 * (macOS) Updated libgit2 to 1.9.0, pugixml to 1.15, libvpx to 1.14.1, Opus to 1.5.2 and FFmpeg to 7.1
 * (Windows) Updated gettext/linbintl to 0.23.1, ICU to 77.1, curl to 8.13.0, GLEW to 2.2.0, HarfBuzz to 11.0.1, FreeType to 2.13.3
 * (Windows) Updated libgit2 to 1.9.0, Poppler to 24.08.0, pugixml to 1.15 and FFmpeg to 7.1
-* Updated LunaSVG to commit 84c71c543dde471e349a0fc33d9610a5e0a4eaf0
+* Updated LunaSVG to 3.3.0
 * Updated CImg to 3.5.3
 * Updated GLM to 1.0.0
 * Updated RapidJSON to commit 24b5e7a8b27f42fa16b96fc70aade9106cf7102f

@@ -739,6 +739,7 @@ The following emulators are supported in AppImage format when using the bundled 
 | ps3                  | RPCS3               | rpcs3*.AppImage                |
 | ps4                  | shadPS4             | Shadps4-qt*.AppImage           |
 | ps4                  | shadPS4             | Shadps4-sdl*.AppImage          |
+| psp                  | PPSSPP              | PPSSPP*.AppImage               |
 | psvita               | Vita3K              | Vita3K*.AppImage               |
 | psx                  | DuckStation         | DuckStation*.AppImage          |
 | snes                 | Snes9x              | Snes9x*.AppImage               |
@@ -4487,7 +4488,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | tanodragon            | Tano Dragon                                    | MAME [Tape] **(Standalone)**      | MAME [Cartridge] **(Standalone)**,<br>XRoar **(Standalone)** | Yes          | See the specific _Dragon 32 and Tano Dragon_ section elsewhere in this guide |
 | tg16                  | NEC TurboGrafx-16                              | Beetle PCE                        | Beetle PCE FAST,<br>Beetle SuperGrafx,<br>Geargrafx,<br>Mednafen **(Standalone)**,<br>Mesen **(Standalone)** [LW],<br>ares **(Standalone)** | No           | Single archive or ROM file |
 | tg-cd                 | NEC TurboGrafx-CD                              | Beetle PCE                        | Beetle PCE FAST,<br>Beetle SuperGrafx,<br>Mednafen **(Standalone)**,<br>Mesen **(Standalone)** [LW],<br>ares **(Standalone)** | Yes          |                                      |
-| ti99                  | Texas Instruments TI-99                        | MAME **(Standalone)**             |                                   | Yes          | See the specific _Texas Instruments TI-99_ section elsewhere in this guide |
+| ti99                  | Texas Instruments TI-99                        | MAME **(Standalone)**             | MAME Legacy **(Standalone)**      | Yes          | See the specific _Texas Instruments TI-99_ section elsewhere in this guide |
 | tic80                 | TIC-80 Fantasy Computer                        | TIC-80                            | TIC-80 **(Standalone)**           | No           | Single .tic file      |
 | to8                   | Thomson TO8                                    | Theodore                          |                                   |              |                                      |
 | triforce              | Namco-Sega-Nintendo Triforce                   | Triforce **(Standalone)** [LW]    |                                   | No           |                                      |
