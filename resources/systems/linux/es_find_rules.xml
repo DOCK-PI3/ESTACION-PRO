@@ -835,6 +835,10 @@
             <entry>org.ppsspp.PPSSPP</entry>
         </rule>
         <rule type="staticpath">
+            <entry>~/Applications/PPSSPP*.AppImage</entry>
+            <entry>~/.local/share/applications/PPSSPP*.AppImage</entry>
+            <entry>~/.local/bin/PPSSPP*.AppImage</entry>
+            <entry>~/bin/PPSSPP*.AppImage</entry>
             <entry>/var/lib/flatpak/exports/bin/org.ppsspp.PPSSPP</entry>
             <entry>~/.local/share/flatpak/exports/bin/org.ppsspp.PPSSPP</entry>
         </rule>
