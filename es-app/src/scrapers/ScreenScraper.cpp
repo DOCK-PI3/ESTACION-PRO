@@ -401,6 +401,7 @@ void ScreenScraperRequest::processGame(const pugi::xml_document& xmldoc,
         ScraperSearchResult result;
         ScreenScraperRequest::ScreenScraperConfig ssConfig;
 
+        result.scraperRequestMaxAllowance = maxRequestsPerDay;
         result.scraperRequestAllowance = scraperRequestAllowance;
         result.gameID = game.attribute("id").as_string();
 

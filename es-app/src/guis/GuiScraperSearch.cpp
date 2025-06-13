@@ -127,6 +127,13 @@ GuiScraperSearch::GuiScraperSearch(SearchType type, unsigned int scrapeCount, in
     mMD_Grid =
         std::make_shared<ComponentGrid>(glm::ivec2 {2, static_cast<int>(mMD_Pairs.size() * 2 - 1)});
     unsigned int i {0};
+
+    if (mSearchType == AUTOMATIC_MODE) {
+        mAPIStatistics = std::make_shared<TextComponent>("", Font::get(FONT_SIZE_MINI),
+                                                         mMenuColorPrimary, ALIGN_LEFT);
+        mGrid.setEntry(mAPIStatistics, glm::ivec2 {1, 2}, false, true, glm::ivec2 {2, 1});
+    }
+
     for (auto it = mMD_Pairs.cbegin(); it != mMD_Pairs.cend(); ++it) {
         mMD_Grid->setEntry(it->first, glm::ivec2 {0, i}, false, true);
         mMD_Grid->setEntry(it->second, glm::ivec2 {1, i}, false, it->resize);
@@ -438,6 +445,23 @@ void GuiScraperSearch::onSearchDone(std::vector<ScraperSearchResult>& results)
         }
     }
     else {
+        if (mSearchType == AUTOMATIC_MODE) {
+            if (Settings::getInstance()->getString("Scraper") == "screenscraper") {
+                const unsigned int maxAllowance {results.back().scraperRequestMaxAllowance};
+                const unsigned int usedAllowance {maxAllowance -
+                                                  results.back().scraperRequestAllowance};
+                mAPIStatistics->setValue(_("API CALLS:") + " " + std::to_string(usedAllowance) +
+                                         "/" + std::to_string(maxAllowance));
+            }
+            else {
+                mAPIStatistics->setValue(
+                    _("API CALLS:") + " " +
+                    Utils::String::format(
+                        _n("%i REMAINING", "%i REMAINING", results.back().scraperRequestAllowance),
+                        results.back().scraperRequestAllowance));
+            }
+        }
+
         mFoundGame = true;
         ComponentListRow row;
 

@@ -52,6 +52,7 @@ struct ScraperSearchParams {
 struct ScraperSearchResult {
     ScraperSearchResult()
         : mdl(GAME_METADATA)
+        , scraperRequestMaxAllowance {0}
         , scraperRequestAllowance {0}
         , mediaURLFetch {NOT_STARTED}
         , thumbnailDownloadStatus {NOT_STARTED}
@@ -67,6 +68,7 @@ struct ScraperSearchResult {
 
     // How many more objects the scraper service allows to be downloaded
     // within a given time period.
+    unsigned int scraperRequestMaxAllowance;
     unsigned int scraperRequestAllowance;
 
     enum downloadStatus mediaURLFetch;
