@@ -36,6 +36,7 @@
             <!-- Flatpak package -->
             <entry>~/.var/app/org.libretro.RetroArch/config/retroarch/cores</entry>
             <!-- Snap package -->
+            <entry>~/snap/retroarch/common/.config/retroarch/cores</entry>
             <entry>~/snap/retroarch/current/.config/retroarch/cores</entry>
             <!-- Ubuntu and Linux Mint repository -->
             <entry>/usr/lib/x86_64-linux-gnu/libretro</entry>
