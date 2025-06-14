@@ -11,6 +11,7 @@
 * Added translations for Bosnian (bs_BA)
 * Added translations for Croatian (hr_HR)
 * Added translations for Serbian (sr_RS)
+* The scraper API call statistics is now shown in the interface when running the multi-scraper in automatic mode
 * Added the Geargrafx RetroArch core as an alternative emulator for the pcengine, supergrafx and tg16 systems
 * Added the DICE RetroArch core as an alternative emulator for the arcade and mame systems
 * Added the .rom file extension to the pcengine, supergrafx and tg16 systems
@@ -21,6 +22,7 @@
 * (Linux) Added the native xenia release as the default emulator for the xbox360 system
 * (Linux) Added Lindbergh Loader standalone as an alternative emulator for the arcade, mame and pcarcade systems
 * (Linux) Added a RetroArch core find rule entry for ~/.config/retroarch/libretro
+* (Linux) Added a RetroArch core find rule entry for ~/snap/retroarch/common/.config/retroarch/cores
 * (Linux) Added support for the Flatpak release of Azahar
 * (Linux) Added support for the AppImage release of PPSSPP
 * (Linux) Added support for the manually downloaded release of BlastEm
@@ -35,6 +37,7 @@
 * Changed the max value for the backgroundHorizontalPadding and backgroundVerticalPadding properties to 1 for the helpsystem, systemstatus and clock elements
 * Added support for the 5:3 display aspect ratio
 * Added support for a fourth button to GuiMsgBox
+* Added support for scraping the Sega Pico (segapico) platform (not added as a new system so it will require custom system configuration to use)
 * Removed the obsolete InputManager::doOnFinish() and InputManager::getTemporaryConfigPath() functions
 * (Windows) Worked around an OS glitch by changing PlatformUtil::runSystemCommand() to use CreateProcessW() instead of _wsystem()
 * (Windows) Converted to backslashes instead of forward slashes as directory separators for the screensaver-game-select, game-select and system-select events
@@ -45,6 +48,9 @@
 * (macOS) Updated libgit2 to 1.9.0, pugixml to 1.15, libvpx to 1.14.1, Opus to 1.5.2 and FFmpeg to 7.1
 * (Windows) Updated gettext/linbintl to 0.23.1, ICU to 77.1, curl to 8.13.0, GLEW to 2.2.0, HarfBuzz to 11.0.1, FreeType to 2.13.3
 * (Windows) Updated libgit2 to 1.9.0, Poppler to 24.08.0, pugixml to 1.15 and FFmpeg to 7.1
+* Updated SDL to 2.32.8 on Android, Windows, macOS and the Linux AppImage builds
+* Updated the MAME index files to include ROMs up to MAME version 0.277
+* Bundled the May 2025 release of the Mozilla TLS/SSL certificates
 * Updated LunaSVG to 3.3.0
 * Updated CImg to 3.5.3
 * Updated GLM to 1.0.0
@@ -56,6 +62,7 @@
 
 ### Bug fixes
 
+* (macOS) The application crashed when disconnecting a Bluetooth controller
 * Under some circumstances duplicate system-select events could be generated
 * Sorting configuration was missing for the mark3 and vircon32 systems
 * (Windows) Custom event scripts would not work if the path to the ES-DE directory contained spaces
