@@ -118,9 +118,6 @@ http://www.libpng.org
 LibTIFF \
 https://libtiff.gitlab.io/libtiff
 
-libvpx \
-https://github.com/webmproject/libvpx
-
 LunaSVG \
 https://github.com/sammycage/lunasvg
 

@@ -36,28 +36,33 @@
 * Added a "mipmap" property to the image element to allow for higher quality texture scale-down
 * Changed the max value for the backgroundHorizontalPadding and backgroundVerticalPadding properties to 1 for the helpsystem, systemstatus and clock elements
 * Added support for the 5:3 display aspect ratio
+* Added .webm as a supported video file extension
 * Added support for a fourth button to GuiMsgBox
 * Added support for scraping the Sega Pico (segapico) platform (not added as a new system so it will require custom system configuration to use)
 * Removed the obsolete InputManager::doOnFinish() and InputManager::getTemporaryConfigPath() functions
+* (Android) Updated the build environment to the latest stable versions
+* (Android) Updated a number of Java and Kotlin dependencies to the latest stable versions
+* (Android) Prepared the application for 16 KB page sizes
 * (Windows) Worked around an OS glitch by changing PlatformUtil::runSystemCommand() to use CreateProcessW() instead of _wsystem()
 * (Windows) Converted to backslashes instead of forward slashes as directory separators for the screensaver-game-select, game-select and system-select events
 * (Android) Updated libiconv to 1.18, gettext/libintl to 0.24, ICU to 77.1, libpng to 1.6.47, LibTIFF to 4.7.0 and HarfBuzz to 11.0.1
 * (Android) Updated FreeType to 2.13.3, Poppler to 24.08.0, OpenSSL to 3.4.1, libgit2 to 1.9.0 and pugixml to 1.15
 * (macOS) Updated libiconv to 1.18, gettext/libintl to 0.24, ICU to 77.1, libpng to 1.6.47, HarfBuzz to 11.0.1 and FreeType to 2.13.3
 * (macOS) Updated fontconfig to 2.16.1, libjpeg-turbo to 3.1.0, LibTIFF to 4.7.0, OpenJPEG to 2.5.3 and Poppler to 25.04.0
-* (macOS) Updated libgit2 to 1.9.0, pugixml to 1.15, libvpx to 1.14.1, Opus to 1.5.2 and FFmpeg to 7.1
+* (macOS) Updated libgit2 to 1.9.0, pugixml to 1.15, Opus to 1.5.2 and FFmpeg to 7.1
+* (macOS) Removed an unnecessary dependency on libvpx
 * (Windows) Updated gettext/linbintl to 0.23.1, ICU to 77.1, curl to 8.13.0, GLEW to 2.2.0, HarfBuzz to 11.0.1, FreeType to 2.13.3
 * (Windows) Updated libgit2 to 1.9.0, Poppler to 24.08.0, pugixml to 1.15 and FFmpeg to 7.1
 * Updated SDL to 2.32.8 on Android, Windows, macOS and the Linux AppImage builds
-* Updated the MAME index files to include ROMs up to MAME version 0.277
-* Bundled the May 2025 release of the Mozilla TLS/SSL certificates
 * Updated LunaSVG to 3.3.0
 * Updated CImg to 3.5.3
 * Updated GLM to 1.0.0
+* Updated UTF8-CPP to 4.0.6
 * Updated RapidJSON to commit 24b5e7a8b27f42fa16b96fc70aade9106cf7102f
 * Updated rlottie to commit e3026b1e1a516fff3c22d2b1b9f26ec864f89a82
 * Manually updated the rlottie CMake configuration to be able to build with CMake 4.0
-* Updated UTF8-CPP to 4.0.6
+* Updated the MAME index files to include ROMs up to MAME version 0.277
+* Bundled the May 2025 release of the Mozilla TLS/SSL certificates
 * Translation updates for multiple languages
 
 ### Bug fixes
