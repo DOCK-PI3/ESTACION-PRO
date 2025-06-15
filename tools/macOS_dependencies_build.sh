@@ -312,21 +312,6 @@ cp libSDL2-2.0.0.dylib ../../..
 cd ../..
 
 echo
-echo "Building libvpx"
-
-if [ ! -d libvpx ]; then
-  echo "libvpx directory is missing, aborting."
-  exit
-fi
-
-cd libvpx
-./configure --disable-examples --disable-docs --disable-tools --disable-unit-tests --enable-pic --enable-vp9-highbitdepth --prefix=$(pwd)/../local_install
-make clean
-make -j${JOBS}
-make install
-cd ..
-
-echo
 echo "Building Ogg"
 
 if [ ! -d ogg ]; then
@@ -385,7 +370,7 @@ if [ ! -d FFmpeg ]; then
 fi
 
 cd FFmpeg
-PKG_CONFIG_PATH=$(pwd)/../local_install/lib/pkgconfig ./configure --prefix=/usr/local --enable-rpath --install-name-dir=@rpath --disable-doc --disable-lzma --enable-gpl --enable-shared --enable-libvorbis --enable-libopus --enable-libvpx --enable-postproc
+PKG_CONFIG_PATH=$(pwd)/../local_install/lib/pkgconfig ./configure --prefix=/usr/local --enable-rpath --install-name-dir=@rpath --disable-doc --disable-lzma --enable-gpl --enable-shared --enable-libvorbis --enable-libopus --enable-postproc
 
 make clean
 make -j${JOBS}

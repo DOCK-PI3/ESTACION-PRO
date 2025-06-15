@@ -339,20 +339,6 @@ mkdir build
 cd ..
 
 echo
-echo "Setting up libvpx"
-rm -rf libvpx
-git clone https://github.com/webmproject/libvpx.git
-
-if [ ! -d libvpx ]; then
-  echo "libvpx directory is missing, aborting."
-  exit
-fi
-
-cd libvpx
-git checkout v1.14.1
-cd ..
-
-echo
 echo "Setting up Ogg"
 rm -rf ogg
 git clone https://github.com/xiph/ogg.git
