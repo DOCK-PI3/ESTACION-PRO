@@ -137,8 +137,9 @@ void GamelistView::onThemeChanged(const std::shared_ptr<ThemeData>& theme)
     assert(selectedTheme != themes.cend());
 
     mStaticVideoAudio = false;
-    const bool isStartupSystem {Settings::getInstance()->getString("StartupSystem") ==
-                                mRoot->getSystem()->getName()};
+    const bool isStartupSystem {Settings::getInstance()->getString("StartupView") == "gamelist" &&
+                                Settings::getInstance()->getString("StartupSystem") ==
+                                    mRoot->getSystem()->getName()};
 
     using namespace ThemeFlags;
 

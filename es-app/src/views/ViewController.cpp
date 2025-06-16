@@ -516,28 +516,42 @@ void ViewController::goToStart(bool playTransition)
         return;
 
     // If the system view does not exist, then create it. We do this here as it would
-    // otherwise not be done if jumping directly into a specific game system on startup.
+    // otherwise not be done if jumping directly into a gamelist on startup.
     if (!mSystemListView)
         getSystemListView();
 
-    // If a specific system is requested, go directly to its game list.
-    auto requestedSystem = Settings::getInstance()->getString("StartupSystem");
-    if (requestedSystem != "") {
+    // If a specific system is requested then go directly to this system, which could be either
+    // the system view or the gamelist view.
+    std::string requestedSystem {Settings::getInstance()->getString("StartupSystem")};
+    SystemData* selectedSystem {nullptr};
+
+    if (requestedSystem == "") {
+        selectedSystem = SystemData::sSystemVector.front();
+    }
+    else {
         for (auto it = SystemData::sSystemVector.cbegin(); // Line break.
              it != SystemData::sSystemVector.cend(); ++it) {
             if ((*it)->getName() == requestedSystem) {
-                goToGamelist(*it);
-                if (!playTransition)
-                    cancelViewTransitions();
-                return;
+                selectedSystem = *it;
+                break;
             }
         }
+    }
 
-        // Requested system doesn't exist.
+    // If the requested system doesn't exist.
+    if (selectedSystem == nullptr) {
+        selectedSystem = SystemData::sSystemVector.front();
         Settings::getInstance()->setString("StartupSystem", "");
     }
-    // Get the first system entry.
-    goToSystemView(getSystemListView()->getFirstSystem(), false);
+
+    if (Settings::getInstance()->getString("StartupView") == "gamelist") {
+        goToGamelist(selectedSystem);
+        if (!playTransition)
+            cancelViewTransitions();
+    }
+    else {
+        goToSystemView(selectedSystem, playTransition);
+    }
 }
 
 void ViewController::ReloadAndGoToStart()

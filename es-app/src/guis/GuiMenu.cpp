@@ -641,10 +641,10 @@ void GuiMenu::openUIOptions()
         }
     });
 
-    // Optionally start in selected system/gamelist.
+    // Start at the selected system.
     auto startupSystem =
-        std::make_shared<OptionListComponent<std::string>>(_("GAMELIST ON STARTUP"), false);
-    startupSystem->add(_("NONE"), "", Settings::getInstance()->getString("StartupSystem") == "");
+        std::make_shared<OptionListComponent<std::string>>(_("SYSTEM ON STARTUP"), false);
+    startupSystem->add(_("DEFAULT"), "", Settings::getInstance()->getString("StartupSystem") == "");
     for (auto it = SystemData::sSystemVector.cbegin(); // Line break.
          it != SystemData::sSystemVector.cend(); ++it) {
         // If required, abbreviate the system name so it doesn't overlap the setting name.
@@ -658,14 +658,31 @@ void GuiMenu::openUIOptions()
                            Settings::getInstance()->getString("StartupSystem") == (*it)->getName(),
                            maxNameLength);
     }
-    // This can probably not happen but as an extra precaution select the "NONE" entry if no
-    // entry is selected.
+    // If there are no objects returned, then the configured system is probably no longer present.
+    // Simply set the startup system to default in this case.
     if (startupSystem->getSelectedObjects().size() == 0)
         startupSystem->selectEntry(0);
-    s->addWithLabel(_("GAMELIST ON STARTUP"), startupSystem);
+    s->addWithLabel(_("SYSTEM ON STARTUP"), startupSystem);
     s->addSaveFunc([startupSystem, s] {
         if (startupSystem->getSelected() != Settings::getInstance()->getString("StartupSystem")) {
             Settings::getInstance()->setString("StartupSystem", startupSystem->getSelected());
+            s->setNeedsSaving();
+        }
+    });
+
+    // Whether to start in the system or gamelist view.
+    auto startupView = std::make_shared<OptionListComponent<std::string>>(_("STARTUP VIEW"), false);
+    const std::string selectedStartupView {Settings::getInstance()->getString("StartupView")};
+    startupView->add(_("SYSTEM"), "system", selectedStartupView == "system");
+    startupView->add(_("GAMELIST"), "gamelist", selectedStartupView == "gamelist");
+    // If there are no objects returned, then there must be a manually modified entry in the
+    // configuration file. Simply set the startup view to "system" in this case.
+    if (startupView->getSelectedObjects().size() == 0)
+        startupView->selectEntry(0);
+    s->addWithLabel(_("STARTUP VIEW"), startupView);
+    s->addSaveFunc([startupView, s] {
+        if (startupView->getSelected() != Settings::getInstance()->getString("StartupView")) {
+            Settings::getInstance()->setString("StartupView", startupView->getSelected());
             s->setNeedsSaving();
         }
     });

@@ -173,6 +173,7 @@ void Settings::setDefaults()
     mStringMap["ApplicationLanguage"] = {"automatic", "automatic"};
     mStringMap["QuickSystemSelect"] = {"leftrightshoulders", "leftrightshoulders"};
     mStringMap["StartupSystem"] = {"", ""};
+    mStringMap["StartupView"] = {"system", "system"};
     mStringMap["SystemsSorting"] = {"default", "default"};
     mStringMap["DefaultSortOrder"] = {"name, ascending", "name, ascending"};
     mStringMap["MenuColorScheme"] = {"dark", "dark"};
