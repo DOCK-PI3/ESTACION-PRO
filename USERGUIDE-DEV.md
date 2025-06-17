@@ -3465,9 +3465,13 @@ Sets the language for the application user interface. If this option is set to _
 
 The buttons to use to jump between systems in the gamelist view. The options are _Left/right or shoulders_, _Left/right or triggers_, _Shoulders_, _Triggers_, _Left/right_ or _Disabled_. The first two options will apply either left/right or shoulder/trigger buttons depending on the type of primary element used for the gamelist. For example a textlist or a vertical carousel will allow the use of the left and right buttons, but for horizontal carousels and grids these buttons are reserved for navigating the entries so instead the secondary buttons will be used, i.e. the shoulder or trigger buttons. Using these two options therefore leads to a slight inconsistency as different buttons will be used depending on the theme configuration. If instead using any of the single button pair options, i.e. _Shoulders_, _Triggers_ or _Left/right_, the navigation will be consistent regardless of theme configuration but you'll sacrifice the ability to use the selected buttons if the gamelist supports it, such as the ability to jump rows in a textlist using the shoulder and trigger buttons.
 
-**Gamelist on startup**
+**System on startup**
 
-If set to _None_, the system view will be displayed on startup. Any other value will automatically jump to that system's gamelist on startup.
+This selects the system to go to on startup. Whether to jump to the system view or the gamelist view is handled by the _Startup view_ setting covered below. If set to _Default_ then the first system will be selected, which will vary depending on the system sorting that is currently applied.
+
+**Startup view**
+
+Which view to go to on startup, i.e. the system view or the gamelist view. This setting is used in conjunction with _System on startup_.
 
 **Systems sorting**
 
@@ -3760,6 +3764,10 @@ When enabling this setting the functions for the A/B and X/Y buttons will be swa
 **Ignore keyboard input**
 
 If this setting is enabled then all keyboard input will be ignored, except the quit shortcut used to shut down the application. The main reason for ignoring keyboard input is if running Steam in parallel to ES-DE and you need to use the Steam Input's _Desktop Layout_ functionality to send keyboard input using the controller. In this case double or conflicting input will be sent to ES-DE as both the controller and keyboard events are read by the application. It's however generally a better idea to disable this functionality altogether in Steam and leave the ES-DE setting untouched. If you accidentally enable this setting when using a keyboard as input device, then you'll either need to plug in a controller to disable it again, or you'll need to modify the _InputIgnoreKeyboard_ entry in the ~/ES-DE/settings/es_settings.xml configuration file.
+
+**Input device notifications**
+
+Whether to display on-screen notification popups when plugging in and removing input devices.
 
 **Configure keyboard and controllers**
 

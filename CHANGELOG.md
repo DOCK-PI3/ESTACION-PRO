@@ -8,10 +8,12 @@
 
 ### Detailed list of changes
 
+* Renamed the "Gamelist on startup" setting to "System on startup" and added a new "Startup view" option to control where to go on application startup
+* The scraper API call statistics is now shown in the interface when running the multi-scraper in automatic mode
+* Added a setting for whether to display notification popups when plugging in and removing input devices (like controllers and keyboards)
 * Added translations for Bosnian (bs_BA)
 * Added translations for Croatian (hr_HR)
 * Added translations for Serbian (sr_RS)
-* The scraper API call statistics is now shown in the interface when running the multi-scraper in automatic mode
 * Added the Geargrafx RetroArch core as an alternative emulator for the pcengine, supergrafx and tg16 systems
 * Added the DICE RetroArch core as an alternative emulator for the arcade and mame systems
 * Added the .rom file extension to the pcengine, supergrafx and tg16 systems
@@ -35,10 +37,10 @@
 * Added support to the theme downloader for detecting and handling diverged repositories
 * Added a "mipmap" property to the image element to allow for higher quality texture scale-down
 * Changed the max value for the backgroundHorizontalPadding and backgroundVerticalPadding properties to 1 for the helpsystem, systemstatus and clock elements
+* Added support for scraping the Sega Pico (segapico) platform (not added as a new system so it will require custom system configuration to use)
 * Added support for the 5:3 display aspect ratio
 * Added .webm as a supported video file extension
 * Added support for a fourth button to GuiMsgBox
-* Added support for scraping the Sega Pico (segapico) platform (not added as a new system so it will require custom system configuration to use)
 * Removed the obsolete InputManager::doOnFinish() and InputManager::getTemporaryConfigPath() functions
 * (Android) Updated the build environment to the latest stable versions
 * (Android) Updated a number of Java and Kotlin dependencies to the latest stable versions
