@@ -759,7 +759,7 @@ void InputManager::addControllerByDeviceIndex(Window* window, int deviceIndex)
                      << ", instance ID: " << joyID << ", device index: " << deviceIndex << ")";
     }
 
-    if (window != nullptr) {
+    if (window != nullptr && Settings::getInstance()->getBool("InputDeviceNotifications")) {
         window->queueInfoPopup(
             Utils::String::format(
                 _("ADDED INPUT DEVICE '%s'"),
@@ -808,7 +808,7 @@ void InputManager::removeControllerByJoystickID(Window* window, SDL_JoystickID j
                  << ", serial number: " << (serialNumber == "" ? "n/a" : serialNumber)
                  << ", instance ID: " << joyID << ")";
 
-    if (window != nullptr) {
+    if (window != nullptr && Settings::getInstance()->getBool("InputDeviceNotifications")) {
         window->queueInfoPopup(
             Utils::String::format(
                 _("REMOVED INPUT DEVICE '%s'"),

@@ -263,6 +263,7 @@ void Settings::setDefaults()
     mBoolMap["InputOnlyFirstController"] = {false, false};
     mBoolMap["InputSwapButtons"] = {false, false};
     mBoolMap["InputIgnoreKeyboard"] = {false, false};
+    mBoolMap["InputDeviceNotifications"] = {true, true};
 
     // Game collection settings.
     mStringMap["CollectionSystemsAuto"] = {"", ""};

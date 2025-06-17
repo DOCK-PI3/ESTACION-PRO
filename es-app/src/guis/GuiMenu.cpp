@@ -1586,6 +1586,20 @@ void GuiMenu::openInputDeviceOptions()
         }
     });
 
+    // Whether to display notifications when plugging in and removing input devices.
+    auto inputDeviceNotifications = std::make_shared<SwitchComponent>();
+    inputDeviceNotifications->setState(
+        Settings::getInstance()->getBool("InputDeviceNotifications"));
+    s->addWithLabel(_("INPUT DEVICE NOTIFICATIONS"), inputDeviceNotifications);
+    s->addSaveFunc([inputDeviceNotifications, s] {
+        if (Settings::getInstance()->getBool("InputDeviceNotifications") !=
+            inputDeviceNotifications->getState()) {
+            Settings::getInstance()->setBool("InputDeviceNotifications",
+                                             inputDeviceNotifications->getState());
+            s->setNeedsSaving();
+        }
+    });
+
     // Configure keyboard and controllers.
     ComponentListRow configureInputRow;
     configureInputRow.elements.clear();
