@@ -72,6 +72,7 @@ private:
 
     std::atomic<bool> mIsImporting;
     std::atomic<bool> mDoneImporting;
+    std::atomic<bool> mHasEntries;
 };
 
 #endif // ES_APP_GUIS_GUI_GAME_IMPORTER_H
