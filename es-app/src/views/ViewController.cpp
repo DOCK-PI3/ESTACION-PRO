@@ -268,20 +268,20 @@ void ViewController::invalidSystemsFileDialog()
 void ViewController::noGamesDialog()
 {
 #if defined(__ANDROID__) || defined(__IOS__)
-    mNoGamesErrorMessage = _("NO GAME FILES WERE FOUND, PLEASE PLACE YOUR GAMES IN "
-                             "THE CONFIGURED ROM DIRECTORY. OPTIONALLY THE ROM "
-                             "DIRECTORY STRUCTURE CAN BE GENERATED WHICH WILL "
-                             "CREATE A TEXT FILE FOR EACH SYSTEM PROVIDING SOME "
-                             "INFORMATION SUCH AS THE SUPPORTED FILE EXTENSIONS.\n"
-                             "THIS IS THE CURRENTLY CONFIGURED ROM DIRECTORY:\n");
+    mNoGamesErrorMessage = _("NO GAME FILES WERE FOUND. EITHER IMPORT SOME GAMES OR "
+                             "PLACE THEM MANUALLY IN THE CONFIGURED ROM DIRECTORY. "
+                             "OPTIONALLY YOU CAN GENERATE THE ROM DIRECTORY STRUCTURE "
+                             "WHICH WILL CREATE A TEXT FILE FOR EACH SYSTEM PROVIDING "
+                             "SOME INFORMATION SUCH AS THE SUPPORTED FILE EXTENSIONS. "
+                             "THIS IS THE CONFIGURED ROM DIRECTORY:\n");
 #else
-    mNoGamesErrorMessage = _("NO GAME FILES WERE FOUND. EITHER PLACE YOUR GAMES IN "
-                             "THE CURRENTLY CONFIGURED ROM DIRECTORY OR CHANGE "
-                             "ITS PATH USING THE BUTTON BELOW. OPTIONALLY THE ROM "
-                             "DIRECTORY STRUCTURE CAN BE GENERATED WHICH WILL "
-                             "CREATE A TEXT FILE FOR EACH SYSTEM PROVIDING SOME "
-                             "INFORMATION SUCH AS THE SUPPORTED FILE EXTENSIONS.\n"
-                             "THIS IS THE CURRENTLY CONFIGURED ROM DIRECTORY:\n");
+    mNoGamesErrorMessage = _("NO GAME FILES WERE FOUND. EITHER IMPORT SOME GAMES OR "
+                             "PLACE THEM MANUALLY IN THE CURRENTLY CONFIGURED ROM "
+                             "DIRECTORY. YOU CAN ALSO CHANGE THE ROM PATH AND "
+                             "OPTIONALLY GENERATE THE ROM DIRECTORY STRUCTURE "
+                             "WHICH WILL CREATE A TEXT FILE FOR EACH SYSTEM PROVIDING "
+                             "SOME INFORMATION SUCH AS THE SUPPORTED FILE EXTENSIONS. "
+                             "THIS IS THE CONFIGURED ROM DIRECTORY:\n");
 #endif
 
 #if defined(_WIN64)
