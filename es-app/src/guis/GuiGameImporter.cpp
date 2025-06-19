@@ -395,7 +395,7 @@ void GuiGameImporter::selectorWindow()
 
     removeChild(&mMenu);
 
-    mSelectorMenu = std::make_unique<MenuComponent>(_("MAKE SELECTION"));
+    mSelectorMenu = std::make_unique<MenuComponent>(_("MAKE YOUR SELECTION"));
     addChild(mSelectorMenu.get());
 
     mCheckboxes.clear();
