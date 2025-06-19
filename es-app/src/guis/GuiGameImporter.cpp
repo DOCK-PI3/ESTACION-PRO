@@ -29,6 +29,7 @@ GuiGameImporter::GuiGameImporter(std::string title)
     , mAndroidGetApps {false}
     , mIsImporting {false}
     , mDoneImporting {false}
+    , mHasEntries {false}
 {
     mTempDir = Utils::FileSystem::getAppDataDirectory() + "/importer_temp";
     Utils::FileSystem::removeDirectory(mTempDir, true);
@@ -271,7 +272,15 @@ void GuiGameImporter::update(int deltaTime)
     if (mDoneImporting) {
         mIsImporting = false;
         mDoneImporting = false;
-        selectorWindow();
+        if (mHasEntries) {
+            mHasEntries = false;
+            selectorWindow();
+        }
+        else {
+            mWindow->pushGui(new GuiMsgBox(
+                _("COULDN'T FIND ANYTHING TO IMPORT"), _("OK"), [] {}, "", nullptr, "", nullptr, "",
+                nullptr, nullptr, true, true));
+        }
     }
 
     GuiComponent::update(deltaTime);
@@ -359,7 +368,7 @@ void GuiGameImporter::pressedStart()
                   "ALL GAME FILES WITH THE \"%s\" FILE EXTENSION FROM THE \"%s\" SYSTEM DIRECTORY "
                   "AND THEN IMPORT THE ENTRIES YOU SELECT ON THE NEXT SCREEN\nARE YOU SURE?"),
                 mFileExtension.c_str(), mTargetSystem->getSelected().c_str()),
-            _("YES"), [this, importFunc] { importFunc(); }, "NO", nullptr, "", nullptr, "", nullptr,
+            _("YES"), [importFunc] { importFunc(); }, "NO", nullptr, "", nullptr, "", nullptr,
             nullptr, false, true,
             (mRenderer->getIsVerticalOrientation() ?
                  0.90f :
@@ -584,6 +593,7 @@ void GuiGameImporter::androidpackageRule(std::vector<std::pair<std::string, std:
     }
 
     for (auto& app : appList) {
+        mHasEntries = true;
         std::ofstream appFile;
         appFile.open(mTempDir + "/files/" + app.first + mFileExtension, std::ios::binary);
         appFile << app.second << std::endl;
@@ -600,6 +610,7 @@ void GuiGameImporter::filesRule()
     mIsImporting = true;
     SDL_Delay(700);
     mIsImporting = false;
+    mHasEntries = true;
     mDoneImporting = true;
 }
 
