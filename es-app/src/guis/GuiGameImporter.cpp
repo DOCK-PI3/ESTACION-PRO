@@ -70,7 +70,6 @@ GuiGameImporter::GuiGameImporter(std::string title)
     mRemoveEntries = std::make_shared<OptionListComponent<std::string>>(_("REMOVE ENTRIES"), false);
     std::string selectedRemoveEntries {Settings::getInstance()->getString("ImporterRemoveEntries")};
     mRemoveEntries->add(_("NEVER"), "never", selectedRemoveEntries == "never");
-    mRemoveEntries->add(_("NONEXISTENT"), "nonexistent", selectedRemoveEntries == "nonexistent");
     mRemoveEntries->add(_("ALL UNSELECTED"), "unselected", selectedRemoveEntries == "unselected");
     mMenu.addSaveFunc([this] {
         if (mRemoveEntries->getSelected() !=
@@ -313,34 +312,61 @@ void GuiGameImporter::pressedStart()
     Utils::FileSystem::removeDirectory(mTempDir, true);
     mHasUpdates = false;
 
-    if (mImportThread) {
-        mImportThread->join();
-        mImportThread.reset();
-    }
-
     mTargetSystemDir = mTargetSystem->getSelected();
     mMediaTargetDir = mMediaTarget->getSelected();
     mFileExtension = "";
-    mMediaFileExtension = "";
 
     for (auto& importRule : SystemData::sImportRules.get()->mSystems) {
         if (importRule.first == mTargetSystemDir) {
             mFileExtension = importRule.second.extension;
-            if (importRule.second.ruleType == "androidpackage") {
-                mMediaFileExtension = ".png";
-                std::vector<std::pair<std::string, std::string>> appList;
-                // Due to JNI weirdness on Android where there are issues with SDL if attempting
-                // to run the app retrieval in a separate thread we instead need to run this on
-                // the main thread. We set a flag to execute it from the update() function which
-                // is just a hack to make sure a static busy indicator is rendered before calling
-                // the retrieval function.
-                mAndroidGetApps = true;
-            }
-            else if (importRule.second.ruleType == "files") {
-                mImportThread = std::make_unique<std::thread>(&GuiGameImporter::filesRule, this);
-            }
             break;
         }
+    }
+
+    auto importFunc = [this]() {
+        if (mImportThread) {
+            mImportThread->join();
+            mImportThread.reset();
+        }
+
+        mMediaFileExtension = "";
+
+        for (auto& importRule : SystemData::sImportRules.get()->mSystems) {
+            if (importRule.first == mTargetSystemDir) {
+                if (importRule.second.ruleType == "androidpackage") {
+                    mMediaFileExtension = ".png";
+                    std::vector<std::pair<std::string, std::string>> appList;
+                    // Due to JNI weirdness on Android where there are issues with SDL if
+                    // attempting to run the app retrieval in a separate thread we instead need
+                    // to run this on the main thread. We set a flag to execute it from the
+                    // update() function which is just a hack to make sure a static busy
+                    // indicator is rendered before calling the retrieval function.
+                    mAndroidGetApps = true;
+                }
+                else if (importRule.second.ruleType == "files") {
+                    mImportThread =
+                        std::make_unique<std::thread>(&GuiGameImporter::filesRule, this);
+                }
+                break;
+            }
+        }
+    };
+
+    if (mRemoveEntries->getSelected() == "unselected") {
+        mWindow->pushGui(new GuiMsgBox(
+            Utils::String::format(
+                _("YOU HAVE CHOSEN TO REMOVE ALL UNSELECTED ENTRIES, THIS WILL DELETE "
+                  "ALL GAME FILES WITH THE \"%s\" FILE EXTENSION FROM THE \"%s\" SYSTEM DIRECTORY "
+                  "AND THEN IMPORT THE ENTRIES YOU SELECT ON THE NEXT SCREEN\nARE YOU SURE?"),
+                mFileExtension.c_str(), mTargetSystem->getSelected().c_str()),
+            _("YES"), [this, importFunc] { importFunc(); }, "NO", nullptr, "", nullptr, "", nullptr,
+            nullptr, false, true,
+            (mRenderer->getIsVerticalOrientation() ?
+                 0.90f :
+                 0.60f * (1.778f / mRenderer->getScreenAspectRatio()))));
+    }
+    else {
+        importFunc();
     }
 }
 
@@ -445,8 +471,19 @@ void GuiGameImporter::selectorWindow()
     }
 
     mSelectorMenu->addButton(_("IMPORT"), _("import"), [this, fileList] {
-        const bool importMedia {Settings::getInstance()->getBool("ImporterImportMedia")};
+        const std::string removeEntries {mRemoveEntries->getSelected()};
+        const bool importMedia {mImportMedia->getState()};
         int numEntriesImported {0};
+
+        if (removeEntries == "unselected") {
+            for (auto& file : Utils::FileSystem::getDirContent(
+                     FileData::getROMDirectory() + mTargetSystemDir, false)) {
+                if (Utils::FileSystem::getExtension(file) == mFileExtension) {
+                    LOG(LogInfo) << "GuiGameImporter: Removed file \"" << file << "\"";
+                    Utils::FileSystem::removeFile(file);
+                }
+            }
+        }
 
         for (int i {0}; i < static_cast<int>(mCheckboxes.size()); ++i) {
             const std::string systemDir {FileData::getROMDirectory() + mTargetSystemDir};
