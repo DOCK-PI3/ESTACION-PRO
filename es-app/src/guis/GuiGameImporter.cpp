@@ -371,7 +371,7 @@ void GuiGameImporter::pressedStart()
             _("YES"), [importFunc] { importFunc(); }, "NO", nullptr, "", nullptr, "", nullptr,
             nullptr, false, true,
             (mRenderer->getIsVerticalOrientation() ?
-                 0.90f :
+                 0.94f :
                  0.60f * (1.778f / mRenderer->getScreenAspectRatio()))));
     }
     else {
