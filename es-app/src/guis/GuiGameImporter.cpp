@@ -123,7 +123,7 @@ GuiGameImporter::GuiGameImporter(std::string title)
     mImportMediaAdditional = std::make_shared<SwitchComponent>();
     mImportMediaAdditional->setState(
         Settings::getInstance()->getBool("ImporterImportMediaAdditional"));
-    mMenu.addWithLabel(_("IMPORT BANNER OR LOGO IF AVAILABLE"), mImportMediaAdditional);
+    mMenu.addWithLabel(_("IMPORT BANNERS OR LOGOS IF AVAILABLE"), mImportMediaAdditional);
     mMenu.addSaveFunc([this] {
         if (mImportMediaAdditional->getState() !=
             Settings::getInstance()->getBool("ImporterImportMediaAdditional")) {
