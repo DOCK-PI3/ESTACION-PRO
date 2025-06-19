@@ -334,10 +334,13 @@ void ImportRules::loadImportRules()
                         }
                     }
 
+                    bool hasExtension {false};
+
                     const pugi::xml_node& extension {rule.child("extension")};
                     if (extension) {
                         const std::string extensionValue {extension.text().get()};
                         if (extensionValue.size() > 0) {
+                            hasExtension = true;
                             importRule.extension = extensionValue;
                         }
                         else {
@@ -345,7 +348,14 @@ void ImportRules::loadImportRules()
                                             << "\" has no value defined";
                         }
                     }
-                    mSystems[systemName] = importRule;
+
+                    if (hasExtension) {
+                        mSystems[systemName] = importRule;
+                    }
+                    else {
+                        LOG(LogWarning) << "Missing mandatory property \"extension\" for system \""
+                                        << systemName << "\"";
+                    }
                 }
                 else if (ruleType == "files") {
                     ImportRule importRule;
