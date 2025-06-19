@@ -368,7 +368,7 @@ void GuiGameImporter::pressedStart()
                   "ALL GAME FILES WITH THE \"%s\" FILE EXTENSION FROM THE \"%s\" SYSTEM DIRECTORY "
                   "AND THEN IMPORT THE ENTRIES YOU SELECT ON THE NEXT SCREEN\nARE YOU SURE?"),
                 mFileExtension.c_str(), mTargetSystem->getSelected().c_str()),
-            _("YES"), [importFunc] { importFunc(); }, "NO", nullptr, "", nullptr, "", nullptr,
+            _("YES"), [importFunc] { importFunc(); }, _("NO"), nullptr, "", nullptr, "", nullptr,
             nullptr, false, true,
             (mRenderer->getIsVerticalOrientation() ?
                  0.94f :
