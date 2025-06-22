@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!-- This is the ES-DE import rules configuration file for Linux -->
+<ruleList>
+    <system name="desktop">
+        <rule type="desktopshortcuts">
+            <directory gamesOnly="false">/usr/share/applications</directory>
+            <directory gamesOnly="false">~/.local/share/applications</directory>
+            <directory gamesOnly="false">/var/lib/flatpak/exports/share/applications</directory>
+            <directory gamesOnly="false">/var/lib/snapd/desktop/applications</directory>
+        </rule>
+    </system>
+    <system name="emulators">
+        <rule type="desktopshortcuts">
+            <directory gamesOnly="false">/usr/share/applications</directory>
+            <directory gamesOnly="false">~/.local/share/applications</directory>
+            <directory gamesOnly="false">/var/lib/flatpak/exports/share/applications</directory>
+            <directory gamesOnly="false">/var/lib/snapd/desktop/applications</directory>
+        </rule>
+    </system>
+    <system name="steam">
+        <rule type="desktopshortcuts">
+            <directory gamesOnly="true">~/.local/share/applications</directory>
+        </rule>
+    </system>
+</ruleList>
