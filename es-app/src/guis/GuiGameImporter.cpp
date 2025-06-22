@@ -586,11 +586,17 @@ void GuiGameImporter::selectorWindow()
 
                 const std::string file {fileList[i].first};
                 if (Utils::FileSystem::exists(file)) {
+#if defined(__APPLE__)
+                    // On macOS we need to move the file to preserve the symlink.
+                    Utils::FileSystem::renameFile(
+                        file, systemDir + "/" + Utils::FileSystem::getFileName(file), true);
+#else
                     // We have to copy and not rename the files as they may need to move across
                     // different storage devices.
                     Utils::FileSystem::copyFile(
                         file, systemDir + "/" + Utils::FileSystem::getFileName(file), true);
                     Utils::FileSystem::removeFile(file);
+#endif
 
                     LOG(LogInfo) << "GuiGameImporter: Importing \""
                                  << Utils::FileSystem::getStem(Utils::FileSystem::getFileName(file))
@@ -711,13 +717,25 @@ void GuiGameImporter::filesRule(std::pair<const std::string, ImportRules::Import
             Utils::FileSystem::getDirContent(expandedDir, directory.second)};
         for (auto& file : fileList) {
             if (Utils::FileSystem::getExtension(file) == mFileExtension) {
+#if defined(__APPLE__)
+                if (file.find("Frameworks") != std::string::npos) {
+                    LOG(LogDebug) << "GuiGameImporter::filesRule(): Skipping Frameworks entry \""
+                                  << file << "\"";
+                    continue;
+                }
+                if (file.find("Platforms") != std::string::npos) {
+                    LOG(LogDebug) << "GuiGameImporter::filesRule(): Skipping Platforms entry \""
+                                  << file << "\"";
+                    continue;
+                }
+#else
                 const long fileSize {Utils::FileSystem::getFileSize(file)};
                 if (fileSize > MAX_FILE_SIZE) {
                     LOG(LogWarning) << "GuiGameImporter: File \"" << file << "\" is too big at "
                                     << fileSize << " bytes, skipping it";
                     continue;
                 }
-
+#endif
                 std::string targetFile {file};
                 hasEntries = true;
                 int index {1};
@@ -736,8 +754,16 @@ void GuiGameImporter::filesRule(std::pair<const std::string, ImportRules::Import
                     ++index;
                 }
 
+#if defined(__APPLE__)
+                // On macOS there are no shortcut entries but rather the entries are the
+                // applications themselves, meaning their entire directory structures. As such
+                // we'll create symlinks instead of copying files on this operating system.
+                Utils::FileSystem::createSymlink(
+                    file, filesDir + "/" + Utils::FileSystem::getFileName(targetFile));
+#else
                 Utils::FileSystem::copyFile(
                     file, filesDir + "/" + Utils::FileSystem::getFileName(targetFile), false);
+#endif
             }
         }
     }
