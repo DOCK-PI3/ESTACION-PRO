@@ -70,6 +70,8 @@ namespace Utils
                         const std::string& destinationPath,
                         bool overwrite);
         bool createEmptyFile(const std::filesystem::path& path);
+        bool createSymlink(const std::filesystem::path& source,
+                           const std::filesystem::path& target);
         bool removeFile(const std::string& path);
         bool removeDirectory(const std::string& path, bool recursive);
         bool createDirectory(const std::string& path);

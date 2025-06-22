@@ -876,6 +876,21 @@ namespace Utils
             return true;
         }
 
+        bool createSymlink(const std::filesystem::path& source, const std::filesystem::path& target)
+        {
+            try {
+                if (std::filesystem::is_directory(source))
+                    std::filesystem::create_directory_symlink(source, target);
+                else
+                    std::filesystem::create_symlink(source, target);
+            }
+            catch (std::filesystem::filesystem_error& error) {
+                LOG(LogError) << "FileSystemUtil::createSymlink(): " << error.what();
+                return false;
+            }
+            return true;
+        }
+
         bool removeFile(const std::string& path)
         {
             const std::string& genericPath {getGenericPath(path)};
