@@ -410,7 +410,7 @@ void GuiGameImporter::pressedStart()
                 }
                 else if (importRule.second.ruleType == "desktopshortcuts") {
                     mImportThread = std::make_unique<std::thread>(
-                        &GuiGameImporter::desktopShortcutsRule, this, importRule);
+                        &GuiGameImporter::desktopshortcutsRule, this, importRule);
                 }
                 break;
             }
@@ -786,7 +786,7 @@ void GuiGameImporter::filesRule(std::pair<const std::string, ImportRules::Import
     mDoneInventorying = true;
 }
 
-void GuiGameImporter::desktopShortcutsRule(
+void GuiGameImporter::desktopshortcutsRule(
     std::pair<const std::string, ImportRules::ImportRule> importRule)
 {
     mHasEntries = false;
@@ -820,7 +820,7 @@ void GuiGameImporter::desktopShortcutsRule(
                 }
 
                 LOG(LogDebug)
-                    << "GuiGameImporter::desktopShortcutsRule(): Parsing desktop shortcut file \""
+                    << "GuiGameImporter::desktopshortcutsRule(): Parsing desktop shortcut file \""
                     << file << "\"";
 
                 bool validFile {false};
@@ -854,7 +854,7 @@ void GuiGameImporter::desktopShortcutsRule(
                 // Any .desktop file with a NoDisplay key set to true should be skipped as it's
                 // not intended to be shown to the user.
                 if (noDisplay) {
-                    LOG(LogDebug) << "GuiGameImporter::desktopShortcutsRule(): File has the "
+                    LOG(LogDebug) << "GuiGameImporter::desktopshortcutsRule(): File has the "
                                      "NoDisplay key set to true, skipping it";
                     continue;
                 }
@@ -863,7 +863,7 @@ void GuiGameImporter::desktopShortcutsRule(
                 // "Game" string, then skip the entry.
                 if (directory.second &&
                     Utils::String::toLower(categoriesEntry).find("game") == std::string::npos) {
-                    LOG(LogDebug) << "GuiGameImporter::desktopShortcutsRule(): Set to only import "
+                    LOG(LogDebug) << "GuiGameImporter::desktopshortcutsRule(): Set to only import "
                                      "games and the file is not categorized as a game, skipping it";
                     continue;
                 }
@@ -914,12 +914,12 @@ void GuiGameImporter::desktopShortcutsRule(
                 targetFile = targetFileTemp;
 
                 if (usedNameEntry) {
-                    LOG(LogDebug) << "GuiGameImporter::desktopShortcutsRule(): Using Name entry "
+                    LOG(LogDebug) << "GuiGameImporter::desktopshortcutsRule(): Using Name entry "
                                      "from file to set filename to \""
                                   << targetFile << "\"";
                 }
                 else {
-                    LOG(LogDebug) << "GuiGameImporter::desktopShortcutsRule(): Couldn't read Name "
+                    LOG(LogDebug) << "GuiGameImporter::desktopshortcutsRule(): Couldn't read Name "
                                      "entry from file, falling back to using filename";
                 }
 

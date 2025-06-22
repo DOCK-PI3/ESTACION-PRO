@@ -44,7 +44,7 @@ private:
 #else
     void filesRule(std::pair<const std::string, ImportRules::ImportRule> importRule);
 #endif
-    void desktopShortcutsRule(std::pair<const std::string, ImportRules::ImportRule> importRule);
+    void desktopshortcutsRule(std::pair<const std::string, ImportRules::ImportRule> importRule);
 
     bool input(InputConfig* config, Input input) override;
 
