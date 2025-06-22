@@ -3,13 +3,11 @@
 <ruleList>
     <system name="desktop">
         <rule type="macosbundle">
-            <extension>.app</extension>
             <directory recursive="false">/Applications</directory>
         </rule>
     </system>
     <system name="emulators">
         <rule type="macosbundle">
-            <extension>.app</extension>
             <directory recursive="false">/Applications</directory>
         </rule>
     </system>
