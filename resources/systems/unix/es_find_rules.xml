@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- This is the ES-DE find rules configuration file for BSD Unix -->
+<!-- This is the ES-DE find rules configuration file for FreeBSD -->
 <ruleList>
     <emulator name="OS-SHELL">
         <!-- Operating system shell -->
