@@ -664,8 +664,8 @@ void GuiGameImporter::filesRule(std::pair<const std::string, ImportRules::Import
     bool hasEntries {false};
 
     for (auto& directory : importRule.second.directories) {
-        std::list<std::string> fileList {
-            Utils::FileSystem::getDirContent(Utils::FileSystem::expandHomePath(directory))};
+        std::list<std::string> fileList {Utils::FileSystem::getDirContent(
+            Utils::FileSystem::expandHomePath(directory.first), directory.second)};
         for (auto& file : fileList) {
             if (Utils::FileSystem::getExtension(file) == mFileExtension) {
                 const long fileSize {Utils::FileSystem::getFileSize(file)};

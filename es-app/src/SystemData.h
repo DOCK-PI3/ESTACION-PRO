@@ -75,7 +75,7 @@ private:
         std::string fullName;
         std::string ruleType;
         std::string extension;
-        std::vector<std::string> directories;
+        std::vector<std::pair<std::string, bool>> directories;
         std::vector<std::pair<std::string, std::string>> media;
         bool validSystem;
 

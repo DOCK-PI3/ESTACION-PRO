@@ -363,19 +363,44 @@ void ImportRules::loadImportRules()
 
                     for (pugi::xml_node directory {rule.child("directory")}; directory;
                          directory = directory.next_sibling("directory")) {
+
+                        bool recursive {false};
+
                         if (directory) {
                             const std::string directoryValue {directory.text().get()};
+                            const std::string& directoryRecursive {
+                                directory.attribute("recursive").as_string()};
+                            if (directoryRecursive.empty()) {
+                                LOG(LogWarning)
+                                    << "Missing or blank mandatory recursive attribute for "
+                                       "directory tag for system \""
+                                    << systemName << "\", skipping entry ";
+                                continue;
+                            }
+                            else {
+                                if (directoryRecursive.size() > 0) {
+                                    if (directoryRecursive.front() == '1' ||
+                                        directoryRecursive.front() == 't' ||
+                                        directoryRecursive.front() == 'T' ||
+                                        directoryRecursive.front() == 'y' ||
+                                        directoryRecursive.front() == 'Y')
+                                        recursive = true;
+                                }
+                            }
+
                             if (directoryValue.size() > 0) {
                                 if (std::find(importRule.directories.cbegin(),
                                               importRule.directories.cend(),
-                                              directoryValue) != importRule.directories.cend()) {
+                                              std::make_pair(directoryValue, recursive)) !=
+                                    importRule.directories.cend()) {
                                     LOG(LogWarning)
                                         << "Property \"directory\" for system \"" << systemName
                                         << "\" has duplicate value defined";
                                 }
                                 else {
                                     hasDirectory = true;
-                                    importRule.directories.emplace_back(directoryValue);
+                                    importRule.directories.emplace_back(
+                                        std::make_pair(directoryValue, recursive));
                                 }
                             }
                             else {
