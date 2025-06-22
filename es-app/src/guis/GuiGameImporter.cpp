@@ -674,9 +674,27 @@ void GuiGameImporter::filesRule(std::pair<const std::string, ImportRules::Import
                                     << fileSize << " bytes, skipping it";
                     continue;
                 }
+
+                std::string targetFile {file};
                 hasEntries = true;
+                int index {1};
+
+                // Add an index number to the filename in case there are multiple files with the
+                // same name.
+                while (Utils::FileSystem::exists(filesDir + "/" +
+                                                 Utils::FileSystem::getFileName(targetFile))) {
+                    targetFile = {Utils::FileSystem::getParent(file)};
+                    targetFile.append("/")
+                        .append(Utils::FileSystem::getStem(Utils::FileSystem::getFileName(file)))
+                        .append(" (")
+                        .append(std::to_string(index))
+                        .append(")")
+                        .append(Utils::FileSystem::getExtension(file));
+                    ++index;
+                }
+
                 Utils::FileSystem::copyFile(
-                    file, filesDir + "/" + Utils::FileSystem::getFileName(file), true);
+                    file, filesDir + "/" + Utils::FileSystem::getFileName(targetFile), false);
             }
         }
     }
