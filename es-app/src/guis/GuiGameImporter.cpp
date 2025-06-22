@@ -735,12 +735,16 @@ void GuiGameImporter::filesRule(std::pair<const std::string, ImportRules::Import
                         << file << "\"";
                     continue;
                 }
+
                 if (file.find("Platforms") != std::string::npos) {
                     LOG(LogDebug)
                         << "GuiGameImporter::macosbundleRule(): Skipping Platforms entry \"" << file
                         << "\"";
                     continue;
                 }
+
+                if (file.find("ES-DE.app") != std::string::npos)
+                    continue;
 #else
                 const long fileSize {Utils::FileSystem::getFileSize(file)};
                 if (fileSize > MAX_FILE_SIZE) {
@@ -748,6 +752,14 @@ void GuiGameImporter::filesRule(std::pair<const std::string, ImportRules::Import
                                     << fileSize << " bytes, skipping it";
                     continue;
                 }
+#endif
+
+#if defined(_WIN64)
+                if (Utils::FileSystem::getFileName(file) == "ES-DE.lnk")
+                    continue;
+#elif defined(__linux__) || defined(__FreeBSD__)
+                if (Utils::FileSystem::getFileName(file) == "org.es_de.frontend.desktop")
+                    continue;
 #endif
                 std::string targetFile {file};
                 hasEntries = true;
@@ -818,6 +830,9 @@ void GuiGameImporter::desktopshortcutsRule(
                                     << fileSize << " bytes, skipping it";
                     continue;
                 }
+
+                if (Utils::FileSystem::getFileName(file) == "org.es_de.frontend.desktop")
+                    continue;
 
                 LOG(LogDebug)
                     << "GuiGameImporter::desktopshortcutsRule(): Parsing desktop shortcut file \""
