@@ -349,6 +349,7 @@ void ImportRules::loadImportRules()
                 else if (ruleType == "macosbundle") {
                     ImportRule importRule;
                     importRule.ruleType = "macosbundle";
+                    importRule.extension = ".app";
 #else
                 else if (ruleType == "files") {
                     ImportRule importRule;
