@@ -547,7 +547,12 @@ void GuiGameImporter::selectorWindow()
             for (auto& file : Utils::FileSystem::getDirContent(
                      FileData::getROMDirectory() + mTargetSystemDir, false)) {
                 if (Utils::FileSystem::getExtension(file) == mFileExtension) {
+#if defined(_WIN64)
+                    LOG(LogInfo) << "GuiGameImporter: Removed file \""
+                                 << Utils::String::replace(file, "/", "\\") << "\"";
+#else
                     LOG(LogInfo) << "GuiGameImporter: Removed file \"" << file << "\"";
+#endif
                     Utils::FileSystem::removeFile(file);
                 }
             }
