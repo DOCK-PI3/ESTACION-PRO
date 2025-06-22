@@ -87,6 +87,7 @@ GuiGameImporter::GuiGameImporter(std::string title)
 
     mMenu.addWithLabel(_("REMOVE ENTRIES"), mRemoveEntries);
 
+#if defined(__ANDROID__)
     mMediaTarget =
         std::make_shared<OptionListComponent<std::string>>(_("MEDIA TARGET TYPE"), false);
     std::string selectedMediaTarget {Settings::getInstance()->getString("ImporterMediaTarget")};
@@ -200,6 +201,7 @@ GuiGameImporter::GuiGameImporter(std::string title)
             mMenu.setNeedsSaving();
         }
     });
+#endif
 
     mMenu.addButton(_("START"), _("start importer"),
                     std::bind(&GuiGameImporter::pressedStart, this));
@@ -218,7 +220,7 @@ GuiGameImporter::GuiGameImporter(std::string title)
         mRemoveEntries->getParent()
             ->getChild(mRemoveEntries->getChildIndex() - 1)
             ->setOpacity(DISABLED_OPACITY);
-
+#if defined(__ANDROID__)
         mMediaTarget->setEnabled(false);
         mMediaTarget->setOpacity(DISABLED_OPACITY);
         mMediaTarget->getParent()
@@ -248,7 +250,7 @@ GuiGameImporter::GuiGameImporter(std::string title)
         mGamesOnly->getParent()
             ->getChild(mGamesOnly->getChildIndex() - 1)
             ->setOpacity(DISABLED_OPACITY);
-
+#endif
         mMenu.setButtonOpacity(0, 0.5f);
     }
 
@@ -287,19 +289,19 @@ void GuiGameImporter::update(int deltaTime)
     if (mIsInventorying)
         mBusyAnim.update(deltaTime);
 
+#if defined(__ANDROID__)
     if (mAndroidGetApps && mIsInventorying) {
         // We call the Android retrieval function here instead of in pressedStart() to be able
         // to render a static busy indicator before executing the call.
         mAndroidGetApps = false;
         mIsInventorying = true;
         std::vector<std::pair<std::string, std::string>> appList;
-#if defined(__ANDROID__)
         Utils::Platform::Android::getInstalledApps(appList, mGamesOnly->getState(),
                                                    mImportMediaAdditional->getState());
-#endif
         mImportThread =
             std::make_unique<std::thread>(&GuiGameImporter::androidpackageRule, this, appList);
     }
+#endif
 
     if (mDoneInventorying) {
         // We call this just to reset the busy indicator to the first animation frame, in case
@@ -328,11 +330,16 @@ void GuiGameImporter::render(const glm::mat4& parentTrans)
     glm::mat4 trans {parentTrans * getTransform()};
     renderChildren(trans);
 
+#if defined(__ANDROID__)
     if (mIsInventorying || mAndroidGetApps)
         mBusyAnim.render(trans);
 
     if (mAndroidGetApps)
         mIsInventorying = true;
+#else
+    if (mIsInventorying)
+        mBusyAnim.render(trans);
+#endif
 }
 
 std::vector<HelpPrompt> GuiGameImporter::getHelpPrompts()
@@ -359,7 +366,9 @@ void GuiGameImporter::pressedStart()
     mHasUpdates = false;
 
     mTargetSystemDir = mTargetSystem->getSelected();
+#if defined(__ANDROID__)
     mMediaTargetDir = mMediaTarget->getSelected();
+#endif
     mFileExtension = "";
 
     for (auto& importRule : SystemData::sImportRules.get()->mSystems) {
@@ -457,18 +466,23 @@ void GuiGameImporter::selectorWindow()
 
     std::vector<std::pair<std::string, std::string>> fileList;
 
+#if defined(__ANDROID__)
     const bool darkColorScheme {Settings::getInstance()->getString("MenuColorScheme") != "light"};
+#endif
 
     for (std::string& file : inputFileList) {
+#if defined(__ANDROID__)
         std::string mediaFile {mTempDir + "/icons/" +
                                Utils::FileSystem::getStem(Utils::FileSystem::getFileName(file)) +
                                mMediaFileExtension};
+#endif
 
         row.elements.clear();
         auto lbl = std::make_shared<TextComponent>(
             Utils::FileSystem::getStem(Utils::FileSystem::getFileName(file)),
             Font::get(FONT_SIZE_MEDIUM), mMenuColorPrimary);
 
+#if defined(__ANDROID__)
         auto media = std::make_shared<ImageComponent>();
         media->setResize(0, Font::get(FONT_SIZE_MEDIUM)->getLetterHeight() * 1.4f);
         if (!darkColorScheme)
@@ -491,6 +505,9 @@ void GuiGameImporter::selectorWindow()
         else {
             fileList.emplace_back(std::make_pair(file, ""));
         }
+#else
+        fileList.emplace_back(std::make_pair(file, ""));
+#endif
 
         auto checkbox = std::make_shared<ImageComponent>();
         checkbox->setResize(0, Font::get(FONT_SIZE_MEDIUM)->getLetterHeight());
@@ -499,8 +516,10 @@ void GuiGameImporter::selectorWindow()
         checkbox->setEnabled(false);
         mCheckboxes.emplace_back(checkbox);
 
+#if defined(__ANDROID__)
         row.addElement(media, false);
         row.addElement(spacer, false);
+#endif
         row.addElement(lbl, true);
         row.addElement(checkbox, false);
         row.makeAcceptInputHandler([checkbox] {
@@ -518,8 +537,10 @@ void GuiGameImporter::selectorWindow()
 
     mSelectorMenu->addButton(_("IMPORT"), _("import"), [this, fileList] {
         const std::string removeEntries {mRemoveEntries->getSelected()};
+#if defined(__ANDROID__)
         const bool importMedia {mImportMedia->getState()};
         const bool overwriteMedia {mImportMediaOverwrite->getState()};
+#endif
         int numEntriesImported {0};
 
         if (removeEntries == "unselected") {
@@ -534,15 +555,17 @@ void GuiGameImporter::selectorWindow()
 
         for (int i {0}; i < static_cast<int>(mCheckboxes.size()); ++i) {
             const std::string systemDir {FileData::getROMDirectory() + mTargetSystemDir};
+#if defined(__ANDROID__)
             const std::string mediaDir {FileData::getMediaDirectory() + mTargetSystemDir + "/" +
                                         mMediaTargetDir};
-
+#endif
             if (!Utils::FileSystem::exists(systemDir))
                 Utils::FileSystem::createDirectory(systemDir);
 
             if (!Utils::FileSystem::exists(systemDir))
                 return;
 
+#if defined(__ANDROID__)
             if (importMedia) {
                 if (!Utils::FileSystem::exists(mediaDir))
                     Utils::FileSystem::createDirectory(mediaDir);
@@ -550,6 +573,7 @@ void GuiGameImporter::selectorWindow()
                 if (!Utils::FileSystem::exists(mediaDir))
                     return;
             }
+#endif
 
             if (mCheckboxes[i]->getEnabled()) {
                 mHasUpdates = true;
@@ -563,11 +587,11 @@ void GuiGameImporter::selectorWindow()
                         file, systemDir + "/" + Utils::FileSystem::getFileName(file), true);
                     Utils::FileSystem::removeFile(file);
 
-                    LOG(LogDebug) << "GuiGameImporter::selectorWindow(): Importing \""
-                                  << Utils::FileSystem::getStem(
-                                         Utils::FileSystem::getFileName(file))
-                                  << "\"";
+                    LOG(LogInfo) << "GuiGameImporter: Importing \""
+                                 << Utils::FileSystem::getStem(Utils::FileSystem::getFileName(file))
+                                 << "\"";
 
+#if defined(__ANDROID__)
                     const std::string mediaFile {fileList[i].second};
 
                     if (importMedia) {
@@ -579,6 +603,7 @@ void GuiGameImporter::selectorWindow()
                             Utils::FileSystem::removeFile(mediaFile);
                         }
                     }
+#endif
                 }
             }
         }

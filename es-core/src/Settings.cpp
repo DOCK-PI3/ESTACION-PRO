@@ -342,11 +342,13 @@ void Settings::setDefaults()
     // Utilities -> Game Importer.
     mStringMap["ImporterTargetSystem"] = {"", ""};
     mStringMap["ImporterRemoveEntries"] = {"never", "never"};
+#if defined(__ANDROID__)
     mStringMap["ImporterMediaTarget"] = {"screenshots", "screenshots"};
     mBoolMap["ImporterImportMedia"] = {true, true};
     mBoolMap["ImporterImportMediaAdditional"] = {true, true};
     mBoolMap["ImporterImportMediaOverwrite"] = {false, false};
     mBoolMap["ImporterGamesOnly"] = {false, false};
+#endif
 
     //
     // Settings configured via command-line arguments.
