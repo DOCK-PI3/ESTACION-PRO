@@ -664,8 +664,16 @@ void GuiGameImporter::filesRule(std::pair<const std::string, ImportRules::Import
     bool hasEntries {false};
 
     for (auto& directory : importRule.second.directories) {
-        std::list<std::string> fileList {Utils::FileSystem::getDirContent(
-            Utils::FileSystem::expandHomePath(directory.first), directory.second)};
+        // Expand ~ to the user home directory.
+        std::string expandedDir {Utils::FileSystem::expandHomePath(directory.first)};
+#if !defined(__ANDROID__)
+        // Expand %ESPATH% to the ES-DE binary directory.
+        expandedDir =
+            Utils::String::replace(expandedDir, "%ESPATH%", Utils::FileSystem::getExePath());
+#endif
+
+        std::list<std::string> fileList {
+            Utils::FileSystem::getDirContent(expandedDir, directory.second)};
         for (auto& file : fileList) {
             if (Utils::FileSystem::getExtension(file) == mFileExtension) {
                 const long fileSize {Utils::FileSystem::getFileSize(file)};
