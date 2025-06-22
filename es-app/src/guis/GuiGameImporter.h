@@ -39,7 +39,7 @@ private:
     void selectorWindow();
 
     void androidpackageRule(std::vector<std::pair<std::string, std::string>> appList);
-    void filesRule();
+    void filesRule(std::pair<const std::string, ImportRules::ImportRule> importRule);
 
     bool input(InputConfig* config, Input input) override;
 

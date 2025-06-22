@@ -17,6 +17,7 @@
 #include "utils/PlatformUtilAndroid.h"
 #endif
 
+#define MAX_FILE_SIZE 1048576
 #define CHECKED_PATH ":/graphics/checkbox_checked.svg"
 #define UNCHECKED_PATH ":/graphics/checkbox_unchecked.svg"
 
@@ -236,6 +237,12 @@ GuiGameImporter::GuiGameImporter(std::string title)
             ->getChild(mImportMediaAdditional->getChildIndex() - 1)
             ->setOpacity(DISABLED_OPACITY);
 
+        mImportMediaOverwrite->setEnabled(false);
+        mImportMediaOverwrite->setOpacity(DISABLED_OPACITY);
+        mImportMediaOverwrite->getParent()
+            ->getChild(mImportMediaOverwrite->getChildIndex() - 1)
+            ->setOpacity(DISABLED_OPACITY);
+
         mGamesOnly->setEnabled(false);
         mGamesOnly->setOpacity(DISABLED_OPACITY);
         mGamesOnly->getParent()
@@ -378,8 +385,8 @@ void GuiGameImporter::pressedStart()
                     mAndroidGetApps = true;
                 }
                 else if (importRule.second.ruleType == "files") {
-                    mImportThread =
-                        std::make_unique<std::thread>(&GuiGameImporter::filesRule, this);
+                    mImportThread = std::make_unique<std::thread>(&GuiGameImporter::filesRule, this,
+                                                                  importRule);
                 }
                 break;
             }
@@ -603,7 +610,10 @@ void GuiGameImporter::selectorWindow()
 
 void GuiGameImporter::androidpackageRule(std::vector<std::pair<std::string, std::string>> appList)
 {
+    mHasEntries = false;
     mIsInventorying = true;
+
+    bool hasEntries {false};
 
     // This is just so that the busy component gets shown briefly regardless of processing time.
     SDL_Delay(400);
@@ -614,13 +624,15 @@ void GuiGameImporter::androidpackageRule(std::vector<std::pair<std::string, std:
         if (!Utils::FileSystem::exists(filesDir))
             Utils::FileSystem::createDirectory(filesDir);
         if (!Utils::FileSystem::exists(filesDir)) {
-            LOG(LogError) << "Couldn't create temporary files directory";
+            mIsInventorying = false;
+            mDoneInventorying = true;
+            LOG(LogError) << "GuiGameImporter: Couldn't create temporary files directory";
             return;
         }
     }
 
     for (auto& app : appList) {
-        mHasEntries = true;
+        hasEntries = true;
         std::ofstream appFile;
         appFile.open(mTempDir + "/files/" + app.first + mFileExtension, std::ios::binary);
         appFile << app.second << std::endl;
@@ -628,16 +640,49 @@ void GuiGameImporter::androidpackageRule(std::vector<std::pair<std::string, std:
     }
 #endif
 
+    mHasEntries = hasEntries;
     mIsInventorying = false;
     mDoneInventorying = true;
 }
 
-void GuiGameImporter::filesRule()
+void GuiGameImporter::filesRule(std::pair<const std::string, ImportRules::ImportRule> importRule)
 {
+    mHasEntries = false;
     mIsInventorying = true;
     SDL_Delay(700);
+
+    const std::string filesDir {mTempDir + "/files"};
+    if (!Utils::FileSystem::exists(filesDir))
+        Utils::FileSystem::createDirectory(filesDir);
+    if (!Utils::FileSystem::exists(filesDir)) {
+        mIsInventorying = false;
+        mDoneInventorying = true;
+        LOG(LogError) << "GuiGameImporter: Couldn't create temporary files directory";
+        return;
+    }
+
+    bool hasEntries {false};
+
+    for (auto& directory : importRule.second.directories) {
+        std::list<std::string> fileList {
+            Utils::FileSystem::getDirContent(Utils::FileSystem::expandHomePath(directory))};
+        for (auto& file : fileList) {
+            if (Utils::FileSystem::getExtension(file) == mFileExtension) {
+                const long fileSize {Utils::FileSystem::getFileSize(file)};
+                if (fileSize > MAX_FILE_SIZE) {
+                    LOG(LogWarning) << "GuiGameImporter: File \"" << file << "\" is too big at "
+                                    << fileSize << " bytes, skipping it";
+                    continue;
+                }
+                hasEntries = true;
+                Utils::FileSystem::copyFile(
+                    file, filesDir + "/" + Utils::FileSystem::getFileName(file), true);
+            }
+        }
+    }
+
+    mHasEntries = hasEntries;
     mIsInventorying = false;
-    mHasEntries = true;
     mDoneInventorying = true;
 }
 
