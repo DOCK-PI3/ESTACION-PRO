@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-06-19 22:17+0200\n"
-"PO-Revision-Date: 2025-06-19 21:53+0200\n"
+"POT-Creation-Date: 2025-06-22 11:43+0200\n"
+"PO-Revision-Date: 2025-06-22 11:41+0200\n"
 "Last-Translator: Northwestern Software <info@es-de.org>\n"
 "Language-Team: Svenska <info@es-de.org>\n"
 "Language: sv_SE\n"
@@ -542,7 +542,7 @@ msgid "COVERS"
 msgstr "LÅDOMSLAG"
 
 msgid "BACK COVERS"
-msgstr "OMSLAG FÖR LÅDBAKSIDOR"
+msgstr "LÅDBAKSIDOR"
 
 msgid "MARQUEES (WHEELS)"
 msgstr "MARQUEES (HJUL)"
@@ -561,6 +561,9 @@ msgstr "IMPORTERA MEDIA"
 
 msgid "IMPORT BANNERS OR LOGOS IF AVAILABLE"
 msgstr "IMPORTERA TILLGÄNGLIGA BANNERS OCH LOGOTYPER"
+
+msgid "OVERWRITE MEDIA FILES"
+msgstr "SKRIV ÖVER MEDIAFILER"
 
 msgid "ONLY INCLUDE APPS CATEGORIZED AS GAMES"
 msgstr "INKLUDERA ENBART APPAR KATEGORISERADE SOM SPEL"
@@ -1631,7 +1634,7 @@ msgid "BOX COVER IMAGES"
 msgstr "BILDER FÖR LÅDOMSLAG"
 
 msgid "BOX BACK COVER IMAGES"
-msgstr "OMSLAGSBILDER FÖR LÅDBAKSIDA"
+msgstr "BILDER FÖR LÅDBAKSIDA"
 
 msgid "MARQUEE (WHEEL) IMAGES"
 msgstr "MARQUEE-BILDER (HJUL)"
@@ -2238,7 +2241,7 @@ msgid "BOX COVER"
 msgstr "LÅDOMSLAG"
 
 msgid "BOX BACK COVER"
-msgstr "OMSLAG FÖR LÅDBAKSIDA"
+msgstr "LÅDBAKSIDA"
 
 msgid "TITLE SCREEN"
 msgstr "TITELSKÄRM"
