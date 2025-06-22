@@ -5,7 +5,6 @@
         <rule type="files">
             <extension>.lnk</extension>
             <directory recursive="true">C:\ProgramData\Microsoft\Windows\Start Menu\Programs</directory>
-            <directory recursive="true">D:\ProgramData\Microsoft\Windows\Start Menu\Programs</directory>
             <directory recursive="true">~\AppData\Roaming\Microsoft\Windows\Start Menu\Programs</directory>
         </rule>
     </system>
@@ -13,7 +12,6 @@
         <rule type="files">
             <extension>.lnk</extension>
             <directory recursive="true">C:\ProgramData\Microsoft\Windows\Start Menu\Programs</directory>
-            <directory recursive="true">D:\ProgramData\Microsoft\Windows\Start Menu\Programs</directory>
             <directory recursive="true">~\AppData\Roaming\Microsoft\Windows\Start Menu\Programs</directory>
             <directory recursive="true">%ESPATH%\Emulators</directory>
             <directory recursive="true">%ESPATH%\..\Emulators</directory>
@@ -29,7 +27,6 @@
         <rule type="files">
             <extension>.lnk</extension>
             <directory recursive="true">C:\ProgramData\Microsoft\Windows\Start Menu\Programs</directory>
-            <directory recursive="true">D:\ProgramData\Microsoft\Windows\Start Menu\Programs</directory>
             <directory recursive="true">~\AppData\Roaming\Microsoft\Windows\Start Menu\Programs</directory>
         </rule>
     </system>
