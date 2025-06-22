@@ -27,8 +27,8 @@ GuiGameImporter::GuiGameImporter(std::string title)
     , mSelectorWindow {false}
     , mHasUpdates {false}
     , mAndroidGetApps {false}
-    , mIsImporting {false}
-    , mDoneImporting {false}
+    , mIsInventorying {false}
+    , mDoneInventorying {false}
     , mHasEntries {false}
 {
     mTempDir = Utils::FileSystem::getAppDataDirectory() + "/importer_temp";
@@ -259,7 +259,7 @@ GuiGameImporter::GuiGameImporter(std::string title)
 
 GuiGameImporter::~GuiGameImporter()
 {
-    mIsImporting = false;
+    mIsInventorying = false;
 
     if (mImportThread) {
         mImportThread->join();
@@ -277,14 +277,14 @@ GuiGameImporter::~GuiGameImporter()
 
 void GuiGameImporter::update(int deltaTime)
 {
-    if (mIsImporting)
+    if (mIsInventorying)
         mBusyAnim.update(deltaTime);
 
-    if (mAndroidGetApps && mIsImporting) {
+    if (mAndroidGetApps && mIsInventorying) {
         // We call the Android retrieval function here instead of in pressedStart() to be able
         // to render a static busy indicator before executing the call.
         mAndroidGetApps = false;
-        mIsImporting = true;
+        mIsInventorying = true;
         std::vector<std::pair<std::string, std::string>> appList;
 #if defined(__ANDROID__)
         Utils::Platform::Android::getInstalledApps(appList, mGamesOnly->getState(),
@@ -294,9 +294,9 @@ void GuiGameImporter::update(int deltaTime)
             std::make_unique<std::thread>(&GuiGameImporter::androidpackageRule, this, appList);
     }
 
-    if (mDoneImporting) {
-        mIsImporting = false;
-        mDoneImporting = false;
+    if (mDoneInventorying) {
+        mIsInventorying = false;
+        mDoneInventorying = false;
         if (mHasEntries) {
             mHasEntries = false;
             selectorWindow();
@@ -316,11 +316,11 @@ void GuiGameImporter::render(const glm::mat4& parentTrans)
     glm::mat4 trans {parentTrans * getTransform()};
     renderChildren(trans);
 
-    if (mIsImporting || mAndroidGetApps)
+    if (mIsInventorying || mAndroidGetApps)
         mBusyAnim.render(trans);
 
     if (mAndroidGetApps)
-        mIsImporting = true;
+        mIsInventorying = true;
 }
 
 std::vector<HelpPrompt> GuiGameImporter::getHelpPrompts()
@@ -603,7 +603,7 @@ void GuiGameImporter::selectorWindow()
 
 void GuiGameImporter::androidpackageRule(std::vector<std::pair<std::string, std::string>> appList)
 {
-    mIsImporting = true;
+    mIsInventorying = true;
 
     // This is just so that the busy component gets shown briefly regardless of processing time.
     SDL_Delay(400);
@@ -628,22 +628,22 @@ void GuiGameImporter::androidpackageRule(std::vector<std::pair<std::string, std:
     }
 #endif
 
-    mIsImporting = false;
-    mDoneImporting = true;
+    mIsInventorying = false;
+    mDoneInventorying = true;
 }
 
 void GuiGameImporter::filesRule()
 {
-    mIsImporting = true;
+    mIsInventorying = true;
     SDL_Delay(700);
-    mIsImporting = false;
+    mIsInventorying = false;
     mHasEntries = true;
-    mDoneImporting = true;
+    mDoneInventorying = true;
 }
 
 bool GuiGameImporter::input(InputConfig* config, Input input)
 {
-    if (mIsImporting)
+    if (mIsInventorying)
         return true;
 
     if (GuiComponent::input(config, input))

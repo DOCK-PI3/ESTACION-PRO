@@ -71,8 +71,8 @@ private:
     bool mHasUpdates;
     bool mAndroidGetApps;
 
-    std::atomic<bool> mIsImporting;
-    std::atomic<bool> mDoneImporting;
+    std::atomic<bool> mIsInventorying;
+    std::atomic<bool> mDoneInventorying;
     std::atomic<bool> mHasEntries;
 };
 
