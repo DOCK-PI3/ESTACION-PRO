@@ -317,7 +317,6 @@ void ImportRules::loadImportRules()
                 if (ruleType == "androidpackage") {
                     ImportRule importRule;
                     importRule.ruleType = "androidpackage";
-                    importRule.extension = ".app";
 
                     bool hasExtension {false};
 
@@ -344,17 +343,16 @@ void ImportRules::loadImportRules()
                 }
                 else if (ruleType == "files") {
                     ImportRule importRule;
-#if defined(__linux__) || defined(__FreeBSD__)
-                    importRule.extension = ".desktop";
-#else
-                    importRule.extension = ".lnk";
-#endif
                     importRule.ruleType = "files";
+
+                    bool hasExtension {false};
+                    bool hasDirectory {false};
 
                     const pugi::xml_node& extension {rule.child("extension")};
                     if (extension) {
                         const std::string extensionValue {extension.text().get()};
                         if (extensionValue.size() > 0) {
+                            hasExtension = true;
                             importRule.extension = extensionValue;
                         }
                         else {
@@ -362,6 +360,7 @@ void ImportRules::loadImportRules()
                                             << "\" has no value defined";
                         }
                     }
+
                     for (pugi::xml_node directory {rule.child("directory")}; directory;
                          directory = directory.next_sibling("directory")) {
                         if (directory) {
@@ -375,6 +374,7 @@ void ImportRules::loadImportRules()
                                         << "\" has duplicate value defined";
                                 }
                                 else {
+                                    hasDirectory = true;
                                     importRule.directories.emplace_back(directoryValue);
                                 }
                             }
@@ -384,6 +384,7 @@ void ImportRules::loadImportRules()
                             }
                         }
                     }
+
                     for (pugi::xml_node media {rule.child("media")}; media;
                          media = media.next_sibling("media")) {
                         if (media) {
@@ -413,7 +414,23 @@ void ImportRules::loadImportRules()
                             }
                         }
                     }
-                    mSystems[systemName] = importRule;
+
+                    bool addRule {true};
+
+                    if (!hasExtension) {
+                        addRule = false;
+                        LOG(LogWarning) << "Missing mandatory property \"extension\" for system \""
+                                        << systemName << "\"";
+                    }
+
+                    if (!hasDirectory) {
+                        addRule = false;
+                        LOG(LogWarning) << "Missing mandatory property \"directory\" for system \""
+                                        << systemName << "\"";
+                    }
+
+                    if (addRule)
+                        mSystems[systemName] = importRule;
                 }
             }
         }
