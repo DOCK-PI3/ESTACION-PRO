@@ -54,6 +54,7 @@ private:
     std::shared_ptr<OptionListComponent<std::string>> mRemoveEntries;
     std::shared_ptr<SwitchComponent> mImportMedia;
     std::shared_ptr<SwitchComponent> mImportMediaAdditional;
+    std::shared_ptr<SwitchComponent> mImportMediaOverwrite;
     std::shared_ptr<SwitchComponent> mGamesOnly;
     std::vector<std::shared_ptr<ImageComponent>> mCheckboxes;
 

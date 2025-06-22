@@ -343,8 +343,9 @@ void Settings::setDefaults()
     mStringMap["ImporterTargetSystem"] = {"", ""};
     mStringMap["ImporterRemoveEntries"] = {"never", "never"};
     mStringMap["ImporterMediaTarget"] = {"screenshots", "screenshots"};
-    mBoolMap["ImporterImportMedia"] = {false, false};
+    mBoolMap["ImporterImportMedia"] = {true, true};
     mBoolMap["ImporterImportMediaAdditional"] = {true, true};
+    mBoolMap["ImporterImportMediaOverwrite"] = {false, false};
     mBoolMap["ImporterGamesOnly"] = {false, false};
 
     //

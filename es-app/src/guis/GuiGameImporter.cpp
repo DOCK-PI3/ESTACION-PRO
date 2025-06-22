@@ -146,6 +146,12 @@ GuiGameImporter::GuiGameImporter(std::string title)
             mImportMediaAdditional->getParent()
                 ->getChild(mImportMediaAdditional->getChildIndex() - 1)
                 ->setOpacity(DISABLED_OPACITY);
+
+            mImportMediaOverwrite->setEnabled(false);
+            mImportMediaOverwrite->setOpacity(DISABLED_OPACITY);
+            mImportMediaOverwrite->getParent()
+                ->getChild(mImportMediaOverwrite->getChildIndex() - 1)
+                ->setOpacity(DISABLED_OPACITY);
         }
         else {
             mMediaTarget->setEnabled(true);
@@ -159,8 +165,27 @@ GuiGameImporter::GuiGameImporter(std::string title)
             mImportMediaAdditional->getParent()
                 ->getChild(mImportMediaAdditional->getChildIndex() - 1)
                 ->setOpacity(1.0f);
+
+            mImportMediaOverwrite->setEnabled(true);
+            mImportMediaOverwrite->setOpacity(1.0f);
+            mImportMediaOverwrite->getParent()
+                ->getChild(mImportMediaOverwrite->getChildIndex() - 1)
+                ->setOpacity(1.0f);
         }
     };
+
+    mImportMediaOverwrite = std::make_shared<SwitchComponent>();
+    mImportMediaOverwrite->setState(
+        Settings::getInstance()->getBool("ImporterImportMediaOverwrite"));
+    mMenu.addWithLabel(_("OVERWRITE MEDIA FILES"), mImportMediaOverwrite);
+    mMenu.addSaveFunc([this] {
+        if (mImportMediaOverwrite->getState() !=
+            Settings::getInstance()->getBool("ImporterImportMediaOverwrite")) {
+            Settings::getInstance()->setBool("ImporterImportMediaOverwrite",
+                                             mImportMediaOverwrite->getState());
+            mMenu.setNeedsSaving();
+        }
+    });
 
     importMediaToggleFunc();
     mImportMedia->setCallback(importMediaToggleFunc);
@@ -482,6 +507,7 @@ void GuiGameImporter::selectorWindow()
     mSelectorMenu->addButton(_("IMPORT"), _("import"), [this, fileList] {
         const std::string removeEntries {mRemoveEntries->getSelected()};
         const bool importMedia {mImportMedia->getState()};
+        const bool overwriteMedia {mImportMediaOverwrite->getState()};
         int numEntriesImported {0};
 
         if (removeEntries == "unselected") {
@@ -536,7 +562,8 @@ void GuiGameImporter::selectorWindow()
                         if (Utils::FileSystem::exists(mediaFile)) {
                             Utils::FileSystem::copyFile(
                                 mediaFile,
-                                mediaDir + "/" + Utils::FileSystem::getFileName(mediaFile), true);
+                                mediaDir + "/" + Utils::FileSystem::getFileName(mediaFile),
+                                overwriteMedia);
                             Utils::FileSystem::removeFile(mediaFile);
                         }
                     }
