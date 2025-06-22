@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!-- This is the ES-DE import rules configuration file for Windows -->
+<ruleList>
+    <system name="desktop">
+        <rule type="files">
+            <extension>.lnk</extension>
+            <directory recursive="true">C:\ProgramData\Microsoft\Windows\Start Menu\Programs</directory>
+            <directory recursive="true">D:\ProgramData\Microsoft\Windows\Start Menu\Programs</directory>
+            <directory recursive="true">~\AppData\Roaming\Microsoft\Windows\Start Menu\Programs</directory>
+        </rule>
+    </system>
+    <system name="emulators">
+        <rule type="files">
+            <extension>.lnk</extension>
+            <directory recursive="true">C:\ProgramData\Microsoft\Windows\Start Menu\Programs</directory>
+            <directory recursive="true">D:\ProgramData\Microsoft\Windows\Start Menu\Programs</directory>
+            <directory recursive="true">~\AppData\Roaming\Microsoft\Windows\Start Menu\Programs</directory>
+            <directory recursive="true">%ESPATH%\Emulators</directory>
+            <directory recursive="true">%ESPATH%\..\Emulators</directory>
+        </rule>
+    </system>
+    <system name="steam">
+        <rule type="files">
+            <extension>.url</extension>
+            <directory recursive="false">~\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Steam</directory>
+        </rule>
+    </system>
+    <system name="windows">
+        <rule type="files">
+            <extension>.lnk</extension>
+            <directory recursive="true">C:\ProgramData\Microsoft\Windows\Start Menu\Programs</directory>
+            <directory recursive="true">D:\ProgramData\Microsoft\Windows\Start Menu\Programs</directory>
+            <directory recursive="true">~\AppData\Roaming\Microsoft\Windows\Start Menu\Programs</directory>
+        </rule>
+    </system>
+</ruleList>
