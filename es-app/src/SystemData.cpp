@@ -307,8 +307,10 @@ void ImportRules::loadImportRules()
                 }
 #if defined(__ANDROID__)
                 if (ruleType != "androidpackage") {
+#elif defined(__linux__) || defined(__FreeBSD__)
+                if (ruleType != "files" && ruleType != "desktopshortcuts") {
 #else
-                if (ruleType != "androidpackage" && ruleType != "files") {
+                if (ruleType != "files") {
 #endif
                     LOG(LogWarning) << "Found invalid rule type \"" << ruleType
                                     << "\" for system \"" << systemName << "\", skipping entry";
@@ -447,6 +449,71 @@ void ImportRules::loadImportRules()
                         LOG(LogWarning) << "Missing mandatory property \"extension\" for system \""
                                         << systemName << "\"";
                     }
+
+                    if (!hasDirectory) {
+                        addRule = false;
+                        LOG(LogWarning) << "Missing mandatory property \"directory\" for system \""
+                                        << systemName << "\"";
+                    }
+
+                    if (addRule)
+                        mSystems[systemName] = importRule;
+                }
+                else if (ruleType == "desktopshortcuts") {
+                    ImportRule importRule;
+                    importRule.ruleType = "desktopshortcuts";
+                    importRule.extension = ".desktop";
+
+                    bool hasDirectory {false};
+
+                    for (pugi::xml_node directory {rule.child("directory")}; directory;
+                         directory = directory.next_sibling("directory")) {
+
+                        bool isGamesOnly {false};
+
+                        if (directory) {
+                            const std::string directoryValue {directory.text().get()};
+                            const std::string& gamesOnly {
+                                directory.attribute("gamesOnly").as_string()};
+                            if (gamesOnly.empty()) {
+                                LOG(LogWarning)
+                                    << "Missing or blank mandatory gamesOnly attribute for "
+                                       "directory tag for system \""
+                                    << systemName << "\", skipping entry ";
+                                continue;
+                            }
+                            else {
+                                if (gamesOnly.size() > 0) {
+                                    if (gamesOnly.front() == '1' || gamesOnly.front() == 't' ||
+                                        gamesOnly.front() == 'T' || gamesOnly.front() == 'y' ||
+                                        gamesOnly.front() == 'Y')
+                                        isGamesOnly = true;
+                                }
+                            }
+
+                            if (directoryValue.size() > 0) {
+                                if (std::find(importRule.directories.cbegin(),
+                                              importRule.directories.cend(),
+                                              std::make_pair(directoryValue, isGamesOnly)) !=
+                                    importRule.directories.cend()) {
+                                    LOG(LogWarning)
+                                        << "Property \"directory\" for system \"" << systemName
+                                        << "\" has duplicate value defined";
+                                }
+                                else {
+                                    hasDirectory = true;
+                                    importRule.directories.emplace_back(
+                                        std::make_pair(directoryValue, isGamesOnly));
+                                }
+                            }
+                            else {
+                                LOG(LogWarning) << "Property \"directory\" for system \""
+                                                << systemName << "\" has no value defined";
+                            }
+                        }
+                    }
+
+                    bool addRule {true};
 
                     if (!hasDirectory) {
                         addRule = false;

@@ -302,6 +302,11 @@ void GuiGameImporter::update(int deltaTime)
     }
 
     if (mDoneInventorying) {
+        // We call this just to reset the busy indicator to the first animation frame, in case
+        // the selector window is closed and the import is initialized again, or if there was
+        // nothing found to import.
+        mBusyAnim.onSizeChanged();
+
         mIsInventorying = false;
         mDoneInventorying = false;
         if (mHasEntries) {
@@ -388,6 +393,10 @@ void GuiGameImporter::pressedStart()
                     mImportThread = std::make_unique<std::thread>(&GuiGameImporter::filesRule, this,
                                                                   importRule);
                 }
+                else if (importRule.second.ruleType == "desktopshortcuts") {
+                    mImportThread = std::make_unique<std::thread>(
+                        &GuiGameImporter::desktopShortcutsRule, this, importRule);
+                }
                 break;
             }
         }
@@ -421,10 +430,6 @@ void GuiGameImporter::mainWindow()
 
 void GuiGameImporter::selectorWindow()
 {
-    // We call this just to reset the busy indicator to the first animation frame, in case
-    // the selector window is closed and the import is initialized again.
-    mBusyAnim.onSizeChanged();
-
     removeChild(&mMenu);
 
     mSelectorMenu = std::make_unique<MenuComponent>(_("MAKE YOUR SELECTION"));
@@ -703,6 +708,157 @@ void GuiGameImporter::filesRule(std::pair<const std::string, ImportRules::Import
 
                 Utils::FileSystem::copyFile(
                     file, filesDir + "/" + Utils::FileSystem::getFileName(targetFile), false);
+            }
+        }
+    }
+
+    mHasEntries = hasEntries;
+    mIsInventorying = false;
+    mDoneInventorying = true;
+}
+
+void GuiGameImporter::desktopShortcutsRule(
+    std::pair<const std::string, ImportRules::ImportRule> importRule)
+{
+    mHasEntries = false;
+    mIsInventorying = true;
+    SDL_Delay(700);
+
+    const std::string filesDir {mTempDir + "/files"};
+    if (!Utils::FileSystem::exists(filesDir))
+        Utils::FileSystem::createDirectory(filesDir);
+    if (!Utils::FileSystem::exists(filesDir)) {
+        mIsInventorying = false;
+        mDoneInventorying = true;
+        LOG(LogError) << "GuiGameImporter: Couldn't create temporary files directory";
+        return;
+    }
+
+    bool hasEntries {false};
+
+    for (auto& directory : importRule.second.directories) {
+        // Expand ~ to the user home directory.
+        std::string expandedDir {Utils::FileSystem::expandHomePath(directory.first)};
+
+        std::list<std::string> fileList {Utils::FileSystem::getDirContent(expandedDir, false)};
+        for (auto& file : fileList) {
+            if (Utils::FileSystem::getExtension(file) == mFileExtension) {
+                const long fileSize {Utils::FileSystem::getFileSize(file)};
+                if (fileSize > MAX_FILE_SIZE) {
+                    LOG(LogWarning) << "GuiGameImporter: File \"" << file << "\" is too big at "
+                                    << fileSize << " bytes, skipping it";
+                    continue;
+                }
+
+                LOG(LogDebug)
+                    << "GuiGameImporter::desktopShortcutsRule(): Parsing desktop shortcut file \""
+                    << file << "\"";
+
+                bool validFile {false};
+                bool noDisplay {false};
+                std::string nameEntry;
+                std::string categoriesEntry;
+                std::ifstream desktopFileStream;
+
+                desktopFileStream.open(file);
+
+                for (std::string line; getline(desktopFileStream, line);) {
+                    // Some non-standard .desktop files add a leading line such as
+                    // "#!/usr/bin/env xdg-open" and some lines may also be indented by
+                    // whitespace characters. So we need to handle such oddities in order
+                    // to parse these files.
+                    line = Utils::String::trim(line);
+                    if (line.substr(0, 2) == "#!")
+                        continue;
+                    if (line.find("[Desktop Entry]") != std::string::npos)
+                        validFile = true;
+                    if (line.substr(0, 5) == "Name=")
+                        nameEntry = line;
+                    if (line.substr(0, 11) == "Categories=")
+                        categoriesEntry = line;
+                    if (Utils::String::toLower(line).substr(0, 14) == "nodisplay=true")
+                        noDisplay = true;
+                }
+
+                desktopFileStream.close();
+
+                // Any .desktop file with a NoDisplay key set to true should be skipped as it's
+                // not intended to be shown to the user.
+                if (noDisplay) {
+                    LOG(LogDebug) << "GuiGameImporter::desktopShortcutsRule(): File has the "
+                                     "NoDisplay key set to true, skipping it";
+                    continue;
+                }
+
+                // If we're only importing games and the Categories flag does not contain a
+                // "Game" string, then skip the entry.
+                if (directory.second &&
+                    Utils::String::toLower(categoriesEntry).find("game") == std::string::npos) {
+                    LOG(LogDebug) << "GuiGameImporter::desktopShortcutsRule(): Set to only import "
+                                     "games and the file is not categorized as a game, skipping it";
+                    continue;
+                }
+
+                std::string targetFile;
+                bool usedNameEntry {false};
+
+                // Forward slashes can't be used in filenames so remove them if present.
+                if (nameEntry != "")
+                    nameEntry = Utils::String::replace(nameEntry, "/", " ");
+
+                if (validFile && nameEntry.length() > 5) {
+                    targetFile = nameEntry.substr(5, nameEntry.length()) + ".desktop";
+                    usedNameEntry = true;
+                }
+                else {
+                    targetFile = file;
+                }
+
+                hasEntries = true;
+                int index {1};
+
+                std::string targetFileTemp {targetFile};
+
+                // Add an index number to the filename in case there are multiple files with the
+                // same name.
+                while (Utils::FileSystem::exists(filesDir + "/" +
+                                                 Utils::FileSystem::getFileName(targetFileTemp))) {
+                    if (usedNameEntry) {
+                        targetFileTemp = targetFile.substr(0, targetFile.length() - 8);
+                        targetFileTemp.append(" (")
+                            .append(std::to_string(index))
+                            .append(").desktop");
+                    }
+                    else {
+                        targetFileTemp = {Utils::FileSystem::getParent(file)};
+                        targetFileTemp.append("/")
+                            .append(
+                                Utils::FileSystem::getStem(Utils::FileSystem::getFileName(file)))
+                            .append(" (")
+                            .append(std::to_string(index))
+                            .append(")")
+                            .append(Utils::FileSystem::getExtension(file));
+                    }
+                    ++index;
+                }
+
+                targetFile = targetFileTemp;
+
+                if (usedNameEntry) {
+                    LOG(LogDebug) << "GuiGameImporter::desktopShortcutsRule(): Using Name entry "
+                                     "from file to set filename to \""
+                                  << targetFile << "\"";
+                }
+                else {
+                    LOG(LogDebug) << "GuiGameImporter::desktopShortcutsRule(): Couldn't read Name "
+                                     "entry from file, falling back to using filename";
+                }
+
+                if (usedNameEntry)
+                    Utils::FileSystem::copyFile(file, filesDir + "/" + targetFile, false);
+                else
+                    Utils::FileSystem::copyFile(
+                        file, filesDir + "/" + Utils::FileSystem::getFileName(targetFile), false);
             }
         }
     }
