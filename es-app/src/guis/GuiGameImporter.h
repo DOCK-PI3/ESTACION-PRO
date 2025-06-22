@@ -39,7 +39,11 @@ private:
     void selectorWindow();
 
     void androidpackageRule(std::vector<std::pair<std::string, std::string>> appList);
+#if defined(__APPLE__)
+    void macosbundleRule(std::pair<const std::string, ImportRules::ImportRule> importRule);
+#else
     void filesRule(std::pair<const std::string, ImportRules::ImportRule> importRule);
+#endif
     void desktopShortcutsRule(std::pair<const std::string, ImportRules::ImportRule> importRule);
 
     bool input(InputConfig* config, Input input) override;

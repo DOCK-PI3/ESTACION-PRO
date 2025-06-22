@@ -307,6 +307,8 @@ void ImportRules::loadImportRules()
                 }
 #if defined(__ANDROID__)
                 if (ruleType != "androidpackage") {
+#elif defined(__APPLE__)
+                if (ruleType != "macosbundle") {
 #elif defined(__linux__) || defined(__FreeBSD__)
                 if (ruleType != "files" && ruleType != "desktopshortcuts") {
 #else
@@ -343,9 +345,15 @@ void ImportRules::loadImportRules()
                                         << systemName << "\"";
                     }
                 }
+#if defined(__APPLE__)
+                else if (ruleType == "macosbundle") {
+                    ImportRule importRule;
+                    importRule.ruleType = "macosbundle";
+#else
                 else if (ruleType == "files") {
                     ImportRule importRule;
                     importRule.ruleType = "files";
+#endif
 
                     bool hasExtension {false};
                     bool hasDirectory {false};

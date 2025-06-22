@@ -398,9 +398,15 @@ void GuiGameImporter::pressedStart()
                     // indicator is rendered before calling the retrieval function.
                     mAndroidGetApps = true;
                 }
+#if defined(__APPLE__)
+                else if (importRule.second.ruleType == "macosbundle") {
+                    mImportThread = std::make_unique<std::thread>(&GuiGameImporter::macosbundleRule,
+                                                                  this, importRule);
+#else
                 else if (importRule.second.ruleType == "files") {
                     mImportThread = std::make_unique<std::thread>(&GuiGameImporter::filesRule, this,
                                                                   importRule);
+#endif
                 }
                 else if (importRule.second.ruleType == "desktopshortcuts") {
                     mImportThread = std::make_unique<std::thread>(
@@ -686,7 +692,12 @@ void GuiGameImporter::androidpackageRule(std::vector<std::pair<std::string, std:
     mDoneInventorying = true;
 }
 
+#if defined(__APPLE__)
+void GuiGameImporter::macosbundleRule(
+    std::pair<const std::string, ImportRules::ImportRule> importRule)
+#else
 void GuiGameImporter::filesRule(std::pair<const std::string, ImportRules::ImportRule> importRule)
+#endif
 {
     mHasEntries = false;
     mIsInventorying = true;
@@ -719,13 +730,15 @@ void GuiGameImporter::filesRule(std::pair<const std::string, ImportRules::Import
             if (Utils::FileSystem::getExtension(file) == mFileExtension) {
 #if defined(__APPLE__)
                 if (file.find("Frameworks") != std::string::npos) {
-                    LOG(LogDebug) << "GuiGameImporter::filesRule(): Skipping Frameworks entry \""
-                                  << file << "\"";
+                    LOG(LogDebug)
+                        << "GuiGameImporter::macosbundleRule(): Skipping Frameworks entry \""
+                        << file << "\"";
                     continue;
                 }
                 if (file.find("Platforms") != std::string::npos) {
-                    LOG(LogDebug) << "GuiGameImporter::filesRule(): Skipping Platforms entry \""
-                                  << file << "\"";
+                    LOG(LogDebug)
+                        << "GuiGameImporter::macosbundleRule(): Skipping Platforms entry \"" << file
+                        << "\"";
                     continue;
                 }
 #else
