@@ -354,11 +354,12 @@ void ImportRules::loadImportRules()
                 else if (ruleType == "files") {
                     ImportRule importRule;
                     importRule.ruleType = "files";
-#endif
 
                     bool hasExtension {false};
+#endif
                     bool hasDirectory {false};
 
+#if !defined(__APPLE__)
                     const pugi::xml_node& extension {rule.child("extension")};
                     if (extension) {
                         const std::string extensionValue {extension.text().get()};
@@ -371,7 +372,7 @@ void ImportRules::loadImportRules()
                                             << "\" has no value defined";
                         }
                     }
-
+#endif
                     for (pugi::xml_node directory {rule.child("directory")}; directory;
                          directory = directory.next_sibling("directory")) {
 
@@ -452,13 +453,13 @@ void ImportRules::loadImportRules()
                     }
 
                     bool addRule {true};
-
+#if !defined(__APPLE__)
                     if (!hasExtension) {
                         addRule = false;
                         LOG(LogWarning) << "Missing mandatory property \"extension\" for system \""
                                         << systemName << "\"";
                     }
-
+#endif
                     if (!hasDirectory) {
                         addRule = false;
                         LOG(LogWarning) << "Missing mandatory property \"directory\" for system \""
