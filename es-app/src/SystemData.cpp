@@ -319,21 +319,6 @@ void ImportRules::loadImportRules()
                     importRule.ruleType = "androidpackage";
                     importRule.extension = ".app";
 
-                    const pugi::xml_node& gamesOnlyOption {rule.child("gamesOnlyOption")};
-                    if (gamesOnlyOption) {
-                        const std::string gamesOnlyValue {gamesOnlyOption.text().get()};
-                        if (gamesOnlyValue.size() > 0) {
-                            if (gamesOnlyValue.front() == '1' || gamesOnlyValue.front() == 't' ||
-                                gamesOnlyValue.front() == 'T' || gamesOnlyValue.front() == 'y' ||
-                                gamesOnlyValue.front() == 'Y')
-                                importRule.gamesOnlyOption = true;
-                        }
-                        else {
-                            LOG(LogWarning) << "Property \"gamesOnlyOption\" for system \""
-                                            << systemName << "\" has no value defined";
-                        }
-                    }
-
                     bool hasExtension {false};
 
                     const pugi::xml_node& extension {rule.child("extension")};

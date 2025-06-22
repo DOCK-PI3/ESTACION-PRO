@@ -78,11 +78,9 @@ private:
         std::vector<std::string> directories;
         std::vector<std::pair<std::string, std::string>> media;
         bool validSystem;
-        bool gamesOnlyOption;
 
         ImportRule()
             : validSystem {false}
-            , gamesOnlyOption {false}
         {
         }
     };
