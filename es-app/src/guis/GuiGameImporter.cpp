@@ -549,11 +549,17 @@ void GuiGameImporter::selectorWindow()
         if (removeEntries == "unselected") {
             for (auto& file : Utils::FileSystem::getDirContent(
                      FileData::getROMDirectory() + mTargetSystemDir, false)) {
-                if (Utils::FileSystem::getExtension(file) == mFileExtension) {
 #if defined(_WIN64)
+                if (Utils::String::toLower(Utils::FileSystem::getExtension(file)) ==
+                    Utils::String::toLower(mFileExtension)) {
                     LOG(LogInfo) << "GuiGameImporter: Removed file \""
                                  << Utils::String::replace(file, "/", "\\") << "\"";
+#elif defined(__APPLE__)
+                if (Utils::String::toLower(Utils::FileSystem::getExtension(file)) ==
+                    Utils::String::toLower(mFileExtension)) {
+                    LOG(LogInfo) << "GuiGameImporter: Removed file \"" << file << "\"";
 #else
+                if (Utils::FileSystem::getExtension(file) == mFileExtension) {
                     LOG(LogInfo) << "GuiGameImporter: Removed file \"" << file << "\"";
 #endif
                     Utils::FileSystem::removeFile(file);
@@ -730,7 +736,12 @@ void GuiGameImporter::fileRule(std::pair<const std::string, ImportRules::ImportR
         std::list<std::string> fileList {
             Utils::FileSystem::getDirContent(expandedDir, directory.second)};
         for (auto& file : fileList) {
+#if defined(_WIN64) || defined(__APPLE__)
+            if (Utils::String::toLower(Utils::FileSystem::getExtension(file)) ==
+                Utils::String::toLower(mFileExtension)) {
+#else
             if (Utils::FileSystem::getExtension(file) == mFileExtension) {
+#endif
 #if defined(__APPLE__)
                 if (file.find("Frameworks") != std::string::npos) {
                     LOG(LogDebug)
