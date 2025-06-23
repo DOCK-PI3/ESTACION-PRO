@@ -2,19 +2,19 @@
 <!-- This is the ES-DE import rules configuration file for FreeBSD -->
 <ruleList>
     <system name="desktop">
-        <rule type="desktopshortcuts">
+        <rule type="desktopshortcut">
             <directory gamesOnly="false">/usr/local/share/applications</directory>
             <directory gamesOnly="false">~/.local/share/applications</directory>
         </rule>
     </system>
     <system name="emulators">
-        <rule type="desktopshortcuts">
+        <rule type="desktopshortcut">
             <directory gamesOnly="false">/usr/local/share/applications</directory>
             <directory gamesOnly="false">~/.local/share/applications</directory>
         </rule>
     </system>
     <system name="steam">
-        <rule type="desktopshortcuts">
+        <rule type="desktopshortcut">
             <directory gamesOnly="true">~/.local/share/applications</directory>
         </rule>
     </system>
