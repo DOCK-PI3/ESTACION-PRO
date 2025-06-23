@@ -991,6 +991,35 @@ For most systems game setup is straightforward, just put your game files into th
 
 But for some systems a more elaborate setup is required, and the configuration for a number of such systems can be found below.
 
+There's also a built-in game importer that can be used for some systems, and which is described in the next section.
+
+### Game importer
+
+The built-in game importer makes it possible to import games for some systems. This is intended for things like native Android apps, Steam games, desktop applications and similar. So it's not really intended for emulated games, for these the setup procedure is documented in various sections later in this document.
+
+You can access the game importer either from the _Utilities_ menu on the main menu, or from the _"No ROMs"_ interface that is shown on application startup if ES-DE can't find any games.
+
+The importer is configured using an es_import_rules.xml file that can also be user-customized in the same way as the find rules. If you're interested in doing that you can find more information in the _es_import_rules.xml_ section of the [INSTALL-DEV.md](INSTALL-DEV.md#es_import_rulesxml) document.
+
+On Android the game importer offers the ability to import icons, banners and logos for native apps and games, and on desktop operating systems the importer is simplified and allows you to simply import the games and applications.
+
+![alt text](images/es-de_game_importer_android.png "ES-DE Game Importer Android")
+_Game importer main screen on Android._
+
+![alt text](images/es-de_game_importer_selection_android.png "ES-DE Game Importer Android")
+_Game importer selection screen on Android._
+
+![alt text](images/es-de_game_importer_desktop.png "ES-DE Game Importer Desktop")
+_Game importer main screen on desktop operating systems._
+
+To see detailed explanations for every setting refer to the _Game importer_ section of the _Main menu_ reference section elsewhere in this document.
+
+Hopefully using the game importer should be pretty self-explanatory, you select the target system to import to, decide whether to remove all entries you're not importing and then you press _Start_. Assuming ES-DE finds something to import you'll next be presented with a selection screen of what entries to actually import. Just tick the games or applications you're interested in getting into ES-DE and press the _Import_ button.
+
+On Android you can also select whether to import media from the actual app packages installed on your device, which will retrieve the app icon, and optionally the banner or logo if that's available for the app. If the corresponding setting has been enabled the banner will be searched for first, and if that is not found then the logo will be searched for, and if that's also not available a fallback will take place to the app icon which always exists. Also on Android you can select whether to only include apps categorized as games, just be aware that this may not be entirely reliable as some apps are not correctly categorized by their developers.
+
+Once the import has finished a popup notification will be displayed telling you how many games were imported. You can proceed to import games for additional systems if you want to, or you can leave the game importer in which case ES-DE will reload, populating the systems with your newly imported games or applications.
+
 ### Single game file installation
 
 Let's start with the simple scenario of a single ROM file per game, which is the case for the majority of platforms. For this example we're setting up ES-DE to play Nintendo Entertainment System games.
@@ -3928,6 +3957,10 @@ With this setting enabled, there is a Quit menu shown as the last entry on the m
 
 This menu contains various utilities.
 
+**Game importer**
+
+The game importer entry opens a separate submenu, whose entries are covered in detail below.
+
 **Orphaned data cleanup**
 
 This utility makes it possible to remove media files, gamelist.xml entries and custom collection entries that are orphaned, i.e. their corresponding game files no longer exist. How to use this utility is explained in more detail elsewhere in this document.
@@ -3939,6 +3972,38 @@ This utility will create all game system directories inside your ROM directory t
 **Rescan ROM directory**
 
 This utility will rescan the ROM directory for any changes such as added or removed games and systems without having to restart the application. But don't use this utility to reload changes to gamelist.xml files that you have made outside ES-DE as this can lead to data corruption. If you need to manually edit your gamelist.xml files then do this while ES-DE is shut down.
+
+#### Game importer
+
+This tool makes it possible to import games and apps into ES-DE. It's fully configurable via XML files so the available systems will differ between operating systems. If there are no import rules available for your operating system, then all entries in this menu will be grayed out.
+
+**Import to system**
+
+Which system to import to, will display _No configuration_ if there are no available import rules.
+
+**Remove entries**
+
+Whether to remove entries during the import process. Can be set to _Never_ or _All unselected_. The latter option is slightly dangerous as it will delete any files from the target game system matching the extension that is configured for the import rule. It's generally better to manually delete entries you no longer need from the gamelist view using the metadata editor.
+
+**Media target type** _(Android only)_
+
+If chosing to import media then this option controls which target media type to import to. The available types are the same ones that can be saved by the scraper.
+
+**Import media** _(Android only)_
+
+Whether to also import media when importing games. It's generally best to use the scraper instead, but for some non-game systems the scraper services may not offer much content, in which case this setting is quite useful.
+
+**Import banners or logos if available** _(Android only)_
+
+There are three types of possible media files available for Android apps, the app icon, a banner and a logotype. If this option is disabled then the icon is always selected, and if the setting is enabled the banner will be tried first and if that does not exist the logo will be checked for. If neither of these two images are available then ES-DE will fall back to importing the app icon.
+
+**Overwrite media files** _(Android only)_
+
+Whether to overwrite existing media files during the import process.
+
+**Only include apps categorized as games** _(Android only)_
+
+On Android apps can be categorized as games, and by enabling this option you'll only see such apps in the selection screen. Note that this is not very consistent as some apps and emulators are categorized as games and some aren't. Most real games are hopefully categorized correctly however.
 
 ### Quit / Quit ES-DE
 

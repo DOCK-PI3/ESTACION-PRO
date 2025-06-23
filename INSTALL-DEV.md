@@ -1937,6 +1937,138 @@ These files include all systems supported by ES-DE and provide the following sor
 
 You can apply any of these sorting files via the _Systems sorting_ option in the _Other settings_ menu. Note that in order to load a es_systems_sorting.xml file placed in the custom_systems directory you'll need to set this option to _Full names or custom_.
 
+## es_import_rules.xml
+
+The es_import_rules.xml file is used by the game importer that is accessible via the _Utilities_ menu and via a button in the "No ROMs" interface on application startup if there are no games present.
+
+The configuration file makes it possible to define which game systems should be added to the game importer and what rule types to use for each system. The es_import_rules.xml file is located in the resources directory, i.e. the same location as the es_systems.xml and es_find_rules.xml files, but a customized copy can be placed in ~/ES-DE/custom_systems, which will complement the bundled file.
+
+The structure of the file is similar to es_find_rules.xml with the configuration contained within a _ruleList_ tag pair. There is a _system_ tag pair that describes each system and the name attribute for this tag defines the actual game system to apply the configuration to.
+
+There are four import rules available, `androidpackage`, `file`, `desktopshortcut` and `macosbundle`.
+
+You can only define one rule per system, if you attempt to add more than one then the latest entry will simply overwrite any previous rules.
+
+`androidpackage` -  This rule which is only available on Android has a mandatory _extension_ tag which controls the file extension to use when importing the native apps and games. That is the only configuration necessary to apply this rule.
+
+Here's an example:
+
+```xml
+<!-- This is the ES-DE import rules configuration file for Android -->
+<ruleList>
+    <system name="androidapps">
+        <rule type="androidpackage">
+            <extension>.app</extension>
+        </rule>
+    </system>
+    <system name="androidgames">
+        <rule type="androidpackage">
+            <extension>.app</extension>
+        </rule>
+    </system>
+    <system name="emulators">
+        <rule type="androidpackage">
+            <extension>.app</extension>
+        </rule>
+    </system>
+</ruleList>
+```
+
+`file` - This rule is available on Linux and Windows and has a mandatory _extension_ tag which controls the file extension to match when looking for files to import. This extension is case-sensitive in Linux and case-insensitive in Windows. There's also a _directory_ tag with a mandatory _recursive_ attribute. You can add multiple _directory_ tags to look for files at various locations. It's also possible to use the `%ESPATH%` variable for this tag to look for files relative to the ES-DE binary directory. The tilde symbol `~` is supported as well and will expand to the user home directory. Be aware that if ES-DE has been started with the --home command line option, the home directory is considered to be whatever path was passed as an argument to that option. The same is true if using a portable.txt file.
+
+Here's an example:
+
+```xml
+<?xml version="1.0"?>
+<!-- This is the ES-DE import rules configuration file for Windows -->
+<ruleList>
+    <system name="desktop">
+        <rule type="file">
+            <extension>.lnk</extension>
+            <directory recursive="true">C:\ProgramData\Microsoft\Windows\Start Menu\Programs</directory>
+            <directory recursive="true">~\AppData\Roaming\Microsoft\Windows\Start Menu\Programs</directory>
+        </rule>
+    </system>
+    <system name="emulators">
+        <rule type="file">
+            <extension>.lnk</extension>
+            <directory recursive="true">C:\ProgramData\Microsoft\Windows\Start Menu\Programs</directory>
+            <directory recursive="true">~\AppData\Roaming\Microsoft\Windows\Start Menu\Programs</directory>
+            <directory recursive="true">%ESPATH%\Emulators</directory>
+            <directory recursive="true">%ESPATH%\..\Emulators</directory>
+        </rule>
+    </system>
+    <system name="steam">
+        <rule type="file">
+            <extension>.url</extension>
+            <directory recursive="false">~\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Steam</directory>
+        </rule>
+    </system>
+    <system name="windows">
+        <rule type="file">
+            <extension>.lnk</extension>
+            <directory recursive="true">C:\ProgramData\Microsoft\Windows\Start Menu\Programs</directory>
+            <directory recursive="true">~\AppData\Roaming\Microsoft\Windows\Start Menu\Programs</directory>
+        </rule>
+    </system>
+</ruleList>
+```
+
+`desktopshortcut` - This rule is available on Linux and FreeBSD and only has a _directory_ tag with a mandatory _gamesOnly_ attribute that controls whether to only include entries categorized as games. The way this rule works is that it searches for files with the .desktop extension in the defined directories and will then parse these files to retrieve the name of the game or application, the application category and whether the NoDisplay key has been set. The name parsing is important as these files can have cryptic names like _org.kde.gwenview.desktop_ and ES-DE will instead use the actual name defined inside the file. The NoDisplay key is set for entries that should not be shown in the operating system menus, and ES-DE will as such skip these files during the import process.
+
+Here's an example:
+
+```xml
+<?xml version="1.0"?>
+<!-- This is the ES-DE import rules configuration file for Linux -->
+<ruleList>
+    <system name="desktop">
+        <rule type="desktopshortcut">
+            <directory gamesOnly="false">/usr/share/applications</directory>
+            <directory gamesOnly="false">/usr/local/share/applications</directory>
+            <directory gamesOnly="false">~/.local/share/applications</directory>
+            <directory gamesOnly="false">/var/lib/flatpak/exports/share/applications</directory>
+            <directory gamesOnly="false">/var/lib/snapd/desktop/applications</directory>
+        </rule>
+    </system>
+    <system name="emulators">
+        <rule type="desktopshortcut">
+            <directory gamesOnly="false">/usr/share/applications</directory>
+            <directory gamesOnly="false">/usr/local/share/applications</directory>
+            <directory gamesOnly="false">~/.local/share/applications</directory>
+            <directory gamesOnly="false">/var/lib/flatpak/exports/share/applications</directory>
+            <directory gamesOnly="false">/var/lib/snapd/desktop/applications</directory>
+        </rule>
+    </system>
+    <system name="steam">
+        <rule type="desktopshortcut">
+            <directory gamesOnly="true">~/.local/share/applications</directory>
+        </rule>
+    </system>
+</ruleList>
+```
+
+`macosbundle` - This rule is only available on macOS and works a bit different than the other rules. It has a _directory_ tag with a mandatory _recursive_ attribute which is used to define which directory to look for bundles in. As macOS bundles are entire directory structures containing the actual application files, ES-DE will make symlinks to these directories rather than copying them to the target system directory.
+
+Here's an example:
+
+```xml
+<?xml version="1.0"?>
+<!-- This is the ES-DE import rules configuration file for macOS -->
+<ruleList>
+    <system name="desktop">
+        <rule type="macosbundle">
+            <directory recursive="true">/Applications</directory>
+        </rule>
+    </system>
+    <system name="emulators">
+        <rule type="macosbundle">
+            <directory recursive="true">/Applications</directory>
+        </rule>
+    </system>
+</ruleList>
+```
+
 ## gamelist.xml
 
 The gamelist.xml file for a system defines the metadata for its entries, such as the game names, descriptions, release dates and ratings.
