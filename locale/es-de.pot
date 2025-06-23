@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-06-22 11:43+0200\n"
+"POT-Creation-Date: 2025-06-23 17:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <info@es-de.org>\n"
@@ -583,6 +583,12 @@ msgstr ""
 
 msgid "import"
 msgstr ""
+
+#, c-format
+msgid "IMPORTED %i ENTRY"
+msgid_plural "IMPORTED %i ENTRIES"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "SELECT ALL"
 msgstr ""

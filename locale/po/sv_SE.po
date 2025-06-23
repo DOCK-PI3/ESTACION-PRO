@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-06-22 11:43+0200\n"
-"PO-Revision-Date: 2025-06-22 11:41+0200\n"
+"POT-Creation-Date: 2025-06-23 17:59+0200\n"
+"PO-Revision-Date: 2025-06-23 10:55+0200\n"
 "Last-Translator: Northwestern Software <info@es-de.org>\n"
 "Language-Team: Svenska <info@es-de.org>\n"
 "Language: sv_SE\n"
@@ -600,6 +600,12 @@ msgstr "IMPORTERA"
 
 msgid "import"
 msgstr "importera"
+
+#, c-format
+msgid "IMPORTED %i ENTRY"
+msgid_plural "IMPORTED %i ENTRIES"
+msgstr[0] "IMPORTERADE %i POST"
+msgstr[1] "IMPORTERADE %i POSTER"
 
 msgid "SELECT ALL"
 msgstr "VÄLJ ALLA"
