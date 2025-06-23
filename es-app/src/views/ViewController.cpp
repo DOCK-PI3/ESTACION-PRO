@@ -290,14 +290,24 @@ void ViewController::noGamesDialog()
     mRomDirectory = FileData::getROMDirectory();
 #endif
 
+    auto gameImporterUpdateFunc = [&]() {
+        delete mNoGamesMessageBox;
+        ViewController::getInstance()->rescanROMDirectory();
+    };
+
 #if defined(__ANDROID__) || defined(__IOS__)
     mNoGamesMessageBox = new GuiMsgBox(
         mNoGamesErrorMessage + mRomDirectory, _("IMPORT"),
-        [this] { mWindow->pushGui(new GuiGameImporter(_("GAME IMPORTER"))); },
+        [this, gameImporterUpdateFunc] {
+            mWindow->pushGui(new GuiGameImporter(_("GAME IMPORTER"), gameImporterUpdateFunc));
+        },
 #else
     mNoGamesMessageBox = new GuiMsgBox(
         mNoGamesErrorMessage + mRomDirectory, _("IMPORT"),
-        [this] { mWindow->pushGui(new GuiGameImporter(_("GAME IMPORTER"))); }, _("CHANGE"),
+        [this, gameImporterUpdateFunc] {
+            mWindow->pushGui(new GuiGameImporter(_("GAME IMPORTER"), gameImporterUpdateFunc));
+        },
+        _("CHANGE"),
         [this] {
             std::string currentROMDirectory;
 #if defined(_WIN64)

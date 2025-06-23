@@ -310,9 +310,9 @@ void ImportRules::loadImportRules()
 #elif defined(__APPLE__)
                 if (ruleType != "macosbundle") {
 #elif defined(__linux__) || defined(__FreeBSD__)
-                if (ruleType != "files" && ruleType != "desktopshortcuts") {
+                if (ruleType != "file" && ruleType != "desktopshortcut") {
 #else
-                if (ruleType != "files") {
+                if (ruleType != "file") {
 #endif
                     LOG(LogWarning) << "Found invalid rule type \"" << ruleType
                                     << "\" for system \"" << systemName << "\", skipping entry";
@@ -351,9 +351,9 @@ void ImportRules::loadImportRules()
                     importRule.ruleType = "macosbundle";
                     importRule.extension = ".app";
 #else
-                else if (ruleType == "files") {
+                else if (ruleType == "file") {
                     ImportRule importRule;
-                    importRule.ruleType = "files";
+                    importRule.ruleType = "file";
 
                     bool hasExtension {false};
 #endif
@@ -469,9 +469,9 @@ void ImportRules::loadImportRules()
                     if (addRule)
                         mSystems[systemName] = importRule;
                 }
-                else if (ruleType == "desktopshortcuts") {
+                else if (ruleType == "desktopshortcut") {
                     ImportRule importRule;
-                    importRule.ruleType = "desktopshortcuts";
+                    importRule.ruleType = "desktopshortcut";
                     importRule.extension = ".desktop";
 
                     bool hasDirectory {false};

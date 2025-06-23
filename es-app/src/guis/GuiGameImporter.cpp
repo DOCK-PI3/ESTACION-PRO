@@ -21,8 +21,9 @@
 #define CHECKED_PATH ":/graphics/checkbox_checked.svg"
 #define UNCHECKED_PATH ":/graphics/checkbox_unchecked.svg"
 
-GuiGameImporter::GuiGameImporter(std::string title)
+GuiGameImporter::GuiGameImporter(std::string title, std::function<void()> updateCallback)
     : mRenderer {Renderer::getInstance()}
+    , mUpdateCallback(updateCallback)
     , mMenu {title}
     , mNoConfig {false}
     , mSelectorWindow {false}
@@ -276,12 +277,10 @@ GuiGameImporter::~GuiGameImporter()
     }
 
     Utils::FileSystem::removeDirectory(mTempDir, true);
+    mWindow->stopInfoPopup();
 
-    if (mHasUpdates) {
-        ViewController::getInstance()->rescanROMDirectory();
-        while (mWindow->getGuiStackSize() > 1)
-            mWindow->removeGui(mWindow->peekGui());
-    }
+    if (mHasUpdates && mUpdateCallback)
+        mUpdateCallback();
 }
 
 void GuiGameImporter::update(int deltaTime)
@@ -305,8 +304,7 @@ void GuiGameImporter::update(int deltaTime)
 
     if (mDoneInventorying) {
         // We call this just to reset the busy indicator to the first animation frame, in case
-        // the selector window is closed and the import is initialized again, or if there was
-        // nothing found to import.
+        // multiple imports are done by the user.
         mBusyAnim.onSizeChanged();
 
         mIsInventorying = false;
@@ -363,7 +361,6 @@ void GuiGameImporter::pressedStart()
         return;
 
     Utils::FileSystem::removeDirectory(mTempDir, true);
-    mHasUpdates = false;
 
     mTargetSystemDir = mTargetSystem->getSelected();
 #if defined(__ANDROID__)
@@ -403,14 +400,14 @@ void GuiGameImporter::pressedStart()
                     mImportThread = std::make_unique<std::thread>(&GuiGameImporter::macosbundleRule,
                                                                   this, importRule);
 #else
-                else if (importRule.second.ruleType == "files") {
-                    mImportThread = std::make_unique<std::thread>(&GuiGameImporter::filesRule, this,
-                                                                  importRule);
+                else if (importRule.second.ruleType == "file") {
+                    mImportThread =
+                        std::make_unique<std::thread>(&GuiGameImporter::fileRule, this, importRule);
 #endif
                 }
-                else if (importRule.second.ruleType == "desktopshortcuts") {
+                else if (importRule.second.ruleType == "desktopshortcut") {
                     mImportThread = std::make_unique<std::thread>(
-                        &GuiGameImporter::desktopshortcutsRule, this, importRule);
+                        &GuiGameImporter::desktopshortcutRule, this, importRule);
                 }
                 break;
             }
@@ -629,7 +626,13 @@ void GuiGameImporter::selectorWindow()
             LOG(LogInfo) << "GuiGameImporter: Imported " << numEntriesImported
                          << (numEntriesImported == 1 ? " entry" : " entries") << " for system \""
                          << mTargetSystemDir << "\"";
-            delete this;
+            mWindow->queueInfoPopup(
+                Utils::String::format(
+                    _n("IMPORTED %i ENTRY", "IMPORTED %i ENTRIES", numEntriesImported),
+                    numEntriesImported),
+                4000);
+            removeChild(mSelectorMenu.get());
+            mainWindow();
         }
     });
 
@@ -696,7 +699,7 @@ void GuiGameImporter::androidpackageRule(std::vector<std::pair<std::string, std:
 void GuiGameImporter::macosbundleRule(
     std::pair<const std::string, ImportRules::ImportRule> importRule)
 #else
-void GuiGameImporter::filesRule(std::pair<const std::string, ImportRules::ImportRule> importRule)
+void GuiGameImporter::fileRule(std::pair<const std::string, ImportRules::ImportRule> importRule)
 #endif
 {
     mHasEntries = false;
@@ -743,8 +746,11 @@ void GuiGameImporter::filesRule(std::pair<const std::string, ImportRules::Import
                     continue;
                 }
 
-                if (file.find("ES-DE.app") != std::string::npos)
+                if (file.find("ES-DE.app") != std::string::npos ||
+                    file.find("Uninstall.app") != std::string::npos ||
+                    file.find("Uninstaller.app") != std::string::npos) {
                     continue;
+                }
 #else
                 const long fileSize {Utils::FileSystem::getFileSize(file)};
                 if (fileSize > MAX_FILE_SIZE) {
@@ -798,7 +804,7 @@ void GuiGameImporter::filesRule(std::pair<const std::string, ImportRules::Import
     mDoneInventorying = true;
 }
 
-void GuiGameImporter::desktopshortcutsRule(
+void GuiGameImporter::desktopshortcutRule(
     std::pair<const std::string, ImportRules::ImportRule> importRule)
 {
     mHasEntries = false;
@@ -835,7 +841,7 @@ void GuiGameImporter::desktopshortcutsRule(
                     continue;
 
                 LOG(LogDebug)
-                    << "GuiGameImporter::desktopshortcutsRule(): Parsing desktop shortcut file \""
+                    << "GuiGameImporter::desktopshortcutRule(): Parsing desktop shortcut file \""
                     << file << "\"";
 
                 bool validFile {false};
@@ -869,7 +875,7 @@ void GuiGameImporter::desktopshortcutsRule(
                 // Any .desktop file with a NoDisplay key set to true should be skipped as it's
                 // not intended to be shown to the user.
                 if (noDisplay) {
-                    LOG(LogDebug) << "GuiGameImporter::desktopshortcutsRule(): File has the "
+                    LOG(LogDebug) << "GuiGameImporter::desktopshortcutRule(): File has the "
                                      "NoDisplay key set to true, skipping it";
                     continue;
                 }
@@ -878,7 +884,7 @@ void GuiGameImporter::desktopshortcutsRule(
                 // "Game" string, then skip the entry.
                 if (directory.second &&
                     Utils::String::toLower(categoriesEntry).find("game") == std::string::npos) {
-                    LOG(LogDebug) << "GuiGameImporter::desktopshortcutsRule(): Set to only import "
+                    LOG(LogDebug) << "GuiGameImporter::desktopshortcutRule(): Set to only import "
                                      "games and the file is not categorized as a game, skipping it";
                     continue;
                 }
@@ -929,12 +935,12 @@ void GuiGameImporter::desktopshortcutsRule(
                 targetFile = targetFileTemp;
 
                 if (usedNameEntry) {
-                    LOG(LogDebug) << "GuiGameImporter::desktopshortcutsRule(): Using Name entry "
+                    LOG(LogDebug) << "GuiGameImporter::desktopshortcutRule(): Using Name entry "
                                      "from file to set filename to \""
                                   << targetFile << "\"";
                 }
                 else {
-                    LOG(LogDebug) << "GuiGameImporter::desktopshortcutsRule(): Couldn't read Name "
+                    LOG(LogDebug) << "GuiGameImporter::desktopshortcutRule(): Couldn't read Name "
                                      "entry from file, falling back to using filename";
                 }
 

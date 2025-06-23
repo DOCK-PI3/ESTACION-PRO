@@ -25,7 +25,7 @@ template <typename T> class OptionListComponent;
 class GuiGameImporter : public GuiComponent
 {
 public:
-    GuiGameImporter(std::string title);
+    GuiGameImporter(std::string title, std::function<void()> updateCallback);
     ~GuiGameImporter();
 
     void update(int deltaTime) override;
@@ -42,14 +42,15 @@ private:
 #if defined(__APPLE__)
     void macosbundleRule(std::pair<const std::string, ImportRules::ImportRule> importRule);
 #else
-    void filesRule(std::pair<const std::string, ImportRules::ImportRule> importRule);
+    void fileRule(std::pair<const std::string, ImportRules::ImportRule> importRule);
 #endif
-    void desktopshortcutsRule(std::pair<const std::string, ImportRules::ImportRule> importRule);
+    void desktopshortcutRule(std::pair<const std::string, ImportRules::ImportRule> importRule);
 
     bool input(InputConfig* config, Input input) override;
 
     Renderer* mRenderer;
     BusyComponent mBusyAnim;
+    std::function<void()> mUpdateCallback;
 
     MenuComponent mMenu;
     std::unique_ptr<MenuComponent> mSelectorMenu;

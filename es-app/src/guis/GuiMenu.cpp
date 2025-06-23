@@ -2224,13 +2224,20 @@ void GuiMenu::openUtilities()
 {
     auto s = new GuiSettings(_("UTILITIES"));
 
+    auto gameImporterUpdateFunc = [&, s]() {
+        delete s;
+        delete this;
+        ViewController::getInstance()->rescanROMDirectory();
+    };
+
     ComponentListRow row;
     row.addElement(std::make_shared<TextComponent>(_("GAME IMPORTER"), Font::get(FONT_SIZE_MEDIUM),
                                                    mMenuColorPrimary),
                    true);
     row.addElement(mMenu.makeArrow(), false);
-    row.makeAcceptInputHandler(
-        std::bind([this] { mWindow->pushGui(new GuiGameImporter(_("GAME IMPORTER"))); }));
+    row.makeAcceptInputHandler(std::bind([this, gameImporterUpdateFunc] {
+        mWindow->pushGui(new GuiGameImporter(_("GAME IMPORTER"), gameImporterUpdateFunc));
+    }));
     s->addRow(row);
 
     row.elements.clear();
