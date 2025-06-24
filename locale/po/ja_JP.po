@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-03-18 18:28+0100\n"
+"POT-Creation-Date: 2025-06-24 18:58+0200\n"
 "PO-Revision-Date: 2025-03-06 23:38+0800\n"
 "Last-Translator: ice <natsumekyousuke211314@gmail.com>\n"
 "Language-Team: 日本語 <info@es-de.org>\n"
@@ -528,6 +528,103 @@ msgstr "カスタムコレクションのお気に入りを上に"
 msgid "DISPLAY STAR MARKINGS FOR CUSTOM COLLECTIONS"
 msgstr "カスタムコレクションにスターマークを表示"
 
+msgid "IMPORT TO SYSTEM"
+msgstr ""
+
+msgid "NO CONFIGURATION"
+msgstr ""
+
+msgid "REMOVE ENTRIES"
+msgstr ""
+
+msgid "ALL UNSELECTED"
+msgstr ""
+
+msgid "MEDIA TARGET TYPE"
+msgstr ""
+
+msgid "SCREENSHOTS"
+msgstr ""
+
+msgid "TITLE SCREENS"
+msgstr ""
+
+msgid "COVERS"
+msgstr ""
+
+msgid "BACK COVERS"
+msgstr ""
+
+msgid "MARQUEES (WHEELS)"
+msgstr ""
+
+msgid "3D BOXES"
+msgstr ""
+
+msgid "PHYSICAL MEDIA"
+msgstr ""
+
+msgid "FAN ART"
+msgstr "ファンアート"
+
+msgid "IMPORT MEDIA"
+msgstr ""
+
+msgid "IMPORT BANNERS OR LOGOS IF AVAILABLE"
+msgstr ""
+
+msgid "OVERWRITE MEDIA FILES"
+msgstr ""
+
+msgid "ONLY INCLUDE APPS CATEGORIZED AS GAMES"
+msgstr ""
+
+msgid "START"
+msgstr "開始"
+
+msgid "start importer"
+msgstr ""
+
+msgid "WORKING..."
+msgstr "稼働中..."
+
+msgid "COULDN'T FIND ANYTHING TO IMPORT"
+msgstr ""
+
+#, c-format
+msgid ""
+"YOU HAVE CHOSEN TO REMOVE ALL UNSELECTED ENTRIES, THIS WILL DELETE ALL GAME "
+"FILES WITH THE \"%s\" FILE EXTENSION FROM THE \"%s\" SYSTEM DIRECTORY AND "
+"THEN IMPORT THE ENTRIES YOU SELECT ON THE NEXT SCREEN\n"
+"ARE YOU SURE?"
+msgstr ""
+
+msgid "MAKE YOUR SELECTION"
+msgstr ""
+
+msgid "IMPORT"
+msgstr ""
+
+msgid "import"
+msgstr ""
+
+#, c-format
+msgid "IMPORTED %i ENTRY"
+msgid_plural "IMPORTED %i ENTRIES"
+msgstr[0] ""
+
+msgid "SELECT ALL"
+msgstr "すべてを選ぶ"
+
+msgid "select all"
+msgstr "すべてを選ぶ"
+
+msgid "SELECT NONE"
+msgstr "何も選ばない"
+
+msgid "select none"
+msgstr "何も選ばない"
+
 msgid "FILTER GAMELIST"
 msgstr "ゲームリストを絞り込む"
 
@@ -708,11 +805,17 @@ msgstr "トリガー"
 msgid "LEFT/RIGHT"
 msgstr "左/右"
 
-msgid "GAMELIST ON STARTUP"
-msgstr "起動時にゲームリスト"
+msgid "SYSTEM ON STARTUP"
+msgstr ""
 
-msgid "NONE"
-msgstr "無"
+msgid "STARTUP VIEW"
+msgstr ""
+
+msgid "SYSTEM"
+msgstr "システム"
+
+msgid "GAMELIST"
+msgstr ""
 
 msgid "SYSTEMS SORTING"
 msgstr "システムのソート"
@@ -756,6 +859,9 @@ msgstr "メニューオープニングアニメーション"
 
 msgid "SCALE-UP"
 msgstr "拡大"
+
+msgid "NONE"
+msgstr "無"
 
 msgid "LAUNCH SCREEN DURATION"
 msgstr "起動画面の継続時間"
@@ -955,6 +1061,9 @@ msgstr "A/B ボタンと X/Y ボタンを入れ替える"
 msgid "IGNORE KEYBOARD INPUT"
 msgstr "キーボードからの入力を無視"
 
+msgid "INPUT DEVICE NOTIFICATIONS"
+msgstr ""
+
 msgid "CONFIGURE KEYBOARD AND CONTROLLERS"
 msgstr "キーボードとコントローラーを設定"
 
@@ -1105,6 +1214,9 @@ msgstr "キッズモードでメニューを有効"
 
 msgid "SHOW QUIT MENU (REBOOT AND POWER OFF ENTRIES)"
 msgstr "終了メニューを表示（再起動/電源オフ）"
+
+msgid "GAME IMPORTER"
+msgstr ""
 
 msgid "ORPHANED DATA CLEANUP"
 msgstr "孤児データのクリーンアップ"
@@ -1278,9 +1390,6 @@ msgstr "処理中："
 
 msgid "Last error message:"
 msgstr "最後のエラー情報："
-
-msgid "START"
-msgstr "開始"
 
 msgid "start processing"
 msgstr "処理開始"
@@ -1757,9 +1866,6 @@ msgstr ""
 msgid "SCRAPING IN PROGRESS"
 msgstr "スクレイプ中"
 
-msgid "SYSTEM"
-msgstr "システム"
-
 msgid "REFINE SEARCH"
 msgstr "絞り込み検索"
 
@@ -1816,6 +1922,14 @@ msgstr "プレイヤー："
 
 msgid "NO GAMES FOUND"
 msgstr "ゲームを発見できませんでした"
+
+msgid "API CALLS:"
+msgstr ""
+
+#, c-format
+msgid "%i REMAINING"
+msgid_plural "%i REMAINING"
+msgstr[0] ""
 
 msgid "RETRY"
 msgstr "再試行"
@@ -1916,6 +2030,9 @@ msgstr "バッテリーの残量パーセンテージを表示"
 msgid "DOWNLOADING THEMES LIST 100%"
 msgstr "テーマリストのダウンロードが100% 完了しました"
 
+msgid "REPOSITORY HAS DIVERGED FROM ORIGIN"
+msgstr ""
+
 msgid "THEME ALREADY UP TO DATE"
 msgstr "テーマはすでに最新の状態です"
 
@@ -1988,6 +2105,14 @@ msgstr ""
 
 #, c-format
 msgid ""
+"IT SEEMS AS IF THIS IS A DIVERGED REPOSITORY WHICH USUALLY MEANS THERE IS AN "
+"UPSTREAM MERGE CONFLICT THAT NEEDS TO BE RESOLVED BY THE THEME DEVELOPER. A "
+"FRESH DOWNLOAD IS REQUIRED AND THE OLD THEME DIRECTORY \"%s\" WILL BE "
+"RENAMED TO \"%s_DIVERGED_DISABLED\""
+msgstr ""
+
+#, c-format
+msgid ""
 "THE LOCALLY CLONED REPOSITORY CONTAINS THE WRONG URL WHICH NORMALLY MEANS "
 "THE THEME HAS BEEN MOVED TO A NEW GIT SITE. A FRESH DOWNLOAD IS REQUIRED AND "
 "THE OLD THEME DIRECTORY \"%s\" WILL BE RENAMED TO \"%s_WRONG_URL_DISABLED\""
@@ -2028,6 +2153,9 @@ msgstr "手動ダウンロード"
 
 msgid "CORRUPT"
 msgstr "破損した"
+
+msgid "DIVERGED"
+msgstr ""
 
 msgid "SHALLOW"
 msgstr "シャロー"
@@ -2136,9 +2264,6 @@ msgstr "ボックスバックカバー"
 
 msgid "TITLE SCREEN"
 msgstr "タイトルスクリーン"
-
-msgid "FAN ART"
-msgstr "ファンアート"
 
 msgid "MIXIMAGE"
 msgstr "複合画像"
@@ -2489,34 +2614,23 @@ msgstr ""
 "を参照してください"
 
 msgid ""
-"NO GAME FILES WERE FOUND, PLEASE PLACE YOUR GAMES IN THE CONFIGURED ROM "
-"DIRECTORY. OPTIONALLY THE ROM DIRECTORY STRUCTURE CAN BE GENERATED WHICH "
-"WILL CREATE A TEXT FILE FOR EACH SYSTEM PROVIDING SOME INFORMATION SUCH AS "
-"THE SUPPORTED FILE EXTENSIONS.\n"
-"THIS IS THE CURRENTLY CONFIGURED ROM DIRECTORY:\n"
+"NO GAME FILES WERE FOUND. EITHER IMPORT SOME GAMES OR PLACE THEM MANUALLY IN "
+"THE CONFIGURED ROM DIRECTORY. OPTIONALLY YOU CAN GENERATE THE ROM DIRECTORY "
+"STRUCTURE WHICH WILL CREATE A TEXT FILE FOR EACH SYSTEM PROVIDING SOME "
+"INFORMATION SUCH AS THE SUPPORTED FILE EXTENSIONS. THIS IS THE CONFIGURED "
+"ROM DIRECTORY:\n"
 msgstr ""
-"ゲームファイルが見つかりませんでした。設定されたROMディレクトリにゲームを配置"
-"してください。オプションとして、ROMディレクトリ構造を生成することもできます。"
-"これにより、各システム用のテキストファイルが作成され、サポートされているファ"
-"イル拡張子などの情報も提供されます。\n"
-"以下が現在設定されているROMディレクトリです：\n"
 
 msgid ""
-"NO GAME FILES WERE FOUND. EITHER PLACE YOUR GAMES IN THE CURRENTLY "
-"CONFIGURED ROM DIRECTORY OR CHANGE ITS PATH USING THE BUTTON BELOW. "
-"OPTIONALLY THE ROM DIRECTORY STRUCTURE CAN BE GENERATED WHICH WILL CREATE A "
-"TEXT FILE FOR EACH SYSTEM PROVIDING SOME INFORMATION SUCH AS THE SUPPORTED "
-"FILE EXTENSIONS.\n"
-"THIS IS THE CURRENTLY CONFIGURED ROM DIRECTORY:\n"
+"NO GAME FILES WERE FOUND. EITHER IMPORT SOME GAMES OR PLACE THEM MANUALLY IN "
+"THE CURRENTLY CONFIGURED ROM DIRECTORY. YOU CAN ALSO CHANGE THE ROM PATH AND "
+"OPTIONALLY GENERATE THE ROM DIRECTORY STRUCTURE WHICH WILL CREATE A TEXT "
+"FILE FOR EACH SYSTEM PROVIDING SOME INFORMATION SUCH AS THE SUPPORTED FILE "
+"EXTENSIONS. THIS IS THE CONFIGURED ROM DIRECTORY:\n"
 msgstr ""
-"ゲームファイルが見つかりませんでした。現在構成されているROMディレクトリにゲー"
-"ムを配置するか、以下のボタンを使用してパスを変更してください。オプションとし"
-"て、ROMディレクトリ構造が生成され、各システムのテキストファイルが作成されま"
-"す。サポートされているファイル拡張子などの情報も提供されます。\n"
-"以下が現在設定されているROMディレクトリです：\n"
 
-msgid "CHANGE ROM DIRECTORY"
-msgstr "ROMディレクトリを変更する"
+msgid "CHANGE"
+msgstr ""
 
 msgid "ENTER ROM DIRECTORY PATH"
 msgstr "ROMディレクトリパスを入力してください"
@@ -2535,9 +2649,6 @@ msgstr "現在設定されたパスをロード"
 
 msgid "CLEAR (LEAVE BLANK TO RESET TO DEFAULT PATH)"
 msgstr "クリア（何も入力せずにデフォルトパスにリセット）"
-
-msgid "CREATE DIRECTORIES"
-msgstr "ディレクトリを作成する"
 
 msgid ""
 "THIS WILL CREATE DIRECTORIES FOR ALL THE GAME SYSTEMS DEFINED IN es_systems."
@@ -2620,9 +2731,6 @@ msgstr "ゲーム '%s' を起動中"
 msgid "menu"
 msgstr "メニュー"
 
-msgid "WORKING..."
-msgstr "稼働中..."
-
 msgctxt "theme"
 msgid "never"
 msgstr "しない"
@@ -2676,18 +2784,6 @@ msgstr[0] "%i 種を選んだ"
 
 msgid "change value"
 msgstr "値を変更する"
-
-msgid "SELECT ALL"
-msgstr "すべてを選ぶ"
-
-msgid "select all"
-msgstr "すべてを選ぶ"
-
-msgid "SELECT NONE"
-msgstr "何も選ばない"
-
-msgid "select none"
-msgstr "何も選ばない"
 
 msgid "add half star"
 msgstr "ハーフスターを追加する"

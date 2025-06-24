@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2024-12-10 18:16+0100\n"
+"POT-Creation-Date: 2025-06-24 19:40+0200\n"
 "PO-Revision-Date: 2024-08-04 12:22+0200\n"
 "Last-Translator: Northwestern Software <info@es-de.org>\n"
 "Language-Team: العربية (Egypt) <info@es-de.org>\n"
@@ -513,6 +513,108 @@ msgstr ""
 msgid "DISPLAY STAR MARKINGS FOR CUSTOM COLLECTIONS"
 msgstr ""
 
+msgid "IMPORT TO SYSTEM"
+msgstr ""
+
+msgid "NO CONFIGURATION"
+msgstr ""
+
+msgid "REMOVE ENTRIES"
+msgstr ""
+
+msgid "ALL UNSELECTED"
+msgstr ""
+
+msgid "MEDIA TARGET TYPE"
+msgstr ""
+
+msgid "SCREENSHOTS"
+msgstr ""
+
+msgid "TITLE SCREENS"
+msgstr ""
+
+msgid "COVERS"
+msgstr ""
+
+msgid "BACK COVERS"
+msgstr ""
+
+msgid "MARQUEES (WHEELS)"
+msgstr ""
+
+msgid "3D BOXES"
+msgstr ""
+
+msgid "PHYSICAL MEDIA"
+msgstr ""
+
+msgid "FAN ART"
+msgstr ""
+
+msgid "IMPORT MEDIA"
+msgstr ""
+
+msgid "IMPORT BANNERS OR LOGOS IF AVAILABLE"
+msgstr ""
+
+msgid "OVERWRITE MEDIA FILES"
+msgstr ""
+
+msgid "ONLY INCLUDE APPS CATEGORIZED AS GAMES"
+msgstr ""
+
+msgid "START"
+msgstr ""
+
+msgid "start importer"
+msgstr ""
+
+msgid "WORKING..."
+msgstr ""
+
+msgid "COULDN'T FIND ANYTHING TO IMPORT"
+msgstr ""
+
+#, c-format
+msgid ""
+"YOU HAVE CHOSEN TO REMOVE ALL UNSELECTED ENTRIES, THIS WILL DELETE ALL GAME "
+"FILES WITH THE \"%s\" FILE EXTENSION FROM THE \"%s\" SYSTEM DIRECTORY AND "
+"THEN IMPORT THE ENTRIES YOU SELECT ON THE NEXT SCREEN\n"
+"ARE YOU SURE?"
+msgstr ""
+
+msgid "MAKE YOUR SELECTION"
+msgstr ""
+
+msgid "IMPORT"
+msgstr ""
+
+msgid "import"
+msgstr ""
+
+#, c-format
+msgid "IMPORTED %i ENTRY"
+msgid_plural "IMPORTED %i ENTRIES"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+msgid "SELECT ALL"
+msgstr ""
+
+msgid "select all"
+msgstr ""
+
+msgid "SELECT NONE"
+msgstr ""
+
+msgid "select none"
+msgstr ""
+
 msgid "FILTER GAMELIST"
 msgstr ""
 
@@ -693,10 +795,16 @@ msgstr ""
 msgid "LEFT/RIGHT"
 msgstr ""
 
-msgid "GAMELIST ON STARTUP"
+msgid "SYSTEM ON STARTUP"
 msgstr ""
 
-msgid "NONE"
+msgid "STARTUP VIEW"
+msgstr ""
+
+msgid "SYSTEM"
+msgstr ""
+
+msgid "GAMELIST"
 msgstr ""
 
 msgid "SYSTEMS SORTING"
@@ -742,6 +850,9 @@ msgstr ""
 msgid "SCALE-UP"
 msgstr ""
 
+msgid "NONE"
+msgstr ""
+
 msgid "LAUNCH SCREEN DURATION"
 msgstr ""
 
@@ -752,6 +863,9 @@ msgid "BRIEF"
 msgstr ""
 
 msgid "LONG"
+msgstr ""
+
+msgid "POPUP"
 msgstr ""
 
 msgid "UI MODE"
@@ -798,6 +912,9 @@ msgstr ""
 msgid "GAMES AND SYSTEMS"
 msgstr ""
 
+msgid "SYSTEM STATUS SETTINGS"
+msgstr ""
+
 msgid "MEDIA VIEWER SETTINGS"
 msgstr ""
 
@@ -805,6 +922,9 @@ msgid "SCREENSAVER SETTINGS"
 msgstr ""
 
 msgid "ENABLE THEME VARIANT TRIGGERS"
+msgstr ""
+
+msgid "DISPLAY CLOCK"
 msgstr ""
 
 msgid "BLUR BACKGROUND WHEN MENU IS OPEN"
@@ -909,6 +1029,9 @@ msgid "SWAP THE A/B AND X/Y BUTTONS"
 msgstr ""
 
 msgid "IGNORE KEYBOARD INPUT"
+msgstr ""
+
+msgid "INPUT DEVICE NOTIFICATIONS"
 msgstr ""
 
 msgid "CONFIGURE KEYBOARD AND CONTROLLERS"
@@ -1032,6 +1155,9 @@ msgstr ""
 msgid "ENABLE CUSTOM EVENT SCRIPTS"
 msgstr ""
 
+msgid "BROWSING CUSTOM EVENTS"
+msgstr ""
+
 msgid "ONLY SHOW GAMES FROM GAMELIST.XML FILES"
 msgstr ""
 
@@ -1054,6 +1180,9 @@ msgid "ENABLE MENU IN KID MODE"
 msgstr ""
 
 msgid "SHOW QUIT MENU (REBOOT AND POWER OFF ENTRIES)"
+msgstr ""
+
+msgid "GAME IMPORTER"
 msgstr ""
 
 msgid "ORPHANED DATA CLEANUP"
@@ -1099,6 +1228,10 @@ msgid "REALLY POWER OFF?"
 msgstr ""
 
 msgid "POWER OFF SYSTEM"
+msgstr ""
+
+msgctxt "short"
+msgid "SYSTEM STATUS SETTINGS"
 msgstr ""
 
 msgctxt "short"
@@ -1205,9 +1338,6 @@ msgid "Processing:"
 msgstr ""
 
 msgid "Last error message:"
-msgstr ""
-
-msgid "START"
 msgstr ""
 
 msgid "start processing"
@@ -1648,9 +1778,6 @@ msgstr ""
 msgid "SCRAPING IN PROGRESS"
 msgstr ""
 
-msgid "SYSTEM"
-msgstr ""
-
 msgid "REFINE SEARCH"
 msgstr ""
 
@@ -1710,6 +1837,19 @@ msgstr ""
 
 msgid "NO GAMES FOUND"
 msgstr ""
+
+msgid "API CALLS:"
+msgstr ""
+
+#, c-format
+msgid "%i REMAINING"
+msgid_plural "%i REMAINING"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
 
 msgid "RETRY"
 msgstr ""
@@ -1792,7 +1932,25 @@ msgstr ""
 msgid "RENDER BLUR"
 msgstr ""
 
+msgid "DISPLAY BLUETOOTH STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY WI-FI STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY CELLULAR STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY BATTERY STATUS INDICATOR"
+msgstr ""
+
+msgid "DISPLAY BATTERY CHARGE PERCENTAGE"
+msgstr ""
+
 msgid "DOWNLOADING THEMES LIST 100%"
+msgstr ""
+
+msgid "REPOSITORY HAS DIVERGED FROM ORIGIN"
 msgstr ""
 
 msgid "THEME ALREADY UP TO DATE"
@@ -1851,6 +2009,14 @@ msgstr ""
 
 #, c-format
 msgid ""
+"IT SEEMS AS IF THIS IS A DIVERGED REPOSITORY WHICH USUALLY MEANS THERE IS AN "
+"UPSTREAM MERGE CONFLICT THAT NEEDS TO BE RESOLVED BY THE THEME DEVELOPER. A "
+"FRESH DOWNLOAD IS REQUIRED AND THE OLD THEME DIRECTORY \"%s\" WILL BE "
+"RENAMED TO \"%s_DIVERGED_DISABLED\""
+msgstr ""
+
+#, c-format
+msgid ""
 "THE LOCALLY CLONED REPOSITORY CONTAINS THE WRONG URL WHICH NORMALLY MEANS "
 "THE THEME HAS BEEN MOVED TO A NEW GIT SITE. A FRESH DOWNLOAD IS REQUIRED AND "
 "THE OLD THEME DIRECTORY \"%s\" WILL BE RENAMED TO \"%s_WRONG_URL_DISABLED\""
@@ -1884,6 +2050,9 @@ msgid "MANUAL DOWNLOAD"
 msgstr ""
 
 msgid "CORRUPT"
+msgstr ""
+
+msgid "DIVERGED"
 msgstr ""
 
 msgid "SHALLOW"
@@ -1982,9 +2151,6 @@ msgid "BOX BACK COVER"
 msgstr ""
 
 msgid "TITLE SCREEN"
-msgstr ""
-
-msgid "FAN ART"
 msgstr ""
 
 msgid "MIXIMAGE"
@@ -2331,23 +2497,22 @@ msgid ""
 msgstr ""
 
 msgid ""
-"NO GAME FILES WERE FOUND, PLEASE PLACE YOUR GAMES IN THE CONFIGURED ROM "
-"DIRECTORY. OPTIONALLY THE ROM DIRECTORY STRUCTURE CAN BE GENERATED WHICH "
-"WILL CREATE A TEXT FILE FOR EACH SYSTEM PROVIDING SOME INFORMATION SUCH AS "
-"THE SUPPORTED FILE EXTENSIONS.\n"
-"THIS IS THE CURRENTLY CONFIGURED ROM DIRECTORY:\n"
+"NO GAME FILES WERE FOUND. EITHER IMPORT SOME GAMES OR PLACE THEM MANUALLY IN "
+"THE CONFIGURED ROM DIRECTORY. OPTIONALLY YOU CAN GENERATE THE ROM DIRECTORY "
+"STRUCTURE WHICH WILL CREATE A TEXT FILE FOR EACH SYSTEM PROVIDING SOME "
+"INFORMATION SUCH AS THE SUPPORTED FILE EXTENSIONS. THIS IS THE CONFIGURED "
+"ROM DIRECTORY:\n"
 msgstr ""
 
 msgid ""
-"NO GAME FILES WERE FOUND. EITHER PLACE YOUR GAMES IN THE CURRENTLY "
-"CONFIGURED ROM DIRECTORY OR CHANGE ITS PATH USING THE BUTTON BELOW. "
-"OPTIONALLY THE ROM DIRECTORY STRUCTURE CAN BE GENERATED WHICH WILL CREATE A "
-"TEXT FILE FOR EACH SYSTEM PROVIDING SOME INFORMATION SUCH AS THE SUPPORTED "
-"FILE EXTENSIONS.\n"
-"THIS IS THE CURRENTLY CONFIGURED ROM DIRECTORY:\n"
+"NO GAME FILES WERE FOUND. EITHER IMPORT SOME GAMES OR PLACE THEM MANUALLY IN "
+"THE CURRENTLY CONFIGURED ROM DIRECTORY. YOU CAN ALSO CHANGE THE ROM PATH AND "
+"OPTIONALLY GENERATE THE ROM DIRECTORY STRUCTURE WHICH WILL CREATE A TEXT "
+"FILE FOR EACH SYSTEM PROVIDING SOME INFORMATION SUCH AS THE SUPPORTED FILE "
+"EXTENSIONS. THIS IS THE CONFIGURED ROM DIRECTORY:\n"
 msgstr ""
 
-msgid "CHANGE ROM DIRECTORY"
+msgid "CHANGE"
 msgstr ""
 
 msgid "ENTER ROM DIRECTORY PATH"
@@ -2364,9 +2529,6 @@ msgid "LOAD CURRENTLY CONFIGURED PATH"
 msgstr ""
 
 msgid "CLEAR (LEAVE BLANK TO RESET TO DEFAULT PATH)"
-msgstr ""
-
-msgid "CREATE DIRECTORIES"
 msgstr ""
 
 msgid ""
@@ -2423,9 +2585,6 @@ msgid "LAUNCHING GAME '%s'"
 msgstr ""
 
 msgid "menu"
-msgstr ""
-
-msgid "WORKING..."
 msgstr ""
 
 msgctxt "theme"
@@ -2502,18 +2661,6 @@ msgstr[0] ""
 msgstr[1] ""
 
 msgid "change value"
-msgstr ""
-
-msgid "SELECT ALL"
-msgstr ""
-
-msgid "select all"
-msgstr ""
-
-msgid "SELECT NONE"
-msgstr ""
-
-msgid "select none"
 msgstr ""
 
 msgid "add half star"
@@ -2738,7 +2885,13 @@ msgstr ""
 msgid "4:3 vertical"
 msgstr ""
 
+msgid "5:3 vertical"
+msgstr ""
+
 msgid "5:4 vertical"
+msgstr ""
+
+msgid "8:7 vertical"
 msgstr ""
 
 msgid "19.5:9 vertical"

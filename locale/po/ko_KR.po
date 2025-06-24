@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-03-18 18:28+0100\n"
+"POT-Creation-Date: 2025-06-24 18:58+0200\n"
 "PO-Revision-Date: 2025-03-17 18:10+0900\n"
 "Last-Translator: wakeboxer <ljhmd0825@gmail.com>\n"
 "Language-Team: 한국어 <info@es-de.org>\n"
@@ -510,6 +510,103 @@ msgstr "커스텀 컬렉션에서 즐겨찾기를 최상단에 표시"
 msgid "DISPLAY STAR MARKINGS FOR CUSTOM COLLECTIONS"
 msgstr "커스텀 컬렉션에서 별 표시하기"
 
+msgid "IMPORT TO SYSTEM"
+msgstr ""
+
+msgid "NO CONFIGURATION"
+msgstr ""
+
+msgid "REMOVE ENTRIES"
+msgstr ""
+
+msgid "ALL UNSELECTED"
+msgstr ""
+
+msgid "MEDIA TARGET TYPE"
+msgstr ""
+
+msgid "SCREENSHOTS"
+msgstr ""
+
+msgid "TITLE SCREENS"
+msgstr ""
+
+msgid "COVERS"
+msgstr ""
+
+msgid "BACK COVERS"
+msgstr ""
+
+msgid "MARQUEES (WHEELS)"
+msgstr ""
+
+msgid "3D BOXES"
+msgstr ""
+
+msgid "PHYSICAL MEDIA"
+msgstr ""
+
+msgid "FAN ART"
+msgstr "팬아트"
+
+msgid "IMPORT MEDIA"
+msgstr ""
+
+msgid "IMPORT BANNERS OR LOGOS IF AVAILABLE"
+msgstr ""
+
+msgid "OVERWRITE MEDIA FILES"
+msgstr ""
+
+msgid "ONLY INCLUDE APPS CATEGORIZED AS GAMES"
+msgstr ""
+
+msgid "START"
+msgstr "시작"
+
+msgid "start importer"
+msgstr ""
+
+msgid "WORKING..."
+msgstr "실행 중..."
+
+msgid "COULDN'T FIND ANYTHING TO IMPORT"
+msgstr ""
+
+#, c-format
+msgid ""
+"YOU HAVE CHOSEN TO REMOVE ALL UNSELECTED ENTRIES, THIS WILL DELETE ALL GAME "
+"FILES WITH THE \"%s\" FILE EXTENSION FROM THE \"%s\" SYSTEM DIRECTORY AND "
+"THEN IMPORT THE ENTRIES YOU SELECT ON THE NEXT SCREEN\n"
+"ARE YOU SURE?"
+msgstr ""
+
+msgid "MAKE YOUR SELECTION"
+msgstr ""
+
+msgid "IMPORT"
+msgstr ""
+
+msgid "import"
+msgstr ""
+
+#, c-format
+msgid "IMPORTED %i ENTRY"
+msgid_plural "IMPORTED %i ENTRIES"
+msgstr[0] ""
+
+msgid "SELECT ALL"
+msgstr "모두 선택"
+
+msgid "select all"
+msgstr "모두 선택"
+
+msgid "SELECT NONE"
+msgstr "선택 해제"
+
+msgid "select none"
+msgstr "선택 해제"
+
 msgid "FILTER GAMELIST"
 msgstr "게임리스트 필터"
 
@@ -690,11 +787,17 @@ msgstr "트리거버튼"
 msgid "LEFT/RIGHT"
 msgstr "좌/우 버튼"
 
-msgid "GAMELIST ON STARTUP"
-msgstr "게임목록에서 시작"
+msgid "SYSTEM ON STARTUP"
+msgstr ""
 
-msgid "NONE"
-msgstr "없음"
+msgid "STARTUP VIEW"
+msgstr ""
+
+msgid "SYSTEM"
+msgstr "시스템"
+
+msgid "GAMELIST"
+msgstr ""
 
 msgid "SYSTEMS SORTING"
 msgstr "시스템 정렬"
@@ -738,6 +841,9 @@ msgstr "메뉴 열기 애니메이션"
 
 msgid "SCALE-UP"
 msgstr "스케일-업"
+
+msgid "NONE"
+msgstr "없음"
 
 msgid "LAUNCH SCREEN DURATION"
 msgstr "시작 화면 지속시간"
@@ -936,6 +1042,9 @@ msgstr "A/B 및 X/Y 버튼 전환"
 msgid "IGNORE KEYBOARD INPUT"
 msgstr "키보드 입력 무시"
 
+msgid "INPUT DEVICE NOTIFICATIONS"
+msgstr ""
+
 msgid "CONFIGURE KEYBOARD AND CONTROLLERS"
 msgstr "키보드와 컨트롤러 구성"
 
@@ -1085,6 +1194,9 @@ msgstr "아동용 모드에서 메뉴 사용 가능"
 
 msgid "SHOW QUIT MENU (REBOOT AND POWER OFF ENTRIES)"
 msgstr "종료 메뉴에 리부트와 전원오프 엔트리 보이기"
+
+msgid "GAME IMPORTER"
+msgstr ""
 
 msgid "ORPHANED DATA CLEANUP"
 msgstr "게임파일이 없는 데이터 정리"
@@ -1255,9 +1367,6 @@ msgstr "프로세스중:"
 
 msgid "Last error message:"
 msgstr "마지막 오류 메시지:"
-
-msgid "START"
-msgstr "시작"
 
 msgid "start processing"
 msgstr "프로세스 시작"
@@ -1711,9 +1820,6 @@ msgstr "모든 게임이 필터링되었으며 스크랩할 것이 없습니다"
 msgid "SCRAPING IN PROGRESS"
 msgstr "스크랩 진행중"
 
-msgid "SYSTEM"
-msgstr "시스템"
-
 msgid "REFINE SEARCH"
 msgstr "개선 검색"
 
@@ -1770,6 +1876,14 @@ msgstr "플레이어:"
 
 msgid "NO GAMES FOUND"
 msgstr "게임을 찾을 수 없음"
+
+msgid "API CALLS:"
+msgstr ""
+
+#, c-format
+msgid "%i REMAINING"
+msgid_plural "%i REMAINING"
+msgstr[0] ""
 
 msgid "RETRY"
 msgstr "재시도"
@@ -1870,6 +1984,9 @@ msgstr "배터리 충전 상태 표시"
 msgid "DOWNLOADING THEMES LIST 100%"
 msgstr "테마 리스트 다운로드 중 100%"
 
+msgid "REPOSITORY HAS DIVERGED FROM ORIGIN"
+msgstr ""
+
 msgid "THEME ALREADY UP TO DATE"
 msgstr "테마가 이미 최신 상태입니다"
 
@@ -1941,6 +2058,14 @@ msgstr ""
 
 #, c-format
 msgid ""
+"IT SEEMS AS IF THIS IS A DIVERGED REPOSITORY WHICH USUALLY MEANS THERE IS AN "
+"UPSTREAM MERGE CONFLICT THAT NEEDS TO BE RESOLVED BY THE THEME DEVELOPER. A "
+"FRESH DOWNLOAD IS REQUIRED AND THE OLD THEME DIRECTORY \"%s\" WILL BE "
+"RENAMED TO \"%s_DIVERGED_DISABLED\""
+msgstr ""
+
+#, c-format
+msgid ""
 "THE LOCALLY CLONED REPOSITORY CONTAINS THE WRONG URL WHICH NORMALLY MEANS "
 "THE THEME HAS BEEN MOVED TO A NEW GIT SITE. A FRESH DOWNLOAD IS REQUIRED AND "
 "THE OLD THEME DIRECTORY \"%s\" WILL BE RENAMED TO \"%s_WRONG_URL_DISABLED\""
@@ -1980,6 +2105,9 @@ msgstr "수동 다운로드"
 
 msgid "CORRUPT"
 msgstr "손상됨"
+
+msgid "DIVERGED"
+msgstr ""
 
 msgid "SHALLOW"
 msgstr "쉘로우"
@@ -2087,9 +2215,6 @@ msgstr "박스 후면 커버"
 
 msgid "TITLE SCREEN"
 msgstr "타이틀 스크린"
-
-msgid "FAN ART"
-msgstr "팬아트"
 
 msgid "MIXIMAGE"
 msgstr "믹스이미지"
@@ -2430,33 +2555,23 @@ msgstr ""
 "txt를 참조하세요"
 
 msgid ""
-"NO GAME FILES WERE FOUND, PLEASE PLACE YOUR GAMES IN THE CONFIGURED ROM "
-"DIRECTORY. OPTIONALLY THE ROM DIRECTORY STRUCTURE CAN BE GENERATED WHICH "
-"WILL CREATE A TEXT FILE FOR EACH SYSTEM PROVIDING SOME INFORMATION SUCH AS "
-"THE SUPPORTED FILE EXTENSIONS.\n"
-"THIS IS THE CURRENTLY CONFIGURED ROM DIRECTORY:\n"
+"NO GAME FILES WERE FOUND. EITHER IMPORT SOME GAMES OR PLACE THEM MANUALLY IN "
+"THE CONFIGURED ROM DIRECTORY. OPTIONALLY YOU CAN GENERATE THE ROM DIRECTORY "
+"STRUCTURE WHICH WILL CREATE A TEXT FILE FOR EACH SYSTEM PROVIDING SOME "
+"INFORMATION SUCH AS THE SUPPORTED FILE EXTENSIONS. THIS IS THE CONFIGURED "
+"ROM DIRECTORY:\n"
 msgstr ""
-"게임 파일을 찾을 수 없습니다. 구성된 롬 디렉터리에 게임을 넣으십시오. 선택적"
-"으로 지원되는 파일 확장자와 같은 일부 정보를 제공하는 각 시스템에 대한 텍스"
-"트 파일을 생성하는 롬 디렉터리 구조를 생성할 수 있습니다.\n"
-"현재 구성된 롬 디렉터리는 다음과 같습니다:\n"
 
 msgid ""
-"NO GAME FILES WERE FOUND. EITHER PLACE YOUR GAMES IN THE CURRENTLY "
-"CONFIGURED ROM DIRECTORY OR CHANGE ITS PATH USING THE BUTTON BELOW. "
-"OPTIONALLY THE ROM DIRECTORY STRUCTURE CAN BE GENERATED WHICH WILL CREATE A "
-"TEXT FILE FOR EACH SYSTEM PROVIDING SOME INFORMATION SUCH AS THE SUPPORTED "
-"FILE EXTENSIONS.\n"
-"THIS IS THE CURRENTLY CONFIGURED ROM DIRECTORY:\n"
+"NO GAME FILES WERE FOUND. EITHER IMPORT SOME GAMES OR PLACE THEM MANUALLY IN "
+"THE CURRENTLY CONFIGURED ROM DIRECTORY. YOU CAN ALSO CHANGE THE ROM PATH AND "
+"OPTIONALLY GENERATE THE ROM DIRECTORY STRUCTURE WHICH WILL CREATE A TEXT "
+"FILE FOR EACH SYSTEM PROVIDING SOME INFORMATION SUCH AS THE SUPPORTED FILE "
+"EXTENSIONS. THIS IS THE CONFIGURED ROM DIRECTORY:\n"
 msgstr ""
-"게임 파일을 찾을 수 없습니다. 현재 구성된 롬 디렉터리에 게임을 넣거나 아래 버"
-"튼을 사용하여 경로를 변경하세요. 선택적으로 지원되는 파일 확장자와 같은 일부 "
-"정보를 제공하는 각 시스템에 대한 텍스트 파일을 생성하는 롬 디렉터리 구조를 생"
-"성할 수 있습니다.\n"
-"현재 구성된 롬 디렉터리는 다음과 같습니다:\n"
 
-msgid "CHANGE ROM DIRECTORY"
-msgstr "롬 디렉터리 변경"
+msgid "CHANGE"
+msgstr ""
 
 msgid "ENTER ROM DIRECTORY PATH"
 msgstr "롬 디렉터리 경로 입력"
@@ -2475,9 +2590,6 @@ msgstr "현재 구성된 경로 로드"
 
 msgid "CLEAR (LEAVE BLANK TO RESET TO DEFAULT PATH)"
 msgstr "비우기 (기본 경로로 재설정 위해 공란으로 비우기)"
-
-msgid "CREATE DIRECTORIES"
-msgstr "디렉터리 생성"
 
 msgid ""
 "THIS WILL CREATE DIRECTORIES FOR ALL THE GAME SYSTEMS DEFINED IN es_systems."
@@ -2559,9 +2671,6 @@ msgstr "게임 '%s' 시작 중"
 msgid "menu"
 msgstr "메뉴"
 
-msgid "WORKING..."
-msgstr "실행 중..."
-
 msgctxt "theme"
 msgid "never"
 msgstr "사용안함"
@@ -2615,18 +2724,6 @@ msgstr[0] "%i 선택"
 
 msgid "change value"
 msgstr "값 변경"
-
-msgid "SELECT ALL"
-msgstr "모두 선택"
-
-msgid "select all"
-msgstr "모두 선택"
-
-msgid "SELECT NONE"
-msgstr "선택 해제"
-
-msgid "select none"
-msgstr "선택 해제"
 
 msgid "add half star"
 msgstr "하프스타 추가"

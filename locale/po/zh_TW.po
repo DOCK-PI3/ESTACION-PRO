@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-03-18 18:28+0100\n"
+"POT-Creation-Date: 2025-06-24 18:58+0200\n"
 "PO-Revision-Date: 2025-03-13 22:26+0800\n"
 "Last-Translator: Northwestern Software <info@es-de.org>\n"
 "Language-Team: 繁體中文 <info@es-de.org>\n"
@@ -505,6 +505,103 @@ msgstr "將喜愛的遊戲排序在頂部以進行自定義收藏"
 msgid "DISPLAY STAR MARKINGS FOR CUSTOM COLLECTIONS"
 msgstr "顯示自定義收藏的星形標記"
 
+msgid "IMPORT TO SYSTEM"
+msgstr ""
+
+msgid "NO CONFIGURATION"
+msgstr ""
+
+msgid "REMOVE ENTRIES"
+msgstr ""
+
+msgid "ALL UNSELECTED"
+msgstr ""
+
+msgid "MEDIA TARGET TYPE"
+msgstr ""
+
+msgid "SCREENSHOTS"
+msgstr ""
+
+msgid "TITLE SCREENS"
+msgstr ""
+
+msgid "COVERS"
+msgstr ""
+
+msgid "BACK COVERS"
+msgstr ""
+
+msgid "MARQUEES (WHEELS)"
+msgstr ""
+
+msgid "3D BOXES"
+msgstr ""
+
+msgid "PHYSICAL MEDIA"
+msgstr ""
+
+msgid "FAN ART"
+msgstr "粉絲自制"
+
+msgid "IMPORT MEDIA"
+msgstr ""
+
+msgid "IMPORT BANNERS OR LOGOS IF AVAILABLE"
+msgstr ""
+
+msgid "OVERWRITE MEDIA FILES"
+msgstr ""
+
+msgid "ONLY INCLUDE APPS CATEGORIZED AS GAMES"
+msgstr ""
+
+msgid "START"
+msgstr "開始"
+
+msgid "start importer"
+msgstr ""
+
+msgid "WORKING..."
+msgstr "正在執行……"
+
+msgid "COULDN'T FIND ANYTHING TO IMPORT"
+msgstr ""
+
+#, c-format
+msgid ""
+"YOU HAVE CHOSEN TO REMOVE ALL UNSELECTED ENTRIES, THIS WILL DELETE ALL GAME "
+"FILES WITH THE \"%s\" FILE EXTENSION FROM THE \"%s\" SYSTEM DIRECTORY AND "
+"THEN IMPORT THE ENTRIES YOU SELECT ON THE NEXT SCREEN\n"
+"ARE YOU SURE?"
+msgstr ""
+
+msgid "MAKE YOUR SELECTION"
+msgstr ""
+
+msgid "IMPORT"
+msgstr ""
+
+msgid "import"
+msgstr ""
+
+#, c-format
+msgid "IMPORTED %i ENTRY"
+msgid_plural "IMPORTED %i ENTRIES"
+msgstr[0] ""
+
+msgid "SELECT ALL"
+msgstr "選擇全部"
+
+msgid "select all"
+msgstr "選擇全部"
+
+msgid "SELECT NONE"
+msgstr "取消選擇"
+
+msgid "select none"
+msgstr "取消選擇"
+
 msgid "FILTER GAMELIST"
 msgstr "過濾遊戲列表"
 
@@ -685,11 +782,17 @@ msgstr "扳機鍵"
 msgid "LEFT/RIGHT"
 msgstr "左/右鍵"
 
-msgid "GAMELIST ON STARTUP"
-msgstr "啟動時顯示遊戲列表"
+msgid "SYSTEM ON STARTUP"
+msgstr ""
 
-msgid "NONE"
-msgstr "無"
+msgid "STARTUP VIEW"
+msgstr ""
+
+msgid "SYSTEM"
+msgstr "平台"
+
+msgid "GAMELIST"
+msgstr ""
 
 msgid "SYSTEMS SORTING"
 msgstr "平台分類"
@@ -733,6 +836,9 @@ msgstr "選單展開動畫"
 
 msgid "SCALE-UP"
 msgstr "放大"
+
+msgid "NONE"
+msgstr "無"
 
 msgid "LAUNCH SCREEN DURATION"
 msgstr "啟動畫面時長"
@@ -929,6 +1035,9 @@ msgstr "交換 A/B 和 X/Y 按鍵"
 msgid "IGNORE KEYBOARD INPUT"
 msgstr "忽略鍵盤輸入"
 
+msgid "INPUT DEVICE NOTIFICATIONS"
+msgstr ""
+
 msgid "CONFIGURE KEYBOARD AND CONTROLLERS"
 msgstr "配置鍵盤和控制器"
 
@@ -1078,6 +1187,9 @@ msgstr "在兒童模式下啟用選單"
 
 msgid "SHOW QUIT MENU (REBOOT AND POWER OFF ENTRIES)"
 msgstr "顯示退出選單（包含重啟和關機選項）"
+
+msgid "GAME IMPORTER"
+msgstr ""
 
 msgid "ORPHANED DATA CLEANUP"
 msgstr "資料清理"
@@ -1244,9 +1356,6 @@ msgstr "處理："
 
 msgid "Last error message:"
 msgstr "最後一條錯誤訊息："
-
-msgid "START"
-msgstr "開始"
 
 msgid "start processing"
 msgstr "開始處理"
@@ -1695,9 +1804,6 @@ msgstr "所有遊戲都經過過濾，無需抓取"
 msgid "SCRAPING IN PROGRESS"
 msgstr "抓取正在進行中"
 
-msgid "SYSTEM"
-msgstr "平台"
-
 msgid "REFINE SEARCH"
 msgstr "完善搜尋"
 
@@ -1754,6 +1860,14 @@ msgstr "玩家數："
 
 msgid "NO GAMES FOUND"
 msgstr "未找到遊戲"
+
+msgid "API CALLS:"
+msgstr ""
+
+#, c-format
+msgid "%i REMAINING"
+msgid_plural "%i REMAINING"
+msgstr[0] ""
 
 msgid "RETRY"
 msgstr "重試"
@@ -1854,6 +1968,9 @@ msgstr "顯示電量百分比"
 msgid "DOWNLOADING THEMES LIST 100%"
 msgstr "正在下載主題列表 100%"
 
+msgid "REPOSITORY HAS DIVERGED FROM ORIGIN"
+msgstr ""
+
 msgid "THEME ALREADY UP TO DATE"
 msgstr "主題已是最新版本"
 
@@ -1920,6 +2037,14 @@ msgstr ""
 
 #, c-format
 msgid ""
+"IT SEEMS AS IF THIS IS A DIVERGED REPOSITORY WHICH USUALLY MEANS THERE IS AN "
+"UPSTREAM MERGE CONFLICT THAT NEEDS TO BE RESOLVED BY THE THEME DEVELOPER. A "
+"FRESH DOWNLOAD IS REQUIRED AND THE OLD THEME DIRECTORY \"%s\" WILL BE "
+"RENAMED TO \"%s_DIVERGED_DISABLED\""
+msgstr ""
+
+#, c-format
+msgid ""
 "THE LOCALLY CLONED REPOSITORY CONTAINS THE WRONG URL WHICH NORMALLY MEANS "
 "THE THEME HAS BEEN MOVED TO A NEW GIT SITE. A FRESH DOWNLOAD IS REQUIRED AND "
 "THE OLD THEME DIRECTORY \"%s\" WILL BE RENAMED TO \"%s_WRONG_URL_DISABLED\""
@@ -1957,6 +2082,9 @@ msgstr "手冊下載"
 
 msgid "CORRUPT"
 msgstr "損壞"
+
+msgid "DIVERGED"
+msgstr ""
 
 msgid "SHALLOW"
 msgstr "淺"
@@ -2061,9 +2189,6 @@ msgstr "盒裝後蓋"
 
 msgid "TITLE SCREEN"
 msgstr "標題"
-
-msgid "FAN ART"
-msgstr "粉絲自制"
 
 msgid "MIXIMAGE"
 msgstr "混合影象"
@@ -2400,31 +2525,23 @@ msgstr ""
 "件 es_log.txt 以獲取更多資訊"
 
 msgid ""
-"NO GAME FILES WERE FOUND, PLEASE PLACE YOUR GAMES IN THE CONFIGURED ROM "
-"DIRECTORY. OPTIONALLY THE ROM DIRECTORY STRUCTURE CAN BE GENERATED WHICH "
-"WILL CREATE A TEXT FILE FOR EACH SYSTEM PROVIDING SOME INFORMATION SUCH AS "
-"THE SUPPORTED FILE EXTENSIONS.\n"
-"THIS IS THE CURRENTLY CONFIGURED ROM DIRECTORY:\n"
+"NO GAME FILES WERE FOUND. EITHER IMPORT SOME GAMES OR PLACE THEM MANUALLY IN "
+"THE CONFIGURED ROM DIRECTORY. OPTIONALLY YOU CAN GENERATE THE ROM DIRECTORY "
+"STRUCTURE WHICH WILL CREATE A TEXT FILE FOR EACH SYSTEM PROVIDING SOME "
+"INFORMATION SUCH AS THE SUPPORTED FILE EXTENSIONS. THIS IS THE CONFIGURED "
+"ROM DIRECTORY:\n"
 msgstr ""
-"未找到遊戲檔案，請將您的遊戲放在已配置的 ROM 目錄中。可選擇生成 ROM 目錄結"
-"構，這將為每個系統建立一個文字檔案，提供一些資訊，例如支援的副檔名。\n"
-"這是當前配置的 ROM 目錄：\n"
 
 msgid ""
-"NO GAME FILES WERE FOUND. EITHER PLACE YOUR GAMES IN THE CURRENTLY "
-"CONFIGURED ROM DIRECTORY OR CHANGE ITS PATH USING THE BUTTON BELOW. "
-"OPTIONALLY THE ROM DIRECTORY STRUCTURE CAN BE GENERATED WHICH WILL CREATE A "
-"TEXT FILE FOR EACH SYSTEM PROVIDING SOME INFORMATION SUCH AS THE SUPPORTED "
-"FILE EXTENSIONS.\n"
-"THIS IS THE CURRENTLY CONFIGURED ROM DIRECTORY:\n"
+"NO GAME FILES WERE FOUND. EITHER IMPORT SOME GAMES OR PLACE THEM MANUALLY IN "
+"THE CURRENTLY CONFIGURED ROM DIRECTORY. YOU CAN ALSO CHANGE THE ROM PATH AND "
+"OPTIONALLY GENERATE THE ROM DIRECTORY STRUCTURE WHICH WILL CREATE A TEXT "
+"FILE FOR EACH SYSTEM PROVIDING SOME INFORMATION SUCH AS THE SUPPORTED FILE "
+"EXTENSIONS. THIS IS THE CONFIGURED ROM DIRECTORY:\n"
 msgstr ""
-"未找到遊戲檔案。請將您的遊戲放入當前配置的 ROM 目錄中，或使用下面的按鍵更改其"
-"路徑。也可以選擇生成 ROM 目錄結構，這將為每個系統建立一個文字檔案，提供一些信"
-"息，例如支援的副檔名。\n"
-"這是當前配置的 ROM 目錄：\n"
 
-msgid "CHANGE ROM DIRECTORY"
-msgstr "更改 ROM 目錄"
+msgid "CHANGE"
+msgstr ""
 
 msgid "ENTER ROM DIRECTORY PATH"
 msgstr "輸入 ROM 目錄路徑"
@@ -2441,9 +2558,6 @@ msgstr "載入當前配置的路徑"
 
 msgid "CLEAR (LEAVE BLANK TO RESET TO DEFAULT PATH)"
 msgstr "清除（留空則重置為預設路徑）"
-
-msgid "CREATE DIRECTORIES"
-msgstr "建立目錄"
 
 msgid ""
 "THIS WILL CREATE DIRECTORIES FOR ALL THE GAME SYSTEMS DEFINED IN es_systems."
@@ -2516,9 +2630,6 @@ msgstr "正在啟動遊戲 '%s'"
 msgid "menu"
 msgstr "選單"
 
-msgid "WORKING..."
-msgstr "正在執行……"
-
 msgctxt "theme"
 msgid "never"
 msgstr "從不"
@@ -2572,18 +2683,6 @@ msgstr[0] "已選擇 %i"
 
 msgid "change value"
 msgstr "更改數值"
-
-msgid "SELECT ALL"
-msgstr "選擇全部"
-
-msgid "select all"
-msgstr "選擇全部"
-
-msgid "SELECT NONE"
-msgstr "取消選擇"
-
-msgid "select none"
-msgstr "取消選擇"
 
 msgid "add half star"
 msgstr "加半顆星"
