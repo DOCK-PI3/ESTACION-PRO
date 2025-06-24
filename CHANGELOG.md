@@ -8,7 +8,7 @@
 
 ### Detailed list of changes
 
-* Added a fully configurable game importer tool
+* Added a fully configurable cross-platform game importer tool
 * Renamed the "Gamelist on startup" setting to "System on startup" and added a new "Startup view" option to control where to go on application startup
 * The scraper API call statistics is now shown in the interface when running the multi-scraper in automatic mode
 * Added a setting for whether to display notification popups when plugging in and removing input devices (like controllers and keyboards)

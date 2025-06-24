@@ -1020,6 +1020,8 @@ On Android you can also select whether to import media from the actual app packa
 
 Once the import has finished a popup notification will be displayed telling you how many games were imported. You can proceed to import games for additional systems if you want to, or you can leave the game importer in which case ES-DE will reload, populating the systems with your newly imported games or applications.
 
+Note that for the desktop operating systems, the import rules included in the bundled configuration use shortcut files, so to for example import your Steam games into ES-DE you first need to create such shortcut files from within Steam.
+
 ### Single game file installation
 
 Let's start with the simple scenario of a single ROM file per game, which is the case for the majority of platforms. For this example we're setting up ES-DE to play Nintendo Entertainment System games.
