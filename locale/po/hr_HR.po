@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-06-24 18:58+0200\n"
-"PO-Revision-Date: 2025-05-11 14:43+0200\n"
+"POT-Creation-Date: 2025-06-25 17:10+0200\n"
+"PO-Revision-Date: 2025-06-24 23:48+0200\n"
 "Last-Translator: SecularSteve <info@es-de.org>\n"
 "Language-Team: Croatian (Croatia) <info@es-de.org>\n"
 "Language: hr_HR\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.6\n"
 
 msgid "Network error (status:"
 msgstr "Mrežna pogreška (status:"
@@ -532,67 +532,67 @@ msgid "DISPLAY STAR MARKINGS FOR CUSTOM COLLECTIONS"
 msgstr "PRIKAŽITE ZVJEZDNE OZNAKE ZA PRILAGOĐENE KOLEKCIJE"
 
 msgid "IMPORT TO SYSTEM"
-msgstr ""
+msgstr "UVEZI U SUSTAV"
 
 msgid "NO CONFIGURATION"
-msgstr ""
+msgstr "NEMA KONFIGURACIJE"
 
 msgid "REMOVE ENTRIES"
-msgstr ""
+msgstr "UKLONITE UNOS"
 
 msgid "ALL UNSELECTED"
-msgstr ""
+msgstr "SVE NEODABRANO"
 
 msgid "MEDIA TARGET TYPE"
-msgstr ""
+msgstr "VRSTA CILJNE MEDIJSKE GRUPE"
 
 msgid "SCREENSHOTS"
-msgstr ""
+msgstr "SNIMKE ZASLONA"
 
 msgid "TITLE SCREENS"
-msgstr ""
+msgstr "POČETNI ZASLONI"
 
 msgid "COVERS"
-msgstr ""
+msgstr "NASLOVNICE"
 
 msgid "BACK COVERS"
-msgstr ""
+msgstr "IZA-NASLOVNICE"
 
 msgid "MARQUEES (WHEELS)"
-msgstr ""
+msgstr "ŠATORI (KOTAČI)"
 
 msgid "3D BOXES"
-msgstr ""
+msgstr "3D KUTIJE"
 
 msgid "PHYSICAL MEDIA"
-msgstr ""
+msgstr "FIZIČKI MEDIJ"
 
 msgid "FAN ART"
 msgstr "UMJETNOST OBOŽAVATELJA"
 
 msgid "IMPORT MEDIA"
-msgstr ""
+msgstr "UVEZITE MEDIJ"
 
 msgid "IMPORT BANNERS OR LOGOS IF AVAILABLE"
-msgstr ""
+msgstr "UVEZITE BARJAK ILI LOGO AKO SU DOSTUPNI"
 
 msgid "OVERWRITE MEDIA FILES"
-msgstr ""
+msgstr "PREPIŠITE MEDIJSKE DATOTEKE"
 
 msgid "ONLY INCLUDE APPS CATEGORIZED AS GAMES"
-msgstr ""
+msgstr "UKLJUČITE SAMO APLIKACIJE KATEGORIZIRANE KAO IGRE"
 
 msgid "START"
 msgstr "START"
 
 msgid "start importer"
-msgstr ""
+msgstr "pokrenite uvoznik"
 
 msgid "WORKING..."
 msgstr "RADI..."
 
 msgid "COULDN'T FIND ANYTHING TO IMPORT"
-msgstr ""
+msgstr "NIJE SE MOGLO PRONAĆI NIŠTA ZA UVOZ"
 
 #, c-format
 msgid ""
@@ -601,22 +601,26 @@ msgid ""
 "THEN IMPORT THE ENTRIES YOU SELECT ON THE NEXT SCREEN\n"
 "ARE YOU SURE?"
 msgstr ""
+"ODABRALI STE UKLONJITI SVE NEODABRANE UNOSE. OVIM ĆE SE IZBRISATI SVE "
+"DATOTEKE IGRE S PRODUŽETKOM \"%s\" IZ SISTEMSKOG IMENIKA \"%s\", A ZATIM ĆE "
+"SE UVESTI UNOSI KOJE ODABERETE NA SLJEDEĆEM ZASLONU.\n"
+"JESTE LI SIGURNI?"
 
 msgid "MAKE YOUR SELECTION"
-msgstr ""
+msgstr "NAPRAVITE SVOJ ODABIR"
 
 msgid "IMPORT"
-msgstr ""
+msgstr "UVEZITE"
 
 msgid "import"
-msgstr ""
+msgstr "uvezite"
 
 #, c-format
 msgid "IMPORTED %i ENTRY"
 msgid_plural "IMPORTED %i ENTRIES"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "UVEZEN %i UNOS"
+msgstr[1] "UVEZENA %i UNOSA"
+msgstr[2] "UVEZENO %i UNOSA"
 
 msgid "SELECT ALL"
 msgstr "ODABERI SVE"
@@ -811,16 +815,16 @@ msgid "LEFT/RIGHT"
 msgstr "LIJEVO/DESNO"
 
 msgid "SYSTEM ON STARTUP"
-msgstr ""
+msgstr "SUSTAV PRI POKRETANJU"
 
 msgid "STARTUP VIEW"
-msgstr ""
+msgstr "POČETNI PRIKAZ"
 
 msgid "SYSTEM"
 msgstr "SUSTAV"
 
 msgid "GAMELIST"
-msgstr ""
+msgstr "LISTA IGARA"
 
 msgid "SYSTEMS SORTING"
 msgstr "SORTIRANJE SUSTAVA"
@@ -1068,7 +1072,7 @@ msgid "IGNORE KEYBOARD INPUT"
 msgstr "IGNORIRAJ UNOS S TIPKOVNICE"
 
 msgid "INPUT DEVICE NOTIFICATIONS"
-msgstr ""
+msgstr "OBAVIJESTI ULAZNIH UREĐAJA"
 
 msgid "CONFIGURE KEYBOARD AND CONTROLLERS"
 msgstr "KONFIGURIRAJTE TIPKOVNICU I KONTROLERE"
@@ -1221,7 +1225,7 @@ msgid "SHOW QUIT MENU (REBOOT AND POWER OFF ENTRIES)"
 msgstr "PRIKAŽI IZBORNIK ZA IZLAZ (UNOS ZA PONOVNO POKRETANJE I ISKLJUČIVANJE)"
 
 msgid "GAME IMPORTER"
-msgstr ""
+msgstr "UVOZNIK IGARA"
 
 msgid "ORPHANED DATA CLEANUP"
 msgstr "ČIŠĆENJE NASIROTIH PODATAKA"
@@ -1929,17 +1933,17 @@ msgid "NO GAMES FOUND"
 msgstr "NISU PRONAĐENE IGRE"
 
 msgid "API CALLS:"
-msgstr ""
+msgstr "API POZIVI:"
 
 #, c-format
 msgid "%i REMAINING"
 msgid_plural "%i REMAINING"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%i PREOSTALA"
+msgstr[1] "%i PREOSTALE"
+msgstr[2] "%i PREOSTALO"
 
 msgid "RETRY"
-msgstr "POKUŠAJ PONOVO"
+msgstr "POKUŠAJ PONOVNO"
 
 msgid "Error downloading thumbnail:"
 msgstr "Greška pri preuzimanju minijature:"
@@ -2038,7 +2042,7 @@ msgid "DOWNLOADING THEMES LIST 100%"
 msgstr "PREUZIMANJE POPISA TEMA 100%"
 
 msgid "REPOSITORY HAS DIVERGED FROM ORIGIN"
-msgstr ""
+msgstr "SKLADIŠTE SE DIVERGIRALO OD POČETNOG KUĆIŠTA"
 
 msgid "THEME ALREADY UP TO DATE"
 msgstr "TEMA JE VEĆ AŽURIRANA"
@@ -2119,6 +2123,10 @@ msgid ""
 "FRESH DOWNLOAD IS REQUIRED AND THE OLD THEME DIRECTORY \"%s\" WILL BE "
 "RENAMED TO \"%s_DIVERGED_DISABLED\""
 msgstr ""
+"OVO IZGLEDA KAO DIVERGIRANI REPOZITORIJ ŠTO OBIČNO ZNAČI DA POSTOJI SUKOB "
+"PRI SPAJANJU UZVODNOG PROGRAMA KOJI RAZVOJ TEME TREBA RIJEŠITI. POTREBNO JE "
+"NOVO PREUZIMANJE, A STARI DIREKTORIJ TEME \"%s\" BIT ĆE PREIMENOVAN U "
+"\"%s_DIVERGED_DISABLED\""
 
 #, c-format
 msgid ""
@@ -2163,7 +2171,7 @@ msgid "CORRUPT"
 msgstr "KORUPCIJA"
 
 msgid "DIVERGED"
-msgstr ""
+msgstr "DIVERGIRANO"
 
 msgid "SHALLOW"
 msgstr "PLITKO"
@@ -2628,6 +2636,11 @@ msgid ""
 "INFORMATION SUCH AS THE SUPPORTED FILE EXTENSIONS. THIS IS THE CONFIGURED "
 "ROM DIRECTORY:\n"
 msgstr ""
+"NISU PRONAĐENE DATOTEKE IGARA. UVEZITE NEKE IGRE ILI IH RUČNO STAVITE U "
+"KONFIGURIRANI ROM DIREKTOR. PO ŽELJI MOŽETE GENERIRATI STRUKTURU ROM "
+"DIREKTORIJA KOJA ĆE IZGRADITI TEKSTUALNU DATOTEKU ZA SVAKI SUSTAV KOJA ĆE "
+"PRUŽITI NEKE INFORMACIJE KAO ŠTO SU PODRŽANI PRODUŽECI DATOTEKA. OVO JE "
+"KONFIGURIRANI ROM DIREKTORIJ:\n"
 
 msgid ""
 "NO GAME FILES WERE FOUND. EITHER IMPORT SOME GAMES OR PLACE THEM MANUALLY IN "
@@ -2636,9 +2649,14 @@ msgid ""
 "FILE FOR EACH SYSTEM PROVIDING SOME INFORMATION SUCH AS THE SUPPORTED FILE "
 "EXTENSIONS. THIS IS THE CONFIGURED ROM DIRECTORY:\n"
 msgstr ""
+"NISU PRONAĐENE DATOTEKE IGARA. UVEZITE NEKE IGRE ILI IH RUČNO POSTAVITE U "
+"SVOJ TRENUTNO KONFIGURIRANI ROM DIREKTORIJ. TAKOĐER MOŽETE PROMIJENITI PUT "
+"ROM-A I OPCIONALNO GENERIRATI STRUKTURU ROM DIREKTORIJA KOJA ĆE IZGRADITI "
+"TEKSTUALNU DATOTEKU ZA SVAKI SUSTAV KOJA ĆE PRUŽITI NEKE INFORMACIJE KAO ŠTO "
+"SU PODRŽANI PRODUŽECI DATOTEKA. OVO JE KONFIGURIRANI ROM DIREKTORIJ:\n"
 
 msgid "CHANGE"
-msgstr ""
+msgstr "PROMIJENI"
 
 msgid "ENTER ROM DIRECTORY PATH"
 msgstr "UNESITE PUT ROM DIREKTORA"
