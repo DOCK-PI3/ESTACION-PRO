@@ -1949,25 +1949,28 @@ There are four import rules available, `androidpackage`, `file`, `desktopshortcu
 
 You can only define one rule per system, if you attempt to add more than one then the latest entry will simply overwrite any previous rules.
 
+All rule tags have two mandatory attributes, _name_ and _type_. The name attribute can be set to any value and is primarily intended for future use.
+
 `androidpackage` -  This rule which is only available on Android has a mandatory _extension_ tag which controls the file extension to use when importing the native apps and games. That is the only configuration necessary to apply this rule.
 
 Here's an example:
 
 ```xml
+<?xml version="1.0"?>
 <!-- This is the ES-DE import rules configuration file for Android -->
 <ruleList>
     <system name="androidapps">
-        <rule type="androidpackage">
+        <rule name="Android Package" type="androidpackage">
             <extension>.app</extension>
         </rule>
     </system>
     <system name="androidgames">
-        <rule type="androidpackage">
+        <rule name="Android Package" type="androidpackage">
             <extension>.app</extension>
         </rule>
     </system>
     <system name="emulators">
-        <rule type="androidpackage">
+        <rule name="Android Package" type="androidpackage">
             <extension>.app</extension>
         </rule>
     </system>
@@ -1983,14 +1986,14 @@ Here's an example:
 <!-- This is the ES-DE import rules configuration file for Windows -->
 <ruleList>
     <system name="desktop">
-        <rule type="file">
+        <rule name="Shortcut File" type="file">
             <extension>.lnk</extension>
             <directory recursive="true">C:\ProgramData\Microsoft\Windows\Start Menu\Programs</directory>
             <directory recursive="true">~\AppData\Roaming\Microsoft\Windows\Start Menu\Programs</directory>
         </rule>
     </system>
     <system name="emulators">
-        <rule type="file">
+        <rule name="Shortcut File" type="file">
             <extension>.lnk</extension>
             <directory recursive="true">C:\ProgramData\Microsoft\Windows\Start Menu\Programs</directory>
             <directory recursive="true">~\AppData\Roaming\Microsoft\Windows\Start Menu\Programs</directory>
@@ -1999,13 +2002,13 @@ Here's an example:
         </rule>
     </system>
     <system name="steam">
-        <rule type="file">
+        <rule name="Steam URL File" type="file">
             <extension>.url</extension>
             <directory recursive="false">~\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Steam</directory>
         </rule>
     </system>
     <system name="windows">
-        <rule type="file">
+        <rule name="Shortcut File" type="file">
             <extension>.lnk</extension>
             <directory recursive="true">C:\ProgramData\Microsoft\Windows\Start Menu\Programs</directory>
             <directory recursive="true">~\AppData\Roaming\Microsoft\Windows\Start Menu\Programs</directory>
@@ -2014,7 +2017,7 @@ Here's an example:
 </ruleList>
 ```
 
-`desktopshortcut` - This rule is available on Linux and FreeBSD and only has a _directory_ tag with a mandatory _gamesOnly_ attribute that controls whether to only include entries categorized as games. The way this rule works is that it searches for files with the .desktop extension in the defined directories and will then parse these files to retrieve the name of the game or application, the application category and whether the NoDisplay key has been set. The name parsing is important as these files can have cryptic names like _org.kde.gwenview.desktop_ and ES-DE will instead use the actual name defined inside the file. The NoDisplay key is set for entries that should not be shown in the operating system menus, and ES-DE will as such skip these files during the import process.
+`desktopshortcut` - This rule is available on Linux and FreeBSD and only has a _directory_ tag with two optional attributes, _gamesOnly_ and _execFilter_. The way this rule works is that it searches for files with the .desktop extension in the defined directories and will then parse these files to retrieve the name of the game or application as well as the Exec key, the application category and whether the NoDisplay key has been set. The name parsing is important as these files can have cryptic names like _org.kde.gwenview.desktop_ and ES-DE will instead use the actual name defined inside the file. The _gamesOnly_ attribute controls whether to only include entries categorized as games. The _execFilter_ attribute can be used to match against the content of the _Exec_ key inside the shortcut file to only include files where there's a match. Note that this matching is case-insensitive. Finally the NoDisplay key is set for entries that should not be shown in the operating system menus, and ES-DE will as such skip these files during the import process.
 
 Here's an example:
 
@@ -2023,26 +2026,33 @@ Here's an example:
 <!-- This is the ES-DE import rules configuration file for Linux -->
 <ruleList>
     <system name="desktop">
-        <rule type="desktopshortcut">
-            <directory gamesOnly="false">/usr/share/applications</directory>
-            <directory gamesOnly="false">/usr/local/share/applications</directory>
-            <directory gamesOnly="false">~/.local/share/applications</directory>
-            <directory gamesOnly="false">/var/lib/flatpak/exports/share/applications</directory>
-            <directory gamesOnly="false">/var/lib/snapd/desktop/applications</directory>
+        <rule name="Desktop Shortcut" type="desktopshortcut">
+            <directory>/usr/share/applications</directory>
+            <directory>/usr/local/share/applications</directory>
+            <directory>~/.local/share/applications</directory>
+            <directory>/var/lib/flatpak/exports/share/applications</directory>
+            <directory>/var/lib/snapd/desktop/applications</directory>
         </rule>
     </system>
     <system name="emulators">
-        <rule type="desktopshortcut">
-            <directory gamesOnly="false">/usr/share/applications</directory>
-            <directory gamesOnly="false">/usr/local/share/applications</directory>
-            <directory gamesOnly="false">~/.local/share/applications</directory>
-            <directory gamesOnly="false">/var/lib/flatpak/exports/share/applications</directory>
-            <directory gamesOnly="false">/var/lib/snapd/desktop/applications</directory>
+        <rule name="Desktop Shortcut" type="desktopshortcut">
+            <directory>/usr/share/applications</directory>
+            <directory>/usr/local/share/applications</directory>
+            <directory>~/.local/share/applications</directory>
+            <directory>/var/lib/flatpak/exports/share/applications</directory>
+            <directory>/var/lib/snapd/desktop/applications</directory>
+        </rule>
+    </system>
+    <system name="lutris">
+        <rule name="Desktop Shortcut" type="desktopshortcut">
+            <directory execFilter="lutris:rungameid">~/.local/share/applications</directory>
+            <directory execFilter="lutris:rungameid">~/Desktop</directory>
         </rule>
     </system>
     <system name="steam">
-        <rule type="desktopshortcut">
-            <directory gamesOnly="true">~/.local/share/applications</directory>
+        <rule name="Desktop Shortcut" type="desktopshortcut">
+            <directory execFilter="steam://rungameid">~/.local/share/applications</directory>
+            <directory execFilter="steam://rungameid">~/Desktop</directory>
         </rule>
     </system>
 </ruleList>
@@ -2057,12 +2067,12 @@ Here's an example:
 <!-- This is the ES-DE import rules configuration file for macOS -->
 <ruleList>
     <system name="desktop">
-        <rule type="macosbundle">
+        <rule name="macOS Bundle" type="macosbundle">
             <directory recursive="true">/Applications</directory>
         </rule>
     </system>
     <system name="emulators">
-        <rule type="macosbundle">
+        <rule name="macOS Bundle" type="macosbundle">
             <directory recursive="true">/Applications</directory>
         </rule>
     </system>
