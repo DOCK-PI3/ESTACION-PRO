@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-06-24 18:58+0200\n"
-"PO-Revision-Date: 2025-03-05 00:20+0200\n"
+"POT-Creation-Date: 2025-06-25 17:06+0200\n"
+"PO-Revision-Date: 2025-06-25 13:21+0300\n"
 "Last-Translator: Mihai Vasiliu <mihai.vasiliu.93@gmail.com>\n"
 "Language-Team: Română <info@es-de.org>\n"
 "Language: ro_RO\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 
 msgid "Network error (status:"
 msgstr "Eroare rețea (stare:"
@@ -527,67 +527,67 @@ msgid "DISPLAY STAR MARKINGS FOR CUSTOM COLLECTIONS"
 msgstr "AFIȘEAZĂ O STEA PENTRU COLECȚIILE PERSONALIZATE"
 
 msgid "IMPORT TO SYSTEM"
-msgstr ""
+msgstr "IMPORTĂ ÎN SISTEMUL"
 
 msgid "NO CONFIGURATION"
-msgstr ""
+msgstr "NICIO CONFIGURAȚIE"
 
 msgid "REMOVE ENTRIES"
-msgstr ""
+msgstr "ELIMINĂ INTRĂRILE"
 
 msgid "ALL UNSELECTED"
-msgstr ""
+msgstr "TOATE DESELECTATE"
 
 msgid "MEDIA TARGET TYPE"
-msgstr ""
+msgstr "TIP MEDIA"
 
 msgid "SCREENSHOTS"
-msgstr ""
+msgstr "CAPTURI DE ECRAN"
 
 msgid "TITLE SCREENS"
-msgstr ""
+msgstr "ECRANE TITLU"
 
 msgid "COVERS"
-msgstr ""
+msgstr "COPERȚI"
 
 msgid "BACK COVERS"
-msgstr ""
+msgstr "SPATE COPERȚI"
 
 msgid "MARQUEES (WHEELS)"
-msgstr ""
+msgstr "BANNERE"
 
 msgid "3D BOXES"
-msgstr ""
+msgstr "CUTII 3D"
 
 msgid "PHYSICAL MEDIA"
-msgstr ""
+msgstr "MEDIU FIZIC"
 
 msgid "FAN ART"
 msgstr "FAN ART"
 
 msgid "IMPORT MEDIA"
-msgstr ""
+msgstr "IMPORTĂ MEDIA"
 
 msgid "IMPORT BANNERS OR LOGOS IF AVAILABLE"
-msgstr ""
+msgstr "IMPORTĂ BANNERE SAU LOGOURI DACĂ EXISTĂ"
 
 msgid "OVERWRITE MEDIA FILES"
-msgstr ""
+msgstr "SUPRASCRIE FIȘIERELE MEDIA"
 
 msgid "ONLY INCLUDE APPS CATEGORIZED AS GAMES"
-msgstr ""
+msgstr "INCLUDE DOAR APLICAȚIILE CLASIFICATE CA JOCURI"
 
 msgid "START"
 msgstr "START"
 
 msgid "start importer"
-msgstr ""
+msgstr "începe importarea"
 
 msgid "WORKING..."
 msgstr "SE LUCREAZĂ..."
 
 msgid "COULDN'T FIND ANYTHING TO IMPORT"
-msgstr ""
+msgstr "NU S-A PUTUT GĂSI NIMIC DE IMPORTAT"
 
 #, c-format
 msgid ""
@@ -596,22 +596,26 @@ msgid ""
 "THEN IMPORT THE ENTRIES YOU SELECT ON THE NEXT SCREEN\n"
 "ARE YOU SURE?"
 msgstr ""
+"AI ALES SĂ ELIMINI TOATE INTRĂRILE DESELECTATE. ACEST LUCRU VA ȘTERGE TOATE "
+"FIȘIERELE JOCURILOR CU EXTENSIA \"%s\" DIN DOSARUL DE SISTEM \"%s\" ȘI APOI "
+"SĂ IMPORTE INTRĂRILE PE CARE LE VEI SELECTA PE ECRANUL URMĂTOR\n"
+"EȘTI SIGUR?"
 
 msgid "MAKE YOUR SELECTION"
-msgstr ""
+msgstr "SELECTEAZĂ"
 
 msgid "IMPORT"
-msgstr ""
+msgstr "IMPORTĂ"
 
 msgid "import"
-msgstr ""
+msgstr "importă"
 
 #, c-format
 msgid "IMPORTED %i ENTRY"
 msgid_plural "IMPORTED %i ENTRIES"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "S-A IMPORTAT %i INTRARE"
+msgstr[1] "S-AU IMPORTAT %i INTRĂRI"
+msgstr[2] "S-AU IMPORTAT %i DE INTRĂRI"
 
 msgid "SELECT ALL"
 msgstr "SELECTEAZĂ TOT"
@@ -806,16 +810,16 @@ msgid "LEFT/RIGHT"
 msgstr "STÂNGA/DREAPTA"
 
 msgid "SYSTEM ON STARTUP"
-msgstr ""
+msgstr "SISTEM LA PORNIRE"
 
 msgid "STARTUP VIEW"
-msgstr ""
+msgstr "VIZUALIZARE PORNIRE"
 
 msgid "SYSTEM"
 msgstr "SISTEM"
 
 msgid "GAMELIST"
-msgstr ""
+msgstr "LISTA DE JOCURI"
 
 msgid "SYSTEMS SORTING"
 msgstr "SORTARE SISTEME"
@@ -1062,7 +1066,7 @@ msgid "IGNORE KEYBOARD INPUT"
 msgstr "IGNORĂ INTRAREA DE LA TASTATURĂ"
 
 msgid "INPUT DEVICE NOTIFICATIONS"
-msgstr ""
+msgstr "NOTIFICĂRI DISPOZITIV DE INTRARE"
 
 msgid "CONFIGURE KEYBOARD AND CONTROLLERS"
 msgstr "CONFIGUREAZĂ TASTATURA ȘI CONTROLERELE"
@@ -1216,7 +1220,7 @@ msgid "SHOW QUIT MENU (REBOOT AND POWER OFF ENTRIES)"
 msgstr "AFIȘEAZĂ MENIU IEȘIRE (REPORNIRE ȘI ÎNCHIDERE)"
 
 msgid "GAME IMPORTER"
-msgstr ""
+msgstr "IMPORTATOR JOCURI"
 
 msgid "ORPHANED DATA CLEANUP"
 msgstr "CURĂȚARE DATE INVALIDE"
@@ -1919,14 +1923,14 @@ msgid "NO GAMES FOUND"
 msgstr "NU S-AU GĂSIT JOCURI"
 
 msgid "API CALLS:"
-msgstr ""
+msgstr "APELURI API:"
 
 #, c-format
 msgid "%i REMAINING"
 msgid_plural "%i REMAINING"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%i RĂMAS"
+msgstr[1] "%i RĂMASE"
+msgstr[2] "%i RĂMASE"
 
 msgid "RETRY"
 msgstr "REÎNCEARCĂ"
@@ -2028,7 +2032,7 @@ msgid "DOWNLOADING THEMES LIST 100%"
 msgstr "SE DESCARCĂ LISTA DE TEME 100%"
 
 msgid "REPOSITORY HAS DIVERGED FROM ORIGIN"
-msgstr ""
+msgstr "REPOSITORY-UL S-A ÎNDEPĂRTAT DE LA ORIGINE"
 
 msgid "THEME ALREADY UP TO DATE"
 msgstr "TEMA ESTE DEJA LA ZI"
@@ -2109,6 +2113,10 @@ msgid ""
 "FRESH DOWNLOAD IS REQUIRED AND THE OLD THEME DIRECTORY \"%s\" WILL BE "
 "RENAMED TO \"%s_DIVERGED_DISABLED\""
 msgstr ""
+"SE PARE CĂ ACEST REPOSITORY S-A ÎNDEPĂRTAT DE ORIGINE, CEEA CE DE REGULĂ "
+"ÎNSEAMNĂ CĂ EXISTĂ UN CONFLICT CARE TREBUIE SĂ FIE REZOLVAT DE DEZVOLTATORUL "
+"TEMEI. O DESCĂRCARE PROASPĂTĂ ESTE NECESARĂ ȘI VECHIUL DOSAR AL TEMEI „%s” "
+"VA FI REDENUMIT ÎN „%s_DIVERGED_DISABLED”"
 
 #, c-format
 msgid ""
@@ -2155,7 +2163,7 @@ msgid "CORRUPT"
 msgstr "CORUPTĂ"
 
 msgid "DIVERGED"
-msgstr ""
+msgstr "ÎNDEPĂRTAT"
 
 msgid "SHALLOW"
 msgstr "SUPERFICIALĂ"
@@ -2627,6 +2635,11 @@ msgid ""
 "INFORMATION SUCH AS THE SUPPORTED FILE EXTENSIONS. THIS IS THE CONFIGURED "
 "ROM DIRECTORY:\n"
 msgstr ""
+"NU S-AU GĂSIT FIȘIERE DE JOCURI. FIE IMPORTĂ NIȘTE JOCURI, FIE PLASEAZĂ-LE "
+"MANUAL ÎN DOSARUL DE ROM-URI CONFIGURAT. OPȚIONAL POȚI ȘI GENERA STRUCTURA "
+"DE DOSARE DE ROM-URI CARE VA CREA ȘI UN FIȘIER TEXT PENTRU FIECARE SISTEM CU "
+"INFORMAȚII UTILE CUM AR FI EXTENSIILE DE FIȘIERE SUPORTATE. ACESTA ESTE "
+"DOSARUL DE ROM-URI CONFIGURAT:\n"
 
 msgid ""
 "NO GAME FILES WERE FOUND. EITHER IMPORT SOME GAMES OR PLACE THEM MANUALLY IN "
@@ -2635,9 +2648,15 @@ msgid ""
 "FILE FOR EACH SYSTEM PROVIDING SOME INFORMATION SUCH AS THE SUPPORTED FILE "
 "EXTENSIONS. THIS IS THE CONFIGURED ROM DIRECTORY:\n"
 msgstr ""
+"NU S-AU GĂSIT FIȘIERE DE JOCURI. FIE IMPORTĂ NIȘTE JOCURI, FIE PLASEAZĂ-LE "
+"MANUAL ÎN DOSARUL DE ROM-URI CONFIGURAT. POȚI DE ASEMENEA SĂ SCHIMBI CALEA "
+"DOSARULUI DE ROM-URI ȘI OPȚIONAL POȚI GENERA ȘI STRUCTURA DE DOSARE DE ROM-"
+"URI CARE VA CREA ȘI UN FIȘIER TEXT PENTRU FIECARE SISTEM CU INFORMAȚII UTILE "
+"CUM AR FI EXTENSIILE DE FIȘIERE SUPORTATE. ACESTA ESTE DOSARUL DE ROM-URI "
+"CONFIGURAT:\n"
 
 msgid "CHANGE"
-msgstr ""
+msgstr "SCHIMBĂ"
 
 msgid "ENTER ROM DIRECTORY PATH"
 msgstr "INTRODU LOCAȚIA DOSARULUI DE ROM-URI"
