@@ -19,6 +19,12 @@
             <directory>/var/lib/snapd/desktop/applications</directory>
         </rule>
     </system>
+    <system name="lutris">
+        <rule name="Desktop Shortcut" type="desktopshortcut">
+            <directory execFilter="lutris:rungameid">~/.local/share/applications</directory>
+            <directory execFilter="lutris:rungameid">~/Desktop</directory>
+        </rule>
+    </system>
     <system name="steam">
         <rule name="Desktop Shortcut" type="desktopshortcut">
             <directory execFilter="steam://rungameid">~/.local/share/applications</directory>
