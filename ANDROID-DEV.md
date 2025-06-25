@@ -675,6 +675,7 @@ This is clearly not a complete list of Android devices, but rather those we know
 | Oppo         | Find X5 Pro             | 14              | Yes       | None                |                            |
 | Oppo         | Reno5                   | 12              | Yes       | None                |                            |
 | Orange Pi    | Pi 5                    | 12 (TV)         | Yes       | None                |                            |
+| Orange Pi    | Pi Zero3                | 12              | Yes       | None                |                            |
 | Powkiddy     | RGB (RK3566) series     | GammaOS 13 TV   | Yes       | None                | Limited RAM capacity for this device makes it unsuitable for demanding themes and large game collections |
 | Raspberry    | Pi 4/400                | 13, 14          | Yes       | None                | Low-power GPU so ES-DE may run a bit sluggish |
 | Raspberry    | Pi 5                    | 15              | Yes       | None                | Very poor GPU performance, runs at almost double speed in Raspberry Pi OS so likely a driver issue |
