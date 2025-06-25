@@ -2,27 +2,27 @@
 <!-- This is the ES-DE import rules configuration file for Linux -->
 <ruleList>
     <system name="desktop">
-        <rule type="desktopshortcut">
-            <directory gamesOnly="false">/usr/share/applications</directory>
-            <directory gamesOnly="false">/usr/local/share/applications</directory>
-            <directory gamesOnly="false">~/.local/share/applications</directory>
-            <directory gamesOnly="false">/var/lib/flatpak/exports/share/applications</directory>
-            <directory gamesOnly="false">/var/lib/snapd/desktop/applications</directory>
+        <rule name="Desktop Shortcut" type="desktopshortcut">
+            <directory>/usr/share/applications</directory>
+            <directory>/usr/local/share/applications</directory>
+            <directory>~/.local/share/applications</directory>
+            <directory>/var/lib/flatpak/exports/share/applications</directory>
+            <directory>/var/lib/snapd/desktop/applications</directory>
         </rule>
     </system>
     <system name="emulators">
-        <rule type="desktopshortcut">
-            <directory gamesOnly="false">/usr/share/applications</directory>
-            <directory gamesOnly="false">/usr/local/share/applications</directory>
-            <directory gamesOnly="false">~/.local/share/applications</directory>
-            <directory gamesOnly="false">/var/lib/flatpak/exports/share/applications</directory>
-            <directory gamesOnly="false">/var/lib/snapd/desktop/applications</directory>
+        <rule name="Desktop Shortcut" type="desktopshortcut">
+            <directory>/usr/share/applications</directory>
+            <directory>/usr/local/share/applications</directory>
+            <directory>~/.local/share/applications</directory>
+            <directory>/var/lib/flatpak/exports/share/applications</directory>
+            <directory>/var/lib/snapd/desktop/applications</directory>
         </rule>
     </system>
     <system name="steam">
-        <rule type="desktopshortcut">
-            <directory gamesOnly="true">~/.local/share/applications</directory>
-            <directory gamesOnly="true">~/Desktop</directory>
+        <rule name="Desktop Shortcut" type="desktopshortcut">
+            <directory execFilter="steam://rungameid">~/.local/share/applications</directory>
+            <directory execFilter="steam://rungameid">~/Desktop</directory>
         </rule>
     </system>
 </ruleList>

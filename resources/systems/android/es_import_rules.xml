@@ -2,17 +2,17 @@
 <!-- This is the ES-DE import rules configuration file for Android -->
 <ruleList>
     <system name="androidapps">
-        <rule type="androidpackage">
+        <rule name="Android Package" type="androidpackage">
             <extension>.app</extension>
         </rule>
     </system>
     <system name="androidgames">
-        <rule type="androidpackage">
+        <rule name="Android Package" type="androidpackage">
             <extension>.app</extension>
         </rule>
     </system>
     <system name="emulators">
-        <rule type="androidpackage">
+        <rule name="Android Package" type="androidpackage">
             <extension>.app</extension>
         </rule>
     </system>
