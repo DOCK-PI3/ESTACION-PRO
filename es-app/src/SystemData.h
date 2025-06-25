@@ -71,12 +71,25 @@ public:
     void loadImportRules();
 
 private:
+    struct ImportRuleDirectory {
+        std::string path;
+        std::string filter;
+        bool recursive;
+        bool gamesOnly;
+
+        ImportRuleDirectory()
+            : recursive {false}
+            , gamesOnly {false}
+        {
+        }
+    };
+
     struct ImportRule {
-        std::string fullName;
+        std::string ruleName;
         std::string ruleType;
+        std::string fullName;
         std::string extension;
-        std::vector<std::pair<std::string, bool>> directories;
-        std::vector<std::pair<std::string, std::string>> media;
+        std::vector<ImportRuleDirectory> directories;
         bool validSystem;
 
         ImportRule()

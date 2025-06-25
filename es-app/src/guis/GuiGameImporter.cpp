@@ -726,7 +726,7 @@ void GuiGameImporter::fileRule(std::pair<const std::string, ImportRules::ImportR
 
     for (auto& directory : importRule.second.directories) {
         // Expand ~ to the user home directory.
-        std::string expandedDir {Utils::FileSystem::expandHomePath(directory.first)};
+        std::string expandedDir {Utils::FileSystem::expandHomePath(directory.path)};
 #if !defined(__ANDROID__)
         // Expand %ESPATH% to the ES-DE binary directory.
         expandedDir =
@@ -734,7 +734,7 @@ void GuiGameImporter::fileRule(std::pair<const std::string, ImportRules::ImportR
 #endif
 
         std::list<std::string> fileList {
-            Utils::FileSystem::getDirContent(expandedDir, directory.second)};
+            Utils::FileSystem::getDirContent(expandedDir, directory.recursive)};
         for (auto& file : fileList) {
 #if defined(_WIN64) || defined(__APPLE__)
             if (Utils::String::toLower(Utils::FileSystem::getExtension(file)) ==
@@ -836,7 +836,7 @@ void GuiGameImporter::desktopshortcutRule(
 
     for (auto& directory : importRule.second.directories) {
         // Expand ~ to the user home directory.
-        std::string expandedDir {Utils::FileSystem::expandHomePath(directory.first)};
+        std::string expandedDir {Utils::FileSystem::expandHomePath(directory.path)};
 
         std::list<std::string> fileList {Utils::FileSystem::getDirContent(expandedDir, false)};
         for (auto& file : fileList) {
@@ -858,6 +858,7 @@ void GuiGameImporter::desktopshortcutRule(
                 bool validFile {false};
                 bool noDisplay {false};
                 std::string nameEntry;
+                std::string execEntry;
                 std::string categoriesEntry;
                 std::ifstream desktopFileStream;
 
@@ -875,6 +876,8 @@ void GuiGameImporter::desktopshortcutRule(
                         validFile = true;
                     if (line.substr(0, 5) == "Name=")
                         nameEntry = line;
+                    if (line.substr(0, 5) == "Exec=")
+                        execEntry = line.substr(5, line.size() - 5);
                     if (line.substr(0, 11) == "Categories=")
                         categoriesEntry = line;
                     if (Utils::String::toLower(line).substr(0, 14) == "nodisplay=true")
@@ -893,11 +896,27 @@ void GuiGameImporter::desktopshortcutRule(
 
                 // If we're only importing games and the Categories flag does not contain a
                 // "Game" string, then skip the entry.
-                if (directory.second &&
+                if (directory.gamesOnly &&
                     Utils::String::toLower(categoriesEntry).find("game") == std::string::npos) {
                     LOG(LogDebug) << "GuiGameImporter::desktopshortcutRule(): Set to only import "
                                      "games and the file is not categorized as a game, skipping it";
                     continue;
+                }
+
+                if (directory.filter != "") {
+                    if (execEntry.empty()) {
+                        LOG(LogDebug) << "GuiGameImporter::desktopshortcutRule(): An execFilter "
+                                         "value has been defined but the file contains no Exec "
+                                         "key, skipping it";
+                        continue;
+                    }
+                    if (Utils::String::toLower(execEntry).find(
+                            Utils::String::toLower(directory.filter)) == std::string::npos) {
+                        LOG(LogDebug) << "GuiGameImporter::desktopshortcutRule(): File's Exec key "
+                                         "does not match the defined execFilter value \""
+                                      << directory.filter << "\", skipping it";
+                        continue;
+                    }
                 }
 
                 std::string targetFile;

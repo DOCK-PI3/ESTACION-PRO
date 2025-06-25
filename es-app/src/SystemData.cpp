@@ -299,6 +299,11 @@ void ImportRules::loadImportRules()
             }
             for (pugi::xml_node rule {system.child("rule")}; rule;
                  rule = rule.next_sibling("rule")) {
+                const std::string& ruleName {rule.attribute("name").as_string()};
+                if (ruleName.empty()) {
+                    LOG(LogWarning) << "Found rule tag without name attribute, skipping entry";
+                    continue;
+                }
                 const std::string& ruleType {rule.attribute("type").as_string()};
                 if (ruleType.empty()) {
                     LOG(LogWarning) << "Found rule tag without type attribute for system \""
@@ -320,6 +325,7 @@ void ImportRules::loadImportRules()
                 }
                 if (ruleType == "androidpackage") {
                     ImportRule importRule;
+                    importRule.ruleName = ruleName;
                     importRule.ruleType = "androidpackage";
 
                     bool hasExtension {false};
@@ -348,11 +354,13 @@ void ImportRules::loadImportRules()
 #if defined(__APPLE__)
                 else if (ruleType == "macosbundle") {
                     ImportRule importRule;
+                    importRule.ruleName = ruleName;
                     importRule.ruleType = "macosbundle";
                     importRule.extension = ".app";
 #else
                 else if (ruleType == "file") {
                     ImportRule importRule;
+                    importRule.ruleName = ruleName;
                     importRule.ruleType = "file";
 
                     bool hasExtension {false};
@@ -401,53 +409,28 @@ void ImportRules::loadImportRules()
                             }
 
                             if (directoryValue.size() > 0) {
-                                if (std::find(importRule.directories.cbegin(),
-                                              importRule.directories.cend(),
-                                              std::make_pair(directoryValue, recursive)) !=
-                                    importRule.directories.cend()) {
+                                bool duplicateEntry {false};
+                                for (auto& directoryEntry : importRule.directories) {
+                                    if (directoryEntry.path == directoryValue)
+                                        duplicateEntry = true;
+                                }
+                                if (duplicateEntry) {
                                     LOG(LogWarning)
                                         << "Property \"directory\" for system \"" << systemName
-                                        << "\" has duplicate value defined";
+                                        << "\" has duplicate path defined, skipping entry";
+                                    continue;
                                 }
                                 else {
                                     hasDirectory = true;
-                                    importRule.directories.emplace_back(
-                                        std::make_pair(directoryValue, recursive));
+                                    ImportRuleDirectory directoryEntry;
+                                    directoryEntry.path = directoryValue;
+                                    directoryEntry.recursive = recursive;
+                                    importRule.directories.emplace_back(directoryEntry);
                                 }
                             }
                             else {
                                 LOG(LogWarning) << "Property \"directory\" for system \""
                                                 << systemName << "\" has no value defined";
-                            }
-                        }
-                    }
-
-                    for (pugi::xml_node media {rule.child("media")}; media;
-                         media = media.next_sibling("media")) {
-                        if (media) {
-                            const std::string mediaValue {media.text().get()};
-                            if (mediaValue.size() > 0) {
-                                const std::string& mediaType {media.attribute("type").as_string()};
-
-                                if (mediaType.empty()) {
-                                    LOG(LogWarning)
-                                        << "Property \"media\" for system \"" << systemName
-                                        << "\" is missing the type attribute";
-                                }
-                                else if (mediaType != "icon") {
-                                    LOG(LogWarning)
-                                        << "Property \"media\" for system \"" << systemName
-                                        << "\" has the type attribute set to unknown value \""
-                                        << mediaType << "\"";
-                                }
-                                else {
-                                    importRule.media.emplace_back(
-                                        std::make_pair(mediaType, mediaValue));
-                                }
-                            }
-                            else {
-                                LOG(LogWarning) << "Property \"media\" for system \"" << systemName
-                                                << "\" has no value defined";
                             }
                         }
                     }
@@ -471,6 +454,7 @@ void ImportRules::loadImportRules()
                 }
                 else if (ruleType == "desktopshortcut") {
                     ImportRule importRule;
+                    importRule.ruleName = ruleName;
                     importRule.ruleType = "desktopshortcut";
                     importRule.extension = ".desktop";
 
@@ -480,40 +464,39 @@ void ImportRules::loadImportRules()
                          directory = directory.next_sibling("directory")) {
 
                         bool isGamesOnly {false};
+                        std::string execFilter {directory.attribute("execFilter").as_string()};
 
                         if (directory) {
                             const std::string directoryValue {directory.text().get()};
                             const std::string& gamesOnly {
                                 directory.attribute("gamesOnly").as_string()};
-                            if (gamesOnly.empty()) {
-                                LOG(LogWarning)
-                                    << "Missing or blank mandatory gamesOnly attribute for "
-                                       "directory tag for system \""
-                                    << systemName << "\", skipping entry ";
-                                continue;
-                            }
-                            else {
-                                if (gamesOnly.size() > 0) {
-                                    if (gamesOnly.front() == '1' || gamesOnly.front() == 't' ||
-                                        gamesOnly.front() == 'T' || gamesOnly.front() == 'y' ||
-                                        gamesOnly.front() == 'Y')
-                                        isGamesOnly = true;
-                                }
+
+                            if (!gamesOnly.empty()) {
+                                if (gamesOnly.front() == '1' || gamesOnly.front() == 't' ||
+                                    gamesOnly.front() == 'T' || gamesOnly.front() == 'y' ||
+                                    gamesOnly.front() == 'Y')
+                                    isGamesOnly = true;
                             }
 
                             if (directoryValue.size() > 0) {
-                                if (std::find(importRule.directories.cbegin(),
-                                              importRule.directories.cend(),
-                                              std::make_pair(directoryValue, isGamesOnly)) !=
-                                    importRule.directories.cend()) {
+                                bool duplicateEntry {false};
+                                for (auto& directoryEntry : importRule.directories) {
+                                    if (directoryEntry.path == directoryValue)
+                                        duplicateEntry = true;
+                                }
+                                if (duplicateEntry) {
                                     LOG(LogWarning)
                                         << "Property \"directory\" for system \"" << systemName
-                                        << "\" has duplicate value defined";
+                                        << "\" has duplicate path defined, skipping entry";
+                                    continue;
                                 }
                                 else {
                                     hasDirectory = true;
-                                    importRule.directories.emplace_back(
-                                        std::make_pair(directoryValue, isGamesOnly));
+                                    ImportRuleDirectory directoryEntry;
+                                    directoryEntry.path = directoryValue;
+                                    directoryEntry.filter = execFilter;
+                                    directoryEntry.gamesOnly = isGamesOnly;
+                                    importRule.directories.emplace_back(directoryEntry);
                                 }
                             }
                             else {
