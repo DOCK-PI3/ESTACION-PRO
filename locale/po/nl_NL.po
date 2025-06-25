@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-06-24 18:58+0200\n"
-"PO-Revision-Date: 2025-03-03 20:53+0100\n"
+"POT-Creation-Date: 2025-06-25 17:06+0200\n"
+"PO-Revision-Date: 2025-06-24 23:48+0200\n"
 "Last-Translator: Stefan <s.vandenbroekprive@gmail.com>\n"
 "Language-Team: Nederlands <info@es-de.org>\n"
 "Language: nl_NL\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 
 msgid "Network error (status:"
 msgstr "Netwerkfout (status:"
@@ -521,67 +521,67 @@ msgid "DISPLAY STAR MARKINGS FOR CUSTOM COLLECTIONS"
 msgstr "WEERGAVE VAN STERRENMARKERINGEN VOOR AANGEPASTE COLLECTIES"
 
 msgid "IMPORT TO SYSTEM"
-msgstr ""
+msgstr "IMPORTEER NAAR SYSTEEM"
 
 msgid "NO CONFIGURATION"
-msgstr ""
+msgstr "GEEN CONFIGURATIE"
 
 msgid "REMOVE ENTRIES"
-msgstr ""
+msgstr "VERWIJDER TOEVOEGINGEN"
 
 msgid "ALL UNSELECTED"
-msgstr ""
+msgstr "ALLE ONGESELECTEERDE"
 
 msgid "MEDIA TARGET TYPE"
-msgstr ""
+msgstr "MEDIA TARGET TYPE"
 
 msgid "SCREENSHOTS"
-msgstr ""
+msgstr "SCHERMAFBEELDINGEN"
 
 msgid "TITLE SCREENS"
-msgstr ""
+msgstr "TITEL SCHERMEN"
 
 msgid "COVERS"
-msgstr ""
+msgstr "COVERS"
 
 msgid "BACK COVERS"
-msgstr ""
+msgstr "ACHTERKANT COVERS"
 
 msgid "MARQUEES (WHEELS)"
-msgstr ""
+msgstr "MARQUEES (WHEELS)"
 
 msgid "3D BOXES"
-msgstr ""
+msgstr "3D BOXES"
 
 msgid "PHYSICAL MEDIA"
-msgstr ""
+msgstr "FYSIEKE MEDIA"
 
 msgid "FAN ART"
 msgstr "FAN ART"
 
 msgid "IMPORT MEDIA"
-msgstr ""
+msgstr "IMPORTEER MEDIA"
 
 msgid "IMPORT BANNERS OR LOGOS IF AVAILABLE"
-msgstr ""
+msgstr "BANNERS OF LOGO'S IMPORTEREN, INDIEN BESCHIKBAAR"
 
 msgid "OVERWRITE MEDIA FILES"
-msgstr ""
+msgstr "MEDIABESTANDEN OVERSCHRIJVEN"
 
 msgid "ONLY INCLUDE APPS CATEGORIZED AS GAMES"
-msgstr ""
+msgstr "ALLEEN APPS BEVATTEN DIE ZIJN GECATEGORISEERD ALS GAMES"
 
 msgid "START"
 msgstr "BEGIN"
 
 msgid "start importer"
-msgstr ""
+msgstr "start importeren"
 
 msgid "WORKING..."
 msgstr "BEZIG..."
 
 msgid "COULDN'T FIND ANYTHING TO IMPORT"
-msgstr ""
+msgstr "KON NIETS VINDEN OM TE IMPORTEREN"
 
 #, c-format
 msgid ""
@@ -590,30 +590,35 @@ msgid ""
 "THEN IMPORT THE ENTRIES YOU SELECT ON THE NEXT SCREEN\n"
 "ARE YOU SURE?"
 msgstr ""
+"U ERVOOR HEBT GEKOZEN OM ALLE NIET-GESELECTEERDE ITEMS TE VERWIJDEREN, "
+"WORDEN ALLE SPELBESTANDEN MET DE \"%s\" BESTANDSEXTENSIE UIT DE \"%s\" "
+"SYSTEEMDIRECTORY EN IMPORTEERT VERVOLGENS DE ITEMS DIE U SELECTEERT OP HET "
+"VOLGENDE SCHERM\n"
+"WEET U HET ZEKER?"
 
 msgid "MAKE YOUR SELECTION"
-msgstr ""
+msgstr "MAAK UW KEUZE"
 
 msgid "IMPORT"
-msgstr ""
+msgstr "IMPORTEREN"
 
 msgid "import"
-msgstr ""
+msgstr "Importeren"
 
 #, c-format
 msgid "IMPORTED %i ENTRY"
 msgid_plural "IMPORTED %i ENTRIES"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "GESELECTEERDE %i ENTRIES"
+msgstr[1] "GESELECTEERDE %i ENTRIES"
 
 msgid "SELECT ALL"
-msgstr "SELECTEER ALLES"
+msgstr "ALLES"
 
 msgid "select all"
 msgstr "selecteer alles"
 
 msgid "SELECT NONE"
-msgstr "SELECTEER GEEN"
+msgstr "GEEN"
 
 msgid "select none"
 msgstr "selecteer geen"
@@ -799,16 +804,16 @@ msgid "LEFT/RIGHT"
 msgstr "LINKS/RECHTS"
 
 msgid "SYSTEM ON STARTUP"
-msgstr ""
+msgstr "SYSTEEM BIJ OPSTARTEN"
 
 msgid "STARTUP VIEW"
-msgstr ""
+msgstr "OPSTARTSCHERM"
 
 msgid "SYSTEM"
 msgstr "SYSTEEM"
 
 msgid "GAMELIST"
-msgstr ""
+msgstr "GAMELIJST"
 
 msgid "SYSTEMS SORTING"
 msgstr "SYSTEEMSORTERING"
@@ -1058,7 +1063,7 @@ msgid "IGNORE KEYBOARD INPUT"
 msgstr "NEGEER TOETSENBORDINVOER"
 
 msgid "INPUT DEVICE NOTIFICATIONS"
-msgstr ""
+msgstr "INVOERAPPARAAT NOTIFICATIES"
 
 msgid "CONFIGURE KEYBOARD AND CONTROLLERS"
 msgstr "TOETSENBORD EN CONTROLLERS CONFIGUREREN"
@@ -1212,7 +1217,7 @@ msgid "SHOW QUIT MENU (REBOOT AND POWER OFF ENTRIES)"
 msgstr "MENU AFSLUITEN TONEN (HERSTARTEN EN UITSCHAKELEN)"
 
 msgid "GAME IMPORTER"
-msgstr ""
+msgstr "GAME IMPORTER"
 
 msgid "ORPHANED DATA CLEANUP"
 msgstr "OPRUIMING VAN VERWEESDE DATA"
@@ -1914,13 +1919,13 @@ msgid "NO GAMES FOUND"
 msgstr "GEEN SPELLETJES GEVONDEN"
 
 msgid "API CALLS:"
-msgstr ""
+msgstr "API CALLS:"
 
 #, c-format
 msgid "%i REMAINING"
 msgid_plural "%i REMAINING"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%i RESTEREND"
+msgstr[1] "%i RESTERENDE"
 
 msgid "RETRY"
 msgstr "OPNIEUW PROBEREN"
@@ -2022,7 +2027,7 @@ msgid "DOWNLOADING THEMES LIST 100%"
 msgstr "DOWNLOAD THEMA LIJST 100%"
 
 msgid "REPOSITORY HAS DIVERGED FROM ORIGIN"
-msgstr ""
+msgstr "REPOSITORY IS AFWIJKEND VAN OORSPRONG"
 
 msgid "THEME ALREADY UP TO DATE"
 msgstr "THEMA AL BIJGEWERKT"
@@ -2091,7 +2096,7 @@ msgid ""
 "DOWNLOAD IS REQUIRED AND THE OLD THEME DIRECTORY \"%s\" WILL BE RENAMED TO "
 "\"%s_DISABLED\""
 msgstr ""
-"HET LIJKT EROP DAT DIT EEN ONdiepe REPOSITORY IS, WAT BETEKENT DAT HET IS "
+"HET LIJKT EROP DAT DIT EEN ZWAKKE REPOSITORY IS, WAT BETEKENT DAT HET IS "
 "GEDOWNLOAD MET EEN ANDERE TOOL DAN DEZE THEMA DOWNLOADER. EEN NIEUWE "
 "DOWNLOAD IS VEREIST EN DE OUDE THEMA DIRECTORY \"%s\" WORDT HERNOEMD NAAR "
 "\"%s_DISABLED\""
@@ -2103,6 +2108,10 @@ msgid ""
 "FRESH DOWNLOAD IS REQUIRED AND THE OLD THEME DIRECTORY \"%s\" WILL BE "
 "RENAMED TO \"%s_DIVERGED_DISABLED\""
 msgstr ""
+"HET LIJKT EROP DAT DIT EEN AFWIJKENDE REPOSITORY IS, WAT MEESTAL BETEKENT "
+"DAT ER EEN UPSTREAM MERGE CONFLICT MOET WORDEN OPGELOST DOOR DE MAKER VAN "
+"HET THEMA, EEN VERSE INSTALLATIE IS NODIG EN DE OUDE THEMA MAP “%s” ZAL "
+"HERNOEMD WORDEN NAAR ‘%s_AFWIJKEND_UITGESCHAKELD”"
 
 #, c-format
 msgid ""
@@ -2149,7 +2158,7 @@ msgid "CORRUPT"
 msgstr "CORRUPT"
 
 msgid "DIVERGED"
-msgstr ""
+msgstr "AFWIJKEND"
 
 msgid "SHALLOW"
 msgstr "SHALLOW"
@@ -2554,11 +2563,11 @@ msgstr "onbekend"
 
 msgctxt "theme"
 msgid "yes"
-msgstr "Ja"
+msgstr "ja"
 
 msgctxt "theme"
 msgid "no"
-msgstr "Nee"
+msgstr "nee"
 
 msgid "screensaver"
 msgstr "schermbeveiliging"
@@ -2615,6 +2624,11 @@ msgid ""
 "INFORMATION SUCH AS THE SUPPORTED FILE EXTENSIONS. THIS IS THE CONFIGURED "
 "ROM DIRECTORY:\n"
 msgstr ""
+"ER ZIJN GEEN GAMEBESTANDEN GEVONDEN. IMPORTEER ENKELE GAMES OF PLAATS ZE "
+"HANDMATIG IN DE GECONFIGUREERDE ROM-MAP. Optioneel kunt u de structuur van "
+"de ROM-map genereren, waardoor er voor elk systeem een ​​tekstbestand wordt "
+"aangemaakt met informatie zoals de ondersteunde bestandsextensies. Dit is de "
+"GECONFIGUREERDE ROM-map:\n"
 
 msgid ""
 "NO GAME FILES WERE FOUND. EITHER IMPORT SOME GAMES OR PLACE THEM MANUALLY IN "
@@ -2623,9 +2637,14 @@ msgid ""
 "FILE FOR EACH SYSTEM PROVIDING SOME INFORMATION SUCH AS THE SUPPORTED FILE "
 "EXTENSIONS. THIS IS THE CONFIGURED ROM DIRECTORY:\n"
 msgstr ""
+"ER ZIJN GEEN GAMEBESTANDEN GEVONDEN. IMPORTEER ENKELE SPELLEN OF PLAATS ZE "
+"HANDMATIG IN DE HUIDIG GECONFIGUREERDE ROM-MAP. U KUNT OOK HET ROM-PAD "
+"WIJZIGEN EN DESGEWENST DE ROM-MAPSTRUCTUUR GENEREREN, WAARDOOR VOOR ELK "
+"SYSTEEM EEN TEKSTBESTAND WORDT AANGEMAAKT MET INFORMATIE, ZOALS DE "
+"ONDERSTEUNDE BESTANDSEXTENSIES. DIT IS DE GECONFIGUREERDE ROM-MAP:\n"
 
 msgid "CHANGE"
-msgstr ""
+msgstr "VERANDER"
 
 msgid "ENTER ROM DIRECTORY PATH"
 msgstr "VOER HET PAD VAN DE ROM-MAP IN"
