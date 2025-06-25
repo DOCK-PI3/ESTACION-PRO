@@ -2228,6 +2228,7 @@ void GuiMenu::openUtilities()
         delete s;
         delete this;
         ViewController::getInstance()->rescanROMDirectory();
+        ViewController::getInstance()->goToStart(false);
     };
 
     ComponentListRow row;
