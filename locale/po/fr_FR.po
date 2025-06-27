@@ -557,9 +557,7 @@ msgid "COVERS"
 msgstr "AFFICHES"
 
 msgid "BACK COVERS"
-msgstr ""
-"AFFICHES\n"
-" ARRIÈRE"
+msgstr "AFFICHES ARRIÈRE"
 
 msgid "MARQUEES (WHEELS)"
 msgstr "MARQUEES (WHEELS)"
@@ -622,8 +620,8 @@ msgstr "importer"
 #, c-format
 msgid "IMPORTED %i ENTRY"
 msgid_plural "IMPORTED %i ENTRIES"
-msgstr[0] "ENTRÉE %i  IMPORTÉ"
-msgstr[1] "ENTRÉES %i  IMPORTÉS"
+msgstr[0] "ENTRÉE %i IMPORTÉ"
+msgstr[1] "ENTRÉES %i IMPORTÉS"
 
 msgid "SELECT ALL"
 msgstr "TOUT SÉLECTIONNER"
