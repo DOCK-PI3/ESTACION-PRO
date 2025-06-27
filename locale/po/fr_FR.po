@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-06-24 18:58+0200\n"
-"PO-Revision-Date: 2025-03-03 21:39+0100\n"
+"POT-Creation-Date: 2025-06-27 19:22+0200\n"
+"PO-Revision-Date: 2025-06-27 18:27+0200\n"
 "Last-Translator: Northwestern Software <info@es-de.org>\n"
 "Language-Team: Français <info@es-de.org>\n"
 "Language: fr_FR\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 
 msgid "Network error (status:"
 msgstr "Erreur réseau (état :"
@@ -533,67 +533,69 @@ msgid "DISPLAY STAR MARKINGS FOR CUSTOM COLLECTIONS"
 msgstr "AFFICHER UNE ÉTOILE POUR LES COLLECTIONS PERSO"
 
 msgid "IMPORT TO SYSTEM"
-msgstr ""
+msgstr "IMPORTATION DANS LE SYSTÈME"
 
 msgid "NO CONFIGURATION"
-msgstr ""
+msgstr "PAS DE CONFIGURATION"
 
 msgid "REMOVE ENTRIES"
-msgstr ""
+msgstr "ENLEVER LES ENTRÉES"
 
 msgid "ALL UNSELECTED"
-msgstr ""
+msgstr "TOUT DELESCTIONNER"
 
 msgid "MEDIA TARGET TYPE"
-msgstr ""
+msgstr "TYPE DE MÉDIA CIBLE"
 
 msgid "SCREENSHOTS"
-msgstr ""
+msgstr "CAPTURES D'ÉCRANS"
 
 msgid "TITLE SCREENS"
-msgstr ""
+msgstr "ECRAN DE TITRE"
 
 msgid "COVERS"
-msgstr ""
+msgstr "AFFICHES"
 
 msgid "BACK COVERS"
 msgstr ""
+"AFFICHES\n"
+" ARRIÈRE"
 
 msgid "MARQUEES (WHEELS)"
-msgstr ""
+msgstr "MARQUEES (WHEELS)"
 
 msgid "3D BOXES"
-msgstr ""
+msgstr "BOÎTES 3D"
 
 msgid "PHYSICAL MEDIA"
-msgstr ""
+msgstr "MÉDIA PHYSIQUE"
 
 msgid "FAN ART"
 msgstr "FANART"
 
 msgid "IMPORT MEDIA"
-msgstr ""
+msgstr "IMPORTE MÉDIA"
 
 msgid "IMPORT BANNERS OR LOGOS IF AVAILABLE"
-msgstr ""
+msgstr "IMPORTE BANNIÈRES OU LOGO SI DISPO"
 
 msgid "OVERWRITE MEDIA FILES"
-msgstr ""
+msgstr "ECRASER LES FICHIERS MÉDIA"
 
 msgid "ONLY INCLUDE APPS CATEGORIZED AS GAMES"
-msgstr ""
+msgstr "INCLURE UNIQUEMENT LES APPS CLASSÉES COMME JEUX"
 
 msgid "START"
 msgstr "DÉMARRER"
 
 msgid "start importer"
-msgstr ""
+msgstr "demarrage de l'importation"
 
 msgid "WORKING..."
 msgstr "EN COURS..."
 
 msgid "COULDN'T FIND ANYTHING TO IMPORT"
-msgstr ""
+msgstr "JE N'AI RIEN TROUVÉ À IMPORTER"
 
 #, c-format
 msgid ""
@@ -602,21 +604,26 @@ msgid ""
 "THEN IMPORT THE ENTRIES YOU SELECT ON THE NEXT SCREEN\n"
 "ARE YOU SURE?"
 msgstr ""
+"VOUS AVEZ CHOISI DE SUPPRIMER TOUTES LES ENTRÉES NON SÉLECTIONNÉES. CELA "
+"SUPPRIMERA TOUS LES FICHIERS DE JEU AVEC L'EXTENSION « %s » DU RÉPERTOIRE "
+"SYSTÈME « %s ». LES ENTRÉES SÉLECTIONNÉES SERONT IMPORTÉES SUR L'ÉCRAN "
+"SUIVANT\n"
+"ÊTES-VOUS SÛR ?"
 
 msgid "MAKE YOUR SELECTION"
-msgstr ""
+msgstr "FAITES VOTRE SÉLECTION"
 
 msgid "IMPORT"
-msgstr ""
+msgstr "IMPORTER"
 
 msgid "import"
-msgstr ""
+msgstr "importer"
 
 #, c-format
 msgid "IMPORTED %i ENTRY"
 msgid_plural "IMPORTED %i ENTRIES"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "ENTRÉE %i  IMPORTÉ"
+msgstr[1] "ENTRÉES %i  IMPORTÉS"
 
 msgid "SELECT ALL"
 msgstr "TOUT SÉLECTIONNER"
@@ -811,16 +818,16 @@ msgid "LEFT/RIGHT"
 msgstr "GAUCHE/DROITE"
 
 msgid "SYSTEM ON STARTUP"
-msgstr ""
+msgstr "SYSTÈME AU DÉMARRAGE"
 
 msgid "STARTUP VIEW"
-msgstr ""
+msgstr "VUE AU DÉMARRAGE"
 
 msgid "SYSTEM"
 msgstr "SYSTÈME"
 
 msgid "GAMELIST"
-msgstr ""
+msgstr "LISTE DES JEUX"
 
 msgid "SYSTEMS SORTING"
 msgstr "TRI DES SYSTÈMES"
@@ -1068,7 +1075,7 @@ msgid "IGNORE KEYBOARD INPUT"
 msgstr "IGNORER LES ENTRÉES CLAVIER"
 
 msgid "INPUT DEVICE NOTIFICATIONS"
-msgstr ""
+msgstr "NOTIFICATIONS DU PÉRIPHÉRIQUE D'ENTRÉE"
 
 msgid "CONFIGURE KEYBOARD AND CONTROLLERS"
 msgstr "CONFIGURER CLAVIER ET MANETTES"
@@ -1224,7 +1231,7 @@ msgid "SHOW QUIT MENU (REBOOT AND POWER OFF ENTRIES)"
 msgstr "AFFICHER LE MENU QUITTER (AVEC LES OPTIONS REDÉMARRER ET ÉTEINDRE)"
 
 msgid "GAME IMPORTER"
-msgstr ""
+msgstr "IMPORTEUR DE JEUX"
 
 msgid "ORPHANED DATA CLEANUP"
 msgstr "NETTOYAGE DES DONNÉES ORPHELINES"
@@ -1940,13 +1947,13 @@ msgid "NO GAMES FOUND"
 msgstr "AUCUN JEUX TROUVÉ"
 
 msgid "API CALLS:"
-msgstr ""
+msgstr "APPELS API:"
 
 #, c-format
 msgid "%i REMAINING"
 msgid_plural "%i REMAINING"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%i RESTANT"
+msgstr[1] "%i RESTANTS"
 
 msgid "RETRY"
 msgstr "RECOMMENCER"
@@ -2048,7 +2055,7 @@ msgid "DOWNLOADING THEMES LIST 100%"
 msgstr "TÉLÉCHARGEMENT LISTE DES THÈMES 100%"
 
 msgid "REPOSITORY HAS DIVERGED FROM ORIGIN"
-msgstr ""
+msgstr "LE DÉPOT A DEVIÉ DE L'ORIGINAL"
 
 msgid "THEME ALREADY UP TO DATE"
 msgstr "THÈME DÉJÀ MIS À JOUR"
@@ -2131,6 +2138,11 @@ msgid ""
 "FRESH DOWNLOAD IS REQUIRED AND THE OLD THEME DIRECTORY \"%s\" WILL BE "
 "RENAMED TO \"%s_DIVERGED_DISABLED\""
 msgstr ""
+"IL SEMBLE QU'IL S'AGIT D'UN RÉFÉRENTIEL DÉVERGENT, CE QUI SIGNIFIE "
+"GÉNÉRALEMENT QU'IL EXISTE UN CONFLIT DE FUSION EN AMONT QUI DOIT ÊTRE RÉSOLU "
+"PAR LE DÉVELOPPEUR DU THÈME . UN NOUVEAU TÉLÉCHARGEMENT EST REQUIS ET "
+"L'ANCIEN RÉPERTOIRE DE THÈMES \"%s\" SERA RENOMMÉ EN \"%s_ "
+"DIVERGED_DISABLED\""
 
 #, c-format
 msgid ""
@@ -2176,7 +2188,7 @@ msgid "CORRUPT"
 msgstr "CORROMPU"
 
 msgid "DIVERGED"
-msgstr ""
+msgstr "DÉVIÉ"
 
 msgid "SHALLOW"
 msgstr "SUPERFICIEL"
@@ -2282,10 +2294,10 @@ msgid "SCREENSHOT"
 msgstr "CAPTURE D'ÉCRAN"
 
 msgid "BOX COVER"
-msgstr "BOÎTE"
+msgstr "IMAGES DE LA BOITE (AVANT)"
 
 msgid "BOX BACK COVER"
-msgstr "DOS DE LA BOITE"
+msgstr "IMAGES DE LA BOITE (DOS)"
 
 msgid "TITLE SCREEN"
 msgstr "ÉCRAN TITRE"
@@ -2649,6 +2661,11 @@ msgid ""
 "INFORMATION SUCH AS THE SUPPORTED FILE EXTENSIONS. THIS IS THE CONFIGURED "
 "ROM DIRECTORY:\n"
 msgstr ""
+"AUCUN FICHIER DE JEU N'A ÉTÉ TROUVÉ. IMPORTEZ DES JEUX OU PLACEZ-LES "
+"MANUELLEMENT DANS LE RÉPERTOIRE ROM CONFIGURÉ. EN OPTION, VOUS POUVEZ "
+"GÉNÉRER LA STRUCTURE DU RÉPERTOIRE ROM, CE QUI CRÉERA UN FICHIER TEXTE POUR "
+"CHAQUE SYSTÈME FOURNISSANT DES INFORMATIONS TELLES QUE LES EXTENSIONS DE "
+"FICHIERS PRISES EN CHARGE. VOICI LE RÉPERTOIRE ROM CONFIGURÉ :\n"
 
 msgid ""
 "NO GAME FILES WERE FOUND. EITHER IMPORT SOME GAMES OR PLACE THEM MANUALLY IN "
@@ -2657,9 +2674,15 @@ msgid ""
 "FILE FOR EACH SYSTEM PROVIDING SOME INFORMATION SUCH AS THE SUPPORTED FILE "
 "EXTENSIONS. THIS IS THE CONFIGURED ROM DIRECTORY:\n"
 msgstr ""
+"AUCUN FICHIER DE JEU N'A ÉTÉ TROUVÉ. IMPORTEZ DES JEUX OU PLACEZ-LES "
+"MANUELLEMENT DANS LE RÉPERTOIRE ROM ACTUELLEMENT CONFIGURÉ. VOUS POUVEZ "
+"ÉGALEMENT MODIFIER LE CHEMIN ROM ET ÉVENTUELLEMENT GÉNÉRER LA STRUCTURE DU "
+"RÉPERTOIRE ROM, CE QUI CRÉERA UN FICHIER TEXTE POUR CHAQUE SYSTÈME "
+"FOURNISSANT DES INFORMATIONS TELLES QUE LES EXTENSIONS DE FICHIERS PRISES EN "
+"CHARGE. IL S'AGIT DU RÉPERTOIRE ROM CONFIGURÉ :\n"
 
 msgid "CHANGE"
-msgstr ""
+msgstr "CHANGER"
 
 msgid "ENTER ROM DIRECTORY PATH"
 msgstr "ENTRER LE CHEMIN DU DOSSIER ROM"
