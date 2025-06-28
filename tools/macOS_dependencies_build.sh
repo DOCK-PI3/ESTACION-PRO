@@ -110,9 +110,9 @@ fi
 cd libpng
 rm -f CMakeCache.txt
 if [ $(uname -m) == "arm64" ]; then
-  cmake -DCMAKE_BUILD_TYPE=Release -DPNG_SHARED=off -DPNG_ARM_NEON=off -DCMAKE_INSTALL_PREFIX=$(pwd)/../local_install .
+  cmake -DCMAKE_BUILD_TYPE=Release -DPNG_SHARED=off -DPNG_FRAMEWORK=off -DPNG_ARM_NEON=off -DCMAKE_INSTALL_PREFIX=$(pwd)/../local_install .
 else
-  cmake -DCMAKE_BUILD_TYPE=Release -DPNG_SHARED=off -DCMAKE_INSTALL_PREFIX=$(pwd)/../local_install .
+  cmake -DCMAKE_BUILD_TYPE=Release -DPNG_SHARED=off -DPNG_FRAMEWORK=off -DCMAKE_INSTALL_PREFIX=$(pwd)/../local_install .
 fi
 make clean
 make -j${JOBS}

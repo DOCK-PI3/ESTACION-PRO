@@ -112,7 +112,7 @@ fi
 
 cd libpng
 rm -f CMakeCache.txt
-cmake -DCMAKE_BUILD_TYPE=Release -DPNG_SHARED=off -DCMAKE_INSTALL_PREFIX=$(pwd)/../local_install .
+cmake -DCMAKE_BUILD_TYPE=Release -DPNG_SHARED=off -DPNG_FRAMEWORK=off -DCMAKE_INSTALL_PREFIX=$(pwd)/../local_install .
 make clean
 make -j${JOBS}
 make install
