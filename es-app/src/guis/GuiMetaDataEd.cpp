@@ -668,6 +668,13 @@ GuiMetaDataEd::GuiMetaDataEd(MetaDataList* md,
         mEditors.push_back(ed);
     }
 
+    bool symlinkedDirectory {false};
+#if !defined(__ANDROID__)
+    if (scraperParams.game->getType() == FOLDER &&
+        Utils::FileSystem::isSymlink(scraperParams.game->getPath()))
+        symlinkedDirectory = true;
+#endif
+
     std::vector<std::shared_ptr<ButtonComponent>> buttons;
 
     if (!scraperParams.system->hasPlatformId(PlatformIds::PLATFORM_IGNORE))
@@ -680,7 +687,7 @@ GuiMetaDataEd::GuiMetaDataEd(MetaDataList* md,
     }));
     buttons.push_back(
         std::make_shared<ButtonComponent>(_("CANCEL"), _("cancel changes"), [&] { delete this; }));
-    if (scraperParams.game->getType() == FOLDER) {
+    if (scraperParams.game->getType() == FOLDER && !symlinkedDirectory) {
         if (mClearGameFunc) {
             auto clearSelf = [&] {
                 mClearGameFunc();
@@ -725,8 +732,10 @@ GuiMetaDataEd::GuiMetaDataEd(MetaDataList* md,
         }
 
         // For the special case where a directory has a supported file extension and is therefore
-        // interpreted as a file, don't add the delete button.
-        if (mDeleteGameFunc && !Utils::FileSystem::isDirectory(scraperParams.game->getPath())) {
+        // interpreted as a file, don't add the delete button. If it's however a symlink to a
+        // directory then add the delete button as we should be able to remove such files.
+        if (mDeleteGameFunc && (symlinkedDirectory ||
+                                !Utils::FileSystem::isDirectory(scraperParams.game->getPath()))) {
             auto deleteFilesAndSelf = [&] {
                 mDeleteGameFunc();
                 delete this;
