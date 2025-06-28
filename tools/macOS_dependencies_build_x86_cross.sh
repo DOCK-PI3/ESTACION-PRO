@@ -160,7 +160,7 @@ fi
 
 cd fontconfig
 rm -rf builddir
-PKG_CONFIG_PATH=$(pwd)/../local_install/lib/pkgconfig meson setup --buildtype=release --prefix $(pwd)/../local_install builddir
+PKG_CONFIG_PATH=$(pwd)/../local_install/lib/pkgconfig meson setup --buildtype=release --prefix $(pwd)/../local_install builddir -Dcache-dir=false
 cd builddir
 meson compile
 
