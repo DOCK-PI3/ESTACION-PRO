@@ -14,6 +14,7 @@
 #include <SDL2/SDL_timer.h>
 
 #if defined(__ANDROID__)
+#include "InputOverlay.h"
 #include "utils/PlatformUtilAndroid.h"
 #endif
 
@@ -329,8 +330,11 @@ void GuiGameImporter::render(const glm::mat4& parentTrans)
     renderChildren(trans);
 
 #if defined(__ANDROID__)
-    if (mIsInventorying || mAndroidGetApps)
+    if (mIsInventorying || mAndroidGetApps) {
         mBusyAnim.render(trans);
+        // Make sure no touch overlay buttons are shown as stuck when the rendering is blocked.
+        InputOverlay::getInstance().unselectAllButtons();
+    }
 
     if (mAndroidGetApps)
         mIsInventorying = true;
