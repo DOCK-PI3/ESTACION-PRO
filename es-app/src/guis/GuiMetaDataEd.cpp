@@ -734,8 +734,12 @@ GuiMetaDataEd::GuiMetaDataEd(MetaDataList* md,
         // For the special case where a directory has a supported file extension and is therefore
         // interpreted as a file, don't add the delete button. If it's however a symlink then add
         // the delete button as we should be able to remove such files.
+#if defined(__ANDROID__)
+        if (mDeleteGameFunc && !Utils::FileSystem::isDirectory(scraperParams.game->getPath())) {
+#else
         if (mDeleteGameFunc && (Utils::FileSystem::isSymlink(scraperParams.game->getPath()) ||
                                 !Utils::FileSystem::isDirectory(scraperParams.game->getPath()))) {
+#endif
             auto deleteFilesAndSelf = [&] {
                 mDeleteGameFunc();
                 delete this;
