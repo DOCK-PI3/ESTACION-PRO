@@ -997,6 +997,9 @@ bool GuiGameImporter::input(InputConfig* config, Input input)
     if (mIsInventorying)
         return true;
 
+    if (config->isMappedTo("back", input))
+        return true;
+
     if (GuiComponent::input(config, input))
         return true;
 
