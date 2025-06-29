@@ -71,6 +71,8 @@
 ### Bug fixes
 
 * (macOS) The application crashed when disconnecting a Bluetooth controller
+* (macOS) The PDF viewer created unnecessary Fontconfig cache files under some circumstances
+* Symlinks to directories could not be deleted from the metadata editor
 * Under some circumstances duplicate system-select events could be generated
 * Sorting configuration was missing for the mark3 and vircon32 systems
 * (Windows) Custom event scripts would not work if the path to the ES-DE directory contained spaces

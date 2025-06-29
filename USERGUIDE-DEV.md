@@ -59,6 +59,8 @@ There's not really much to say about these operating systems, just install ES-DE
 
 **On first application startup**
 
+_This section primarily covers the desktop ports of ES-DE, for Android there's a separate document with its own section for the onboarding and first startup that you can find [here](ANDROID-DEV.md#first-startup-and-onboarding)._
+
 Upon first startup, ES-DE will create its `~/ES-DE` application data directory.
 
 On Linux this means `/home/<username>/ES-DE`, on macOS `/Users/<username>/ES-DE` and on Windows `C:\Users\<username>\ES-DE` or `ES-DE\ES-DE` depending on whether the installer release or the portable release is used.
@@ -69,7 +71,7 @@ In addition to es_systems.xml there's an `es_find_rules.xml` file that gets load
 
 There's also a log file created in the `ES-DE/logs` directory named `es_log.txt`, refer to this in case of any issues as it should hopefully provide information on what went wrong. Enabling _Debug mode_ in the _Other settings_ menu or starting ES-DE with the --debug flag outputs even more detailed information to this log file.
 
-After ES-DE finds at least one game file, it will populate that game system and the application will start. If there are no game files, a dialog will be shown explaining that you need to install your game files into your ROM directory. You will also be given a choice to change that ROM directory path if you don't want to use the default one. As well you have the option to generate the complete game systems directory structure based on information in es_systems.xml.
+After ES-DE finds at least one game file, it will populate that game system and the application will start. If there are no game files, a dialog will be shown explaining that you need to install your game files into your ROM directory. You will also be given a choice to import games using the built-in game importer, or change the ROM directory path if you don't want to use the default one. As well you have the option to generate the complete game systems directory structure based on information in es_systems.xml.
 
 When generating the directory structure, a file named systeminfo.txt will be created in each game system folder which will provide you with some information about the system. Here's an example for the _dos_ system as seen on Linux:
 ```
@@ -116,7 +118,7 @@ famicom: Nintendo Family Computer
 If a custom es_systems.xml file is present in ~/ES-DE/custom_systems/ any entries from this file will have their names trailed by the text _(custom system)_. So if the _dos_ system in the example above would be present in the custom systems configuration file, the system would be shown as _dos (custom system)_ instead of simply _dos_. This is only applicable for the systems.txt and systeminfo.txt files, the trailing text is not applied or used anywhere else in the application.
 
 ![alt text](images/es-de_ui_easy_setup.png "ES-DE Easy Setup")
-_This is the dialog shown if no game files were found. It lets you configure the ROM directory if you don't want to use the default one, and you can also generate the game systems directory structure. Note that the directory is the physical path, and that your operating system may present this as a localized path if you are using a language other than English._
+_This is the dialog shown if no game files were found. It lets you import games, change the ROM directory if you don't want to use the default one, and you can also generate the game systems directory structure. Note that the directory is the physical path, and that your operating system may present this as a localized path if you are using a language other than English._
 
 ## Upgrading to a newer release
 
@@ -611,7 +613,7 @@ Refer to the official themes list for a selection of high-quality themes (these 
 https://gitlab.com/es-de/themes/themes-list
 
 ![alt text](images/es-de_ui_theme_support.png "ES-DE Theme Support")
-_This is a screenshot of the Slate theme that is bundled with ES-DE in addition to the default Linear theme._
+_This is a screenshot of the Slate theme that is bundled with ES-DE for desktop operating systems (in addition to the default Linear theme)._
 
 ## Theme downloader
 
@@ -1985,7 +1987,9 @@ Simulation is done via the Handheld Electronic (GW) RetroArch core, in which cas
 
 ### Lutris
 
-Adding these games is most easily accomplished by using .desktop files that can be created from inside the Lutris application. Right click on each game you would like to add to ES-DE and select _Create desktop shortcut_, then simply move these shortcuts from your desktop to the `lutris` system directory. You may also want to rename some of the files as their names may be a bit cryptic which could confuse the scraper. Remember that it's the physical filenames that will show up inside ES-DE.
+Adding these games is most easily accomplished by using .desktop shortcut files that can be created from inside the Lutris application. Right click on each game you would like to add to ES-DE and select _Create desktop shortcut_. Following this it's recommend to use the built-in game importer (accessible from the _Utilities_ menu) to import the .desktop files into ES-DE. If doing this then ES-DE will take the actual game name that is defined inside the .desktop file and rename it to that as part of the import process.
+
+You could alternatively manually move the .desktop files to the `lutris` system directory, but if doing so you may also want to rename some of the files as their names may be a bit cryptic which could confuse the scraper.
 
 After doing this you should end up with something like the following:
 
@@ -2504,6 +2508,8 @@ Here's an example using alias files on macOS:
 ~/ROMs/desktop/System Preferences.app
 ```
 
+For the _desktop_ and _emulators_ systems on Linux, macOS and Windows it's also possible to use the built-in game importer to populate the systems using shortcut files. You can find the game importer in the _Utilities_ menu and it's also described in-depth elsewhere in this document.
+
 **Method 2, scripts**
 
 For more advanced setups you may want to use scripts. While it's possible to add these files directly to the root of the system directories it's instead generally recommended to setup a separate directory per game as there may be more than a single file required. For instance you may have multiple game variants or mods or you may want to keep game data files within the ROM directory tree. Only examples for Linux are provided here, but it's the same process for Windows and macOS except that in Windows .bat batch files are used instead of shell scripts.
@@ -2728,11 +2734,11 @@ Just extract the corresponding file for any game you have installed in Vita3K an
 
 These games can easily be added to ES-DE using shortcuts, just be aware that this requires that the games have been installed locally.
 
-Make sure to have the Steam application minimized when launching games from ES-DE or otherwise Steam may try to steal focus and you would need to manually switch to the ES-DE window after quitting a game. Unfortunately this does not seem to work on macOS as Steam insists on stealing focus on this operating system.
+On Linux and Windows you can use the built-in game importer to populate your steam system. This tool is available from the _Utilities_ menu and you can find an in-depth description of it elsewhere in this document. Note that you still need to create shortcut files prior to running this tool.
 
 **Windows**
 
-Simply copy the Start Menu entries for your Steam games into the ~\ROMs\steam directory. These files have the .url extension and can be launched directly from within ES-DE. For example you may end up with something like the following:
+Simply copy the Start Menu entries for your Steam games into the ~\ROMs\steam directory or use the built-in game importer to accomplish the same thing. These files have the .url extension and can be launched directly from within ES-DE. For example you may end up with something like the following:
 
 ```
 ~\ROMs\steam\Axiom Verge.url
@@ -2741,7 +2747,7 @@ Simply copy the Start Menu entries for your Steam games into the ~\ROMs\steam di
 
 **Linux**
 
-Copy the .desktop shortcuts for your games into the ~/ROMs/steam directory. If your desktop environment does not allow you to copy them directly from the application menu then you may need to navigate to `~/.local/share/applications` using your file manager and copy the .desktop files from there. Alternatively you can also create shortcuts from inside Steam by right clicking on a game, selecting _Manage_ and then _Add desktop shortcut_. These file can then be moved from your desktop to your ~/ROMs/steam directory. This is an example of what you could end up with:
+Copy the .desktop shortcuts for your games into the ~/ROMs/steam directory or use the built-in game importer to accomplish the same thing. If going for manual copying of the files and your desktop environment does not allow you to copy them directly from the application menu then you may need to navigate to `~/.local/share/applications` using your file manager and copy the .desktop files from there. Alternatively you can also create shortcuts from inside Steam by right clicking on a game, selecting _Manage_ and then _Add desktop shortcut_. These file can then be moved from your desktop to your ~/ROMs/steam directory. This is an example of what you could end up with:
 
 ```
 ~/ROMs/steam/Axiom Verge.desktop

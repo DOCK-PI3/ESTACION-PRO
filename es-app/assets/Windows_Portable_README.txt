@@ -12,7 +12,7 @@ If upgrading from a previous release, then don't unpack this ZIP archive on top 
 
 New installation:
 1) The ROMs_ALL directory contains all the systems that ES-DE supports, but to decrease application startup time only copy the folders you need to the ROMs directory
-2) Place your games into their respective folders in the ROMs directory tree
+2) Place your games into their respective folders in the ROMs directory tree or optionally import some using the built-in game importer
 3) Place your emulators inside the Emulators directory
 4) Start ES-DE using ES-DE.exe and enjoy some retrogaming!
 
