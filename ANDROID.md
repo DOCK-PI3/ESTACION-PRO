@@ -279,9 +279,7 @@ https://archive.org/details/dolphin-and-citra-fork-backup
 
 ### DraStic
 
-This emulator can be installed from the Play store as a paid app. Note that it does not support launching of zipped game files.
-
-https://play.google.com/store/apps/details?id=com.dsemu.drastic
+This emulator used to be available from the Play store but since it's been removed from there it's not entirely clear where to get it from. Also note that it does not support launching of zipped game files.
 
 ### DroidArcadia
 
@@ -620,6 +618,7 @@ This is clearly not a complete list of Android devices, but rather those we know
 | Anbernic     | RG556                   | 13              | Yes       | None                |                            |
 | Anbernic     | RG ARC                  | LineageOS 12,<br>GammaOS 12,<br>GammaOS 13 TV | Yes       | None                | Limited RAM capacity for this device makes it unsuitable for demanding themes and large game collections |
 | Anbernic     | RG Cube                 | 13              | Yes       | None                |                            |
+| AYANEO       | Pocket ACE              | 13              | Yes       | None                |                            |
 | AYANEO       | Pocket Air              | 12              | Yes       | None                |                            |
 | AYANEO       | Pocket DMG              | 13              | Yes       | None                |                            |
 | AYANEO       | Pocket Micro            | 13              | Yes       | None                |                            |

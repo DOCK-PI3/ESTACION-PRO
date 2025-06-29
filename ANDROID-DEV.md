@@ -20,7 +20,7 @@ After this step you need to select a ROMs directory where your game files will b
 
 The next step is optional, and it's whether to create the game systems directory structure inside your ROMs folder. Performing this will also create _systeminfo.txt_ files in each system directory. These files contain information about the system such as what file extensions and emulators that are supported. They are not mandatory for the app to function, they are only there for your convenience. In general it's recommended to create the system directories, although you could remove the ones you don't need afterwards for a slightly faster app startup speed.
 
-This is basically the onboarding process, and ES-DE should now start up. Just be aware that you need to place at least one game with a supported file extension in the ROMs directory tree or ES-DE will only show an information dialog about missing games.
+This is basically the onboarding process, and ES-DE should now start up. Just be aware that you need to place at least one game with a supported file extension in the ROMs directory tree or ES-DE will only show an information dialog about missing games. You can however import native Android apps and games directly from this interface. The game import process is explained elsewhere in this document.
 
 Also note that ES-DE does not install any emulators, you need to install those separately. There is more information about that topic later in this document.
 
@@ -270,9 +270,7 @@ https://archive.org/details/dolphin-and-citra-fork-backup
 
 ### DraStic
 
-This emulator can be installed from the Play store as a paid app. Note that it does not support launching of zipped game files.
-
-https://play.google.com/store/apps/details?id=com.dsemu.drastic
+This emulator used to be available from the Play store but since it's been removed from there it's not entirely clear where to get it from. Also note that it does not support launching of zipped game files.
 
 ### DroidArcadia
 
@@ -611,6 +609,7 @@ This is clearly not a complete list of Android devices, but rather those we know
 | Anbernic     | RG556                   | 13              | Yes       | None                |                            |
 | Anbernic     | RG ARC                  | LineageOS 12,<br>GammaOS 12,<br>GammaOS 13 TV | Yes       | None                | Limited RAM capacity for this device makes it unsuitable for demanding themes and large game collections |
 | Anbernic     | RG Cube                 | 13              | Yes       | None                |                            |
+| AYANEO       | Pocket ACE              | 13              | Yes       | None                |                            |
 | AYANEO       | Pocket Air              | 12              | Yes       | None                |                            |
 | AYANEO       | Pocket DMG              | 13              | Yes       | None                |                            |
 | AYANEO       | Pocket Micro            | 13              | Yes       | None                |                            |

@@ -1118,6 +1118,27 @@ export ESDE_APPDATA_DIR=~/.config/ES-DE
 ./ES-DE_x64.AppImage
 ```
 
+## Overriding resource files
+
+Although not normally needed, it's possible to override the bundled resource files on a per-file basis. To do so simply create the resource path inside the ES-DE application data directory and place a file there with the same name as the file you intend to override.
+
+Here's an example where the splash screen has been overridden with a custom image:
+
+```
+ES-DE/resources/graphics/splash.svg
+```
+
+And here's a custom MAME name translation file is in use:
+```
+ES-DE/resources/MAME/mamenames.xml
+```
+Overriding resource files is supported on all operating systems including Android.
+
+Here's the bundled resource directory for reference: \
+https://gitlab.com/es-de/emulationstation-de/-/tree/master/resources?ref_type=heads
+
+Note that it's a bad idea to override the es_find_rules.xml, es_systems.xml and es_import_rules.xml files as for these there are better mechanisms available to customize the configuration, as covered elsewhere in this document.
+
 ## Settings not configurable via the GUI
 
 There are some settings which are not configurable via the GUI as modifying these should normally not be required. To still change these, edit the es_settings.xml file directly.

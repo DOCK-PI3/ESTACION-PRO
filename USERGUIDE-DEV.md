@@ -817,7 +817,7 @@ So placing a manually downloaded emulator binary in either of these directories 
 
 The following manually downloaded emulators are supported when using the bundled configuration:
 
-| System name                                   | Emulator         | Filename                          |
+| System                                        | Emulator         | Filename                          |
 | :-------------------------------------------- | :--------------- | :-------------------------------- |
 | _Multiple_                                    | Mesen            | Mesen/Mesen                       |
 | adam/colecovision                             | ColEm            | colem/colem                       |
@@ -945,7 +945,7 @@ Likewise the contents of the `WineCfg (Proton).sh` file could look something lik
 
 The following Windows emulators are supported, and the setup for most of these is covered in detail in specific sections of this document:
 
-| System name               | Emulator         | Filename                |
+| System                    | Emulator         | Filename                |
 | :------------------------ | :--------------- | :-----------------------|
 | arcade/mame               | MFME             | MFME/MFME.exe           |
 | atarijaguar/atarijaguarcd | BigPEmu          | BigPEmu/BigPEmu.exe     |
@@ -1023,6 +1023,24 @@ On Android you can also select whether to import media from the actual app packa
 Once the import has finished a popup notification will be displayed telling you how many games were imported. You can proceed to import games for additional systems if you want to, or you can leave the game importer in which case ES-DE will reload, populating the systems with your newly imported games or applications.
 
 Note that for the desktop operating systems, the import rules included in the bundled configuration use shortcut files, so to for example import your Steam games into ES-DE you first need to create such shortcut files from within Steam.
+
+Below are the import rules that are part of the bundled configuration.
+
+| Operating system | System directory             | Full system name            | Rule name         |
+| :--------------- | :--------------------------- | :-------------------------- | :---------------- |
+| Android          | androidapps                  | Android Apps                | Android Package   |
+| Android          | androidgames                 | Android Games               | Android Package   |
+| Android          | emulators                    | Emulators                   | Android Package   |
+| Linux            | desktop                      | Desktop Applications        | Desktop Shortcut  |
+| Linux            | emulators                    | Emulators                   | Desktop Shortcut  |
+| Linux            | lutris                       | Lutris Open Gaming Platform | Desktop Shortcut  |
+| Linux            | steam                        | Valve Steam                 | Desktop Shortcut  |
+| macOS            | desktop                      | Desktop Applications        | macOS Bundle      |
+| macOS            | emulators                    | Emulators                   | macOS Bundle      |
+| Windows          | desktop                      | Desktop Applications        | Shortcut File     |
+| Windows          | emulators                    | Emulators                   | Shortcut File     |
+| Windows          | steam                        | Valve Steam                 | Steam URL File    |
+| Windows          | windows                      | Microsoft Windows           | Shortcut File     |
 
 ### Single game file installation
 
@@ -2507,6 +2525,8 @@ Here's an example using alias files on macOS:
 ~/ROMs/desktop/RetroArch.app
 ~/ROMs/desktop/System Preferences.app
 ```
+
+As an alternative on macOS it's also possible to add symlinks to the .app directories, although you likely need to do this from a terminal window.
 
 For the _desktop_ and _emulators_ systems on Linux, macOS and Windows it's also possible to use the built-in game importer to populate the systems using shortcut files. You can find the game importer in the _Utilities_ menu and it's also described in-depth elsewhere in this document.
 
