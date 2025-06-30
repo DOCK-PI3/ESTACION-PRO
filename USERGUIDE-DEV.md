@@ -855,6 +855,7 @@ The following manually downloaded emulators are supported when using the bundled
 | switch                                        | Ryujinx          | publish/Ryujinx                   |
 | switch                                        | Ryujinx          | publish/Ryujinx.Ava               |
 | trs-80                                        | sdl2trs          | sdl2trs/sdl2trs                   |
+| vpinball                                      | Visual Pinball X | VPinballX/VPinballX_BGFX          |
 | vpinball                                      | Visual Pinball X | VPinballX/VPinballX_GL            |
 | wiiu                                          | Cemu             | Cemu/Cemu                         |
 | xbox360                                       | xenia            | xenia/xenia                       |
@@ -880,6 +881,12 @@ And for SkyEmu:
 ```
 cd ~/Applications/SkyEmu
 chmod +x SkyEmu
+```
+
+And for VPinballX_BGFX:
+```
+cd ~/Applications/VPinballX
+chmod +x VPinballX_BGFX
 ```
 
 And for VPinballX_GL:

@@ -21,6 +21,7 @@
 * Added Ymir standalone as an alternative emulator for the saturn and saturnjp systems on Linux and Windows
 * Changed the MAME "speech" parameter to "speechadapter" for the ti99 system due to changes introduced in MAME 0.276
 * Added MAME Legacy (Standalone) as an alternative emulator for the ti99 system on Linux, macOS and Windows
+* Added find rule entries for the bgfx release of Visual Pinball
 * (Android) Removed all MAME4droid 2024 emulator entries (replacement MAME4droid Current entries were added in ES-DE 3.2.0-45)
 * (Linux) Added the native xenia release as the default emulator for the xbox360 system
 * (Linux) Added Lindbergh Loader standalone as an alternative emulator for the arcade, mame and pcarcade systems

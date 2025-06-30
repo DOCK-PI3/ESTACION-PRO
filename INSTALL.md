@@ -1126,16 +1126,16 @@ Here's an example where the splash screen has been overridden with a custom imag
 ES-DE/resources/graphics/splash.svg
 ```
 
-And here's a custom MAME name translation file is in use:
+And here's a custom MAME name translation file in use:
 ```
 ES-DE/resources/MAME/mamenames.xml
 ```
 Overriding resource files is supported on all operating systems including Android.
 
-Here's the bundled resource directory for reference: \
+Here's the bundled resources directory for reference: \
 https://gitlab.com/es-de/emulationstation-de/-/tree/master/resources?ref_type=heads
 
-Note that it's a bad idea to override the es_find_rules.xml, es_systems.xml and es_import_rules.xml files as for these there are better mechanisms available to customize the configuration, as covered elsewhere in this document.
+Note that it's a bad idea to override the es_find_rules.xml and es_systems.xml files as for these there are better mechanisms available to customize the configuration. How that works is covered elsewhere in this document.
 
 ## Settings not configurable via the GUI
 
