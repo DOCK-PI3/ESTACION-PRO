@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-06-24 18:58+0200\n"
-"PO-Revision-Date: 2025-03-03 18:27-0300\n"
+"POT-Creation-Date: 2025-06-30 19:52+0200\n"
+"PO-Revision-Date: 2025-06-30 09:39-0300\n"
 "Last-Translator: Northwestern Software <info@es-de.org>\n"
 "Language-Team: Português (Brasil) <info@es-de.org>\n"
 "Language: pt_BR\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 
 msgid "Network error (status:"
 msgstr "Erro de rede (estado:"
@@ -521,67 +521,67 @@ msgid "DISPLAY STAR MARKINGS FOR CUSTOM COLLECTIONS"
 msgstr "MOSTRAR ESTRELAS NAS COLEÇÕES ADAPTADAS"
 
 msgid "IMPORT TO SYSTEM"
-msgstr ""
+msgstr "IMPORTAR AO SISTEMA"
 
 msgid "NO CONFIGURATION"
-msgstr ""
+msgstr "NENHUMA CONFIGURAÇÃO"
 
 msgid "REMOVE ENTRIES"
-msgstr ""
+msgstr "REMOVER ENTRADAS"
 
 msgid "ALL UNSELECTED"
-msgstr ""
+msgstr "NENHUM SELECIONADO"
 
 msgid "MEDIA TARGET TYPE"
-msgstr ""
+msgstr "TIPO DE ALVO DA MÍDIA"
 
 msgid "SCREENSHOTS"
-msgstr ""
+msgstr "CAPTURAS DE TELA"
 
 msgid "TITLE SCREENS"
-msgstr ""
+msgstr "TELAS DE TÍTULO"
 
 msgid "COVERS"
-msgstr ""
+msgstr "CAPAS"
 
 msgid "BACK COVERS"
-msgstr ""
+msgstr "CAPAS TRASEIRAS"
 
 msgid "MARQUEES (WHEELS)"
-msgstr ""
+msgstr "LETREIRO (RODA)"
 
 msgid "3D BOXES"
-msgstr ""
+msgstr "CAIXAS 3D"
 
 msgid "PHYSICAL MEDIA"
-msgstr ""
+msgstr "MÍDIA FÍSICA"
 
 msgid "FAN ART"
 msgstr "ARTE DE FÃ"
 
 msgid "IMPORT MEDIA"
-msgstr ""
+msgstr "IMPORTAR MÍDIA"
 
 msgid "IMPORT BANNERS OR LOGOS IF AVAILABLE"
-msgstr ""
+msgstr "IMPORTAR BANNERS OU LOGOTIPOS SE DISPONÍVEIS"
 
 msgid "OVERWRITE MEDIA FILES"
-msgstr ""
+msgstr "SUBSTITUIR ARQUIVOS DE MÍDIA"
 
 msgid "ONLY INCLUDE APPS CATEGORIZED AS GAMES"
-msgstr ""
+msgstr "INCLUIR SÓ APLICATIVOS CLASSIFICADOS COMO JOGOS"
 
 msgid "START"
 msgstr "INICIAR"
 
 msgid "start importer"
-msgstr ""
+msgstr "iniciar importador"
 
 msgid "WORKING..."
 msgstr "TRABALHANDO..."
 
 msgid "COULDN'T FIND ANYTHING TO IMPORT"
-msgstr ""
+msgstr "NÃO FOI POSSÍVEL ENCONTRAR NADA PARA IMPORTAR"
 
 #, c-format
 msgid ""
@@ -590,33 +590,37 @@ msgid ""
 "THEN IMPORT THE ENTRIES YOU SELECT ON THE NEXT SCREEN\n"
 "ARE YOU SURE?"
 msgstr ""
+"AO OPTAR POR REMOVER TODAS AS ENTRADAS NÃO SELECIONADAS, TODOS OS ARQUIVOS "
+"DE JOGO COM A EXTENSÃO “%s” DA PASTA DO SISTEMA “%s” SERÃO EXCLUÍDOS, E AS "
+"ENTRADAS SELECIONADAS SERÃO IMPORTADAS NA PRÓXIMA TELA.\n"
+"TEM CERTEZA?"
 
 msgid "MAKE YOUR SELECTION"
-msgstr ""
+msgstr "FAÇA SUA SELEÇÃO"
 
 msgid "IMPORT"
-msgstr ""
+msgstr "IMPORTAR"
 
 msgid "import"
-msgstr ""
+msgstr "importar"
 
 #, c-format
 msgid "IMPORTED %i ENTRY"
 msgid_plural "IMPORTED %i ENTRIES"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "IMPORTOU %i ENTRADA"
+msgstr[1] "IMPORTOU %i ENTRADAS"
 
 msgid "SELECT ALL"
-msgstr "ESCOLHER TODOS"
+msgstr "TODOS"
 
 msgid "select all"
-msgstr "escolher todos"
+msgstr "todos"
 
 msgid "SELECT NONE"
-msgstr "NÃO ESCOLHER NENHUM"
+msgstr "NENHUM"
 
 msgid "select none"
-msgstr "não escolher nenhum"
+msgstr "nenhum"
 
 msgid "FILTER GAMELIST"
 msgstr "FILTRAR A LISTA DE JOGOS"
@@ -799,16 +803,16 @@ msgid "LEFT/RIGHT"
 msgstr "ESQUERDA/DIREITA"
 
 msgid "SYSTEM ON STARTUP"
-msgstr ""
+msgstr "SISTEMA AO INICIAR"
 
 msgid "STARTUP VIEW"
-msgstr ""
+msgstr "VISÃO AO INICIAR"
 
 msgid "SYSTEM"
 msgstr "SISTEMA"
 
 msgid "GAMELIST"
-msgstr ""
+msgstr "LISTA DE JOGOS"
 
 msgid "SYSTEMS SORTING"
 msgstr "ORDENAR SISTEMAS"
@@ -1055,7 +1059,7 @@ msgid "IGNORE KEYBOARD INPUT"
 msgstr "IGNORAR ENTRADA DO TECLADO"
 
 msgid "INPUT DEVICE NOTIFICATIONS"
-msgstr ""
+msgstr "NOTIFICAÇÕES DO DISPOSITIVO DE ENTRADA"
 
 msgid "CONFIGURE KEYBOARD AND CONTROLLERS"
 msgstr "CONFIGURAR O TECLADO E OS CONTROLES"
@@ -1209,7 +1213,7 @@ msgid "SHOW QUIT MENU (REBOOT AND POWER OFF ENTRIES)"
 msgstr "EXIBIR MENU DE SAÍDA (OPÇÕES DE REINICIAR/DESLIGAR)"
 
 msgid "GAME IMPORTER"
-msgstr ""
+msgstr "IMPORTADOR DE JOGOS"
 
 msgid "ORPHANED DATA CLEANUP"
 msgstr "LIMPEZA DE DADOS ÓRFÃOS"
@@ -1913,13 +1917,13 @@ msgid "NO GAMES FOUND"
 msgstr "NENHUM JOGO ENCONTRADO"
 
 msgid "API CALLS:"
-msgstr ""
+msgstr "CHAMADAS DE API:"
 
 #, c-format
 msgid "%i REMAINING"
 msgid_plural "%i REMAINING"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%i RESTANTE"
+msgstr[1] "%i RESTANTES"
 
 msgid "RETRY"
 msgstr "TENTAR DE NOVO"
@@ -2021,7 +2025,7 @@ msgid "DOWNLOADING THEMES LIST 100%"
 msgstr "BAIXANDO LISTA DE TEMAS 100%"
 
 msgid "REPOSITORY HAS DIVERGED FROM ORIGIN"
-msgstr ""
+msgstr "O REPOSITÓRIO SE DIVERGIU DA ORIGEM"
 
 msgid "THEME ALREADY UP TO DATE"
 msgstr "O TEMA JÁ ESTÁ ATUALIZADO"
@@ -2101,6 +2105,10 @@ msgid ""
 "FRESH DOWNLOAD IS REQUIRED AND THE OLD THEME DIRECTORY \"%s\" WILL BE "
 "RENAMED TO \"%s_DIVERGED_DISABLED\""
 msgstr ""
+"PARECE QUE ISTO É UM REPOSITÓRIO DIVERGENTE, O QUE GERALMENTE SIGNIFICA QUE "
+"HÁ UM CONFLITO DE MESCLAGEM ASCENDENTE QUE PRECISA SER RESOLVIDO PELO "
+"DESENVOLVEDOR DO TEMA. SERÁ PRECISO BAIXÁ-LO NOVAMENTE E A ANTIGA PASTA DO "
+"TEMA. \"%s\" SERÁ RENOMEADA PARA \"%s_DIVERGED_DISABLED\""
 
 #, c-format
 msgid ""
@@ -2147,7 +2155,7 @@ msgid "CORRUPT"
 msgstr "CORROMPIDO"
 
 msgid "DIVERGED"
-msgstr ""
+msgstr "DIVERGENTE"
 
 msgid "SHALLOW"
 msgstr "SUPERFICIAL"
@@ -2616,6 +2624,11 @@ msgid ""
 "INFORMATION SUCH AS THE SUPPORTED FILE EXTENSIONS. THIS IS THE CONFIGURED "
 "ROM DIRECTORY:\n"
 msgstr ""
+"NÃO FORAM ENCONTRADOS ARQUIVOS DE JOGOS. IMPORTE ALGUNS JOGOS OU COLOQUE-OS "
+"MANUALMENTE NA PASTA DE ROMS CONFIGURADA. SE PREFERIR, VOCÊ PODE GERAR A "
+"ESTRUTURA DA PASTA DE ROMS, QUE VAI CRIAR UM ARQUIVO DE TEXTO PARA CADA "
+"SISTEMA, FORNECENDO ALGUMAS INFORMAÇÕES, COMO AS EXTENSÕES DE ARQUIVO "
+"SUPORTADAS. ESTA É A PASTA DE ROMS CONFIGURADA:\n"
 
 msgid ""
 "NO GAME FILES WERE FOUND. EITHER IMPORT SOME GAMES OR PLACE THEM MANUALLY IN "
@@ -2624,9 +2637,15 @@ msgid ""
 "FILE FOR EACH SYSTEM PROVIDING SOME INFORMATION SUCH AS THE SUPPORTED FILE "
 "EXTENSIONS. THIS IS THE CONFIGURED ROM DIRECTORY:\n"
 msgstr ""
+"NÃO FORAM ENCONTRADOS ARQUIVOS DE JOGOS. IMPORTE ALGUNS JOGOS OU COLOQUE-OS "
+"MANUALMENTE NA PASTA DE ROMS ATUALMENTE CONFIGURADA. VOCÊ TAMBÉM PODE "
+"ALTERAR O CAMINHO DAS ROMS E, SE PREFERIR, GERAR A ESTRUTURA DA PASTA DE "
+"ROMS, QUE VAI CRIAR UM ARQUIVO DE TEXTO PARA CADA SISTEMA, FORNECENDO "
+"ALGUMAS INFORMAÇÕES, COMO AS EXTENSÕES DE ARQUIVO SUPORTADAS.. ESTA É A "
+"PASTA DE ROMS CONFIGURADA:\n"
 
 msgid "CHANGE"
-msgstr ""
+msgstr "MODIFICAR"
 
 msgid "ENTER ROM DIRECTORY PATH"
 msgstr "INSIRA O CAMINHO DA PASTA DAS ROMS"
