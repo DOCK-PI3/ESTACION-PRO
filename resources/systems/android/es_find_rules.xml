@@ -436,6 +436,7 @@
     <emulator name="VISUAL-PINBALL">
         <!-- Pinball simulator Visual Pinball -->
         <rule type="androidpackage">
+            <entry>org.vpinball.vpinball_bgfx/org.vpinball.app.VPinballActivity</entry>
             <entry>org.vpinball.app/.VpxLauncherActivity</entry>
         </rule>
     </emulator>

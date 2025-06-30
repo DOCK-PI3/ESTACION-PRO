@@ -724,6 +724,8 @@
     <emulator name="VISUAL-PINBALL">
         <!-- Pinball simulator Visual Pinball -->
         <rule type="staticpath">
+            <entry>%ESPATH%\Emulators\VPinballX\VPinballX_BGFX64.exe</entry>
+            <entry>%ESPATH%\..\Emulators\VPinballX\VPinballX_BGFX64.exe</entry>
             <entry>%ESPATH%\Emulators\VPinballX\VPinballX_GL64.exe</entry>
             <entry>%ESPATH%\..\Emulators\VPinballX\VPinballX_GL64.exe</entry>
             <entry>%ESPATH%\Emulators\VPinballX\VPinballX64.exe</entry>

@@ -145,6 +145,7 @@ Emulators\VICE\bin\xplus4.exe
 Emulators\VICE\xvic.exe
 Emulators\VICE\bin\xvic.exe
 Emulators\Vircon32\Emulator\Vircon32.exe
+Emulators\VPinballX\VPinballX_BGFX64.exe
 Emulators\VPinballX\VPinballX_GL64.exe
 Emulators\VPinballX\VPinballX64.exe
 Emulators\Vita3K\Vita3K.exe

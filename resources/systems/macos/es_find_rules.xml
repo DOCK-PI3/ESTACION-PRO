@@ -417,6 +417,7 @@
     <emulator name="VISUAL-PINBALL">
         <!-- Pinball simulator Visual Pinball -->
         <rule type="staticpath">
+            <entry>/Applications/VPinballX_BGFX.app/Contents/MacOS/VPinballX_BGFX</entry>
             <entry>/Applications/VPinballX_GL.app/Contents/MacOS/VPinballX_GL</entry>
         </rule>
     </emulator>

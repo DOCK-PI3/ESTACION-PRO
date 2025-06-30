@@ -628,9 +628,14 @@
     <emulator name="VISUAL-PINBALL">
         <!-- Pinball simulator Visual Pinball -->
         <rule type="systempath">
+            <entry>VPinballX_BGFX</entry>
             <entry>VPinballX_GL</entry>
         </rule>
         <rule type="staticpath">
+            <entry>~/Applications/VPinballX/VPinballX_BGFX</entry>
+            <entry>~/.local/share/applications/VPinballX/VPinballX_BGFX</entry>
+            <entry>~/.local/bin/VPinballX/VPinballX_BGFX</entry>
+            <entry>~/bin/VPinballX/VPinballX_BGFX</entry>
             <entry>~/Applications/VPinballX/VPinballX_GL</entry>
             <entry>~/.local/share/applications/VPinballX/VPinballX_GL</entry>
             <entry>~/.local/bin/VPinballX/VPinballX_GL</entry>
