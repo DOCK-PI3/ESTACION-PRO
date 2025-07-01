@@ -767,6 +767,12 @@ void GuiGameImporter::fileRule(std::pair<const std::string, ImportRules::ImportR
                     continue;
                 }
 #else
+                if (Utils::FileSystem::isDirectory(file)) {
+                    LOG(LogWarning) << "GuiGameImporter: Skipping \"" << file
+                                    << "\" as it's a directory and not a file";
+                    continue;
+                }
+
                 const long fileSize {Utils::FileSystem::getFileSize(file)};
                 if (fileSize > MAX_FILE_SIZE) {
                     LOG(LogWarning) << "GuiGameImporter: File \"" << file << "\" is too big at "
@@ -845,6 +851,12 @@ void GuiGameImporter::desktopshortcutRule(
         std::list<std::string> fileList {Utils::FileSystem::getDirContent(expandedDir, false)};
         for (auto& file : fileList) {
             if (Utils::FileSystem::getExtension(file) == mFileExtension) {
+                if (Utils::FileSystem::isDirectory(file)) {
+                    LOG(LogWarning) << "GuiGameImporter: Skipping \"" << file
+                                    << "\" as it's a directory and not a file";
+                    continue;
+                }
+
                 const long fileSize {Utils::FileSystem::getFileSize(file)};
                 if (fileSize > MAX_FILE_SIZE) {
                     LOG(LogWarning) << "GuiGameImporter: File \"" << file << "\" is too big at "
