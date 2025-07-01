@@ -616,6 +616,7 @@ This is clearly not a complete list of Android devices, but rather those we know
 | Anbernic     | RG406V                  | 13              | Yes       | None                |                            |
 | Anbernic     | RG505                   | 12,<br>GammaOS 12 | Yes       | None                |                            |
 | Anbernic     | RG556                   | 13              | Yes       | None                |                            |
+| Anbernic     | RG557                   | 14              | Yes       | Theme downloader    | There's a firmware bug that prevents the theme downloader from working, so themes need to be installed manually |
 | Anbernic     | RG ARC                  | LineageOS 12,<br>GammaOS 12,<br>GammaOS 13 TV | Yes       | None                | Limited RAM capacity for this device makes it unsuitable for demanding themes and large game collections |
 | Anbernic     | RG Cube                 | 13              | Yes       | None                |                            |
 | AYANEO       | Pocket ACE              | 13              | Yes       | None                |                            |
