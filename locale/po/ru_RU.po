@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-06-24 18:58+0200\n"
-"PO-Revision-Date: 2025-03-05 19:28+0400\n"
+"POT-Creation-Date: 2025-07-02 15:02+0200\n"
+"PO-Revision-Date: 2025-07-02 16:34+0400\n"
 "Last-Translator: Northwestern Software <info@es-de.org>\n"
 "Language-Team: Русский <info@es-de.org>\n"
 "Language: ru_RU\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 
 msgid "Network error (status:"
 msgstr "Ошибка сети (статус:"
@@ -493,7 +493,7 @@ msgid ""
 "'%s'\n"
 "ARE YOU SURE?"
 msgstr ""
-"ЭТО ПРИВЕДЕТ К БЕЗВОЗВРАТНОМУ УДАЛЕНИЮ КОЛЛЕКЦИИ\n"
+"ЭТО ПРИВЕДЕТ К БЕЗВОЗВРАТНОМУ УДАЛЕНИЮ КОЛЛЕКЦИИ.\n"
 "'%s'\n"
 "ВЫ УВЕРЕНЫ?"
 
@@ -522,67 +522,67 @@ msgid "DISPLAY STAR MARKINGS FOR CUSTOM COLLECTIONS"
 msgstr "ВКЛ. ОЦЕНКУ ЗВЁЗДАМИ ДЛЯ ПОЛЬЗ. КОЛЛЕКЦИЙ"
 
 msgid "IMPORT TO SYSTEM"
-msgstr ""
+msgstr "ИМПОРТИРОВАТЬ В СИСТЕМУ"
 
 msgid "NO CONFIGURATION"
-msgstr ""
+msgstr "НЕТ КОНФИГУРАЦИИ"
 
 msgid "REMOVE ENTRIES"
-msgstr ""
+msgstr "УДАЛИТЬ ЗАПИСИ"
 
 msgid "ALL UNSELECTED"
-msgstr ""
+msgstr "ВСЕ НЕ ВЫБРАННЫЕ"
 
 msgid "MEDIA TARGET TYPE"
-msgstr ""
+msgstr "ТИП МЕДИА"
 
 msgid "SCREENSHOTS"
-msgstr ""
+msgstr "СКРИНШОТЫ"
 
 msgid "TITLE SCREENS"
-msgstr ""
+msgstr "СКРИНШОТЫ ГЛАВНОГО МЕНЮ"
 
 msgid "COVERS"
-msgstr ""
+msgstr "ПЕРЕДНИЕ ОБЛОЖКИ"
 
 msgid "BACK COVERS"
-msgstr ""
+msgstr "ЗАДНИЕ ОБЛОЖКИ"
 
 msgid "MARQUEES (WHEELS)"
-msgstr ""
+msgstr "ЛОГО (БАННЕРЫ)"
 
 msgid "3D BOXES"
-msgstr ""
+msgstr "3D-ОБЛОЖКИ"
 
 msgid "PHYSICAL MEDIA"
-msgstr ""
+msgstr "ФИЗИЧЕСКИЕ НОСИТЕЛИ"
 
 msgid "FAN ART"
 msgstr "ФАН-АРТ"
 
 msgid "IMPORT MEDIA"
-msgstr ""
+msgstr "ИМПОРТИРОВАТЬ МЕДИА"
 
 msgid "IMPORT BANNERS OR LOGOS IF AVAILABLE"
-msgstr ""
+msgstr "ИМПОРТИРОВАТЬ БАННЕРЫ ИЛИ ЛОГОТИПЫ ЕСЛИ ДОСТУПНО"
 
 msgid "OVERWRITE MEDIA FILES"
-msgstr ""
+msgstr "ПЕРЕЗАПИСЫВАТЬ МЕДИАФАЙЛЫ"
 
 msgid "ONLY INCLUDE APPS CATEGORIZED AS GAMES"
-msgstr ""
+msgstr "ВКЛЮЧАТЬ ТОЛЬКО ПРИЛОЖЕНИЯ ИЗ КАТЕГОРИИ ИГР"
 
 msgid "START"
 msgstr "СТАРТ"
 
 msgid "start importer"
-msgstr ""
+msgstr "запуск импорта"
 
 msgid "WORKING..."
 msgstr "ВЫПОЛНЕНИЕ..."
 
 msgid "COULDN'T FIND ANYTHING TO IMPORT"
-msgstr ""
+msgstr "НЕ НАЙДЕНО НИЧЕГО ДЛЯ ИМПОРТА"
 
 #, c-format
 msgid ""
@@ -591,22 +591,26 @@ msgid ""
 "THEN IMPORT THE ENTRIES YOU SELECT ON THE NEXT SCREEN\n"
 "ARE YOU SURE?"
 msgstr ""
+"ВЫ ВЫБРАЛИ УДАЛИТЬ ВСЕ НЕВЫБРАННЫЕ ЗАПИСИ, ЭТО УДАЛИТ ВСЕ ИГРОВЫЕ ФАЙЛЫ С "
+"РАСШИРЕНИЕМ ФАЙЛА \"%s\" ИЗ СИСТЕМНОЙ ДИРЕКТОРИИ \"%s\" И ЗАТЕМ ИМПОРТИРУЕТ "
+"ФАЙЛЫ, ВЫБРАННЫЕ ВАМИ НА СЛЕДУЮЩЕМ ЭКРАНЕ\n"
+"ВЫ УВЕРЕНЫ?"
 
 msgid "MAKE YOUR SELECTION"
-msgstr ""
+msgstr "СДЕЛАЙТЕ ВЫБОР"
 
 msgid "IMPORT"
-msgstr ""
+msgstr "ИМПОРТ"
 
 msgid "import"
-msgstr ""
+msgstr "импорт"
 
 #, c-format
 msgid "IMPORTED %i ENTRY"
 msgid_plural "IMPORTED %i ENTRIES"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "ИМПОРТИРОВАНА %i ЗАПИСЬ"
+msgstr[1] "ИМПОРТИРОВАНО %i ЗАПИСИ"
+msgstr[2] "ИМПОРТИРОВАНО %i ЗАПИСЕЙ"
 
 msgid "SELECT ALL"
 msgstr "ВЫБРАТЬ ВСЁ"
@@ -801,16 +805,16 @@ msgid "LEFT/RIGHT"
 msgstr "ВЛЕВО/ВПРАВО"
 
 msgid "SYSTEM ON STARTUP"
-msgstr ""
+msgstr "СИСТЕМА ПРИ ЗАПУСКЕ"
 
 msgid "STARTUP VIEW"
-msgstr ""
+msgstr "ВИД ПРИ ЗАПУСКЕ"
 
 msgid "SYSTEM"
 msgstr "СИСТЕМА"
 
 msgid "GAMELIST"
-msgstr ""
+msgstr "ГЕЙМЛИСТ"
 
 msgid "SYSTEMS SORTING"
 msgstr "СОРТИРОВКА СИСТЕМ"
@@ -1058,7 +1062,7 @@ msgid "IGNORE KEYBOARD INPUT"
 msgstr "ИГНОРИРОВАТЬ ВВОД С КЛАВИАТУРЫ"
 
 msgid "INPUT DEVICE NOTIFICATIONS"
-msgstr ""
+msgstr "УВЕДОМЛЕНИЯ УСТРОЙСТВ ВВОДА"
 
 msgid "CONFIGURE KEYBOARD AND CONTROLLERS"
 msgstr "НАСТРОЙКА КЛАВИАТУРЫ И КОНТРОЛЛЕРОВ"
@@ -1212,7 +1216,7 @@ msgid "SHOW QUIT MENU (REBOOT AND POWER OFF ENTRIES)"
 msgstr "МЕНЮ ВЫХОДА (ПУНКТЫ ПЕРЕЗАГРУЗКИ И ВЫКЛ.)"
 
 msgid "GAME IMPORTER"
-msgstr ""
+msgstr "ИМПОРТ ИГР"
 
 msgid "ORPHANED DATA CLEANUP"
 msgstr "ОЧИСТКА НЕАКТУАЛЬНЫХ ДАННЫХ"
@@ -1911,14 +1915,14 @@ msgid "NO GAMES FOUND"
 msgstr "НЕ НАЙДЕНО ИГР"
 
 msgid "API CALLS:"
-msgstr ""
+msgstr "ВЫЗОВЫ API:"
 
 #, c-format
 msgid "%i REMAINING"
 msgid_plural "%i REMAINING"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%i ОСТАЛОСЬ"
+msgstr[1] "%i ОСТАЛОСЬ"
+msgstr[2] "%i ОСТАЛОСЬ"
 
 msgid "RETRY"
 msgstr "ПОВТОР"
@@ -2021,7 +2025,7 @@ msgid "DOWNLOADING THEMES LIST 100%"
 msgstr "ЗАГРУЗКА СПИСКА ТЕМ 100%"
 
 msgid "REPOSITORY HAS DIVERGED FROM ORIGIN"
-msgstr ""
+msgstr "РЕПОЗИТОРИЙ РАСХОДИТСЯ С ИСТОЧНИКОМ"
 
 msgid "THEME ALREADY UP TO DATE"
 msgstr "ТЕМА УЖЕ АКТУАЛЬНАЯ"
@@ -2102,6 +2106,10 @@ msgid ""
 "FRESH DOWNLOAD IS REQUIRED AND THE OLD THEME DIRECTORY \"%s\" WILL BE "
 "RENAMED TO \"%s_DIVERGED_DISABLED\""
 msgstr ""
+"ПОХОЖЕ, ЧТО ЭТО РАСХОДЯЩИЙСЯ РЕПОЗИТОРИЙ, ЧТО ОБЫЧНО ОЗНАЧАЕТ НАЛИЧИЕ "
+"КОНФЛИКТА СЛИЯНИЯ, КОТОРЫЙ ДОЛЖЕН БЫТЬ ИСПРАВЛЕН РАЗРАБОТЧИКОМ ТЕМЫ. ТЕМУ "
+"НЕОБХОДИМО ЗАГРУЗИТЬ ПОВТОРНО, А КАТАЛОГ СТАРОЙ ТЕМЫ \"%s\" БУДЕТ "
+"ПЕРЕИМЕНОВАН В \"%s_DIVERGED_DISABLED\""
 
 #, c-format
 msgid ""
@@ -2148,7 +2156,7 @@ msgid "CORRUPT"
 msgstr "ИСКАЖЁННЫЕ"
 
 msgid "DIVERGED"
-msgstr ""
+msgstr "РАЗОШЛИСЬ"
 
 msgid "SHALLOW"
 msgstr "ПОВЕРХНОСТНЫХ"
@@ -2621,6 +2629,11 @@ msgid ""
 "INFORMATION SUCH AS THE SUPPORTED FILE EXTENSIONS. THIS IS THE CONFIGURED "
 "ROM DIRECTORY:\n"
 msgstr ""
+"НЕ НАЙДЕНО ИГРОВЫХ ФАЙЛОВ. ИМПОРТИРУЙТЕ ИГРЫ ИЛИ ПОМЕСТИТЕ ИХ ВРУЧНУЮ В "
+"КАТАЛОГ РОМОВ. ОПЦИОНАЛЬНО ВЫ МОЖЕТЕ СГЕНЕРИРОВАТЬ СТРУКТУРУ КАТАЛОГОВ "
+"РОМОВ, ЧТО СОЗДАСТ ТЕКСТОВЫЙ ФАЙЛ ДЛЯ КАЖДОЙ СИСТЕМЫ, ДАЮЩИЙ НЕКОТОРУЮ "
+"ИНФОРМАЦИЮ, НАПРИМЕР, ПОДДЕРЖИВАЕМЫЕ РАСШИРЕНИЯ ФАЙЛОВ. ТЕКУЩИЙ КАТАЛОГ "
+"РОМОВ:\n"
 
 msgid ""
 "NO GAME FILES WERE FOUND. EITHER IMPORT SOME GAMES OR PLACE THEM MANUALLY IN "
@@ -2629,9 +2642,14 @@ msgid ""
 "FILE FOR EACH SYSTEM PROVIDING SOME INFORMATION SUCH AS THE SUPPORTED FILE "
 "EXTENSIONS. THIS IS THE CONFIGURED ROM DIRECTORY:\n"
 msgstr ""
+"НЕ НАЙДЕНО ИГРОВЫХ ФАЙЛОВ. ИМПОРТИРУЙТЕ ИГРЫ ИЛИ ПОМЕСТИТЕ ИХ ВРУЧНУЮ В "
+"КАТАЛОГ РОМОВ. ВЫ ТАКЖЕ МОЖЕТЕ СМЕНИТЬ ПУТЬ К РОМАМ И ОПЦИОНАЛЬНО "
+"СГЕНЕРИРОВАТЬ СТРУКТУРУ КАТАЛОГОВ РОМОВ, ЧТО СОЗДАСТ ТЕКСТОВЫЙ ФАЙЛ ДЛЯ "
+"КАЖДОЙ СИСТЕМЫ, ДАЮЩИЙ НЕКОТОРУЮ ИНФОРМАЦИЮ, НАПРИМЕР, ПОДДЕРЖИВАЕМЫЕ "
+"РАСШИРЕНИЯ ФАЙЛОВ. ТЕКУЩИЙ КАТАЛОГ РОМОВ:\n"
 
 msgid "CHANGE"
-msgstr ""
+msgstr "ИЗМЕНИТЬ"
 
 msgid "ENTER ROM DIRECTORY PATH"
 msgstr "ВВЕДИТЕ ПУТЬ К КАТАЛОГУ РОМОВ"
