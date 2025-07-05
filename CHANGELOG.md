@@ -15,8 +15,11 @@
 * Added translations for Bosnian (bs_BA)
 * Added translations for Croatian (hr_HR)
 * Added translations for Serbian (sr_RS)
+* Added support for the Sega Model 3 (model3) game system on Android and macOS
+* Added the MAME - Current RetroArch core and MAME standalone as alternative emulators for the model3 system on Linux and Windows
 * Added the Geargrafx RetroArch core as an alternative emulator for the pcengine, supergrafx and tg16 systems
 * Added the DICE RetroArch core as an alternative emulator for the arcade and mame systems
+* Added the drs (Cave Story) RetroArch core as an alternative emulator for the ports system
 * Added the .rom file extension to the pcengine, supergrafx and tg16 systems
 * Added Ymir standalone as an alternative emulator for the saturn and saturnjp systems on Linux and Windows
 * Changed the MAME "speech" parameter to "speechadapter" for the ti99 system due to changes introduced in MAME 0.276

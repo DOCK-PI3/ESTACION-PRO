@@ -1348,6 +1348,8 @@ Likewise if using AdvanceMAME you need to define the ROM directory in the advmam
 
 **Sega Model 2**
 
+These games can be emulated using MAME or Model 2 Emulator.
+
 If emulating Sega Model 2 games using _Model 2 Emulator_ (natively on Windows or using Wine or Proton on Linux), then you need to change the ROM directory path in the EMULATOR.INI file to point to your Model 2 ROMs.
 
 On Linux it could look something like the following:
@@ -1381,6 +1383,8 @@ It seems as if Proton generally provides better performance for this emulator th
 On macOS, the only available emulator for Sega Model 2 is MAME, either the RetroArch - Current core or MAME standalone. Compatibility is still quite poor with only a handful of games working correctly, but this is likely to improve going forward as almost all games for this platform can already start and run to a certain degree. Some games flagged as not working by MAME are still playable with only minor glitches to audio and graphics, just make sure to use a recent ROM set for maximum compatibility.
 
 **Sega Model 3**
+
+These games can be emulated using MAME or Supermodel, note however that MAME support for this platform is still not very mature.
 
 In the past a custom Supermodel build was provided for Linux as there was no other way to run this emulator on devices like the Steam Deck. As there is now a Flatpak available this should be used instead and no further custom builds will be provided by the ES-DE project.
 
@@ -4523,7 +4527,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | megaduck              | Creatronic Mega Duck                           | SameDuck                          | MAME - Current,<br>MAME **(Standalone)** | No           | Single archive or ROM file |
 | mess                  | Multi Emulator Super System                    | MESS 2015                         |                                   |              |                                      |
 | model2                | Sega Model 2                                   | Model 2 Emulator **(Standalone)** [W],<br>MAME - Current [LM] | Model 2 Emulator [Suspend ES-DE] **(Standalone)** [W],<br>MAME - Current [W],<br>MAME **(Standalone)**,<br>Model 2 Emulator **(Wine)** [L],<br>Model 2 Emulator **(Proton)** [L] | Yes for MAME | See the specific _Arcade and Neo Geo_ section elsewhere in this guide |
-| model3                | Sega Model 3                                   | Supermodel **(Standalone)** [LW]  | Supermodel Dojo **(Standalone)** [W] | No           | See the specific _Arcade and Neo Geo_ section elsewhere in this guide |
+| model3                | Sega Model 3                                   | Supermodel **(Standalone)** [LW],<br>MAME - Current [M] | Supermodel Dojo **(Standalone)** [W],<br>MAME - Current [LW],<br>MAME **(Standalone)** | No           | See the specific _Arcade and Neo Geo_ section elsewhere in this guide |
 | moto                  | Thomson MO/TO Series                           | Theodore                          |                                   |              |                                      |
 | msx                   | MSX                                            | blueMSX                           | fMSX,<br>openMSX **(Standalone)**,<br>openMSX No Machine **(Standalone)**,<br>ares **(Standalone)** | Yes          |                                      |
 | msx1                  | MSX1                                           | blueMSX                           | fMSX,<br>openMSX **(Standalone)**,<br>openMSX No Machine **(Standalone)**,<br>ares **(Standalone)** | Yes          |                                      |
@@ -4559,7 +4563,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | pico8                 | PICO-8 Fantasy Console                         | PICO-8 **(Standalone)**           | PICO-8 Splore **(Standalone)**,<br>Retro8 | No           | See the specific _PICO-8_ section elsewhere in this guide |
 | plus4                 | Commodore Plus/4                               | VICE xplus4                       | VICE xplus4 **(Standalone)**      | No           | Single archive or image file for tape, cartridge or single-diskette games, .m3u playlist for multi-diskette games |
 | pokemini              | Nintendo Pokémon Mini                          | PokeMini                          |                                   | No           |                                      |
-| ports                 | Ports                                          | _Shortcut or script_              | _AppImage_ [L],<br>ECWolf (Wolfenstein 3D),<br>CannonBall (OutRun),<br>Mr.Boom (Bomberman),<br>NXEngine (Cave Story),<br>OpenLara (Tomb Raider) [LW],<br>Super Bros War | Yes for ECWolf | See the specific _Ports and desktop applications_ section elsewhere in this guide |
+| ports                 | Ports                                          | _Shortcut or script_              | _AppImage_ [L],<br>ECWolf (Wolfenstein 3D),<br>CannonBall (OutRun),<br>Mr.Boom (Bomberman),<br>NXEngine (Cave Story),<br>drs (Cave Story),<br>OpenLara (Tomb Raider) [LW],<br>Super Bros War | Yes for ECWolf | See the specific _Ports and desktop applications_ section elsewhere in this guide |
 | ps2                   | Sony PlayStation 2                             | LRPS2 [LW],<br>PCSX2 **(Standalone)** [M] | PCSX2 [LW] @,<br>PCSX2 **(Standalone)** [LW],<br>PCSX2 Legacy **(Standalone)** @,<br>Play! **(Standalone)**,<br>AetherSX2 **(Standalone)** [M] | Yes except for Play! |                                      |
 | ps3                   | Sony PlayStation 3                             | RPCS3 Shortcut **(Standalone)**   | RPCS3 Game Serial **(Standalone)**,<br>RPCS3 Directory **(Standalone)** | Yes    | See the specific _Sony PlayStation 3_ section elsewhere in this guide |
 | ps4                   | Sony PlayStation 4                             | shadPS4 Shortcut **(Standalone)** [LW],<br>shadPS4 Game Serial **(Standalone)** [M] | shadPS4 Game Serial **(Standalone)** [LW],<br>shadPS4 eboot.bin **(Standalone)** | No           | See the specific _Sony PlayStation 4_ section elsewhere in this guide |
