@@ -11,4 +11,9 @@
             <directory recursive="true">/Applications</directory>
         </rule>
     </system>
+    <system name="steam">
+        <rule name="macOS Bundle" type="macosbundle">
+            <directory recursive="false">~/Desktop</directory>
+        </rule>
+    </system>
 </ruleList>
