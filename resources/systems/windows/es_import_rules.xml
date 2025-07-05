@@ -21,6 +21,7 @@
         <rule name="Steam URL File" type="file">
             <extension>.url</extension>
             <directory recursive="false">~\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Steam</directory>
+            <directory recursive="false">~\Desktop</directory>
         </rule>
     </system>
     <system name="windows">
