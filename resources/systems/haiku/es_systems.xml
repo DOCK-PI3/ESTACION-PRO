@@ -947,7 +947,7 @@
         <fullname>Sega Model 3</fullname>
         <path>%ROMPATH%/model3</path>
         <extension>.7z .7Z .zip .ZIP</extension>
-        <command>PLACEHOLDER %ROM%</command>
+        <command label="MAME (Standalone)">%STARTDIR%=~/config/settings/mame %EMULATOR_MAME% -rompath %GAMEDIR%\;%ROMPATH%/model3 %BASENAME%</command>
         <platform>arcade</platform>
         <theme>model3</theme>
     </system>
