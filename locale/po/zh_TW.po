@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-06-24 18:58+0200\n"
-"PO-Revision-Date: 2025-03-13 22:26+0800\n"
+"POT-Creation-Date: 2025-07-06 12:33+0200\n"
+"PO-Revision-Date: 2025-07-06 12:32+0200\n"
 "Last-Translator: Northwestern Software <info@es-de.org>\n"
 "Language-Team: 繁體中文 <info@es-de.org>\n"
 "Language: zh_TW\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 
 msgid "Network error (status:"
 msgstr "網路錯誤（狀態："
@@ -506,67 +506,67 @@ msgid "DISPLAY STAR MARKINGS FOR CUSTOM COLLECTIONS"
 msgstr "顯示自定義收藏的星形標記"
 
 msgid "IMPORT TO SYSTEM"
-msgstr ""
+msgstr "導入系統"
 
 msgid "NO CONFIGURATION"
-msgstr ""
+msgstr "無配置"
 
 msgid "REMOVE ENTRIES"
-msgstr ""
+msgstr "刪除選項"
 
 msgid "ALL UNSELECTED"
-msgstr ""
+msgstr "所有未選擇的"
 
 msgid "MEDIA TARGET TYPE"
-msgstr ""
+msgstr "媒體目標類型"
 
 msgid "SCREENSHOTS"
-msgstr ""
+msgstr "截圖"
 
 msgid "TITLE SCREENS"
-msgstr ""
+msgstr "標題畫面"
 
 msgid "COVERS"
-msgstr ""
+msgstr "封面"
 
 msgid "BACK COVERS"
-msgstr ""
+msgstr "背封"
 
 msgid "MARQUEES (WHEELS)"
-msgstr ""
+msgstr "遊戲標誌"
 
 msgid "3D BOXES"
-msgstr ""
+msgstr "3D盒子"
 
 msgid "PHYSICAL MEDIA"
-msgstr ""
+msgstr "實體卡帶"
 
 msgid "FAN ART"
 msgstr "粉絲自制"
 
 msgid "IMPORT MEDIA"
-msgstr ""
+msgstr "導入媒體"
 
 msgid "IMPORT BANNERS OR LOGOS IF AVAILABLE"
-msgstr ""
+msgstr "如有可能匯入橫幅或LOGO"
 
 msgid "OVERWRITE MEDIA FILES"
-msgstr ""
+msgstr "覆寫媒體文件"
 
 msgid "ONLY INCLUDE APPS CATEGORIZED AS GAMES"
-msgstr ""
+msgstr "僅包含歸類為遊戲的應用"
 
 msgid "START"
 msgstr "開始"
 
 msgid "start importer"
-msgstr ""
+msgstr "啟動導入器"
 
 msgid "WORKING..."
 msgstr "正在執行……"
 
 msgid "COULDN'T FIND ANYTHING TO IMPORT"
-msgstr ""
+msgstr "無法找到可導入內容"
 
 #, c-format
 msgid ""
@@ -575,20 +575,23 @@ msgid ""
 "THEN IMPORT THE ENTRIES YOU SELECT ON THE NEXT SCREEN\n"
 "ARE YOU SURE?"
 msgstr ""
+"你已選擇移除所有未選中項目，此操作將刪除\"%s\"系統目錄中所有擴展名為\"%s\"的"
+"遊戲文件，隨後導入你在下一屏幕選定的項目。\n"
+"確定繼續嗎？"
 
 msgid "MAKE YOUR SELECTION"
-msgstr ""
+msgstr "請選擇"
 
 msgid "IMPORT"
-msgstr ""
+msgstr "導入"
 
 msgid "import"
-msgstr ""
+msgstr "導入"
 
 #, c-format
 msgid "IMPORTED %i ENTRY"
 msgid_plural "IMPORTED %i ENTRIES"
-msgstr[0] ""
+msgstr[0] "已導入%i個項目"
 
 msgid "SELECT ALL"
 msgstr "選擇全部"
@@ -783,16 +786,16 @@ msgid "LEFT/RIGHT"
 msgstr "左/右鍵"
 
 msgid "SYSTEM ON STARTUP"
-msgstr ""
+msgstr "初始系統"
 
 msgid "STARTUP VIEW"
-msgstr ""
+msgstr "初始瀏覽"
 
 msgid "SYSTEM"
 msgstr "平台"
 
 msgid "GAMELIST"
-msgstr ""
+msgstr "遊戲列表"
 
 msgid "SYSTEMS SORTING"
 msgstr "平台分類"
@@ -1036,7 +1039,7 @@ msgid "IGNORE KEYBOARD INPUT"
 msgstr "忽略鍵盤輸入"
 
 msgid "INPUT DEVICE NOTIFICATIONS"
-msgstr ""
+msgstr "輸入設備通知"
 
 msgid "CONFIGURE KEYBOARD AND CONTROLLERS"
 msgstr "配置鍵盤和控制器"
@@ -1189,7 +1192,7 @@ msgid "SHOW QUIT MENU (REBOOT AND POWER OFF ENTRIES)"
 msgstr "顯示退出選單（包含重啟和關機選項）"
 
 msgid "GAME IMPORTER"
-msgstr ""
+msgstr "遊戲導入器"
 
 msgid "ORPHANED DATA CLEANUP"
 msgstr "資料清理"
@@ -1862,12 +1865,12 @@ msgid "NO GAMES FOUND"
 msgstr "未找到遊戲"
 
 msgid "API CALLS:"
-msgstr ""
+msgstr "API回應："
 
 #, c-format
 msgid "%i REMAINING"
 msgid_plural "%i REMAINING"
-msgstr[0] ""
+msgstr[0] "剩餘%i個"
 
 msgid "RETRY"
 msgstr "重試"
@@ -1969,7 +1972,7 @@ msgid "DOWNLOADING THEMES LIST 100%"
 msgstr "正在下載主題列表 100%"
 
 msgid "REPOSITORY HAS DIVERGED FROM ORIGIN"
-msgstr ""
+msgstr "本地倉庫與遠端倉庫已分叉"
 
 msgid "THEME ALREADY UP TO DATE"
 msgstr "主題已是最新版本"
@@ -2042,6 +2045,9 @@ msgid ""
 "FRESH DOWNLOAD IS REQUIRED AND THE OLD THEME DIRECTORY \"%s\" WILL BE "
 "RENAMED TO \"%s_DIVERGED_DISABLED\""
 msgstr ""
+"看起來這是一個分叉倉庫，這通常意味著存在上游合併衝突，這需要由主題開發者解"
+"決。必須重新下載最新版本，原有的主題目錄 \"%s\" 將會重新命名為 "
+"\"%s_DIVERGED_DISABLED\"。"
 
 #, c-format
 msgid ""
@@ -2084,7 +2090,7 @@ msgid "CORRUPT"
 msgstr "損壞"
 
 msgid "DIVERGED"
-msgstr ""
+msgstr "已分叉"
 
 msgid "SHALLOW"
 msgstr "淺"
@@ -2531,6 +2537,9 @@ msgid ""
 "INFORMATION SUCH AS THE SUPPORTED FILE EXTENSIONS. THIS IS THE CONFIGURED "
 "ROM DIRECTORY:\n"
 msgstr ""
+"未找到任何遊戲檔案。請匯入遊戲檔案或將其手動放置到配置的遊戲目錄中。你也可以"
+"選擇產生遊戲目錄結構，該操作會為每個遊戲系統創建一個文字說明文件，其中包含支"
+"援的文件副檔名等關鍵資訊。目前配置的遊戲目錄為：\n"
 
 msgid ""
 "NO GAME FILES WERE FOUND. EITHER IMPORT SOME GAMES OR PLACE THEM MANUALLY IN "
@@ -2539,9 +2548,12 @@ msgid ""
 "FILE FOR EACH SYSTEM PROVIDING SOME INFORMATION SUCH AS THE SUPPORTED FILE "
 "EXTENSIONS. THIS IS THE CONFIGURED ROM DIRECTORY:\n"
 msgstr ""
+"未找到任何遊戲檔案。請匯入遊戲檔案或將其手動放置到目前配置的ROM目錄中。你也可"
+"以更改ROM路徑，並可選地產生ROM目錄結構，該操作將為每個系統建立說明文字文件，"
+"其中包含支援的文件副檔名等資訊。目前配置的ROM目錄為：\n"
 
 msgid "CHANGE"
-msgstr ""
+msgstr "變更"
 
 msgid "ENTER ROM DIRECTORY PATH"
 msgstr "輸入 ROM 目錄路徑"
