@@ -415,7 +415,8 @@
         <command label="Flycast (Standalone)">%EMULATOR_FLYCAST% %ROM%</command>
         <command label="Flycast Dojo (Standalone)">%EMULATOR_FLYCAST-DOJO% %ROM%</command>
         <command label="Mednafen [Sega Saturn] (Standalone)">%EMULATOR_MEDNAFEN% -force_module ss %ROM%</command>
-        <command label="Play! (Standalone)">%EMULATOR_PLAY!% --disc %ROM%</command>
+        <command label="Play! Arcade (Standalone)">%EMULATOR_PLAY!% --arcade %GAMEDIR%/%BASENAME%</command>
+        <command label="Play! Disc (Standalone)">%EMULATOR_PLAY!% --disc %ROM%</command>
         <command label="RPCS3 Shortcut (Standalone)">%RUNINBACKGROUND% %ENABLESHORTCUTS% %EMULATOR_OS-SHELL% %ROM%</command>
         <command label="RPCS3 Game Serial (Standalone)">%EMULATOR_RPCS3% --no-gui %RPCS3_GAMEID%:%INJECT%=%BASENAME%.ps3</command>
         <command label="xemu (Standalone)">%EMULATOR_XEMU% -dvd_path %ROM%</command>
@@ -1524,7 +1525,7 @@
         <name>ps2</name>
         <fullname>Sony PlayStation 2</fullname>
         <path>%ROMPATH%/ps2</path>
-        <extension>.arcadedef .bin .BIN .chd .CHD .ciso .CISO .cso .CSO .dump .DUMP .elf .ELF .gz .GZ .m3u .M3U .mdf .MDF .img .IMG .iso .ISO .isz .ISZ .ngr .NRG .zso .ZSO</extension>
+        <extension>.bin .BIN .chd .CHD .ciso .CISO .cso .CSO .dump .DUMP .elf .ELF .gz .GZ .m3u .M3U .mdf .MDF .img .IMG .iso .ISO .isz .ISZ .ngr .NRG .zso .ZSO</extension>
         <command label="PCSX2 (Standalone)">%EMULATOR_PCSX2% -batch %ROM%</command>
         <command label="PCSX2 Legacy (Standalone)">%EMULATOR_PCSX2% --nogui %ROM%</command>
         <command label="AetherSX2 (Standalone)">%EMULATOR_AETHERSX2% -batch %ROM%</command>
