@@ -1044,6 +1044,7 @@ Below are the import rules that are part of the bundled configuration.
 | Linux            | steam                        | Valve Steam                 | Desktop Shortcut  |
 | macOS            | desktop                      | Desktop Applications        | macOS Bundle      |
 | macOS            | emulators                    | Emulators                   | macOS Bundle      |
+| macOS            | steam                        | Valve Steam                 | macOS Bundle      |
 | Windows          | desktop                      | Desktop Applications        | Shortcut File     |
 | Windows          | emulators                    | Emulators                   | Shortcut File     |
 | Windows          | steam                        | Valve Steam                 | Steam URL File    |
@@ -1642,7 +1643,48 @@ When it comes to practically organizing these games it's recommended to use a fo
 ~/ROMs/consolearcade/Taito FX-1B/
 ```
 
-How to configure each emulator is far beyond the scope of this document, but there are many resources available on the Internet on how to accomplish this.
+**Play! for Namco System 2x6 games**
+
+The required setup for this emulator is very particular. There are two Play! emulator entries for the consolearcade system and the one to use for most arcade games is named _Play! Arcade (Standalone)_. We will cover the setup of two example games here, _Bloody Roar 3_ and _Cobra: The Arcade_. The first step after you have the game files ready is to download the necessary .arcadedef files from the Play! GitHub site:
+
+https://github.com/jpd002/Play-/tree/master/arcadedefs
+
+The shortnames for these two games are bldyr3b and cobrata so download the corresponding .arcadedef files and place them in the ES-DE ROMs directory. As these are System 246 games we have named the directory _Namco System 246_:
+
+```
+~/ROMs/consolearcade/Namco System 246/bldyr3b.arcadedef
+~/ROMs/consolearcade/Namco System 246/cobrata.arcadedef
+```
+
+Next make a subdirectory that will contain the ROMs files, and place a noload.txt file inside this directory so that ES-DE will skip it completely when scanning for games on application startup:
+
+```
+~/ROMs/consolearcade/Namco System 246/Play! ROMs/noload.txt
+~/ROMs/consolearcade/Namco System 246/bldyr3b.arcadedef
+~/ROMs/consolearcade/Namco System 246/cobrata.arcadedef
+```
+
+Start the Play! emulator, open the Settings interface and set the _Arcade ROMs directory_ to this directory, i.e. for this example it's `~/ROMs/consolearcade/Namco System 246/Play! ROMs`
+
+The last step is to copy the game files into the `Play! ROMs` subdirectory, and here you need a directory per game named with the shortname, and inside there you need to place the disc image. Any additional files required by the game will need to be placed inside a .zip file which is also named using the game shortname. For this example the bldyr3b.zip file which contains the br3-dongle.bin file and the cobrata.zip file which contains the cbr1verb.ic002 and cbr1verb_spr.ic002 files.
+
+The complete setup will look like the following:
+
+```
+~/ROMs/consolearcade/Namco System 246/Play! ROMs/bldyr3b/bldyr3b.chd
+~/ROMs/consolearcade/Namco System 246/Play! ROMs/cobrata/cbr1-ha.chd
+~/ROMs/consolearcade/Namco System 246/Play! ROMs/bldyr3b.zip
+~/ROMs/consolearcade/Namco System 246/Play! ROMs/cobrata.zip
+~/ROMs/consolearcade/Namco System 246/Play! ROMs/noload.txt
+~/ROMs/consolearcade/Namco System 246/bldyr3b.arcadedef
+~/ROMs/consolearcade/Namco System 246/cobrata.arcadedef
+```
+
+Finally make sure to set the emulator to _Play! Arcade (Standalone)_ for the two .arcadedef files, which can be done on a per-file basis from the metadata editor.
+
+**Other emulators**
+
+How to configure all other emulators is beyond the scope of this document, but there are many resources available on the Internet on how to accomplish this.
 
 ### DOS / PC
 
@@ -2765,7 +2807,9 @@ Just extract the corresponding file for any game you have installed in Vita3K an
 
 These games can easily be added to ES-DE using shortcuts, just be aware that this requires that the games have been installed locally.
 
-On Linux and Windows you can use the built-in game importer to populate your steam system. This tool is available from the _Utilities_ menu and you can find an in-depth description of it elsewhere in this document. Note that you still need to create shortcut files prior to running this tool.
+You can use the built-in game importer to populate your steam system. This tool is available from the _Utilities_ menu and you can find an in-depth description of it elsewhere in this document. Note that you still need to create shortcut files prior to running this tool.
+
+If using macOS then the importer will symlink to your .app shortcut directories which means the shortcuts exported from Steam need to be kept on your desktop. If you don't want this then you can just move these directories manually as described below instead of using the game importer.
 
 **Windows**
 
@@ -4472,7 +4516,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | channelf              | Fairchild Channel F                            | FreeChaF                          | MAME - Current,<br>MAME **(Standalone)** | Yes          | Single archive or ROM file           |
 | coco                  | Tandy Color Computer                           | XRoar CoCo 2 NTSC **(Standalone)** | XRoar CoCo 2 PAL **(Standalone)**,<br>MAME [Cartridge] **(Standalone)**,<br>MAME [Tape] **(Standalone)** | Yes           | See the specific _Tandy Color Computer_ section elsewhere in this guide |
 | colecovision          | Coleco ColecoVision                            | blueMSX                           | Gearcoleco,<br>openMSX **(Standalone)**,<br>ares **(Standalone)**,<br>Mesen **(Standalone)** [LW],<br>ColEm **(Standalone)** [LW] | Yes          | Single archive or ROM file |
-| consolearcade         | Console Arcade Systems                         | MAME - Current                    | MAME **(Standalone)**,<br>Flycast,<br>Flycast **(Standalone)**,<br>Flycast Dojo **(Standalone)**,<br>Kronos [LW],<br>Mednafen [Sega Saturn] **(Standalone)**,<br>Play! **(Standalone)**,<br>RPCS3 Shortcut **(Standalone)**,<br>RPCS3 Game Serial **(Standalone)**,<br>Triforce **(Standalone)** [LW],<br>xemu **(Standalone)**,<br>Cxbx-Reloaded **(Standalone)** [W],<br> _Shortcut or script_ | Depends      | See the specific _Console Arcade Systems_ section elsewhere in this guide |
+| consolearcade         | Console Arcade Systems                         | MAME - Current                    | MAME **(Standalone)**,<br>Flycast,<br>Flycast **(Standalone)**,<br>Flycast Dojo **(Standalone)**,<br>Kronos [LW],<br>Mednafen [Sega Saturn] **(Standalone)**,<br>Play! Arcade **(Standalone)**,<br>Play! Disc **(Standalone)**,<br>RPCS3 Shortcut **(Standalone)**,<br>RPCS3 Game Serial **(Standalone)**,<br>Triforce **(Standalone)** [LW],<br>xemu **(Standalone)**,<br>Cxbx-Reloaded **(Standalone)** [W],<br> _Shortcut or script_ | Depends      | See the specific _Console Arcade Systems_ section elsewhere in this guide |
 | cps                   | Capcom Play System                             | MAME - Current                    | MAME 2010,<br>MAME 2003-Plus,<br>MAME 2003,<br>MAME 2000,<br>MAME **(Standalone)**,<br>FinalBurn Neo,<br>FinalBurn Neo **(Standalone)** [LW],<br>FB Alpha 2012,<br>FB Alpha 2012 CPS-1,<br>FB Alpha 2012 CPS-2,<br>FB Alpha 2012 CPS-3 | Depends      | See the specific _Arcade and Neo Geo_ section elsewhere in this guide |
 | cps1                  | Capcom Play System I                           | MAME - Current                    | MAME 2010,<br>MAME 2003-Plus,<br>MAME 2003,<br>MAME 2000,<br>MAME **(Standalone)**,<br>FinalBurn Neo,<br>FinalBurn Neo **(Standalone)** [LW],<br>FB Alpha 2012,<br>FB Alpha 2012 CPS-1 | Depends      | See the specific _Arcade and Neo Geo_ section elsewhere in this guide |
 | cps2                  | Capcom Play System II                          | MAME - Current                    | MAME 2010,<br>MAME 2003-Plus,<br>MAME 2003,<br>MAME 2000,<br>MAME **(Standalone)**,<br>FinalBurn Neo,<br>FinalBurn Neo **(Standalone)** [LW],<br>FB Alpha 2012,<br>FB Alpha 2012 CPS-2 | Depends      | See the specific _Arcade and Neo Geo_ section elsewhere in this guide |

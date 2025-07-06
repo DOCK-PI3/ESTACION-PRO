@@ -22,6 +22,9 @@
 * Added the drs (Cave Story) RetroArch core as an alternative emulator for the ports system
 * Added the .rom file extension to the pcengine, supergrafx and tg16 systems
 * Added Ymir standalone as an alternative emulator for the saturn and saturnjp systems on Linux and Windows
+* Changed Play! (Standalone) to Play! Disc (Standalone) for the consolearcade system on Linux, macOS and Windows
+* Added Play! Arcade (Standalone) as an alternative emulator for the consolearcade system on Linux, macOS and Windows
+* Removed the .arcadedef file extension from the ps2 system on Linux, macOS and Windows
 * Changed the MAME "speech" parameter to "speechadapter" for the ti99 system due to changes introduced in MAME 0.276
 * Added MAME Legacy (Standalone) as an alternative emulator for the ti99 system on Linux, macOS and Windows
 * Added find rule entries for the bgfx release of Visual Pinball
@@ -78,6 +81,7 @@
 * (macOS) The PDF viewer created unnecessary Fontconfig cache files under some circumstances
 * Symlinks to directories could not be deleted from the metadata editor
 * Under some circumstances duplicate system-select events could be generated
+* Some orphaned data cleanup utility fields were not displayed correctly at some aspect ratios like 8:7
 * Sorting configuration was missing for the mark3 and vircon32 systems
 * (Windows) Custom event scripts would not work if the path to the ES-DE directory contained spaces
 
