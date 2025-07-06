@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-06-24 18:58+0200\n"
-"PO-Revision-Date: 2025-03-07 00:41+0100\n"
+"POT-Creation-Date: 2025-07-06 12:54+0200\n"
+"PO-Revision-Date: 2025-07-06 12:54+0200\n"
 "Last-Translator: Josep M <johnnydement@duck.com>\n"
 "Language-Team: Català <info@es-de.org>\n"
 "Language: ca_ES\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 
 msgid "Network error (status:"
 msgstr "Error de xarxa (estat:"
@@ -519,67 +519,67 @@ msgid "DISPLAY STAR MARKINGS FOR CUSTOM COLLECTIONS"
 msgstr "MARCA AMB UNA ESTRELLA A LES COL·LECCIONS A MIDA"
 
 msgid "IMPORT TO SYSTEM"
-msgstr ""
+msgstr "IMPORTA AL SISTEMA"
 
 msgid "NO CONFIGURATION"
-msgstr ""
+msgstr "SENSE CONFIGURACIÓ"
 
 msgid "REMOVE ENTRIES"
-msgstr ""
+msgstr "ELIMINA ENTRADES"
 
 msgid "ALL UNSELECTED"
-msgstr ""
+msgstr "TOTS SENSE SELECCIONAR"
 
 msgid "MEDIA TARGET TYPE"
-msgstr ""
+msgstr "TIPUS DE MITJÀ OBJECTIU"
 
 msgid "SCREENSHOTS"
-msgstr ""
+msgstr "CAPTURES DE PANTALLA"
 
 msgid "TITLE SCREENS"
-msgstr ""
+msgstr "PANTALLES DE TÍTOL"
 
 msgid "COVERS"
-msgstr ""
+msgstr "COBERTES"
 
 msgid "BACK COVERS"
-msgstr ""
+msgstr "CONTRAPORTADES"
 
 msgid "MARQUEES (WHEELS)"
-msgstr ""
+msgstr "CARPES (RODES)"
 
 msgid "3D BOXES"
-msgstr ""
+msgstr "CAIXES 3D"
 
 msgid "PHYSICAL MEDIA"
-msgstr ""
+msgstr "MITJANS FÍSICS"
 
 msgid "FAN ART"
 msgstr "FAN ART"
 
 msgid "IMPORT MEDIA"
-msgstr ""
+msgstr "IMPORTACIÓ DE SUPORTS"
 
 msgid "IMPORT BANNERS OR LOGOS IF AVAILABLE"
-msgstr ""
+msgstr "IMPORTAR BANDERES O LOGOTIPS SI HI HA"
 
 msgid "OVERWRITE MEDIA FILES"
-msgstr ""
+msgstr "SOBREESCRIURE ELS FITXERS MULTIMÈDIA"
 
 msgid "ONLY INCLUDE APPS CATEGORIZED AS GAMES"
-msgstr ""
+msgstr "NOMÉS INCLOURE APLICACIONS CATEGORITZADES COM A JOCS"
 
 msgid "START"
 msgstr "INICIAR"
 
 msgid "start importer"
-msgstr ""
+msgstr "iniciar l'importador"
 
 msgid "WORKING..."
 msgstr "TREBALLANT…"
 
 msgid "COULDN'T FIND ANYTHING TO IMPORT"
-msgstr ""
+msgstr "NO HE POT TROBAR RES PER IMPORTAR"
 
 #, c-format
 msgid ""
@@ -588,30 +588,34 @@ msgid ""
 "THEN IMPORT THE ENTRIES YOU SELECT ON THE NEXT SCREEN\n"
 "ARE YOU SURE?"
 msgstr ""
+"HAS TRIAT ELIMINAR TOTES LES ENTRADES NO SELECCIONADES. AIXÒ ELIMINARÀ TOTS "
+"ELS FITXERS DE JOC AMB L'EXTENSIÓ \"%s\" DEL DIRECTORI DEL SISTEMA \"%s\" I "
+"DESPRÉS S'IMPORTARÀN LES ENTRADES QUE SELECCIONIS A LA PANTALLA SEGÜENT.\n"
+"ESTÀS SEGUR?"
 
 msgid "MAKE YOUR SELECTION"
-msgstr ""
+msgstr "FES LA TEVA SELECCIÓ"
 
 msgid "IMPORT"
-msgstr ""
+msgstr "IMPORTACIÓ"
 
 msgid "import"
-msgstr ""
+msgstr "importació"
 
 #, c-format
 msgid "IMPORTED %i ENTRY"
 msgid_plural "IMPORTED %i ENTRIES"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "ENTRADA %i IMPORTADA"
+msgstr[1] "IMPORTADES %i ENTRADES"
 
 msgid "SELECT ALL"
-msgstr "SELECCIONAR-HO TOT"
+msgstr "TOT"
 
 msgid "select all"
 msgstr "seleccionar-ho tot"
 
 msgid "SELECT NONE"
-msgstr "NETEJAR SELECCIÓ"
+msgstr "NETEJAR"
 
 msgid "select none"
 msgstr "netejar selecció"
@@ -797,16 +801,16 @@ msgid "LEFT/RIGHT"
 msgstr "ESQUERRA/DRETA"
 
 msgid "SYSTEM ON STARTUP"
-msgstr ""
+msgstr "SISTEMA A L'INICI"
 
 msgid "STARTUP VIEW"
-msgstr ""
+msgstr "VISTA D'INICI"
 
 msgid "SYSTEM"
 msgstr "SISTEMA"
 
 msgid "GAMELIST"
-msgstr ""
+msgstr "LLISTA DE JOCS"
 
 msgid "SYSTEMS SORTING"
 msgstr "ORDRE DELS SISTEMES"
@@ -1051,7 +1055,7 @@ msgid "IGNORE KEYBOARD INPUT"
 msgstr "IGNORA LES ENTRADES DEL TECLAT"
 
 msgid "INPUT DEVICE NOTIFICATIONS"
-msgstr ""
+msgstr "NOTIFICACIONS DEL DISPOSITIU D'ENTRADA"
 
 msgid "CONFIGURE KEYBOARD AND CONTROLLERS"
 msgstr "CONFIGURA EL TECLAT I ELS COMANDAMENTS"
@@ -1205,7 +1209,7 @@ msgid "SHOW QUIT MENU (REBOOT AND POWER OFF ENTRIES)"
 msgstr "MOSTRAR MENÚ SORTIR (OPCIONS DE REINICI I APAGAR)"
 
 msgid "GAME IMPORTER"
-msgstr ""
+msgstr "IMPORTADOR DE JOCS"
 
 msgid "ORPHANED DATA CLEANUP"
 msgstr "NETEJA DADES ORFES"
@@ -1905,13 +1909,13 @@ msgid "NO GAMES FOUND"
 msgstr "NO S'HAN TROBAT JOCS"
 
 msgid "API CALLS:"
-msgstr ""
+msgstr "CRIDADES A L'API:"
 
 #, c-format
 msgid "%i REMAINING"
 msgid_plural "%i REMAINING"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%i RESTANT"
+msgstr[1] "%i RESTANTS"
 
 msgid "RETRY"
 msgstr "REINTENTAR"
@@ -2015,7 +2019,7 @@ msgid "DOWNLOADING THEMES LIST 100%"
 msgstr "DESCARREGANT EL LLISTAT DE TEMES 100%"
 
 msgid "REPOSITORY HAS DIVERGED FROM ORIGIN"
-msgstr ""
+msgstr "EL REPOSITORI S'HA DESVIAT DE L'ORIGEN"
 
 msgid "THEME ALREADY UP TO DATE"
 msgstr "EL TEMA JA ESTÀ ACTUALITZAT"
@@ -2095,6 +2099,10 @@ msgid ""
 "FRESH DOWNLOAD IS REQUIRED AND THE OLD THEME DIRECTORY \"%s\" WILL BE "
 "RENAMED TO \"%s_DIVERGED_DISABLED\""
 msgstr ""
+"SEMBLA QUE AQUEST ÉS UN REPOSITORI DIVERGIT, LA QUAL NORMALMENT VOL DIR QUE "
+"HI HA UN CONFLICTE DE FUSIÓ AMUNT QUE HA DE SER RESOLDUT PEL DESENVOLUPADOR "
+"DEL TEMA. CAL UNA DESCÀRREGA NOU I EL DIRECTORI DEL TEMA ANTIC \"%s\" ES "
+"REANOMENARÀ A \"%s_DIVERGED_DISABLED\""
 
 #, c-format
 msgid ""
@@ -2140,7 +2148,7 @@ msgid "CORRUPT"
 msgstr "CORRUPTE"
 
 msgid "DIVERGED"
-msgstr ""
+msgstr "DIVERGIT"
 
 msgid "SHALLOW"
 msgstr "INFORMAL"
@@ -2608,6 +2616,11 @@ msgid ""
 "INFORMATION SUCH AS THE SUPPORTED FILE EXTENSIONS. THIS IS THE CONFIGURED "
 "ROM DIRECTORY:\n"
 msgstr ""
+"NO S'HA TROBAT CAP FITXER DE JOC. IMPORTEU ALGUNS JOCS O COL·LOQUEU-LOS "
+"MANUALMENT AL DIRECTORI ROM CONFIGURAT. OPCIONALMENT, PODEU GENERAR "
+"L'ESTRUCTURA DEL DIRECTORI ROM, QUE CREARÀ UN FITXER DE TEXT PER A CADA "
+"SISTEMA QUE PROPORCIONA INFORMACIÓ COM LES EXTENSIONS DE FITXER COMPATIBLES. "
+"AQUEST ÉS EL DIRECTORI ROM CONFIGURAT:\n"
 
 msgid ""
 "NO GAME FILES WERE FOUND. EITHER IMPORT SOME GAMES OR PLACE THEM MANUALLY IN "
@@ -2616,9 +2629,15 @@ msgid ""
 "FILE FOR EACH SYSTEM PROVIDING SOME INFORMATION SUCH AS THE SUPPORTED FILE "
 "EXTENSIONS. THIS IS THE CONFIGURED ROM DIRECTORY:\n"
 msgstr ""
+"NO S'HA TROBAT CAP FITXER DE JOC. IMPORTEU ALGUNS JOCS O COL·LOQUEU-LOS "
+"MANUALMENT AL DIRECTORI ROM CONFIGURAT ACTUALMENT. TAMBÉ PODEU CANVIAR LA "
+"RUTA DE LA ROM I, OPCIONALMENT, GENERAR L'ESTRUCTURA DEL DIRECTORI ROM, QUE "
+"CREARÀ UN FITXER DE TEXT PER A CADA SISTEMA QUE PROPORCIONA INFORMACIÓ COM "
+"LES EXTENSIONS DE FITXER ADMISSIBLES. AQUEST ÉS EL DIRECTORI ROM "
+"CONFIGURAT:\n"
 
 msgid "CHANGE"
-msgstr ""
+msgstr "CANVI"
 
 msgid "ENTER ROM DIRECTORY PATH"
 msgstr "ESCRIU LA RUTA A LA CARPETA DE ROMS"
