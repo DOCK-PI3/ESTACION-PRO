@@ -15,6 +15,7 @@
 * Added translations for Bosnian (bs_BA)
 * Added translations for Croatian (hr_HR)
 * Added translations for Serbian (sr_RS)
+* Added translations for Portuguese (Portugal) (pt_PT)
 * Added support for the Sega Model 3 (model3) game system on Android and macOS
 * Added the MAME - Current RetroArch core and MAME standalone as alternative emulators for the model3 system on Linux and Windows
 * Added the Geargrafx RetroArch core as an alternative emulator for the pcengine, supergrafx and tg16 systems
@@ -38,6 +39,7 @@
 * (Linux) Added support for the manually downloaded release of BlastEm
 * (Windows) Added BlastEm standalone as an alternative emulator for the genesis, megadrive and megadrivejp systems
 * (Windows) Added Supermodel Dojo standalone as an alternative emulator for the arcade, mame and model3 systems
+* (Windows) Added Future Pinball FPLoader standalone as an alternative emulator for the fpinball system
 * Added MAME - Current [Software list] and MAME [Software list] (Standalone) as alternative emulators for the apple2gs on Linux, macOS and Windows
 * Added an %INJECT% variable for A7800 standalone for the atari7800 system on Linux and Windows
 * Added an %INJECT% variable for xenia standalone for the xbox360 system on Linux and Windows

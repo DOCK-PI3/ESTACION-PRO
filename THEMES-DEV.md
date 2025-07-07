@@ -787,6 +787,7 @@ The following languages are supported:
 | nl_NL         | Dutch                    | Nederlands               |
 | pl_PL         | Polish                   | Polski                   |
 | pt_BR         | Portuguese (Brazil)      | Português (Brasil)       |
+| pt_PT         | Portuguese (Portugal)    | Português (Portugal)     |
 | ro_RO         | Romanian                 | Română                   |
 | ru_RU         | Russian                  | Русский                  |
 | sr_RS         | Serbian                  | Srpski                   |

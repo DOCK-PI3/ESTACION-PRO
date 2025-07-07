@@ -40,6 +40,8 @@ Stefan VDB\
 kycho \
 **Portuguese (Brazil)** \
 MrVictorFull \
+**Portuguese (Portugal)** \
+Luís Torres (Naprosnia) \
 **Romanian** \
 SilverGreen93 \
 **Russian** \
