@@ -142,6 +142,19 @@
             <langYourCollections>Suas Coleções</langYourCollections>
         </variables>
     </language>
+    <language name="pt_PT">
+        <variables>
+            <langLabelRating>Classificação</langLabelRating>
+            <langLabelReleasedate>Lançamento</langLabelReleasedate>
+            <langLabelPlayers>Jogadores</langLabelPlayers>
+            <langLabelGenre>Género</langLabelGenre>
+            <langLabelDeveloper>Programador</langLabelDeveloper>
+            <langLabelPublisher>Editora</langLabelPublisher>
+            <langLabelLastPlayed>Última Jogada</langLabelLastPlayed>
+            <langCustomCollections>Coleções</langCustomCollections>
+            <langYourCollections>As Tuas Coleções</langYourCollections>
+        </variables>
+    </language>
     <language name="ro_RO">
         <variables>
             <langLabelRating>Scor</langLabelRating>
