@@ -24,7 +24,7 @@ The following options are included:
 - 4:3
 - 4:3 vertical
 
-20 languages:
+21 languages:
 
 - English (United States)
 - English (United Kingdom)
@@ -38,6 +38,7 @@ The following options are included:
 - Nederlands
 - Polski
 - Português (Brasil)
+- Português (Portugal)
 - Română
 - Русский
 - Srpski

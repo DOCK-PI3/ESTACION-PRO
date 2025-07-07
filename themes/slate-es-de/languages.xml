@@ -108,6 +108,16 @@
             <langLabelLastPlayed>Última Vez Que Jogou</langLabelLastPlayed>
         </variables>
     </language>
+    <language name="pt_PT">
+        <variables>
+            <langLabelReleasedate>Lançamento</langLabelReleasedate>
+            <langLabelDeveloper>Programador</langLabelDeveloper>
+            <langLabelPublisher>Editora</langLabelPublisher>
+            <langLabelGenre>Género</langLabelGenre>
+            <langLabelPlayers>Jogadores</langLabelPlayers>
+            <langLabelLastPlayed>Última Jogada</langLabelLastPlayed>
+        </variables>
+    </language>
     <language name="ro_RO">
         <variables>
             <langLabelReleasedate>Lansat</langLabelReleasedate>

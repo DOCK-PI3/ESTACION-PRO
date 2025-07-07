@@ -17,6 +17,7 @@
     <language>nl_NL</language>
     <language>pl_PL</language>
     <language>pt_BR</language>
+    <language>pt_PT</language>
     <language>ro_RO</language>
     <language>ru_RU</language>
     <language>sr_RS</language>
@@ -47,6 +48,7 @@
         <label language="nl_NL">Donker</label>
         <label language="pl_PL">Ciemna</label>
         <label language="pt_BR">Escuro</label>
+        <label language="pt_PT">Escuro</label>
         <label language="ro_RO">Întunecată</label>
         <label language="ru_RU">Тёмная</label>
         <label language="sr_RS">Tamna</label>
@@ -70,6 +72,7 @@
         <label language="nl_NL">Licht</label>
         <label language="pl_PL">Jasna</label>
         <label language="pt_BR">Claro</label>
+        <label language="pt_PT">Claro</label>
         <label language="ro_RO">Luminoasă</label>
         <label language="ru_RU">Светлая</label>
         <label language="sr_RS">Svetla</label>
@@ -93,6 +96,7 @@
         <label language="nl_NL">Glijden</label>
         <label language="pl_PL">Przesunięcie</label>
         <label language="pt_BR">Deslizar</label>
+        <label language="pt_PT">Deslizar</label>
         <label language="ro_RO">Glisează</label>
         <label language="ru_RU">Скольжение</label>
         <label language="sr_RS">Klizivo</label>
@@ -121,6 +125,7 @@
         <label language="nl_NL">Direct</label>
         <label language="pl_PL">Natychmiastowe</label>
         <label language="pt_BR">Instantâneo</label>
+        <label language="pt_PT">Instantâneo</label>
         <label language="ro_RO">Instant</label>
         <label language="ru_RU">Мгновенно</label>
         <label language="sr_RS">Instantno</label>
@@ -151,6 +156,7 @@
         <label language="nl_NL">Fade</label>
         <label language="pl_PL">Zanikanie</label>
         <label language="pt_BR">Esmaecer</label>
+        <label language="pt_PT">Desvanecer</label>
         <label language="ro_RO">Estompează</label>
         <label language="ru_RU">Затухание</label>
         <label language="sr_RS">Bled</label>
@@ -187,6 +193,7 @@
         <label language="nl_NL">Tekstlijst met video's</label>
         <label language="pl_PL">Lista tekstowa z wideo</label>
         <label language="pt_BR">Lista de texto com vídeos</label>
+        <label language="pt_PT">Lista com vídeos</label>
         <label language="ro_RO">Listă text cu videouri</label>
         <label language="ru_RU">Текст с видео</label>
         <label language="sr_RS">Tekstlista s videima</label>
@@ -216,6 +223,7 @@
         <label language="nl_NL">Tekstlijst zonder video's</label>
         <label language="pl_PL">Lista tekstowa bez wideo</label>
         <label language="pt_BR">Lista de texto sem vídeos</label>
+        <label language="pt_PT">Lista sem vídeos</label>
         <label language="ro_RO">Listă text fără videouri</label>
         <label language="ru_RU">Текст без видео</label>
         <label language="sr_RS">Tekstlista bez videa</label>
