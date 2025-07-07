@@ -119,6 +119,17 @@
             <langUnknown>Desconhecido</langUnknown>
         </variables>
     </language>
+    <language name="pt_PT">
+        <variables>
+            <langLabelRating>Classificação</langLabelRating>
+            <langLabelReleasedate>Lançamento</langLabelReleasedate>
+            <langLabelPlayers>Jogadores</langLabelPlayers>
+            <langLabelGenre>Género</langLabelGenre>
+            <langLabelDeveloper>Programador</langLabelDeveloper>
+            <langLabelPublisher>Editora</langLabelPublisher>
+            <langUnknown>Desconhecido</langUnknown>
+        </variables>
+    </language>
     <language name="ro_RO">
         <variables>
             <langLabelRating>Scor</langLabelRating>
