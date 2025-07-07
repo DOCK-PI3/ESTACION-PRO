@@ -742,6 +742,7 @@
         <path>%ROMPATH%\fpinball</path>
         <extension>.fpt .FPT</extension>
         <command label="Future Pinball (Standalone)">%EMULATOR_FUTURE-PINBALL% /Exit /Play /Open %ROM%</command>
+        <command label="Future Pinball FPLoader (Standalone)">%RUNINBACKGROUND% %EMULATOR_FUTURE-PINBALL-FPLOADER% /Exit /Play /Open %ROM%</command>
         <platform>fpinball</platform>
         <theme>fpinball</theme>
     </system>

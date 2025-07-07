@@ -415,6 +415,20 @@
             <entry>%ESPATH%\..\Emulators\Future Pinball\Future Pinball.exe</entry>
         </rule>
     </emulator>
+    <emulator name="FUTURE-PINBALL-FPLOADER">
+        <!-- Pinball simulator Future Pinball (FPLoader) -->
+        <rule type="systempath">
+            <entry>FPLoader.exe</entry>
+        </rule>
+        <rule type="staticpath">
+            <entry>%ESPATH%\Emulators\Future Pinball\BAM\FPLoader.exe</entry>
+            <entry>%ESPATH%\..\Emulators\Future Pinball\BAM\FPLoader.exe</entry>
+            <entry>%ESPATH%\Emulators\Future Pinball\BAM-OpenVR\FPLoader.exe</entry>
+            <entry>%ESPATH%\..\Emulators\Future Pinball\BAM-OpenVR\FPLoader.exe</entry>
+            <entry>%ESPATH%\Emulators\Future Pinball\BAM-OpenVR-OC\FPLoader.exe</entry>
+            <entry>%ESPATH%\..\Emulators\Future Pinball\BAM-OpenVR-OC\FPLoader.exe</entry>
+        </rule>
+    </emulator>
     <emulator name="GARGOYLE">
         <!-- Interactive fiction player Gargoyle -->
         <rule type="systempath">

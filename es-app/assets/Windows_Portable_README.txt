@@ -81,6 +81,9 @@ Emulators\FS-UAE\Windows\x86-64\fs-uae.exe
 Emulators\FS-UAE-Launcher\Windows\x86-64\fs-uae-launcher.exe
 Emulators\Fuse\fuse.exe
 Emulators\Future Pinball\Future Pinball.exe
+Emulators\Future Pinball\BAM\FPLoader.exe
+Emulators\Future Pinball\BAM-OpenVR\FPLoader.exe
+Emulators\Future Pinball\BAM-OpenVR-OC\FPLoader.exe
 Emulators\gargoyle\gargoyle.exe
 Emulators\Gearboy\Gearboy.exe
 Emulators\gopher2600\gopher2600_windows_amd64.exe
