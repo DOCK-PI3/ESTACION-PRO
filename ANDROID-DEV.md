@@ -480,8 +480,9 @@ https://play.google.com/store/apps/details?id=it.dbtecno.pizzaboyscpro
 
 ### Play!
 
-This PlayStation 2 emulator can be downloaded from their website.
+This emulator can be installed from the Play store or from their website.
 
+https://play.google.com/store/apps/details?id=com.virtualapplications.play \
 https://www.purei.org/downloads.php
 
 ### PPSSPP

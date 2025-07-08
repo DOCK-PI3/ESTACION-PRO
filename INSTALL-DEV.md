@@ -1998,7 +1998,7 @@ Here's an example:
 </ruleList>
 ```
 
-`file` - This rule is available on Linux and Windows and has a mandatory _extension_ tag which controls the file extension to match when looking for files to import. This extension is case-sensitive in Linux and case-insensitive in Windows. There's also a _directory_ tag with a mandatory _recursive_ attribute. You can add multiple _directory_ tags to look for files at various locations. It's also possible to use the `%ESPATH%` variable for this tag to look for files relative to the ES-DE binary directory. The tilde symbol `~` is supported as well and will expand to the user home directory. Be aware that if ES-DE has been started with the --home command line option, the home directory is considered to be whatever path was passed as an argument to that option. The same is true if using a portable.txt file.
+`file` - This rule is available on Linux and Windows and has a mandatory _extension_ tag which controls the file extension to match when looking for files to import. This extension is case-sensitive in Linux and case-insensitive in Windows. There's also a _directory_ tag with a mandatory _recursive_ attribute. You can add multiple _directory_ tags to look for files at various locations. It's also possible to use the `%ESPATH%` variable for the directory tag to look for files relative to the ES-DE binary directory. The tilde symbol `~` is supported as well and will expand to the user home directory. Note that this will always expand to the operating system home directory, even if the --home command line option has been used, or if a portable.txt file is present.
 
 Here's an example:
 
@@ -2038,7 +2038,7 @@ Here's an example:
 </ruleList>
 ```
 
-`desktopshortcut` - This rule is available on Linux and FreeBSD and only has a _directory_ tag with two optional attributes, _gamesOnly_ and _execFilter_. The way this rule works is that it searches for files with the .desktop extension in the defined directories and will then parse these files to retrieve the name of the game or application as well as the Exec key, the application category and whether the NoDisplay key has been set. The name parsing is important as these files can have cryptic names like _org.kde.gwenview.desktop_ and ES-DE will instead use the actual name defined inside the file. The _gamesOnly_ attribute controls whether to only include entries categorized as games. The _execFilter_ attribute can be used to match against the content of the _Exec_ key inside the shortcut file to only include files where there's a match. Note that this matching is case-insensitive. Finally the NoDisplay key is set for entries that should not be shown in the operating system menus, and ES-DE will as such skip these files during the import process.
+`desktopshortcut` - This rule is available on Linux and FreeBSD and only has a _directory_ tag with two optional attributes, _gamesOnly_ and _execFilter_. The way this rule works is that it searches for files with the .desktop extension in the defined directories and will then parse these files to retrieve the name of the game or application as well as the Exec key, the application category and whether the NoDisplay key has been set. The name parsing is important as these files can have cryptic names like _org.kde.gwenview.desktop_ and ES-DE will instead use the actual name defined inside the file. The _gamesOnly_ attribute controls whether to only include entries categorized as games. The _execFilter_ attribute can be used to match against the content of the _Exec_ key inside the shortcut file to only include files where there's a match. Note that this matching is case-insensitive. Finally the NoDisplay key is set for entries that should not be shown in the operating system menus, and ES-DE will as such skip these files during the import process. The tilde symbol `~` is supported as well for the directory tag, and will expand to the user home directory. Note that this will always expand to the operating system home directory, even if the --home command line option has been used, or if a portable.txt file is present.
 
 Here's an example:
 
@@ -2079,7 +2079,7 @@ Here's an example:
 </ruleList>
 ```
 
-`macosbundle` - This rule is only available on macOS and works a bit different than the other rules. It has a _directory_ tag with a mandatory _recursive_ attribute which is used to define which directory to look for bundles in. As macOS bundles are entire directory structures containing the actual application files, ES-DE will make symlinks to these directories rather than copying them to the target system directory.
+`macosbundle` - This rule is only available on macOS and works a bit different than the other rules. It has a _directory_ tag with a mandatory _recursive_ attribute which is used to define which directory to look for bundles in. As macOS bundles are entire directory structures containing the actual application files, ES-DE will make symlinks to these directories rather than copying them to the target system directory. The tilde symbol `~` is supported as well for the directory tag, and will expand to the user home directory. Note that this will always expand to the operating system home directory, even if the --home command line option has been used, or if a portable.txt file is present.
 
 Here's an example:
 
