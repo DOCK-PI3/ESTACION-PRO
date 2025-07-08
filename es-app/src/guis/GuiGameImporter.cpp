@@ -730,7 +730,7 @@ void GuiGameImporter::fileRule(std::pair<const std::string, ImportRules::ImportR
 
     for (auto& directory : importRule.second.directories) {
         // Expand ~ to the user home directory.
-        std::string expandedDir {Utils::FileSystem::expandHomePath(directory.path)};
+        std::string expandedDir {Utils::FileSystem::expandHomePath(directory.path, true)};
 #if !defined(__ANDROID__)
         // Expand %ESPATH% to the ES-DE binary directory.
         expandedDir =
@@ -846,7 +846,7 @@ void GuiGameImporter::desktopshortcutRule(
 
     for (auto& directory : importRule.second.directories) {
         // Expand ~ to the user home directory.
-        std::string expandedDir {Utils::FileSystem::expandHomePath(directory.path)};
+        std::string expandedDir {Utils::FileSystem::expandHomePath(directory.path, true)};
 
         std::list<std::string> fileList {Utils::FileSystem::getDirContent(expandedDir, false)};
         for (auto& file : fileList) {

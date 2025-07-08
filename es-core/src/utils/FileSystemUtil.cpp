@@ -662,10 +662,18 @@ namespace Utils
             }
         }
 
-        std::string expandHomePath(const std::string& path)
+        std::string expandHomePath(const std::string& path, const bool systemHome)
         {
             // Expand home path if ~ is used.
+#if defined(__ANDROID__)
             return Utils::String::replace(path, "~", Utils::FileSystem::getHomePath());
+#else
+            if (systemHome)
+                return Utils::String::replace(path, "~",
+                                              Utils::FileSystem::getSystemHomeDirectory());
+            else
+                return Utils::String::replace(path, "~", Utils::FileSystem::getHomePath());
+#endif
         }
 
         std::string resolveRelativePath(const std::string& path,
