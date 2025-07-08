@@ -6,6 +6,18 @@
 
 ### Release overview
 
+This release introduces a cross-platform game importer tool that makes it possible to import games and apps into ES-DE. This is especially useful on Android where native Android apps and games can now be loaded into the androidapps, androidgames and emulators systems and launched from inside ES-DE. But the game importer is also available on Linux, macOS and Windows where it can import things like desktop applications, emulators and Steam games.
+
+A number of new emulators are supported across all operating systems, and on Android the Sega Model 3 (model3) system has been enabled by using MAME. Also on Android the MAME4droid 2024 emulator entries have been removed since the emulator has been renamed to MAME4droid Current by its developer. Replacement entries with the new name were added already in ES-DE 3.2.0-45.
+
+Translations for four new languages have also been added, these being Bosnian, Croatian, Serbian and Portugues (Portugal).
+
+A change in behavior in this release is that the "Gamelist on startup" setting has been removed and replaced with the two new options "System on startup" and "Startup view". To retain the old functionality of going directly into the gamelist view on startup, the "Startup view" setting has to be set to "Gamelist".
+
+Two minor additions is that API statistics is now displayed in the multi-scraper GUI and that device notifications can now be disabled when plugging in and removing controllers.
+
+Apart from the above this release includes a large amount of internal changes as most of the dependencies (libraries) have been upgraded to newer versions. For Android there is also initial support for 16 KB page sizes which is a future requirement from Google.
+
 ### Detailed list of changes
 
 * Added a fully configurable cross-platform game importer tool
@@ -23,8 +35,8 @@
 * Added the drs (Cave Story) RetroArch core as an alternative emulator for the ports system
 * Added the .rom file extension to the pcengine, supergrafx and tg16 systems
 * Added Ymir standalone as an alternative emulator for the saturn and saturnjp systems on Linux and Windows
-* Changed Play! (Standalone) to Play! Disc (Standalone) for the consolearcade system on Linux, macOS and Windows
 * Added Play! Arcade (Standalone) as an alternative emulator for the consolearcade system on Linux, macOS and Windows
+* Changed Play! (Standalone) to Play! Disc (Standalone) for the consolearcade system on Linux, macOS and Windows
 * Removed the .arcadedef file extension from the ps2 system on Linux, macOS and Windows
 * Changed the MAME "speech" parameter to "speechadapter" for the ti99 system due to changes introduced in MAME 0.276
 * Added MAME Legacy (Standalone) as an alternative emulator for the ti99 system on Linux, macOS and Windows
