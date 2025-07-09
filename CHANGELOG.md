@@ -1,22 +1,22 @@
 # ES-DE Frontend - Changelog
 
-## Version 3.3.0 / 3.3.0-xx (in development)
+## Version 3.3.0 / 3.3.0-48 (in development)
 
 **Release date:** TBD
 
 ### Release overview
 
-This release introduces a cross-platform game importer tool that makes it possible to import games and apps into ES-DE. This is especially useful on Android where native Android apps and games can now be loaded into the androidapps, androidgames and emulators systems and launched from inside ES-DE. But the game importer is also available on Linux, macOS and Windows where it can import things like desktop applications, emulators and Steam games.
+This release introduces a cross-platform game importer tool that makes it possible to import games and apps into ES-DE. This is especially useful on Android where native apps and games can now be loaded into the androidapps, androidgames and emulators systems and launched from inside ES-DE. But the game importer is also available on Linux, macOS and Windows where it can import things like desktop applications, emulators and Steam games.
 
-A number of new emulators are supported across all operating systems, and on Android the Sega Model 3 (model3) system has been enabled by using MAME. Also on Android the MAME4droid 2024 emulator entries have been removed since the emulator has been renamed to MAME4droid Current by its developer. Replacement entries with the new name were added already in ES-DE 3.2.0-45.
+Support for a number of new emulators has been added across all operating systems, and on Android the Sega Model 3 (model3) system has been enabled by using MAME. Also on Android the MAME4droid 2024 emulator entries have been removed since the emulator has been renamed to MAME4droid Current by its developer. Replacement entries with the new name were added already in ES-DE 3.2.0-45.
 
-Translations for four new languages have also been added, these being Bosnian, Croatian, Serbian and Portugues (Portugal).
+Translations to four new languages are also included, these being Bosnian, Croatian, Serbian and Portugues (Portugal).
 
-A change in behavior in this release is that the "Gamelist on startup" setting has been removed and replaced with the two new options "System on startup" and "Startup view". To retain the old functionality of going directly into the gamelist view on startup, the "Startup view" setting has to be set to "Gamelist".
+A change in behavior in this release is that the "Gamelist on startup" setting has been removed and replaced with the two new options "System on startup" and "Startup view". To retain the old functionality of going directly into the gamelist view, the "Startup view" setting has to be set to "Gamelist".
 
-Two minor additions is that API statistics is now displayed in the multi-scraper GUI and that device notifications can now be disabled when plugging in and removing controllers.
+Two minor additions is that API statistics is now displayed in the multi-scraper GUI and that device notifications can be disabled for plugging in and removing controllers.
 
-Apart from the above this release includes a large amount of internal changes as most of the dependencies (libraries) have been upgraded to newer versions. For Android there is also initial support for 16 KB page sizes which is a future requirement from Google.
+Apart from the above this release includes a large amount of internal changes as most dependencies (libraries) have been upgraded to newer versions. For Android there is also initial support for 16 KB page sizes which is a future requirement from Google.
 
 ### Detailed list of changes
 
@@ -31,9 +31,9 @@ Apart from the above this release includes a large amount of internal changes as
 * Added support for the Sega Model 3 (model3) game system on Android and macOS
 * Added the MAME - Current RetroArch core and MAME standalone as alternative emulators for the model3 system on Linux and Windows
 * Added the Geargrafx RetroArch core as an alternative emulator for the pcengine, supergrafx and tg16 systems
+* Added the .rom file extension to the pcengine, supergrafx and tg16 systems
 * Added the DICE RetroArch core as an alternative emulator for the arcade and mame systems
 * Added the drs (Cave Story) RetroArch core as an alternative emulator for the ports system
-* Added the .rom file extension to the pcengine, supergrafx and tg16 systems
 * Added Ymir standalone as an alternative emulator for the saturn and saturnjp systems on Linux and Windows
 * Added Play! Arcade (Standalone) as an alternative emulator for the consolearcade system on Linux, macOS and Windows
 * Changed Play! (Standalone) to Play! Disc (Standalone) for the consolearcade system on Linux, macOS and Windows
@@ -52,7 +52,7 @@ Apart from the above this release includes a large amount of internal changes as
 * (Windows) Added BlastEm standalone as an alternative emulator for the genesis, megadrive and megadrivejp systems
 * (Windows) Added Supermodel Dojo standalone as an alternative emulator for the arcade, mame and model3 systems
 * (Windows) Added Future Pinball FPLoader standalone as an alternative emulator for the fpinball system
-* Added MAME - Current [Software list] and MAME [Software list] (Standalone) as alternative emulators for the apple2gs on Linux, macOS and Windows
+* Added MAME - Current [Software list] and MAME [Software list] (Standalone) as alternative emulators for the apple2gs system on Linux, macOS and Windows
 * Added an %INJECT% variable for A7800 standalone for the atari7800 system on Linux and Windows
 * Added an %INJECT% variable for xenia standalone for the xbox360 system on Linux and Windows
 * Updated the logo and carousel icons for the Sega Mark III (mark3) system
@@ -75,7 +75,7 @@ Apart from the above this release includes a large amount of internal changes as
 * (macOS) Updated fontconfig to 2.16.1, libjpeg-turbo to 3.1.0, LibTIFF to 4.7.0, OpenJPEG to 2.5.3 and Poppler to 25.04.0
 * (macOS) Updated libgit2 to 1.9.0, pugixml to 1.15, Opus to 1.5.2 and FFmpeg to 7.1
 * (macOS) Removed an unnecessary dependency on libvpx
-* (Windows) Updated gettext/linbintl to 0.23.1, ICU to 77.1, curl to 8.13.0, GLEW to 2.2.0, HarfBuzz to 11.0.1, FreeType to 2.13.3
+* (Windows) Updated gettext/linbintl to 0.23.1, ICU to 77.1, curl to 8.13.0, GLEW to 2.2.0, HarfBuzz to 11.0.1 and FreeType to 2.13.3
 * (Windows) Updated libgit2 to 1.9.0, Poppler to 24.08.0, pugixml to 1.15 and FFmpeg to 7.1
 * Updated SDL to 2.32.8 on Android, Windows, macOS and the Linux AppImage builds
 * Updated LunaSVG to 3.3.0
