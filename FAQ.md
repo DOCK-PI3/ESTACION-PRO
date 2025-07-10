@@ -117,7 +117,7 @@ ES-DE uses mostly the same system names as these other frontends, but there are 
 
 ## Can ES-DE update itself automatically when a new release becomes available?
 
-There is a built-in application updater that works with the Linux AppImage releases. And if using the AUR release updates are handled via the operating system's package manager. Likewise if using RetroDECK, then ES-DE is updated as part of the overall RetroDECK Flatpak. For Windows and macOS the application updater will download the latest version (as of ES-DE 2.2.0) but you need to manually perform the upgrade. The process to upgrade ES-DE is covered in the _Upgrading to a newer release_ section of the [User guide](USERGUIDE.md#upgrading-to-a-newer-release). If you find the update notification messages annoying you can change the frequency of update checks between _Always_, _Daily_, _Weekly_, _Monthly_ or _Never_ from the _Other Settings_ menu.
+There is a built-in application updater that works with the Linux AppImage releases. And if using the AUR release updates are handled via the operating system's package manager. Likewise if using RetroDECK, then ES-DE is updated as part of the overall RetroDECK Flatpak. For Windows and macOS the application updater will download the latest version but you need to manually perform the upgrade. The process to upgrade ES-DE is covered in the _Upgrading to a newer release_ section of the [User guide](USERGUIDE.md#upgrading-to-a-newer-release). If you find the update notification messages annoying you can change the frequency of update checks between _Always_, _Daily_, _Weekly_, _Monthly_ or _Never_ from the _Other Settings_ menu.
 
 ## I can't find any game media links in the gamelist.xml files, where is this data stored?
 

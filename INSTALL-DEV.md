@@ -10,13 +10,13 @@ Table of contents:
 
 ES-DE is developed and compiled using GCC and Clang/LLVM on Unix/Linux, Clang/LLVM on macOS and MSVC on Windows.
 
-CMake is the build system for all the supported operating systems, used in conjunction with `make` on Unix and macOS and `jom` on Windows. Xcode on macOS or Visual Studio on Windows are not required for building ES-DE and they have not been used during development.
+CMake is the build system for all the supported operating systems, used in conjunction with `make` on Unix and macOS and `jom` on Windows. Xcode on macOS or Visual Studio on Windows are not required for building ES-DE.
 
 For automatic code formatting [clang-format](https://clang.llvm.org/docs/ClangFormat.html) is used.
 
-Any code editor can be used of course, but [VSCode](https://code.visualstudio.com) is recommended.
+Any code editor can be used, but [VSCode](https://code.visualstudio.com) is recommended.
 
-## Building on Unix
+## Building on Linux and Unix
 
 There are some dependencies that need to be fulfilled in order to build ES-DE. These are detailed per operating system below.
 
@@ -851,6 +851,7 @@ git remote add glm-external https://github.com/g-truc/glm.git
 git remote add lunasvg-external https://github.com/sammycage/lunasvg.git
 git remote add rapidjson-external https://github.com/Tencent/rapidjson.git
 git remote add rlottie-external https://github.com/Samsung/rlottie.git
+git remote add utfcpp-external https://github.com/nemtrif/utfcpp.git
 ```
 
 Following this, updates can be pulled like so (fetching up to the latest commit):
@@ -2337,6 +2338,8 @@ There are numerous locations throughout ES-DE where custom scripts can be execut
 The approach is quite straightforward, ES-DE will look for any files inside a script directory that corresponds to the event that is triggered and will then attempt to execute all these files (regardless of their file extensions, except on Windows where only .bat files can be used). If you want to have the scripts executed in a certain order you can name them accordingly as they will be sorted and executed in lexicographic order. The sorting is case-sensitive on Linux and Android and case-insensitive on macOS and Windows. ES-DE will wait for each script to finish its execution before moving on to the next one, so the application will suspend briefly when whatever the script is doing is executing. If you want to avoid this you can setup a wrapper script that executes another script outside the ES-DE scripts directory as a background process. Refer to your operating system documentation on how to accomplish this.
 
 On Windows PowerShell scripts can't be executed directly but they can be run via .bat wrapper script where you explicitly call powershell.exe with the -command flag. Just be aware that by default the execution of PowerShell scripts is disabled on Windows. Further details about PowerShell is beyond the scope of this document.
+
+The working directory set when launching scripts differs between operating systems due to the way that the script execution works on different platforms, so it's best to not rely on this and instead set explicit paths in all your scripts. This way any child script executions or file output etc. will behave consistently.
 
 There are up to four parameters that will be passed to these scripts, as detailed below:
 

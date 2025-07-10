@@ -8,7 +8,7 @@
 
 This release introduces a cross-platform game importer tool that makes it possible to import games and apps into ES-DE. This is especially useful on Android where native apps and games can now be loaded into the androidapps, androidgames and emulators systems and launched from inside ES-DE. But the game importer is also available on Linux, macOS and Windows where it can import things like desktop applications, emulators and Steam games.
 
-Support for a number of new emulators has been added across all operating systems, and on Android the Sega Model 3 (model3) system has been enabled by using MAME. Also on Android the MAME4droid 2024 emulator entries have been removed since the emulator has been renamed to MAME4droid Current by its developer. Replacement entries with the new name were added already in ES-DE 3.2.0-45.
+Support for a number of new emulators has been added across all operating systems, and on Android the Sega Model 3 (model3) system has been enabled. Also on Android the MAME4droid 2024 emulator entries have been removed since the emulator has been renamed to MAME4droid Current by its developer. Replacement entries with the new name were added already in ES-DE 3.2.0-45.
 
 Translations to four new languages are also included, these being Bosnian, Croatian, Serbian and Portugues (Portugal).
 

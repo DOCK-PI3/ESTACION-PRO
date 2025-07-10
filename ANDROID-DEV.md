@@ -14,9 +14,9 @@ Table of contents:
 
 When you first start ES-DE you will be greeted by a welcome screen, this is part of the _configurator_, the ES-DE onboarding interface. The configurator is easy to use and will guide you through the necessary setup steps.
 
-As a first step you need to give ES-DE the required storage access permission or it will not be able to function. Just enable the setting and the configurator will proceed to the next step. Next you will need to define a application data directory where your settings, scraped media, custom collections and so on will be stored. By default this will be placed in the _ES-DE_ directory in the root of your device's internal storage, and this directory will be created for you automatically.
+As a first step you need to give ES-DE the required storage access permission or it will not be able to function. Just enable the setting and the configurator will proceed to the next step. Next you will need to define an application data directory where your settings, scraped media, custom collections and so on will be stored. By default this will be placed in the _ES-DE_ directory in the root of your device's internal storage, and this directory will be created for you automatically.
 
-After this step you need to select a ROMs directory where your game files will be stored, by default this will be named _ROMs_ and will be located in the root of you device's internal storage. You can however choose to place this on an SD card if you want to, just change the path using the Android file selector GUI. If you do change the path to the SD card you will however need to manually create the ROMs directory as well as to delete the empty directory that was created for you in the built-in storage.
+After this step you need to select a ROMs directory where your game files will be stored, by default this will be named _ROMs_ and will be located in the root of you device's internal storage. You can however choose to place this on an SD card if you want to, just change the path using the Android file selector GUI. If you do change the path to the SD card you will however need to manually create the ROMs directory as well as to delete the empty directory that was created for you on the built-in storage.
 
 The next step is optional, and it's whether to create the game systems directory structure inside your ROMs folder. Performing this will also create _systeminfo.txt_ files in each system directory. These files contain information about the system such as what file extensions and emulators that are supported. They are not mandatory for the app to function, they are only there for your convenience. In general it's recommended to create the system directories, although you could remove the ones you don't need afterwards for a slightly faster app startup speed.
 
@@ -46,9 +46,9 @@ Thankfully sideloading emulators is easy to do, the exact producedure for how to
 
 There is also the [F-Droid](https://f-droid.org/) app store as an alternative to Google Play, and this service contains a couple of emulators that are not present on the Play store, or that are present there but haven't been updated for a very long time.
 
-A number of emulators support the [FileProvider](https://developer.android.com/reference/androidx/core/content/FileProvider) API which makes it possible for ES-DE to temporarily provide storage access to the game file on launch. This means that most of the time no access permission needs to be setup in the emulator upfront. Access can however only be passed for single files, so for systems that support multi-file games such as disc-based games in .bin/.cue format SAF URIs are often used instead. For those emulators you will therefore generally need to manually provide scoped storage access to each game system directory. Note that it's not supported to give access to the root of the entire ROM directory for emulators that use scoped storage, it has to be for the specific system. For instance `/storage/emulated/0/ROMs/n64` rather than `/storage/emulated/0/ROMs`.
+A number of emulators support the [FileProvider](https://developer.android.com/reference/androidx/core/content/FileProvider) API which makes it possible for ES-DE to temporarily provide storage access to the game file on launch. This means that most of the time no access permission needs to be setup in the emulator upfront. Access can however only be passed for single files, so for systems that support multi-file games such as disc-based games in .bin/.cue format SAF URIs are often used instead. For those emulators you will therefore generally need to manually provide scoped storage access to each game system directory. Note that it's not supported to give access to the root of the entire ROM directory for most emulators that use scoped storage, it has to be for the specific system. For instance `/storage/emulated/0/ROMs/n64` rather than `/storage/emulated/0/ROMs`. The MAME4droid emulator is an exception to this rule though, as explained elsewhere in this document.
 
-Adding to the FileProvider API confusion is the fact that some emulators will only launch games when using this API even though they need to have scoped storage access setup within the emulator upfront. FPseNG and FPse are two examples of this. So there is unfortunately no definitive rule regarding the use of the FileProvider API, it all depends on how the emulator has implemented the functionality.
+Adding to the FileProvider API confusion is the fact that some emulators will only launch games when using this API, but they still need to have scoped storage access setup within the emulator interface. FPseNG and FPse are two examples of this. So there is unfortunately no definitive rule regarding the use of the FileProvider API, it all depends on how the emulator has implemented this functionality.
 
 Some emulators like RetroArch are still using an older storage access method and for those emulators this is not something you need to consider.
 
@@ -173,7 +173,7 @@ It's also possible to import app icons as well as banners or logos if they are a
 
 Note that your imported apps and games are not automatically updated when you add or remove them from your device, you need to run the import tool after any changes and/or remove entries manually from the gamelist view.
 
-It's possible to scrape Android apps and games using ScreenScraper, but at the time of writing the amount of entries in their database is somehow limited. It's therefore encouraged to participate in improving this situation by contributing metadata and media to their database, this will benefit everyone in the long run.
+It's possible to scrape Android apps and games using ScreenScraper, but at the time of writing the amount of entries in their database is somehow limited. It's therefore encouraged to participate in improving this situation by contributing metadata and media to their database.
 
 ## Running ES-DE as the Android home app
 
@@ -207,11 +207,10 @@ Below are specific instructions and considerations for all supported emulators.
 
 ### RetroArch
 
-The RetroArch release from the Google Play store is problematic. It does not contain all emulator cores and a number of people have reported issues launching games from ES-DE (apparently it doesn't work at all on some devices). For these reasons it's strongly recommended to use the 64-bit release from the RetroArch website instead, or to install it from the Samsung Galaxy Store, Amazon Appstore or the F-Droid store.
+The RetroArch release from the Google Play store is problematic. It does not contain all emulator cores and a number of people have reported issues launching games from ES-DE (apparently it doesn't work at all on some devices). For these reasons it's strongly recommended to use the 64-bit release from the RetroArch website instead, or to install it from the Samsung Galaxy Store or the F-Droid store.
 
 https://retroarch.com \
 https://galaxystore.samsung.com/detail/com.retroarch \
-https://www.amazon.com/dp/B09753XRVF \
 https://f-droid.org/en/packages/com.retroarch
 
 Be aware that you need to manually install every core you want to use from inside the RetroArch user interface, and you also need to install all necessary BIOS files. The Android release of RetroArch is pretty unforgiving and will usually just present a black screen on game launch if the core file or the BIOS file is missing, and it will hang there until Android realizes the app is not responding and displays a popup where you can choose to kill the process.
@@ -226,8 +225,9 @@ https://github.com/Trixarian/NetherSX2-patch
 
 ### Azahar
 
-This emulator can be downloaded from their GitHub site.
+This emulator can be installed from the Play store or from their GitHub site.
 
+https://play.google.com/store/apps/details?id=io.github.lime3ds.android \
 https://github.com/azahar-emu/azahar/releases
 
 ### Cemu
@@ -377,9 +377,7 @@ https://github.com/woesss/JL-Mod/releases
 
 ### Lime3DS
 
-This emulator which is forked from Citra can be downloaded from their GitHub site.
-
-https://github.com/Lime3DS/Lime3DS/releases
+This emulator which is forked from Citra is no longer developed as it's been carried over into the Azahar emulator.
 
 ### MAME4droid Current and MAME4droid
 
@@ -420,9 +418,8 @@ https://play.google.com/store/apps/details?id=me.magnum.melonds
 
 ### M64Plus FZ
 
-This emulator can be installed from the Amazon Appstore or the Google Play store. The Pro version is recommended to avoid annoying ads.
+This emulator can be installed from the Google Play store. The Pro version is recommended to avoid annoying ads.
 
-https://www.amazon.com/dp/B09L5FB7T4 \
 https://play.google.com/store/apps/details?id=org.mupen64plusae.v3.fzurita.pro \
 https://play.google.com/store/apps/details?id=org.mupen64plusae.v3.fzurita
 
@@ -441,9 +438,8 @@ https://play.google.com/store/apps/details?id=com.fastemulator.gbc
 
 ### Nesoid
 
-Nesoid is not available on the Play store but it can be installed from the F-Droid store, or it can be downloaded from their GitHub site.
+This emulator can be downloaded from their GitHub site.
 
-https://f-droid.org/en/packages/com.androidemu.nes \
 https://github.com/proninyaroslav/nesoid/releases
 
 ### NooDS

@@ -1027,9 +1027,9 @@ Hopefully using the game importer should be pretty self-explanatory, you select 
 
 On Android you can also select whether to import media from the actual app packages installed on your device, which will retrieve the app icon, and optionally the banner or logo if that's available for the app. If the corresponding setting has been enabled the banner will be searched for first, and if that is not found then the logo will be searched for, and if that's also not available a fallback will take place to the app icon which always exists. Also on Android you can select whether to only include apps categorized as games, just be aware that this may not be entirely reliable as some apps are not correctly categorized by their developers.
 
-Once the import has finished a popup notification will be displayed telling you how many games were imported. You can proceed to import games for additional systems if you want to, or you can leave the game importer in which case ES-DE will reload, populating the systems with your newly imported games or applications.
+Once the import has finished a popup notification will be displayed telling you how many entries were imported. You can proceed to import games for additional systems if you want to, or you can leave the game importer in which case ES-DE will reload, populating the systems with your newly imported games or applications.
 
-Note that for the desktop operating systems, the import rules included in the bundled configuration use shortcut files, so to for example import your Steam games into ES-DE you first need to create such shortcut files from within Steam.
+Note that for the desktop operating systems, the import rules for most systems rely on shortcut files, so to for example import your Steam games into ES-DE you first need to create such shortcut files from within Steam.
 
 Below are the import rules that are part of the bundled configuration.
 
