@@ -250,7 +250,16 @@ namespace Utils
 
 #if defined(_WIN64)
             _configthreadlocale(_DISABLE_PER_THREAD_LOCALE);
-            sLocaleID = LocaleNameToLCID(Utils::String::stringToWideString(locale).c_str(),
+            // Some workarounds as Windows can apparently never follow standards.
+            std::string localeTemp;
+            if (locale == "bs_BA")
+                localeTemp = "bs-Latn-BA";
+            else if (locale == "sr_RS")
+                localeTemp = "sr-Latn-RS";
+            else
+                localeTemp = locale;
+
+            sLocaleID = LocaleNameToLCID(Utils::String::stringToWideString(localeTemp).c_str(),
                                          LOCALE_ALLOW_NEUTRAL_NAMES);
             SetThreadLocale(sLocaleID);
 #else
