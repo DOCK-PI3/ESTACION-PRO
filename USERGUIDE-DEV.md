@@ -118,7 +118,7 @@ famicom: Nintendo Family Computer
 If a custom es_systems.xml file is present in ~/ES-DE/custom_systems/ any entries from this file will have their names trailed by the text _(custom system)_. So if the _dos_ system in the example above would be present in the custom systems configuration file, the system would be shown as _dos (custom system)_ instead of simply _dos_. This is only applicable for the systems.txt and systeminfo.txt files, the trailing text is not applied or used anywhere else in the application.
 
 ![alt text](images/es-de_ui_easy_setup.png "ES-DE Easy Setup")
-_This is the dialog shown if no game files were found. It lets you import games, change the ROM directory if you don't want to use the default one, and you can also generate the game systems directory structure. Note that the directory is the physical path, and that your operating system may present this as a localized path if you are using a language other than English._
+_This is the dialog shown on desktop operating systems if no game files were found. It lets you import games, change the ROM directory if you don't want to use the default one, and you can also generate the game systems directory structure. Note that the directory is the physical path, and that your operating system may present this as a localized path if you are using a language other than English._
 
 ## Upgrading to a newer release
 
@@ -367,7 +367,6 @@ Instructions on how to customize the es_systems.xml file can be found in [INSTAL
 In addition to the above it's also possible to customize the find rules via the `es_find_rules.xml` file. The logic is essentially identical to what is described for es_systems.xml, and details regarding this file can be found in [INSTALL-DEV.md](INSTALL-DEV.md#es_find_rulesxml) as well.
 
 While the es_systems.xml and es_find_rules.xml files for Android in principle work identically to the desktop ports, there are still some important differences as far as the syntax is concerned. For this reason there's a specific section in the [INSTALL-DEV.md](INSTALL-DEV.md#es_find_rulesxml-and-es_systemsxml-on-android) document that covers the Android configuration.
-
 
 ## Migrating from EmulationStation
 
@@ -2058,7 +2057,7 @@ Simulation is done via the Handheld Electronic (GW) RetroArch core, in which cas
 
 ### Lutris
 
-Adding these games is most easily accomplished by using .desktop shortcut files that can be created from inside the Lutris application. Right click on each game you would like to add to ES-DE and select _Create desktop shortcut_. Following this it's recommend to use the built-in game importer (accessible from the _Utilities_ menu) to import the .desktop files into ES-DE. If doing this then ES-DE will take the actual game name that is defined inside the .desktop file and rename it to that as part of the import process.
+Adding these games is most easily accomplished by using .desktop shortcut files that can be created from inside the Lutris application. Right click on each game you would like to add to ES-DE and select _Create desktop shortcut_. Following this it's recommend to use the built-in game importer (accessible from the _Utilities_ menu) to import the .desktop files into ES-DE. If doing this then ES-DE will take the actual game name that is defined inside the .desktop file and rename the entry to that as part of the import process.
 
 You could alternatively manually move the .desktop files to the `lutris` system directory, but if doing so you may also want to rename some of the files as their names may be a bit cryptic which could confuse the scraper.
 
@@ -2822,7 +2821,7 @@ Simply copy the Start Menu entries for your Steam games into the ~\ROMs\steam di
 
 **Linux**
 
-Copy the .desktop shortcuts for your games into the ~/ROMs/steam directory or use the built-in game importer to accomplish the same thing. If going for manual copying of the files and your desktop environment does not allow you to copy them directly from the application menu then you may need to navigate to `~/.local/share/applications` using your file manager and copy the .desktop files from there. Alternatively you can also create shortcuts from inside Steam by right clicking on a game, selecting _Manage_ and then _Add desktop shortcut_. These file can then be moved from your desktop to your ~/ROMs/steam directory. This is an example of what you could end up with:
+Copy the .desktop shortcuts for your games into the ~/ROMs/steam directory or use the built-in game importer to accomplish the same thing. If going for manual copying of the files and your desktop environment does not allow you to copy them directly from the application menu then you may need to navigate to `~/.local/share/applications` using your file manager and copy the .desktop files from there. Alternatively you can create shortcuts from inside Steam by right clicking on a game, selecting _Manage_ and then _Add desktop shortcut_. These file can then be moved from your desktop to your ~/ROMs/steam directory or imported using the game importer. This is an example of what you could end up with:
 
 ```
 ~/ROMs/steam/Axiom Verge.desktop
@@ -2831,7 +2830,7 @@ Copy the .desktop shortcuts for your games into the ~/ROMs/steam directory or us
 
 **macOS**
 
-On macOS the shortcuts come with the .app extension and are actually directories rather than files. They work exactly as regular shortcuts though. Unless you already have shortcuts available for your games, then go into Steam, right click on a game and select _Manage_ followed by _Add desktop shortcut_. Then move these .app directories to the ~/ROMs/steam directory. You should have something like the following after making these steps:
+On macOS the shortcuts come with the .app extension and are actually directories rather than files. They work exactly as regular shortcuts though. Unless you already have shortcuts available for your games, then go into Steam, right click on a game and select _Manage_ followed by _Add desktop shortcut_. Then move these .app directories to the ~/ROMs/steam directory or import them using the game importer. You should have something like the following after making these steps:
 
 ```
 ~/ROMs/steam/Axiom Verge.app/

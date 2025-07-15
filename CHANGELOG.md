@@ -1,8 +1,8 @@
 # ES-DE Frontend - Changelog
 
-## Version 3.3.0 / 3.3.0-48 (in development)
+## Version 3.3.0 / 3.3.0-48
 
-**Release date:** TBD
+**Release date:** 2025-07-15
 
 ### Release overview
 
@@ -87,7 +87,7 @@ Apart from the above this release includes a large amount of internal changes as
 * Manually updated the rlottie CMake configuration to be able to build with CMake 4.0
 * Updated the MAME index files to include ROMs up to MAME version 0.277
 * Bundled the May 2025 release of the Mozilla TLS/SSL certificates
-* Translation updates for multiple languages
+* Translation updates for all languages
 
 ### Bug fixes
 
