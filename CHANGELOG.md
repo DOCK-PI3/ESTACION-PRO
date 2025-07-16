@@ -1,5 +1,18 @@
 # ES-DE Frontend - Changelog
 
+## Version 3.4.0 (in development)
+
+**Release date:** TBD
+
+### Release overview
+
+### Detailed list of changes
+
+### Bug fixes
+
+* (Android) Apps with invalid banner or logo images crashed the game importer if the "Import banners or logos if available" setting was enabled
+* (Android) Apps with any of the special characters :|"/\\?*<> in their names could not be imported by the game importer
+
 ## Version 3.3.0 / 3.3.0-48
 
 **Release date:** 2025-07-15
