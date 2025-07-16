@@ -1022,7 +1022,7 @@ To see detailed explanations for every setting refer to the _Game importer_ sect
 
 Hopefully using the game importer should be pretty self-explanatory, you select the target system to import to, decide whether to remove all entries you're not importing and then you press _Start_. Assuming ES-DE finds something to import you'll next be presented with a selection screen of what entries to actually import. Just tick the games or applications you're interested in getting into ES-DE and press the _Import_ button.
 
-If there are multiple apps or games with the same name, then a prefix will be appended to any additional entries, for example _TMNT Shredder's Revenge_ and _TMNT Shredder's Revenge (1)_ if there are two apps which are both named _TMNT Shredder's Revenge_.
+If there are multiple apps or games with the same name, then a sequence number will be appended to any additional entries, for example _TMNT Shredder's Revenge_ and _TMNT Shredder's Revenge (1)_ if there are two apps which are both named _TMNT Shredder's Revenge_.
 
 On Android you can also select whether to import media from the actual app packages installed on your device, which will retrieve the app icon, and optionally the banner or logo if that's available for the app. If the corresponding setting has been enabled the banner will be searched for first, and if that is not found then the logo will be searched for, and if that's also not available a fallback will take place to the app icon which always exists. Also on Android you can select whether to only include apps categorized as games, just be aware that this may not be entirely reliable as some apps are not correctly categorized by their developers.
 
