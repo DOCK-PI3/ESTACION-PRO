@@ -6,9 +6,9 @@
         "version": "3.3.0",
         "release": "49",
         "date": "2025-07-15",
-        "androidVersionName": "3.2.0-45",
-        "androidVersionCode": "45",
-        "androidDate": "2025-04-04",
+        "androidVersionName": "3.3.0-48",
+        "androidVersionCode": "48",
+        "androidDate": "2025-07-15",
         "packages": [
             {
                 "name": "WindowsPortable",
