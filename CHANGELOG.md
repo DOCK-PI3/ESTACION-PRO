@@ -1,12 +1,12 @@
 # ES-DE Frontend - Changelog
 
-## Version 3.4.0 / 3.4.0-xx (in development)
+## Version 3.3.0-50 (Android intermediate)
 
-**Release date:** TBD
+**Release date:** 2025-07-18
 
 ### Release overview
 
-### Detailed list of changes
+Android-specific hotfix release that fixes two issues with the game importer.
 
 ### Bug fixes
 
