@@ -411,7 +411,7 @@ if(CMAKE_SYSTEM_NAME MATCHES Linux)
 endif()
 
 if(APPLE)
-    if(CMAKE_SYSTEM_PROCESSOR MATCHES arm)
+    if(CMAKE_SYSTEM_PROCESSOR MATCHES arm AND NOT CMAKE_OSX_ARCHITECTURES MATCHES x86_64)
         add_compile_definitions(MACOS_APPLE_CPU)
     else()
         add_compile_definitions(MACOS_INTEL_CPU)
