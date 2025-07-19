@@ -101,6 +101,7 @@ GuiGameImporter::GuiGameImporter(std::string title, std::function<void()> update
     mMediaTarget->add(_("3D BOXES"), "3dboxes", selectedMediaTarget == "3dboxes");
     mMediaTarget->add(_("PHYSICAL MEDIA"), "physicalmedia", selectedMediaTarget == "physicalmedia");
     mMediaTarget->add(_("FAN ART"), "fanart", selectedMediaTarget == "fanart");
+    mMediaTarget->add(_("MIXIMAGES"), "miximages", selectedMediaTarget == "miximages");
     mMenu.addSaveFunc([this] {
         if (mMediaTarget->getSelected() !=
             Settings::getInstance()->getString("ImporterMediaTarget")) {
