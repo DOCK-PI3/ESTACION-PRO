@@ -1,5 +1,19 @@
 # ES-DE Frontend - Changelog
 
+## Version 3.4.0 / 3.4.0-xx (in development)
+
+**Release date:** TBD
+
+### Release overview
+
+### Detailed list of changes
+
+* (Android) Added miximages as a media target type for the game importer
+
+### Bug fixes
+
+* (macOS) The application updater for the x86 release downloaded the ARM package instead of the x86 package
+
 ## Version 3.3.0-50 (Android intermediate)
 
 **Release date:** 2025-07-18
