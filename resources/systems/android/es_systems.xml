@@ -208,7 +208,7 @@
         <name>atari5200</name>
         <fullname>Atari 5200</fullname>
         <path>%ROMPATH%/atari5200</path>
-        <extension>.a52 .A52 .atr .ATR .atx .ATX .bin .BIN .car .CAR .cas .CAS .cdm .CDM .rom .ROM .xex .XEX .xfd .XFD .7z .7Z .zip .ZIP</extension>
+        <extension>.a52 .A52 .atr .ATR .atx .ATX .bin .BIN .car .CAR .cas .CAS .cdm .CDM .com .COM .rom .ROM .xex .XEX .xfd .XFD .7z .7Z .zip .ZIP</extension>
         <command label="a5200">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/a5200_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="Atari800">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/atari800_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <platform>atari5200</platform>
@@ -228,7 +228,7 @@
         <name>atari800</name>
         <fullname>Atari 800</fullname>
         <path>%ROMPATH%/atari800</path>
-        <extension>.a52 .A52 .atr .ATR .atx .ATX .bin .BIN .car .CAR .cas .CAS .cdm .CDM .rom .ROM .xex .XEX .xfd .XFD .7z .7Z .zip .ZIP</extension>
+        <extension>.a52 .A52 .atr .ATR .atx .ATX .bin .BIN .car .CAR .cas .CAS .cdm .CDM .com .COM .rom .ROM .xex .XEX .xfd .XFD .7z .7Z .zip .ZIP</extension>
         <command label="Atari800">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/atari800_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <platform>atari800</platform>
         <theme>atari800</theme>
@@ -278,7 +278,7 @@
         <name>atarixe</name>
         <fullname>Atari XE</fullname>
         <path>%ROMPATH%/atarixe</path>
-        <extension>.a52 .A52 .atr .ATR .atx .ATX .bin .BIN .car .CAR .cas .CAS .cdm .CDM .rom .ROM .xex .XEX .xfd .XFD .7z .7Z .zip .ZIP</extension>
+        <extension>.a52 .A52 .atr .ATR .atx .ATX .bin .BIN .car .CAR .cas .CAS .cdm .CDM .com .COM .rom .ROM .xex .XEX .xfd .XFD .7z .7Z .zip .ZIP</extension>
         <command label="Atari800">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/atari800_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <platform>atarixe</platform>
         <theme>atarixe</theme>
