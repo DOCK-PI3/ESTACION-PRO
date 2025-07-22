@@ -8,6 +8,8 @@
 
 ### Detailed list of changes
 
+* Added the .com file extension to the atari5200, atari800 and atarixe systems
+* Added the .rom file extension to the atarixe system
 * (Android) Added miximages as a media target type for the game importer
 
 ### Bug fixes
