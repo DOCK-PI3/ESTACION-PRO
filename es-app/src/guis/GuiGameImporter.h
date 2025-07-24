@@ -58,6 +58,7 @@ private:
     std::shared_ptr<OptionListComponent<std::string>> mTargetSystem;
     std::shared_ptr<OptionListComponent<std::string>> mMediaTarget;
     std::shared_ptr<OptionListComponent<std::string>> mRemoveEntries;
+    std::shared_ptr<SwitchComponent> mStripSpecialChars;
     std::shared_ptr<SwitchComponent> mImportMedia;
     std::shared_ptr<SwitchComponent> mImportMediaAdditional;
     std::shared_ptr<SwitchComponent> mImportMediaOverwrite;

@@ -342,6 +342,9 @@ void Settings::setDefaults()
     // Utilities -> Game Importer.
     mStringMap["ImporterTargetSystem"] = {"", ""};
     mStringMap["ImporterRemoveEntries"] = {"never", "never"};
+#if defined(__linux__) || defined(__FreeBSD__)
+    mBoolMap["ImporterStripSpecialChars"] = {false, false};
+#endif
 #if defined(__ANDROID__)
     mStringMap["ImporterMediaTarget"] = {"screenshots", "screenshots"};
     mBoolMap["ImporterImportMedia"] = {true, true};

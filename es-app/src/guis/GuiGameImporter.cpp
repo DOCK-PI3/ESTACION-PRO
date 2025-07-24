@@ -89,6 +89,20 @@ GuiGameImporter::GuiGameImporter(std::string title, std::function<void()> update
 
     mMenu.addWithLabel(_("REMOVE ENTRIES"), mRemoveEntries);
 
+#if defined(__linux__) || defined(__FreeBSD__)
+    mStripSpecialChars = std::make_shared<SwitchComponent>();
+    mStripSpecialChars->setState(Settings::getInstance()->getBool("ImporterStripSpecialChars"));
+    mMenu.addWithLabel(_("STRIP SPECIAL CHARACTERS"), mStripSpecialChars);
+    mMenu.addSaveFunc([this] {
+        if (mStripSpecialChars->getState() !=
+            Settings::getInstance()->getBool("ImporterStripSpecialChars")) {
+            Settings::getInstance()->setBool("ImporterStripSpecialChars",
+                                             mStripSpecialChars->getState());
+            mMenu.setNeedsSaving();
+        }
+    });
+#endif
+
 #if defined(__ANDROID__)
     mMediaTarget =
         std::make_shared<OptionListComponent<std::string>>(_("MEDIA TARGET TYPE"), false);
@@ -223,6 +237,13 @@ GuiGameImporter::GuiGameImporter(std::string title, std::function<void()> update
         mRemoveEntries->getParent()
             ->getChild(mRemoveEntries->getChildIndex() - 1)
             ->setOpacity(DISABLED_OPACITY);
+#if defined(__linux__) || defined(__FreeBSD__)
+        mStripSpecialChars->setEnabled(false);
+        mStripSpecialChars->setOpacity(DISABLED_OPACITY);
+        mStripSpecialChars->getParent()
+            ->getChild(mStripSpecialChars->getChildIndex() - 1)
+            ->setOpacity(DISABLED_OPACITY);
+#endif
 #if defined(__ANDROID__)
         mMediaTarget->setEnabled(false);
         mMediaTarget->setOpacity(DISABLED_OPACITY);
@@ -939,9 +960,28 @@ void GuiGameImporter::desktopshortcutRule(
                 std::string targetFile;
                 bool usedNameEntry {false};
 
-                // Forward slashes can't be used in filenames so remove them if present.
-                if (nameEntry != "")
-                    nameEntry = Utils::String::replace(nameEntry, "/", " ");
+#if defined(__linux__) || defined(__FreeBSD__)
+                if (nameEntry != "") {
+                    if (mStripSpecialChars->getState()) {
+                        // Remove characters that are not allowed in filenames on FAT-based
+                        // filesystems, which is also equivalent to what's not allowed on Windows.
+                        nameEntry = Utils::String::replace(nameEntry, "\"", "");
+                        nameEntry = Utils::String::replace(nameEntry, ":", "");
+                        nameEntry = Utils::String::replace(nameEntry, "|", "");
+                        nameEntry = Utils::String::replace(nameEntry, "/", "");
+                        nameEntry = Utils::String::replace(nameEntry, "\\", "");
+                        nameEntry = Utils::String::replace(nameEntry, "?", "");
+                        nameEntry = Utils::String::replace(nameEntry, "*", "");
+                        nameEntry = Utils::String::replace(nameEntry, "<", "");
+                        nameEntry = Utils::String::replace(nameEntry, ">", "");
+                    }
+                    else {
+                        // Always remove forward slashes.
+                        if (nameEntry != "")
+                            nameEntry = Utils::String::replace(nameEntry, "/", "");
+                    }
+                }
+#endif
 
                 if (validFile && nameEntry.length() > 5) {
                     targetFile = nameEntry.substr(5, nameEntry.length()) + ".desktop";
