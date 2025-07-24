@@ -8,6 +8,7 @@
 
 ### Detailed list of changes
 
+* (Linux) Added a "Strip special characters" setting to the game importer to enable imports to FAT-based filesystems
 * Added the .com file extension to the atari5200, atari800 and atarixe systems
 * Added the .rom file extension to the atarixe system
 * (Android) Added miximages as a media target type for the game importer

@@ -4073,6 +4073,10 @@ Which system to import to, will display _No configuration_ if there are no avail
 
 Whether to remove entries during the import process. Can be set to _Never_ or _All unselected_. The latter option is slightly dangerous as it will delete any files from the target game system matching the extension that is configured for the import rule. It's generally better to manually delete entries you no longer need from the gamelist view using the metadata editor.
 
+**Strip special characters** _(Linux only)_
+
+Whether to strip the special characters :|"?*<> from the names extracted from .desktop files when using the desktopshortcut rule. This is normally not required as all these characters are supported on proper filesystems like ext4, XFS and btrfs. But if using a FAT-based fileystem such as exFAT this option needs to be enabled as the importer will otherwise not be able to import any such entries. Note however that it's strongly recommended to use a proper filesystem with ES-DE in the first place, and not a FAT-based filesystem.
+
 **Media target type** _(Android only)_
 
 If chosing to import media then this option controls which target media type to import to. The available types are the same ones that can be saved by the scraper.
