@@ -26,6 +26,12 @@
             <directory execFilter="lutris:rungameid">~/Desktop</directory>
         </rule>
     </system>
+    <system name="ps3">
+        <rule name="Desktop Shortcut" type="desktopshortcut">
+            <directory execFilter="RPCS3_GAMEID">~/.local/share/applications/RPCS3</directory>
+            <directory execFilter="RPCS3_GAMEID">~/Desktop</directory>
+        </rule>
+    </system>
     <system name="steam">
         <rule name="Desktop Shortcut" type="desktopshortcut">
             <directory execFilter="steam://rungameid">~/.local/share/applications</directory>
