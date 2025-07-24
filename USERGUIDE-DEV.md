@@ -2688,11 +2688,13 @@ Apart from this you need to install the PS3 system firmware to use the emulator,
 
 First install your games inside RPCS3, then right click on each entry and select _Manage Game_ followed by _Create Desktop Shortcut_. On Windows this will create shortcuts with the .lnk extension, on macOS they will have the .app extension and on Linux they will have the .desktop extension.
 
-Then simply move these files from your desktop to your ~/ROMs/ps3 directory and you're done. Here's an example of what this could look like on Linux:
+Then simply copy or move these files from your desktop to your ~/ROMs/ps3 directory and you're done. Here's an example of what this could look like on Linux:
 ```
 ~/ROMs/ps3/Bejeweled 2.desktop
 ~/ROMs/ps3/Gran Turismo 5.desktop
 ```
+
+On Linux specifically you can also import the shortcut files using the built-in game importer intead of manually copying or moving the files.
 
 Note that if using the Flatpak release of RPCS3 on Linux there is currently a bug where the .desktop files will include the wrong path to the emulator binary. The Exec key will look something like this:
 ```
