@@ -5,6 +5,7 @@
         <rule name="Desktop Shortcut" type="desktopshortcut">
             <directory>/usr/local/share/applications</directory>
             <directory>~/.local/share/applications</directory>
+            <directory>~/Desktop</directory>
         </rule>
     </system>
     <system name="emulators">

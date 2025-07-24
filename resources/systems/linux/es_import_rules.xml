@@ -8,6 +8,7 @@
             <directory>~/.local/share/applications</directory>
             <directory>/var/lib/flatpak/exports/share/applications</directory>
             <directory>/var/lib/snapd/desktop/applications</directory>
+            <directory>~/Desktop</directory>
         </rule>
     </system>
     <system name="emulators">
