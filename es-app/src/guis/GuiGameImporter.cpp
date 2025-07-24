@@ -976,9 +976,9 @@ void GuiGameImporter::desktopshortcutRule(
                         nameEntry = Utils::String::replace(nameEntry, ">", "");
                     }
                     else {
-                        // Always remove forward slashes.
-                        if (nameEntry != "")
-                            nameEntry = Utils::String::replace(nameEntry, "/", "");
+                        // Always remove forward slashes and backslashes.
+                        nameEntry = Utils::String::replace(nameEntry, "/", "");
+                        nameEntry = Utils::String::replace(nameEntry, "\\", "");
                     }
                 }
 #endif
