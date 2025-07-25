@@ -13,6 +13,7 @@
 * (Linux) Added desktopshortcut import rules for the ps3 system
 * (Linux) Added a ~/Desktop import rule entry for the desktop system
 * (Windows) Added ~\Desktop import rule entries for the desktop, emulators and windows systems
+* Added Azahar Shortcut standalone as an alternative emulator for the n3ds system on Linux and Windows
 * Added the .com file extension to the atari5200, atari800 and atarixe systems
 * Added the .rom file extension to the atarixe system
 
