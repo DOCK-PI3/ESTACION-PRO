@@ -1230,6 +1230,27 @@ Recca
 
 Note that _Kid Icarus_ will only show up once since there is a name collision present and in this case only the first file processed will be added and any other identically named files will be ignored. Also note that in this case it's random whether metadata from _EU/Kid Icarus_ or _USA/Kid Icarus_ will be used.
 
+### RetroArch ROM hacks
+
+The easiest way to setup RetroArch ROM hacks in ES-DE is to use the _directories interpreted as files_ functionality described elsewhere in this document. This way you can have separate entries in your gamelist for each patch, which will be applied automatically by RetroArch on game launch.
+
+Here's an example of the _Contra_ game for the Nintendo Entertainment System:
+```
+~/ROMs/nes/Contra.zip
+~/ROMs/nes/Contra (easy mode).zip
+~/ROMs/nes/Contra (easy mode).zip/Contra (easy mode).ips
+~/ROMs/nes/Contra (easy mode).zip/Contra (easy mode).zip
+~/ROMs/nes/Contra (iikori).zip
+~/ROMs/nes/Contra (iikori).zip/Contra (iikori).ips
+~/ROMs/nes/Contra (iikori).zip/Contra (iikori).zip
+```
+
+For this example there will be three entries in the gamelist named _Contra_, _Contra (easy mode)_ and _Contra (iikori)_ and these will be shown as regular games and not as folders due to the use of the directories interpreted as files functionality.
+
+As they are separate entries it's also possible to scrape or manually assign different graphics and metadata to them to make it nice and easy to navigate the system.
+
+Be aware though that scraping entries like those in this example will likely require that the names are refined or the scraper services may not find any matching games. It could also be a good idea to disable the _Game names_ option in the scraper content settings menu to not overwrite the names during scraping.
+
 ## Platform-specific setup
 
 Not all systems are as simple to setup as what was described in the previous sections, and in some cases there may be multiple ways to perform the configuration. Specifics for such platforms are covered below.

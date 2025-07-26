@@ -16,6 +16,7 @@
 * Added Azahar Shortcut standalone as an alternative emulator for the n3ds system on Linux and Windows
 * Added the .com file extension to the atari5200, atari800 and atarixe systems
 * Added the .rom file extension to the atarixe system
+* (Android) Changed the target SDK version to 36 (Android 16)
 
 ### Bug fixes
 
