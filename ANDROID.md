@@ -604,14 +604,16 @@ This is clearly not a complete list of Android devices, but rather those we know
 | Anbernic     | RG406V                  | 13              | Yes       | None                |                            |
 | Anbernic     | RG505                   | 12,<br>GammaOS 12 | Yes       | None                |                            |
 | Anbernic     | RG556                   | 13              | Yes       | None                |                            |
-| Anbernic     | RG557                   | 14              | Yes       | Theme downloader    | There's a firmware bug that prevents the theme downloader from working, so themes need to be installed manually |
+| Anbernic     | RG557                   | 14              | Yes       | None                |                            |
 | Anbernic     | RG ARC                  | LineageOS 12,<br>GammaOS 12,<br>GammaOS 13 TV | Yes       | None                | Limited RAM capacity for this device makes it unsuitable for demanding themes and large game collections |
 | Anbernic     | RG Cube                 | 13              | Yes       | None                |                            |
+| Anbernic     | RG Slide                | 13              | Yes       | None                |                            |
 | AYANEO       | Pocket ACE              | 13              | Yes       | None                |                            |
 | AYANEO       | Pocket Air              | 12              | Yes       | None                |                            |
 | AYANEO       | Pocket DMG              | 13              | Yes       | None                |                            |
 | AYANEO       | Pocket Micro            | 13              | Yes       | None                |                            |
 | AYANEO       | Pocket S                | 13              | Yes       | None                |                            |
+| AYANEO       | Pocket S2               | 14              | Yes       | None                |                            |
 | Ayn          | Odin (Base/Pro)         | 10              | Yes       | None                |                            |
 | Ayn          | Odin Lite               | 11              | Yes       | None                |                            |
 | Ayn          | Odin 2 (Base/Pro/Max)   | 13              | Yes       | Minor audio issues  |                            |
@@ -642,6 +644,7 @@ This is clearly not a complete list of Android devices, but rather those we know
 | Lenovo       | Xiaoxin Pad Pro 2021    | 11              | Yes       | None                |                            |
 | LG           | V60 ThinQ               | 13              | Yes       | None                |                            |
 | Logitech     | G Cloud                 | 11              | Yes       | None                |                            |
+| Magicx       | Zero 40                 | 10              | Yes       | None                |                            |
 | Meta         | Quest 3                 | 12 ?            | Yes       | None                |                            |
 | Microsoft    | Surface Duo 2           | 12              | Unclear   | Unclear             | Conflicting reports of whether this device works or not |
 | Motorola     | Moto G60                | 12              | Yes       | None                |                            |
@@ -659,6 +662,7 @@ This is clearly not a complete list of Android devices, but rather those we know
 | OnePlus      | 12                      | 14              | Yes       | None                |                            |
 | OnePlus      | Nord 2                  | 13              | Yes       | None                |                            |
 | OnePlus      | Open                    | 14              | Yes       | None                |                            |
+| ONEXPLAYER   | ONEXSUGAR SUGAR 1       | 14              | Yes       | None                |                            |
 | Oppo         | A15                     | 10              | Yes       | None                |                            |
 | Oppo         | Find X5 Pro             | 14              | Yes       | None                |                            |
 | Oppo         | Reno5                   | 12              | Yes       | None                |                            |
@@ -676,8 +680,11 @@ This is clearly not a complete list of Android devices, but rather those we know
 | Retroid      | Pocket 4                | 13              | Yes       | None                |                            |
 | Retroid      | Pocket 4 Pro            | 13              | Yes       | None                |                            |
 | Retroid      | Pocket 5                | 13              | Yes       | None                |                            |
+| Retroid      | Pocket Classic          | 14              | Yes       | None                |                            |
 | Retroid      | Pocket Flip             | 11              | Yes       | None                |                            |
+| Retroid      | Pocket Flip 2           | 13              | Yes       | None                |                            |
 | Retroid      | Pocket Mini             | 10              | Yes       | None                |                            |
+| Retroid      | Pocket Mini V2          | 13              | Yes       | None                |                            |
 | Samsung      | Galaxy A17              | 11              | Yes       | None                |                            |
 | Samsung      | Galaxy A20              | 10              | Yes       | No write access to SD card | ROMs folder can be moved to SD card after setup and be used in read-only mode |
 | Samsung      | Galaxy A52              | 13              | Yes       | None                |                            |
