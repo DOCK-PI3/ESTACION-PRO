@@ -575,7 +575,7 @@ https://github.com/Vita3K/Vita3K-Android/releases
 In order to use Winlator to run Windows games you need to use a specific fork named _Winlator Cmod_ as mainline [Winlator](https://winlator.com/) does not offer frontend support. The Cmod fork can be downloaded from their GitHub page:\
 https://github.com/coffincolors/winlator
 
-There are two variants of the fork, Glibc and PRoot, both of which come with some pros and cons with regards to compatibility and performance. The Glibc variant is the default emulator in ES-DE, so to use PRoot instead you'll need to select its alternative emulator entry.
+There are three variants of the fork, the main one (aka Bionic) as well as the Glibc and PRoot builds. The main variant is the default emulator in ES-DE, so to use Glibc or PRoot instead you'll need to select either of these alternative emulator entries.
 
 In addition to the official repository there are multiple Winlator builds floating around the Internet, but these have not been extensively tested with ES-DE.
 
@@ -855,7 +855,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | pc                    | IBM PC                                         | DOSBox-Pure                       | DOSBox-Core,<br>DOSBox-SVN,<br>VirtualXT | No           | See the specific _DOS / PC_ section in the user guide |
 | pc88                  | NEC PC-8800 Series                             | QUASI88                           |                                   | Yes          |                                      |
 | pc98                  | NEC PC-9800 Series                             | Neko Project II Kai               | Neko Project II                   |              |                                      |
-| pcarcade              | PC Arcade Systems                              | Winlator Cmod Glibc **(Standalone)** | Winlator Cmod PRoot **(Standalone)** | No           | See the _Winlator_ section elsewhere in this document |
+| pcarcade              | PC Arcade Systems                              | Winlator Cmod **(Standalone)**    | Winlator Cmod Glibc **(Standalone)**,<br>Winlator Cmod PRoot **(Standalone)** | No           | See the _Winlator_ section elsewhere in this document |
 | pcengine              | NEC PC Engine                                  | Beetle PCE                        | Beetle PCE FAST,<br>Beetle SuperGrafx,<br>Geargrafx,<br>PCE.emu **(Standalone)** | No           | Single archive or ROM file           |
 | pcenginecd            | NEC PC Engine CD                               | Beetle PCE                        | Beetle PCE FAST,<br>Beetle SuperGrafx,<br>PCE.emu **(Standalone)** | Yes          |                                      |
 | pcfx                  | NEC PC-FX                                      | Beetle PC-FX                      |                                   | Yes          |                                      |
@@ -904,7 +904,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | to8                   | Thomson TO8                                    | Theodore                          |                                   |              |                                      |
 | triforce              | Namco-Sega-Nintendo Triforce                   | _Placeholder_                     |                                   |              |                                      |
 | trs-80                | Tandy TRS-80                                   | _Placeholder_                     |                                   |              |                                      |
-| type-x                | Taito Type X                                   | Winlator Cmod Glibc **(Standalone)** | Winlator Cmod PRoot **(Standalone)** | No           | See the _Winlator_ section elsewhere in this document |
+| type-x                | Taito Type X                                   | Winlator Cmod **(Standalone)**    | Winlator Cmod Glibc **(Standalone)**,<br>Winlator Cmod PRoot **(Standalone)** | No           | See the _Winlator_ section elsewhere in this document |
 | uzebox                | Uzebox Open Source Console                     | Uzem                              |                                   |              |                                      |
 | vectrex               | GCE Vectrex                                    | vecx                              | MAME4droid Current **(Standalone)**  | Yes for MAME4droid Current | Single archive or ROM file           |
 | vic20                 | Commodore VIC-20                               | VICE xvic                         |                                   | No           | Single archive or tape, cartridge or diskette image file |
@@ -916,7 +916,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | wasm4                 | WASM-4 Fantasy Console                         | WASM-4                            |                                   | No           | Single .wasm file                    |
 | wii                   | Nintendo Wii                                   | Dolphin                           | Dolphin **(Standalone)**,<br>Dolphin MMJR **(Standalone)**,<br>Dolphin MMJR2 **(Standalone)** | No           |                                      |
 | wiiu                  | Nintendo Wii U                                 | Cemu **(Standalone)**             |                                   | No           | See the specific _Nintendo Wii U_ section in the user guide |
-| windows               | Microsoft Windows                              | Winlator Cmod Glibc **(Standalone)** | Winlator Cmod PRoot **(Standalone)** | No           | See the _Winlator_ section elsewhere in this document |
+| windows               | Microsoft Windows                              | Winlator Cmod **(Standalone)**    | Winlator Cmod Glibc **(Standalone)**,<br>Winlator Cmod PRoot **(Standalone)** | No           | See the _Winlator_ section elsewhere in this document |
 | windows3x             | Microsoft Windows 3.x                          | DOSBox-Pure                       |                                   | No           |                                      |
 | windows9x             | Microsoft Windows 9x                           | DOSBox-Pure                       |                                   | No           |                                      |
 | wonderswan            | Bandai WonderSwan                              | Beetle Cygne                      | Swan.emu **(Standalone)**         | No           | Single archive or ROM file           |
