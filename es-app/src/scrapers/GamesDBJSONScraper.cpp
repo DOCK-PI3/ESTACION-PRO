@@ -3,7 +3,7 @@
 //  ES-DE Frontend
 //  GamesDBJSONScraper.cpp
 //
-//  Functions specifically for scraping from thegamesdb.net
+//  Functions for scraping from TheGamesDB (thegamesdb.net).
 //  Called from Scraper.
 //
 

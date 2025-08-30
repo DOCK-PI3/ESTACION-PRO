@@ -3,7 +3,7 @@
 //  ES-DE Frontend
 //  ScreenScraper.cpp
 //
-//  Functions specifically for scraping from screenscraper.fr
+//  Functions for scraping from ScreenScraper (screenscraper.fr).
 //  Called from Scraper.
 //
 
@@ -274,7 +274,7 @@ void ScreenScraperRequest::process(const std::unique_ptr<HttpReq>& req,
     pugi::xml_document doc;
 
     // It seems as if screenscraper.fr has changed their API slightly and now just returns
-    // a simple text messsage upon not finding any matching game. If we don't return here,
+    // a simple text message upon not finding any matching game. If we don't return here,
     // we will get a pugixml error trying to process this string as an XML message.
     if (req->getContent().find("Erreur : Rom") == 0)
         return;
