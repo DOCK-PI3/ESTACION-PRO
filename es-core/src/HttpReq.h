@@ -60,6 +60,32 @@ public:
         }
     }
 
+#if defined(__FreeBSD__)
+    const static inline std::string sPlatformIdentifier {"B"};
+#elif defined(__HAIKU__)
+    const static inline std::string sPlatformIdentifier {"H"};
+#elif defined(STEAM_DECK)
+    const static inline std::string sPlatformIdentifier {"S"};
+#elif defined(RETRODECK)
+    const static inline std::string sPlatformIdentifier {"R"};
+#elif defined(__ANDROID__)
+    const static inline std::string sPlatformIdentifier {"G"};
+#elif defined(APPIMAGE_BUILD)
+    const static inline std::string sPlatformIdentifier {"A"};
+#elif defined(__linux__) && defined(RASPBERRY_PI)
+    const static inline std::string sPlatformIdentifier {"P"};
+#elif defined(__linux__)
+    const static inline std::string sPlatformIdentifier {"L"};
+#elif defined(__IOS__)
+    const static inline std::string sPlatformIdentifier {"I"};
+#elif defined(__APPLE__)
+    const static inline std::string sPlatformIdentifier {"M"};
+#elif defined(_WIN64)
+    const static inline std::string sPlatformIdentifier {"W"};
+#else
+    const static inline std::string sPlatformIdentifier {"O"};
+#endif
+
 private:
     // Callbacks.
     static int transferProgress(
