@@ -5,7 +5,6 @@
 //
 //  Main scraper logic.
 //  Called from GuiScraperSearch.
-//  Calls either GamesDBJSONScraper or ScreenScraper.
 //
 
 #ifndef ES_APP_SCRAPERS_SCRAPER_H
@@ -158,9 +157,6 @@ protected:
 std::unique_ptr<ScraperSearchHandle> startScraperSearch(const ScraperSearchParams& params);
 
 std::unique_ptr<ScraperSearchHandle> startMediaURLsFetch(const std::string& gameIDs);
-
-// Returns a list of valid scraper names.
-std::vector<std::string> getScraperList();
 
 // Returns true if the scraper configured in the settings is still valid.
 bool isValidConfiguredScraper();

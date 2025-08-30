@@ -5,7 +5,6 @@
 //
 //  Main scraper logic.
 //  Called from GuiScraperSearch.
-//  Calls either GamesDBJSONScraper or ScreenScraper.
 //
 
 #include "scrapers/Scraper.h"
@@ -87,15 +86,6 @@ std::unique_ptr<ScraperSearchHandle> startMediaURLsFetch(const std::string& game
     }
 
     return handle;
-}
-
-std::vector<std::string> getScraperList()
-{
-    std::vector<std::string> list;
-    for (auto it = scraper_request_funcs.cbegin(); it != scraper_request_funcs.cend(); ++it)
-        list.push_back(it->first);
-
-    return list;
 }
 
 bool isValidConfiguredScraper()

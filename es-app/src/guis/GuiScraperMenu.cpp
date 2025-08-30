@@ -26,12 +26,9 @@ GuiScraperMenu::GuiScraperMenu(std::string title)
 {
     // Scraper service.
     mScraper = std::make_shared<OptionListComponent<std::string>>(_("SCRAPE FROM"), false);
-    std::vector<std::string> scrapers = getScraperList();
-    // Select either the first entry or the one read from the settings,
-    // just in case the scraper from settings has vanished.
-    for (auto it = scrapers.cbegin(); it != scrapers.cend(); ++it)
-        mScraper->add(Utils::String::toUpper(*it), *it,
-                      *it == Settings::getInstance()->getString("Scraper"));
+    const std::string selectedScraper {Settings::getInstance()->getString("Scraper")};
+    mScraper->add(("SCREENSCRAPER"), "screenscraper", selectedScraper == "screenscraper");
+    mScraper->add(("THEGAMESDB"), "thegamesdb", selectedScraper == "thegamesdb");
     // If there are no objects returned, then there must be a manually modified entry in the
     // configuration file. Simply set the scraper to "screenscraper" in this case.
     if (mScraper->getSelectedObjects().size() == 0)
