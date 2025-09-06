@@ -1139,11 +1139,11 @@
         <fullname>Nintendo 3DS</fullname>
         <path>%ROMPATH%/n3ds</path>
         <extension>.3ds .3DS .3dsx .3DSX .app .APP .axf .AXF .cci .CCI .cxi .CXI .elf .ELF .z3dsx .Z3DSX .zcci .ZCCI .zcxi .ZCXI .7z .7Z .zip .ZIP</extension>
+        <command label="Azahar (Standalone)">%EMULATOR_AZAHAR% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %DATA%=%ROMSAF%</command>
         <command label="Citra">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/citra_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="Citra (Standalone)">%EMULATOR_CITRA% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %DATA%=%ROMSAF%</command>
         <command label="Citra Canary (Standalone)">%EMULATOR_CITRA-CANARY% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %DATA%=%ROMSAF%</command>
         <command label="Citra MMJ (Standalone)">%EMULATOR_CITRA-MMJ% %EXTRA_GamePath%=%ROM%</command>
-        <command label="Azahar (Standalone)">%EMULATOR_AZAHAR% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %DATA%=%ROMSAF%</command>
         <command label="Mandarine (Standalone)">%EMULATOR_MANDARINE% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %DATA%=%ROMSAF%</command>
         <command label="Lime3DS (Standalone)">%EMULATOR_LIME3DS% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %DATA%=%ROMSAF%</command>
         <command label="Panda3DS (Standalone)">%EMULATOR_PANDA3DS% %DATA%=%ROMPROVIDER%</command>
