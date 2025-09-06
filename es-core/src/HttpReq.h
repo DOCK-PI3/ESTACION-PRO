@@ -33,6 +33,7 @@ public:
         REQ_FAILED_VERIFICATION, // Peer's certificate or fingerprint wasn't verified correctly.
         REQ_BAD_STATUS_CODE,     // HTTP error response >= 400.
         REQ_RESOURCE_NOT_FOUND,  // HTTP error code 404 specifically.
+        REQ_QUOTA_REACHED,       // API quota reached on scraper service.
         REQ_INVALID_RESPONSE,    // The HTTP response was invalid.
         REQ_UNDEFINED_ERROR
         // clang-format on
