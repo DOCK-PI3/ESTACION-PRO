@@ -402,8 +402,13 @@ void HttpReq::pollCurl()
                         long responseCode;
                         curl_easy_getinfo(msg->easy_handle, CURLINFO_RESPONSE_CODE, &responseCode);
 
-                        if (responseCode == 430 &&
-                            Settings::getInstance()->getString("Scraper") == "screenscraper") {
+                        if (responseCode == 429 &&
+                            Settings::getInstance()->getString("Scraper") != "screenscraper") {
+                            req->mContent << _("You have exceeded your daily scrape quota");
+                            req->mStatus = REQ_QUOTA_REACHED;
+                        }
+                        else if (responseCode == 430 &&
+                                 Settings::getInstance()->getString("Scraper") == "screenscraper") {
                             req->mContent << _("You have exceeded your daily scrape quota");
                             req->mStatus = REQ_SUCCESS;
                         }

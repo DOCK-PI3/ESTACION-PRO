@@ -473,23 +473,38 @@ void GuiScraperSearch::onSearchDone(std::vector<ScraperSearchResult>& results)
             std::string otherPlatforms;
 
             if (mMD5Hash != "") {
-                const std::string entryText {
-                    results.size() > 1 ? "Result entry " + std::to_string(i) + ": " : ""};
-                if (results[i].md5Hash == mMD5Hash) {
-                    mAutomaticModeGameEntry = static_cast<int>(i);
-                    LOG(LogDebug)
-                        << "GuiScraperSearch::onSearchDone(): " << entryText
-                        << "Perfect match, MD5 digest in server response identical to file hash";
+                if (Settings::getInstance()->getString("Scraper") != "screenscraper") {
+                    if (results[i].md5Hash == "match") {
+                        LOG(LogDebug)
+                            << "GuiScraperSearch::onSearchDone(): Perfect match, scraper service "
+                               "has indicated that the game was matched using the MD5 digest";
+                    }
+                    else {
+                        LOG(LogDebug)
+                            << "GuiScraperSearch::onSearchDone(): Not a perfect match, scraper "
+                               "service has indicated that the game was matched using its name";
+                    }
                 }
-                else if (results[i].md5Hash != "") {
-                    LOG(LogDebug) << "GuiScraperSearch::onSearchDone(): " << entryText
-                                  << "Not a perfect match, MD5 digest in server response not "
-                                     "identical to file hash";
-                }
-                else {
-                    LOG(LogDebug) << "GuiScraperSearch::onSearchDone(): " << entryText
-                                  << "Server did not return an MD5 digest, can't tell whether this "
-                                     "is a perfect match";
+                if (Settings::getInstance()->getString("Scraper") == "screenscraper") {
+                    const std::string entryText {
+                        results.size() > 1 ? "Result entry " + std::to_string(i) + ": " : ""};
+                    if (results[i].md5Hash == mMD5Hash) {
+                        mAutomaticModeGameEntry = static_cast<int>(i);
+                        LOG(LogDebug) << "GuiScraperSearch::onSearchDone(): " << entryText
+                                      << "Perfect match, MD5 digest in server response identical "
+                                         "to file hash";
+                    }
+                    else if (results[i].md5Hash != "") {
+                        LOG(LogDebug) << "GuiScraperSearch::onSearchDone(): " << entryText
+                                      << "Not a perfect match, MD5 digest in server response not "
+                                         "identical to file hash";
+                    }
+                    else {
+                        LOG(LogDebug)
+                            << "GuiScraperSearch::onSearchDone(): " << entryText
+                            << "Server did not return an MD5 digest, can't tell whether this "
+                               "is a perfect match";
+                    }
                 }
             }
 
