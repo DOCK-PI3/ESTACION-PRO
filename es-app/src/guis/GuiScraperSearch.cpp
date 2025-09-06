@@ -992,6 +992,13 @@ void GuiScraperSearch::updateThumbnail()
             mGrid.onSizeChanged(); // A hack to fix the thumbnail position since its size changed.
         }
     }
+    else if (it != mThumbnailReqMap.end() &&
+             it->second->status() == HttpReq::REQ_RESOURCE_NOT_FOUND) {
+        LOG(LogWarning)
+            << "GuiScraperSearch::updateThumbnail): Server returned HTTP error code 404 "
+               "(resource not found)";
+        mScraperResults[mResultList->getCursorId()].thumbnailDownloadStatus = COMPLETED;
+    }
     else {
         mResultThumbnail->setImage("");
         onSearchError(_("Error downloading thumbnail:") + " \n" + it->second->getErrorMsg(), true,
