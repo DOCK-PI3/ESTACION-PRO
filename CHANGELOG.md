@@ -18,7 +18,11 @@
 * Removed the .7z and .zip file extensions from the atarijaguarcd system on Linux and Windows
 * Added the .com file extension to the atari5200, atari800 and atarixe systems
 * Added the .rom file extension to the atarixe system
+* Added better support for handling invalid media files when scraping using ScreenScraper
+* Added better support for handling missing media files when scraping (HTTP 404 errors)
+* Added the User-Agent string when making scraper HTTP requests
 * (Android) Changed the target SDK version to 36 (Android 16)
+* Translation updates for multiple languages
 
 ### Bug fixes
 
