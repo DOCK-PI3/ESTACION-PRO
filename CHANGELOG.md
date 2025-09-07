@@ -14,12 +14,16 @@
 * (Linux) Added a ~/Desktop import rule entry for the desktop system
 * (Windows) Added ~\Desktop import rule entries for the desktop, emulators and windows systems
 * (Android) Added Winlator Cmod standalone as the default emulator for the pcarcade, type-x and windows systems
+* (Android) Changed Pizza Boy GBA/A to use %ROMSAF% instead of %ROM% as the developer has changed the way games are launched from frontends
+* (Android) Changed Pizza Boy SC to use %ROMSAF% instead of %ROM% as the developer has changed the way games are launched from frontends
+* Added Parallel Launcher standalone as an alternative emulator for the n64 system on Linux, macOS and Windows
 * Added ares [Mega LD] standalone (Pioneer LaserActive) as an alternative emulator for the daphne and laserdisc systems on Linux, macOS and Windows
 * Added the .mmi file extension to the daphne and laserdisc systems on Linux, macOS and Windows
 * Changed to Azahar standalone as the default emulator for the n3ds system
 * Added Azahar Shortcut standalone as an alternative emulator for the n3ds system on Linux and Windows
 * Added the .z3dsx, .zcci and .zcxi file extensions to the n3ds system
 * (Windows) Changed to the MAME - Current RetroArch core as the default emulator for the model2 system
+* (Windows) Added %STARTDIR%=%EMUDIR% for the shadPS4 Game Serial and shadPS4 eboot.bin emulator entries
 * Removed the .7z and .zip file extensions from the atarijaguarcd system on Linux and Windows
 * Added the .com file extension to the atari5200, atari800 and atarixe systems
 * Added the .lyx file extension to the atarilynx system
@@ -34,6 +38,7 @@
 
 ### Bug fixes
 
+* (Android) Fixed a crash when scraping if the downloaded_media directory had been set to an invalid path
 * (macOS) The application updater for the x86 release downloaded the ARM package instead of the x86 package
 
 ## Version 3.3.0-50 (Android intermediate)

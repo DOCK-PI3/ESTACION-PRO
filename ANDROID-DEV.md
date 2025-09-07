@@ -465,7 +465,6 @@ https://github.com/wheremyfoodat/Panda3DS/releases
 ### Pizza Boy emulators
 
 The Pizza Boy GBA/A, Pizza Boy GBC/C and Pizza Boy SC emulators can be installed from the Play store. There are Basic (free) versions and Pro (paid) versions available.
-At the time of writing the Basic version of the GBA/A emulator does not seem to be able to launch zipped games, but both the Basic and Pro versions of the GBC/C and SC emulators are working correctly.
 
 https://play.google.com/store/apps/details?id=it.dbtecno.pizzaboygba \
 https://play.google.com/store/apps/details?id=it.dbtecno.pizzaboygbapro \
