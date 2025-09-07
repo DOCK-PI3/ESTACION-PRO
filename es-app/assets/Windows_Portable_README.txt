@@ -107,6 +107,7 @@ Emulators\noods\noods.exe
 Emulators\openMSX\openmsx.exe
 Emulators\Oricutron\oricutron.exe
 Emulators\Panda3DS\Alber.exe
+Emulators\parallel-launcher\parallel-launcher.exe
 Emulators\PCSX2\pcsx2.exe
 Emulators\PCSX2-Qt\pcsx2-qt.exe
 Emulators\PICO-8\pico8.exe

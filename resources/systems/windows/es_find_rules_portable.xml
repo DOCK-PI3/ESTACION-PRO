@@ -452,6 +452,13 @@
             <entry>%ESPATH%\..\Emulators\Panda3DS\Alber.exe</entry>
         </rule>
     </emulator>
+    <emulator name="PARALLEL-LAUNCHER">
+        <!-- Nintendo 64 emulator Parallel Launcher  -->
+        <rule type="staticpath">
+            <entry>%ESPATH%\Emulators\parallel-launcher\parallel-launcher.exe</entry>
+            <entry>%ESPATH%\..\Emulators\parallel-launcher\parallel-launcher.exe</entry>
+        </rule>
+    </emulator>
     <emulator name="PCSX2">
         <!-- Sony PlayStation 2 emulator PCSX2 -->
         <rule type="staticpath">

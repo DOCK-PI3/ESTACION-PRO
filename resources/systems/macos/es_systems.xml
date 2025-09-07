@@ -1213,6 +1213,7 @@
         <command label="Mupen64Plus-Next">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/mupen64plus_next_libretro.dylib %ROM%</command>
         <command label="Mupen64Plus (Standalone)">%EMULATOR_MUPEN64PLUS% %ROM%</command>
         <command label="ParaLLEl N64">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/parallel_n64_libretro.dylib %ROM%</command>
+        <command label="Parallel Launcher (Standalone)">%EMULATOR_PARALLEL-LAUNCHER% %ROM%</command>
         <command label="ares (Standalone)">%EMULATOR_ARES% --fullscreen --system "Nintendo 64" %ROM%</command>
         <command label="sixtyforce (Standalone)">%EMULATOR_SIXTYFORCE% %ROM%</command>
         <platform>n64</platform>
