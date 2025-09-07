@@ -966,6 +966,8 @@
             <entry>~/.local/share/applications/*yujinx*.AppImage</entry>
             <entry>~/.local/bin/*yujinx*.AppImage</entry>
             <entry>~/bin/*yujinx*.AppImage</entry>
+            <entry>/var/lib/flatpak/exports/bin/io.github.ryubing.Ryujinx</entry>
+            <entry>~/.local/share/flatpak/exports/bin/io.github.ryubing.Ryujinx</entry>
             <entry>/var/lib/flatpak/exports/bin/org.ryujinx.Ryujinx</entry>
             <entry>~/.local/share/flatpak/exports/bin/org.ryujinx.Ryujinx</entry>
             <entry>~/Applications/publish/Ryujinx</entry>
