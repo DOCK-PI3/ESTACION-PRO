@@ -1646,8 +1646,8 @@
         <path>%ROMPATH%\ps4</path>
         <extension>.bin .BIN .lnk .LNK .ps4 .PS4</extension>
         <command label="shadPS4 Shortcut (Standalone)">%HIDEWINDOW% %ESCAPESPECIALS% %EMULATOR_OS-SHELL% /C %ROM%</command>
-        <command label="shadPS4 Game Serial (Standalone)">%EMULATOR_SHADPS4% -g %INJECT%=%BASENAME%.ps4</command>
-        <command label="shadPS4 eboot.bin (Standalone)">%EMULATOR_SHADPS4% %ROM%</command>
+        <command label="shadPS4 Game Serial (Standalone)">%STARTDIR%=%EMUDIR% %EMULATOR_SHADPS4% -g %INJECT%=%BASENAME%.ps4</command>
+        <command label="shadPS4 eboot.bin (Standalone)">%STARTDIR%=%EMUDIR% %EMULATOR_SHADPS4% %ROM%</command>
         <platform>ps4</platform>
         <theme>ps4</theme>
     </system>
