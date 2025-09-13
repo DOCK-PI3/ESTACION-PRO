@@ -477,6 +477,26 @@ void GuiScraperMenu::openMiximageOptions()
         }
     });
 
+    // Miximage file format.
+    auto miximageFileFormat =
+        std::make_shared<OptionListComponent<std::string>>(_("MIXIMAGE FILE FORMAT"), false);
+    std::string selectedFileFormat {Settings::getInstance()->getString("MiximageFileFormat")};
+    miximageFileFormat->add("PNG", "png", selectedFileFormat == "png");
+    miximageFileFormat->add("WEBP", "webp", selectedFileFormat == "webp");
+    // If there are no objects returned, then there must be a manually modified entry in the
+    // configuration file. Simply set the file format to "png" in this case.
+    if (miximageFileFormat->getSelectedObjects().size() == 0)
+        miximageFileFormat->selectEntry(0);
+    s->addWithLabel(_("MIXIMAGE FILE FORMAT"), miximageFileFormat);
+    s->addSaveFunc([miximageFileFormat, s] {
+        if (miximageFileFormat->getSelected() !=
+            Settings::getInstance()->getString("MiximageFileFormat")) {
+            Settings::getInstance()->setString("MiximageFileFormat",
+                                               miximageFileFormat->getSelected());
+            s->setNeedsSaving();
+        }
+    });
+
     // Horizontally oriented screenshots fit.
     auto miximageHorizontalFit = std::make_shared<OptionListComponent<std::string>>(
         _p("short", "HORIZONTAL SCREENSHOT FIT"), false);

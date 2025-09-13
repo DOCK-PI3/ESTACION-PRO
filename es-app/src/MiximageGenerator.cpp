@@ -762,12 +762,19 @@ bool MiximageGenerator::generateImage()
                                             canvasImage.height(), canvasImage.width() * 4, 32,
                                             FI_RGBA_BLUE, FI_RGBA_GREEN, FI_RGBA_RED);
 
+    FREE_IMAGE_FORMAT format {FIF_UNKNOWN};
+
+    if (Settings::getInstance()->getString("MiximageFileFormat") == "webp")
+        format = FIF_WEBP;
+    else
+        format = FIF_PNG;
+
 #if defined(_WIN64)
-    bool savedImage {FreeImage_SaveU(FIF_PNG, mixImage,
+    bool savedImage {FreeImage_SaveU(format, mixImage,
                                      Utils::String::stringToWideString(getSavePath()).c_str()) !=
                      0};
 #else
-    bool savedImage {FreeImage_Save(FIF_PNG, mixImage, getSavePath().c_str()) != 0};
+    bool savedImage {FreeImage_Save(format, mixImage, getSavePath().c_str()) != 0};
 #endif
 
     if (!savedImage) {
@@ -916,7 +923,14 @@ std::string MiximageGenerator::getSavePath() const
     if (!Utils::FileSystem::exists(path))
         Utils::FileSystem::createDirectory(path);
 
-    path += name + ".png";
+    if (Settings::getInstance()->getString("MiximageFileFormat") == "webp")
+        path += name + ".webp";
+    else
+        path += name + ".png";
+
+    // Always delete the image if it exists since we may generate it in another file format.
+    if (mGame->getMiximagePath() != "")
+        Utils::FileSystem::removeFile(mGame->getMiximagePath());
 
     // Success.
     return path;
