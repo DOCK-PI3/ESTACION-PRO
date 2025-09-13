@@ -161,8 +161,8 @@ private:
     std::string mGameOverridePath;
     std::string mGameOverrideOriginalPath;
 
-    static inline std::vector<std::string> sSupportedOverrideExtensions {".jpg", ".png", ".gif",
-                                                                         ".svg"};
+    static inline std::vector<std::string> sSupportedOverrideExtensions {".jpg", ".png", ".webp",
+                                                                         ".gif", ".svg"};
     static inline std::vector<std::string> sSupportedImageTypes {
         "image", "miximage",  "marquee", "screenshot",    "titlescreen",
         "cover", "backcover", "3dbox",   "physicalmedia", "fanart"};
