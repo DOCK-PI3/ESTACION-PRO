@@ -8,17 +8,22 @@
 
 ### Detailed list of changes
 
+* Added .webp as a supported image file extension for scraped media
+* Added a menu option for generating miximages in the PNG or WebP file format
+* Added .webp as a supported file extension for the gameOverridePath property for the image element
 * (Android) Added miximages as a media target type for the game importer
 * (Linux) Added a "Strip special characters" setting to the game importer to enable imports to FAT-based filesystems
 * (Linux) Added desktopshortcut import rules for the ps3 system
 * (Linux) Added a ~/Desktop import rule entry for the desktop system
 * (Windows) Added ~\Desktop import rule entries for the desktop, emulators and windows systems
 * (Android) Added Winlator Cmod standalone as the default emulator for the pcarcade, type-x and windows systems
+* (Android) Added Pizza Boy SC standalone as an alternative emulator for the megacd, megacdjp and segacd systems
 * (Android) Changed Pizza Boy GBA/A to use %ROMSAF% instead of %ROM% as the developer has changed the way games are launched from frontends
 * (Android) Changed Pizza Boy SC to use %ROMSAF% instead of %ROM% as the developer has changed the way games are launched from frontends
 * Added Parallel Launcher standalone as an alternative emulator for the n64 system on Linux, macOS and Windows
 * Added ares [Mega LD] standalone (Pioneer LaserActive) as an alternative emulator for the daphne and laserdisc systems on Linux, macOS and Windows
 * Added the .mmi file extension to the daphne and laserdisc systems on Linux, macOS and Windows
+* Added the .png file extension to the tic80 system on Linux, macOS and Windows
 * Changed to Azahar standalone as the default emulator for the n3ds system
 * Added Azahar Shortcut standalone as an alternative emulator for the n3ds system on Linux and Windows
 * Added the .z3dsx, .zcci and .zcxi file extensions to the n3ds system
