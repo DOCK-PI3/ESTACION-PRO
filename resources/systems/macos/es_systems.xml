@@ -1970,7 +1970,7 @@
         <name>tic80</name>
         <fullname>TIC-80 Fantasy Computer</fullname>
         <path>%ROMPATH%/tic80</path>
-        <extension>.tic .TIC</extension>
+        <extension>.png .PNG .tic .TIC</extension>
         <command label="TIC-80">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/tic80_libretro.dylib %ROM%</command>
         <command label="TIC-80 (Standalone)">%EMULATOR_TIC-80% %ROM% --fullscreen</command>
         <platform>tic80</platform>
