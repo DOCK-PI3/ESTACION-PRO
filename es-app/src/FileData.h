@@ -156,8 +156,8 @@ public:
     const std::string& getSortTypeString() const { return mSortTypeString; }
     const FileData::SortType& getSortTypeFromString(const std::string& desc) const;
 
-    static inline std::vector<std::string> sImageExtensions {".png", ".jpg"};
-    static inline std::vector<std::string> sVideoExtensions {".mp4", ".mkv", ".avi", ".mp4",
+    static inline std::vector<std::string> sImageExtensions {".png", ".jpg", ".webp"};
+    static inline std::vector<std::string> sVideoExtensions {".mp4", ".mkv", ".avi",
                                                              ".wmv", ".mov", ".webm"};
 
 protected:
