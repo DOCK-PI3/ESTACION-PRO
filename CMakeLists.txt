@@ -677,9 +677,6 @@ elseif(EMSCRIPTEN)
                          ${PROJECT_SOURCE_DIR}/libopus.a
                          ${PROJECT_SOURCE_DIR}/libtheoradec.a
                          ${PROJECT_SOURCE_DIR}/libtheoraenc.a
-                         ${PROJECT_SOURCE_DIR}/libvorbis.a
-                         ${PROJECT_SOURCE_DIR}/libvorbisenc.a
-                         ${PROJECT_SOURCE_DIR}/libvorbisfile.a
                          ${PROJECT_SOURCE_DIR}/libwavpack.a
                          ${PROJECT_SOURCE_DIR}/libz.a
                          # Other dependencies.
