@@ -353,20 +353,6 @@ git checkout v1.3.5
 cd ..
 
 echo
-echo "Setting up Vorbis"
-rm -rf vorbis
-git clone https://gitlab.xiph.org/xiph/vorbis.git
-
-if [ ! -d vorbis ]; then
-  echo "Vorbis directory is missing, aborting."
-  exit
-fi
-
-cd vorbis
-git checkout v1.3.7
-cd ..
-
-echo
 echo "Setting up dav1d"
 rm -rf dav1d
 git clone https://code.videolan.org/videolan/dav1d.git
@@ -378,20 +364,6 @@ fi
 
 cd dav1d
 git checkout 1.5.1
-cd ..
-
-echo
-echo "Setting up Opus"
-rm -rf opus
-git clone https://gitlab.xiph.org/xiph/opus.git
-
-if [ ! -d opus ]; then
-  echo "Opus directory is missing, aborting."
-  exit
-fi
-
-cd opus
-git checkout v1.5.2
 cd ..
 
 echo

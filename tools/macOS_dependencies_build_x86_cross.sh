@@ -389,7 +389,7 @@ if [ ! -d FFmpeg ]; then
 fi
 
 cd FFmpeg
-PKG_CONFIG_PATH=$(pwd)/../local_install/lib/pkgconfig ./configure --arch=x86_64-apple-darwin --cpu=x86_64 --prefix=/usr/local --enable-rpath --install-name-dir=@rpath --disable-doc --disable-lzma --enable-gpl --enable-shared --enable-libvorbis --enable-libopus --enable-libdav1d --enable-postproc
+PKG_CONFIG_PATH=$(pwd)/../local_install/lib/pkgconfig ./configure --arch=x86_64-apple-darwin --cpu=x86_64 --prefix=/usr/local --enable-rpath --install-name-dir=@rpath --disable-doc --disable-lzma --enable-gpl --enable-shared --enable-libdav1d --enable-postproc
 make clean
 make -j${JOBS}
 install_name_tool -rpath /usr/local/lib @executable_path libavcodec/libavcodec.61.dylib
