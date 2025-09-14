@@ -763,18 +763,22 @@ bool MiximageGenerator::generateImage()
                                             FI_RGBA_BLUE, FI_RGBA_GREEN, FI_RGBA_RED);
 
     FREE_IMAGE_FORMAT format {FIF_UNKNOWN};
+    int flags {0};
 
-    if (Settings::getInstance()->getString("MiximageFileFormat") == "webp")
+    if (Settings::getInstance()->getString("MiximageFileFormat") == "webp") {
         format = FIF_WEBP;
-    else
+        flags = 85; // This sets the quality to 85 instead of the default which is 75.
+    }
+    else {
         format = FIF_PNG;
+    }
 
 #if defined(_WIN64)
     bool savedImage {FreeImage_SaveU(format, mixImage,
-                                     Utils::String::stringToWideString(getSavePath()).c_str()) !=
-                     0};
+                                     Utils::String::stringToWideString(getSavePath()).c_str(),
+                                     flags) != 0};
 #else
-    bool savedImage {FreeImage_Save(format, mixImage, getSavePath().c_str()) != 0};
+    bool savedImage {FreeImage_Save(format, mixImage, getSavePath().c_str(), flags) != 0};
 #endif
 
     if (!savedImage) {
