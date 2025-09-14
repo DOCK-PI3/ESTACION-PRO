@@ -367,6 +367,20 @@ git checkout v1.3.7
 cd ..
 
 echo
+echo "Setting up dav1d"
+rm -rf dav1d
+git clone https://code.videolan.org/videolan/dav1d.git
+
+if [ ! -d dav1d ]; then
+  echo "dav1d directory is missing, aborting."
+  exit
+fi
+
+cd dav1d
+git checkout 1.5.1
+cd ..
+
+echo
 echo "Setting up Opus"
 rm -rf opus
 git clone https://gitlab.xiph.org/xiph/opus.git

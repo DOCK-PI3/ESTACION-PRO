@@ -362,6 +362,22 @@ make install
 cd ..
 
 echo
+echo "Building dav1d"
+
+if [ ! -d dav1d ]; then
+  echo "dav1d directory is missing, aborting."
+  exit
+fi
+
+cd dav1d
+rm -rf builddir
+PKG_CONFIG_PATH=$(pwd)/../local_install/lib/pkgconfig meson setup --buildtype=release --prefix $(pwd)/../local_install builddir
+cd builddir
+meson compile
+meson install
+cd ../..
+
+echo
 echo "Building FFmpeg"
 
 if [ ! -d FFmpeg ]; then
@@ -370,7 +386,7 @@ if [ ! -d FFmpeg ]; then
 fi
 
 cd FFmpeg
-PKG_CONFIG_PATH=$(pwd)/../local_install/lib/pkgconfig ./configure --prefix=/usr/local --enable-rpath --install-name-dir=@rpath --disable-doc --disable-lzma --enable-gpl --enable-shared --enable-libvorbis --enable-libopus --enable-postproc
+PKG_CONFIG_PATH=$(pwd)/../local_install/lib/pkgconfig ./configure --prefix=/usr/local --enable-rpath --install-name-dir=@rpath --disable-doc --disable-lzma --enable-gpl --enable-shared --enable-libvorbis --enable-libopus --enable-libdav1d --enable-postproc
 
 make clean
 make -j${JOBS}
