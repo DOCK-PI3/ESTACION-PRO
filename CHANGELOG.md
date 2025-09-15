@@ -11,6 +11,7 @@
 * Added .webp as a supported image file extension for scraped media
 * Added a menu option for generating miximages in the PNG or WebP file format
 * Added .webp as a supported file extension for the gameOverridePath property for the image element
+* Added support for the AV1 video codec on Android and macOS
 * (Android) Added miximages as a media target type for the game importer
 * (Linux) Added a "Strip special characters" setting to the game importer to enable imports to FAT-based filesystems
 * (Linux) Added desktopshortcut import rules for the ps3 system
@@ -38,6 +39,8 @@
 * Added better support for handling missing media files when scraping (HTTP 404 errors)
 * Added the User-Agent string when making scraper HTTP requests
 * (Android) Changed the target SDK version to 36 (Android 16)
+* (macOS) Added dav1d as a dependency
+* (macOS) Removed unnecessary dependencies on the Vorbis and Opus encoders
 * Updated CImg to 3.6.1
 * Translation updates for multiple languages
 
