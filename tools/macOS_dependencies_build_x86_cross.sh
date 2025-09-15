@@ -374,7 +374,29 @@ fi
 
 cd dav1d
 rm -rf builddir
-PKG_CONFIG_PATH=$(pwd)/../local_install/lib/pkgconfig meson setup --buildtype=release --prefix $(pwd)/../local_install builddir
+
+cat > x86_cross-compile.txt <<EOF
+[binaries]
+c = 'clang'
+cpp = 'clang++'
+ar = 'ar'
+strip = 'strip'
+
+[host_machine]
+system = 'darwin'
+cpu_family = 'x86_64'
+cpu = 'x86_64'
+endian = 'little'
+
+[build_machine]
+system = 'darwin'
+cpu_family = 'aarch64'
+cpu = 'aarch64'
+endian = 'little'
+EOF
+
+PKG_CONFIG_PATH=$(pwd)/../local_install/lib/pkgconfig meson setup --cross-file x86_cross-compile.txt --buildtype=release --prefix $(pwd)/../local_install builddir
+
 cd builddir
 meson compile
 meson install
