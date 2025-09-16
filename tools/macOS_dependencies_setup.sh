@@ -291,6 +291,15 @@ cat << EOF | patch Makefile.osx -
  COMPILERPPFLAGS = -Wno-ctor-dtor-privacy -D__ANSI__ -std=c++11 -stdlib=libc++ -Wc++11-narrowing
 EOF
 fi
+
+if [[ $(clang -dumpversion | awk -F. '{print $1*1000 + $2*10 + $3}') -ge 1700 ]]; then
+  echo "Clang version is 17.0.0 or higher, patching additional files"
+  echo patching file Source/ZLib/zutil.h
+  sed -i '' '140s/^/\/\/ /' Source/ZLib/zutil.h
+  echo patching file Source/LibPNG/pngpriv.h
+  sed -i '' 's/#      include <fp.h>/#      include <math.h>/g' Source/LibPNG/pngpriv.h
+fi
+
 cd ../..
 
 echo
