@@ -11,7 +11,7 @@
 #
 
 # How many CPU threads to use for the compilation.
-JOBS=4
+JOBS=$(nproc 2>/dev/null || echo 8)
 
 SDL_RELEASE_TAG=release-2.32.8
 SDL_SHARED_LIBRARY=libSDL2-2.0.so.0.3200.8

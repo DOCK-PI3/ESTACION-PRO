@@ -28,7 +28,7 @@
 ##### fi # if false; then
 
 # How many CPU threads to use for the compilation.
-JOBS=8
+JOBS=$(nproc 2>/dev/null || echo 8)
 
 if [ ! -f .clang-format ]; then
   echo "You need to run this script from the root of the repository."
