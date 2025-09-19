@@ -164,7 +164,7 @@ void Settings::setDefaults()
     mStringMap["ThemeVariant"] = {"", ""};
     mStringMap["ThemeColorScheme"] = {"", ""};
     mStringMap["ThemeFontSize"] = {"", ""};
-    mStringMap["ThemeAspectRatio"] = {"", ""};
+    mStringMap["ThemeAspectRatio"] = {"automatic", "automatic"};
     mStringMap["ThemeTransitions"] = {"automatic", "automatic"};
     mStringMap["ThemeLanguage"] = {"automatic", "automatic"};
     mStringMap["ApplicationLanguage"] = {"automatic", "automatic"};
