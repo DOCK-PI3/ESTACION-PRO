@@ -25,7 +25,7 @@ fi
 
 if [ ! -f appimagetool-x86_64.AppImage ]; then
   echo -e "Can't find appimagetool-x86_64.AppImage, downloading the latest version...\n"
-  wget "https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage"
+  wget "https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage"
 fi
 
 chmod a+x appimagetool-x86_64.AppImage
