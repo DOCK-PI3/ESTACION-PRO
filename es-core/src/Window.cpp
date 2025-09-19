@@ -1006,6 +1006,9 @@ void Window::stopMediaViewer()
     }
 
     mRenderMediaViewer = false;
+
+    if (!mGuiStack.empty())
+        mGuiStack.back()->updateHelpPrompts();
 }
 
 void Window::startPDFViewer(FileData* game)
