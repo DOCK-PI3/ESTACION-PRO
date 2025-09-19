@@ -276,9 +276,6 @@ namespace Utils
 #endif
                     FileSystemVariables::sAppDataDirectory = getHomePath() + "/ES-DE";
                 }
-                else if (Utils::FileSystem::exists(getHomePath() + "/.emulationstation")) {
-                    FileSystemVariables::sAppDataDirectory = getHomePath() + "/.emulationstation";
-                }
                 else {
                     FileSystemVariables::sAppDataDirectory = getHomePath() + "/ES-DE";
                 }

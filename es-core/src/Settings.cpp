@@ -47,7 +47,6 @@ namespace
         "DebugGrid",
         "DebugText",
         "DebugImage",
-        "LegacyAppDataDirectory",
         "ScraperFilter",
         "TransitionsSystemToSystem",
         "TransitionsSystemToGamelist",
@@ -79,9 +78,6 @@ Settings::Settings()
 {
     mWasChanged = false;
     setDefaults();
-    if (Utils::FileSystem::getFileName(Utils::FileSystem::getAppDataDirectory()) ==
-        ".emulationstation")
-        mBoolMap["LegacyAppDataDirectory"] = std::make_pair(true, true);
     loadFile();
 }
 
@@ -408,7 +404,6 @@ void Settings::setDefaults()
     mBoolMap["DebugGrid"] = {false, false};
     mBoolMap["DebugText"] = {false, false};
     mBoolMap["DebugImage"] = {false, false};
-    mBoolMap["LegacyAppDataDirectory"] = {false, false};
     mIntMap["ScraperFilter"] = {0, 0};
     mIntMap["TransitionsSystemToSystem"] = {ViewTransitionAnimation::INSTANT,
                                             ViewTransitionAnimation::INSTANT};
@@ -426,13 +421,7 @@ void Settings::setDefaults()
 
 void Settings::saveFile()
 {
-    std::string path;
-    if (mBoolMap["LegacyAppDataDirectory"].second == true) {
-        path = Utils::FileSystem::getAppDataDirectory() + "/es_settings.xml";
-    }
-    else {
-        path = Utils::FileSystem::getAppDataDirectory() + "/settings/es_settings.xml";
-    }
+    const std::string path {Utils::FileSystem::getAppDataDirectory() + "/settings/es_settings.xml"};
 
     pugi::xml_document doc;
 
@@ -462,11 +451,7 @@ void Settings::saveFile()
 
 void Settings::loadFile()
 {
-    std::string path;
-    if (mBoolMap["LegacyAppDataDirectory"].second == true)
-        path = Utils::FileSystem::getAppDataDirectory() + "/es_settings.xml";
-    else
-        path = Utils::FileSystem::getAppDataDirectory() + "/settings/es_settings.xml";
+    const std::string path {Utils::FileSystem::getAppDataDirectory() + "/settings/es_settings.xml"};
 
     if (!Utils::FileSystem::exists(path))
         return;

@@ -25,10 +25,7 @@ void Log::setReportingLevel(LogLevel level)
 
 void Log::init()
 {
-    if (Settings::getInstance()->getBool("LegacyAppDataDirectory"))
-        sLogPath = Utils::FileSystem::getAppDataDirectory() + "/es_log.txt";
-    else
-        sLogPath = Utils::FileSystem::getAppDataDirectory() + "/logs/es_log.txt";
+    sLogPath = Utils::FileSystem::getAppDataDirectory() + "/logs/es_log.txt";
 
     Utils::FileSystem::removeFile(sLogPath + ".bak");
     // Rename the previous log file.

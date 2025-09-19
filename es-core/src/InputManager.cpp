@@ -106,15 +106,8 @@ void InputManager::init()
     // the bundled mapping is incorrect, or the SDL version is a bit older, it makes sense to be
     // able to customize this. If a controller GUID is present in the mappings file that is
     // already present inside SDL, the custom mapping will overwrite the bundled one.
-    std::string mappingsFile;
-
-    if (Settings::getInstance()->getBool("LegacyAppDataDirectory")) {
-        mappingsFile = Utils::FileSystem::getAppDataDirectory() + "/es_controller_mappings.cfg";
-    }
-    else {
-        mappingsFile =
-            Utils::FileSystem::getAppDataDirectory() + "/controllers/es_controller_mappings.cfg";
-    }
+    std::string mappingsFile {Utils::FileSystem::getAppDataDirectory() +
+                              "/controllers/es_controller_mappings.cfg"};
 
     if (!Utils::FileSystem::exists(mappingsFile))
         mappingsFile = ResourceManager::getInstance().getResourcePath(
@@ -223,10 +216,7 @@ void InputManager::writeDeviceConfig(InputConfig* config)
 
 std::string InputManager::getConfigPath()
 {
-    if (Settings::getInstance()->getBool("LegacyAppDataDirectory"))
-        return Utils::FileSystem::getAppDataDirectory() + "/es_input.xml";
-    else
-        return Utils::FileSystem::getAppDataDirectory() + "/settings/es_input.xml";
+    return Utils::FileSystem::getAppDataDirectory() + "/settings/es_input.xml";
 }
 
 int InputManager::getNumConfiguredDevices()

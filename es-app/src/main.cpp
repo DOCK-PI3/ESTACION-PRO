@@ -674,32 +674,31 @@ int main(int argc, char* argv[])
         return 1;
 
     {
-        if (!Settings::getInstance()->getBool("LegacyAppDataDirectory")) {
-            // Create the logs folder in the application data directory.
-            const std::string logsDir {Utils::FileSystem::getAppDataDirectory() + "/logs"};
+
+        // Create the logs folder in the application data directory.
+        const std::string logsDir {Utils::FileSystem::getAppDataDirectory() + "/logs"};
+        if (!Utils::FileSystem::isDirectory(logsDir)) {
+#if defined(__ANDROID__)
+            __android_log_print(ANDROID_LOG_VERBOSE, ANDROID_APPLICATION_ID,
+                                "Creating logs directory \"%s\"...", logsDir.c_str());
+#else
+            std::cout << "Creating logs directory \"" << logsDir << "\"..." << std::endl;
+#endif
+            Utils::FileSystem::createDirectory(logsDir);
             if (!Utils::FileSystem::isDirectory(logsDir)) {
 #if defined(__ANDROID__)
-                __android_log_print(ANDROID_LOG_VERBOSE, ANDROID_APPLICATION_ID,
-                                    "Creating logs directory \"%s\"...", logsDir.c_str());
+                __android_log_print(ANDROID_LOG_ERROR, ANDROID_APPLICATION_ID,
+                                    "Couldn't create directory, permission problems?");
 #else
-                std::cout << "Creating logs directory \"" << logsDir << "\"..." << std::endl;
+                std::cerr << "Couldn't create directory, permission problems?" << std::endl;
 #endif
-                Utils::FileSystem::createDirectory(logsDir);
-                if (!Utils::FileSystem::isDirectory(logsDir)) {
-#if defined(__ANDROID__)
-                    __android_log_print(ANDROID_LOG_ERROR, ANDROID_APPLICATION_ID,
-                                        "Couldn't create directory, permission problems?");
-#else
-                    std::cerr << "Couldn't create directory, permission problems?" << std::endl;
-#endif
-                }
-                else {
-                    // Remove any old logs in the root of the directory.
-                    Utils::FileSystem::removeFile(Utils::FileSystem::getAppDataDirectory() +
-                                                  "/es_log.txt");
-                    Utils::FileSystem::removeFile(Utils::FileSystem::getAppDataDirectory() +
-                                                  "/es_log.txt.bak");
-                }
+            }
+            else {
+                // Remove any old logs in the root of the directory.
+                Utils::FileSystem::removeFile(Utils::FileSystem::getAppDataDirectory() +
+                                              "/es_log.txt");
+                Utils::FileSystem::removeFile(Utils::FileSystem::getAppDataDirectory() +
+                                              "/es_log.txt.bak");
             }
         }
     }
@@ -760,49 +759,43 @@ int main(int argc, char* argv[])
     bool migratedSettings {false};
 
     {
-        if (!Settings::getInstance()->getBool("LegacyAppDataDirectory")) {
-            // Create the settings folder in the application data directory.
-            const std::string settingsDir {Utils::FileSystem::getAppDataDirectory() + "/settings"};
-            if (!Utils::FileSystem::isDirectory(settingsDir)) {
+        // Create the settings folder in the application data directory.
+        const std::string settingsDir {Utils::FileSystem::getAppDataDirectory() + "/settings"};
+        if (!Utils::FileSystem::isDirectory(settingsDir)) {
 #if defined(_WIN64)
-                LOG(LogInfo) << "Creating settings directory \""
-                             << Utils::String::replace(settingsDir, "/", "\\") << "\"...";
+            LOG(LogInfo) << "Creating settings directory \""
+                         << Utils::String::replace(settingsDir, "/", "\\") << "\"...";
 #else
-                LOG(LogInfo) << "Creating settings directory \"" << settingsDir << "\"...";
+            LOG(LogInfo) << "Creating settings directory \"" << settingsDir << "\"...";
 #endif
-                Utils::FileSystem::createDirectory(settingsDir);
-                if (!Utils::FileSystem::isDirectory(settingsDir)) {
-                    LOG(LogError) << "Couldn't create directory, permission problems?";
-                }
+            Utils::FileSystem::createDirectory(settingsDir);
+            if (!Utils::FileSystem::isDirectory(settingsDir)) {
+                LOG(LogError) << "Couldn't create directory, permission problems?";
             }
-            std::string settingsPathOld;
-            std::string settingsPathNew;
-            settingsPathOld = Utils::FileSystem::getAppDataDirectory() + "/es_settings.xml";
-            settingsPathNew =
-                Utils::FileSystem::getAppDataDirectory() + "/settings/es_settings.xml";
-            if (!Utils::FileSystem::exists(settingsPathNew) &&
-                Utils::FileSystem::exists(settingsPathOld)) {
-                Utils::FileSystem::renameFile(settingsPathOld, settingsPathNew, false);
-                Settings::getInstance()->loadFile();
-                migratedSettings = true;
-            }
-            settingsPathOld = Utils::FileSystem::getAppDataDirectory() + "/es_input.xml";
-            settingsPathNew = Utils::FileSystem::getAppDataDirectory() + "/settings/es_input.xml";
-            if (!Utils::FileSystem::exists(settingsPathNew) &&
-                Utils::FileSystem::exists(settingsPathOld)) {
-                Utils::FileSystem::renameFile(settingsPathOld, settingsPathNew, false);
-                migratedSettings = true;
-            }
+        }
+        std::string settingsPathOld;
+        std::string settingsPathNew;
+        settingsPathOld = Utils::FileSystem::getAppDataDirectory() + "/es_settings.xml";
+        settingsPathNew = Utils::FileSystem::getAppDataDirectory() + "/settings/es_settings.xml";
+        if (!Utils::FileSystem::exists(settingsPathNew) &&
+            Utils::FileSystem::exists(settingsPathOld)) {
+            Utils::FileSystem::renameFile(settingsPathOld, settingsPathNew, false);
+            Settings::getInstance()->loadFile();
+            migratedSettings = true;
+        }
+        settingsPathOld = Utils::FileSystem::getAppDataDirectory() + "/es_input.xml";
+        settingsPathNew = Utils::FileSystem::getAppDataDirectory() + "/settings/es_input.xml";
+        if (!Utils::FileSystem::exists(settingsPathNew) &&
+            Utils::FileSystem::exists(settingsPathOld)) {
+            Utils::FileSystem::renameFile(settingsPathOld, settingsPathNew, false);
+            migratedSettings = true;
         }
     }
 
     {
         // Check if the es_settings.xml file exists, and if not, create it.
-        std::string settingsPath;
-        if (Settings::getInstance()->getBool("LegacyAppDataDirectory"))
-            settingsPath = Utils::FileSystem::getAppDataDirectory() + "/es_settings.xml";
-        else
-            settingsPath = Utils::FileSystem::getAppDataDirectory() + "/settings/es_settings.xml";
+        std::string settingsPath {Utils::FileSystem::getAppDataDirectory() +
+                                  "/settings/es_settings.xml"};
 
         if (!Utils::FileSystem::exists(settingsPath)) {
             LOG(LogInfo) << "Settings file es_settings.xml does not exist, creating it...";
@@ -1002,31 +995,28 @@ int main(int argc, char* argv[])
     }
 
     {
-        if (!Settings::getInstance()->getBool("LegacyAppDataDirectory")) {
-            // Create the controllers folder in the application data directory.
-            const std::string controllersDir {Utils::FileSystem::getAppDataDirectory() +
-                                              "/controllers"};
-            if (!Utils::FileSystem::exists(controllersDir)) {
+        // Create the controllers folder in the application data directory.
+        const std::string controllersDir {Utils::FileSystem::getAppDataDirectory() +
+                                          "/controllers"};
+        if (!Utils::FileSystem::exists(controllersDir)) {
 #if defined(_WIN64)
-                LOG(LogInfo) << "Creating controllers directory \""
-                             << Utils::String::replace(controllersDir, "/", "\\") << "\"...";
+            LOG(LogInfo) << "Creating controllers directory \""
+                         << Utils::String::replace(controllersDir, "/", "\\") << "\"...";
 #else
-                LOG(LogInfo) << "Creating controllers directory \"" << controllersDir << "\"...";
+            LOG(LogInfo) << "Creating controllers directory \"" << controllersDir << "\"...";
 #endif
-                Utils::FileSystem::createDirectory(controllersDir);
-                if (!Utils::FileSystem::exists(controllersDir)) {
-                    LOG(LogWarning) << "Couldn't create directory, permission problems?";
-                }
+            Utils::FileSystem::createDirectory(controllersDir);
+            if (!Utils::FileSystem::exists(controllersDir)) {
+                LOG(LogWarning) << "Couldn't create directory, permission problems?";
             }
-            std::string configPathOld {Utils::FileSystem::getAppDataDirectory() +
-                                       "/es_controller_mappings.cfg"};
-            std::string configPathNew {Utils::FileSystem::getAppDataDirectory() +
-                                       "/controllers/es_controller_mappings.cfg"};
-            if (!Utils::FileSystem::exists(configPathNew) &&
-                Utils::FileSystem::exists(configPathOld)) {
-                Utils::FileSystem::renameFile(configPathOld, configPathNew, false);
-                migratedSettings = true;
-            }
+        }
+        std::string configPathOld {Utils::FileSystem::getAppDataDirectory() +
+                                   "/es_controller_mappings.cfg"};
+        std::string configPathNew {Utils::FileSystem::getAppDataDirectory() +
+                                   "/controllers/es_controller_mappings.cfg"};
+        if (!Utils::FileSystem::exists(configPathNew) && Utils::FileSystem::exists(configPathOld)) {
+            Utils::FileSystem::renameFile(configPathOld, configPathNew, false);
+            migratedSettings = true;
         }
     }
 
@@ -1256,9 +1246,6 @@ int main(int argc, char* argv[])
             }
         }
 #endif
-
-        if (Settings::getInstance()->getBool("LegacyAppDataDirectory"))
-            ViewController::getInstance()->legacyAppDataDialog();
 
         if (migratedSettings) {
             LOG(LogInfo) << "Migrated settings from a legacy application data directory structure";
