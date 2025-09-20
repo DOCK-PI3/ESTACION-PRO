@@ -2422,6 +2422,7 @@ void GuiMenu::openQuitMenu()
                 _("REALLY SUSPEND?"), _("YES"),
                 [this] {
                     LOG(LogInfo) << "Suspending system";
+                    Scripting::fireEvent("suspend");
                     if (Utils::Platform::runSuspendCommand() != 0) {
                         LOG(LogWarning) << "Couldn't suspend system";
                     }
