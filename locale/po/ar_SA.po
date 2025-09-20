@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-09-20 10:07+0200\n"
+"POT-Creation-Date: 2025-09-20 15:27+0200\n"
 "PO-Revision-Date: 2025-09-17 14:34+0300\n"
 "Last-Translator: Northwestern Software <info@es-de.org>\n"
 "Language-Team: Arabic (Classical Arabic) <info@es-de.org>\n"
@@ -547,7 +547,7 @@ msgid "BACK COVERS"
 msgstr "الأغطية الخلفية"
 
 msgid "MARQUEES (WHEELS)"
-msgstr "ماركي (عجلات)"
+msgstr "(عجلات) ماركي"
 
 msgid "3D BOXES"
 msgstr "صناديق ثلاثية الأبعاد"
@@ -663,7 +663,7 @@ msgid "EDIT THIS GAME'S METADATA"
 msgstr "تحرير بيانات تعريف هذه اللعبة"
 
 msgid "ENTER FOLDER (OVERRIDE FOLDER LINK)"
-msgstr "أدخل المجلد (رابط المجلد تجاوز)"
+msgstr "(رابط المجلد تجاوز) أدخل المجلد"
 
 msgid "CLOSE"
 msgstr "إغلاق"
@@ -678,10 +678,10 @@ msgid "apply"
 msgstr "تطبيق"
 
 msgid "close (apply)"
-msgstr "إغلاق (تطبيق)"
+msgstr "(تطبيق) إغلاق"
 
 msgid "close (cancel)"
-msgstr "إغلاق (إلغاء)"
+msgstr "(إلغاء) إغلاق"
 
 msgid "LAUNCHING GAME"
 msgstr "تشغيل لعبة"
@@ -774,13 +774,13 @@ msgid "THEME PROFILE"
 msgstr "ملف تعريف السمة"
 
 msgid "INSTANT (BUILT-IN)"
-msgstr "لحظة (مدمجة)"
+msgstr "(مدمجة) فوري"
 
 msgid "SLIDE (BUILT-IN)"
-msgstr "شريحة (مدمجة)"
+msgstr "(مدمجة) شريحة"
 
 msgid "FADE (BUILT-IN)"
-msgstr "تلاشي (مدمج)"
+msgstr "(مدمج) تلاشي"
 
 msgid "THEME LANGUAGE"
 msgstr "لغة السمة"
@@ -984,7 +984,7 @@ msgid "AUDIO DRIVER"
 msgstr "برنامج تشغيل الصوت"
 
 msgid "AUDIO DRIVER (REQUIRES RESTART)"
-msgstr "برنامج تشغيل الصوت (يتطلب إعادة التشغيل)"
+msgstr "(يتطلب إعادة التشغيل) برنامج تشغيل الصوت"
 
 msgid "SYSTEM VOLUME"
 msgstr "صوت النظام"
@@ -1056,7 +1056,7 @@ msgid "ONLY ACCEPT INPUT FROM FIRST CONTROLLER"
 msgstr "قبول الإدخال من وحدة التحكم الأولى فقط"
 
 msgid "SWAP THE A/B AND X/Y BUTTONS"
-msgstr "تبديل أزرار A/B و X/Y"
+msgstr "X/Y و A/B تبديل أزرار"
 
 msgid "IGNORE KEYBOARD INPUT"
 msgstr "تجاهل مدخلات لوحة المفاتيح"
@@ -1097,10 +1097,10 @@ msgid "load default directory"
 msgstr "تحميل المسار الافتراضي"
 
 msgid "VRAM LIMIT"
-msgstr "حد VRAM"
+msgstr "VRAM حد"
 
 msgid "ANTI-ALIASING (MSAA)"
-msgstr "مكافحة التعرجات (MSAA)"
+msgstr "(MSAA) مكافحة التعرجات"
 
 msgid "2X"
 msgstr "2x"
@@ -1109,13 +1109,13 @@ msgid "4X"
 msgstr "4x"
 
 msgid "ANTI-ALIASING (MSAA) (REQUIRES RESTART)"
-msgstr "مكافحة التعرجات (MSAA) (يتطلب إعادة التشغيل)"
+msgstr "(MSAA) (يتطلب إعادة التشغيل) مكافحة التعرجات"
 
 msgid "DISPLAY/MONITOR INDEX"
 msgstr "مؤشر العرض/الشاشة"
 
 msgid "DISPLAY/MONITOR INDEX (REQUIRES RESTART)"
-msgstr "مؤشر العرض/الشاشة (يتطلب إعادة التشغيل)"
+msgstr "(يتطلب إعادة التشغيل) مؤشر العرض/الشاشة"
 
 msgid "ROTATE SCREEN"
 msgstr "تدوير الشاشة"
@@ -1130,7 +1130,7 @@ msgid "270 DEGREES"
 msgstr "270 درجة"
 
 msgid "ROTATE SCREEN (REQUIRES RESTART)"
-msgstr "تدوير الشاشة (يتطلب إعادة التشغيل)"
+msgstr "(يتطلب إعادة التشغيل) تدوير الشاشة"
 
 msgid "KEYBOARD QUIT SHORTCUT"
 msgstr "اختصار الخروج في لوحة المفاتيح"
@@ -1164,13 +1164,13 @@ msgid "INCLUDE PRERELEASES IN UPDATE CHECKS"
 msgstr "تضمين الإصدارات المسبقة في عمليات التحقق من التحديث"
 
 msgid "HIDE TASKBAR (REQUIRES RESTART)"
-msgstr "إخفاء شريط المهام (يتطلب إعادة التشغيل)"
+msgstr "(يتطلب إعادة التشغيل) إخفاء شريط المهام"
 
 msgid "RUN IN BACKGROUND (WHILE GAME IS LAUNCHED)"
-msgstr "تشغيل في الخلفية (أثناء إطلاق اللعبة)"
+msgstr "(أثناء إطلاق اللعبة) تشغيل في الخلفية"
 
 msgid "VIDEO HARDWARE DECODING (EXPERIMENTAL)"
-msgstr "فك تشفير أجهزة الفيديو (تجريبي)"
+msgstr "(تجريبي) فك تشفير أجهزة الفيديو"
 
 msgid "UPSCALE VIDEO FRAME RATE TO 60 FPS"
 msgstr "رفع معدل إطارات الفيديو إلى 60 إطارًا في الثانية"
@@ -1191,13 +1191,13 @@ msgid "BROWSING CUSTOM EVENTS"
 msgstr "تصفح الأحداث المخصصة"
 
 msgid "ONLY SHOW GAMES FROM GAMELIST.XML FILES"
-msgstr "عرض الألعاب فقط من ملفات gamelist.xml"
+msgstr "gamelist.xml عرض الألعاب فقط من ملفات"
 
 msgid "STRIP EXTRA MAME NAME INFO (REQUIRES RESTART)"
-msgstr "قم بإزالة معلومات اسم MAME الإضافية (يتطلب إعادة التشغيل)"
+msgstr "(يتطلب إعادة التشغيل) قم بإزالة معلومات اسم MAME الإضافية"
 
 msgid "DISABLE DESKTOP COMPOSITION (REQUIRES RESTART)"
-msgstr "تعطيل تكوين سطح المكتب (يتطلب إعادة التشغيل)"
+msgstr "(يتطلب إعادة التشغيل) تعطيل تكوين سطح المكتب"
 
 msgid "BACK BUTTON/BACK SWIPE EXITS APP"
 msgstr "زر العودة/الظهر يخرج من التطبيق"
@@ -1212,7 +1212,7 @@ msgid "ENABLE MENU IN KID MODE"
 msgstr "تمكين القائمة في وضع الأطفال"
 
 msgid "SHOW QUIT MENU (REBOOT AND POWER OFF ENTRIES)"
-msgstr "إظهار قائمة الخروج (إدخالات إعادة التشغيل وإيقاف التشغيل)"
+msgstr "(إيقاف وإعادة تشغيل الإدخالات) إظهار قائمة الخروج"
 
 msgid "GAME IMPORTER"
 msgstr "مستورد اللعبة"
@@ -1269,6 +1269,12 @@ msgstr "هل يجب إيقاف التشغيل حقًا؟"
 
 msgid "POWER OFF SYSTEM"
 msgstr "إيقاف التشغيل النظام "
+
+msgid "REALLY SUSPEND?"
+msgstr ""
+
+msgid "SUSPEND SYSTEM"
+msgstr ""
 
 msgctxt "short"
 msgid "SYSTEM STATUS SETTINGS"
@@ -1379,7 +1385,7 @@ msgid "Skipped:"
 msgstr "تم تخطيه:"
 
 msgid "Skipped (existing):"
-msgstr "تم تخطيه (موجود):"
+msgstr "(موجود): تم تخطيه"
 
 msgid "Failed:"
 msgstr "فشل:"
@@ -1400,7 +1406,7 @@ msgid "pause processing"
 msgstr "إيقاف المعالجة"
 
 msgid "close (abort processing)"
-msgstr "إغلاق (إلغاء المعالجة)"
+msgstr "(إلغاء المعالجة) إغلاق"
 
 msgid "RUNNING..."
 msgstr "...جري"
@@ -1415,7 +1421,7 @@ msgid "DONE"
 msgstr "إنتهي"
 
 msgid "done (close)"
-msgstr "تم (إغلاق)"
+msgstr "(إغلاق) تم"
 
 msgid ""
 "THIS WILL REMOVE ALL MEDIA FILES WHERE NO MATCHING GAME FILES CAN BE FOUND. "
@@ -1645,7 +1651,7 @@ msgid "BOX BACK COVER IMAGES"
 msgstr "صور الغلاف الخلفي للصندوق"
 
 msgid "MARQUEE (WHEEL) IMAGES"
-msgstr "صور ماركي (عجلة)"
+msgstr "(عجلة) صور ماركي"
 
 msgid "3D BOX IMAGES"
 msgstr "صور الصندوق ثلاثي الأبعاد"
@@ -1730,7 +1736,7 @@ msgid "GENERATE MIXIMAGES WHEN SCRAPING"
 msgstr "توليد الصور عند الكشط"
 
 msgid "OVERWRITE MIXIMAGES (SCRAPER/OFFLINE GENERATOR)"
-msgstr "استبدال الصور (مكشطة/مولد غير متصل)"
+msgstr "(مكشطة/مولد غير متصل) استبدال الصور"
 
 msgid "REMOVE LETTERBOXES FROM SCREENSHOTS"
 msgstr "إزالة صناديق الخطاب من لقطات الشاشة"
@@ -1748,7 +1754,7 @@ msgid "INCLUDE BOX IMAGE"
 msgstr "تضمين صورة صندوق"
 
 msgid "USE COVER IMAGE IF 3D BOX IS MISSING"
-msgstr "استخدم صورة الغلاف إذا كان المربع ثلاثي الأبعاد مفقودًا"
+msgstr "استخدم صورة الغلاف إذا كان الصندوق ثلاثي الأبعاد مفقودًا"
 
 msgid "INCLUDE PHYSICAL MEDIA IMAGE"
 msgstr "تضمين صورة الوسائط المادية"
@@ -1794,7 +1800,7 @@ msgid "OVERWRITE FILES AND DATA"
 msgstr "استبدال الملفات والبيانات"
 
 msgid "SEARCH USING FILE HASHES (NON-INTERACTIVE MODE)"
-msgstr "البحث باستخدام تجزئة الملفات (الوضع غير التفاعلي)"
+msgstr "(الوضع غير التفاعلي) البحث باستخدام تجزئة الملفات"
 
 msgid "SEARCH USING METADATA NAMES"
 msgstr "البحث باستخدام أسماء البيانات الوصفية"
@@ -1942,10 +1948,10 @@ msgid "accept result"
 msgstr "قبول النتيجة"
 
 msgid "back (cancel)"
-msgstr "العودة (إلغاء)"
+msgstr "(إلغاء) العودة"
 
 msgid "START SCREENSAVER AFTER (MINUTES)"
-msgstr "ابدأ شاشة توقف بعد (دقائق)"
+msgstr "(دقائق) ابدأ شاشة توقف بعد"
 
 msgid "SCREENSAVER TYPE"
 msgstr "نوع شاشة توقف"
@@ -1972,7 +1978,7 @@ msgid "SLIDESHOW SCREENSAVER"
 msgstr "عرض الشرائح شاشة توقف"
 
 msgid "SWAP IMAGES AFTER (SECONDS)"
-msgstr "تبديل الصور بعد (ثواني)"
+msgstr "(ثواني) تبديل الصور بعد"
 
 msgid "ONLY INCLUDE FAVORITE GAMES"
 msgstr "تضمين الألعاب المفضلة فقط"
@@ -1999,7 +2005,7 @@ msgid "VIDEO SCREENSAVER"
 msgstr "الفيديو شاشة توقف"
 
 msgid "SWAP VIDEOS AFTER (SECONDS)"
-msgstr "تبادل الفيديو بعد (ثواني)"
+msgstr "(ثواني) تبادل الفيديو بعد"
 
 msgid "RENDER BLUR"
 msgstr "عرض ضبابي"
@@ -2151,7 +2157,7 @@ msgid "SHALLOW"
 msgstr "أجوف"
 
 msgid "NOT INSTALLED (NEW)"
-msgstr "غير مثبت (جديد)"
+msgstr "(جديد) غير مثبت"
 
 msgid "NOT INSTALLED"
 msgstr "غير مثبت"
@@ -2346,7 +2352,7 @@ msgstr "لعبة أطفال"
 
 msgctxt "metadata"
 msgid "KIDGAME (ONLY AFFECTS BADGES)"
-msgstr "لعبة أطفال (يؤثر فقط على الشارات)"
+msgstr "(يؤثر فقط على الشارات) لعبة أطفال"
 
 msgctxt "metadata"
 msgid "HIDDEN"
@@ -2619,7 +2625,7 @@ msgid ""
 "EXTENSIONS. THIS IS THE CONFIGURED ROM DIRECTORY:\n"
 msgstr ""
 "لم يتم العثور على أي ملفات ألعاب استورد بعض الألعاب أو ضعها يدويًا في مجلد "
-"الروم المُهيأ حاليًا يمكنك أيضًا تغيير مسار الروم ويمكنك اختياريًا إنشاء بنية "
+"الروم المُهيأ حاليًا يمكنك أيضًا تغيير مسار الروم و يمكنك اختياريًا إنشاء بنية "
 "مجلد الروم والتي ستُنشئ ملفًا نصيًا لكل نظام يُوفر معلومات مثل امتدادات الملفات "
 "المدعومة هذا هو مجلد الروم المُهيأ:\n"
 
@@ -2640,7 +2646,7 @@ msgid "LOAD CURRENTLY CONFIGURED PATH"
 msgstr "تحميل المسار الذي تم تكوينه حاليًا"
 
 msgid "CLEAR (LEAVE BLANK TO RESET TO DEFAULT PATH)"
-msgstr "واضح (اترك فارغًا لإعادة التعيين إلى المسار الافتراضي)"
+msgstr "(اترك فارغًا لإعادة التعيين إلى المسار الافتراضي) فارغ"
 
 msgid ""
 "THIS WILL CREATE DIRECTORIES FOR ALL THE GAME SYSTEMS DEFINED IN es_systems."
@@ -2737,7 +2743,7 @@ msgid "%i hour ago"
 msgid_plural "%i hours ago"
 msgstr[0] "منذ ساعة"
 msgstr[1] "منذ ساعتين"
-msgstr[2] "منذ  %i ساعات"
+msgstr[2] "منذ %i ساعات"
 msgstr[3] "منذ %i ساعة"
 
 #, c-format
@@ -2829,7 +2835,7 @@ msgid "HOLD A BUTTON ON YOUR KEYBOARD TO CONFIGURE IT"
 msgstr "اضغط باستمرار على أحد الأزرار الموجودة على لوحة المفاتيح لتكوينه"
 
 msgid "PRESS ESC TO SKIP (OR THE QUIT SHORTCUT TO QUIT AT ANY TIME)"
-msgstr "اضغط على ESC لتخطي (أو اختصار الخروج للخروج في أي وقت)"
+msgstr "(أو اختصار الخروج للخروج في أي وقت) اضغط على ESC لتخطي"
 
 msgid "PRESS ESC TO CANCEL"
 msgstr "اضغط على ESC للإلغاء"
