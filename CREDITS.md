@@ -51,6 +51,8 @@ SecularSteve \
 **Swedish** \
 Leon Styhre \
 Daniel Nylander \
+**Arabic** \
+fotonom243 \
 **Vietnamese** \
 dungtrinh25 \
 **Japanese** \

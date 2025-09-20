@@ -2349,6 +2349,7 @@ There are up to four parameters that will be passed to these scripts, as detaile
 | quit                     |                                                    | Application quit/shutdown                                                                         |
 | reboot                   |                                                    | System reboot (quit event triggered as well)                                                      |
 | poweroff                 |                                                    | System power off (quit event triggered as well)                                                   |
+| suspend                  |                                                    | System suspend (on platforms that support suspending)                                             |
 | config-changed           |                                                    | On saving application settings or controller configuration                                        |
 | settings-changed         |                                                    | On saving application settings (config-changed event triggered as well)                           |
 | controls-changed         |                                                    | On saving controller configuration (config-changed event triggered as well)                       |

@@ -4145,6 +4145,10 @@ Self explanatory.
 
 Self explanatory.
 
+**Suspend system** _(All operating systems except macOS, Android and Haiku)_
+
+Self explanatory.
+
 ## Gamelist options menu
 
 This menu is opened from the gamelist view, and can't be accessed from the system view. The menu changes slightly depending on the context, for example if a game file or a folder is selected, or whether the current system is a collection or a normal game system.

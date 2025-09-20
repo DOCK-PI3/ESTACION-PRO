@@ -9,6 +9,9 @@
 ### Detailed list of changes
 
 * Removed the "EmulationStation Desktop Edition" subtitle from the splash screen
+* Added a "Suspend system" entry to the quit menu on Linux, FreeBSD and Windows
+* Added a suspend custom event
+* Added translations for Arabic (ar_SA)
 * Added .webp as a supported image file extension for scraped media
 * Added a menu option for generating miximages in the PNG or WebP file format
 * Added .webp as a supported file extension for the gameOverridePath property for the image element
@@ -52,6 +55,7 @@
 * (Android) Fixed a crash when scraping if the downloaded_media directory had been set to an invalid path
 * (macOS) The application updater for the x86 release downloaded the ARM package instead of the x86 package
 * Helpsystem icons could sometimes disappear temporarily after closing the media viewer
+* (Haiku) The reboot and power off entries in the quit menu didn't work as intended
 
 ## Version 3.3.0-50 (Android intermediate)
 
