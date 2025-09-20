@@ -27,6 +27,7 @@ namespace Utils
 
         int runRebootCommand();
         int runPoweroffCommand();
+        int runSuspendCommand();
 
         // Uses UTF-8 for Unix and UTF-16 for Windows.
         int runSystemCommand(const std::string& cmd_utf8);

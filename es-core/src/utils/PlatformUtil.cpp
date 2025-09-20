@@ -41,35 +41,55 @@ namespace Utils
     {
         int runRebootCommand()
         {
-#if defined(__IOS__)
+#if defined(__APPLE__)
             return 0;
-#else
-#if defined(_WIN64)
+#elif defined(_WIN64)
             return system("shutdown -r -t 0");
-#elif defined(__APPLE__) || defined(__FreeBSD__)
-            // This will probably never be used on macOS as it requires root privileges to reboot.
+#elif defined(__FreeBSD__)
             return system("shutdown -r now");
+#elif defined(__HAIKU__)
+            return system("shutdown -r");
 #else
             return system("shutdown --reboot now");
-#endif
 #endif
         }
 
         int runPoweroffCommand()
         {
-#if defined(__IOS__)
+#if defined(__APPLE__)
             return 0;
-#else
-#if defined(_WIN64)
+#elif defined(_WIN64)
             return system("shutdown -s -t 0");
-#elif defined(__APPLE__)
-            // This will probably never be used as macOS requires root privileges to power off.
-            return system("shutdown now");
 #elif defined(__FreeBSD__)
             return system("shutdown -p now");
+#elif defined(__HAIKU__)
+            return system("shutdown");
 #else
             return system("shutdown --poweroff now");
 #endif
+        }
+
+        int runSuspendCommand()
+        {
+#if defined(_APPLE__)
+            return 0;
+#elif defined(_WIN64)
+            return system("rundll32.exe powrprof.dll,SetSuspendState 0,1,0");
+#elif defined(__FreeBSD__)
+            if (Utils::FileSystem::getPathToBinary("zzz") != "")
+                return system("zzz");
+
+            return -1;
+#else
+            // This should work on all Linux distributions that use systemd.
+            if (Utils::FileSystem::getPathToBinary("systemctl") != "")
+                return system("systemctl suspend");
+
+            // Fallback to the zzz command on some distributions.
+            if (Utils::FileSystem::getPathToBinary("zzz") != "")
+                return system("zzz");
+
+            return -1;
 #endif
         }
 

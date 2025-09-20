@@ -2387,7 +2387,7 @@ void GuiMenu::openQuitMenu()
                 _("REALLY REBOOT?"), _("YES"),
                 [] {
                     if (Utils::Platform::quitES(Utils::Platform::QuitMode::REBOOT) != 0) {
-                        LOG(LogWarning) << "Reboot terminated with non-zero result!";
+                        LOG(LogWarning) << "Couldn't reboot system";
                     }
                 },
                 _("NO"), nullptr));
@@ -2404,7 +2404,7 @@ void GuiMenu::openQuitMenu()
                 _("REALLY POWER OFF?"), _("YES"),
                 [] {
                     if (Utils::Platform::quitES(Utils::Platform::QuitMode::POWEROFF) != 0) {
-                        LOG(LogWarning) << "Power off terminated with non-zero result!";
+                        LOG(LogWarning) << "Couldn't power off system";
                     }
                 },
                 _("NO"), nullptr));
@@ -2414,6 +2414,28 @@ void GuiMenu::openQuitMenu()
         powerOffText->setSelectable(true);
         row.addElement(powerOffText, true);
         s->addRow(row);
+
+#if !defined(__HAIKU__)
+        row.elements.clear();
+        row.makeAcceptInputHandler([window, this] {
+            window->pushGui(new GuiMsgBox(
+                _("REALLY SUSPEND?"), _("YES"),
+                [this] {
+                    if (Utils::Platform::runSuspendCommand() != 0) {
+                        LOG(LogWarning) << "Couldn't suspend system";
+                    }
+                    else {
+                        this->close(true);
+                    }
+                },
+                _("NO"), nullptr));
+        });
+        auto suspendText = std::make_shared<TextComponent>(
+            _("SUSPEND SYSTEM"), Font::get(FONT_SIZE_MEDIUM), mMenuColorPrimary);
+        suspendText->setSelectable(true);
+        row.addElement(suspendText, true);
+        s->addRow(row);
+#endif
 
         s->setSize(mSize);
         mWindow->pushGui(s);
