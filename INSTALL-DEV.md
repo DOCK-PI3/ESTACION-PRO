@@ -1816,6 +1816,10 @@ The es_systems.xml file on Android utilizes variables heavily to implement the _
 
 `%MIMETYPE%` - Sets an explicit MIME type, which you need to assign using an equal sign such as %MIMETYPE%=text/plain. You will rarely, if ever, need to set an explicit MIME type so this variable is of limited use. By default Android will set the MIME type to application/octet-stream which is normally what you want.
 
+`%INTERNALDATA%` - Expands to _/data/user/\<userid\>_ - for example _/data/user/0_ or _/data/user/11_. This is for instance necessary for launching RetroArch in multi-user setups.
+
+`%EXTERNALDATA%` - Expands to _/storage/emulated/\<userid\>_ - for example _/storage/emulated/0_ or _/storage/emulated/11_. This is for instance necessary for launching RetroArch in multi-user setups.
+
 There are two main ways to pass options to emulators, using _extras_ or using the _data_ URI. There can only be a single data URI but there can be an arbitrary amount of extras. To understand more about the way this works, you can read about the _putExtra()_ and and _setData()_ functions here:\
 https://developer.android.com/reference/android/content/Intent
 

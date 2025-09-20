@@ -9,6 +9,7 @@
 ### Detailed list of changes
 
 * Removed the "EmulationStation Desktop Edition" subtitle from the splash screen
+* (Android) Added %INTERNALDATA% and %EXTERNALDATA% variables to support launching RetroArch in multi-user setups
 * Added a "Suspend system" entry to the quit menu on Linux, FreeBSD and Windows
 * Added a suspend custom event
 * Added translations for Arabic (ar_SA)
