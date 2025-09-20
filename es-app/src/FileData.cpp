@@ -1796,6 +1796,12 @@ void FileData::launchGame()
     // marks when parsing the Extras.
     command = Utils::String::replace(command, "\\\"", "%QUOTATION%");
 
+    // This is expanded to /data/user/<userid> and /storage/emulated/<userid> respectively.
+    command = Utils::String::replace(command, "%INTERNALDATA%",
+                                     Utils::Platform::Android::getInternalDirectory());
+    command = Utils::String::replace(command, "%EXTERNALDATA%",
+                                     Utils::Platform::Android::getExternalDirectory());
+
     const std::vector<std::string> androidVariabels {
         "%ACTION%=", "%CATEGORY%=", "%MIMETYPE%=", "%DATA%="};
 
