@@ -2421,6 +2421,7 @@ void GuiMenu::openQuitMenu()
             window->pushGui(new GuiMsgBox(
                 _("REALLY SUSPEND?"), _("YES"),
                 [this] {
+                    LOG(LogInfo) << "Suspending system";
                     if (Utils::Platform::runSuspendCommand() != 0) {
                         LOG(LogWarning) << "Couldn't suspend system";
                     }
