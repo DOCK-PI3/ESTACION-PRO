@@ -31,7 +31,7 @@ The following options are included:
 - 4:3
 - 21:9
 
-21 languages:
+22 languages:
 
 - English (United States)
 - English (United Kingdom)
@@ -50,6 +50,7 @@ The following options are included:
 - Русский
 - Srpski
 - Svenska
+- العربية
 - 日本語
 - 한국어
 - 简体中文
