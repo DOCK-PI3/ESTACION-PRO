@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-09-20 15:27+0200\n"
+"POT-Creation-Date: 2025-09-21 12:37+0200\n"
 "PO-Revision-Date: 2025-09-17 14:34+0300\n"
 "Last-Translator: Northwestern Software <info@es-de.org>\n"
 "Language-Team: Arabic (Classical Arabic) <info@es-de.org>\n"
@@ -330,7 +330,7 @@ msgid "DEFAULT"
 msgstr "الإعدادات الافتراضية"
 
 msgid "select"
-msgstr "أختيار"
+msgstr "تحديد"
 
 msgid "APPLICATION UPDATER"
 msgstr "تحديث التطبيق"
@@ -550,7 +550,7 @@ msgid "MARQUEES (WHEELS)"
 msgstr "(عجلات) ماركي"
 
 msgid "3D BOXES"
-msgstr "صناديق ثلاثية الأبعاد"
+msgstr "3D صناديق"
 
 msgid "PHYSICAL MEDIA"
 msgstr "الوسائط المادية"
@@ -574,7 +574,7 @@ msgid "ONLY INCLUDE APPS CATEGORIZED AS GAMES"
 msgstr "فقط تضمين التطبيقات المصنفة كألعاب"
 
 msgid "START"
-msgstr "أبدأ"
+msgstr "أبدا"
 
 msgid "start importer"
 msgstr "ابدأ الأستراد"
@@ -708,13 +708,13 @@ msgid "STRETCH VIDEOS TO SCREEN RESOLUTION"
 msgstr "تمديد مقاطع الفيديو إلى دقة الشاشة"
 
 msgid "RENDER SCANLINES FOR VIDEOS"
-msgstr "عرض خطوط المسح الضوئي لمقاطع الفيديو"
+msgstr "عرض خطوط في الفيديو"
 
 msgid "RENDER BLUR FOR VIDEOS"
 msgstr "عرض ضبابية لمقاطع الفيديو"
 
 msgid "RENDER SCANLINES FOR SCREENSHOTS AND TITLES"
-msgstr "عرض خطوط المسح الضوئي للقطات الشاشة والعناوين"
+msgstr "عرض خطوط في للقطات الشاشة والعناوين"
 
 msgid "MAIN MENU"
 msgstr "القائمة الرئيسية"
@@ -984,7 +984,7 @@ msgid "AUDIO DRIVER"
 msgstr "برنامج تشغيل الصوت"
 
 msgid "AUDIO DRIVER (REQUIRES RESTART)"
-msgstr "(يتطلب إعادة التشغيل) برنامج تشغيل الصوت"
+msgstr "(إعادة التشغيل) برنامج تشغيل الصوت"
 
 msgid "SYSTEM VOLUME"
 msgstr "صوت النظام"
@@ -1109,13 +1109,13 @@ msgid "4X"
 msgstr "4x"
 
 msgid "ANTI-ALIASING (MSAA) (REQUIRES RESTART)"
-msgstr "(MSAA) (يتطلب إعادة التشغيل) مكافحة التعرجات"
+msgstr "(MSAA) (إعادة التشغيل) مكافحة التعرجات"
 
 msgid "DISPLAY/MONITOR INDEX"
 msgstr "مؤشر العرض/الشاشة"
 
 msgid "DISPLAY/MONITOR INDEX (REQUIRES RESTART)"
-msgstr "(يتطلب إعادة التشغيل) مؤشر العرض/الشاشة"
+msgstr "(إعادة التشغيل) مؤشر العرض/الشاشة"
 
 msgid "ROTATE SCREEN"
 msgstr "تدوير الشاشة"
@@ -1130,7 +1130,7 @@ msgid "270 DEGREES"
 msgstr "270 درجة"
 
 msgid "ROTATE SCREEN (REQUIRES RESTART)"
-msgstr "(يتطلب إعادة التشغيل) تدوير الشاشة"
+msgstr "(إعادة التشغيل) تدوير الشاشة"
 
 msgid "KEYBOARD QUIT SHORTCUT"
 msgstr "اختصار الخروج في لوحة المفاتيح"
@@ -1161,10 +1161,10 @@ msgid "CHECK FOR APPLICATION UPDATES"
 msgstr "تحقق من وجود تحديثات التطبيق"
 
 msgid "INCLUDE PRERELEASES IN UPDATE CHECKS"
-msgstr "تضمين الإصدارات المسبقة في عمليات التحقق من التحديث"
+msgstr "تضمين الإصدارات المسبقة عند التحقق من التحديث"
 
 msgid "HIDE TASKBAR (REQUIRES RESTART)"
-msgstr "(يتطلب إعادة التشغيل) إخفاء شريط المهام"
+msgstr "(إعادة التشغيل) إخفاء شريط المهام"
 
 msgid "RUN IN BACKGROUND (WHILE GAME IS LAUNCHED)"
 msgstr "(أثناء إطلاق اللعبة) تشغيل في الخلفية"
@@ -1173,7 +1173,7 @@ msgid "VIDEO HARDWARE DECODING (EXPERIMENTAL)"
 msgstr "(تجريبي) فك تشفير أجهزة الفيديو"
 
 msgid "UPSCALE VIDEO FRAME RATE TO 60 FPS"
-msgstr "رفع معدل إطارات الفيديو إلى 60 إطارًا في الثانية"
+msgstr "إطارًا في الثانية 60 رفع معدل إطارات الفيديو إلى"
 
 msgid "ENABLE ALTERNATIVE EMULATORS PER GAME"
 msgstr "تمكين المحاكيات البديلة لكل لعبة"
@@ -1194,10 +1194,10 @@ msgid "ONLY SHOW GAMES FROM GAMELIST.XML FILES"
 msgstr "gamelist.xml عرض الألعاب فقط من ملفات"
 
 msgid "STRIP EXTRA MAME NAME INFO (REQUIRES RESTART)"
-msgstr "(يتطلب إعادة التشغيل) قم بإزالة معلومات اسم MAME الإضافية"
+msgstr "(إعادة التشغيل) الإضافية MAME إزالة معلومات اسم"
 
 msgid "DISABLE DESKTOP COMPOSITION (REQUIRES RESTART)"
-msgstr "(يتطلب إعادة التشغيل) تعطيل تكوين سطح المكتب"
+msgstr "(إعادة التشغيل) تعطيل تكوين سطح المكتب"
 
 msgid "BACK BUTTON/BACK SWIPE EXITS APP"
 msgstr "زر العودة/الظهر يخرج من التطبيق"
@@ -1212,7 +1212,7 @@ msgid "ENABLE MENU IN KID MODE"
 msgstr "تمكين القائمة في وضع الأطفال"
 
 msgid "SHOW QUIT MENU (REBOOT AND POWER OFF ENTRIES)"
-msgstr "(إيقاف وإعادة تشغيل الإدخالات) إظهار قائمة الخروج"
+msgstr "(إيقاف وإعادة تشغيل الإدخالات) إظهر قائمة الخروج"
 
 msgid "GAME IMPORTER"
 msgstr "مستورد اللعبة"
@@ -1459,7 +1459,7 @@ msgid "DESCRIPTION:"
 msgstr "وصف:"
 
 msgid "TOTAL ENTRIES REMOVED:"
-msgstr "إجمالي الإدخالات المحذوفة:"
+msgstr "الإدخالات المحذوفة:"
 
 msgid "LAST PROCESSED SYSTEM:"
 msgstr "آخر نظام تمت معالجته:"
@@ -1654,7 +1654,7 @@ msgid "MARQUEE (WHEEL) IMAGES"
 msgstr "(عجلة) صور ماركي"
 
 msgid "3D BOX IMAGES"
-msgstr "صور الصندوق ثلاثي الأبعاد"
+msgstr "3D صور الصندوق"
 
 msgid "PHYSICAL MEDIA IMAGES"
 msgstr "صور الوسائط المادية"
@@ -1754,7 +1754,7 @@ msgid "INCLUDE BOX IMAGE"
 msgstr "تضمين صورة صندوق"
 
 msgid "USE COVER IMAGE IF 3D BOX IS MISSING"
-msgstr "استخدم صورة الغلاف إذا كان الصندوق ثلاثي الأبعاد مفقودًا"
+msgstr "مفقودًا 3D استخدم صورة الغلاف إذا كان الصندوق"
 
 msgid "INCLUDE PHYSICAL MEDIA IMAGE"
 msgstr "تضمين صورة الوسائط المادية"
@@ -1794,13 +1794,13 @@ msgid "RETRY ATTEMPT TIMER"
 msgstr "مؤقت إعادة المحاولة"
 
 msgid "HASH SEARCHES MAX FILE SIZE"
-msgstr "الحد الأقصى لحجم الملف في عمليات البحث باستخدام التجزئة"
+msgstr "أقصى حد لحجم الملف في عمليات هاش"
 
 msgid "OVERWRITE FILES AND DATA"
 msgstr "استبدال الملفات والبيانات"
 
 msgid "SEARCH USING FILE HASHES (NON-INTERACTIVE MODE)"
-msgstr "(الوضع غير التفاعلي) البحث باستخدام تجزئة الملفات"
+msgstr "(الوضع غير التفاعلي) بحث ملفات باستخدام هاشات"
 
 msgid "SEARCH USING METADATA NAMES"
 msgstr "البحث باستخدام أسماء البيانات الوصفية"
@@ -1990,7 +1990,7 @@ msgid "DISPLAY GAME INFO OVERLAY"
 msgstr "عرض معلومات اللعبة"
 
 msgid "RENDER SCANLINES"
-msgstr "عرض خطوط المسح"
+msgstr "عرض خطوط"
 
 msgid "USE CUSTOM IMAGES"
 msgstr "استخدم صور مخصصة"
@@ -2288,7 +2288,7 @@ msgstr "مجموعات مخصصة sortname"
 
 msgctxt "metadata"
 msgid "ENTER COLLECTIONS SORTNAME"
-msgstr "أدخل مجموعات sortname"
+msgstr "أدخل مجموعات SORTNAME"
 
 msgctxt "metadata"
 msgid "DESCRIPTION"
@@ -2332,7 +2332,7 @@ msgstr "أدخل النوع"
 
 msgctxt "metadata"
 msgid "PLAYERS"
-msgstr "اللاعبين"
+msgstr "اللاعبون"
 
 msgctxt "metadata"
 msgid "ENTER NUMBER OF PLAYERS"
