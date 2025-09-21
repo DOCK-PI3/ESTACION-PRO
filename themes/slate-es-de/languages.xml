@@ -158,6 +158,16 @@
             <langLabelLastPlayed>Senast Spelat</langLabelLastPlayed>
         </variables>
     </language>
+    <language name="ar_SA">
+        <variables>
+            <langLabelReleasedate>تاريخ الإصدار</langLabelReleasedate>
+            <langLabelDeveloper>المطور</langLabelDeveloper>
+            <langLabelPublisher>الناشر</langLabelPublisher>
+            <langLabelGenre>النوع</langLabelGenre>
+            <langLabelPlayers>اللاعبون</langLabelPlayers>
+            <langLabelLastPlayed>لعب آخر مرة</langLabelLastPlayed>
+        </variables>
+    </language>
     <language name="ja_JP">
         <variables>
             <langLabelReleasedate>発行日</langLabelReleasedate>
