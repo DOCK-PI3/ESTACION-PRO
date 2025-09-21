@@ -174,6 +174,17 @@
             <langUnknown>Okänd</langUnknown>
         </variables>
     </language>
+    <language name="ar_SA">
+        <variables>
+            <langLabelRating>التقيم</langLabelRating>
+            <langLabelReleasedate>تاريخ الإصدار</langLabelReleasedate>
+            <langLabelPlayers>اللاعبون</langLabelPlayers>
+            <langLabelGenre>النوع</langLabelGenre>
+            <langLabelDeveloper>المطور</langLabelDeveloper>
+            <langLabelPublisher>الناشر</langLabelPublisher>
+            <langUnknown>غير معروف</langUnknown>
+        </variables>
+    </language>
     <language name="ja_JP">
         <variables>
             <langLabelRating>評価</langLabelRating>
