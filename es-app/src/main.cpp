@@ -674,7 +674,6 @@ int main(int argc, char* argv[])
         return 1;
 
     {
-
         // Create the logs folder in the application data directory.
         const std::string logsDir {Utils::FileSystem::getAppDataDirectory() + "/logs"};
         if (!Utils::FileSystem::isDirectory(logsDir)) {
