@@ -190,6 +190,12 @@
             <entry>io.github.lime3ds.android/.activities.EmulationActivity</entry>
         </rule>
     </emulator>
+    <emulator name="LINKBOY">
+        <!-- Nintendo Game Boy, Game Boy Color and Game Boy Advance emulator Linkboy -->
+        <rule type="androidpackage">
+            <entry>com.pixelrespawn.linkboy/.EmulatorActivity</entry>
+        </rule>
+    </emulator>
     <emulator name="LYNX-EMU">
         <!-- Atari Lynx emulator Lynx.emu -->
         <rule type="androidpackage">
