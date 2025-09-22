@@ -9,15 +9,24 @@
 ### Detailed list of changes
 
 * Removed the "EmulationStation Desktop Edition" subtitle from the splash screen
-* (Android) Added %INTERNALDATA% and %EXTERNALDATA% variables to support launching RetroArch in multi-user setups
+* Removed the logic to check for and handle the legacy application data directory ~/.emulationstation
+* Added Asia, Australia, Brazil, Canada, China, Germany, France, Italy and Korea as additional ScreenScraper regions
+* Added Netherlands, Russia, Sweden, Spain, Taiwan and United Kingdom as additional ScreenScraper regions
+* Changed the media and release date fallback order for the scraper to place Europe prior to Japan, so it matches the game name fallback order
+* (Android) Added two new %INTERNALDATA% and %EXTERNALDATA% variables to support launching RetroArch in multi-user setups
+* (Android) Added %INTERNALDATA% and %EXTERNALDATA% to the Opera core for the 3do system and the PUAE 2021 core for the amiga system
+* (Android) Added %INTERNALDATA% and %EXTERNALDATA% to the MAME 2003-Plus core for the arcade system and the Stella 2023 core for the atari2600 system
+* (Android) Added %INTERNALDATA% and %EXTERNALDATA% to the DOSBox-Core core for the dos system and the Genesis Plus GX Wide core for the gamegear system
+* (Android) Added %INTERNALDATA% and %EXTERNALDATA% to the SameBoy core for the gbc system and the blueMSX core for the msx2 system
+* (Android) Added %INTERNALDATA% and %EXTERNALDATA% to the QuickNES core for the nes system and the Beetle PCE FAST core for the pcengine system
+* (Android) Added %INTERNALDATA% and %EXTERNALDATA% to the bsnes core for the snes and snesna systems and the Vircon32 core for the vircon32 system
 * Added a "Suspend system" entry to the quit menu on Linux, FreeBSD and Windows
 * Added a suspend custom event
 * Added translations for Arabic (ar_SA)
 * Added .webp as a supported image file extension for scraped media
-* Added a menu option for generating miximages in the PNG or WebP file format
 * Added .webp as a supported file extension for the gameOverridePath property for the image element
+* Added a menu option for generating miximages in the PNG or WebP file format
 * Added support for the AV1 video codec on Android and macOS
-* Removed the logic to check for and handle the legacy application data directory ~/.emulationstation
 * (Android) Added miximages as a media target type for the game importer
 * (Linux) Added a "Strip special characters" setting to the game importer to enable imports to FAT-based filesystems
 * (Linux) Added desktopshortcut import rules for the ps3 system
@@ -25,6 +34,7 @@
 * (Windows) Added ~\Desktop import rule entries for the desktop, emulators and windows systems
 * (Android) Added Winlator Cmod standalone as the default emulator for the pcarcade, type-x and windows systems
 * (Android) Added Pizza Boy SC standalone as an alternative emulator for the megacd, megacdjp and segacd systems
+* (Android) Added Linkboy standalone as an alternative emulator for the gb, gba and gbc systems
 * (Android) Changed Pizza Boy GBA/A to use %ROMSAF% instead of %ROM% as the developer has changed the way games are launched from frontends
 * (Android) Changed Pizza Boy SC to use %ROMSAF% instead of %ROM% as the developer has changed the way games are launched from frontends
 * Added Parallel Launcher standalone as an alternative emulator for the n64 system on Linux, macOS and Windows

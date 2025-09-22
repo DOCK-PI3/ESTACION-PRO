@@ -379,6 +379,12 @@ https://github.com/woesss/JL-Mod/releases
 
 This emulator which is forked from Citra is no longer developed as it's been carried over into the Azahar emulator.
 
+### Linkboy
+
+This emulator can be installed from the Play store.
+
+https://play.google.com/store/apps/details?id=com.pixelrespawn.linkboy
+
 ### MAME4droid Current and MAME4droid
 
 These emulators can be installed from the Play store or from their GitHub sites. It's strongly recommended to go for the _MAME4droid Current_ version (previously named _MAME4droid 2024_) as this is updated with a recent MAME release while the older _MAME4droid_ is using an ancient MAME release.
@@ -798,9 +804,9 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | gameandwatch          | Nintendo Game and Watch                        | Multi (MESS)                      | MAME4droid Current Local Artwork **(Standalone)**,<br>MAME4droid Current **(Standalone)**,<br>Handheld Electronic (GW) | No           | See the specific _LCD handheld games_ section in the user guide |
 | gamecom               | Tiger Electronics Game.com                     | MAME4droid Current **(Standalone)**  |                                   | Yes          | Single archive or ROM file           |
 | gamegear              | Sega Game Gear                                 | Genesis Plus GX                   | Genesis Plus GX Wide,<br>Gearsystem,<br>SMS Plus GX,<br>PicoDrive,<br>Pizza Boy SC **(Standalone)**,<br>MasterGear **(Standalone)** | No           | Single archive or ROM file |
-| gb                    | Nintendo Game Boy                              | Gambatte                          | SameBoy,<br>Gearboy,<br>TGB Dual,<br>DoubleCherryGB,<br>Mesen-S,<br>bsnes,<br>mGBA,<br>VBA-M,<br>GBC.emu **(Standalone)**,<br>SkyEmu **(Standalone)**,<br>My OldBoy! **(Standalone**),<br>Pizza Boy GBC **(Standalone)** | No           | Single archive or ROM file |
-| gba                   | Nintendo Game Boy Advance                      | mGBA                              | VBA-M,<br>VBA Next,<br>gpSP,<br>NooDS,<br>NooDS **(Standalone)**,<br>GBA.emu **(Standalone)**,<br>SkyEmu **(Standalone)**,<br>My Boy! **(Standalone)**,<br>Pizza Boy GBA **(Standalone)** | No          | Single archive or ROM file |
-| gbc                   | Nintendo Game Boy Color                        | Gambatte                          | SameBoy,<br>Gearboy,<br>TGB Dual,<br>DoubleCherryGB,<br>Mesen-S,<br>bsnes,<br>mGBA,<br>VBA-M,<br>GBC.emu **(Standalone)**,<br>SkyEmu **(Standalone)**,<br>My OldBoy! **(Standalone**),<br>Pizza Boy GBC **(Standalone)** | No           | Single archive or ROM file |
+| gb                    | Nintendo Game Boy                              | Gambatte                          | SameBoy,<br>Gearboy,<br>TGB Dual,<br>DoubleCherryGB,<br>Mesen-S,<br>bsnes,<br>mGBA,<br>VBA-M,<br>GBC.emu **(Standalone)**,<br>SkyEmu **(Standalone)**,<br>My OldBoy! **(Standalone**),<br>Linkboy **(Standalone)**,<br>Pizza Boy GBC **(Standalone)** | No           | Single archive or ROM file |
+| gba                   | Nintendo Game Boy Advance                      | mGBA                              | VBA-M,<br>VBA Next,<br>gpSP,<br>NooDS,<br>NooDS **(Standalone)**,<br>GBA.emu **(Standalone)**,<br>SkyEmu **(Standalone)**,<br>My Boy! **(Standalone)**,<br>Linkboy **(Standalone)**,<br>Pizza Boy GBA **(Standalone)** | No          | Single archive or ROM file |
+| gbc                   | Nintendo Game Boy Color                        | Gambatte                          | SameBoy,<br>Gearboy,<br>TGB Dual,<br>DoubleCherryGB,<br>Mesen-S,<br>bsnes,<br>mGBA,<br>VBA-M,<br>GBC.emu **(Standalone)**,<br>SkyEmu **(Standalone)**,<br>My OldBoy! **(Standalone**),<br>Linkboy **(Standalone)**,<br>Pizza Boy GBC **(Standalone)** | No           | Single archive or ROM file |
 | gc                    | Nintendo GameCube                              | Dolphin                           | Dolphin **(Standalone)**,<br>Dolphin MMJR **(Standalone)**,<br>Dolphin MMJR2 **(Standalone)** | No           | Disc image file for single-disc games, .m3u playlist for multi-disc games |
 | genesis               | Sega Genesis                                   | Genesis Plus GX                   | Genesis Plus GX Wide,<br>PicoDrive,<br>MD.emu **(Standalone)**,<br>Pizza Boy SC **(Standalone)** | No           | Single archive or ROM file |
 | gmaster               | Hartung Game Master                            | MAME4droid Current **(Standalone)**  |                                   | Yes          | Single archive or ROM file           |
