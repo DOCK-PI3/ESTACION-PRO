@@ -823,10 +823,25 @@ void GuiScraperMenu::openOtherOptions()
     auto scraperRegion = std::make_shared<OptionListComponent<std::string>>(_("REGION"), false);
     std::string selectedScraperRegion {Settings::getInstance()->getString("ScraperRegion")};
     // clang-format off
-    scraperRegion->add(_("EUROPE"), "eu",  selectedScraperRegion == "eu");
-    scraperRegion->add(_("JAPAN"),  "jp",  selectedScraperRegion == "jp");
-    scraperRegion->add(_("USA"),    "us",  selectedScraperRegion == "us");
-    scraperRegion->add(_("WORLD"),  "wor", selectedScraperRegion == "wor");
+    scraperRegion->add(_("EUROPE"),         "eu",  selectedScraperRegion == "eu");
+    scraperRegion->add(_("JAPAN"),          "jp",  selectedScraperRegion == "jp");
+    scraperRegion->add(_("USA"),            "us",  selectedScraperRegion == "us");
+    scraperRegion->add(_("WORLD"),          "wor", selectedScraperRegion == "wor");
+    scraperRegion->add(_("ASIA"),           "asi", selectedScraperRegion == "asi");
+    scraperRegion->add(_("AUSTRALIA"),      "au",  selectedScraperRegion == "au");
+    scraperRegion->add(_("BRAZIL"),         "br",  selectedScraperRegion == "br");
+    scraperRegion->add(_("CANADA"),         "ca",  selectedScraperRegion == "ca");
+    scraperRegion->add(_("CHINA"),          "cn",  selectedScraperRegion == "cn");
+    scraperRegion->add(_("GERMANY"),        "de",  selectedScraperRegion == "de");
+    scraperRegion->add(_("FRANCE"),         "fr",  selectedScraperRegion == "fr");
+    scraperRegion->add(_("ITALY"),          "it",  selectedScraperRegion == "it");
+    scraperRegion->add(_("KOREA"),          "kr",  selectedScraperRegion == "kr");
+    scraperRegion->add(_("NETHERLANDS"),    "nl",  selectedScraperRegion == "nl");
+    scraperRegion->add(_("RUSSIA"),         "ru",  selectedScraperRegion == "ru");
+    scraperRegion->add(_("SWEDEN"),         "se",  selectedScraperRegion == "se");
+    scraperRegion->add(_("SPAIN"),          "sp",  selectedScraperRegion == "sp");
+    scraperRegion->add(_("TAIWAN"),         "tw",  selectedScraperRegion == "tw");
+    scraperRegion->add(_("UNITED KINGDOM"), "uk",  selectedScraperRegion == "uk");
     // clang-format on
     // If there are no objects returned, then there must be a manually modified entry in the
     // configuration file. Simply set the region to "Europe" in this case.
