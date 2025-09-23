@@ -259,6 +259,10 @@ System icon set by Zoidburg:
 
 https://github.com/Zoidburg13/ES-DE-System-Icon-Set
 
+Pixel system icon set by Rob Zombie:
+
+https://github.com/RobZombie9043/pixel-es-de/tree/main/_inc/systems/consoles
+
 Console/system logos by Dan Patrick (GitHub mirror, not officially maintained by Patrick):
 
 https://github.com/PRO100BYTE/console-logos
