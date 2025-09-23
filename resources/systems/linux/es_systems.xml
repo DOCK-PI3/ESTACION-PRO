@@ -1296,6 +1296,7 @@
         <command label="simple64 (Standalone)">%EMULATOR_SIMPLE64% --nogui %ROM%</command>
         <command label="Rosalie's Mupen GUI (Standalone)">%EMULATOR_ROSALIES-MUPEN-GUI% --nogui -q %ROM%</command>
         <command label="ares (Standalone)">%EMULATOR_ARES% --fullscreen --system "Nintendo 64" %ROM%</command>
+        <command label="Gopher64 (Standalone)">%EMULATOR_GOPHER64% -f %ROM%</command>
         <command label="Native binary">%STARTDIR%=%GAMEDIR% %EMULATOR_OS-SHELL% -c "%ROM%"</command>
         <command label="Shortcut or script">%ENABLESHORTCUTS% %EMULATOR_OS-SHELL% %ROM%</command>
         <platform>n64</platform>

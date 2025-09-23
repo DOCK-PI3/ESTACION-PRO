@@ -308,6 +308,13 @@
             <entry>%ESPATH%\..\Emulators\gopher2600\gopher2600_windows_amd64.exe</entry>
         </rule>
     </emulator>
+    <emulator name="GOPHER64">
+        <!-- Nintendo 64 emulator Gopher64 -->
+        <rule type="staticpath">
+            <entry>%ESPATH%\Emulators\gopher64\gopher64-windows-x86_64.exe</entry>
+            <entry>%ESPATH%\..\Emulators\gopher64\gopher64-windows-x86_64.exe</entry>
+        </rule>
+    </emulator>
     <emulator name="HATARI">
         <!-- Atari ST/STE/TT/Falcon emulator Hatari -->
         <rule type="staticpath">
