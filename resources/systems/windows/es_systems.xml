@@ -1295,7 +1295,7 @@
         <command label="Project64 (Standalone)">%EMULATOR_PROJECT64% %ROM%</command>
         <command label="ares (Standalone)">%EMULATOR_ARES% --fullscreen --system "Nintendo 64" %ROM%</command>
         <command label="Gopher64 (Standalone)">%EMULATOR_GOPHER64% -f %ROM%</command>
-        <command label="Native binary">%HIDEWINDOW% %ESCAPESPECIALS% %STARTDIR%=%GAMEDIR% %EMULATOR_OS-SHELL% /C %ROM%</command>
+        <command label="Native port">%HIDEWINDOW% %ESCAPESPECIALS% %STARTDIR%=%GAMEDIR% %EMULATOR_OS-SHELL% /C %ROM%</command>
         <command label="Shortcut or script">%HIDEWINDOW% %ESCAPESPECIALS% %EMULATOR_OS-SHELL% /C %ROM%</command>
         <platform>n64</platform>
         <theme>n64</theme>
