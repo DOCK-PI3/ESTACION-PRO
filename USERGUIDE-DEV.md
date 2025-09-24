@@ -1045,6 +1045,7 @@ Below are the import rules that are part of the bundled configuration.
 | Android          | androidapps                  | Android Apps                | Android Package   |
 | Android          | androidgames                 | Android Games               | Android Package   |
 | Android          | emulators                    | Emulators                   | Android Package   |
+| Android          | n64                          | Nintendo 64                 | Android Package   |
 | Linux            | desktop                      | Desktop Applications        | Desktop Shortcut  |
 | Linux            | emulators                    | Emulators                   | Desktop Shortcut  |
 | Linux            | lutris                       | Lutris Open Gaming Platform | Desktop Shortcut  |
@@ -2336,9 +2337,15 @@ Do NOT overwrite any files when copying over the `data` and `font` directories, 
 
 These games are essentially source ports but with a difference compared to typical ports in that the original game ROM is normally needed to run the game.
 
-ES-DE supports such games for the _n64_ system on Linux, macOS and Windows.
+Below is an example for the _Perfect Dark_ port which can be found at https://github.com/fgsfdsfgs/perfect_dark for desktop operating systems and https://github.com/izzy2lost/perfect_dark for Android.
 
-Below is an example for the _Perfect Dark_ port which can be found at https://github.com/fgsfdsfgs/perfect_dark
+Like mentioned you need to supply your own game ROM file as the recompilation does not contain any game assets for Copyright reasons.
+
+**Android**
+
+First download and install the APK, then import the game into the Nintendo 64 system via the _Game importer_ that can be found in the _Utilities_ menu.
+
+After ES-DE has reloaded set the alternative emulator to _Native port_ via the metadata editor. The game should now run correctly and you should be able to scrape it like any regular game.
 
 **Linux**
 
@@ -2353,9 +2360,11 @@ The directory structure should look like the following (some files left out):
 ~/ROMs/n64/Perfect Dark.n64/Perfect Dark.n64
 ```
 
-Now start ES-DE and set the alternative emulator to _Native binary_ via the metadata editor. The game should now run correctly and you should be able to scrape it like any regular game.
+Now start ES-DE and set the alternative emulator to _Native port_ via the metadata editor. The game should now run correctly and you should be able to scrape it like any regular game.
 
 There is also a _Shortcut or script_ alternative emulator entry available in case you prefer to install your recompilations in this way, but this type of setup is not covered in detail in this section.
+
+Finally some recompilations are distributed as AppImages, and these can be run using the _Native port_ alternative emulator entry, just make sure that the filename has the .AppImage extension and not .appimage for example as some projects ship files with the incorrect letter casing.
 
 **macOS**
 
@@ -2370,9 +2379,9 @@ The directory structure should look like the following (some files left out):
 ~/ROMs/n64/Perfect Dark.n64/Perfect Dark.n64
 ```
 
-Now start ES-DE and set the alternative emulator to _Native binary_ via the metadata editor. The game should now run correctly and you should be able to scrape it like any regular game.
+Now start ES-DE and set the alternative emulator to _Native port_ via the metadata editor. The game should now run correctly and you should be able to scrape it like any regular game.
 
-Note that some recompilations on macOS are packaged properly as app bundles, these will be named something like _Game name.app_ and they can be placed either directly into the ~/ROMs/n64 directory or under /Applications. In the latter case you'll need to make an alias to this directory and place this into the ~/ROMs/n64 directory. When launching such an app bundle you'll need to set the alternative emulator to _Shortcut or script_ instead of _Native binary_.
+Note that some recompilations on macOS are packaged properly as app bundles, these will be named something like _Game name.app_ and they can be placed either directly into the ~/ROMs/n64 directory or under /Applications. In the latter case you'll need to make an alias to this directory and place this into the ~/ROMs/n64 directory. When launching such an app bundle you'll need to set the alternative emulator to _Shortcut or script_ instead of _Native port_.
 
 The directory structure should simply look like the following for such a game:
 ```
@@ -2392,7 +2401,7 @@ The directory structure should look like the following (some files left out):
 ~/ROMs/n64/Perfect Dark.exe/Perfect Dark.exe
 ```
 
-Now start ES-DE and set the alternative emulator to _Native binary_ via the metadata editor. The game should now run correctly and you should be able to scrape it like any regular game.
+Now start ES-DE and set the alternative emulator to _Native port_ via the metadata editor. The game should now run correctly and you should be able to scrape it like any regular game.
 
 There is also a _Shortcut or script_ alternative emulator entry available in case you prefer to install your recompilations in this way, but this type of setup is not covered in detail in this section.
 
@@ -4689,7 +4698,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | mugen                 | M.U.G.E.N Game Engine                          | Ikemen GO **(Standalone)**        |                                   | No           | See the specific _M.U.G.E.N Game Engine_ section elsewhere in this guide |
 | multivision           | Othello Multivision                            | Gearsystem                        | Mesen **(Standalone)** [LW]       | No           | Single archive or ROM file |
 | n3ds                  | Nintendo 3DS                                   | Azahar **(Standalone)**           | Azahar Shortcut **(Standalone)** [LW],<br>Citra [LW],<br>Citra **(Standalone)** [M],<br>Citra 2018 [LW],<br>Citra **(Standalone)** [LW],<br>Mandarine **(Standalone)**,<br>Lime3DS **(Standalone)**,<br>Panda3DS **(Standalone)** | No           | Single ROM file       |
-| n64                   | Nintendo 64                                    | Mupen64Plus-Next                  | Mupen64Plus **(Standalone)**,<br>ParaLLEl N64,<br>Parallel Launcher **(Standalone)**,<br>simple64 **(Standalone)** [LW],<br>Rosalie's Mupen GUI **(Standalone)** [LW],<br>Project64 **(Standalone)** [W],<br>ares **(Standalone)**,<br>Gopher64 **(Standalone)** [LW],<br>sixtyforce **(Standalone)** [M],<br> _Native binary_,<br> _Shortcut or script_ | No           | Single archive or ROM file, for recompilations see the specific _Nintendo 64 Recompilations_ section elsewhere in this guide |
+| n64                   | Nintendo 64                                    | Mupen64Plus-Next                  | Mupen64Plus **(Standalone)**,<br>ParaLLEl N64,<br>Parallel Launcher **(Standalone)**,<br>simple64 **(Standalone)** [LW],<br>Rosalie's Mupen GUI **(Standalone)** [LW],<br>Project64 **(Standalone)** [W],<br>ares **(Standalone)**,<br>Gopher64 **(Standalone)** [LW],<br>sixtyforce **(Standalone)** [M],<br> _Native port_,<br> _Shortcut or script_ | No           | Single archive or ROM file, for recompilations see the specific _Nintendo 64 Recompilations_ section elsewhere in this guide |
 | n64dd                 | Nintendo 64DD                                  | ParaLLEl N64 [LW],<br>Mupen64Plus-Next [M] | Mupen64Plus-Next [LW],<br>ParaLLEl N64 [M],<br>Rosalie's Mupen GUI **(Standalone)** [LW],<br>ares **(Standalone)** | Yes          | See the specific _Nintendo 64DD_ section elsewhere in this guide |
 | naomi                 | Sega NAOMI                                     | Flycast                           | Flycast **(Standalone)**,<br>Flycast Dojo **(Standalone)**,<br>Demul **(Standalone)** [W] | Yes          | Single archive file + .chd file in subdirectory if GD-ROM game |
 | naomi2                | Sega NAOMI 2                                   | Flycast                           | Flycast **(Standalone)**,<br>Flycast Dojo **(Standalone)**,<br>Demul **(Standalone)** [W] | Yes          | Single archive file + .chd file in subdirectory if GD-ROM game |

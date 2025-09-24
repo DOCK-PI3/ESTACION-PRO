@@ -39,8 +39,11 @@
 * (Android) Changed Pizza Boy SC to use %ROMSAF% instead of %ROM% as the developer has changed the way games are launched from frontends
 * Added Parallel Launcher standalone as an alternative emulator for the n64 system on Linux, macOS and Windows
 * Added Gopher64 standalone as an alternative emulator for the n64 system on Linux and Windows
-* Added "Native binary" and "Shortcut or script" as alternative emulators for the n64 system on Linux, macOS and Windows (for running N64 recompilations)
-* (Linux) Added the .desktop and .sh file extensions to the n64 system
+* Added "Native port" as an alternative emulator for the n64 system (for running N64 recompilations)
+* Added "Shortcut or script" as an alternative emulator for the n64 system on Linux, macOS and Windows
+* (Android) Added an import rule for the n64 system
+* (Android) Added the .app file extension to the n64 system
+* (Linux) Added the .AppImage, .desktop and .sh file extensions to the n64 system
 * (macOS) Added the .app file extension to the n64 system
 * (Windows) Added the .exe and .LNK file extensions to the n64 system
 * Added ares [Mega LD] standalone (Pioneer LaserActive) as an alternative emulator for the daphne and laserdisc systems on Linux, macOS and Windows
