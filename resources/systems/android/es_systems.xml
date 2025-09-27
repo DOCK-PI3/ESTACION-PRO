@@ -569,8 +569,8 @@
         <name>epic</name>
         <fullname>Epic Games Store</fullname>
         <path>%ROMPATH%/epic</path>
-        <extension>.7z .7Z .zip .ZIP</extension>
-        <command>PLACEHOLDER %ROM%</command>
+        <extension>.app .APP</extension>
+        <command label="Android Game">%ANDROIDAPP%=%FILEINJECT%</command>
         <platform>pcwindows</platform>
         <theme>epic</theme>
     </system>
