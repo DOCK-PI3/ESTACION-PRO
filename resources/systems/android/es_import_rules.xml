@@ -16,6 +16,11 @@
             <extension>.app</extension>
         </rule>
     </system>
+    <system name="epic">
+        <rule name="Android Package" type="androidpackage">
+            <extension>.app</extension>
+        </rule>
+    </system>
     <system name="n64">
         <rule name="Android Package" type="androidpackage">
             <extension>.app</extension>
