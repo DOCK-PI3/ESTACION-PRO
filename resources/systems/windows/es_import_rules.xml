@@ -19,6 +19,12 @@
             <directory recursive="true">%ESPATH%\..\Emulators</directory>
         </rule>
     </system>
+    <system name="epic">
+        <rule name="Epic URL File" type="file">
+            <extension>.url</extension>
+            <directory recursive="false">~\Desktop</directory>
+        </rule>
+    </system>
     <system name="steam">
         <rule name="Steam URL File" type="file">
             <extension>.url</extension>

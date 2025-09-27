@@ -20,6 +20,12 @@
             <directory>/var/lib/snapd/desktop/applications</directory>
         </rule>
     </system>
+    <system name="epic">
+        <rule name="Desktop Shortcut" type="desktopshortcut">
+            <directory execFilter="heroic://launch">~/.local/share/applications</directory>
+            <directory execFilter="heroic://launch">~/Desktop</directory>
+        </rule>
+    </system>
     <system name="lutris">
         <rule name="Desktop Shortcut" type="desktopshortcut">
             <directory execFilter="lutris:rungameid">~/.local/share/applications</directory>
