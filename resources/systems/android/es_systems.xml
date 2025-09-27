@@ -571,7 +571,7 @@
         <path>%ROMPATH%/epic</path>
         <extension>.app .APP</extension>
         <command label="Android Game">%ANDROIDAPP%=%FILEINJECT%</command>
-        <platform>pcwindows</platform>
+        <platform>android</platform>
         <theme>epic</theme>
     </system>
     <system>
