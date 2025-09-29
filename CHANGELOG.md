@@ -20,7 +20,8 @@
 * (Android) Added %INTERNALDATA% and %EXTERNALDATA% to the SameBoy core for the gbc system and the blueMSX core for the msx2 system
 * (Android) Added %INTERNALDATA% and %EXTERNALDATA% to the QuickNES core for the nes system and the Beetle PCE FAST core for the pcengine system
 * (Android) Added %INTERNALDATA% and %EXTERNALDATA% to the bsnes core for the snes and snesna systems and the Vircon32 core for the vircon32 system
-* Added a "Suspend system" entry to the quit menu on Linux, FreeBSD and Windows
+* Changed the grid component to only scroll up when navigating beyond the top row (thanks ManOfSteel89 for the patch)
+* Added a "Suspend system" entry to the quit menu on Linux, FreeBSD and Windows (thanks Emma for the patch)
 * Added a suspend custom event
 * Added translations for Arabic (ar_SA)
 * Added .webp as a supported image file extension for scraped media
@@ -31,7 +32,9 @@
 * (Linux) Added a "Strip special characters" setting to the game importer to enable imports to FAT-based filesystems
 * (Linux) Added desktopshortcut import rules for the ps3 system
 * (Linux) Added a ~/Desktop import rule entry for the desktop system
+* (macOS) Added a ~/Applications import rule entry for the steam system
 * (Windows) Added ~\Desktop import rule entries for the desktop, emulators and windows systems
+* (Android) Added support for the Epic Games Store (epic) game system
 * (Android) Added Winlator Cmod standalone as the default emulator for the pcarcade, type-x and windows systems
 * (Android) Added Pizza Boy SC standalone as an alternative emulator for the megacd, megacdjp and segacd systems
 * (Android) Added Linkboy standalone as an alternative emulator for the gb, gba and gbc systems
@@ -41,6 +44,7 @@
 * Added Gopher64 standalone as an alternative emulator for the n64 system on Linux and Windows
 * Added "Native port" as an alternative emulator for the n64 system (for running N64 recompilations)
 * Added "Shortcut or script" as an alternative emulator for the n64 system on Linux, macOS and Windows
+* Added import rules for the epic system
 * (Android) Added an import rule for the n64 system
 * (Android) Added the .app file extension to the n64 system
 * (Linux) Added the .AppImage, .desktop and .sh file extensions to the n64 system

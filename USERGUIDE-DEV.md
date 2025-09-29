@@ -1045,17 +1045,21 @@ Below are the import rules that are part of the bundled configuration.
 | Android          | androidapps                  | Android Apps                | Android Package   |
 | Android          | androidgames                 | Android Games               | Android Package   |
 | Android          | emulators                    | Emulators                   | Android Package   |
+| Android          | epic                         | Epic Games Store            | Android Package   |
 | Android          | n64                          | Nintendo 64                 | Android Package   |
 | Linux            | desktop                      | Desktop Applications        | Desktop Shortcut  |
 | Linux            | emulators                    | Emulators                   | Desktop Shortcut  |
+| Linux            | epic                         | Epic Games Store            | Desktop Shortcut  |
 | Linux            | lutris                       | Lutris Open Gaming Platform | Desktop Shortcut  |
 | Linux            | ps3                          | Sony PlayStation 3          | Desktop Shortcut  |
 | Linux            | steam                        | Valve Steam                 | Desktop Shortcut  |
 | macOS            | desktop                      | Desktop Applications        | macOS Bundle      |
 | macOS            | emulators                    | Emulators                   | macOS Bundle      |
+| macOS            | epic                         | Epic Games Store            | macOS Bundle      |
 | macOS            | steam                        | Valve Steam                 | macOS Bundle      |
 | Windows          | desktop                      | Desktop Applications        | Shortcut File     |
 | Windows          | emulators                    | Emulators                   | Shortcut File     |
+| Windows          | epic                         | Epic Games Store            | Epic URL File     |
 | Windows          | steam                        | Valve Steam                 | Steam URL File    |
 | Windows          | windows                      | Microsoft Windows           | Shortcut File     |
 
