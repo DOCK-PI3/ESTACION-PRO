@@ -396,6 +396,58 @@ If migrating from Batocera, RetroBat or Recalbox, be aware that ES-DE does not a
 
 The list goes on as there are many other differences in addition to those just mentioned.
 
+## Third party tools and applications
+
+Here is a list of third party tools that provide useful functionality not built into ES-DE itself, or which can be used to curate your games library.
+
+**HandheldExp** _(Android only)_
+
+This adds a game menu with a similar design to the ES-DE user interface which makes it possible to display information about the running game, view its manual, quick save and quick load for supported emulators, and more.
+
+https://github.com/Teppichseite/HandheldExp
+
+**Background Music for ES-DE on Android Using Tasker** _(Android only)_
+
+These instructions explain how to use Tasker on Android to add frontend music to ES-DE (built-in music support is on the roadmap for a future release).
+
+https://github.com/RobZombie9043/bgmusic-android-es-de
+
+**BG_MPlayer for ES-DE** _(Windows only)_
+
+This adds frontend music to ES-DE on Windows (built-in music support is on the roadmap for a future release).
+
+https://github.com/Naprosnia/ES-DE-Background-Music-for-Windows
+
+**CleanReturn for ES-DE** _(Windows only)_
+
+These scripts add more seamless game launching when using for instance Steam or Epic Games Launcher.
+
+https://github.com/Pirate-ai001/CleanReturn-for-ES-DE
+
+**ES-DE-Roms-Renamer**
+
+This Python project can be used to rename ROM files, which will also rename the media files and update the gamelist.xml entries.
+
+https://github.com/mirai-toto/ES-DE-Roms-Renamer
+
+**M3U files generator**
+
+A Python script is linked from this repository that automates the creation of .m3u files for various systems.
+
+https://github.com/Jetup13/Retroid-Pocket-4-Pro-Wiki/wiki/Emulators-and-Formats#m3u-file-generator-python-script
+
+**ES-DE - Vita3K**
+
+This Python script generates .psvita files that can be used to populate the psvita system in ES-DE.
+
+https://github.com/BinaryQuantumSoul/esde-vita3k
+
+**GameList.xml to RetroArch Playlist Converter**
+
+This tool makes it possible to convert ES-DE gamelist.xml files to the RetroArch playlist format.
+
+https://github.com/bnovakovic/GameList_Converter
+
 ## Removing orphaned data
 
 Manually removing game files from the ROMs directory tree instead of deleting them from ES-DE using the metadata editor will make any corresponding scraped media files, gamelist.xml entries and custom collection entries orphaned, i.e. they will refer to non-existent files. Although this is correctly handled by ES-DE and is not causing any serious issues, it does lead to unnecessary disk space usage and it does produce log warnings in es_log.txt on application startup. If a huge amount of game files have been manually removed it can also lead to performance problems.

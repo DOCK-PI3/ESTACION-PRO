@@ -60,6 +60,11 @@ If you have set ES-DE as your home app then for some devices the onboarding conf
 
 While ES-DE would in theory work fine with DeX this is unfortunately not supported as Samsung has a policy to not allow apps that can be set as home apps/launchers to run via DeX. This is a Samsung limitation that they would need to resolve.
 
+## Can I play frontend music inside ES-DE?
+
+Music support is on the roadmap, but until that's been implemented you can use Tasker to get music playback working. Detailed instructions on how to set this up can be found at this GitHub repository:\
+https://github.com/RobZombie9043/bgmusic-android-es-de
+
 ## What game systems/platforms and emulators are supported by ES-DE?
 
 See the _Supported game systems_ section at the bottom of the [Android documentation](ANDROID.md#supported-game-systems) where there's a table listing all supported systems/platforms and emulators.
@@ -91,6 +96,10 @@ Also be aware that there are some slight variations when it comes to how emulato
 ERROR CODE -1 is a general failure mode which could be caused by multiple things. Some emulators react like this when there's a permission issue and they can't access the game file. See the previous question above for how to deal with such permission problems. And some emulators return this error when the file you attempt to launch has an unsupported file extension. For example MD.emu does not support .bin files, but if you rename these files to the .gen extension then game launching works as expected.
 
 A black screen on game launch is also a possible variation of this failure mode, it depends on how the emulator handles errors whether there will be a black screen or whether it will abort and report the launch failure to ES-DE.
+
+## Why aren't my controllers working in RetroArch when launching Nintendo 64 games?
+
+There's an issue in RetroArch that causes this problem when launching games from frontends. To resolve it open RetroArch and go to _Settings -> Input -> Polling Behavior_ and change this to _Early_. Make sure to save your RetroArch settings after making this change. A related problem is that rumble support could break, and this is resolved by starting a game, then opening the RetroArch quick menu and going to _Core Options -> GLideN64_ and enabling _Threaded Renderer_.
 
 ## Sometimes after I return from a game ES-DE is restarting, did it crash?
 
