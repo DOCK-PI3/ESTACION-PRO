@@ -12,8 +12,6 @@
 #include "components/IList.h"
 #include "components/primary/PrimaryComponent.h"
 
-#include <cmath>
-
 struct GridEntry {
     std::shared_ptr<GuiComponent> item;
     std::string imagePath;
@@ -835,30 +833,22 @@ template <typename T> void GridComponent<T>::render(const glm::mat4& parentTrans
         glm::vec2 offsetInwards {0.0f, 0.0f};
 
         if (mScaleInwards && scale != 1.0f) {
-            const int itemIndex {static_cast<int>(*it)};
-            const float scrollOffset {(mItemSize.y + mItemSpacing.y) * mScrollPos};
-            const float scaledHalfHeight {(mItemSize.y * mItemScale) * 0.5f};
-            const float itemTop {(itemPos.y - scaledHalfHeight) - scrollOffset};
-            const float itemBottom {(itemPos.y + scaledHalfHeight) - scrollOffset};
-            const float topLimit {mVerticalMargin + (mItemSpacing.y * 0.5f)};
-            const float bottomLimit {mSize.y - mVerticalMargin - (mItemSpacing.y * 0.5f)};
-
-            // Keep the highlight expansion anchored to the top row while it is visible.
-            if (itemIndex < mColumns || itemTop <= topLimit) {
+            if (static_cast<int>(*it) < mColumns) {
+                // First row.
                 originInwards.y = 0.0f;
                 offsetInwards.y = mItemSize.y / 2.0f;
             }
-            // Only flip anchoring when the scaled tile would clip at the bottom edge.
-            else if (itemBottom >= bottomLimit) {
+            if ((itemPos.y + (mItemSize.y / 2.0f) * mItemScale) > mSize.y) {
+                // Scaled image won't fit vertically at the bottom.
                 originInwards.y = 1.0f;
                 offsetInwards.y = -(mItemSize.y / 2.0f);
             }
-            if (itemIndex % mColumns == 0) {
+            if (static_cast<int>(*it) % mColumns == 0) {
                 // Leftmost column.
                 originInwards.x = 0.0f;
                 offsetInwards.x = mItemSize.x / 2.0f;
             }
-            if (itemIndex % mColumns == mColumns - 1) {
+            if (static_cast<int>(*it) % mColumns == mColumns - 1) {
                 // Rightmost column.
                 originInwards.x = 1.0f;
                 offsetInwards.x = -(mItemSize.x / 2.0f);
@@ -1618,30 +1608,14 @@ template <typename T> void GridComponent<T>::onCursorChanged(const CursorState& 
     if (mSuppressTransitions)
         animTime = 0.0f;
 
-    const float visibleRows {(mVisibleRows > 1.0f) ? mVisibleRows - 1.0f : 0.0f};
+    const float visibleRows {mVisibleRows - 1.0f};
     const float startRow {static_cast<float>(mScrollPos)};
-    const float currentRow {static_cast<float>(mCursor / mColumns)};
-    float endRow {startRow};
+    float endRow {static_cast<float>(mCursor / mColumns)};
 
-    // Scroll the viewport upward when the cursor moves above the visible window.
-    if (currentRow < startRow)
-        endRow = currentRow;
-    // Scroll downward only after the cursor passes the bottom of the window.
-    else if (currentRow > startRow + visibleRows)
-        endRow = currentRow - visibleRows;
-
-    const float totalRows {
-        std::ceil(static_cast<float>(mEntries.size()) / static_cast<float>(mColumns))};
-    float maxRowStart {totalRows - mVisibleRows};
-
-    if (maxRowStart < 0.0f)
-        maxRowStart = 0.0f;
-
-    // Clamp the scroll position to the valid row range.
-    if (endRow < 0.0f)
+    if (endRow <= visibleRows)
         endRow = 0.0f;
-    else if (endRow > maxRowStart)
-        endRow = maxRowStart;
+    else
+        endRow -= visibleRows;
 
     Animation* anim {new LambdaAnimation(
         [this, startPos, endPos, posMax, startRow, endRow](float t) {
