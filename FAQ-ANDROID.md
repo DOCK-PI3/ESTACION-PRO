@@ -124,7 +124,11 @@ https://www.youtube.com/watch?v=k5WWacfIn6Y
 
 ## What type of Android devices are supported
 
-ES-DE runs on a wide range on devices, for example handheld consoles like the Ayn Odin and the Retroid Pocket models, on mobile phones, on tablets and on some Android TV devices like the Nvidia Shield Pro. It supports a wide range of screen resolutions and aspect ratios. A 64-bit version of Android 10 or later is required.
+ES-DE runs on a wide range on devices, for example handheld consoles like the Ayn Odin and the Retroid Pocket models, on mobile phones, on tablets and on some Android TV devices like the Nvidia Shield. It supports a wide range of screen resolutions and aspect ratios. A 64-bit version of Android 10 or later is required.
+
+## Why aren't most Android TV devices supported
+
+The Nvidia Shield is supported, and some GammaOS releases based on Android TV are also supported, so ES-DE does technically run on Android TV. But it's true that it won't work on most Android TV / Google TV devices. There are two reasons for this, the first is that those unsupported devices run a 32-bit version of Android, and ES-DE requires a 64-bit OS to work. The second issue is that most such devices (including official products from Google) are crippled so that the Storage Access Framework (SAF) directory picker is not included. This package, also known as DocumentsUI, is required by both ES-DE and most emulators as you will not be able to use the SAF functionality without it. Hopefully Google and other vendors will at some point in the future update their TV offerings to use a proper 64-bit operating system that includes all the necessary components.
 
 ## Can I use the Android soft keyboard to enter text using touch and swiping
 
