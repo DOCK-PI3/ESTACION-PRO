@@ -8,7 +8,7 @@ Yes it's the exact same application, with only some minor differences. This mean
 
 ## Why is it named ES-DE as in "Desktop Edition" if this is a release for a mobile operating system?
 
-First it's branding, it would be very confusing to have different names for the same application when it's available cross-platform. Second, the _Desktop Edition_ part is now basically legacy. Actually the entire _EmulationStation Desktop Edition_ subtitle used on the splash screen is only temporary during a transition period and it will be removed at some point. The official name of the project is already ES-DE Frontend or ES-DE for short.
+First it's branding, it would be very confusing to have different names for the same application when it's available cross-platform. Second, the _Desktop Edition_ part is now basically legacy. Actually the entire _EmulationStation Desktop Edition_ subtitle used on the splash screen is only temporary during a transition period and it will be removed at some point. The official name of the project is already ES-DE Frontend or ES-DE for short. There's also an interesting diagram available at https://gist.github.com/anthonycaccese/53d72260f5e3c2c72defd77fe216bd1b which provides a visual overview of the EmulationStation history and where ES-DE fits into this.
 
 ## Is it available for free, and is it open source?
 

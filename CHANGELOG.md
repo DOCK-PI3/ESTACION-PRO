@@ -20,7 +20,6 @@
 * (Android) Added %INTERNALDATA% and %EXTERNALDATA% to the SameBoy core for the gbc system and the blueMSX core for the msx2 system
 * (Android) Added %INTERNALDATA% and %EXTERNALDATA% to the QuickNES core for the nes system and the Beetle PCE FAST core for the pcengine system
 * (Android) Added %INTERNALDATA% and %EXTERNALDATA% to the bsnes core for the snes and snesna systems and the Vircon32 core for the vircon32 system
-* Changed the grid component to only scroll up when navigating beyond the top row (thanks ManOfSteel89 for the patch)
 * Added a "Suspend system" entry to the quit menu on Linux, FreeBSD and Windows (thanks Emma for the patch)
 * Added a suspend custom event
 * Added translations for Arabic (ar_SA)
