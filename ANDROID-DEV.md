@@ -375,6 +375,12 @@ This emulator can be downloaded from their GitHub site.
 
 https://github.com/woesss/JL-Mod/releases
 
+### Kenji-NX
+
+This emulator can be downloaded from their GitHub site.
+
+https://github.com/Kenji-NX/Android-Releases/releases
+
 ### Lime3DS
 
 This emulator which is forked from Citra is no longer developed as it's been carried over into the Azahar emulator.
@@ -899,7 +905,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | supergrafx            | NEC SuperGrafx                                 | Beetle SuperGrafx                 | Beetle PCE,<br>Geargrafx,<br>PCE.emu **(Standalone)** | No           | Single archive or ROM file           |
 | supervision           | Watara Supervision                             | Potator                           | MAME4droid Current **(Standalone)**  | No           | Single archive or ROM file           |
 | supracan              | Funtech Super A'Can                            | MAME4droid Current **(Standalone)**  |                                   | Yes          | Single archive or ROM file. You need a supracan.zip archive that contains a valid internal_68k.bin file and an empty file named umc6650.bin |
-| switch                | Nintendo Switch                                | Skyline **(Standalone)**          |                                   | Yes          |                                      |
+| switch                | Nintendo Switch                                | Kenji-NX **(Standalone)**         | Skyline **(Standalone)**          | Yes          |                                      |
 | symbian               | Symbian                                        | EKA2L1 **(Standalone)**           |                                   | Yes          | See the specific _Symbian and Nokia N-Gage_ section in the User guide |
 | tanodragon            | Tano Dragon                                    | MAME4droid Current [Tape] **(Standalone)** | MAME4droid Current [Cartridge] **(Standalone)** | Yes          | See the specific _Dragon 32 and Tano Dragon_ section in the user guide |
 | tg16                  | NEC TurboGrafx-16                              | Beetle PCE                        | Beetle PCE FAST,<br>Beetle SuperGrafx,<br>Geargrafx,<br>PCE.emu **(Standalone)** | No           | Single archive or ROM file           |
