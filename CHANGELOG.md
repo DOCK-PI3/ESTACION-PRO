@@ -8,6 +8,7 @@
 
 ### Detailed list of changes
 
+* Added support for play time tracking
 * Removed the "EmulationStation Desktop Edition" subtitle from the splash screen
 * Removed the logic to check for and handle the legacy application data directory ~/.emulationstation
 * Added Asia, Australia, Brazil, Canada, China, Germany, France, Italy and Korea as additional ScreenScraper regions

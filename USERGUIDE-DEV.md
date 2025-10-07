@@ -4106,6 +4106,10 @@ _The system-wide alternative emulators interface. An entry in bold and with a ge
 
 This setting defines the directory for game media, i.e. images, videos and PDF manuals that have normally been downloaded by the scraper. The default location is _~/ES-DE/downloaded_media_
 
+**Max play time tracking**
+
+The play time for games launched from ES-DE is tracked and when returning from a game the corresponding metadata value is updated with the amount of seconds spent in-game. However you may launch a game and then put your device to sleep or lock the screen while the game is running and not return to ES-DE until many hours later. In this case the play time would jump significantly to include the sleep time for your device. This setting limits the amount of hours that will be tracked for each game launch, which means that whatever play time is measured will be ignored if it exceeds this value. It can bet set from 0 to 24 hours with 0 meaning there is no limit for how long ES-DE will track the play time.
+
 **VRAM limit**
 
 The amount of video RAM to use for the application. Defaults to 512 MiB (192 MiB on the Raspberry Pi) which works fine most of the time when using moderately demanding themes with medium-sized collections at up to 4K display resolution. For large collections (as in many different systems rather than many games per system) in combination with demanding themes which use lots of full-screen images and similar it's recommended to increase this number to 1024 MiB or possibly higher to avoid stuttering and texture pop-in. Enabling the GPU statistics overlay gives some indications regarding the amount of texture memory currently used, which is helpful to determine a reasonable value for this setting. The allowed range for the settings is 128 to 2048 MiB. If you try to set it lower or higher than this by passing such values as command line parameters or by editing the es_settings.xml file manually, ES-DE will log a warning and automatically adjust to a value within the allowable range.
@@ -4461,6 +4465,10 @@ This option will hide most metadata fields as well as any badges. The intention 
 **Times played** _(files only)_
 
 A statistics counter that tracks how many times you have played the game. You normally don't need to touch this, but if you want to, the possibility is there.
+
+**Play time** _(files only)_
+
+A statistics counter that tracks how many seconds you have played the game. You normally don't need to touch this, but if you want to, the possibility is there.
 
 **Controller**
 

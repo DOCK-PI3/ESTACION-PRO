@@ -3056,6 +3056,7 @@ Properties:
     - `broken` - Whether the game is broken/not working. Will be printed as either `yes` or `no`
     - `manual` - Whether a PDF manual has been downloaded for the game. Will be printed as either `yes` or `no`
     - `playcount` - How many times the game has been played.
+    - `playtime` - How long the game has been played (tracked in seconds but presented in minutes or hours using the same logic as in Steam).
     - `controller` - The controller for the game. Will be blank if none has been selected.
     - `altemulator` - The alternative emulator for the game. Will be blank if none has been selected.
     - `emulator` - The emulator used to launch the game, could as such be a per-game alternative emulator entry, a system wide alternative emulator entry or the system's default emulator. This requires that the command tag in es_systems.xml has a label defined, otherwise this value will be blank. Folders will always have blank values as these can't be launched directly.
