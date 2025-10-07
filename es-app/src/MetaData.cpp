@@ -219,6 +219,8 @@ void gettextMessageCatalogEntries()
     _p("metadata", "HIDE METADATA FIELDS");
     _p("metadata", "TIMES PLAYED");
     _p("metadata", "ENTER NUMBER OF TIMES PLAYED");
+    _p("metadata", "PLAY TIME");
+    _p("metadata", "ENTER PLAY TIME");
     _p("metadata", "CONTROLLER");
     _p("metadata", "SELECT CONTROLLER");
     _p("metadata", "ALTERNATIVE EMULATOR");
