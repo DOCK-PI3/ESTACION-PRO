@@ -40,6 +40,7 @@ Window::Window() noexcept
     , mPDFViewer {nullptr}
     , mLaunchScreen {nullptr}
     , mInfoPopup {nullptr}
+    , mGameLaunched {nullptr}
     , mListScrollOpacity {0.0f}
     , mFrameTimeElapsed {0}
     , mFrameCountElapsed {0}

@@ -1424,6 +1424,10 @@ void SystemView::updateGameSelectors()
                 text->setValue(games.at(gameSelectorEntry)->getManualPath() != "" ? "yes" : "no");
             else if (metadata == "playcount")
                 text->setValue(games.at(gameSelectorEntry)->metadata.get("playcount"));
+            else if (metadata == "playtime")
+                text->setValue(
+                    games.at(gameSelectorEntry)
+                        ->getPlayTimeString(games.at(gameSelectorEntry)->metadata.get("playtime")));
             else if (metadata == "altemulator")
                 text->setValue(games.at(gameSelectorEntry)->metadata.get("altemulator"));
             else if (metadata == "emulator")

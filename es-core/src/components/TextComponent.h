@@ -161,6 +161,7 @@ private:
                                                                    "kidgame",
                                                                    "broken",
                                                                    "playcount",
+                                                                   "playtime",
                                                                    "controller",
                                                                    "altemulator",
                                                                    "emulator",

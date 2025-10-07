@@ -524,6 +524,10 @@ void applicationLoop()
                     blockInput = true;
                     inputBlockTime = 0;
                     window->setBlockInput(true);
+                    if (Window::getInstance()->getGameLaunched() != nullptr) {
+                        Window::getInstance()->getGameLaunched()->setPlayTime(true);
+                        Window::getInstance()->setGameLaunched(nullptr);
+                    }
                     Utils::Platform::Android::onResume();
                     ViewController::getInstance()->resetViewVideosTimer();
                 }

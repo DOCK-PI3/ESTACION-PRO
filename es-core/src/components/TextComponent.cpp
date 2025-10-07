@@ -392,9 +392,10 @@ void TextComponent::render(const glm::mat4& parentTrans)
 
 void TextComponent::setValue(const std::string& value)
 {
-    if (value == _p("theme", "unknown") && mDefaultValue != "" &&
+    if (mDefaultValue != "" && value == _p("theme", "unknown") &&
         (mThemeMetadata == "developer" || mThemeMetadata == "publisher" ||
-         mThemeMetadata == "genre" || mThemeMetadata == "players")) {
+         mThemeMetadata == "genre" || mThemeMetadata == "players" ||
+         mThemeMetadata == "playtime")) {
         setText(mDefaultValue);
     }
     else {
@@ -712,7 +713,8 @@ void TextComponent::applyTheme(const std::shared_ptr<ThemeData>& theme,
                 if (elem->has("defaultValue")) {
                     if (mThemeMetadata == "developer" || mThemeMetadata == "publisher" ||
                         mThemeMetadata == "genre" || mThemeMetadata == "players" ||
-                        mThemeMetadata == "systemName" || mThemeMetadata == "systemFullname" ||
+                        mThemeMetadata == "playtime" || mThemeMetadata == "systemName" ||
+                        mThemeMetadata == "systemFullname" ||
                         mThemeMetadata == "sourceSystemName" ||
                         mThemeMetadata == "sourceSystemFullname") {
                         const std::string& defaultValue {elem->get<std::string>("defaultValue")};

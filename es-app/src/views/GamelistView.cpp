@@ -1027,6 +1027,8 @@ void GamelistView::updateView(const CursorState& state)
                 return file->getManualPath() != "" ? _p("theme", "yes") : _p("theme", "no");
             else if (metadata == "playcount")
                 return file->metadata.get("playcount");
+            else if (metadata == "playtime")
+                return file->getPlayTimeString(file->metadata.get("playtime"));
             else if (metadata == "altemulator")
                 return file->metadata.get("altemulator");
             else if (metadata == "emulator")

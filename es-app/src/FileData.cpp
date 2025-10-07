@@ -136,6 +136,91 @@ const bool FileData::getExcludeFromScraper()
         return false;
 }
 
+void FileData::setPlayTime(const bool writeMetadata)
+{
+    const int startTime {Settings::getInstance()->getInt("GameLaunchTime")};
+
+    if (startTime == 0)
+        return;
+
+    Settings::getInstance()->setInt("GameLaunchTime", 0);
+
+    FileData* gameToUpdate {getSourceFileData()};
+    int prevPlayTime {gameToUpdate->metadata.getInt("playtime")};
+
+    if (prevPlayTime < 0)
+        prevPlayTime = 0;
+
+    const int endTime {static_cast<int>(Utils::Time::DateTime(Utils::Time::now()).getTime())};
+    int playTime {endTime - startTime};
+
+    if (playTime < 0)
+        playTime = 0;
+
+    LOG(LogDebug) << "FileData::setPlayTime(): Play time was " << playTime << " seconds";
+
+    gameToUpdate->metadata.set("playtime",
+                               std::to_string(static_cast<long long>(prevPlayTime + playTime)));
+
+    if (writeMetadata) {
+        CollectionSystemsManager::getInstance()->refreshCollectionSystems(gameToUpdate);
+        gameToUpdate->mSystem->onMetaDataSavePoint();
+    }
+}
+
+const std::string FileData::getPlayTimeString(const std::string& playTimeSeconds)
+{
+    int playTimeValue {0};
+
+    try {
+        playTimeValue = std::stoi(playTimeSeconds);
+
+        if (playTimeValue < 0)
+            playTimeValue = 0;
+    }
+    catch (...) {
+        playTimeValue = 0;
+    }
+
+    std::string timeString;
+    std::tm time {};
+
+    time.tm_hour = playTimeValue / 3600;
+    time.tm_min = (playTimeValue % 3600) / 60;
+    time.tm_sec = playTimeValue % 60;
+
+    // The logic is that anything from 1 to 119 seconds will be displayed as "1 minute" and
+    // everything from 2 to 119 minutes will be displayed as the number of minutes, such as
+    // "94 minutes". Everything from 120 minutes and upwards will be displayed as hours, with
+    // fractional values if applicable, such as "12.7 hours". The first six minutes of each
+    // hour will lead to the decimal being omitted, such as "79 hours". This way of presenting
+    // the play time is mimicking exactly how Steam does it.
+
+    if (time.tm_hour == 0 && time.tm_min == 0 && time.tm_sec == 0) {
+        timeString = _p("theme", "unknown");
+    }
+    else if (time.tm_hour == 0 && time.tm_min == 0 && time.tm_sec > 0) {
+        timeString = Utils::String::format(_np("theme", "%i minute", "%i minutes", 1), 1);
+    }
+    else if (time.tm_hour < 2) {
+        int minutes {(time.tm_hour * 60) + time.tm_min};
+        timeString =
+            Utils::String::format(_np("theme", "%i minute", "%i minutes", minutes), minutes);
+    }
+    else {
+        const std::string hours {std::to_string(time.tm_hour)};
+        timeString =
+            Utils::String::format(_np("theme", "%i hour", "%i hours", time.tm_hour), time.tm_hour);
+        if (time.tm_min >= 6) {
+            int fractional {time.tm_min / 6};
+            timeString =
+                Utils::String::replace(timeString, hours, hours + "." + std::to_string(fractional));
+        }
+    }
+
+    return timeString;
+}
+
 const std::vector<FileData*> FileData::getChildrenRecursive() const
 {
     std::vector<FileData*> childrenRecursive;
@@ -2048,6 +2133,9 @@ void FileData::launchGame()
 
     // Possibly keep ES-DE running in the background while the game is launched.
 
+    Settings::getInstance()->setInt(
+        "GameLaunchTime", static_cast<int>(Utils::Time::DateTime(Utils::Time::now()).getTime()));
+
 #if defined(_WIN64)
     returnValue = Utils::Platform::launchGameWindows(
         Utils::String::stringToWideString(command),
@@ -2136,11 +2224,14 @@ returnValue = Utils::Platform::launchGameUnix(command, startDirectory, runInBack
     // Update number of times the game has been launched.
     FileData* gameToUpdate {getSourceFileData()};
 
-    int timesPlayed {gameToUpdate->metadata.getInt("playcount") + 1};
+    const int timesPlayed {gameToUpdate->metadata.getInt("playcount") + 1};
     gameToUpdate->metadata.set("playcount", std::to_string(static_cast<long long>(timesPlayed)));
 
     // Update last played time.
     gameToUpdate->metadata.set("lastplayed", Utils::Time::DateTime(Utils::Time::now()));
+
+    if (!runInBackground)
+        setPlayTime(false);
 
     // If the cursor is on a folder then a folder link must have been configured, so set the
     // lastplayed timestamp for this folder to the same as the launched game.
