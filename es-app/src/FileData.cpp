@@ -157,6 +157,16 @@ void FileData::setPlayTime(const bool writeMetadata)
     if (playTime < 0)
         playTime = 0;
 
+    const int maxPlayTimeTracking {
+        glm::clamp(Settings::getInstance()->getInt("MaxPlayTimeTracking"), 0, 24) * 3600};
+
+    if (maxPlayTimeTracking != 0 && playTime > maxPlayTimeTracking) {
+        LOG(LogDebug) << "FileData::setPlayTime(): Play time was " << playTime
+                      << " seconds which exceeds the MaxPlayTimeTracking value of "
+                      << maxPlayTimeTracking << ", not updating game metadata";
+        return;
+    }
+
     LOG(LogDebug) << "FileData::setPlayTime(): Play time was " << playTime << " seconds";
 
     gameToUpdate->metadata.set("playtime",

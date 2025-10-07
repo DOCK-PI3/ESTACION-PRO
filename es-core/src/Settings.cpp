@@ -274,6 +274,7 @@ void Settings::setDefaults()
 #if !defined(__IOS__)
     mStringMap["MediaDirectory"] = {"", ""};
 #endif
+    mIntMap["MaxPlayTimeTracking"] = {8, 8};
 #if defined(STEAM_DECK) || defined(RETRODECK)
     mIntMap["MaxVRAM"] = {512, 512};
 #elif defined(RASPBERRY_PI)

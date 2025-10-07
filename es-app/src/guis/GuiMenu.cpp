@@ -1702,6 +1702,21 @@ void GuiMenu::openOtherOptions()
     s->addRow(rowMediaDir);
 #endif
 
+    // Maximum play time tracking.
+    auto maxPlayTimeTracking = std::make_shared<SliderComponent>(0.0f, 24.0f, 1.0f, "h");
+    maxPlayTimeTracking->setValue(static_cast<float>(
+        glm::clamp(Settings::getInstance()->getInt("MaxPlayTimeTracking"), 0, 24)));
+    s->addWithLabel(_("MAX PLAY TIME TRACKING"), maxPlayTimeTracking);
+    s->addSaveFunc([maxPlayTimeTracking, s] {
+        if (maxPlayTimeTracking->getValue() !=
+            Settings::getInstance()->getInt("MaxPlayTimeTracking")) {
+            Settings::getInstance()->setInt(
+                "MaxPlayTimeTracking",
+                static_cast<int>(std::round(maxPlayTimeTracking->getValue())));
+            s->setNeedsSaving();
+        }
+    });
+
     // Maximum VRAM.
     auto maxVram = std::make_shared<SliderComponent>(128.0f, 2048.0f, 16.0f, "MiB");
     maxVram->setValue(static_cast<float>(Settings::getInstance()->getInt("MaxVRAM")));
