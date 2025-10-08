@@ -313,7 +313,7 @@ if [ ! -d libgit2 ]; then
 fi
 
 cd libgit2
-git checkout v1.9.0
+git checkout v1.9.1
 mkdir build
 cd ..
 
