@@ -72,7 +72,11 @@
 * (macOS) Made it possible to build using Xcode 26 / clang 17
 * (macOS) Added dav1d as a dependency
 * (macOS) Removed unnecessary dependencies on the Vorbis and Opus encoders
+* Updated SDL to 2.32.10 on Android, Windows, macOS and the Linux AppImage builds
+* Updated libgit2 to 1.9.1 on Android, macOS and Windows
 * Updated CImg to 3.6.1
+* Updated the MAME index files to include ROMs up to MAME version 0.281
+* Bundled the September 2025 release of the Mozilla TLS/SSL certificates
 * Translation updates for multiple languages
 
 ### Bug fixes

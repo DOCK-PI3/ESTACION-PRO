@@ -748,6 +748,8 @@ Therefore all bundled emulator configuration entries that support AppImages will
 
 It's generally recommended to go for the ~/Applications/ directory, but depending on your Linux distribution this may or may not exist by default. If the directory doesn't exist, then just go ahead and create it. Keep in mind that Linux is case-sensitive so make sure to spell it with a capital A.
 
+Note that the [Gear Lever](https://github.com/mijorus/gearlever) application is placing AppImages into the ~/AppImages directory and it also renames the files by converting them to lowercase characters. This goes against the will of the developer/packager and it's non-standard, so for example the officially named _DuckStation-x64.AppImage_ is moved and renamed to _~/AppImages/duckstation.appimage_. For this reason Gear Lever is not supported, so if you insist on still using it you'll need to add custom find rules for your AppImages.
+
 As AppImages often embed version information into the actual filename, the bundled configuration uses wildcards to locate these files, such as `rpcs3*.AppImage` which would match the filename `rpcs3-v0.0.19-13103-cc21d1b3_linux64.AppImage` for instance. Note that if multiple files match the wildcard pattern, the first file returned by the operating system will be selected.
 
 This approach also works when using [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher). When first launching an AppImage with AppImageLauncher installed a question will be asked whether to integrate the application. If accepting this, the AppImage will be moved to the `~/Applications` directory and a hash will be added to the filename, like in this example:
