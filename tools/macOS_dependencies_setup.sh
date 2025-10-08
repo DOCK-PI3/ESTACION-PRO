@@ -342,7 +342,7 @@ if [ ! -d SDL ]; then
 fi
 
 cd SDL
-git checkout release-2.32.8
+git checkout release-2.32.10
 ln -s include SDL2
 mkdir build
 cd ..
