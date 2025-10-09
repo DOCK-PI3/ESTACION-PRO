@@ -9,6 +9,8 @@
 ### Detailed list of changes
 
 * Added support for play time tracking
+* Added support for sorting the gamelist by play time
+* Changed the "last played" metadata value to always reset when returning from a game rather than when launching a game
 * Removed the "EmulationStation Desktop Edition" subtitle from the splash screen
 * Removed the logic to check for and handle the legacy application data directory ~/.emulationstation
 * Added Asia, Australia, Brazil, Canada, China, Germany, France, Italy and Korea as additional ScreenScraper regions
@@ -82,6 +84,7 @@
 ### Bug fixes
 
 * (Android) Fixed a crash when scraping if the downloaded_media directory had been set to an invalid path
+* (macOS) On macOS 26 Tahoe the ES-DE application window was sometimes not focused on startup and the menu bar was sometimes visible
 * (macOS) The application updater for the x86 release downloaded the ARM package instead of the x86 package
 * Helpsystem icons could sometimes disappear temporarily after closing the media viewer
 * (Haiku) The reboot and power off entries in the quit menu didn't work as intended

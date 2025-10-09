@@ -4316,6 +4316,7 @@ Sorting can be applied using the following metadata, in either ascending or desc
 * Players
 * Last played
 * Times played
+* Play time
 * System _(Only for collections)_
 
 The secondary sorting is always in ascending name order.
