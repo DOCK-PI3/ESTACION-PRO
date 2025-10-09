@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-07-06 12:33+0200\n"
+"POT-Creation-Date: 2025-10-09 22:35+0200\n"
 "PO-Revision-Date: 2025-07-06 12:32+0200\n"
 "Last-Translator: Northwestern Software <info@es-de.org>\n"
 "Language-Team: 繁體中文 <info@es-de.org>\n"
@@ -123,6 +123,22 @@ msgstr "'%s' 個遊戲被篩選，現新增了更多可遊玩的遊戲"
 #, c-format
 msgid "DELETED COLLECTION '%s'"
 msgstr "已刪除收藏'%s'"
+
+msgctxt "theme"
+msgid "unknown"
+msgstr "未知"
+
+#, c-format
+msgctxt "theme"
+msgid "%i minute"
+msgid_plural "%i minutes"
+msgstr[0] ""
+
+#, c-format
+msgctxt "theme"
+msgid "%i hour"
+msgid_plural "%i hours"
+msgstr[0] ""
 
 #, c-format
 msgid "ERROR: MISSING PRE-COMMAND FIND RULES CONFIGURATION FOR '%s'"
@@ -287,6 +303,12 @@ msgstr "遊玩次數, 升序"
 
 msgid "times played, descending"
 msgstr "遊玩次數, 降序"
+
+msgid "play time, ascending"
+msgstr ""
+
+msgid "play time, descending"
+msgstr ""
 
 msgid "system, ascending"
 msgstr "平台, 升序"
@@ -517,6 +539,9 @@ msgstr "刪除選項"
 msgid "ALL UNSELECTED"
 msgstr "所有未選擇的"
 
+msgid "STRIP SPECIAL CHARACTERS"
+msgstr ""
+
 msgid "MEDIA TARGET TYPE"
 msgstr "媒體目標類型"
 
@@ -543,6 +568,9 @@ msgstr "實體卡帶"
 
 msgid "FAN ART"
 msgstr "粉絲自制"
+
+msgid "MIXIMAGES"
+msgstr ""
 
 msgid "IMPORT MEDIA"
 msgstr "導入媒體"
@@ -1073,6 +1101,9 @@ msgstr "要儲存更改嗎？"
 msgid "load default directory"
 msgstr "載入預設目錄"
 
+msgid "MAX PLAY TIME TRACKING"
+msgstr ""
+
 msgid "VRAM LIMIT"
 msgstr "視訊記憶體限制"
 
@@ -1243,6 +1274,12 @@ msgstr "真的要關機嗎？"
 
 msgid "POWER OFF SYSTEM"
 msgstr "關機"
+
+msgid "REALLY SUSPEND?"
+msgstr ""
+
+msgid "SUSPEND SYSTEM"
+msgstr ""
 
 msgctxt "short"
 msgid "SYSTEM STATUS SETTINGS"
@@ -1629,6 +1666,9 @@ msgstr "遊戲手冊"
 msgid "MIXIMAGE RESOLUTION"
 msgstr "混合影象解析度"
 
+msgid "MIXIMAGE FILE FORMAT"
+msgstr ""
+
 msgctxt "short"
 msgid "HORIZONTAL SCREENSHOT FIT"
 msgstr "水平截圖適配"
@@ -1740,6 +1780,51 @@ msgstr "美國"
 
 msgid "WORLD"
 msgstr "世界"
+
+msgid "ASIA"
+msgstr ""
+
+msgid "AUSTRALIA"
+msgstr ""
+
+msgid "BRAZIL"
+msgstr ""
+
+msgid "CANADA"
+msgstr ""
+
+msgid "CHINA"
+msgstr ""
+
+msgid "GERMANY"
+msgstr ""
+
+msgid "FRANCE"
+msgstr ""
+
+msgid "ITALY"
+msgstr ""
+
+msgid "KOREA"
+msgstr ""
+
+msgid "NETHERLANDS"
+msgstr ""
+
+msgid "RUSSIA"
+msgstr ""
+
+msgid "SWEDEN"
+msgstr ""
+
+msgid "SPAIN"
+msgstr ""
+
+msgid "TAIWAN"
+msgstr ""
+
+msgid "UNITED KINGDOM"
+msgstr ""
 
 msgid "PREFERRED LANGUAGE"
 msgstr "後設資料首選語言"
@@ -2319,6 +2404,14 @@ msgid "ENTER NUMBER OF TIMES PLAYED"
 msgstr "請輸入遊戲次數"
 
 msgctxt "metadata"
+msgid "PLAY TIME"
+msgstr ""
+
+msgctxt "metadata"
+msgid "ENTER PLAY TIME"
+msgstr ""
+
+msgctxt "metadata"
 msgid "CONTROLLER"
 msgstr "控制器"
 
@@ -2389,6 +2482,9 @@ msgstr "遊戲媒體"
 
 msgid "zoom"
 msgstr "zoom"
+
+msgid "You have exceeded your daily scrape quota"
+msgstr "您已超出每日抓取配額"
 
 msgid "Network error:"
 msgstr "網路錯誤："
@@ -2475,10 +2571,6 @@ msgstr "隨機"
 
 msgid "jump to game"
 msgstr "跳轉到遊戲"
-
-msgctxt "theme"
-msgid "unknown"
-msgstr "未知"
 
 msgctxt "theme"
 msgid "yes"
@@ -2871,9 +2963,6 @@ msgstr "放棄更改"
 
 msgid "discard changes"
 msgstr "放棄更改"
-
-msgid "You have exceeded your daily scrape quota"
-msgstr "您已超出每日抓取配額"
 
 #, c-format
 msgid "Server returned HTTP error code %s"

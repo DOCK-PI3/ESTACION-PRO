@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-06-25 17:06+0200\n"
+"POT-Creation-Date: 2025-10-09 22:35+0200\n"
 "PO-Revision-Date: 2025-06-25 13:21+0300\n"
 "Last-Translator: Mihai Vasiliu <mihai.vasiliu.93@gmail.com>\n"
 "Language-Team: Română <info@es-de.org>\n"
@@ -136,6 +136,26 @@ msgstr "'%s' este filtrată, așadar pot fi mai multe jocuri disponibile"
 #, c-format
 msgid "DELETED COLLECTION '%s'"
 msgstr "S-A ȘTERS COLECȚIA „%s”"
+
+msgctxt "theme"
+msgid "unknown"
+msgstr "necunoscut"
+
+#, c-format
+msgctxt "theme"
+msgid "%i minute"
+msgid_plural "%i minutes"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#, c-format
+msgctxt "theme"
+msgid "%i hour"
+msgid_plural "%i hours"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #, c-format
 msgid "ERROR: MISSING PRE-COMMAND FIND RULES CONFIGURATION FOR '%s'"
@@ -301,6 +321,12 @@ msgstr "nr. partide jucate, ascendent"
 
 msgid "times played, descending"
 msgstr "nr. partide jucate, descendent"
+
+msgid "play time, ascending"
+msgstr ""
+
+msgid "play time, descending"
+msgstr ""
 
 msgid "system, ascending"
 msgstr "sistem, ascendent"
@@ -538,6 +564,9 @@ msgstr "ELIMINĂ INTRĂRILE"
 msgid "ALL UNSELECTED"
 msgstr "TOATE DESELECTATE"
 
+msgid "STRIP SPECIAL CHARACTERS"
+msgstr ""
+
 msgid "MEDIA TARGET TYPE"
 msgstr "TIP MEDIA"
 
@@ -564,6 +593,9 @@ msgstr "MEDIU FIZIC"
 
 msgid "FAN ART"
 msgstr "FAN ART"
+
+msgid "MIXIMAGES"
+msgstr ""
 
 msgid "IMPORT MEDIA"
 msgstr "IMPORTĂ MEDIA"
@@ -1101,6 +1133,9 @@ msgstr "SALVEZI MODIFICĂRILE?"
 msgid "load default directory"
 msgstr "încarcă dosarul implicit"
 
+msgid "MAX PLAY TIME TRACKING"
+msgstr ""
+
 msgid "VRAM LIMIT"
 msgstr "LIMITĂ VRAM"
 
@@ -1275,6 +1310,12 @@ msgstr "CHIAR ÎNCHIZI?"
 
 msgid "POWER OFF SYSTEM"
 msgstr "ÎNCHIDE SISTEMUL"
+
+msgid "REALLY SUSPEND?"
+msgstr ""
+
+msgid "SUSPEND SYSTEM"
+msgstr ""
 
 msgctxt "short"
 msgid "SYSTEM STATUS SETTINGS"
@@ -1676,6 +1717,9 @@ msgstr "MANUALE JOC"
 msgid "MIXIMAGE RESOLUTION"
 msgstr "REZOLUȚIE IMAGINE MIX"
 
+msgid "MIXIMAGE FILE FORMAT"
+msgstr ""
+
 msgctxt "short"
 msgid "HORIZONTAL SCREENSHOT FIT"
 msgstr "POTRIVIRE ORIZONTALĂ CAPTURĂ ECRAN"
@@ -1789,6 +1833,51 @@ msgstr "SUA"
 
 msgid "WORLD"
 msgstr "GLOBAL"
+
+msgid "ASIA"
+msgstr ""
+
+msgid "AUSTRALIA"
+msgstr ""
+
+msgid "BRAZIL"
+msgstr ""
+
+msgid "CANADA"
+msgstr ""
+
+msgid "CHINA"
+msgstr ""
+
+msgid "GERMANY"
+msgstr ""
+
+msgid "FRANCE"
+msgstr ""
+
+msgid "ITALY"
+msgstr ""
+
+msgid "KOREA"
+msgstr ""
+
+msgid "NETHERLANDS"
+msgstr ""
+
+msgid "RUSSIA"
+msgstr ""
+
+msgid "SWEDEN"
+msgstr ""
+
+msgid "SPAIN"
+msgstr ""
+
+msgid "TAIWAN"
+msgstr ""
+
+msgid "UNITED KINGDOM"
+msgstr ""
 
 msgid "PREFERRED LANGUAGE"
 msgstr "LIMBA PREFERATĂ"
@@ -2396,6 +2485,14 @@ msgid "ENTER NUMBER OF TIMES PLAYED"
 msgstr "INTRODU NUMĂR DE PARTIDE"
 
 msgctxt "metadata"
+msgid "PLAY TIME"
+msgstr ""
+
+msgctxt "metadata"
+msgid "ENTER PLAY TIME"
+msgstr ""
+
+msgctxt "metadata"
 msgid "CONTROLLER"
 msgstr "CONTROLER"
 
@@ -2471,6 +2568,9 @@ msgstr "fișiere media joc"
 
 msgid "zoom"
 msgstr "mărește"
+
+msgid "You have exceeded your daily scrape quota"
+msgstr "Ai depășit numărul zilnic maxim de informații preluate"
 
 msgid "Network error:"
 msgstr "Eroare rețea:"
@@ -2564,10 +2664,6 @@ msgstr "aleator"
 
 msgid "jump to game"
 msgstr "sări la joc"
-
-msgctxt "theme"
-msgid "unknown"
-msgstr "necunoscut"
 
 msgctxt "theme"
 msgid "yes"
@@ -3005,9 +3101,6 @@ msgstr "ANULEAZĂ MODIFICĂRILE"
 
 msgid "discard changes"
 msgstr "anulează modificările"
-
-msgid "You have exceeded your daily scrape quota"
-msgstr "Ai depășit numărul zilnic maxim de informații preluate"
 
 #, c-format
 msgid "Server returned HTTP error code %s"

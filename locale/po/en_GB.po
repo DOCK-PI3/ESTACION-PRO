@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-06-24 18:58+0200\n"
+"POT-Creation-Date: 2025-10-09 22:35+0200\n"
 "PO-Revision-Date: 2025-06-24 15:10+0200\n"
 "Last-Translator: Northwestern Software <info@es-de.org>\n"
 "Language-Team: English (United Kingdom) <info@es-de.org>\n"
@@ -131,6 +131,24 @@ msgstr "'%s' is filtered so there may be more games available"
 #, c-format
 msgid "DELETED COLLECTION '%s'"
 msgstr "DELETED COLLECTION '%s'"
+
+msgctxt "theme"
+msgid "unknown"
+msgstr "unknown"
+
+#, c-format
+msgctxt "theme"
+msgid "%i minute"
+msgid_plural "%i minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#, c-format
+msgctxt "theme"
+msgid "%i hour"
+msgid_plural "%i hours"
+msgstr[0] ""
+msgstr[1] ""
 
 #, c-format
 msgid "ERROR: MISSING PRE-COMMAND FIND RULES CONFIGURATION FOR '%s'"
@@ -296,6 +314,12 @@ msgstr "times played, ascending"
 
 msgid "times played, descending"
 msgstr "times played, descending"
+
+msgid "play time, ascending"
+msgstr ""
+
+msgid "play time, descending"
+msgstr ""
 
 msgid "system, ascending"
 msgstr "system, ascending"
@@ -526,6 +550,9 @@ msgstr "REMOVE ENTRIES"
 msgid "ALL UNSELECTED"
 msgstr "ALL UNSELECTED"
 
+msgid "STRIP SPECIAL CHARACTERS"
+msgstr ""
+
 msgid "MEDIA TARGET TYPE"
 msgstr "MEDIA TARGET TYPE"
 
@@ -552,6 +579,9 @@ msgstr "PHYSICAL MEDIA"
 
 msgid "FAN ART"
 msgstr "FAN ART"
+
+msgid "MIXIMAGES"
+msgstr ""
 
 msgid "IMPORT MEDIA"
 msgstr "IMPORT MEDIA"
@@ -1088,6 +1118,9 @@ msgstr "SAVE CHANGES?"
 msgid "load default directory"
 msgstr "load default directory"
 
+msgid "MAX PLAY TIME TRACKING"
+msgstr ""
+
 msgid "VRAM LIMIT"
 msgstr "VRAM LIMIT"
 
@@ -1262,6 +1295,12 @@ msgstr "REALLY POWER OFF?"
 
 msgid "POWER OFF SYSTEM"
 msgstr "POWER OFF SYSTEM"
+
+msgid "REALLY SUSPEND?"
+msgstr ""
+
+msgid "SUSPEND SYSTEM"
+msgstr ""
 
 msgctxt "short"
 msgid "SYSTEM STATUS SETTINGS"
@@ -1654,6 +1693,9 @@ msgstr "GAME MANUALS"
 msgid "MIXIMAGE RESOLUTION"
 msgstr "MIXIMAGE RESOLUTION"
 
+msgid "MIXIMAGE FILE FORMAT"
+msgstr ""
+
 msgctxt "short"
 msgid "HORIZONTAL SCREENSHOT FIT"
 msgstr "HORIZONTAL SCREENSHOT FIT"
@@ -1766,6 +1808,51 @@ msgstr "USA"
 
 msgid "WORLD"
 msgstr "WORLD"
+
+msgid "ASIA"
+msgstr ""
+
+msgid "AUSTRALIA"
+msgstr ""
+
+msgid "BRAZIL"
+msgstr ""
+
+msgid "CANADA"
+msgstr ""
+
+msgid "CHINA"
+msgstr ""
+
+msgid "GERMANY"
+msgstr ""
+
+msgid "FRANCE"
+msgstr ""
+
+msgid "ITALY"
+msgstr ""
+
+msgid "KOREA"
+msgstr ""
+
+msgid "NETHERLANDS"
+msgstr ""
+
+msgid "RUSSIA"
+msgstr ""
+
+msgid "SWEDEN"
+msgstr ""
+
+msgid "SPAIN"
+msgstr ""
+
+msgid "TAIWAN"
+msgstr ""
+
+msgid "UNITED KINGDOM"
+msgstr ""
 
 msgid "PREFERRED LANGUAGE"
 msgstr "PREFERRED LANGUAGE"
@@ -2367,6 +2454,14 @@ msgid "ENTER NUMBER OF TIMES PLAYED"
 msgstr "ENTER NUMBER OF TIMES PLAYED"
 
 msgctxt "metadata"
+msgid "PLAY TIME"
+msgstr ""
+
+msgctxt "metadata"
+msgid "ENTER PLAY TIME"
+msgstr ""
+
+msgctxt "metadata"
 msgid "CONTROLLER"
 msgstr "CONTROLLER"
 
@@ -2437,6 +2532,9 @@ msgstr "game media"
 
 msgid "zoom"
 msgstr "zoom"
+
+msgid "You have exceeded your daily scrape quota"
+msgstr "You have exceeded your daily scrape quota"
 
 msgid "Network error:"
 msgstr "Network error:"
@@ -2523,10 +2621,6 @@ msgstr "random"
 
 msgid "jump to game"
 msgstr "jump to game"
-
-msgctxt "theme"
-msgid "unknown"
-msgstr "unknown"
 
 msgctxt "theme"
 msgid "yes"
@@ -2947,9 +3041,6 @@ msgstr "DISCARD CHANGES"
 
 msgid "discard changes"
 msgstr "discard changes"
-
-msgid "You have exceeded your daily scrape quota"
-msgstr "You have exceeded your daily scrape quota"
 
 #, c-format
 msgid "Server returned HTTP error code %s"

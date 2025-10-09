@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-06-25 17:10+0200\n"
+"POT-Creation-Date: 2025-10-09 22:35+0200\n"
 "PO-Revision-Date: 2025-06-24 23:48+0200\n"
 "Last-Translator: SecularSteve <info@es-de.org>\n"
 "Language-Team: Serbian (Latin, Serbia) <info@es-de.org>\n"
@@ -134,6 +134,26 @@ msgstr "'%s' je filtriran, tako da može biti više igara na raspolaganju"
 #, c-format
 msgid "DELETED COLLECTION '%s'"
 msgstr "IZBRISANA KOLEKCIJA '%s'"
+
+msgctxt "theme"
+msgid "unknown"
+msgstr "nepoznat"
+
+#, c-format
+msgctxt "theme"
+msgid "%i minute"
+msgid_plural "%i minutes"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#, c-format
+msgctxt "theme"
+msgid "%i hour"
+msgid_plural "%i hours"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #, c-format
 msgid "ERROR: MISSING PRE-COMMAND FIND RULES CONFIGURATION FOR '%s'"
@@ -308,6 +328,12 @@ msgstr "tok igranja, uzlazno"
 
 msgid "times played, descending"
 msgstr "tok igranja, silazno"
+
+msgid "play time, ascending"
+msgstr ""
+
+msgid "play time, descending"
+msgstr ""
 
 msgid "system, ascending"
 msgstr "sistem, nagore"
@@ -545,6 +571,9 @@ msgstr "UKLONITE UNOS"
 msgid "ALL UNSELECTED"
 msgstr "SVE NEIZABRANO"
 
+msgid "STRIP SPECIAL CHARACTERS"
+msgstr ""
+
 msgid "MEDIA TARGET TYPE"
 msgstr "TIP CILJNE MEDIJSKE GRUPE"
 
@@ -571,6 +600,9 @@ msgstr "FIZIČKI MEDIJ"
 
 msgid "FAN ART"
 msgstr "UMETNOST OBOŽAVATELJA"
+
+msgid "MIXIMAGES"
+msgstr ""
 
 msgid "IMPORT MEDIA"
 msgstr "UVEZITE MEDIJ"
@@ -1108,6 +1140,9 @@ msgstr "SAČUVAJ PROMENE?"
 msgid "load default directory"
 msgstr "učitavanje podrazumevanog direktorijuma"
 
+msgid "MAX PLAY TIME TRACKING"
+msgstr ""
+
 msgid "VRAM LIMIT"
 msgstr "VRAM OGRANIČENJA"
 
@@ -1282,6 +1317,12 @@ msgstr "STVARNO ISKLJUČITI?"
 
 msgid "POWER OFF SYSTEM"
 msgstr "SISTEM GAŠENJA"
+
+msgid "REALLY SUSPEND?"
+msgstr ""
+
+msgid "SUSPEND SYSTEM"
+msgstr ""
 
 msgctxt "short"
 msgid "SYSTEM STATUS SETTINGS"
@@ -1682,6 +1723,9 @@ msgstr "PRIRUČNICI ZA IGRU"
 msgid "MIXIMAGE RESOLUTION"
 msgstr "REZOLUCIJA MIKSA"
 
+msgid "MIXIMAGE FILE FORMAT"
+msgstr ""
+
 msgctxt "short"
 msgid "HORIZONTAL SCREENSHOT FIT"
 msgstr "HORIZONTALNI SNIMAK EKRANA PRILAGOĐEN"
@@ -1794,6 +1838,51 @@ msgstr "SADA"
 
 msgid "WORLD"
 msgstr "SVETU"
+
+msgid "ASIA"
+msgstr ""
+
+msgid "AUSTRALIA"
+msgstr ""
+
+msgid "BRAZIL"
+msgstr ""
+
+msgid "CANADA"
+msgstr ""
+
+msgid "CHINA"
+msgstr ""
+
+msgid "GERMANY"
+msgstr ""
+
+msgid "FRANCE"
+msgstr ""
+
+msgid "ITALY"
+msgstr ""
+
+msgid "KOREA"
+msgstr ""
+
+msgid "NETHERLANDS"
+msgstr ""
+
+msgid "RUSSIA"
+msgstr ""
+
+msgid "SWEDEN"
+msgstr ""
+
+msgid "SPAIN"
+msgstr ""
+
+msgid "TAIWAN"
+msgstr ""
+
+msgid "UNITED KINGDOM"
+msgstr ""
 
 msgid "PREFERRED LANGUAGE"
 msgstr "ŽELJENI JEZIK"
@@ -2400,6 +2489,14 @@ msgid "ENTER NUMBER OF TIMES PLAYED"
 msgstr "UNESITE BROJ IGRANJA"
 
 msgctxt "metadata"
+msgid "PLAY TIME"
+msgstr ""
+
+msgctxt "metadata"
+msgid "ENTER PLAY TIME"
+msgstr ""
+
+msgctxt "metadata"
 msgid "CONTROLLER"
 msgstr "KONTROLER"
 
@@ -2470,6 +2567,9 @@ msgstr "mediji za igre"
 
 msgid "zoom"
 msgstr "uvećaj"
+
+msgid "You have exceeded your daily scrape quota"
+msgstr "Prekoračili ste dnevnu kvotu za preuzimanje"
 
 msgid "Network error:"
 msgstr "Greška u mreži:"
@@ -2560,10 +2660,6 @@ msgstr "nasumično"
 
 msgid "jump to game"
 msgstr "skoči na igru"
-
-msgctxt "theme"
-msgid "unknown"
-msgstr "nepoznat"
 
 msgctxt "theme"
 msgid "yes"
@@ -2998,9 +3094,6 @@ msgstr "ODBACI PROMENE"
 
 msgid "discard changes"
 msgstr "odbacite promene"
-
-msgid "You have exceeded your daily scrape quota"
-msgstr "Prekoračili ste dnevnu kvotu za preuzimanje"
 
 #, c-format
 msgid "Server returned HTTP error code %s"

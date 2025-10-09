@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-06-25 17:06+0200\n"
+"POT-Creation-Date: 2025-10-09 22:35+0200\n"
 "PO-Revision-Date: 2025-06-24 23:48+0200\n"
 "Last-Translator: Stefan <s.vandenbroekprive@gmail.com>\n"
 "Language-Team: Nederlands <info@es-de.org>\n"
@@ -130,6 +130,24 @@ msgstr "'%s' is gefilterd, dus er kunnen meer spellen beschikbaar zijn"
 #, c-format
 msgid "DELETED COLLECTION '%s'"
 msgstr "VERWIJDERDE COLLECTIE '%s'"
+
+msgctxt "theme"
+msgid "unknown"
+msgstr "onbekend"
+
+#, c-format
+msgctxt "theme"
+msgid "%i minute"
+msgid_plural "%i minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#, c-format
+msgctxt "theme"
+msgid "%i hour"
+msgid_plural "%i hours"
+msgstr[0] ""
+msgstr[1] ""
 
 #, c-format
 msgid "ERROR: MISSING PRE-COMMAND FIND RULES CONFIGURATION FOR '%s'"
@@ -296,6 +314,12 @@ msgstr "keer gespeeld, oplopend"
 
 msgid "times played, descending"
 msgstr "keer gespeeld, aflopend"
+
+msgid "play time, ascending"
+msgstr ""
+
+msgid "play time, descending"
+msgstr ""
 
 msgid "system, ascending"
 msgstr "systeem, oplopend"
@@ -532,6 +556,9 @@ msgstr "VERWIJDER TOEVOEGINGEN"
 msgid "ALL UNSELECTED"
 msgstr "ALLE ONGESELECTEERDE"
 
+msgid "STRIP SPECIAL CHARACTERS"
+msgstr ""
+
 msgid "MEDIA TARGET TYPE"
 msgstr "MEDIA TARGET TYPE"
 
@@ -558,6 +585,9 @@ msgstr "FYSIEKE MEDIA"
 
 msgid "FAN ART"
 msgstr "FAN ART"
+
+msgid "MIXIMAGES"
+msgstr ""
 
 msgid "IMPORT MEDIA"
 msgstr "IMPORTEER MEDIA"
@@ -1098,6 +1128,9 @@ msgstr "WIJZIGINGEN OPSLAAN?"
 msgid "load default directory"
 msgstr "laad standaardmap"
 
+msgid "MAX PLAY TIME TRACKING"
+msgstr ""
+
 msgid "VRAM LIMIT"
 msgstr "VRAM-LIMIET"
 
@@ -1272,6 +1305,12 @@ msgstr "ECHT UITSCHAKELEN?"
 
 msgid "POWER OFF SYSTEM"
 msgstr "SCHAKEL SYSTEEM UIT"
+
+msgid "REALLY SUSPEND?"
+msgstr ""
+
+msgid "SUSPEND SYSTEM"
+msgstr ""
 
 msgctxt "short"
 msgid "SYSTEM STATUS SETTINGS"
@@ -1675,6 +1714,9 @@ msgstr "SPELHANDLEIDING"
 msgid "MIXIMAGE RESOLUTION"
 msgstr "MIXIMAGE-RESOLUTIE"
 
+msgid "MIXIMAGE FILE FORMAT"
+msgstr ""
+
 msgctxt "short"
 msgid "HORIZONTAL SCREENSHOT FIT"
 msgstr "HORIZONTALE SCREENSHOT FIT"
@@ -1787,6 +1829,51 @@ msgstr "VS"
 
 msgid "WORLD"
 msgstr "WERELD"
+
+msgid "ASIA"
+msgstr ""
+
+msgid "AUSTRALIA"
+msgstr ""
+
+msgid "BRAZIL"
+msgstr ""
+
+msgid "CANADA"
+msgstr ""
+
+msgid "CHINA"
+msgstr ""
+
+msgid "GERMANY"
+msgstr ""
+
+msgid "FRANCE"
+msgstr ""
+
+msgid "ITALY"
+msgstr ""
+
+msgid "KOREA"
+msgstr ""
+
+msgid "NETHERLANDS"
+msgstr ""
+
+msgid "RUSSIA"
+msgstr ""
+
+msgid "SWEDEN"
+msgstr ""
+
+msgid "SPAIN"
+msgstr ""
+
+msgid "TAIWAN"
+msgstr ""
+
+msgid "UNITED KINGDOM"
+msgstr ""
 
 msgid "PREFERRED LANGUAGE"
 msgstr "GEWENSTE TAAL"
@@ -2392,6 +2479,14 @@ msgid "ENTER NUMBER OF TIMES PLAYED"
 msgstr "VOER HET AANTAL KEER IN DAT JE GESPEELD HEBT"
 
 msgctxt "metadata"
+msgid "PLAY TIME"
+msgstr ""
+
+msgctxt "metadata"
+msgid "ENTER PLAY TIME"
+msgstr ""
+
+msgctxt "metadata"
 msgid "CONTROLLER"
 msgstr "CONTROLLER"
 
@@ -2463,6 +2558,9 @@ msgstr "spelmedia"
 
 msgid "zoom"
 msgstr "zoom"
+
+msgid "You have exceeded your daily scrape quota"
+msgstr "U hebt uw dagelijkse scrape-quotum overschreden"
 
 msgid "Network error:"
 msgstr "Netwerkfout:"
@@ -2556,10 +2654,6 @@ msgstr "willekeurig"
 
 msgid "jump to game"
 msgstr "ga naar spel"
-
-msgctxt "theme"
-msgid "unknown"
-msgstr "onbekend"
 
 msgctxt "theme"
 msgid "yes"
@@ -2984,9 +3078,6 @@ msgstr "VERANDERINGEN VERWERPEN"
 
 msgid "discard changes"
 msgstr "wijzigingen negeren"
-
-msgid "You have exceeded your daily scrape quota"
-msgstr "U hebt uw dagelijkse scrape-quotum overschreden"
 
 #, c-format
 msgid "Server returned HTTP error code %s"

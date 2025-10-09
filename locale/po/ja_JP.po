@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-06-24 22:05+0200\n"
+"POT-Creation-Date: 2025-10-09 22:35+0200\n"
 "PO-Revision-Date: 2025-06-25 04:03+0800\n"
 "Last-Translator: ice <natsumekyousuke211314@gmail.com>\n"
 "Language-Team: 日本語 <info@es-de.org>\n"
@@ -128,6 +128,22 @@ msgstr "'%s' が絞り込まれ、可能なゲームが増えました"
 #, c-format
 msgid "DELETED COLLECTION '%s'"
 msgstr "コレクション '%s' を削除しました"
+
+msgctxt "theme"
+msgid "unknown"
+msgstr "未知"
+
+#, c-format
+msgctxt "theme"
+msgid "%i minute"
+msgid_plural "%i minutes"
+msgstr[0] ""
+
+#, c-format
+msgctxt "theme"
+msgid "%i hour"
+msgid_plural "%i hours"
+msgstr[0] ""
 
 #, c-format
 msgid "ERROR: MISSING PRE-COMMAND FIND RULES CONFIGURATION FOR '%s'"
@@ -301,6 +317,12 @@ msgstr "遊んだ回数、昇順"
 
 msgid "times played, descending"
 msgstr "遊んだ回数、降順"
+
+msgid "play time, ascending"
+msgstr ""
+
+msgid "play time, descending"
+msgstr ""
 
 msgid "system, ascending"
 msgstr "システム、昇順"
@@ -540,6 +562,9 @@ msgstr "項目を削除"
 msgid "ALL UNSELECTED"
 msgstr "すべての未選択項目"
 
+msgid "STRIP SPECIAL CHARACTERS"
+msgstr ""
+
 msgid "MEDIA TARGET TYPE"
 msgstr "メディア対象の種類"
 
@@ -566,6 +591,9 @@ msgstr "物理メディア"
 
 msgid "FAN ART"
 msgstr "ファンアート"
+
+msgid "MIXIMAGES"
+msgstr ""
 
 msgid "IMPORT MEDIA"
 msgstr "メディアをインポート"
@@ -1101,6 +1129,9 @@ msgstr "セーブしますか？"
 msgid "load default directory"
 msgstr "デフォルトディレクトリをロードします"
 
+msgid "MAX PLAY TIME TRACKING"
+msgstr ""
+
 msgid "VRAM LIMIT"
 msgstr "VRAM制限"
 
@@ -1276,6 +1307,12 @@ msgstr "本当に電源を切りますか？"
 
 msgid "POWER OFF SYSTEM"
 msgstr "電源を切る"
+
+msgid "REALLY SUSPEND?"
+msgstr ""
+
+msgid "SUSPEND SYSTEM"
+msgstr ""
 
 msgctxt "short"
 msgid "SYSTEM STATUS SETTINGS"
@@ -1686,6 +1723,9 @@ msgstr "ゲームマニュアル"
 msgid "MIXIMAGE RESOLUTION"
 msgstr "複合画像の解像度"
 
+msgid "MIXIMAGE FILE FORMAT"
+msgstr ""
+
 msgctxt "short"
 msgid "HORIZONTAL SCREENSHOT FIT"
 msgstr "水平スクリーンショットの調整"
@@ -1798,6 +1838,51 @@ msgstr "アメリカ"
 
 msgid "WORLD"
 msgstr "世界"
+
+msgid "ASIA"
+msgstr ""
+
+msgid "AUSTRALIA"
+msgstr ""
+
+msgid "BRAZIL"
+msgstr ""
+
+msgid "CANADA"
+msgstr ""
+
+msgid "CHINA"
+msgstr ""
+
+msgid "GERMANY"
+msgstr ""
+
+msgid "FRANCE"
+msgstr ""
+
+msgid "ITALY"
+msgstr ""
+
+msgid "KOREA"
+msgstr ""
+
+msgid "NETHERLANDS"
+msgstr ""
+
+msgid "RUSSIA"
+msgstr ""
+
+msgid "SWEDEN"
+msgstr ""
+
+msgid "SPAIN"
+msgstr ""
+
+msgid "TAIWAN"
+msgstr ""
+
+msgid "UNITED KINGDOM"
+msgstr ""
 
 msgid "PREFERRED LANGUAGE"
 msgstr "希望する言語"
@@ -2396,6 +2481,14 @@ msgid "ENTER NUMBER OF TIMES PLAYED"
 msgstr "遊んだ回数を入力してください"
 
 msgctxt "metadata"
+msgid "PLAY TIME"
+msgstr ""
+
+msgctxt "metadata"
+msgid "ENTER PLAY TIME"
+msgstr ""
+
+msgctxt "metadata"
 msgid "CONTROLLER"
 msgstr "コントローラー"
 
@@ -2473,6 +2566,9 @@ msgstr "ゲームメディア"
 
 msgid "zoom"
 msgstr "拡大"
+
+msgid "You have exceeded your daily scrape quota"
+msgstr "一日のスクレイプ制限を超えました"
 
 msgid "Network error:"
 msgstr "ネットワークエラー："
@@ -2563,10 +2659,6 @@ msgstr "ランダム"
 
 msgid "jump to game"
 msgstr "ゲームに移動する"
-
-msgctxt "theme"
-msgid "unknown"
-msgstr "未知"
 
 msgctxt "theme"
 msgid "yes"
@@ -2980,9 +3072,6 @@ msgstr "変更を無視"
 
 msgid "discard changes"
 msgstr "ESC キーを押してスキップ"
-
-msgid "You have exceeded your daily scrape quota"
-msgstr "一日のスクレイプ制限を超えました"
 
 #, c-format
 msgid "Server returned HTTP error code %s"

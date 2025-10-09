@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-07-06 12:54+0200\n"
+"POT-Creation-Date: 2025-10-09 22:35+0200\n"
 "PO-Revision-Date: 2025-09-01 19:55+0200\n"
 "Last-Translator: Josep M <johnnydement@duck.com>\n"
 "Language-Team: Català <info@es-de.org>\n"
@@ -129,6 +129,24 @@ msgstr "«%s» té filtres, per tant, potser hi ha més jocs disponibles"
 #, c-format
 msgid "DELETED COLLECTION '%s'"
 msgstr "COL·LECCIÓ «%s» ESBORRADA"
+
+msgctxt "theme"
+msgid "unknown"
+msgstr "desconegut"
+
+#, c-format
+msgctxt "theme"
+msgid "%i minute"
+msgid_plural "%i minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#, c-format
+msgctxt "theme"
+msgid "%i hour"
+msgid_plural "%i hours"
+msgstr[0] ""
+msgstr[1] ""
 
 #, c-format
 msgid "ERROR: MISSING PRE-COMMAND FIND RULES CONFIGURATION FOR '%s'"
@@ -295,6 +313,12 @@ msgstr "partides, ascendent"
 
 msgid "times played, descending"
 msgstr "partides, descendent"
+
+msgid "play time, ascending"
+msgstr ""
+
+msgid "play time, descending"
+msgstr ""
 
 msgid "system, ascending"
 msgstr "sistema, ascendent"
@@ -530,6 +554,9 @@ msgstr "ELIMINA ENTRADES"
 msgid "ALL UNSELECTED"
 msgstr "ELS NO SELECCIONATS"
 
+msgid "STRIP SPECIAL CHARACTERS"
+msgstr ""
+
 msgid "MEDIA TARGET TYPE"
 msgstr "TIPUS DE MITJÀ OBJECTIU"
 
@@ -556,6 +583,9 @@ msgstr "MITJANS FÍSICS"
 
 msgid "FAN ART"
 msgstr "ART FAN"
+
+msgid "MIXIMAGES"
+msgstr ""
 
 msgid "IMPORT MEDIA"
 msgstr "IMPORTAR MULTIMÈDIA"
@@ -1091,6 +1121,9 @@ msgstr "GUARDAR CANVIS?"
 msgid "load default directory"
 msgstr "guardar directori per defecte"
 
+msgid "MAX PLAY TIME TRACKING"
+msgstr ""
+
 msgid "VRAM LIMIT"
 msgstr "LÍMIT VRAM"
 
@@ -1265,6 +1298,12 @@ msgstr "APAGAR, SEGUR?"
 
 msgid "POWER OFF SYSTEM"
 msgstr "APAGAR EL SISTEMA"
+
+msgid "REALLY SUSPEND?"
+msgstr ""
+
+msgid "SUSPEND SYSTEM"
+msgstr ""
 
 msgctxt "short"
 msgid "SYSTEM STATUS SETTINGS"
@@ -1666,6 +1705,9 @@ msgstr "MANUALS DE JOC"
 msgid "MIXIMAGE RESOLUTION"
 msgstr "RESOLUCIÓ DE COMPOSICIÓ"
 
+msgid "MIXIMAGE FILE FORMAT"
+msgstr ""
+
 msgctxt "short"
 msgid "HORIZONTAL SCREENSHOT FIT"
 msgstr "AJUST HORITZONTAL DE CAPTURA"
@@ -1778,6 +1820,51 @@ msgstr "EEUU"
 
 msgid "WORLD"
 msgstr "MUNDIAL"
+
+msgid "ASIA"
+msgstr ""
+
+msgid "AUSTRALIA"
+msgstr ""
+
+msgid "BRAZIL"
+msgstr ""
+
+msgid "CANADA"
+msgstr ""
+
+msgid "CHINA"
+msgstr ""
+
+msgid "GERMANY"
+msgstr ""
+
+msgid "FRANCE"
+msgstr ""
+
+msgid "ITALY"
+msgstr ""
+
+msgid "KOREA"
+msgstr ""
+
+msgid "NETHERLANDS"
+msgstr ""
+
+msgid "RUSSIA"
+msgstr ""
+
+msgid "SWEDEN"
+msgstr ""
+
+msgid "SPAIN"
+msgstr ""
+
+msgid "TAIWAN"
+msgstr ""
+
+msgid "UNITED KINGDOM"
+msgstr ""
 
 msgid "PREFERRED LANGUAGE"
 msgstr "IDIOMA PREFERIT"
@@ -2383,6 +2470,14 @@ msgid "ENTER NUMBER OF TIMES PLAYED"
 msgstr "ESCRIU EL NÚMERO DE VEGADES QUE S'HA JUGAT"
 
 msgctxt "metadata"
+msgid "PLAY TIME"
+msgstr ""
+
+msgctxt "metadata"
+msgid "ENTER PLAY TIME"
+msgstr ""
+
+msgctxt "metadata"
 msgid "CONTROLLER"
 msgstr "COMANDAMENT"
 
@@ -2455,6 +2550,9 @@ msgstr "mitjans del joc"
 
 msgid "zoom"
 msgstr "zoom"
+
+msgid "You have exceeded your daily scrape quota"
+msgstr "Has excedit la teva quota diaria de garbellat"
 
 msgid "Network error:"
 msgstr "Error de xarxa:"
@@ -2548,10 +2646,6 @@ msgstr "aleatori"
 
 msgid "jump to game"
 msgstr "saltar al joc"
-
-msgctxt "theme"
-msgid "unknown"
-msgstr "desconegut"
 
 msgctxt "theme"
 msgid "yes"
@@ -2657,8 +2751,8 @@ msgid "CLEAR (LEAVE BLANK TO RESET TO DEFAULT PATH)"
 msgstr "NETEJAR (DEIXA-HO EN BLANC PER REINICIAR A LA RUTA PER DEFECTE)"
 
 msgid ""
-"THIS WILL CREATE DIRECTORIES FOR ALL THE GAME SYSTEMS DEFINED IN "
-"es_systems.xml\n"
+"THIS WILL CREATE DIRECTORIES FOR ALL THE GAME SYSTEMS DEFINED IN es_systems."
+"xml\n"
 "\n"
 "THIS MAY CREATE A LOT OF FOLDERS SO IT'S ADVICED TO REMOVE THE ONES YOU "
 "DON'T NEED"
@@ -2700,9 +2794,9 @@ msgstr "ACTUALITZA"
 
 msgid ""
 "THE APPLICATION UPDATER WILL DOWNLOAD THE LATEST PORTABLE WINDOWS RELEASE "
-"FOR YOU, BUT YOU WILL NEED TO MANUALLY PERFORM THE UPGRADE. SEE THE "
-"README.TXT FILE INSIDE THE DOWNLOADED ZIP FILE FOR INSTRUCTIONS ON HOW THIS "
-"IS ACCOMPLISHED. AS IS ALSO DESCRIBED IN THAT DOCUMENT, NEVER UNPACK A NEW "
+"FOR YOU, BUT YOU WILL NEED TO MANUALLY PERFORM THE UPGRADE. SEE THE README."
+"TXT FILE INSIDE THE DOWNLOADED ZIP FILE FOR INSTRUCTIONS ON HOW THIS IS "
+"ACCOMPLISHED. AS IS ALSO DESCRIBED IN THAT DOCUMENT, NEVER UNPACK A NEW "
 "RELEASE ON TOP OF AN OLD INSTALLATION AS THAT MAY BREAK THE APPLICATION."
 msgstr ""
 "L'ACTUALITZADOR DE L'APLICACIÓ DESCARREGARÀ LA VERSIÓ PORTABLE MÉS RECENT "
@@ -2974,9 +3068,6 @@ msgstr "DESCARTAR CANVIS"
 
 msgid "discard changes"
 msgstr "descartar canvis"
-
-msgid "You have exceeded your daily scrape quota"
-msgstr "Has excedit la teva quota diaria de garbellat"
 
 #, c-format
 msgid "Server returned HTTP error code %s"
