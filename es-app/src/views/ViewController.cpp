@@ -1247,8 +1247,9 @@ bool ViewController::input(InputConfig* config, Input input)
         mWindow->setLaunchedGame(false);
         resetViewVideosTimer();
 
+        // This sets the lastplayed and playtime metadata values.
         if (mWindow->getGameLaunched() != nullptr) {
-            mWindow->getGameLaunched()->setPlayTime(true);
+            mWindow->getGameLaunched()->setPlayMetadata(true);
             mWindow->setGameLaunched(nullptr);
         }
 

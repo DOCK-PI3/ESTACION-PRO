@@ -524,8 +524,9 @@ void applicationLoop()
                     blockInput = true;
                     inputBlockTime = 0;
                     window->setBlockInput(true);
+                    // This sets the lastplayed and playtime metadata values.
                     if (Window::getInstance()->getGameLaunched() != nullptr) {
-                        Window::getInstance()->getGameLaunched()->setPlayTime(true);
+                        Window::getInstance()->getGameLaunched()->setPlayMetadata(true);
                         Window::getInstance()->setGameLaunched(nullptr);
                     }
                     Utils::Platform::Android::onResume();

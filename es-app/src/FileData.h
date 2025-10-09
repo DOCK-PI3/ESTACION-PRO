@@ -52,7 +52,7 @@ public:
     const bool getCountAsGame();
     const std::pair<unsigned int, unsigned int>& getGameCount() const { return mGameCount; }
     const bool getExcludeFromScraper();
-    void setPlayTime(const bool writeMetadata);
+    void setPlayMetadata(const bool writeMetadata);
     const std::string getPlayTimeString(const std::string& playTimeSeconds);
     const std::vector<FileData*> getChildrenRecursive() const;
     FileType getType() const { return mType; }

@@ -136,41 +136,58 @@ const bool FileData::getExcludeFromScraper()
         return false;
 }
 
-void FileData::setPlayTime(const bool writeMetadata)
+void FileData::setPlayMetadata(const bool writeMetadata)
 {
-    const int startTime {Settings::getInstance()->getInt("GameLaunchTime")};
-
-    if (startTime == 0)
-        return;
-
-    Settings::getInstance()->setInt("GameLaunchTime", 0);
-
     FileData* gameToUpdate {getSourceFileData()};
-    int prevPlayTime {gameToUpdate->metadata.getInt("playtime")};
+    gameToUpdate->metadata.set("lastplayed", Utils::Time::DateTime(Utils::Time::now()));
 
-    if (prevPlayTime < 0)
-        prevPlayTime = 0;
+    // If the cursor is on a folder then a folder link must have been configured, so set the
+    // lastplayed timestamp for this folder to the same as the launched game.
+    FileData* cursor {
+        ViewController::getInstance()->getGamelistView(gameToUpdate->getSystem())->getCursor()};
+    if (cursor->getType() == FOLDER)
+        cursor->metadata.set("lastplayed", gameToUpdate->metadata.get("lastplayed"));
 
-    const int endTime {static_cast<int>(Utils::Time::DateTime(Utils::Time::now()).getTime())};
-    int playTime {endTime - startTime};
-
-    if (playTime < 0)
-        playTime = 0;
-
-    const int maxPlayTimeTracking {
-        glm::clamp(Settings::getInstance()->getInt("MaxPlayTimeTracking"), 0, 24) * 3600};
-
-    if (maxPlayTimeTracking != 0 && playTime > maxPlayTimeTracking) {
-        LOG(LogDebug) << "FileData::setPlayTime(): Play time was " << playTime
-                      << " seconds which exceeds the MaxPlayTimeTracking value of "
-                      << maxPlayTimeTracking << ", not updating game metadata";
-        return;
+    // If the parent is a folder and it's not the root of the system, then update its lastplayed
+    // timestamp to the same time as the game that was just launched.
+    if (gameToUpdate->getParent()->getType() == FOLDER &&
+        gameToUpdate->getParent()->getName() != gameToUpdate->getSystem()->getFullName()) {
+        gameToUpdate->getParent()->metadata.set("lastplayed",
+                                                gameToUpdate->metadata.get("lastplayed"));
     }
 
-    LOG(LogDebug) << "FileData::setPlayTime(): Play time was " << playTime << " seconds";
+    const int startTime {Settings::getInstance()->getInt("GameLaunchTime")};
 
-    gameToUpdate->metadata.set("playtime",
-                               std::to_string(static_cast<long long>(prevPlayTime + playTime)));
+    if (startTime != 0) {
+        Settings::getInstance()->setInt("GameLaunchTime", 0);
+        int prevPlayTime {gameToUpdate->metadata.getInt("playtime")};
+
+        if (prevPlayTime < 0)
+            prevPlayTime = 0;
+
+        const int endTime {static_cast<int>(Utils::Time::DateTime(Utils::Time::now()).getTime())};
+        int playTime {endTime - startTime};
+
+        if (playTime < 0)
+            playTime = 0;
+
+        const int maxPlayTimeTracking {
+            glm::clamp(Settings::getInstance()->getInt("MaxPlayTimeTracking"), 0, 24) * 3600};
+
+        if (maxPlayTimeTracking != 0 && playTime > maxPlayTimeTracking) {
+            LOG(LogDebug) << "FileData::setPlayMetadata(): Play time was " << playTime
+                          << " seconds which exceeds the MaxPlayTimeTracking value of "
+                          << maxPlayTimeTracking << ", not updating game metadata";
+        }
+        else {
+
+            LOG(LogDebug) << "FileData::setPlayMetadata(): Play time was " << playTime
+                          << " seconds";
+
+            gameToUpdate->metadata.set(
+                "playtime", std::to_string(static_cast<long long>(prevPlayTime + playTime)));
+        }
+    }
 
     if (writeMetadata) {
         CollectionSystemsManager::getInstance()->refreshCollectionSystems(gameToUpdate);
@@ -2237,26 +2254,9 @@ returnValue = Utils::Platform::launchGameUnix(command, startDirectory, runInBack
     const int timesPlayed {gameToUpdate->metadata.getInt("playcount") + 1};
     gameToUpdate->metadata.set("playcount", std::to_string(static_cast<long long>(timesPlayed)));
 
-    // Update last played time.
-    gameToUpdate->metadata.set("lastplayed", Utils::Time::DateTime(Utils::Time::now()));
-
+    // This sets the lastplayed and playtime metadata values.
     if (!runInBackground)
-        setPlayTime(false);
-
-    // If the cursor is on a folder then a folder link must have been configured, so set the
-    // lastplayed timestamp for this folder to the same as the launched game.
-    FileData* cursor {
-        ViewController::getInstance()->getGamelistView(gameToUpdate->getSystem())->getCursor()};
-    if (cursor->getType() == FOLDER)
-        cursor->metadata.set("lastplayed", gameToUpdate->metadata.get("lastplayed"));
-
-    // If the parent is a folder and it's not the root of the system, then update its lastplayed
-    // timestamp to the same time as the game that was just launched.
-    if (gameToUpdate->getParent()->getType() == FOLDER &&
-        gameToUpdate->getParent()->getName() != gameToUpdate->getSystem()->getFullName()) {
-        gameToUpdate->getParent()->metadata.set("lastplayed",
-                                                gameToUpdate->metadata.get("lastplayed"));
-    }
+        setPlayMetadata(false);
 
     // We make an explicit call to close the launch screen instead of waiting for
     // AnimationController to do it as that would be done too late. This is so because on
