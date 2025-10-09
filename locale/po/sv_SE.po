@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-06-24 18:58+0200\n"
-"PO-Revision-Date: 2025-06-23 10:55+0200\n"
+"POT-Creation-Date: 2025-10-09 22:35+0200\n"
+"PO-Revision-Date: 2025-10-09 22:50+0200\n"
 "Last-Translator: Northwestern Software <info@es-de.org>\n"
 "Language-Team: Svenska <info@es-de.org>\n"
 "Language: sv_SE\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.7\n"
 
 msgid "Network error (status:"
 msgstr "Network error (status:"
@@ -132,6 +132,24 @@ msgstr "'%s' är filtrerad så det kan finnas fler spel tillgängliga"
 #, c-format
 msgid "DELETED COLLECTION '%s'"
 msgstr "TOG BORT SAMLINGEN '%s'"
+
+msgctxt "theme"
+msgid "unknown"
+msgstr "okänd"
+
+#, c-format
+msgctxt "theme"
+msgid "%i minute"
+msgid_plural "%i minutes"
+msgstr[0] "%i minut"
+msgstr[1] "%i minuter"
+
+#, c-format
+msgctxt "theme"
+msgid "%i hour"
+msgid_plural "%i hours"
+msgstr[0] "%i timme"
+msgstr[1] "%i timmar"
 
 #, c-format
 msgid "ERROR: MISSING PRE-COMMAND FIND RULES CONFIGURATION FOR '%s'"
@@ -299,6 +317,12 @@ msgstr "speltillfällen, stigande"
 
 msgid "times played, descending"
 msgstr "speltillfällen, fallande"
+
+msgid "play time, ascending"
+msgstr "speltid, stigande"
+
+msgid "play time, descending"
+msgstr "speltid, fallande"
 
 msgid "system, ascending"
 msgstr "system, stigande"
@@ -529,6 +553,9 @@ msgstr "TA BORT POSTER"
 msgid "ALL UNSELECTED"
 msgstr "ALLA AVMARKERADE"
 
+msgid "STRIP SPECIAL CHARACTERS"
+msgstr "FILTRERA BORT SPECIALTECKEN"
+
 msgid "MEDIA TARGET TYPE"
 msgstr "MÅLTYP FÖR MEDIA"
 
@@ -555,6 +582,9 @@ msgstr "FYSISK MEDIA"
 
 msgid "FAN ART"
 msgstr "FAN-SKAPAT"
+
+msgid "MIXIMAGES"
+msgstr "MIXBILDER"
 
 msgid "IMPORT MEDIA"
 msgstr "IMPORTERA MEDIA"
@@ -1094,6 +1124,9 @@ msgstr "SPARA ÄNDRINGAR?"
 msgid "load default directory"
 msgstr "läs in standardkatalog"
 
+msgid "MAX PLAY TIME TRACKING"
+msgstr "MAX LOGGNING AV SPELTID"
+
 msgid "VRAM LIMIT"
 msgstr "VRAM-GRÄNS"
 
@@ -1268,6 +1301,12 @@ msgstr "VERKLIGEN STÄNGA NER?"
 
 msgid "POWER OFF SYSTEM"
 msgstr "STÄNG AV SYSTEMET"
+
+msgid "REALLY SUSPEND?"
+msgstr "VERKLIGEN VILA?"
+
+msgid "SUSPEND SYSTEM"
+msgstr "VILA SYSTEMET"
 
 msgctxt "short"
 msgid "SYSTEM STATUS SETTINGS"
@@ -1660,6 +1699,9 @@ msgstr "SPELMANUALER"
 msgid "MIXIMAGE RESOLUTION"
 msgstr "UPPLÖSNING FÖR MIXBILD"
 
+msgid "MIXIMAGE FILE FORMAT"
+msgstr "FILFORMAT FÖR MIXBILDER"
+
 msgctxt "short"
 msgid "HORIZONTAL SCREENSHOT FIT"
 msgstr "HORISONTELL INPASSNING"
@@ -1772,6 +1814,51 @@ msgstr "USA"
 
 msgid "WORLD"
 msgstr "VÄRLDEN"
+
+msgid "ASIA"
+msgstr "ASIEN"
+
+msgid "AUSTRALIA"
+msgstr "AUSTRALIEN"
+
+msgid "BRAZIL"
+msgstr "BRAZILIEN"
+
+msgid "CANADA"
+msgstr "KANADA"
+
+msgid "CHINA"
+msgstr "KINA"
+
+msgid "GERMANY"
+msgstr "TYSKLAND"
+
+msgid "FRANCE"
+msgstr "FRANKRIKE"
+
+msgid "ITALY"
+msgstr "ITALIEN"
+
+msgid "KOREA"
+msgstr "KOREA"
+
+msgid "NETHERLANDS"
+msgstr "NEDERLÄNDERNA"
+
+msgid "RUSSIA"
+msgstr "RYSSLAND"
+
+msgid "SWEDEN"
+msgstr "SVERIGE"
+
+msgid "SPAIN"
+msgstr "SPANIEN"
+
+msgid "TAIWAN"
+msgstr "TAIWAN"
+
+msgid "UNITED KINGDOM"
+msgstr "STORBRITANNIEN"
 
 msgid "PREFERRED LANGUAGE"
 msgstr "FÖREDRAGET SPRÅK"
@@ -2375,6 +2462,14 @@ msgid "ENTER NUMBER OF TIMES PLAYED"
 msgstr "SKRIV IN SPELTILLFÄLLEN"
 
 msgctxt "metadata"
+msgid "PLAY TIME"
+msgstr "SPELTID"
+
+msgctxt "metadata"
+msgid "ENTER PLAY TIME"
+msgstr "SKRIV IN SPELTID"
+
+msgctxt "metadata"
 msgid "CONTROLLER"
 msgstr "HANDKONTROLL"
 
@@ -2445,6 +2540,9 @@ msgstr "spelmedia"
 
 msgid "zoom"
 msgstr "zooma"
+
+msgid "You have exceeded your daily scrape quota"
+msgstr "Du har överskridit din dagliga scraping-kvot"
 
 msgid "Network error:"
 msgstr "Nätverksfel:"
@@ -2534,10 +2632,6 @@ msgstr "slumpmässig"
 
 msgid "jump to game"
 msgstr "hoppa till spel"
-
-msgctxt "theme"
-msgid "unknown"
-msgstr "okänd"
 
 msgctxt "theme"
 msgid "yes"
@@ -2643,8 +2737,8 @@ msgid "CLEAR (LEAVE BLANK TO RESET TO DEFAULT PATH)"
 msgstr "RENSA (LÄMNA TOMT FÖR STANDARDSÖKVÄG)"
 
 msgid ""
-"THIS WILL CREATE DIRECTORIES FOR ALL THE GAME SYSTEMS DEFINED IN es_systems."
-"xml\n"
+"THIS WILL CREATE DIRECTORIES FOR ALL THE GAME SYSTEMS DEFINED IN "
+"es_systems.xml\n"
 "\n"
 "THIS MAY CREATE A LOT OF FOLDERS SO IT'S ADVICED TO REMOVE THE ONES YOU "
 "DON'T NEED"
@@ -2688,14 +2782,14 @@ msgstr "UPPDATERA"
 
 msgid ""
 "THE APPLICATION UPDATER WILL DOWNLOAD THE LATEST PORTABLE WINDOWS RELEASE "
-"FOR YOU, BUT YOU WILL NEED TO MANUALLY PERFORM THE UPGRADE. SEE THE README."
-"TXT FILE INSIDE THE DOWNLOADED ZIP FILE FOR INSTRUCTIONS ON HOW THIS IS "
-"ACCOMPLISHED. AS IS ALSO DESCRIBED IN THAT DOCUMENT, NEVER UNPACK A NEW "
+"FOR YOU, BUT YOU WILL NEED TO MANUALLY PERFORM THE UPGRADE. SEE THE "
+"README.TXT FILE INSIDE THE DOWNLOADED ZIP FILE FOR INSTRUCTIONS ON HOW THIS "
+"IS ACCOMPLISHED. AS IS ALSO DESCRIBED IN THAT DOCUMENT, NEVER UNPACK A NEW "
 "RELEASE ON TOP OF AN OLD INSTALLATION AS THAT MAY BREAK THE APPLICATION."
 msgstr ""
 "APPLIKATIONSUPPDATERAREN KOMMER HÄMTA NER DEN SENASTE PORTABLA WINDOWS-"
-"VERSIONEN ÅT DIG, MEN DU MÅSTE MANUELLT GENOMFÖRA UPPGRADERINGEN. SE README."
-"TXT FILEN I DEN HÄMTADE ZIP-FILEN FÖR INSTRUKTIONER OM HUR DETTA GÅR "
+"VERSIONEN ÅT DIG, MEN DU MÅSTE MANUELLT GENOMFÖRA UPPGRADERINGEN. SE "
+"README.TXT FILEN I DEN HÄMTADE ZIP-FILEN FÖR INSTRUKTIONER OM HUR DETTA GÅR "
 "TILLVÄGA. SOM ÄVEN BESKRIVS I DETTA DOKUMENT SÅ SKA DU ALDRIG PACKA UPP DEN "
 "NYA UTGÅVAN OVANPÅ DEN GAMLA DÅ DETTA KAN FÖRSTÖRA APPLIKATIONEN."
 
@@ -2962,9 +3056,6 @@ msgstr "FÖRKASTA ÄNDRINGAR"
 
 msgid "discard changes"
 msgstr "förkasta ändringar"
-
-msgid "You have exceeded your daily scrape quota"
-msgstr "Du har överskridit din dagliga scraping-kvot"
 
 #, c-format
 msgid "Server returned HTTP error code %s"
