@@ -375,6 +375,7 @@ PKG_CONFIG_PATH=$(pwd)/../local_install/lib/pkgconfig meson setup --buildtype=re
 cd builddir
 meson compile
 meson install
+cp src/libdav1d.7.dylib ../../..
 cd ../..
 
 echo
@@ -391,10 +392,13 @@ PKG_CONFIG_PATH=$(pwd)/../local_install/lib/pkgconfig ./configure --prefix=/usr/
 make clean
 make -j${JOBS}
 install_name_tool -rpath /usr/local/lib @executable_path libavcodec/libavcodec.61.dylib
+install_name_tool -change $(otool -L libavcodec/libavcodec.61.dylib | grep libdav1d | cut -f1 -d' ' | sed 's/[[:blank:]]//g') @rpath/libdav1d.7.dylib libavcodec/libavcodec.61.dylib
 cp libavcodec/libavcodec.61.dylib ../..
 install_name_tool -rpath /usr/local/lib @executable_path libavfilter/libavfilter.10.dylib
+install_name_tool -change $(otool -L libavfilter/libavfilter.10.dylib | grep libdav1d | cut -f1 -d' ' | sed 's/[[:blank:]]//g') @rpath/libdav1d.7.dylib libavfilter/libavfilter.10.dylib
 cp libavfilter/libavfilter.10.dylib ../..
 install_name_tool -rpath /usr/local/lib @executable_path libavformat/libavformat.61.dylib
+install_name_tool -change $(otool -L libavformat/libavformat.61.dylib | grep libdav1d | cut -f1 -d' ' | sed 's/[[:blank:]]//g') @rpath/libdav1d.7.dylib libavformat/libavformat.61.dylib
 cp libavformat/libavformat.61.dylib ../..
 install_name_tool -rpath /usr/local/lib @executable_path libavutil/libavutil.59.dylib
 cp libavutil/libavutil.59.dylib ../..
