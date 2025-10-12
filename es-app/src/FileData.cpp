@@ -1105,6 +1105,7 @@ void FileData::launchGame()
     std::string androidData;
     std::map<std::string, std::string> androidExtrasString;
     std::map<std::string, std::string> androidExtrasStringArray;
+    std::map<std::string, std::string> androidExtrasInteger;
     std::map<std::string, std::string> androidExtrasBool;
     std::vector<std::string> androidActivityFlags;
 #endif
@@ -1966,7 +1967,8 @@ void FileData::launchGame()
         }
     }
 
-    std::vector<std::string> extraVariabels {"%EXTRA_", "%EXTRAARRAY_", "%EXTRABOOL_"};
+    std::vector<std::string> extraVariabels {"%EXTRA_", "%EXTRAARRAY_", "%EXTRAINTEGER_",
+                                             "%EXTRABOOL_"};
 
     for (std::string variable : extraVariabels) {
         size_t extraPos {command.find(variable)};
@@ -2043,6 +2045,8 @@ void FileData::launchGame()
                             androidExtrasString[extraName] = extraValue;
                         else if (variable == "%EXTRAARRAY_")
                             androidExtrasStringArray[extraName] = extraValue;
+                        else if (variable == "%EXTRAINTEGER_")
+                            androidExtrasInteger[extraName] = extraValue;
                         else if (variable == "%EXTRABOOL_")
                             androidExtrasBool[extraName] = extraValue;
                     }
@@ -2138,6 +2142,10 @@ void FileData::launchGame()
         LOG(LogInfo) << "Extra array name: " << extra.first;
         LOG(LogInfo) << "Extra array value: " << extra.second;
     }
+    for (auto& extra : androidExtrasInteger) {
+        LOG(LogInfo) << "Extra integer name: " << extra.first;
+        LOG(LogInfo) << "Extra integer value: " << extra.second;
+    }
     for (auto& extra : androidExtrasBool) {
         LOG(LogInfo) << "Extra bool name: " << extra.first;
         LOG(LogInfo) << "Extra bool value: " << extra.second;
@@ -2171,7 +2179,7 @@ void FileData::launchGame()
     returnValue = Utils::Platform::Android::launchGame(
         androidPackage, androidActivity, androidAction, androidCategory, androidMimeType,
         androidData, mEnvData->mStartPath, romRaw, androidExtrasString, androidExtrasStringArray,
-        androidExtrasBool, androidActivityFlags);
+        androidExtrasInteger, androidExtrasBool, androidActivityFlags);
 #else
 
 #if defined(DEINIT_ON_LAUNCH)
