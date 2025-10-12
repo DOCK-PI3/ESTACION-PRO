@@ -142,6 +142,12 @@
             <entry>com.emulator.fpse64/.Main</entry>
         </rule>
     </emulator>
+    <emulator name="GAMENATIVE">
+        <!-- Steam client GameNative -->
+        <rule type="androidpackage">
+            <entry>app.gamenative/.MainActivity</entry>
+        </rule>
+    </emulator>
     <emulator name="GBA-EMU">
         <!-- Nintendo Game Boy Advance emulator GBA.emu -->
         <rule type="androidpackage">
