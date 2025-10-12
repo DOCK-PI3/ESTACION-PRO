@@ -339,7 +339,7 @@ These emulators can be installed from the Play store as a paid apps. FPseNG is t
 https://play.google.com/store/apps/details?id=com.emulator.fpse64 \
 https://play.google.com/store/apps/details?id=com.emulator.fpse
 
-## GameNative
+### GameNative
 
 This Steam client can be downloaded from their GitHub site.
 
