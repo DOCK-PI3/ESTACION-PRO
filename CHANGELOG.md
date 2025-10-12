@@ -16,6 +16,7 @@
 * Added Asia, Australia, Brazil, Canada, China, Germany, France, Italy and Korea as additional ScreenScraper regions
 * Added Netherlands, Russia, Sweden, Spain, Taiwan and United Kingdom as additional ScreenScraper regions
 * Changed the media and release date fallback order for the scraper to place Europe prior to Japan, so it matches the game name fallback order
+* (Android) Added an %EXTRAINTEGER_% launch command variable
 * (Android) Added two new %INTERNALDATA% and %EXTERNALDATA% variables to support launching RetroArch in multi-user setups
 * (Android) Added %INTERNALDATA% and %EXTERNALDATA% to the Opera core for the 3do system and the PUAE 2021 core for the amiga system
 * (Android) Added %INTERNALDATA% and %EXTERNALDATA% to the MAME 2003-Plus core for the arcade system and the Stella 2023 core for the atari2600 system
@@ -36,6 +37,7 @@
 * (Linux) Added a ~/Desktop import rule entry for the desktop system
 * (macOS) Added a ~/Applications import rule entry for the steam system
 * (Windows) Added ~\Desktop import rule entries for the desktop, emulators and windows systems
+* (Android) Added support for the Valve Steam (steam) game system (using the GameNative client)
 * (Android) Added support for the Epic Games Store (epic) game system
 * (Android) Added Winlator Cmod standalone as the default emulator for the pcarcade, type-x and windows systems
 * (Android) Added Kenji-NX standalone as the default emulator for the switch system
@@ -79,7 +81,7 @@
 * Updated CImg to 3.6.1
 * Updated the MAME index files to include ROMs up to MAME version 0.281
 * Bundled the September 2025 release of the Mozilla TLS/SSL certificates
-* Translation updates for multiple languages
+* Translation updates for all languages
 
 ### Bug fixes
 

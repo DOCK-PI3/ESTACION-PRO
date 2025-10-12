@@ -1827,6 +1827,8 @@ https://developer.android.com/reference/android/content/Intent
 
 `%EXTRAARRAY_` - Defines an array of comma-separated string values following the key name. Only literal strings and special variables are supported, so this can't be used in combination with any ROM variables. As commas are used as separator characters, you'll need to escape any comma signs that you want to include in the actual value. For example %EXTRAARRAY_Parameters%=pone,p\\,two,pthree will pass the extra named _Parameters_ with the three separate array entries _pone_, _p,two_ and _pthree_. It's also possible to use the `%BASENAME%`, `%GAMEDIRRAW%`, `%ROMPATHRAW%`, `%ROMRAW%` and `%ROMRAWWIN%` variables inside an `%EXTRAARRAY_` variable definition. This will expand to the basename of the game file, the directory of the game file, the ROM directory, the path to the game file with standard forward slashes as directory separators, and the path to the game file with Windows backslashes as directory separators, respectively.
 
+`%EXTRAINTEGER_` - Sets an extra with an integer value.
+
 `%EXTRABOOL_` - Sets an extra with a boolean value, i.e. true/1 or false/0.
 
 `%DATA%` - Sets the data URI value for the intent using an equal sign. This is normally combined with one of the ROM variables but it's also possible to define an explicit value or to inject the content of a file and pass that to the variable. This can for instance be accomplished with `%DATA%=%INJECT%=%ROM%` which will expand to the absolute path of the game file and inject its file content. This also works when combined with the directories interpreted as files functionality. Alternatively the `%BASENAME%` variable can be used instead, as in `%DATA%=%BASENAME%` or `%DATA%=%BASENAME%.extension` but this can't be combined with the directories interpreted as files functionality.
@@ -1850,6 +1852,7 @@ Here are some examples to clarify how this works:
 %DATA%=%ROMPROVIDER%
 %EXTRA_ROM%=%ROM%
 %EXTRA_bootPath%=%ROMSAF%
+%EXTRAINTEGER_app_id%=%INJECT%=%ROM%
 %EXTRABOOL_resumeState%=false
 ```
 
@@ -1916,6 +1919,15 @@ Here's an example es_systems.xml file for Android:
         <command label="DuckStation (Standalone)">%EMULATOR_DUCKSTATION% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRABOOL_resumeState%=false %EXTRA_bootPath%=%ROMSAF%</command>
         <platform>psx</platform>
         <theme>psx</theme>
+    </system>
+    <system>
+        <name>steam</name>
+        <fullname>Valve Steam</fullname>
+        <path>%ROMPATH%/steam</path>
+        <extension>.steam .STEAM</extension>
+        <command label="GameNative (Standalone)">%EMULATOR_GAMENATIVE% %ACTION%=app.gamenative.LAUNCH_GAME %EXTRAINTEGER_app_id%=%INJECT%=%ROM%</command>
+        <platform>steam</platform>
+        <theme>steam</theme>
     </system>
 </systemList>
 ```
@@ -2193,6 +2205,7 @@ There are two basic categories of metadata, `game` and `folders` and the metdata
 * `nomultiscrape` - bool, indicates whether the game should be excluded from the multi-scraper
 * `hidemetadata` - bool, indicates whether to hide most of the metadata fields when displaying the game in the gamelist view
 * `playcount` - integer, the number of times this game has been played
+* `playtime` - integer, the number of seconds that the game has been played
 * `controller` - string, used to display controller badges
 * `altemulator` - string, overrides the emulator/launch command on a per game basis
 * `lastplayed` - statistic, datetime, the last date and time this game was played

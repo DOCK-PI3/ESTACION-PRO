@@ -339,6 +339,12 @@ These emulators can be installed from the Play store as a paid apps. FPseNG is t
 https://play.google.com/store/apps/details?id=com.emulator.fpse64 \
 https://play.google.com/store/apps/details?id=com.emulator.fpse
 
+## GameNative
+
+This Steam client can be downloaded from their GitHub site.
+
+https://github.com/utkarshdalal/GameNative
+
 ### iNES
 
 This emulator can be installed from the Play store.
@@ -899,7 +905,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | snesna                | Nintendo SNES (Super Nintendo) [North America] | Snes9x - Current                  | Snes9x 2010,<br>Snes9x 2005 Plus,<br>Snes9x EX+ **(Standalone)**,<br>bsnes,<br>bsnes-hd,<br>bsnes-jg,<br>bsnes-mercury Accuracy,<br>Beetle Supafaust,<br>Mesen-S | No           | Single archive or ROM file |
 | solarus               | Solarus Game Engine                            | _Placeholder_                     |                                   |              |                                      |
 | spectravideo          | Spectravideo                                   | blueMSX                           |                                   |              |                                      |
-| steam                 | Valve Steam                                    | _Placeholder_                     |                                   |              |                                      |
+| steam                 | Valve Steam                                    | GameNative **(Standalone)**       |                                   | No           | See the specific _Steam_ section in the user guide |
 | stv                   | Sega Titan Video Game System                   | MAME - Current                    | MAME4droid Current **(Standalone)**,<br>MAME4droid **(Standalone)** | Yes          | Single archive file                  |
 | sufami                | Bandai SuFami Turbo                            | Snes9x - Current                  | Snes9x 2010,<br>Snes9x 2005 Plus,<br>Snes9x EX+ **(Standalone)**,<br>bsnes,<br>bsnes-hd,<br>bsnes-jg,<br>bsnes-mercury Accuracy |              |                                      |
 | supergrafx            | NEC SuperGrafx                                 | Beetle SuperGrafx                 | Beetle PCE,<br>Geargrafx,<br>PCE.emu **(Standalone)** | No           | Single archive or ROM file           |

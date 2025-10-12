@@ -2969,9 +2969,9 @@ Just extract the corresponding file for any game you have installed in Vita3K an
 
 ### Steam
 
-These games can easily be added to ES-DE using shortcuts, just be aware that this requires that the games have been installed locally.
+On desktop operating systems these games can easily be added to ES-DE using shortcuts, just be aware that this requires that the games have been installed locally. For the setup on Android see the relevant section below.
 
-You can use the built-in game importer to populate your steam system. This tool is available from the _Utilities_ menu and you can find an in-depth description of it elsewhere in this document. Note that you still need to create shortcut files prior to running this tool.
+You can use the built-in game importer to populate your steam system on desktop operating systems. This tool is available from the _Utilities_ menu and you can find an in-depth description of it elsewhere in this document. Note that you still need to create shortcut files prior to running this tool.
 
 If using macOS then the importer will symlink to your .app shortcut directories which means the shortcuts exported from Steam need to be kept on your desktop. If you don't want this then you can just move these directories manually as described below instead of using the game importer.
 
@@ -3001,6 +3001,23 @@ On macOS the shortcuts come with the .app extension and are actually directories
 ~/ROMs/steam/Axiom Verge.app/
 ~/ROMs/steam/Undertale.app/
 ```
+
+**Android**
+
+The setup on Android is a bit different than on desktop operating systems as you will need to create a text file for each game you want to launch. These files should have the .steam extension and they should simply include the Steam game ID. Here's an example for the game _Broforce_:
+
+```
+ROMs/steam/Broforce.steam
+```
+
+The following is the contents of the `Broforce.steam` file:
+```
+274190
+```
+
+You can get the ID of a game from inside the GameNative client by navigating to it in the app, then pressing the icon with three vertical dots and select _Open store page_. The URL opened will for this example be _https://store.steampowered.com/app/274190/Broforce_
+
+Opening the store page entry in the official Steam client on desktop operating systems accomplishes the same thing.
 
 ### Symbian and Nokia N-Gage
 
