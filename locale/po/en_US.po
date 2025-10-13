@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
 "POT-Creation-Date: 2025-10-09 22:35+0200\n"
-"PO-Revision-Date: 2025-06-24 15:07+0200\n"
+"PO-Revision-Date: 2025-10-13 22:13+0200\n"
 "Last-Translator: Northwestern Software <info@es-de.org>\n"
 "Language-Team: English (United States) <info@es-de.org>\n"
 "Language: en_US\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.7\n"
 
 msgid "Network error (status:"
 msgstr "Network error (status:"
@@ -140,15 +140,15 @@ msgstr "unknown"
 msgctxt "theme"
 msgid "%i minute"
 msgid_plural "%i minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%i minute"
+msgstr[1] "%i minutes"
 
 #, c-format
 msgctxt "theme"
 msgid "%i hour"
 msgid_plural "%i hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%i hour"
+msgstr[1] "%i hours"
 
 #, c-format
 msgid "ERROR: MISSING PRE-COMMAND FIND RULES CONFIGURATION FOR '%s'"
@@ -316,10 +316,10 @@ msgid "times played, descending"
 msgstr "times played, descending"
 
 msgid "play time, ascending"
-msgstr ""
+msgstr "play time, ascending"
 
 msgid "play time, descending"
-msgstr ""
+msgstr "play time, descending"
 
 msgid "system, ascending"
 msgstr "system, ascending"
@@ -551,7 +551,7 @@ msgid "ALL UNSELECTED"
 msgstr "ALL UNSELECTED"
 
 msgid "STRIP SPECIAL CHARACTERS"
-msgstr ""
+msgstr "STRIP SPECIAL CHARACTERS"
 
 msgid "MEDIA TARGET TYPE"
 msgstr "MEDIA TARGET TYPE"
@@ -581,7 +581,7 @@ msgid "FAN ART"
 msgstr "FAN ART"
 
 msgid "MIXIMAGES"
-msgstr ""
+msgstr "MIXIMAGES"
 
 msgid "IMPORT MEDIA"
 msgstr "IMPORT MEDIA"
@@ -1119,7 +1119,7 @@ msgid "load default directory"
 msgstr "load default directory"
 
 msgid "MAX PLAY TIME TRACKING"
-msgstr ""
+msgstr "MAX PLAY TIME TRACKING"
 
 msgid "VRAM LIMIT"
 msgstr "VRAM LIMIT"
@@ -1297,10 +1297,10 @@ msgid "POWER OFF SYSTEM"
 msgstr "POWER OFF SYSTEM"
 
 msgid "REALLY SUSPEND?"
-msgstr ""
+msgstr "REALLY SUSPEND?"
 
 msgid "SUSPEND SYSTEM"
-msgstr ""
+msgstr "SUSPEND SYSTEM"
 
 msgctxt "short"
 msgid "SYSTEM STATUS SETTINGS"
@@ -1694,7 +1694,7 @@ msgid "MIXIMAGE RESOLUTION"
 msgstr "MIXIMAGE RESOLUTION"
 
 msgid "MIXIMAGE FILE FORMAT"
-msgstr ""
+msgstr "MIXIMAGE FILE FORMAT"
 
 msgctxt "short"
 msgid "HORIZONTAL SCREENSHOT FIT"
@@ -1810,49 +1810,49 @@ msgid "WORLD"
 msgstr "WORLD"
 
 msgid "ASIA"
-msgstr ""
+msgstr "ASIA"
 
 msgid "AUSTRALIA"
-msgstr ""
+msgstr "AUSTRALIA"
 
 msgid "BRAZIL"
-msgstr ""
+msgstr "BRAZIL"
 
 msgid "CANADA"
-msgstr ""
+msgstr "CANADA"
 
 msgid "CHINA"
-msgstr ""
+msgstr "CHINA"
 
 msgid "GERMANY"
-msgstr ""
+msgstr "GERMANY"
 
 msgid "FRANCE"
-msgstr ""
+msgstr "FRANCE"
 
 msgid "ITALY"
-msgstr ""
+msgstr "ITALY"
 
 msgid "KOREA"
-msgstr ""
+msgstr "KOREA"
 
 msgid "NETHERLANDS"
-msgstr ""
+msgstr "NETHERLANDS"
 
 msgid "RUSSIA"
-msgstr ""
+msgstr "RUSSIA"
 
 msgid "SWEDEN"
-msgstr ""
+msgstr "SWEDEN"
 
 msgid "SPAIN"
-msgstr ""
+msgstr "SPAIN"
 
 msgid "TAIWAN"
-msgstr ""
+msgstr "TAIWAN"
 
 msgid "UNITED KINGDOM"
-msgstr ""
+msgstr "UNITED KINGDOM"
 
 msgid "PREFERRED LANGUAGE"
 msgstr "PREFERRED LANGUAGE"
@@ -2455,11 +2455,11 @@ msgstr "ENTER NUMBER OF TIMES PLAYED"
 
 msgctxt "metadata"
 msgid "PLAY TIME"
-msgstr ""
+msgstr "PLAY TIME"
 
 msgctxt "metadata"
 msgid "ENTER PLAY TIME"
-msgstr ""
+msgstr "ENTER PLAY TIME"
 
 msgctxt "metadata"
 msgid "CONTROLLER"
