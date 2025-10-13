@@ -137,13 +137,13 @@ msgstr "未知"
 msgctxt "theme"
 msgid "%i minute"
 msgid_plural "%i minutes"
-msgstr[0] ""
+msgstr[0] "%i 分"
 
 #, c-format
 msgctxt "theme"
 msgid "%i hour"
 msgid_plural "%i hours"
-msgstr[0] ""
+msgstr[0] "%i 時間"
 
 #, c-format
 msgid "ERROR: MISSING PRE-COMMAND FIND RULES CONFIGURATION FOR '%s'"
@@ -319,10 +319,10 @@ msgid "times played, descending"
 msgstr "遊んだ回数、降順"
 
 msgid "play time, ascending"
-msgstr ""
+msgstr "プレイ時間、昇順"
 
 msgid "play time, descending"
-msgstr ""
+msgstr "プレイ時間、降順"
 
 msgid "system, ascending"
 msgstr "システム、昇順"
@@ -563,7 +563,7 @@ msgid "ALL UNSELECTED"
 msgstr "すべての未選択項目"
 
 msgid "STRIP SPECIAL CHARACTERS"
-msgstr ""
+msgstr "特殊文字を削除"
 
 msgid "MEDIA TARGET TYPE"
 msgstr "メディア対象の種類"
@@ -593,7 +593,7 @@ msgid "FAN ART"
 msgstr "ファンアート"
 
 msgid "MIXIMAGES"
-msgstr ""
+msgstr "ミックス画像"
 
 msgid "IMPORT MEDIA"
 msgstr "メディアをインポート"
@@ -1130,7 +1130,7 @@ msgid "load default directory"
 msgstr "デフォルトディレクトリをロードします"
 
 msgid "MAX PLAY TIME TRACKING"
-msgstr ""
+msgstr "最大プレイ時間トラッキング"
 
 msgid "VRAM LIMIT"
 msgstr "VRAM制限"
@@ -1309,10 +1309,10 @@ msgid "POWER OFF SYSTEM"
 msgstr "電源を切る"
 
 msgid "REALLY SUSPEND?"
-msgstr ""
+msgstr "本当に一時停止しますか?"
 
 msgid "SUSPEND SYSTEM"
-msgstr ""
+msgstr "システムを一時停止"
 
 msgctxt "short"
 msgid "SYSTEM STATUS SETTINGS"
@@ -1724,7 +1724,7 @@ msgid "MIXIMAGE RESOLUTION"
 msgstr "複合画像の解像度"
 
 msgid "MIXIMAGE FILE FORMAT"
-msgstr ""
+msgstr "ミックス画像ファイル形式"
 
 msgctxt "short"
 msgid "HORIZONTAL SCREENSHOT FIT"
@@ -1840,49 +1840,49 @@ msgid "WORLD"
 msgstr "世界"
 
 msgid "ASIA"
-msgstr ""
+msgstr "アジア"
 
 msgid "AUSTRALIA"
-msgstr ""
+msgstr "アウストリア"
 
 msgid "BRAZIL"
-msgstr ""
+msgstr "ブラジル"
 
 msgid "CANADA"
-msgstr ""
+msgstr "カナダ"
 
 msgid "CHINA"
-msgstr ""
+msgstr "中国"
 
 msgid "GERMANY"
-msgstr ""
+msgstr "ドイツ"
 
 msgid "FRANCE"
-msgstr ""
+msgstr "フランス"
 
 msgid "ITALY"
-msgstr ""
+msgstr "イタリア"
 
 msgid "KOREA"
-msgstr ""
+msgstr "韓国"
 
 msgid "NETHERLANDS"
-msgstr ""
+msgstr "オランダ"
 
 msgid "RUSSIA"
-msgstr ""
+msgstr "ロシア"
 
 msgid "SWEDEN"
-msgstr ""
+msgstr "スウェーデン"
 
 msgid "SPAIN"
-msgstr ""
+msgstr "スペイン"
 
 msgid "TAIWAN"
-msgstr ""
+msgstr "台湾"
 
 msgid "UNITED KINGDOM"
-msgstr ""
+msgstr "イギリス"
 
 msgid "PREFERRED LANGUAGE"
 msgstr "希望する言語"
@@ -2482,11 +2482,11 @@ msgstr "遊んだ回数を入力してください"
 
 msgctxt "metadata"
 msgid "PLAY TIME"
-msgstr ""
+msgstr "プレイ時間"
 
 msgctxt "metadata"
 msgid "ENTER PLAY TIME"
-msgstr ""
+msgstr "プレイ時間を入力"
 
 msgctxt "metadata"
 msgid "CONTROLLER"
