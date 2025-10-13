@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.7\n"
 
 msgid "Network error (status:"
 msgstr "Erro de rede (estado:"
@@ -136,15 +136,15 @@ msgstr "desconhecido"
 msgctxt "theme"
 msgid "%i minute"
 msgid_plural "%i minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%i minuto"
+msgstr[1] "%i minutos"
 
 #, c-format
 msgctxt "theme"
 msgid "%i hour"
 msgid_plural "%i hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%i hora"
+msgstr[1] "%i horas"
 
 #, c-format
 msgid "ERROR: MISSING PRE-COMMAND FIND RULES CONFIGURATION FOR '%s'"
@@ -316,10 +316,10 @@ msgid "times played, descending"
 msgstr "vezes jogado, ordem decrescente"
 
 msgid "play time, ascending"
-msgstr ""
+msgstr "tempo de jogo, ordem crescente"
 
 msgid "play time, descending"
-msgstr ""
+msgstr "tempo de jogo, ordem decrescente"
 
 msgid "system, ascending"
 msgstr "sistema, ordem crescente"
@@ -557,7 +557,7 @@ msgid "ALL UNSELECTED"
 msgstr "NENHUM SELECIONADO"
 
 msgid "STRIP SPECIAL CHARACTERS"
-msgstr ""
+msgstr "RETIRAR CARACTERES ESPECIAIS"
 
 msgid "MEDIA TARGET TYPE"
 msgstr "TIPO DE ALVO DA MÍDIA"
@@ -587,7 +587,7 @@ msgid "FAN ART"
 msgstr "ARTE DE FÃ"
 
 msgid "MIXIMAGES"
-msgstr ""
+msgstr "IMAGENS MIX"
 
 msgid "IMPORT MEDIA"
 msgstr "IMPORTAR MÍDIA"
@@ -1125,7 +1125,7 @@ msgid "load default directory"
 msgstr "carregar pasta padrão"
 
 msgid "MAX PLAY TIME TRACKING"
-msgstr ""
+msgstr "RASTREIO MÁXIMO DE TEMPO DE JOGO"
 
 msgid "VRAM LIMIT"
 msgstr "LIMITE DE RAM DE VÍDEO"
@@ -1303,10 +1303,10 @@ msgid "POWER OFF SYSTEM"
 msgstr "DESLIGAR O SISTEMA"
 
 msgid "REALLY SUSPEND?"
-msgstr ""
+msgstr "DESEJA MESMO SUSPENDER?"
 
 msgid "SUSPEND SYSTEM"
-msgstr ""
+msgstr "SUSPENDER O SISTEMA"
 
 msgctxt "short"
 msgid "SYSTEM STATUS SETTINGS"
@@ -1712,7 +1712,7 @@ msgid "MIXIMAGE RESOLUTION"
 msgstr "RESOLUÇÃO DA IMAGEM MIX"
 
 msgid "MIXIMAGE FILE FORMAT"
-msgstr ""
+msgstr "TIPO DE ARQUIVO DA IMAGEM MIX"
 
 msgctxt "short"
 msgid "HORIZONTAL SCREENSHOT FIT"
@@ -1829,49 +1829,49 @@ msgid "WORLD"
 msgstr "MUNDIAL"
 
 msgid "ASIA"
-msgstr ""
+msgstr "ÁSIA"
 
 msgid "AUSTRALIA"
-msgstr ""
+msgstr "AUSTRÁLIA"
 
 msgid "BRAZIL"
-msgstr ""
+msgstr "BRASIL"
 
 msgid "CANADA"
-msgstr ""
+msgstr "CANADÁ"
 
 msgid "CHINA"
-msgstr ""
+msgstr "CHINA"
 
 msgid "GERMANY"
-msgstr ""
+msgstr "ALEMANHA"
 
 msgid "FRANCE"
-msgstr ""
+msgstr "FRANÇA"
 
 msgid "ITALY"
-msgstr ""
+msgstr "ITÁLIA"
 
 msgid "KOREA"
-msgstr ""
+msgstr "CORÉIA"
 
 msgid "NETHERLANDS"
-msgstr ""
+msgstr "PAÍSES BAIXOS"
 
 msgid "RUSSIA"
-msgstr ""
+msgstr "RÚSSIA"
 
 msgid "SWEDEN"
-msgstr ""
+msgstr "SUÉCIA"
 
 msgid "SPAIN"
-msgstr ""
+msgstr "ESPANHA"
 
 msgid "TAIWAN"
-msgstr ""
+msgstr "TAIWAN"
 
 msgid "UNITED KINGDOM"
-msgstr ""
+msgstr "REINO UNIDO"
 
 msgid "PREFERRED LANGUAGE"
 msgstr "IDIOMA PREFERIDO"
@@ -2478,11 +2478,11 @@ msgstr "INSIRA O NÚMERO DE VEZES JOGADAS"
 
 msgctxt "metadata"
 msgid "PLAY TIME"
-msgstr ""
+msgstr "TEMPO DE JOGO"
 
 msgctxt "metadata"
 msgid "ENTER PLAY TIME"
-msgstr ""
+msgstr "INSIRA O TEMPO DE JOGO"
 
 msgctxt "metadata"
 msgid "CONTROLLER"
