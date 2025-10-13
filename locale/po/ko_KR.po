@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
 "POT-Creation-Date: 2025-10-09 22:35+0200\n"
-"PO-Revision-Date: 2025-06-30 17:28+0900\n"
+"PO-Revision-Date: 2025-10-13 20:58+0200\n"
 "Last-Translator: wakeboxer <ljhmd0825@gmail.com>\n"
 "Language-Team: 한국어 <info@es-de.org>\n"
 "Language: ko_KR\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.7\n"
 
 msgid "Network error (status:"
 msgstr "네트워크 오류 (상태:"
@@ -133,13 +133,13 @@ msgstr "알수없음"
 msgctxt "theme"
 msgid "%i minute"
 msgid_plural "%i minutes"
-msgstr[0] ""
+msgstr[0] "%i 분"
 
 #, c-format
 msgctxt "theme"
 msgid "%i hour"
 msgid_plural "%i hours"
-msgstr[0] ""
+msgstr[0] "%i 시간"
 
 #, c-format
 msgid "ERROR: MISSING PRE-COMMAND FIND RULES CONFIGURATION FOR '%s'"
@@ -307,10 +307,10 @@ msgid "times played, descending"
 msgstr "플레이 시간, 낮은순"
 
 msgid "play time, ascending"
-msgstr ""
+msgstr "플레이 시간, 오름차순"
 
 msgid "play time, descending"
-msgstr ""
+msgstr "플레이 시간, 내림차순"
 
 msgid "system, ascending"
 msgstr "시스템, 오름차순"
@@ -545,7 +545,7 @@ msgid "ALL UNSELECTED"
 msgstr "선택되지 않은 모두"
 
 msgid "STRIP SPECIAL CHARACTERS"
-msgstr ""
+msgstr "스트립 스페셜 캐릭터"
 
 msgid "MEDIA TARGET TYPE"
 msgstr "미디어 타겟 유형"
@@ -575,7 +575,7 @@ msgid "FAN ART"
 msgstr "팬아트"
 
 msgid "MIXIMAGES"
-msgstr ""
+msgstr "믹스이미지"
 
 msgid "IMPORT MEDIA"
 msgstr "미디어 가져오기"
@@ -1110,7 +1110,7 @@ msgid "load default directory"
 msgstr "기본 디렉터리를 로드"
 
 msgid "MAX PLAY TIME TRACKING"
-msgstr ""
+msgstr "최대 플레이 시간 추적"
 
 msgid "VRAM LIMIT"
 msgstr "VRAM 리미트"
@@ -1287,10 +1287,10 @@ msgid "POWER OFF SYSTEM"
 msgstr "시스템 전원 오프"
 
 msgid "REALLY SUSPEND?"
-msgstr ""
+msgstr "정말로 일시 중단하시겠습니까?"
 
 msgid "SUSPEND SYSTEM"
-msgstr ""
+msgstr "시스템 일시 중단"
 
 msgctxt "short"
 msgid "SYSTEM STATUS SETTINGS"
@@ -1680,7 +1680,7 @@ msgid "MIXIMAGE RESOLUTION"
 msgstr "믹스이미지 해상도"
 
 msgid "MIXIMAGE FILE FORMAT"
-msgstr ""
+msgstr "믹스이미지 파일 형식"
 
 msgctxt "short"
 msgid "HORIZONTAL SCREENSHOT FIT"
@@ -1796,49 +1796,49 @@ msgid "WORLD"
 msgstr "세계"
 
 msgid "ASIA"
-msgstr ""
+msgstr "아시아"
 
 msgid "AUSTRALIA"
-msgstr ""
+msgstr "호주"
 
 msgid "BRAZIL"
-msgstr ""
+msgstr "브라질"
 
 msgid "CANADA"
-msgstr ""
+msgstr "캐나다"
 
 msgid "CHINA"
-msgstr ""
+msgstr "중국"
 
 msgid "GERMANY"
-msgstr ""
+msgstr "독일"
 
 msgid "FRANCE"
-msgstr ""
+msgstr "프랑스"
 
 msgid "ITALY"
-msgstr ""
+msgstr "이탈리아"
 
 msgid "KOREA"
-msgstr ""
+msgstr "한국"
 
 msgid "NETHERLANDS"
-msgstr ""
+msgstr "네덜란드"
 
 msgid "RUSSIA"
-msgstr ""
+msgstr "러시아 제국"
 
 msgid "SWEDEN"
-msgstr ""
+msgstr "스웨덴"
 
 msgid "SPAIN"
-msgstr ""
+msgstr "스페인"
 
 msgid "TAIWAN"
-msgstr ""
+msgstr "대만"
 
 msgid "UNITED KINGDOM"
-msgstr ""
+msgstr "영국"
 
 msgid "PREFERRED LANGUAGE"
 msgstr "선호되는 언어"
@@ -2432,11 +2432,11 @@ msgstr "실행 횟수 입력"
 
 msgctxt "metadata"
 msgid "PLAY TIME"
-msgstr ""
+msgstr "놀이 시간"
 
 msgctxt "metadata"
 msgid "ENTER PLAY TIME"
-msgstr ""
+msgstr "플레이 타임 입력"
 
 msgctxt "metadata"
 msgid "CONTROLLER"
