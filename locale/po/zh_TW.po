@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-10-09 22:35+0200\n"
-"PO-Revision-Date: 2025-07-06 12:32+0200\n"
+"POT-Creation-Date: 2025-10-13 22:03+0200\n"
+"PO-Revision-Date: 2025-10-13 22:04+0200\n"
 "Last-Translator: Northwestern Software <info@es-de.org>\n"
 "Language-Team: 繁體中文 <info@es-de.org>\n"
 "Language: zh_TW\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.7\n"
 
 msgid "Network error (status:"
 msgstr "網路錯誤（狀態："
@@ -132,13 +132,13 @@ msgstr "未知"
 msgctxt "theme"
 msgid "%i minute"
 msgid_plural "%i minutes"
-msgstr[0] ""
+msgstr[0] "%i 分"
 
 #, c-format
 msgctxt "theme"
 msgid "%i hour"
 msgid_plural "%i hours"
-msgstr[0] ""
+msgstr[0] "%i 小時"
 
 #, c-format
 msgid "ERROR: MISSING PRE-COMMAND FIND RULES CONFIGURATION FOR '%s'"
@@ -305,10 +305,10 @@ msgid "times played, descending"
 msgstr "遊玩次數, 降序"
 
 msgid "play time, ascending"
-msgstr ""
+msgstr "遊玩時間，升序"
 
 msgid "play time, descending"
-msgstr ""
+msgstr "遊玩時間，降序"
 
 msgid "system, ascending"
 msgstr "平台, 升序"
@@ -540,7 +540,7 @@ msgid "ALL UNSELECTED"
 msgstr "所有未選擇的"
 
 msgid "STRIP SPECIAL CHARACTERS"
-msgstr ""
+msgstr "刪除特殊字符"
 
 msgid "MEDIA TARGET TYPE"
 msgstr "媒體目標類型"
@@ -570,7 +570,7 @@ msgid "FAN ART"
 msgstr "粉絲自制"
 
 msgid "MIXIMAGES"
-msgstr ""
+msgstr "混合影像"
 
 msgid "IMPORT MEDIA"
 msgstr "導入媒體"
@@ -1102,7 +1102,7 @@ msgid "load default directory"
 msgstr "載入預設目錄"
 
 msgid "MAX PLAY TIME TRACKING"
-msgstr ""
+msgstr "最長遊戲時間追蹤"
 
 msgid "VRAM LIMIT"
 msgstr "視訊記憶體限制"
@@ -1276,10 +1276,10 @@ msgid "POWER OFF SYSTEM"
 msgstr "關機"
 
 msgid "REALLY SUSPEND?"
-msgstr ""
+msgstr "真的要暫停嗎？"
 
 msgid "SUSPEND SYSTEM"
-msgstr ""
+msgstr "暫停系統"
 
 msgctxt "short"
 msgid "SYSTEM STATUS SETTINGS"
@@ -1667,7 +1667,7 @@ msgid "MIXIMAGE RESOLUTION"
 msgstr "混合影象解析度"
 
 msgid "MIXIMAGE FILE FORMAT"
-msgstr ""
+msgstr "混合影像檔案格式"
 
 msgctxt "short"
 msgid "HORIZONTAL SCREENSHOT FIT"
@@ -1782,49 +1782,49 @@ msgid "WORLD"
 msgstr "世界"
 
 msgid "ASIA"
-msgstr ""
+msgstr "亞洲"
 
 msgid "AUSTRALIA"
-msgstr ""
+msgstr "澳洲"
 
 msgid "BRAZIL"
-msgstr ""
+msgstr "巴西"
 
 msgid "CANADA"
-msgstr ""
+msgstr "加拿大"
 
 msgid "CHINA"
-msgstr ""
+msgstr "中國"
 
 msgid "GERMANY"
-msgstr ""
+msgstr "德國"
 
 msgid "FRANCE"
-msgstr ""
+msgstr "法國"
 
 msgid "ITALY"
-msgstr ""
+msgstr "義大利"
 
 msgid "KOREA"
-msgstr ""
+msgstr "韓國"
 
 msgid "NETHERLANDS"
-msgstr ""
+msgstr "荷蘭"
 
 msgid "RUSSIA"
-msgstr ""
+msgstr "俄羅斯"
 
 msgid "SWEDEN"
-msgstr ""
+msgstr "瑞典"
 
 msgid "SPAIN"
-msgstr ""
+msgstr "西班牙"
 
 msgid "TAIWAN"
-msgstr ""
+msgstr "中國台灣"
 
 msgid "UNITED KINGDOM"
-msgstr ""
+msgstr "英國"
 
 msgid "PREFERRED LANGUAGE"
 msgstr "後設資料首選語言"
@@ -2405,11 +2405,11 @@ msgstr "請輸入遊戲次數"
 
 msgctxt "metadata"
 msgid "PLAY TIME"
-msgstr ""
+msgstr "遊玩時間"
 
 msgctxt "metadata"
 msgid "ENTER PLAY TIME"
-msgstr ""
+msgstr "輸入遊玩時間"
 
 msgctxt "metadata"
 msgid "CONTROLLER"
