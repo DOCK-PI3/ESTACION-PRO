@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
 "POT-Creation-Date: 2025-10-09 22:35+0200\n"
-"PO-Revision-Date: 2025-06-29 00:49+0200\n"
+"PO-Revision-Date: 2025-10-13 16:42+0200\n"
 "Last-Translator: Northwestern Software <info@es-de.org>\n"
 "Language-Team: Français <info@es-de.org>\n"
 "Language: fr_FR\n"
@@ -138,15 +138,15 @@ msgstr "inconnu"
 msgctxt "theme"
 msgid "%i minute"
 msgid_plural "%i minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%i minute"
+msgstr[1] "%i minutes"
 
 #, c-format
 msgctxt "theme"
 msgid "%i hour"
 msgid_plural "%i hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%i heure"
+msgstr[1] "%i heures"
 
 #, c-format
 msgid "ERROR: MISSING PRE-COMMAND FIND RULES CONFIGURATION FOR '%s'"
@@ -328,10 +328,10 @@ msgid "times played, descending"
 msgstr "parties jouées, décroissant"
 
 msgid "play time, ascending"
-msgstr ""
+msgstr "temps joué, croissant"
 
 msgid "play time, descending"
-msgstr ""
+msgstr "temps joué, décroissant"
 
 msgid "system, ascending"
 msgstr "système, croissant"
@@ -569,7 +569,7 @@ msgid "ALL UNSELECTED"
 msgstr "TOUT DÉSÉLECTIONNER"
 
 msgid "STRIP SPECIAL CHARACTERS"
-msgstr ""
+msgstr "SUPPRIMER LES CARACTÈRES SPÉCIAUX"
 
 msgid "MEDIA TARGET TYPE"
 msgstr "TYPE DE MÉDIA CIBLE"
@@ -599,7 +599,7 @@ msgid "FAN ART"
 msgstr "FANART"
 
 msgid "MIXIMAGES"
-msgstr ""
+msgstr "MIXIMAGES"
 
 msgid "IMPORT MEDIA"
 msgstr "IMPORTE MÉDIA"
@@ -1139,7 +1139,7 @@ msgid "load default directory"
 msgstr "charger le dossier par defaut"
 
 msgid "MAX PLAY TIME TRACKING"
-msgstr ""
+msgstr "DURÉE MAXI DU SUIVI DU TEMPS DE JEU"
 
 msgid "VRAM LIMIT"
 msgstr "LIMITE MÉMOIRE VIDÉO"
@@ -1320,10 +1320,10 @@ msgid "POWER OFF SYSTEM"
 msgstr "ARRÊT DU SYSTÈME"
 
 msgid "REALLY SUSPEND?"
-msgstr ""
+msgstr "VOULEZ-VOUS VRAIMENT METTRE EN VEILLE PROLONGÉE LE SYSTÈME ?"
 
 msgid "SUSPEND SYSTEM"
-msgstr ""
+msgstr "MISE EN VEILLE PROLONGÉE DU SYSTÈME"
 
 msgctxt "short"
 msgid "SYSTEM STATUS SETTINGS"
@@ -1740,7 +1740,7 @@ msgid "MIXIMAGE RESOLUTION"
 msgstr "RÉSOLUTION DU MIXIMAGE"
 
 msgid "MIXIMAGE FILE FORMAT"
-msgstr ""
+msgstr "FORMAT DE FICHIER"
 
 msgctxt "short"
 msgid "HORIZONTAL SCREENSHOT FIT"
@@ -1857,49 +1857,49 @@ msgid "WORLD"
 msgstr "MONDE"
 
 msgid "ASIA"
-msgstr ""
+msgstr "ASIE"
 
 msgid "AUSTRALIA"
-msgstr ""
+msgstr "AUSTRALIE"
 
 msgid "BRAZIL"
-msgstr ""
+msgstr "BRÉSIL"
 
 msgid "CANADA"
-msgstr ""
+msgstr "CANADA"
 
 msgid "CHINA"
-msgstr ""
+msgstr "CHINE"
 
 msgid "GERMANY"
-msgstr ""
+msgstr "ALLEMAGNE"
 
 msgid "FRANCE"
-msgstr ""
+msgstr "FRANCE"
 
 msgid "ITALY"
-msgstr ""
+msgstr "ITALIE"
 
 msgid "KOREA"
-msgstr ""
+msgstr "CORÉE"
 
 msgid "NETHERLANDS"
-msgstr ""
+msgstr "PAYS-BAS"
 
 msgid "RUSSIA"
-msgstr ""
+msgstr "RUSSIE"
 
 msgid "SWEDEN"
-msgstr ""
+msgstr "SUÈDE"
 
 msgid "SPAIN"
-msgstr ""
+msgstr "ESPAGNE"
 
 msgid "TAIWAN"
-msgstr ""
+msgstr "TAIWAN"
 
 msgid "UNITED KINGDOM"
-msgstr ""
+msgstr "ROYAUME-UNI"
 
 msgid "PREFERRED LANGUAGE"
 msgstr "LANGUE PRÉFÉRÉE"
@@ -2511,11 +2511,11 @@ msgstr "ENTRER LE NOMBRE PARTIES JOUÉES"
 
 msgctxt "metadata"
 msgid "PLAY TIME"
-msgstr ""
+msgstr "TEMPS JOUÉ"
 
 msgctxt "metadata"
 msgid "ENTER PLAY TIME"
-msgstr ""
+msgstr "ENTREZ LE TEMPS JOUÉ"
 
 msgctxt "metadata"
 msgid "CONTROLLER"
