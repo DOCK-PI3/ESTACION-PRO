@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
 "POT-Creation-Date: 2025-10-09 22:35+0200\n"
-"PO-Revision-Date: 2025-06-25 02:46+0800\n"
+"PO-Revision-Date: 2025-10-13 02:17+0800\n"
 "Last-Translator: Northwestern Software <info@es-de.org>\n"
 "Language-Team: 简体中文 <info@es-de.org>\n"
 "Language: zh_CN\n"
@@ -132,13 +132,13 @@ msgstr "未知"
 msgctxt "theme"
 msgid "%i minute"
 msgid_plural "%i minutes"
-msgstr[0] ""
+msgstr[0] "%i 分"
 
 #, c-format
 msgctxt "theme"
 msgid "%i hour"
 msgid_plural "%i hours"
-msgstr[0] ""
+msgstr[0] "%i 小时"
 
 #, c-format
 msgid "ERROR: MISSING PRE-COMMAND FIND RULES CONFIGURATION FOR '%s'"
@@ -305,10 +305,10 @@ msgid "times played, descending"
 msgstr "游玩次数, 降序"
 
 msgid "play time, ascending"
-msgstr ""
+msgstr "游玩时间，升序"
 
 msgid "play time, descending"
-msgstr ""
+msgstr "游玩时间，降序"
 
 msgid "system, ascending"
 msgstr "平台, 升序"
@@ -540,7 +540,7 @@ msgid "ALL UNSELECTED"
 msgstr "所有未选择的"
 
 msgid "STRIP SPECIAL CHARACTERS"
-msgstr ""
+msgstr "删除特殊字符"
 
 msgid "MEDIA TARGET TYPE"
 msgstr "媒体目标类型"
@@ -570,7 +570,7 @@ msgid "FAN ART"
 msgstr "粉丝自制"
 
 msgid "MIXIMAGES"
-msgstr ""
+msgstr "混合图像"
 
 msgid "IMPORT MEDIA"
 msgstr "导入媒体"
@@ -1102,7 +1102,7 @@ msgid "load default directory"
 msgstr "加载默认目录"
 
 msgid "MAX PLAY TIME TRACKING"
-msgstr ""
+msgstr "最长游戏时间追踪"
 
 msgid "VRAM LIMIT"
 msgstr "显存限制"
@@ -1276,10 +1276,10 @@ msgid "POWER OFF SYSTEM"
 msgstr "关机"
 
 msgid "REALLY SUSPEND?"
-msgstr ""
+msgstr "真的要暂停吗？"
 
 msgid "SUSPEND SYSTEM"
-msgstr ""
+msgstr "暂停系统"
 
 msgctxt "short"
 msgid "SYSTEM STATUS SETTINGS"
@@ -1667,7 +1667,7 @@ msgid "MIXIMAGE RESOLUTION"
 msgstr "混合图像分辨率"
 
 msgid "MIXIMAGE FILE FORMAT"
-msgstr ""
+msgstr "混合图像文件格式"
 
 msgctxt "short"
 msgid "HORIZONTAL SCREENSHOT FIT"
@@ -1782,49 +1782,49 @@ msgid "WORLD"
 msgstr "世界"
 
 msgid "ASIA"
-msgstr ""
+msgstr "亚洲"
 
 msgid "AUSTRALIA"
-msgstr ""
+msgstr "澳大利亚"
 
 msgid "BRAZIL"
-msgstr ""
+msgstr "巴西"
 
 msgid "CANADA"
-msgstr ""
+msgstr "加拿大"
 
 msgid "CHINA"
-msgstr ""
+msgstr "中国"
 
 msgid "GERMANY"
-msgstr ""
+msgstr "德国"
 
 msgid "FRANCE"
-msgstr ""
+msgstr "法国"
 
 msgid "ITALY"
-msgstr ""
+msgstr "意大利"
 
 msgid "KOREA"
-msgstr ""
+msgstr "韩国"
 
 msgid "NETHERLANDS"
-msgstr ""
+msgstr "荷兰"
 
 msgid "RUSSIA"
-msgstr ""
+msgstr "俄罗斯"
 
 msgid "SWEDEN"
-msgstr ""
+msgstr "瑞典"
 
 msgid "SPAIN"
-msgstr ""
+msgstr "西班牙"
 
 msgid "TAIWAN"
-msgstr ""
+msgstr "中国台湾"
 
 msgid "UNITED KINGDOM"
-msgstr ""
+msgstr "英国"
 
 msgid "PREFERRED LANGUAGE"
 msgstr "元数据首选语言"
@@ -2405,11 +2405,11 @@ msgstr "请输入游戏次数"
 
 msgctxt "metadata"
 msgid "PLAY TIME"
-msgstr ""
+msgstr "游玩时间"
 
 msgctxt "metadata"
 msgid "ENTER PLAY TIME"
-msgstr ""
+msgstr "输入游玩时间"
 
 msgctxt "metadata"
 msgid "CONTROLLER"
