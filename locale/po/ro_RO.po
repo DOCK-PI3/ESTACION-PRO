@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-10-09 22:35+0200\n"
-"PO-Revision-Date: 2025-06-25 13:21+0300\n"
+"POT-Creation-Date: 2025-10-13 21:59+0200\n"
+"PO-Revision-Date: 2025-10-12 21:31+0300\n"
 "Last-Translator: Mihai Vasiliu <mihai.vasiliu.93@gmail.com>\n"
 "Language-Team: Română <info@es-de.org>\n"
 "Language: ro_RO\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.7\n"
 
 msgid "Network error (status:"
 msgstr "Eroare rețea (stare:"
@@ -145,17 +145,17 @@ msgstr "necunoscut"
 msgctxt "theme"
 msgid "%i minute"
 msgid_plural "%i minutes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%i minut"
+msgstr[1] "%i minute"
+msgstr[2] "%i de minute"
 
 #, c-format
 msgctxt "theme"
 msgid "%i hour"
 msgid_plural "%i hours"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%i oră"
+msgstr[1] "%i ore"
+msgstr[2] "%i de ore"
 
 #, c-format
 msgid "ERROR: MISSING PRE-COMMAND FIND RULES CONFIGURATION FOR '%s'"
@@ -323,10 +323,10 @@ msgid "times played, descending"
 msgstr "nr. partide jucate, descendent"
 
 msgid "play time, ascending"
-msgstr ""
+msgstr "timp jucat, ascendent"
 
 msgid "play time, descending"
-msgstr ""
+msgstr "timp jucat, descendent"
 
 msgid "system, ascending"
 msgstr "sistem, ascendent"
@@ -565,7 +565,7 @@ msgid "ALL UNSELECTED"
 msgstr "TOATE DESELECTATE"
 
 msgid "STRIP SPECIAL CHARACTERS"
-msgstr ""
+msgstr "ELIMINĂ CARACTERELE SPECIALE"
 
 msgid "MEDIA TARGET TYPE"
 msgstr "TIP MEDIA"
@@ -595,7 +595,7 @@ msgid "FAN ART"
 msgstr "FAN ART"
 
 msgid "MIXIMAGES"
-msgstr ""
+msgstr "IMAGINI MIX"
 
 msgid "IMPORT MEDIA"
 msgstr "IMPORTĂ MEDIA"
@@ -1134,7 +1134,7 @@ msgid "load default directory"
 msgstr "încarcă dosarul implicit"
 
 msgid "MAX PLAY TIME TRACKING"
-msgstr ""
+msgstr "TIMPUL MAXIM DE URMĂRIT"
 
 msgid "VRAM LIMIT"
 msgstr "LIMITĂ VRAM"
@@ -1312,10 +1312,10 @@ msgid "POWER OFF SYSTEM"
 msgstr "ÎNCHIDE SISTEMUL"
 
 msgid "REALLY SUSPEND?"
-msgstr ""
+msgstr "CONFIRMI SUSPENDAREA?"
 
 msgid "SUSPEND SYSTEM"
-msgstr ""
+msgstr "SUSPENDĂ SISTEMUL"
 
 msgctxt "short"
 msgid "SYSTEM STATUS SETTINGS"
@@ -1718,7 +1718,7 @@ msgid "MIXIMAGE RESOLUTION"
 msgstr "REZOLUȚIE IMAGINE MIX"
 
 msgid "MIXIMAGE FILE FORMAT"
-msgstr ""
+msgstr "FORMAT FIȘIER IMAGINE MIX"
 
 msgctxt "short"
 msgid "HORIZONTAL SCREENSHOT FIT"
@@ -1835,49 +1835,49 @@ msgid "WORLD"
 msgstr "GLOBAL"
 
 msgid "ASIA"
-msgstr ""
+msgstr "ASIA"
 
 msgid "AUSTRALIA"
-msgstr ""
+msgstr "AUSTRALIA"
 
 msgid "BRAZIL"
-msgstr ""
+msgstr "BRAZILIA"
 
 msgid "CANADA"
-msgstr ""
+msgstr "CANADA"
 
 msgid "CHINA"
-msgstr ""
+msgstr "CHINA"
 
 msgid "GERMANY"
-msgstr ""
+msgstr "GERMANIA"
 
 msgid "FRANCE"
-msgstr ""
+msgstr "FRANȚA"
 
 msgid "ITALY"
-msgstr ""
+msgstr "ITALIA"
 
 msgid "KOREA"
-msgstr ""
+msgstr "COREEA"
 
 msgid "NETHERLANDS"
-msgstr ""
+msgstr "ȚĂRILE DE JOS"
 
 msgid "RUSSIA"
-msgstr ""
+msgstr "RUSIA"
 
 msgid "SWEDEN"
-msgstr ""
+msgstr "SUEDIA"
 
 msgid "SPAIN"
-msgstr ""
+msgstr "SPANIA"
 
 msgid "TAIWAN"
-msgstr ""
+msgstr "TAIWAN"
 
 msgid "UNITED KINGDOM"
-msgstr ""
+msgstr "REGATUL UNIT"
 
 msgid "PREFERRED LANGUAGE"
 msgstr "LIMBA PREFERATĂ"
@@ -2486,11 +2486,11 @@ msgstr "INTRODU NUMĂR DE PARTIDE"
 
 msgctxt "metadata"
 msgid "PLAY TIME"
-msgstr ""
+msgstr "TIMP JUCAT"
 
 msgctxt "metadata"
 msgid "ENTER PLAY TIME"
-msgstr ""
+msgstr "INTRODU TIMP JUCAT"
 
 msgctxt "metadata"
 msgid "CONTROLLER"
