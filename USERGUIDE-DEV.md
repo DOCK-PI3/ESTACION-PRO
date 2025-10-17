@@ -3019,6 +3019,13 @@ You can get the ID of a game from inside the GameNative client by navigating to 
 
 Opening the store page entry in the official Steam client on desktop operating systems accomplishes the same thing.
 
+As an alternative to manually creating these files you can find the following repository which contains a set of automatically created .steam files for the entire Steam library:\
+https://github.com/RobZombie9043/steam-files-es-de
+
+ Just make sure you **don't add this entire set of files to ES-DE** as that will make the application incredibly slow with hundreds of thousands of Steam game entries.
+
+The .steam files can be launched with both the default emulator _GameNative_ and the alternative emulator _GameHub Lite_.
+
 ### Symbian and Nokia N-Gage
 
 **At the time of writing the Linux AppImage release of EKA2L1 is partially broken and can't be used to run N-Gage games, instead an alternative emulator entry to run the Windows version of EKA2L1 can be used. This should only be temporary until the bugs have been resolved by the EKA2L1 team, so detailed instructions on how to setup the Windows version on Linux will not be provided below. The documentation instead assumes that the AppImage works as intended.**
@@ -4127,7 +4134,7 @@ This setting defines the directory for game media, i.e. images, videos and PDF m
 
 **Max play time tracking**
 
-The play time for games launched from ES-DE is tracked and when returning from a game the corresponding metadata value is updated with the amount of seconds spent in-game. However you may launch a game and then put your device to sleep or lock the screen while the game is running and not return to ES-DE until many hours later. In this case the play time would jump significantly to include the sleep time for your device. This setting limits the amount of hours that will be tracked for each game launch, which means that whatever play time is measured will be ignored if it exceeds this value. It can bet set from 0 to 24 hours with 0 meaning there is no limit for how long ES-DE will track the play time.
+The play time for games launched from ES-DE is tracked and when returning from a game the corresponding metadata value is updated with the amount of seconds spent in-game. However you may launch a game and then put your device to sleep or lock the screen while the game is running and not return to ES-DE until many hours later. In this case the play time would jump significantly to include the sleep time for your device. This setting limits the amount of hours that will be tracked for each game launch from 1 to 23 hours, which means that whatever play time is measured will be ignored if it exceeds the selected value. It can also be set to 0 to disable play time tracking entirely and to 24 to have no limit for how long ES-DE will track the play time.
 
 **VRAM limit**
 

@@ -39,7 +39,7 @@
 * (Linux) Added a ~/Desktop import rule entry for the desktop system
 * (macOS) Added a ~/Applications import rule entry for the steam system
 * (Windows) Added ~\Desktop import rule entries for the desktop, emulators and windows systems
-* (Android) Added support for the Valve Steam (steam) game system (using the GameNative client)
+* (Android) Added support for the Valve Steam (steam) game system (using GameNative and GameHub Lite)
 * (Android) Added support for the Epic Games Store (epic) game system
 * (Android) Added Winlator Cmod standalone as the default emulator for the pcarcade, type-x and windows systems
 * (Android) Added Kenji-NX standalone as the default emulator for the switch system
