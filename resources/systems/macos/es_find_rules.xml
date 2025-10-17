@@ -445,6 +445,12 @@
             <entry>/Applications/XRoar.app/Contents/MacOS/xroar</entry>
         </rule>
     </emulator>
+    <emulator name="YMIR">
+        <!-- Sega Saturn emulator Ymir -->
+        <rule type="staticpath">
+            <entry>/Applications/ymir-sdl3.app/Contents/MacOS/ymir-sdl3</entry>
+        </rule>
+    </emulator>
     <emulator name="ZESARUX">
         <!-- Sinclair ZX Spectrum emulator ZEsarUX -->
         <rule type="staticpath">
