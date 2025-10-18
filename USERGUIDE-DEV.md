@@ -784,6 +784,7 @@ The following emulators are supported in AppImage format when using the bundled 
 | macintosh            | Basilisk II         | BasiliskII*.AppImage           |
 | macintosh            | SheepShaver         | SheepShaver*.AppImage          |
 | n3ds                 | Azahar              | azahar*.AppImage               |
+| n3ds                 | AzaharPlus          | azaharplus*.AppImage               |
 | n3ds                 | Citra               | citra-qt*.AppImage             |
 | n3ds                 | Lime3DS             | lime3ds.AppImage               |
 | n3ds                 | Mandarine           | mandarine-qt*.AppImage         |
@@ -3004,10 +3005,15 @@ On macOS the shortcuts come with the .app extension and are actually directories
 
 **Android**
 
-The setup on Android is a bit different than on desktop operating systems as you will need to create a text file for each game you want to launch. These files should have the .steam extension and they should simply include the Steam game ID. Here's an example for the game _Broforce_:
+The setup on Android is a bit different than on desktop operating systems as you will need to create a text file for each game you want to launch. These files should have the .steam extension and they should simply include the Steam game ID. Here's an example for the game _Broforce_ when using the _steam_ system:
 
 ```
 ROMs/steam/Broforce.steam
+```
+
+Or when using the _windows_ system:
+```
+ROMs/windows/Broforce.steam
 ```
 
 The following is the contents of the `Broforce.steam` file:
@@ -3024,7 +3030,7 @@ https://github.com/RobZombie9043/steam-files-es-de
 
  Just make sure you **don't add this entire set of files to ES-DE** as that will make the application incredibly slow with hundreds of thousands of Steam game entries.
 
-The .steam files can be launched with both the default emulator _GameNative_ and the alternative emulator _GameHub Lite_.
+The .steam files can be launched with both the _GameNative_ and _GameHub Lite_ emulator entries.
 
 ### Symbian and Nokia N-Gage
 
@@ -4788,7 +4794,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | msxturbor             | MSX Turbo R                                    | blueMSX                           | openMSX **(Standalone)**,<br>openMSX No Machine **(Standalone)** | Yes          |                                      |
 | mugen                 | M.U.G.E.N Game Engine                          | Ikemen GO **(Standalone)**        |                                   | No           | See the specific _M.U.G.E.N Game Engine_ section elsewhere in this guide |
 | multivision           | Othello Multivision                            | Gearsystem                        | Mesen **(Standalone)** [LW]       | No           | Single archive or ROM file |
-| n3ds                  | Nintendo 3DS                                   | Azahar **(Standalone)**           | Azahar Shortcut **(Standalone)** [LW],<br>Citra [LW],<br>Citra **(Standalone)** [M],<br>Citra 2018 [LW],<br>Citra **(Standalone)** [LW],<br>Mandarine **(Standalone)**,<br>Lime3DS **(Standalone)**,<br>Panda3DS **(Standalone)** | No           | Single ROM file       |
+| n3ds                  | Nintendo 3DS                                   | Azahar **(Standalone)**           | Azahar Shortcut **(Standalone)** [LW],<br>AzaharPlus **(Standalone)** [LW],<br>Citra [LW],<br>Citra **(Standalone)** [M],<br>Citra 2018 [LW],<br>Citra **(Standalone)** [LW],<br>Mandarine **(Standalone)**,<br>Lime3DS **(Standalone)**,<br>Panda3DS **(Standalone)** | No           | Single ROM file       |
 | n64                   | Nintendo 64                                    | Mupen64Plus-Next                  | Mupen64Plus **(Standalone)**,<br>ParaLLEl N64,<br>Parallel Launcher **(Standalone)**,<br>simple64 **(Standalone)** [LW],<br>Rosalie's Mupen GUI **(Standalone)** [LW],<br>Project64 **(Standalone)** [W],<br>ares **(Standalone)**,<br>Gopher64 **(Standalone)** [LW],<br>sixtyforce **(Standalone)** [M],<br> _Native port_,<br> _Shortcut or script_ | No           | Single archive or ROM file, for recompilations see the specific _Nintendo 64 Recompilations_ section elsewhere in this guide |
 | n64dd                 | Nintendo 64DD                                  | ParaLLEl N64 [LW],<br>Mupen64Plus-Next [M] | Mupen64Plus-Next [LW],<br>ParaLLEl N64 [M],<br>Rosalie's Mupen GUI **(Standalone)** [LW],<br>ares **(Standalone)** | Yes          | See the specific _Nintendo 64DD_ section elsewhere in this guide |
 | naomi                 | Sega NAOMI                                     | Flycast                           | Flycast **(Standalone)**,<br>Flycast Dojo **(Standalone)**,<br>Demul **(Standalone)** [W] | Yes          | Single archive file + .chd file in subdirectory if GD-ROM game |
@@ -4822,13 +4828,13 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | ps4                   | Sony PlayStation 4                             | shadPS4 Shortcut **(Standalone)** [LW],<br>shadPS4 Game Serial **(Standalone)** [M] | shadPS4 Game Serial **(Standalone)** [LW],<br>shadPS4 eboot.bin **(Standalone)** | No           | See the specific _Sony PlayStation 4_ section elsewhere in this guide |
 | psp                   | Sony PlayStation Portable                      | PPSSPP                            | PPSSPP **(Standalone)**           | No           | Single disc image file      |
 | psvita                | Sony PlayStation Vita                          | Vita3K **(Standalone)**           |                                   | Yes          | See the specific _Sony PlayStation Vita_ section elsewhere in this guide |
-| psx                   | Sony PlayStation                               | Beetle PSX                        | Beetle PSX HW,<br>PCSX ReARMed,<br>SwanStation,<br>DuckStation **(Standalone)**,<br>Mednafen **(Standalone)** | Yes          | .chd file for single-disc games, .m3u playlist for multi-disc games |
+| psx                   | Sony PlayStation                               | Beetle PSX                        | Beetle PSX HW,<br>PCSX ReARMed,<br>SwanStation,<br>DuckStation **(Standalone)**,<br>ares **(Standalone)**,<br>Mednafen **(Standalone)** | Yes          | .chd file for single-disc games, .m3u playlist for multi-disc games |
 | pv1000                | Casio PV-1000                                  | MAME - Current                    | MAME **(Standalone)**             | No           | Single archive or ROM file |
 | quake                 | Quake                                          | TyrQuake                          | vitaQuake 2,<br>vitaQuake 2 [Rogue],<br>vitaQuake 2 [Xatrix],<br>vitaQuake 2 [Zaero],<br>vitaQuake 3 [LW],<br> _Shortcut or script_ | No           |                                      |
 | samcoupe              | MGT SAM Coupé                                  | SimCoupé **(Standalone)**         |                                   | No           | Single archive or ROM file |
 | satellaview           | Nintendo Satellaview                           | Snes9x - Current                  | Snes9x 2010,<br>Snes9x 2005 Plus,<br>Snes9x **(Standalone)**,<br>bsnes,<br>bsnes-hd,<br>bsnes-jg,<br>bsnes-mercury Accuracy,<br>bsnes **(Standalone)** [LW],<br>Mesen-S,<br>Mesen **(Standalone)** [LW],<br>ares **(Standalone)** |              |                                      |
-| saturn                | Sega Saturn                                    | Beetle Saturn                     | Kronos [LW],<br>Kronos **(Standalone)** [LW],<br>YabaSanshiro [LW],<br>Yaba Sanshiro 2 **(Standalone)** [W],<br>Yabause,<br>Ymir **(Standalone)** [LW],<br>Mednafen **(Standalone)**,<br>SSF **(Standalone)** [W] | Yes          | .chd file for single-disc games, .m3u playlist for multi-disc games |
-| saturnjp              | Sega Saturn [Japan]                            | Beetle Saturn                     | Kronos [LW],<br>Kronos **(Standalone)** [LW],<br>YabaSanshiro [LW],<br>Yaba Sanshiro 2 **(Standalone)** [W],<br>Yabause,<br>Ymir **(Standalone)** [LW],<br>Mednafen **(Standalone)**,<br>SSF **(Standalone)** [W] | Yes          | .chd file for single-disc games, .m3u playlist for multi-disc games |
+| saturn                | Sega Saturn                                    | Beetle Saturn                     | Kronos [LW],<br>Kronos **(Standalone)** [LW],<br>YabaSanshiro [LW],<br>Yaba Sanshiro 2 **(Standalone)** [W],<br>Yabause,<br>Ymir **(Standalone)**,<br>Mednafen **(Standalone)**,<br>SSF **(Standalone)** [W] | Yes          | .chd file for single-disc games, .m3u playlist for multi-disc games |
+| saturnjp              | Sega Saturn [Japan]                            | Beetle Saturn                     | Kronos [LW],<br>Kronos **(Standalone)** [LW],<br>YabaSanshiro [LW],<br>Yaba Sanshiro 2 **(Standalone)** [W],<br>Yabause,<br>Ymir **(Standalone)**,<br>Mednafen **(Standalone)**,<br>SSF **(Standalone)** [W] | Yes          | .chd file for single-disc games, .m3u playlist for multi-disc games |
 | scummvm               | ScummVM Game Engine                            | ScummVM                           | ScummVM **(Standalone)**,<br>DREAMM **(Standalone)** | No           | See the specific _ScummVM_ section elsewhere in this guide |
 | scv                   | Epoch Super Cassette Vision                    | MAME - Current                    | MAME **(Standalone)**             | Yes          | Single archive or ROM file |
 | sega32x               | Sega Mega Drive 32X                            | PicoDrive                         | ares **(Standalone)**             | No           | Single archive or ROM file |

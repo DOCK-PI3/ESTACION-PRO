@@ -40,6 +40,7 @@
 * (macOS) Added a ~/Applications import rule entry for the steam system
 * (Windows) Added ~\Desktop import rule entries for the desktop, emulators and windows systems
 * (Android) Added support for the Valve Steam (steam) game system (using GameNative and GameHub Lite)
+* (Android) Added GameNative and GameHub Lite standalone as alternative emulators for the windows system
 * (Android) Added support for the Epic Games Store (epic) game system
 * (Android) Added Winlator Cmod standalone as the default emulator for the pcarcade, type-x and windows systems
 * (Android) Added Kenji-NX standalone as the default emulator for the switch system
@@ -51,12 +52,16 @@
 * Added Gopher64 standalone as an alternative emulator for the n64 system on Linux and Windows
 * Added "Native port" as an alternative emulator for the n64 system (for running N64 recompilations)
 * Added "Shortcut or script" as an alternative emulator for the n64 system on Linux, macOS and Windows
+* Added AzaharPlus as an alternative emulator for the n3ds system on Linux, Windows and Android
 * (Android) Added an import rule for the n64 system
 * (Android) Added the .app file extension to the n64 system
+* (Android) Added the .steam file extension to the windows system
 * (Linux) Added the .AppImage, .desktop and .sh file extensions to the n64 system
 * (Linux) Added find rule entries for the Ryubing Flatpak
+* (macOS) Added Ymir standalone as an alternative emulator for the saturn and saturnjp systems
 * (macOS) Added the .app file extension to the n64 system
 * (Windows) Added the .exe and .LNK file extensions to the n64 system
+* Added ares standalone as an alternative emulator for the psx system on Linux, macOS and Windows
 * Added ares [Mega LD] standalone (Pioneer LaserActive) as an alternative emulator for the daphne and laserdisc systems on Linux, macOS and Windows
 * Added the .mmi file extension to the daphne and laserdisc systems on Linux, macOS and Windows
 * Added the .png file extension to the tic80 system on Linux, macOS and Windows
