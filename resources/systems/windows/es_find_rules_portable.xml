@@ -93,6 +93,13 @@
             <entry>%ESPATH%\..\Emulators\azahar\azahar.exe</entry>
         </rule>
     </emulator>
+    <emulator name="AZAHARPLUS">
+        <!-- Nintendo 3DS emulator AzaharPlus -->
+        <rule type="staticpath">
+            <entry>%ESPATH%\Emulators\azaharplus\azaharplus.exe</entry>
+            <entry>%ESPATH%\..\Emulators\azaharplus\azaharplus.exe</entry>
+        </rule>
+    </emulator>
     <emulator name="BASILISKII">
         <!-- Macintosh 68k emulator Basilisk II -->
         <rule type="staticpath">
