@@ -1178,6 +1178,8 @@
             <entry>%ESPATH%\..\Emulators\xenia\xenia.exe</entry>
             <entry>%ESPATH%\Emulators\xenia_canary\xenia_canary.exe</entry>
             <entry>%ESPATH%\..\Emulators\xenia_canary\xenia_canary.exe</entry>
+            <entry>%ESPATH%\Emulators\XeniaManager\Emulators\Xenia Canary\xenia_canary.exe</entry>
+            <entry>%ESPATH%\..\Emulators\XeniaManager\Emulators\Xenia Canary\xenia_canary.exe</entry>
         </rule>
     </emulator>
     <emulator name="XM6PRO68K">
