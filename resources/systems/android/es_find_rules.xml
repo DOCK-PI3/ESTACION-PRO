@@ -152,6 +152,8 @@
         <!-- Steam client GameHub Lite -->
         <rule type="androidpackage">
             <entry>gamehub.lite/com.xj.landscape.launcher.ui.gamedetail.GameDetailActivity</entry>
+            <entry>com.antutu.ABenchMark/com.xj.landscape.launcher.ui.gamedetail.GameDetailActivity</entry>
+            <entry>com.tencent.ig/com.xj.landscape.launcher.ui.gamedetail.GameDetailActivity</entry>
         </rule>
     </emulator>
     <emulator name="GAMENATIVE">
