@@ -107,6 +107,10 @@
             <entry>dev.ares.ares</entry>
         </rule>
         <rule type="staticpath">
+            <entry>~/Applications/ares*.AppImage</entry>
+            <entry>~/.local/share/applications/ares*.AppImage</entry>
+            <entry>~/.local/bin/ares*.AppImage</entry>
+            <entry>~/bin/ares*.AppImage</entry>
             <entry>/var/lib/flatpak/exports/bin/dev.ares.ares</entry>
             <entry>~/.local/share/flatpak/exports/bin/dev.ares.ares</entry>
         </rule>
