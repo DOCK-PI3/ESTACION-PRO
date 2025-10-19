@@ -770,42 +770,49 @@ chmod +x rpcs3*.AppImage
 
 The following emulators are supported in AppImage format when using the bundled configuration:
 
-| System name          | Emulator            | Filename configuration         |
-| :------------------- | :------------------ | :----------------------------- |
-| _Multiple_           | RetroArch           | RetroArch-Linux*.AppImage      |
-| _Multiple_           | jgenesis            | jgenesis-cli*.AppImage         |
-| _Multiple_           | Mesen               | Mesen*.AppImage                |
-| arcade/mame/pcarcade | Lindbergh Loader    | lindbergh-loader*.AppImage     |
-| dreamcast            | Flycast             | flycast-x86*.AppImage          |
-| dreamcast            | Flycast Dojo        | flycast-dojo*.AppImage         |
-| gba                  | mGBA                | mGBA*.AppImage                 |
-| gc                   | Dolphin             | Dolphin_Emulator*.AppImage     |
-| gc                   | Triforce            | dolphin-emu-triforce*.AppImage |
-| macintosh            | Basilisk II         | BasiliskII*.AppImage           |
-| macintosh            | SheepShaver         | SheepShaver*.AppImage          |
-| n3ds                 | Azahar              | azahar*.AppImage               |
-| n3ds                 | AzaharPlus          | azaharplus*.AppImage               |
-| n3ds                 | Citra               | citra-qt*.AppImage             |
-| n3ds                 | Lime3DS             | lime3ds.AppImage               |
-| n3ds                 | Mandarine           | mandarine-qt*.AppImage         |
-| n3ds                 | Panda3DS            | Alber-*.AppImage               |
-| n64/n64dd            | Rosalie's Mupen GUI | RMG*.AppImage                  |
-| nds                  | melonDS             | melonDS*.AppImage              |
-| ngage/symbian        | EKA2L1              | EKA2L1*.AppImage               |
-| ps2                  | PCSX2               | pcsx2*.AppImage                |
-| ps2                  | Play!               | Play!*.AppImage                |
-| ps3                  | RPCS3               | rpcs3*.AppImage                |
-| ps4                  | shadPS4             | Shadps4-qt*.AppImage           |
-| ps4                  | shadPS4             | Shadps4-sdl*.AppImage          |
-| psp                  | PPSSPP              | PPSSPP*.AppImage               |
-| psvita               | Vita3K              | Vita3K*.AppImage               |
-| psx                  | DuckStation         | DuckStation*.AppImage          |
-| snes                 | Snes9x              | Snes9x*.AppImage               |
-| switch               | Ryujinx             | \*yujinx\*.AppImage            |
-| xbox                 | xemu                | xemu*.AppImage                 |
-| wii                  | Dolphin             | Dolphin_Emulator*.AppImage     |
-| wiiu                 | Cemu                | Cemu*.AppImage                 |
-| zmachine             | Gargoyle            | Gargoyle*.AppImage             |
+| System name          | Emulator            | Filename configuration         | Package source       |
+| :------------------- | :------------------ | :----------------------------- | :------------------- |
+| _Multiple_           | RetroArch           | RetroArch-Linux*.AppImage      | Official             |
+| _Multiple_           | ares                | ares*.AppImage                 | pkgforge-dev         |
+| _Multiple_           | jgenesis            | jgenesis-cli*.AppImage         | Official             |
+| _Multiple_           | MAME                | MAME*.AppImage                 | pkgforge-dev         |
+| _Multiple_           | Mesen               | Mesen*.AppImage                | Official             |
+| arcade/mame/pcarcade | Lindbergh Loader    | lindbergh-loader*.AppImage     | Official             |
+| dreamcast            | Flycast             | flycast-x86*.AppImage          | Official             |
+| dreamcast            | Flycast Dojo        | flycast-dojo*.AppImage         | Official             |
+| gba                  | mGBA                | mGBA*.AppImage                 | Official             |
+| gc                   | Dolphin             | Dolphin_Emulator*.AppImage     | pkgforge-dev         |
+| gc                   | Triforce            | dolphin-emu-triforce*.AppImage | Community            |
+| macintosh            | Basilisk II         | BasiliskII*.AppImage           | Official             |
+| macintosh            | SheepShaver         | SheepShaver*.AppImage          | Official             |
+| n3ds                 | Azahar              | azahar*.AppImage               | Official             |
+| n3ds                 | Azahar              | Azahar-Enhanced*.AppImage      | pkgforge-dev         |
+| n3ds                 | AzaharPlus          | azaharplus*.AppImage           | Official             |
+| n3ds                 | Citra               | citra-qt*.AppImage             | Official             |
+| n3ds                 | Lime3DS             | lime3ds.AppImage               | Official             |
+| n3ds                 | Mandarine           | mandarine-qt*.AppImage         | Official             |
+| n3ds                 | Panda3DS            | Alber-*.AppImage               | Official             |
+| n64/n64dd            | Rosalie's Mupen GUI | RMG*.AppImage                  | Official             |
+| nds                  | DeSmuME             | desmume*.AppImage              | pkgforge-dev         |
+| nds                  | melonDS             | melonDS*.AppImage              | Official             |
+| ngage/symbian        | EKA2L1              | EKA2L1*.AppImage               | Official             |
+| ps2                  | PCSX2               | pcsx2*.AppImage                | Official             |
+| ps2                  | Play!               | Play!*.AppImage                | Official             |
+| ps3                  | RPCS3               | rpcs3*.AppImage                | Official             |
+| ps4                  | shadPS4             | Shadps4-qt*.AppImage           | Official             |
+| ps4                  | shadPS4             | Shadps4-sdl*.AppImage          | Official             |
+| psp                  | PPSSPP              | PPSSPP*.AppImage               | Official             |
+| psvita               | Vita3K              | Vita3K*.AppImage               | Official             |
+| psx                  | DuckStation         | DuckStation*.AppImage          | Official             |
+| snes                 | Snes9x              | Snes9x*.AppImage               | Official             |
+| switch               | Ryujinx             | \*yujinx\*.AppImage            | Community            |
+| xbox                 | xemu                | xemu*.AppImage                 | Official             |
+| xbox360              | xenia               | xenia-canary*.AppImage         | pkgforge-dev         |
+| wii                  | Dolphin             | Dolphin_Emulator*.AppImage     | Official             |
+| wiiu                 | Cemu                | Cemu*.AppImage                 | Official             |
+| zmachine             | Gargoyle            | Gargoyle*.AppImage             | Official             |
+
+Most AppImages are distributed directly by the official projects, but there's also a good selection of AppImages available at https://github.com/pkgforge-dev which includes some emulators that don't ship AppImages themselves.
 
 ## Using AppImageLauncher on Linux
 
@@ -2248,10 +2255,10 @@ This system is emulated using [xenia](https://xenia.jp/), and although there are
 
 **General**
 
-Single-disc ISO images can simply be placed in the root of the `~/ROMs/xbox360` system directory, like the following:
+Single-disc ISO images can simply be placed in the root of the `ROMs/xbox360` system directory, like the following:
 ```
-~/ROMs/xbox360/Gears of War.iso
-~/ROMs/xbox360/Gears of War 3.iso
+ROMs/xbox360/Gears of War.iso
+ROMs/xbox360/Gears of War 3.iso
 ```
 
 Xbox Live Arcade (XBLA) games work quite differently, these are generally shipped in directory structures with quite cryptic filenames that are also extensionless. Here's an example:
@@ -2262,11 +2269,11 @@ Castle Crashers/584108B7/000D0000/
 Castle Crashers/584108B7/000D0000/F9432A7FE407A3C196C95D0FFD4A540937FD4EEC58
 ```
 
-For this example it's F9432A7FE407A3C196C95D0FFD4A540937FD4EEC58 that is the actual game file. It's recommended to move this file to the root of the `~/ROMs/xbox360` system directory and to rename it to the game name followed by _(XBLA)_ to make it clear that it's an Xbox Live Arcade game. After doing this our example directory structure would look like the following:
+For this example it's F9432A7FE407A3C196C95D0FFD4A540937FD4EEC58 that is the actual game file. It's recommended to move this file to the root of the `ROMs/xbox360` system directory and to rename it to the game name followed by _(XBLA)_ to make it clear that it's an Xbox Live Arcade game. After doing this our example directory structure would look like the following:
 ```
-~/ROMs/xbox360/Castle Crashers (XBLA)
-~/ROMs/xbox360/Gears of War.iso
-~/ROMs/xbox360/Gears of War 3.iso
+ROMs/xbox360/Castle Crashers (XBLA)
+ROMs/xbox360/Gears of War.iso
+ROMs/xbox360/Gears of War 3.iso
 ```
 
 Note again that the Castle Crashers game does not have a file extension, this is correct and the game can still be launched from inside ES-DE.
@@ -2276,14 +2283,24 @@ https://github.com/cmclark00/XBLA-Automation
 
 It's as well possible to inject xenia command line options into the launch command on a per-game basis. To do this simply create a file with the same name as the game file and with the .commands file extension. Place the command line options in there, like for this example where we set the language to Spanish for Gears of War:
 ```
-~/ROMs/xbox360/Gears of War.commands
-~/ROMs/xbox360/Gears of War.iso
+ROMs/xbox360/Gears of War.commands
+ROMs/xbox360/Gears of War.iso
 ```
 
 And this is the content of the .commands file:
 ```
 --user_language=5
 ```
+
+On Windows it's also possible to install xenia via Xenia Manager and export .lnk shortcut files that can be launched from ES-DE. Just move the shortcut files to the xbox360 directory and use the _Shortcut or script_ alternative emulator entry:
+
+```
+ROMs/xbox360/Gears of War.lnk
+```
+
+Note that launching shortcut files can't be combined with injection of .commands files, you instead define per-game settings from inside Xenia Manager and these will then be applied when launching the shortcut.
+
+Although we have not tried to run Xenia Manager via Lutris or Bottles or similar translation layers on Linux, this could perhaps be done. Normally such applications allow the export of .desktop shortcut files that could be executed from ES-DE in the same way as on Windows.
 
 **Running xenia on Linux**
 
@@ -2301,7 +2318,7 @@ Also create an empty file named `portable.txt` inside this directory. You should
 ~/Applications/xenia/xenia.pdb
 ```
 
-Make sure that you have placed a valid game file into `~/ROMs/xbox360` and then go ahead and start ES-DE and run the game. You should see xenia starting up and you may hear some sound from the loaded game, but the screen will be black. Quit xenia and check inside the `~/Applications/xenia` directory where there should now be a file named `xenia.config.toml`
+Make sure that you have placed a valid game file into `ROMs/xbox360` and then go ahead and start ES-DE and run the game. You should see xenia starting up and you may hear some sound from the loaded game, but the screen will be black. Quit xenia and check inside the `~/Applications/xenia` directory where there should now be a file named `xenia.config.toml`
 
 You'll need to modify the following lines in this file:
 ```
@@ -2319,7 +2336,7 @@ There are of course many more settings for xenia and Wine that may be adjusted f
 
 The canary release of xenia can also be used but it's not possible to set the xenia release per game. Instead the find rules will first look for `xenia.exe` and if that can't be found it will look for `xenia_canary.exe`. Be aware that if using the canary release of xenia, the configuration file is named `xenia-canary.config.toml` instead of `xenia.config.toml`
 
-For a more complex setup like requiring different Wine or xenia versions per game or similar the xbox360 system on Linux also supports the _Shortcut or script_ alternative emulator entry. Using this you can create shell scripts with specific configuration or you could alternatively install Xbox 360 games via Lutris or similar and export .desktop shortcuts from there and place these inside the `~/ROMs/xbox360` directory. Just make sure to select the appropriate alternative emulator entry if doing this, or it will not work.
+For a more complex setup like requiring different Wine or xenia versions per game or similar the xbox360 system on Linux also supports the _Shortcut or script_ alternative emulator entry. Using this you can create shell scripts with specific configuration or you could alternatively install Xbox 360 games via Lutris or similar and export .desktop shortcuts from there and place these inside the `ROMs/xbox360` directory. Just make sure to select the appropriate alternative emulator entry if doing this, or it will not work.
 
 ### M.U.G.E.N Game Engine
 
@@ -4884,7 +4901,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | x1                    | Sharp X1                                       | X Millennium                      | MAME [Diskette] **(Standalone)**,<br>MAME [Tape] **(Standalone)** | Yes for MAME | Single archive or diskette/tape file |
 | x68000                | Sharp X68000                                   | PX68k                             | MAME **(Standalone)**,<br>XM6 Pro-68k **(Standalone)** [W],<br>XM6 TypeG **(Standalone**) [W],<br>XM6 Pro-68k **(Wine)** [L],<br>XM6 Pro-68k **(Proton)** [L],<br>XM6 TypeG **(Wine)** [L],<br>XM6 TypeG **(Proton)** [L] | Yes for PX68k and MAME |                                      |
 | xbox                  | Microsoft Xbox                                 | xemu **(Standalone)**             | Cxbx-Reloaded **(Standalone)** [W] | Yes for xemu | Single .iso file for xemu or unpacked .iso directory for Cxbx-Reloaded |
-| xbox360               | Microsoft Xbox 360                             | xenia **(Standalone)** [LW]       | xenia **(Wine)** [L],<br>xenia **(Proton)** [L],<br> _Shortcut or script_ [L]          | No           | See the specific _Microsoft Xbox 360_ section elsewhere in this guide |
+| xbox360               | Microsoft Xbox 360                             | xenia **(Standalone)** [LW]       | xenia **(Wine)** [L],<br>xenia **(Proton)** [L],<br> _Shortcut or script_ [LW] | No           | See the specific _Microsoft Xbox 360_ section elsewhere in this guide |
 | xboxone               | Microsoft Xbox One                             | _Placeholder_                     |                                   |              |                                      |
 | zmachine              | Infocom Z-machine                              | MojoZork                          | Gargoyle **(Standalone)**         | No           |                                      |
 | zx81                  | Sinclair ZX81                                  | EightyOne                         |                                   | No           |                                      |
