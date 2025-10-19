@@ -125,6 +125,10 @@
             <entry>~/.local/share/applications/azahar*.AppImage</entry>
             <entry>~/.local/bin/azahar*.AppImage</entry>
             <entry>~/bin/azahar*.AppImage</entry>
+            <entry>~/Applications/Azahar-Enhanced*.AppImage</entry>
+            <entry>~/.local/share/applications/Azahar-Enhanced*.AppImage</entry>
+            <entry>~/.local/bin/Azahar-Enhanced*.AppImage</entry>
+            <entry>~/bin/Azahar-Enhanced*.AppImage</entry>
             <entry>/var/lib/flatpak/exports/bin/org.azahar_emu.Azahar</entry>
             <entry>~/.local/share/flatpak/exports/bin/org.azahar_emu.Azahar</entry>
         </rule>
