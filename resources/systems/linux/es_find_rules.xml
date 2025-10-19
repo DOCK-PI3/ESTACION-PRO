@@ -655,6 +655,10 @@
             <entry>org.mamedev.MAME</entry>
         </rule>
         <rule type="staticpath">
+            <entry>~/Applications/MAME*.AppImage</entry>
+            <entry>~/.local/share/applications/MAME*.AppImage</entry>
+            <entry>~/.local/bin/MAME*.AppImage</entry>
+            <entry>~/bin/MAME*.AppImage</entry>
             <entry>/var/lib/flatpak/exports/bin/org.mamedev.MAME</entry>
             <entry>~/.local/share/flatpak/exports/bin/org.mamedev.MAME</entry>
         </rule>
