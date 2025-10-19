@@ -294,6 +294,10 @@
             <entry>org.desmume.DeSmuME</entry>
         </rule>
         <rule type="staticpath">
+            <entry>~/Applications/desmume*.AppImage</entry>
+            <entry>~/.local/share/applications/desmume*.AppImage</entry>
+            <entry>~/.local/bin/desmume*.AppImage</entry>
+            <entry>~/bin/desmume*.AppImage</entry>
             <entry>/var/lib/flatpak/exports/bin/org.desmume.DeSmuME</entry>
             <entry>~/.local/share/flatpak/exports/bin/org.desmume.DeSmuME</entry>
         </rule>
