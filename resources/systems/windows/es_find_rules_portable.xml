@@ -193,6 +193,13 @@
             <entry>%ESPATH%\..\Emulators\Dolphin-x64\Dolphin.exe</entry>
         </rule>
     </emulator>
+    <emulator name="DOSBOX-PURE-UNLEASHED">
+        <!-- DOS emulator DOSBox Pure Unleashed -->
+        <rule type="staticpath">
+            <entry>%ESPATH%\Emulators\DOSBoxPure\DOSBoxPure.exe</entry>
+            <entry>%ESPATH%\..\Emulators\DOSBoxPure\DOSBoxPure.exe</entry>
+        </rule>
+    </emulator>
     <emulator name="DOSBOX-STAGING">
         <!-- DOS emulator DOSBox Staging -->
         <rule type="staticpath">

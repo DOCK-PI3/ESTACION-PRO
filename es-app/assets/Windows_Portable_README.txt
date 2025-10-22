@@ -67,6 +67,7 @@ Emulators\CSpect\CSpect.exe
 Emulators\Cxbx-Reloaded\cxbx.exe
 Emulators\demul\demul.exe
 Emulators\Dolphin-x64\Dolphin.exe
+Emulators\DOSBoxPure\DOSBoxPure.exe
 Emulators\dosbox-staging\dosbox.exe
 Emulators\DOSBox-X\dosbox-x.exe
 Emulators\dreamm\dreamm.exe

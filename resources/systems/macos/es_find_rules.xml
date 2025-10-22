@@ -90,6 +90,12 @@
             <entry>/Applications/Dolphin.app/Contents/MacOS/Dolphin</entry>
         </rule>
     </emulator>
+    <emulator name="DOSBOX-PURE-UNLEASHED">
+        <!-- DOS emulator DOSBox Pure Unleashed -->
+        <rule type="staticpath">
+            <entry>/Applications/DOSBoxPure.app/Contents/MacOS/DOSBoxPure</entry>
+        </rule>
+    </emulator>
     <emulator name="DOSBOX-STAGING">
         <!-- DOS emulator DOSBox Staging -->
         <rule type="staticpath">

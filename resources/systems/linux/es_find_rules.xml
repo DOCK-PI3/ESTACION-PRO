@@ -318,6 +318,18 @@
             <entry>~/.local/share/flatpak/exports/bin/org.DolphinEmu.dolphin-emu</entry>
         </rule>
     </emulator>
+    <emulator name="DOSBOX-PURE-UNLEASHED">
+        <!-- DOS emulator DOSBox Pure Unleashed -->
+        <rule type="systempath">
+            <entry>DOSBoxPure</entry>
+        </rule>
+        <rule type="staticpath">
+            <entry>~/Applications/DOSBoxPure/DOSBoxPure</entry>
+            <entry>~/.local/share/applications/DOSBoxPure/DOSBoxPure</entry>
+            <entry>~/.local/bin/DOSBoxPure/DOSBoxPure</entry>
+            <entry>~/bin/DOSBoxPure/DOSBoxPure</entry>
+        </rule>
+    </emulator>
     <emulator name="DOSBOX-STAGING">
         <!-- DOS emulator DOSBox Staging -->
         <rule type="systempath">
