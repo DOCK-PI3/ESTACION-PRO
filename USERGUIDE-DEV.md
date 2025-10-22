@@ -880,53 +880,54 @@ So placing a manually downloaded emulator binary in either of these directories 
 
 The following manually downloaded emulators are supported when using the bundled configuration:
 
-| System                                        | Emulator         | Filename                          |
-| :-------------------------------------------- | :--------------- | :-------------------------------- |
-| _Multiple_                                    | Mesen            | Mesen/Mesen                       |
-| adam/colecovision                             | ColEm            | colem/colem                       |
-| amiga/amiga1200/amiga600/amigacd32/cdtv       | Amiberry         | amiberry/amiberry                 |
-| amstradcpc                                    | ACE-DL           | AceDL/AceDL                       |
-| amstradcpc                                    | CPCemu           | cpcemu/cpcemu                     |
-| apple2                                        | LinApple         | linapple/linapple                 |
-| arcade/consolearcade/mame/saturn/saturnjp/stv | Kronos           | kronos/kronos                     |
-| arcade/mame/model3                            | Supermodel       | Supermodel/supermodel             |
-| arcade/mame/pcarcade                          | Lindbergh Loader | lindbergh/lindbergh               |
-| atari2600                                     | Gopher2600       | gopher2600/gopher2600_linux_amd64 |
-| atari7800                                     | A7800            | a7800-linux/a7800                 |
-| atarijaguar/atarijaguarcd                     | BigPEmu          | bigpemu/bigpemu                   |
-| coco/dragon32/tanodragon                      | XRoar            | xroar/xroar                       |
-| daphne                                        | Hypseus Singe    | hypseus-singe/hypseus.bin         |
-| dreamcast                                     | Redream          | redream/redream                   |
-| easyrpg                                       | EasyRPG          | easyrpg/easyrpg-player            |
-| fbneo/neogeo/neogeocd/neogeocdjp              | FinalBurn Neo    | fbneo/fbneo                       |
-| flash                                         | Lightspark       | lightspark/lightspark             |
-| flash                                         | Ruffle           | ruffle/ruffle                     |
-| fmtowns                                       | Tsugaru          | tsugaru/Tsugaru_CUI               |
-| gb/gba/gbc/nds                                | SkyEmu           | SkyEmu/SkyEmu                     |
-| gb/gbc                                        | Gearboy          | gearboy/gearboy                   |
-| genesis/megadrive/megadrivejp                 | BlastEm          | blastem/blastem                   |
-| famicom/nes                                   | puNES            | punes/punes                       |
-| mame-advmame                                  | AdvanceMAME      | advancemame/advmame               |
-| n64                                           | Gopher64         | gopher64/gopher64-linux-aarch64   |
-| n64                                           | Gopher64         | gopher64/gopher64-linux-x86_64    |
-| oric                                          | Oricutron        | oricutron/Oricutron               |
-| pc88                                          | QUASI88          | quasi88/quasi88                   |
-| pico8                                         | PICO-8           | pico-8/pico8                      |
-| ps4                                           | shadPS4          | shadps4/shadps4                   |
-| psvita                                        | Vita3K           | Vita3K/Vita3K                     |
-| samcoupe                                      | SimCoupé         | simcoupe/simcoupe                 |
-| saturn/saturnjp                               | Ymir             | ymir/ymir-sdl3                    |
-| scummvm                                       | DREAMM           | dreamm/dreamm                     |
-| switch                                        | Ryujinx          | publish/Ryujinx                   |
-| switch                                        | Ryujinx          | publish/Ryujinx.Ava               |
-| trs-80                                        | sdl2trs          | sdl2trs/sdl2trs                   |
-| vpinball                                      | Visual Pinball X | VPinballX/VPinballX_BGFX          |
-| vpinball                                      | Visual Pinball X | VPinballX/VPinballX_GL            |
-| wiiu                                          | Cemu             | Cemu/Cemu                         |
-| xbox360                                       | xenia            | xenia/xenia                       |
-| xbox360                                       | xenia            | xenia/xenia_canary                |
-| zxnext                                        | #CSpect          | CSpect/CSpect.exe                 |
-| zxnext                                        | ZEsarUX          | ZEsarUX/zesarux                   |
+| System                                        | Emulator              | Filename                          |
+| :-------------------------------------------- | :-------------------- | :-------------------------------- |
+| _Multiple_                                    | Mesen                 | Mesen/Mesen                       |
+| adam/colecovision                             | ColEm                 | colem/colem                       |
+| amiga/amiga1200/amiga600/amigacd32/cdtv       | Amiberry              | amiberry/amiberry                 |
+| amstradcpc                                    | ACE-DL                | AceDL/AceDL                       |
+| amstradcpc                                    | CPCemu                | cpcemu/cpcemu                     |
+| apple2                                        | LinApple              | linapple/linapple                 |
+| arcade/consolearcade/mame/saturn/saturnjp/stv | Kronos                | kronos/kronos                     |
+| arcade/mame/model3                            | Supermodel            | Supermodel/supermodel             |
+| arcade/mame/pcarcade                          | Lindbergh Loader      | lindbergh/lindbergh               |
+| atari2600                                     | Gopher2600            | gopher2600/gopher2600_linux_amd64 |
+| atari7800                                     | A7800                 | a7800-linux/a7800                 |
+| atarijaguar/atarijaguarcd                     | BigPEmu               | bigpemu/bigpemu                   |
+| coco/dragon32/tanodragon                      | XRoar                 | xroar/xroar                       |
+| daphne                                        | Hypseus Singe         | hypseus-singe/hypseus.bin         |
+| dos/pc/windows3x/windows9x                    | DOSBox Pure Unleashed | DOSBoxPure/DOSBoxPure             |
+| dreamcast                                     | Redream               | redream/redream                   |
+| easyrpg                                       | EasyRPG               | easyrpg/easyrpg-player            |
+| fbneo/neogeo/neogeocd/neogeocdjp              | FinalBurn Neo         | fbneo/fbneo                       |
+| flash                                         | Lightspark            | lightspark/lightspark             |
+| flash                                         | Ruffle                | ruffle/ruffle                     |
+| fmtowns                                       | Tsugaru               | tsugaru/Tsugaru_CUI               |
+| gb/gba/gbc/nds                                | SkyEmu                | SkyEmu/SkyEmu                     |
+| gb/gbc                                        | Gearboy               | gearboy/gearboy                   |
+| genesis/megadrive/megadrivejp                 | BlastEm               | blastem/blastem                   |
+| famicom/nes                                   | puNES                 | punes/punes                       |
+| mame-advmame                                  | AdvanceMAME           | advancemame/advmame               |
+| n64                                           | Gopher64              | gopher64/gopher64-linux-aarch64   |
+| n64                                           | Gopher64              | gopher64/gopher64-linux-x86_64    |
+| oric                                          | Oricutron             | oricutron/Oricutron               |
+| pc88                                          | QUASI88               | quasi88/quasi88                   |
+| pico8                                         | PICO-8                | pico-8/pico8                      |
+| ps4                                           | shadPS4               | shadps4/shadps4                   |
+| psvita                                        | Vita3K                | Vita3K/Vita3K                     |
+| samcoupe                                      | SimCoupé              | simcoupe/simcoupe                 |
+| saturn/saturnjp                               | Ymir                  | ymir/ymir-sdl3                    |
+| scummvm                                       | DREAMM                | dreamm/dreamm                     |
+| switch                                        | Ryujinx               | publish/Ryujinx                   |
+| switch                                        | Ryujinx               | publish/Ryujinx.Ava               |
+| trs-80                                        | sdl2trs               | sdl2trs/sdl2trs                   |
+| vpinball                                      | Visual Pinball X      | VPinballX/VPinballX_BGFX          |
+| vpinball                                      | Visual Pinball X      | VPinballX/VPinballX_GL            |
+| wiiu                                          | Cemu                  | Cemu/Cemu                         |
+| xbox360                                       | xenia                 | xenia/xenia                       |
+| xbox360                                       | xenia                 | xenia/xenia_canary                |
+| zxnext                                        | #CSpect               | CSpect/CSpect.exe                 |
+| zxnext                                        | ZEsarUX               | ZEsarUX/zesarux                   |
 
 #CSpect requires the Mono .NET framework to run, hence the .exe extension.
 
@@ -1129,7 +1130,7 @@ Below are the import rules that are part of the bundled configuration.
 
 Let's start with the simple scenario of a single ROM file per game, which is the case for the majority of platforms. For this example we're setting up ES-DE to play Nintendo Entertainment System games.
 
-The supported file extensions are listed in [linux/es_systems.xml](resources/systems/linux/es_systems.xml), [macos/es_systems.xml](resources/systems/macos/es_systems.xml) and [windows/es_systems.xml](resources/systems/windows/es_systems.xml) but if you generated the game system directories on first application startup or later via _Create/update system directories_ in the _Utilities_ menu, then there will be a file named systeminfo.txt in each game system directory that includes the list of supported file extensions.
+The supported file extensions are listed in [android/es_systems.xml](resources/systems/android/es_systems.xml), [linux/es_systems.xml](resources/systems/linux/es_systems.xml), [macos/es_systems.xml](resources/systems/macos/es_systems.xml) and [windows/es_systems.xml](resources/systems/windows/es_systems.xml) but if you generated the game system directories on first application startup or later via _Create/update system directories_ in the _Utilities_ menu, then there will be a file named systeminfo.txt in each game system directory that includes the list of supported file extensions.
 
 Here is a simplified example from linux/es_systems.xml:
 
@@ -1152,19 +1153,25 @@ The ROM files must be named using one of the supported file extensions, or ES-DE
 
 It's highly recommended to use filenames that correspond to the full name of the game (except for special cases like arcade games), otherwise you may need to manually feed the scraper the game name when scraping which is very tedious.
 
-Symlinks are supported for both ROM directories and individual game files, but make sure to never symlink between files within the same system directory or there may be undefined application behavior when scraping, launching games etc.
+Symlinks are supported for both ROM directories and individual game files on desktop operating systems, but make sure to never symlink between files within the same system directory or there may be undefined application behavior when scraping, launching games etc.
 
 The default game folder is ~/ROMs. On Linux this defaults to `/home/<username>/ROMs`, on macOS `/Users/<username>/ROMs` and on Windows `C:\Users\<username>\ROMs` or `ES-DE\ROMs` depending on whether the installer release or the portable release is used. If the --home command line option was used to start ES-DE, the tilde symbol will resolve to whatever directory was passed as an argument to this option.
 
 Assuming the default ROM directory is used, we need to create a subdirectory corresponding to the \<path\> tag in es_systems.xml, for this example it's `nes`.
 
-So it would look something like the following:
+So it would look something like the following for desktop operating systems:
 
 ```
 /home/myusername/ROMs/nes     # Linux
 /Users/myusername/ROMs/nes    # macOS
 C:\Users\myusername\ROMs\nes  # Windows installer
 ES-DE\ROMs\nes                # Windows portable
+```
+
+On Android it works slightly different as you select the ROMs directory during the onboarding process. The actual paths may look something like the following:
+```
+/storage/emulated/0/ROMs      # Internal storage
+/storage/459E-3A7F/ROMs       # External storage (SD card)
 ```
 
 Now simply copy your game ROMs into this folder, and you should end up with something like this Linux example:
@@ -1784,15 +1791,15 @@ How to configure all other emulators is beyond the scope of this document, but t
 
 ### DOS / PC
 
-For this platform there are two basic approaches for how the setup could be done; either to present each game as a single entry inside ES-DE, or to retain each game's directory structure. The first alternative is more user-friendly, tidy and requires less setup but basically restricts the emulator selection to the DOSBox-Pure RetroArch core. There is an alternative way to setup single entries to work with all DOSBox forks, but it has some drawbacks as discussed below.
+For this platform there are two basic approaches for how the setup could be done; either to present each game as a single entry inside ES-DE, or to retain each game's directory structure. The first alternative is more user-friendly, tidy and requires less setup but basically restricts the emulator selection to the DOSBox-Pure RetroArch core and DOSBox Pure Unleashed (the latter is only available on desktop operating systems). There is an alternative way to setup single entries to work with all DOSBox forks, but it has some drawbacks as discussed below.
 
 If you want to emulate older DOS games and applications then there's also support for the VirtualXT RetroArch core, but this emulator can only run .img and .zip files and it probably won't be able to run most games from the 1990s. For these reasons this documentation does not cover VirtualXT in more detail.
 
-Additionally, for a limited set of LucasArts games [DREAMM](https://aarongiles.com/dreamm) can be used. Note that DREAMM works a bit differently than both DOSBox and VirtualXT in that it just receives the game directory as an argument on game launch and will autodetect the game based on the content of this directory. This also means that DREAMM does not support launching of .zip files, i.e. the games need to be unpacked into separate directories. You can however use the _directories interpreted as a files_ functionality to present them as single entries in the gamelist view instead of as folders that you would have to go into to launch the games.
+Additionally on desktop operating systems, for a limited set of LucasArts games [DREAMM](https://aarongiles.com/dreamm) can be used. Note that DREAMM works a bit differently than both DOSBox and VirtualXT in that it just receives the game directory as an argument on game launch and will autodetect the game based on the content of this directory. This also means that DREAMM does not support launching of .zip files, i.e. the games need to be unpacked into separate directories. You can however use the _directories interpreted as a files_ functionality to present them as single entries in the gamelist view instead of as folders that you would have to go into to launch the games.
 
-Moving on to the DOSBox setup, if you prefer to present the games as single entries you could compress each game directory into a ZIP file with either the .zip or .dosz file extension. On game launch a menu will be displayed by DOSBox-Pure, asking which file inside the archive you would like to execute. This makes it possible to select the actual game file, or for example a setup utility like SETUP.EXE or INSTALL.EXE. Attempting to launch such an archive file with any other DOSBox fork will fail, or not work as expected.
+Moving on to the DOSBox setup, if you prefer to present the games as single entries you could compress each game directory into a ZIP file with either the .zip or .dosz file extension. On game launch a menu will be displayed by DOSBox-Pure or DOSBox Pure Unleashed, asking which file inside the archive you would like to execute. This makes it possible to select the actual game file, or for example a setup utility like SETUP.EXE or INSTALL.EXE. Attempting to launch such an archive file with any other DOSBox fork will fail, or not work as expected.
 
-Here's an example of a .zip archive setup for use with DOSBox-Pure:
+Here's an example of a .zip archive setup for use with DOSBox-Pure or DOSBox Pure Unleashed:
 ```
 ~/ROMs/dos/Dune 2 - The Building of a Dynasty.zip
 ~/ROMs/dos/Quake.zip
@@ -1800,7 +1807,7 @@ Here's an example of a .zip archive setup for use with DOSBox-Pure:
 ~/ROMs/dos/UFO Enemy Unknown.zip
 ```
 
-The alternative setup to get single entries working is to use the _Directories interpreted as files_ functionality explained elsewhere in this guide. This makes it possible to use other DOSBox forks than DOSBox-Pure, but requires some additional setup. How this works is that you create a .bat file inside each game directory with the name of the game, and inside this .bat file you enter the game file you would like to launch. You then rename the game directory to the name of the .bat file including the file extension.
+The alternative setup to get single entries working is to use the _Directories interpreted as files_ functionality explained elsewhere in this guide. This makes it possible to use other DOSBox forks than DOSBox-Pure and DOSBox Pure Unleashed, but it requires some additional setup. How this works is that you create a .bat file inside each game directory with the name of the game, and inside this .bat file you enter the game file you would like to launch. You then rename the game directory to the name of the .bat file including the file extension.
 
 There are however multiple issues with this approach, the first being that only DOSBox-X supports long filenames (LFN) so you can only use directory names with a maximum of 8 characters plus the .bat extension if using another DOSBox fork. The second issue is that as of the time of writing, this setup does not seem to work at all with DOSBox-Core.
 
@@ -1834,7 +1841,7 @@ The Dragon 32, Dragon 64 and Tano Dragon are all slight variations of the Tandy 
 
 **MAME**
 
-To use MAME you need the `dragon32.zip` and `dragon_fdc.zip` BIOS files in the ROMs/dragon32 directory and you need the `tanodr64.zip` BIOS file in ROMs/tanodragon.
+To use MAME you need the `dragon32.zip` and `dragon_fdc.zip` BIOS files in the `~/ROMs/dragon32` directory and you need the `tanodr64.zip` BIOS file in `~/ROMs/tanodragon`.
 
 For the dragon32 system there are four MAME emulator entries for tape and cartridge for the Dragon 32 and Dragon 64 models respectively and for the tanodragon system there are two entries for tape and cartridge.
 
@@ -2170,7 +2177,7 @@ As an alternative you can add Lutris games to the Ports system using the procedu
 
 ### Microsoft Windows 3.x and 9x
 
-There are multiple ways to run Windows 3.x and Windows 9x games and two different approaches are covered here. The first option is to run these games inside a complete operating system emulated via DOSBox and the second option is to use shortcuts, scripts or AppImages to run the games separately via applications like Wine or Lutris or by using source ports and similar. It may also be possible to run these games as zip files via DOSBox-Pure (which is available as an alternative emulator for these systems), but it's not covered here.
+There are multiple ways to run Windows 3.x and Windows 9x games and two different approaches are covered here. The first option is to run these games inside a complete operating system emulated via DOSBox and the second option is to use shortcuts, scripts or AppImages to run the games separately via applications like Wine or Lutris or by using source ports and similar. It may also be possible to run these games as zip files via DOSBox-Pure or DOSBox Pure Unleashed (which are available as alternative emulators for these systems), but it's not covered here. Note that DOSBox Pure Unleashed is only available on desktop operating systems.
 
 The second approach is very flexible but does not lead to the most authentic experience in many cases. It will also not be covered in detail here. As long as you have a script, shortcut or AppImage that can be launched outside ES-DE you should be able to place it into the `~/ROMs/windows3x` or `~/ROMs/windows9x` directories and launch it inside ES-DE as well (assuming you have selected the correct alternative emulator entry). If you've named the files appropriately it should also be possible to scrape them.
 
@@ -2255,10 +2262,10 @@ This system is emulated using [xenia](https://xenia.jp/), and although there are
 
 **General**
 
-Single-disc ISO images can simply be placed in the root of the `ROMs/xbox360` system directory, like the following:
+Single-disc ISO images can simply be placed in the root of the `~/ROMs/xbox360` system directory, like the following:
 ```
-ROMs/xbox360/Gears of War.iso
-ROMs/xbox360/Gears of War 3.iso
+~/ROMs/xbox360/Gears of War.iso
+~/ROMs/xbox360/Gears of War 3.iso
 ```
 
 Xbox Live Arcade (XBLA) games work quite differently, these are generally shipped in directory structures with quite cryptic filenames that are also extensionless. Here's an example:
@@ -2269,11 +2276,11 @@ Castle Crashers/584108B7/000D0000/
 Castle Crashers/584108B7/000D0000/F9432A7FE407A3C196C95D0FFD4A540937FD4EEC58
 ```
 
-For this example it's F9432A7FE407A3C196C95D0FFD4A540937FD4EEC58 that is the actual game file. It's recommended to move this file to the root of the `ROMs/xbox360` system directory and to rename it to the game name followed by _(XBLA)_ to make it clear that it's an Xbox Live Arcade game. After doing this our example directory structure would look like the following:
+For this example it's F9432A7FE407A3C196C95D0FFD4A540937FD4EEC58 that is the actual game file. It's recommended to move this file to the root of the `~/ROMs/xbox360` system directory and to rename it to the game name followed by _(XBLA)_ to make it clear that it's an Xbox Live Arcade game. After doing this our example directory structure would look like the following:
 ```
-ROMs/xbox360/Castle Crashers (XBLA)
-ROMs/xbox360/Gears of War.iso
-ROMs/xbox360/Gears of War 3.iso
+~/ROMs/xbox360/Castle Crashers (XBLA)
+~/ROMs/xbox360/Gears of War.iso
+~/ROMs/xbox360/Gears of War 3.iso
 ```
 
 Note again that the Castle Crashers game does not have a file extension, this is correct and the game can still be launched from inside ES-DE.
@@ -2283,8 +2290,8 @@ https://github.com/cmclark00/XBLA-Automation
 
 It's as well possible to inject xenia command line options into the launch command on a per-game basis. To do this simply create a file with the same name as the game file and with the .commands file extension. Place the command line options in there, like for this example where we set the language to Spanish for Gears of War:
 ```
-ROMs/xbox360/Gears of War.commands
-ROMs/xbox360/Gears of War.iso
+~/ROMs/xbox360/Gears of War.commands
+~/ROMs/xbox360/Gears of War.iso
 ```
 
 And this is the content of the .commands file:
@@ -2295,7 +2302,7 @@ And this is the content of the .commands file:
 On Windows it's also possible to install xenia via Xenia Manager and export .lnk shortcut files that can be launched from ES-DE. Just move the shortcut files to the xbox360 directory and use the _Shortcut or script_ alternative emulator entry:
 
 ```
-ROMs/xbox360/Gears of War.lnk
+~/ROMs/xbox360/Gears of War.lnk
 ```
 
 Note that launching shortcut files can't be combined with injection of .commands files, you instead define per-game settings from inside Xenia Manager and these will then be applied when launching the shortcut.
@@ -2318,7 +2325,7 @@ Also create an empty file named `portable.txt` inside this directory. You should
 ~/Applications/xenia/xenia.pdb
 ```
 
-Make sure that you have placed a valid game file into `ROMs/xbox360` and then go ahead and start ES-DE and run the game. You should see xenia starting up and you may hear some sound from the loaded game, but the screen will be black. Quit xenia and check inside the `~/Applications/xenia` directory where there should now be a file named `xenia.config.toml`
+Make sure that you have placed a valid game file into `~/ROMs/xbox360` and then go ahead and start ES-DE and run the game. You should see xenia starting up and you may hear some sound from the loaded game, but the screen will be black. Quit xenia and check inside the `~/Applications/xenia` directory where there should now be a file named `xenia.config.toml`
 
 You'll need to modify the following lines in this file:
 ```
@@ -2336,7 +2343,7 @@ There are of course many more settings for xenia and Wine that may be adjusted f
 
 The canary release of xenia can also be used but it's not possible to set the xenia release per game. Instead the find rules will first look for `xenia.exe` and if that can't be found it will look for `xenia_canary.exe`. Be aware that if using the canary release of xenia, the configuration file is named `xenia-canary.config.toml` instead of `xenia.config.toml`
 
-For a more complex setup like requiring different Wine or xenia versions per game or similar the xbox360 system on Linux also supports the _Shortcut or script_ alternative emulator entry. Using this you can create shell scripts with specific configuration or you could alternatively install Xbox 360 games via Lutris or similar and export .desktop shortcuts from there and place these inside the `ROMs/xbox360` directory. Just make sure to select the appropriate alternative emulator entry if doing this, or it will not work.
+For a more complex setup like requiring different Wine or xenia versions per game or similar the xbox360 system on Linux also supports the _Shortcut or script_ alternative emulator entry. Using this you can create shell scripts with specific configuration or you could alternatively install Xbox 360 games via Lutris or similar and export .desktop shortcuts from there and place these inside the `~/ROMs/xbox360` directory. Just make sure to select the appropriate alternative emulator entry if doing this, or it will not work.
 
 ### M.U.G.E.N Game Engine
 
@@ -2457,7 +2464,7 @@ The directory structure should look like the following (some files left out):
 
 Now start ES-DE and set the alternative emulator to _Native port_ via the metadata editor. The game should now run correctly and you should be able to scrape it like any regular game.
 
-Note that some recompilations on macOS are packaged properly as app bundles, these will be named something like _Game name.app_ and they can be placed either directly into the ~/ROMs/n64 directory or under /Applications. In the latter case you'll need to make an alias to this directory and place this into the ~/ROMs/n64 directory. When launching such an app bundle you'll need to set the alternative emulator to _Shortcut or script_ instead of _Native port_.
+Note that some recompilations on macOS are packaged properly as app bundles, these will be named something like _Game name.app_ and they can be placed either directly into the `~/ROMs/n64` directory or under `/Applications`. In the latter case you'll need to make an alias to this directory and place this into the `~/ROMs/n64` directory. When launching such an app bundle you'll need to set the alternative emulator to _Shortcut or script_ instead of _Native port_.
 
 The directory structure should simply look like the following for such a game:
 ```
@@ -2609,9 +2616,9 @@ These games are often but not always distributed together with the game engine a
 
 **Android**
 
-Unfortunately there does not seem to be a way to launch individual OpenBOR games from ES-DE on Android, instead the OpenBOR user interface will open on game launch and you need to manually start your game from there. This means games need to be installed upfront in OpenBOR and .openbor dummy files should be added to the `ROMs/openbor` directory. These will then appear as individual games inside ES-DE and you can add metadata to them, scrape them etc. Refer to the OpenBOR documentation on how to add your game PAKs.
+Unfortunately there does not seem to be a way to launch individual OpenBOR games from ES-DE on Android, instead the OpenBOR user interface will open on game launch and you need to manually start your game from there. This means games need to be installed upfront in OpenBOR and .openbor dummy files should be added to the `~/ROMs/openbor` directory. These will then appear as individual games inside ES-DE and you can add metadata to them, scrape them etc. Refer to the OpenBOR documentation on how to add your game PAKs.
 
-Here's an example setup:
+Here's an example setup where the ROMs directory is placed on internal storage:
 
 ```
 /storage/emulated/0/ROMs/openbor/D&D - K&D - The Endless Quest LNS.openbor
@@ -2694,7 +2701,7 @@ On Android it's recommended to use the Fake-08 RetroArch core, although this nee
 
 After the emulator has been installed you are ready to add some games. There are two ways to play games using PICO-8, either to add them to ES-DE as for any other system, or using the built-in Splore tool to explore and run games all through the PICO-8 user interface.
 
-For the first approach you can download games from the [PICO-8 forum](https://www.lexaloffle.com/bbs/?cat=7) and these are quite uniquely distributed as .png images. You just download these and place them inside the ~/ROMs/pico8 directory, for example:
+For the first approach you can download games from the [PICO-8 forum](https://www.lexaloffle.com/bbs/?cat=7) and these are quite uniquely distributed as .png images. You just download these and place them inside the `~/ROMs/pico8` directory, for example:
 ```
 ~/ROMs/pico8/c_e_l_e_s_t_e-0.p8.png
 ~/ROMs/pico8/xzero-3.p8.png
@@ -2702,7 +2709,7 @@ For the first approach you can download games from the [PICO-8 forum](https://ww
 
 After this you just launch them like any regular game. You can also scrape many of these games using ScreenScraper, but you will need to refine the game names in most instances since most have filenames that the scraper service won't recognize. It's therefore recommended to run the scraper in interactive mode for these games or to scrape them one by one from the metadata editor.
 
-The second alternative for playing PICO-8 games is to run Splore to browse and launch games from inside the game engine user interface. To do this, first add a dummy game file to the `ROMs/pico8` directory. It can be named anything but `splore.png` is recommended. The file content doesn't matter, it can even be an empty file. Following this, change to the alternative emulator _PICO-8 Splore (Standalone)_ for this specific entry using the metadata editor. If you now launch the file, you will be brought straight to the Splore browser inside PICO-8.
+The second alternative for playing PICO-8 games is to run Splore to browse and launch games from inside the game engine user interface. To do this, first add a dummy game file to the `~/ROMs/pico8` directory. It can be named anything but `splore.png` is recommended. The file content doesn't matter, it can even be an empty file. Following this, change to the alternative emulator _PICO-8 Splore (Standalone)_ for this specific entry using the metadata editor. If you now launch the file, you will be brought straight to the Splore browser inside PICO-8.
 
 This is what the complete setup could look like:
 ```
@@ -2751,7 +2758,7 @@ And here's an example on Linux:
 ~/ROMs/desktop/spotify.desktop
 ```
 
-On macOS there are two ways to create shortcuts to applications, the first option is .app folders which can be directly executed by ES-DE and the second option is aliases. The easiest way to create an alias is to open two Finder windows, one for your Applications folder and one for your ~/ROMs/desktop folder. Then you can simply drag an application over to the desktop folder which will automatically create an alias file. Alternatively you can right click on an application and select _Make Alias_ and then copy the file over. As a final step you need to add the .app extension to the alias file so that ES-DE can find it on startup. Note that this extension will not be visible in Finder, but if you right click on the file and select _Get Info_ you will see the .app extension in the info window.
+On macOS there are two ways to create shortcuts to applications, the first option is .app folders which can be directly executed by ES-DE and the second option is aliases. The easiest way to create an alias is to open two Finder windows, one for your Applications folder and one for your `~/ROMs/desktop` folder. Then you can simply drag an application over to the desktop folder which will automatically create an alias file. Alternatively you can right click on an application and select _Make Alias_ and then copy the file over. As a final step you need to add the .app extension to the alias file so that ES-DE can find it on startup. Note that this extension will not be visible in Finder, but if you right click on the file and select _Get Info_ you will see the .app extension in the info window.
 
 Here's an example using alias files on macOS:
 ```
@@ -2863,7 +2870,7 @@ Apart from this you need to install the PS3 system firmware to use the emulator,
 
 First install your games inside RPCS3, then right click on each entry and select _Manage Game_ followed by _Create Desktop Shortcut_. On Windows this will create shortcuts with the .lnk extension, on macOS they will have the .app extension and on Linux they will have the .desktop extension.
 
-Then simply copy or move these files from your desktop to your ~/ROMs/ps3 directory and you're done. Here's an example of what this could look like on Linux:
+Then simply copy or move these files from your desktop to your `~/ROMs/ps3` directory and you're done. Here's an example of what this could look like on Linux:
 ```
 ~/ROMs/ps3/Bejeweled 2.desktop
 ~/ROMs/ps3/Gran Turismo 5.desktop
@@ -2908,7 +2915,7 @@ Here's an example of what a game entry could look like:
 ~/ROMs/ps3/Gran Turismo 5.ps3
 ```
 
-It's possible to create a symlink instead, and in this case only the symlink needs to have the .ps3 extension. But if you want to locate your games outside the ~/ROMs/ps3 directory anyway, then it's probably easier to just use shortcuts.
+It's possible to create a symlink instead, and in this case only the symlink needs to have the .ps3 extension. But if you want to locate your games outside the `~/ROMs/ps3` directory anyway, then it's probably easier to just use shortcuts.
 
 When using this setup method you need to set the alternative emulator to _RPCS3 Directory (Standalone)_ or game launching will not work.
 
@@ -2928,7 +2935,7 @@ _Note that this option is not currently available on macOS due to shadPS4 not ex
 
 First install your games inside shadPS4, then right click on each entry and select _Create Shortcut_. On Windows this will create shortcuts with the .lnk extension and on Linux they will have the .desktop extension.
 
-Then simply move these files from your desktop to your ~/ROMs/ps4 directory and you're done. Here's an example of what this could look like on Linux:
+Then simply move these files from your desktop to your `~/ROMs/ps4` directory and you're done. Here's an example of what this could look like on Linux:
 ```
 ~/ROMs/ps4/Bloodborne™.desktop
 ~/ROMs/ps4/Sonic Mania.desktop
@@ -2983,7 +2990,7 @@ Game launching and scraping should now work fine in ES-DE.
 To simplify the setup described above there is a convenient archive of .psvita files available that covers most of the game library for this console. It can be downloaded from here:\
 https://github.com/Jetup13/Retroid-Pocket-5-Wiki/wiki/Emulators-and-Formats#vita3k-frontend-support
 
-Just extract the corresponding file for any game you have installed in Vita3K and place it in ~/ROMs/psvita and you're good to go.
+Just extract the corresponding file for any game you have installed in Vita3K and place it in `~/ROMs/psvita` and you're good to go.
 
 ### Steam
 
@@ -3004,7 +3011,7 @@ Simply copy the Start Menu entries for your Steam games into the ~\ROMs\steam di
 
 **Linux**
 
-Copy the .desktop shortcuts for your games into the ~/ROMs/steam directory or use the built-in game importer to accomplish the same thing. If going for manual copying of the files and your desktop environment does not allow you to copy them directly from the application menu then you may need to navigate to `~/.local/share/applications` using your file manager and copy the .desktop files from there. Alternatively you can create shortcuts from inside Steam by right clicking on a game, selecting _Manage_ and then _Add desktop shortcut_. These file can then be moved from your desktop to your ~/ROMs/steam directory or imported using the game importer. This is an example of what you could end up with:
+Copy the .desktop shortcuts for your games into the `~/ROMs/steam` directory or use the built-in game importer to accomplish the same thing. If going for manual copying of the files and your desktop environment does not allow you to copy them directly from the application menu then you may need to navigate to `~/.local/share/applications` using your file manager and copy the .desktop files from there. Alternatively you can create shortcuts from inside Steam by right clicking on a game, selecting _Manage_ and then _Add desktop shortcut_. These file can then be moved from your desktop to your `~/ROMs/steam` directory or imported using the game importer. This is an example of what you could end up with:
 
 ```
 ~/ROMs/steam/Axiom Verge.desktop
@@ -3013,7 +3020,7 @@ Copy the .desktop shortcuts for your games into the ~/ROMs/steam directory or us
 
 **macOS**
 
-On macOS the shortcuts come with the .app extension and are actually directories rather than files. They work exactly as regular shortcuts though. Unless you already have shortcuts available for your games, then go into Steam, right click on a game and select _Manage_ followed by _Add desktop shortcut_. Then move these .app directories to the ~/ROMs/steam directory or import them using the game importer. You should have something like the following after making these steps:
+On macOS the shortcuts come with the .app extension and are actually directories rather than files. They work exactly as regular shortcuts though. Unless you already have shortcuts available for your games, then go into Steam, right click on a game and select _Manage_ followed by _Add desktop shortcut_. Then move these .app directories to the `~/ROMs/steam` directory or import them using the game importer. You should have something like the following after making these steps:
 
 ```
 ~/ROMs/steam/Axiom Verge.app/
@@ -3022,15 +3029,15 @@ On macOS the shortcuts come with the .app extension and are actually directories
 
 **Android**
 
-The setup on Android is a bit different than on desktop operating systems as you will need to create a text file for each game you want to launch. These files should have the .steam extension and they should simply include the Steam game ID. Here's an example for the game _Broforce_ when using the _steam_ system:
+The setup on Android is a bit different than on desktop operating systems as you will need to create a text file for each game you want to launch. These files should have the .steam extension and they should simply include the Steam game ID. Here's an example for the game _Broforce_ when using the _steam_ system and you have your ROMs directory on internal storage:
 
 ```
-ROMs/steam/Broforce.steam
+/storage/emulated/0/ROMs/steam/Broforce.steam
 ```
 
 Or when using the _windows_ system:
 ```
-ROMs/windows/Broforce.steam
+/storage/emulated/0/ROMs/windows/Broforce.steam
 ```
 
 The following is the contents of the `Broforce.steam` file:
@@ -3059,9 +3066,9 @@ As the Nokia N-Gage was running Symbian it may seem like the _ngage_ and _symbia
 
 For both the ngage and symbian systems it's possible to launch individual games directly from ES-DE, although they need to be installed upfront in EKA2L1.
 
-After installing the games in EKA2L1, long press the game icon and select _Create launch file_ from the popup list which will export a JSON file for the game. Then select the directory where the file should be saved, i.e. ROMs/ngage or ROMs/symbian. Following this, game launching from ES-DE will work as expected.
+After installing the games in EKA2L1, long press the game icon and select _Create launch file_ from the popup list which will export a JSON file for the game. Then select the directory where the file should be saved, i.e. `~/ROMs/ngage` or `~/ROMs/symbian`. Following this, game launching from ES-DE will work as expected.
 
-Here's an example setup:
+Here's an example setup where the ROMs directory is placed on internal storage:
 ```
 /storage/emulated/0/ROMs/ngage/Asphalt 2.json
 /storage/emulated/0/ROMs/ngage/Bomberman.json
@@ -3257,9 +3264,9 @@ Scraping can also be a bit challenging as MAME software list names are used and 
 
 **Android**
 
-Unfortunately there does not seem to be a way to launch individual Visual Pinball tables from ES-DE on Android, instead the Visual Pinball user interface will open on game launch and you need to manually start your table from there. This means tables need to be installed upfront in Visual Pinball and .vpinball dummy files should be added to the `ROMs/vpinball` directory. These will then appear as individual games inside ES-DE and you can add metadata to them, scrape them etc.
+Unfortunately there does not seem to be a way to launch individual Visual Pinball tables from ES-DE on Android, instead the Visual Pinball user interface will open on game launch and you need to manually start your table from there. This means tables need to be installed upfront in Visual Pinball and .vpinball dummy files should be added to the `~/ROMs/vpinball` directory. These will then appear as individual games inside ES-DE and you can add metadata to them, scrape them etc.
 
-Here's an example setup:
+Here's an example setup where the ROMs directory is placed on internal storage:
 
 ```
 /storage/emulated/0/ROMs/vpinball/Apollo 13.vpinball
@@ -4373,7 +4380,7 @@ The secondary sorting is always in ascending name order.
 Choosing this entry opens a separate screen where it's possible to apply a filter to the gamelist. The filter is persistent throughout the program session, or until it's manually reset. The option to reset all filters is shown on the same screen.
 
 ![alt text](images/es-de_gamelist_filters.png "ES-DE Gamelist Filters")
-_The gamelist filter screen, accessed from the gamelist options menu._
+_The gamelist filter screen, accessible from the gamelist options menu._
 
 The following filters can be applied:
 
@@ -4757,7 +4764,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | daphne                | Daphne Arcade LaserDisc Emulator               | Hypseus [Daphne] **(Standalone)** | Hypseus [Singe] **(Standalone)**,<br>MAME - Current,<br>MAME **(Standalone)**,<br>DirkSimple,<br>ares [Mega LD] **(Standalone)** | Depends     | See the specific _LaserDisc Games_ section elsewhere in this guide |
 | desktop               | Desktop Applications                           | _Suspend ES-DE_                   | _Keep ES-DE running_,<br> _AppImage (Suspend ES-DE)_ [L],<br> _AppImage (Keep ES-DE running)_ [L] | No           | See the specific _Ports and desktop applications_ section elsewhere in this guide |
 | doom                  | Doom                                           | PrBoom                            | PrBoom+ **(Standalone)**,<br>Boom 3 [LW],<br>Boom 3 xp [LW],<br> _Shortcut or script_ | No           |                                      |
-| dos                   | DOS (PC)                                       | DOSBox-Pure                       | DOSBox-Core,<br>DOSBox-SVN,<br>DOSBox-X **(Standalone)**,<br>DOSBox Staging **(Standalone)**,<br>DREAMM **(Standalone)**,<br>VirtualXT | No           | See the specific _DOS / PC_ section elsewhere in this guide |
+| dos                   | DOS (PC)                                       | DOSBox-Pure                       | DOSBox Pure Unleashed **(Standalone)**,<br>DOSBox-Core,<br>DOSBox-SVN,<br>DOSBox-X **(Standalone)**,<br>DOSBox Staging **(Standalone)**,<br>DREAMM **(Standalone)**,<br>VirtualXT | No           | See the specific _DOS / PC_ section elsewhere in this guide |
 | dragon32              | Dragon Data Dragon 32                          | MAME Dragon 32 [Tape] **(Standalone)** | MAME Dragon 32 [Cartridge] **(Standalone)**,<br>MAME Dragon 64 [Tape] **(Standalone)**,<br>MAME Dragon 64 [Cartridge] **(Standalone)**,<br>XRoar Dragon 32 **(Standalone)**,<br>XRoar Dragon 64 **(Standalone)** | Yes          | See the specific _Dragon 32 and Tano Dragon_ section elsewhere in this guide |
 | dreamcast             | Sega Dreamcast                                 | Flycast                           | Flycast **(Standalone)**,<br>Flycast Dojo **(Standalone)**,<br>Redream **(Standalone)**,<br>Demul **(Standalone)** [W] | No           | In separate folder interpreted as a file, with .m3u playlist if multi-disc game |
 | easyrpg               | EasyRPG Game Engine                            | EasyRPG                           | EasyRPG Player **(Standalone)** | No           | See the specific _EasyRPG Game Engine_ section elsewhere in this guide |
@@ -4829,7 +4836,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | openbor               | OpenBOR Game Engine                            | OpenBOR **(Standalone)** [LW]     |                                   | No           | See the specific _OpenBOR_ section elsewhere in this guide |
 | oric                  | Tangerine Computer Systems Oric                | MAME **(Standalone)**             | Oricutron **(Standalone)**        | Yes          | See the specific _Tangerine Computer Systems Oric_ section elsewhere in this guide |
 | palm                  | Palm OS                                        | Mu                                |                                   |              |                                      |
-| pc                    | IBM PC                                         | DOSBox-Pure                       | DOSBox-Core,<br>DOSBox-SVN,<br>DOSBox-X **(Standalone)**,<br>DOSBox Staging **(Standalone)**,<br>DREAMM **(Standalone)**,<br>VirtualXT | No           | See the specific _DOS / PC_ section elsewhere in this guide |
+| pc                    | IBM PC                                         | DOSBox-Pure                       | DOSBox Pure Unleashed **(Standalone)**,<br>DOSBox-Core,<br>DOSBox-SVN,<br>DOSBox-X **(Standalone)**,<br>DOSBox Staging **(Standalone)**,<br>DREAMM **(Standalone)**,<br>VirtualXT | No           | See the specific _DOS / PC_ section elsewhere in this guide |
 | pc88                  | NEC PC-8800 Series                             | QUASI88                           | QUASI88 **(Standalone)**          | Yes          |                                      |
 | pc98                  | NEC PC-9800 Series                             | Neko Project II Kai               | Neko Project II                   |              |                                      |
 | pcarcade              | PC Arcade Systems                              | Wine **(Standalone)** [L],<br> _Shortcut or script_ [MW] | Proton **(Standalone)** [L],<br>Lindbergh Loader **(Standalone)** [L],<br> _AppImage_ [L],<br> _Shortcut or script_ [L] | No          |                                      |
@@ -4894,8 +4901,8 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | wii                   | Nintendo Wii                                   | Dolphin                           | Dolphin **(Standalone)**,<br>PrimeHack **(Standalone)** [LW] | No           |                                      |
 | wiiu                  | Nintendo Wii U                                 | Cemu **(Standalone)**             |                                   | No           | See the specific _Nintendo Wii U_ section elsewhere in this guide |
 | windows               | Microsoft Windows                              | _Suspend ES-DE_                   | _Keep ES-DE running_,<br> _AppImage (Suspend ES-DE)_ [L],<br> _AppImage (Keep ES-DE running)_ [L] | No           | Shortcut (.desktop/.app/.lnk) file, script or AppImage |
-| windows3x             | Microsoft Windows 3.x                          | DOSBox-X **(Standalone)**         | DOSBox-Pure,<br> _Shortcut or script (Suspend ES-DE)_,<br> _Shortcut or script (Keep ES-DE running)_,<br> _AppImage (Suspend ES-DE)_ [L],<br> _AppImage (Keep ES-DE running)_ [L] | No           | See the specific _Microsoft Windows 3.x and 9x_ section elsewhere in this guide |
-| windows9x             | Microsoft Windows 9x                           | DOSBox-X **(Standalone)**         | DOSBox-Pure,<br> _Shortcut or script (Suspend ES-DE)_,<br> _Shortcut or script (Keep ES-DE running)_,<br> _AppImage (Suspend ES-DE)_ [L],<br> _AppImage (Keep ES-DE running)_ [L] | No           | See the specific _Microsoft Windows 3.x and 9x_ section elsewhere in this guide |
+| windows3x             | Microsoft Windows 3.x                          | DOSBox-X **(Standalone)**         | DOSBox-Pure,<br>DOSBox Pure Unleashed **(Standalone)**,<br> _Shortcut or script (Suspend ES-DE)_,<br> _Shortcut or script (Keep ES-DE running)_,<br> _AppImage (Suspend ES-DE)_ [L],<br> _AppImage (Keep ES-DE running)_ [L] | No           | See the specific _Microsoft Windows 3.x and 9x_ section elsewhere in this guide |
+| windows9x             | Microsoft Windows 9x                           | DOSBox-X **(Standalone)**         | DOSBox-Pure,<br>DOSBox Pure Unleashed **(Standalone)**,<br> _Shortcut or script (Suspend ES-DE)_,<br> _Shortcut or script (Keep ES-DE running)_,<br> _AppImage (Suspend ES-DE)_ [L],<br> _AppImage (Keep ES-DE running)_ [L] | No           | See the specific _Microsoft Windows 3.x and 9x_ section elsewhere in this guide |
 | wonderswan            | Bandai WonderSwan                              | Beetle Cygne                      | Mednafen **(Standalone)**,<br>ares **(Standalone)**,<br>ares [Benesse Pocket Challenge V2] **(Standalone)**,<br>Mesen **(Standalone)** [LW] | No           | Single archive or ROM file    |
 | wonderswancolor       | Bandai WonderSwan Color                        | Beetle Cygne                      | Mednafen **(Standalone)**,<br>ares **(Standalone)**,<br>Mesen **(Standalone)** [LW] | No           | Single archive or ROM file    |
 | x1                    | Sharp X1                                       | X Millennium                      | MAME [Diskette] **(Standalone)**,<br>MAME [Tape] **(Standalone)** | Yes for MAME | Single archive or diskette/tape file |
