@@ -3029,7 +3029,7 @@ On macOS the shortcuts come with the .app extension and are actually directories
 
 **Android**
 
-The setup on Android is a bit different than on desktop operating systems as you will need to create a text file for each game you want to launch. These files should have the .steam extension and they should simply include the Steam game ID. Here's an example for the game _Broforce_ when using the _steam_ system and you have your ROMs directory on internal storage:
+The setup on Android is a bit different than on desktop operating systems as you will need a text file for each game you want to launch. These files must have the .steam extension and they must simply include the Steam game ID. Here's an example for the game _Broforce_ when using the _steam_ system and you have your ROMs directory on internal storage:
 
 ```
 /storage/emulated/0/ROMs/steam/Broforce.steam
@@ -3045,11 +3045,13 @@ The following is the contents of the `Broforce.steam` file:
 274190
 ```
 
-You can get the ID of a game from inside the GameNative client by navigating to it in the app, then pressing the icon with three vertical dots and select _Open store page_. The URL opened will for this example be _https://store.steampowered.com/app/274190/Broforce_
+If you're using GameNative then you can export these files from inside the app by navigating to a game, pressing the icon with three vertical dots and selecting _Export for frontend_. You can then save the .steam file either to the _steam_ or _windows_ system directory.
+
+Alternatively you can get the ID of a game by selecting the _Open store page_ entry instead. The URL opened will for this example be _https://store.steampowered.com/app/274190/Broforce_
 
 Opening the store page entry in the official Steam client on desktop operating systems accomplishes the same thing.
 
-As an alternative to manually creating these files you can find the following repository which contains a set of automatically created .steam files for the entire Steam library:\
+As an alternative to manually exporting or creating these files you can find the following repository which contains a set of automatically created .steam files for the entire Steam library:\
 https://github.com/RobZombie9043/steam-files-es-de
 
  Just make sure you **don't add this entire set of files to ES-DE** as that will make the application incredibly slow with hundreds of thousands of Steam game entries.
