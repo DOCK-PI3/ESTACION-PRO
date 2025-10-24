@@ -46,6 +46,15 @@
             <entry>/usr/lib/libretro</entry>
         </rule>
     </core>
+    <emulator name="3DSEN">
+        <!-- Nintendo NES and Famicom emulator 3dSen -->
+        <rule type="staticpath">
+            <entry>~/Applications/3dSen/3dSen.exe</entry>
+            <entry>~/.local/share/applications/3dSen/3dSen.exe</entry>
+            <entry>~/.local/bin/3dSen/3dSen.exe</entry>
+            <entry>~/bin/3dSen/3dSen.exe</entry>
+        </rule>
+    </emulator>
     <emulator name="3DSEN-WINDOWS">
         <!-- Nintendo NES and Famicom emulator 3dSen -->
         <rule type="staticpath">

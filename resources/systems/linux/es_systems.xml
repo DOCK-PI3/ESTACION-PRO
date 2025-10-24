@@ -667,6 +667,7 @@
         <command label="ares (Standalone)">%EMULATOR_ARES% --fullscreen --system "Famicom" %ROM%</command>
         <command label="ares FDS (Standalone)">%EMULATOR_ARES% --fullscreen --system "Famicom Disk System" %ROM%</command>
         <command label="jgenesis (Standalone)">%EMULATOR_JGENESIS% --file-path %ROM%</command>
+        <command label="3dSen (Standalone)">%EMULATOR_3DSEN% -id=%INJECT%=%BASENAME%.3dsen</command>
         <command label="3dSen (Wine)">%STARTDIR%=%EMUDIR% %PRECOMMAND_WINE% %EMULATOR_3DSEN-WINDOWS% -id=%INJECT%=%BASENAME%.3dsen</command>
         <command label="3dSen (Proton)">%STARTDIR%=%EMUDIR% %PRECOMMAND_PROTON% %EMULATOR_3DSEN-WINDOWS% -id=%INJECT%=%BASENAME%.3dsen</command>
         <platform>famicom</platform>
@@ -1418,6 +1419,7 @@
         <command label="ares (Standalone)">%EMULATOR_ARES% --fullscreen --system "Famicom" %ROM%</command>
         <command label="ares FDS (Standalone)">%EMULATOR_ARES% --fullscreen --system "Famicom Disk System" %ROM%</command>
         <command label="jgenesis (Standalone)">%EMULATOR_JGENESIS% --file-path %ROM%</command>
+        <command label="3dSen (Standalone)">%EMULATOR_3DSEN% -id=%INJECT%=%BASENAME%.3dsen</command>
         <command label="3dSen (Wine)">%STARTDIR%=%EMUDIR% %PRECOMMAND_WINE% %EMULATOR_3DSEN-WINDOWS% -id=%INJECT%=%BASENAME%.3dsen</command>
         <command label="3dSen (Proton)">%STARTDIR%=%EMUDIR% %PRECOMMAND_PROTON% %EMULATOR_3DSEN-WINDOWS% -id=%INJECT%=%BASENAME%.3dsen</command>
         <platform>nes</platform>
