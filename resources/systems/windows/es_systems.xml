@@ -2361,6 +2361,7 @@
         <path>%ROMPATH%\xbox360</path>
         <extension>. .iso .ISO .lnk .LNK .xex .XEX .zar .ZAR</extension>
         <command label="xenia (Standalone)">%STARTDIR%=%EMUDIR% %EMULATOR_XENIA% %INJECT%=%BASENAME%.commands %ROM%</command>
+        <command label="Xenia Edge (Standalone)">%STARTDIR%=%EMUDIR% %EMULATOR_XENIA-EDGE% %INJECT%=%BASENAME%.commands %ROM%</command>
         <command label="Shortcut or script">%HIDEWINDOW% %ESCAPESPECIALS% %EMULATOR_OS-SHELL% /C %ROM%</command>
         <platform>xbox360</platform>
         <theme>xbox360</theme>

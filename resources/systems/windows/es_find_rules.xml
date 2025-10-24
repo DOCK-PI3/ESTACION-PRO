@@ -1192,6 +1192,16 @@
             <entry>%ESPATH%\..\Emulators\XeniaManager\Emulators\Xenia Canary\xenia_canary.exe</entry>
         </rule>
     </emulator>
+    <emulator name="XENIA-EDGE">
+        <!-- Microsoft Xbox 360 emulator Xenia Edge -->
+        <rule type="systempath">
+            <entry>xenia_edge.exe</entry>
+        </rule>
+        <rule type="staticpath">
+            <entry>%ESPATH%\Emulators\xenia_edge\xenia_edge.exe</entry>
+            <entry>%ESPATH%\..\Emulators\xenia_edge\xenia_edge.exe</entry>
+        </rule>
+    </emulator>
     <emulator name="XM6PRO68K">
         <!-- Sharp X68000 emulator XM6 Pro-68k -->
         <rule type="systempath">

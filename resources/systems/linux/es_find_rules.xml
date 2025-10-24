@@ -1370,6 +1370,18 @@
             <entry>~/bin/xenia-canary*.AppImage</entry>
         </rule>
     </emulator>
+    <emulator name="XENIA-EDGE">
+        <!-- Microsoft Xbox 360 emulator Xenia Edge -->
+        <rule type="systempath">
+            <entry>xenia_edge</entry>
+        </rule>
+        <rule type="staticpath">
+            <entry>~/Applications/xenia_edge*.AppImage</entry>
+            <entry>~/.local/share/applications/xenia_edge*.AppImage</entry>
+            <entry>~/.local/bin/xenia_edge*.AppImage</entry>
+            <entry>~/bin/xenia_edge*.AppImage</entry>
+        </rule>
+    </emulator>
     <emulator name="XENIA-WINDOWS">
         <!-- Microsoft Xbox 360 emulator xenia -->
         <rule type="staticpath">
