@@ -285,7 +285,7 @@ void Settings::setDefaults()
 #if !defined(USE_OPENGLES)
     mIntMap["AntiAliasing"] = {0, 0};
 #endif
-#if !defined(__IOS__)
+#if !defined(__ANDROID__) && !defined(__IOS__)
     mIntMap["DisplayIndex"] = {1, 1};
 #endif
     mIntMap["ScreenRotate"] = {0, 0};

@@ -1753,7 +1753,7 @@ void GuiMenu::openOtherOptions()
     });
 #endif
 
-#if !defined(__IOS__)
+#if !defined(__ANDROID__) && !defined(__IOS__)
     // Display/monitor.
     auto displayIndex =
         std::make_shared<OptionListComponent<std::string>>(_("DISPLAY/MONITOR INDEX"), false);
