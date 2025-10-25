@@ -160,6 +160,7 @@ Emulators\WinArcadia\WinArcadia.exe
 Emulators\xemu\xemu.exe
 Emulators\xenia\xenia.exe
 Emulators\xenia_canary\xenia_canary.exe
+Emulators\xenia_edge\xenia_edge.exe
 Emulators\XeniaManager\Emulators\Xenia Canary\xenia_canary.exe
 Emulators\XM6 Pro-68k\XM6.exe
 Emulators\xm6_typeg\xm6g.exe
