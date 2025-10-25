@@ -2010,6 +2010,21 @@ void GuiMenu::openOtherOptions()
         }
     });
 
+#if defined(__ANDROID__)
+    // Launch games on other screen.
+    auto launchOnOtherScreen = std::make_shared<SwitchComponent>();
+    launchOnOtherScreen->setState(Settings::getInstance()->getBool("LaunchOnOtherScreen"));
+    s->addWithLabel(_("LAUNCH GAMES ON OTHER SCREEN"), launchOnOtherScreen);
+    s->addSaveFunc([launchOnOtherScreen, s] {
+        if (launchOnOtherScreen->getState() !=
+            Settings::getInstance()->getBool("LaunchOnOtherScreen")) {
+            Settings::getInstance()->setBool("LaunchOnOtherScreen",
+                                             launchOnOtherScreen->getState());
+            s->setNeedsSaving();
+        }
+    });
+#endif
+
 #if !defined(__IOS__)
     // Custom event scripts, fired using Scripting::fireEvent().
     auto customEventScripts = std::make_shared<SwitchComponent>();

@@ -2182,7 +2182,8 @@ void FileData::launchGame()
     returnValue = Utils::Platform::Android::launchGame(
         androidPackage, androidActivity, androidAction, androidCategory, androidMimeType,
         androidData, mEnvData->mStartPath, romRaw, androidExtrasString, androidExtrasStringArray,
-        androidExtrasInteger, androidExtrasBool, androidActivityFlags);
+        androidExtrasInteger, androidExtrasBool, androidActivityFlags,
+        Settings::getInstance()->getBool("LaunchOnOtherScreen"));
 #else
 
 #if defined(DEINIT_ON_LAUNCH)

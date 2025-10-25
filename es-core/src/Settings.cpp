@@ -317,6 +317,9 @@ void Settings::setDefaults()
     mBoolMap["AlternativeEmulatorPerGame"] = {true, true};
     mBoolMap["ShowHiddenFiles"] = {true, true};
     mBoolMap["ShowHiddenGames"] = {true, true};
+#if defined(__ANDROID__)
+    mBoolMap["LaunchOnOtherScreen"] = {false, false};
+#endif
 #if !defined(__IOS__)
     mBoolMap["CustomEventScripts"] = {false, false};
     mBoolMap["CustomEventScriptsBrowsing"] = {false, false};
