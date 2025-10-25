@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-10-09 22:35+0200\n"
+"POT-Creation-Date: 2025-10-25 17:16+0200\n"
 "PO-Revision-Date: 2025-10-16 10:32+0200\n"
 "Last-Translator: SecularSteve <info@es-de.org>\n"
 "Language-Team: Serbian (Latin, Serbia) <info@es-de.org>\n"
@@ -1230,6 +1230,9 @@ msgstr "SHOV SKRIVENE DATOTEKE I FASCIKLE"
 
 msgid "SHOW HIDDEN GAMES"
 msgstr "SHOV SKRIVENE IGRE"
+
+msgid "LAUNCH GAMES ON OTHER SCREEN"
+msgstr "ПОКРЕНИ ИГРЕ НА ДРУГОМ ЕКРАНУ"
 
 msgid "ENABLE CUSTOM EVENT SCRIPTS"
 msgstr "OMOGUĆITE PRILAGOĐENE SKRIPTE DOGAĐAJA"

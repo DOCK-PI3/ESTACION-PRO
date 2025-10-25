@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-10-09 22:35+0200\n"
+"POT-Creation-Date: 2025-10-25 17:16+0200\n"
 "PO-Revision-Date: 2025-10-15 09:33+0200\n"
 "Last-Translator: Stefan <s.vandenbroekprive@gmail.com>\n"
 "Language-Team: Nederlands <info@es-de.org>\n"
@@ -1218,6 +1218,9 @@ msgstr "VERBORGEN BESTANDEN EN MAPPEN WEERGEVEN"
 
 msgid "SHOW HIDDEN GAMES"
 msgstr "VERBORGEN SPELLETJES TONEN"
+
+msgid "LAUNCH GAMES ON OTHER SCREEN"
+msgstr "SPELLEN OP EEN ANDER SCHERM STARTEN"
 
 msgid "ENABLE CUSTOM EVENT SCRIPTS"
 msgstr "AANGEPASTE EVENEMENTEN-SCRIPTS INSCHAKELEN"

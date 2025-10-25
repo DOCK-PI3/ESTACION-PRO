@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ES-DE Frontend\n"
 "Report-Msgid-Bugs-To: info@es-de.org\n"
-"POT-Creation-Date: 2025-10-09 22:35+0200\n"
+"POT-Creation-Date: 2025-10-25 17:16+0200\n"
 "PO-Revision-Date: 2025-10-18 14:03+0300\n"
 "Last-Translator: Lorenzo Castelletta <lorenzo.castelletta@gmail.com>\n"
 "Language-Team: Italiano <info@es-de.org>\n"
@@ -1226,6 +1226,9 @@ msgstr "MOSTRA FILE E CARTELLE NASCOSTI"
 
 msgid "SHOW HIDDEN GAMES"
 msgstr "MOSTRA GIOCHI NASCOSTI"
+
+msgid "LAUNCH GAMES ON OTHER SCREEN"
+msgstr "AVVIA I GIOCHI SU UN ALTRO SCHERMO"
 
 msgid "ENABLE CUSTOM EVENT SCRIPTS"
 msgstr "ABILITA GLI SCRIPT DEGLI EVENTI PERSONALIZZATI"
