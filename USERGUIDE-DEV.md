@@ -808,6 +808,7 @@ The following emulators are supported in AppImage format when using the bundled 
 | switch               | Ryujinx             | \*yujinx\*.AppImage            | Community            |
 | xbox                 | xemu                | xemu*.AppImage                 | Official             |
 | xbox360              | xenia               | xenia-canary*.AppImage         | pkgforge-dev         |
+| xbox360              | Xenia Edge          | xenia_edge*.AppImage           | Official             |
 | wii                  | Dolphin             | Dolphin_Emulator*.AppImage     | Official             |
 | wiiu                 | Cemu                | Cemu*.AppImage                 | Official             |
 | zmachine             | Gargoyle            | Gargoyle*.AppImage             | Official             |
@@ -910,6 +911,7 @@ The following manually downloaded emulators are supported when using the bundled
 | mame-advmame                                  | AdvanceMAME           | advancemame/advmame               |
 | n64                                           | Gopher64              | gopher64/gopher64-linux-aarch64   |
 | n64                                           | Gopher64              | gopher64/gopher64-linux-x86_64    |
+| nes/famicon                                   | 3dSen                 | 3dSen/3dSen.exe                   |
 | oric                                          | Oricutron             | oricutron/Oricutron               |
 | pc88                                          | QUASI88               | quasi88/quasi88                   |
 | pico8                                         | PICO-8                | pico-8/pico8                      |
@@ -2528,21 +2530,21 @@ For ares you need the `64DD_IPL.bin` file added to the Firmware configuration sc
 
 ### Nintendo NES and Famicom in 3D
 
-There is a commercial and proprietary emulator named [3dSen](http://www.geodstudio.net) that can be used to run NES and Famicom games in 3D. Only a limited set of games are supported and the quality of the 3D effect varies, but it's an interesting effect if you don't mind supporting closed-source emulator projects.
+There is a commercial emulator named [3dSen](http://www.geodstudio.net) that can be used to run NES and Famicom games in 3D on desktop operating systems (Linux, macOS and Windows). A somehow limited set of games are supported and the quality of the 3D effect varies, but it's an interesting effect nonetheless.
 
-For this guide it's assumed that you have purchased the emulator via Steam. ES-DE will however not run it via the Steam frontend, you'll instead need to relocate the 3dSen installation directory as detailed below.
+You can purchase 3dSen via Steam or itch.io, and you need to copy the installed emulator files to the directory defined below.
 
-**Linux-specific installation**
+**Linux**
 
-As 3dSen is a Windows-only emulator you'll need Wine (or Proton) to run it.
+Move or copy all 3dSen files to `~/Applications/3dSen/`. Note that the name of the binary is _3dSen.exe_ which is quite odd as this is not a Windows executable but rather a native ELF binary.
 
-How to setup Wine is covered in the [Running Windows emulators on Linux using Wine or Proton](USERGUIDE-DEV.md#running-windows-emulators-on-linux-using-wine-or-proton) section.
+**macOS**
 
-Once Wine or Proton has been setup, move or copy all 3dSen files to `~/Applications/3dSen/`
+Simply move 3dSen.app to the `/Applications/` directory.
 
-**Windows-specific installation**
+**Windows**
 
-If using the installer release of ES-DE you need to add the location of the 3dSen directory to your Path environment variable and if using the portable release you need to copy the 3dSen directory to the `Emulators` folder.
+If using the installer release of ES-DE you need to add the location of the 3dSen directory to your Path environment variable and if using the portable release you need to move or copy the 3dSen files to the `Emulators\3dSen\` folder.
 
 **Game setup**
 
@@ -2565,10 +2567,10 @@ You could of course separate the 3D files into their own directory if you prefer
 ~/ROMs/nes/Ice Climber.nes
 ```
 
-Finally you need to add the 3dSen game ID to each file. The RetroBat project maintains a list of supported game IDs for the 3dSen emulator that you can find here:\
+Finally you need to add the 3dSen game ID to each .3dsen file. The RetroBat project maintains a list of supported game IDs for the 3dSen emulator that you can find here:\
 https://wiki.retrobat.org/systems-and-emulators/supported-game-systems/game-consoles/nintendo-game-consoles/nes-3d
 
-To launch the .3dsen files you'll need to use the alternative emulator entry _3dSen (Wine)_, _3dSen (Proton)_  or _3dSen (Standalone)_ depending on your operating system. As you're unlikely to use 3dSen as your primary NES or Famicom emulator it's recommended to set this on a per-game basis using the metadata editor.
+To launch the .3dsen files you'll need to use the alternative emulator entry _3dSen (Standalone)_. As you're unlikely to use 3dSen as your primary NES or Famicom emulator it's recommended to set this on a per-game basis using the metadata editor.
 
 ### Nintendo Wii U
 
@@ -4176,7 +4178,7 @@ The amount of video RAM to use for the application. Defaults to 512 MiB (192 MiB
 
 Sets the level of anti-aliasing for the application. You can select between _disabled_, _2x_ or _4x_. Note that this is a potentially dangerous option which may prevent the application from starting altogether with some GPU drivers. If you're unable to run the application after changing this option then you can reset it via the `--anti-aliasing 0` command line option. Be aware that enabling anti-aliasing has a slight to moderate performance impact.
 
-**Display/monitor index (requires restart)**
+**Display/monitor index (requires restart)** _(All operating systems except Android)_
 
 This option sets the display to use for ES-DE for multi-monitor setups. The possible values are the monitor index numbers 1, 2, 3 or 4. If a value is set here for a display that does not actually exist, then ES-DE will set it to 1 upon startup. Index 1 is the primary display for the computer. It's also possible to override the setting by passing the --display command line argument. Doing so will also overwrite the display index setting in es_settings.xml. The Display/monitor index option only changes the display used by ES-DE, emulators need to be configured separately.
 
@@ -4223,6 +4225,10 @@ If this option is disabled, hidden files and folders within the ROM directory tr
 **Show hidden games**
 
 You can mark games as hidden in the metadata editor, which is useful for instance for DOS games where you may not want to see some batch files and executables inside ES-DE, or for multi-disc games where you may only want to show the .m3u playlists and not the individual game files. By disabling this option these files will not be processed at all when ES-DE starts up. If you enable the option you will see the files, but their name entries will be almost transparent in the gamelist view to visually indicate that they are hidden. When changing this setting ES-DE will automatically reload.
+
+**Launch games on the other screen** _(Android only)_
+
+If using a dual-screen device then enabling this setting will launch the games on the other screen from where ES-DE is running. Note that on some devices you may need to manually tap the primary screen after exiting the game to direct your controller input back to ES-DE. This setting has no effect on single-screen devices.
 
 **Enable custom event scripts**
 
@@ -4773,7 +4779,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | electron              | Acorn Electron                                 | MAME [Tape] **(Standalone)**      | MAME [Diskette DFS] **(Standalone)**,<br>MAME [Diskette ADFS] **(Standalone)** | Yes          | Single archive, or single tape or diskette image file |
 | emulators             | Emulators                                      | _Suspend ES-DE_                   | _Keep ES-DE running_,<br> _AppImage (Suspend ES-DE)_ [L],<br> _AppImage (Keep ES-DE running)_ [L] | No           | See the specific _Ports and desktop applications_ section elsewhere in this guide |
 | epic                  | Epic Games Store                               | Epic Games Store **(Standalone)** |                       | No           | Shortcut (.desktop/.app/.lnk) file |
-| famicom               | Nintendo Family Computer                       | Mesen                             | Mesen **(Standalone)** [LW],<br>Nestopia UE,<br>Nestopia UE **(Standalone)** [L],<br>FCEUmm,<br>QuickNES,<br>puNES **(Standalone)** [LW],<br>Mednafen **(Standalone)**,<br>ares **(Standalone)**,<br>ares FDS **(Standalone)**,<br>jgenesis **(Standalone)** [LW],<br>3dSen **(Wine)** [L],<br>3dSen **(Proton)** [L],<br>3dSen **(Standalone)** [W] | No           | Single archive or ROM file. For Famicom games in 3D see the specific _Nintendo NES and Famicom in 3D_ section elsewhere in this guide |
+| famicom               | Nintendo Family Computer                       | Mesen                             | Mesen **(Standalone)** [LW],<br>Nestopia UE,<br>Nestopia UE **(Standalone)** [L],<br>FCEUmm,<br>QuickNES,<br>puNES **(Standalone)** [LW],<br>Mednafen **(Standalone)**,<br>ares **(Standalone)**,<br>ares FDS **(Standalone)**,<br>jgenesis **(Standalone)** [LW],<br>3dSen **(Standalone)**,<br>3dSen **(Wine)** [L],<br>3dSen **(Proton)** [L] | No           | Single archive or ROM file. For Famicom games in 3D see the specific _Nintendo NES and Famicom in 3D_ section elsewhere in this guide |
 | fba                   | FinalBurn Alpha                                | FB Alpha 2012                     | FB Alpha 2012 Neo Geo,<br>FB Alpha 2012 CPS-1,<br>FB Alpha 2012 CPS-2,<br>FB Alpha 2012 CPS-3 | Yes          | See the specific _Arcade and Neo Geo_ section elsewhere in this guide |
 | fbneo                 | FinalBurn Neo                                  | FinalBurn Neo                     | FinalBurn Neo **(Standalone)** [LW] | Yes          | See the specific _Arcade and Neo Geo_ section elsewhere in this guide |
 | fds                   | Nintendo Famicom Disk System                   | Mesen                             | Mesen **(Standalone)** [LW],<br>Nestopia UE,<br>Nestopia UE **(Standalone)** [L],<br>FCEUmm,<br>Mednafen **(Standalone)**,<br>ares **(Standalone)** | Yes          | Single archive or ROM file |
@@ -4830,7 +4836,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | neogeo                | SNK Neo Geo                                    | FinalBurn Neo                     | FinalBurn Neo **(Standalone)** [LW],<br>Geolith,<br>MAME **(Standalone)** | Yes          | See the specific _Arcade and Neo Geo_ section elsewhere in this guide |
 | neogeocd              | SNK Neo Geo CD                                 | NeoCD                             | FinalBurn Neo,<br>FinalBurn Neo **(Standalone)** [LW],<br>MAME **(Standalone)** | Yes          | .chd (NeoCD and MAME only) or .cue file |
 | neogeocdjp            | SNK Neo Geo CD [Japan]                         | NeoCD                             | FinalBurn Neo,<br>FinalBurn Neo **(Standalone)** [LW],<br>MAME **(Standalone)** | Yes          | .chd (NeoCD and MAME only) or .cue file |
-| nes                   | Nintendo Entertainment System                  | Mesen                             | Mesen **(Standalone)** [LW],<br>Nestopia UE,<br>Nestopia UE **(Standalone)** [L],<br>FCEUmm,<br>QuickNES,<br>puNES **(Standalone)** [LW],<br>Mednafen **(Standalone)**,<br>ares **(Standalone)**,<br>ares FDS **(Standalone)**,<br>jgenesis **(Standalone)** [LW],<br>3dSen **(Wine)** [L],<br>3dSen **(Proton)** [L],<br>3dSen **(Standalone)** [W] | No           | Single archive or ROM file. For NES games in 3D see the specific _Nintendo NES and Famicom in 3D_ section elsewhere in this guide |
+| nes                   | Nintendo Entertainment System                  | Mesen                             | Mesen **(Standalone)** [LW],<br>Nestopia UE,<br>Nestopia UE **(Standalone)** [L],<br>FCEUmm,<br>QuickNES,<br>puNES **(Standalone)** [LW],<br>Mednafen **(Standalone)**,<br>ares **(Standalone)**,<br>ares FDS **(Standalone)**,<br>jgenesis **(Standalone)** [LW],<br>3dSen **(Standalone)**,<br>3dSen **(Wine)** [L],<br>3dSen **(Proton)** [L] | No           | Single archive or ROM file. For NES games in 3D see the specific _Nintendo NES and Famicom in 3D_ section elsewhere in this guide |
 | ngage                 | Nokia N-Gage                                   | EKA2L1 [Mounted] **(Standalone)** | EKA2L1 [Installed] **(Standalone)**,<br>EKA2L1 [Mounted] **(Wine)** [L],<br>EKA2L1 [Installed] **(Wine)** [L] | Yes          | See the specific _Symbian and Nokia N-Gage_ section elsewhere in this guide |
 | ngp                   | SNK Neo Geo Pocket                             | Beetle NeoPop                     | RACE,<br>Mednafen **(Standalone)**,<br>ares **(Standalone)** | No           | Single archive or ROM file           |
 | ngpc                  | SNK Neo Geo Pocket Color                       | Beetle NeoPop                     | RACE,<br>Mednafen **(Standalone)**,<br>ares **(Standalone)** | No           | Single archive or ROM file           |
@@ -4910,7 +4916,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | x1                    | Sharp X1                                       | X Millennium                      | MAME [Diskette] **(Standalone)**,<br>MAME [Tape] **(Standalone)** | Yes for MAME | Single archive or diskette/tape file |
 | x68000                | Sharp X68000                                   | PX68k                             | MAME **(Standalone)**,<br>XM6 Pro-68k **(Standalone)** [W],<br>XM6 TypeG **(Standalone**) [W],<br>XM6 Pro-68k **(Wine)** [L],<br>XM6 Pro-68k **(Proton)** [L],<br>XM6 TypeG **(Wine)** [L],<br>XM6 TypeG **(Proton)** [L] | Yes for PX68k and MAME |                                      |
 | xbox                  | Microsoft Xbox                                 | xemu **(Standalone)**             | Cxbx-Reloaded **(Standalone)** [W] | Yes for xemu | Single .iso file for xemu or unpacked .iso directory for Cxbx-Reloaded |
-| xbox360               | Microsoft Xbox 360                             | xenia **(Standalone)** [LW]       | xenia **(Wine)** [L],<br>xenia **(Proton)** [L],<br> _Shortcut or script_ [LW] | No           | See the specific _Microsoft Xbox 360_ section elsewhere in this guide |
+| xbox360               | Microsoft Xbox 360                             | xenia **(Standalone)** [LW]       | Xenia Edge **(Standalone)** [LW],<br>xenia **(Wine)** [L],<br>xenia **(Proton)** [L],<br> _Shortcut or script_ [LW] | No           | See the specific _Microsoft Xbox 360_ section elsewhere in this guide |
 | xboxone               | Microsoft Xbox One                             | _Placeholder_                     |                                   |              |                                      |
 | zmachine              | Infocom Z-machine                              | MojoZork                          | Gargoyle **(Standalone)**         | No           |                                      |
 | zx81                  | Sinclair ZX81                                  | EightyOne                         |                                   | No           |                                      |

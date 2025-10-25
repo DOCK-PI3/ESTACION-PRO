@@ -58,7 +58,7 @@ If you have set ES-DE as your home app then for some devices the onboarding conf
 
 ## Can I use ES-DE with Samsung DeX?
 
-While ES-DE would in theory work fine with DeX this is unfortunately not supported as Samsung has a policy to not allow apps that can be set as home apps/launchers to run via DeX. This is a Samsung limitation that they would need to resolve.
+Yes ES-DE works with DeX, but you need to run at least One UI 8.0 as DeX on previous releases had a policy restriction that prevented ES-DE from running since it can be set as the home app.
 
 ## Can I play frontend music inside ES-DE?
 

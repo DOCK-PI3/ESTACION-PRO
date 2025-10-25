@@ -18,6 +18,8 @@
 * Added Netherlands, Russia, Sweden, Spain, Taiwan and United Kingdom as additional ScreenScraper regions
 * Changed the media and release date fallback order for the scraper to place Europe prior to Japan, so it matches the game name fallback order
 * Added translations for Arabic (ar_SA)
+* (Android) Added experimental support for Samsung DeX (this requires One UI 8.0 or higher)
+* (Android) Added an experimental "Launch games on the other screen" setting for use on dual-screen devices
 * (Android) Added an %EXTRAINTEGER_% launch command variable
 * (Android) Added two new %INTERNALDATA% and %EXTERNALDATA% variables to support launching of RetroArch in multi-user setups
 * (Android) Added %INTERNALDATA% and %EXTERNALDATA% to the Opera core for the 3do system and the PUAE 2021 core for the amiga system
@@ -33,6 +35,7 @@
 * Added a menu option for generating miximages in the PNG or WebP file format
 * Added support for the AV1 video codec on Android and macOS
 * (Android) Added miximages as a media target type for the game importer
+* (Android) Removed the "Display/monitor index" setting as it does nothing on this operating system
 * (Linux) Added a "Strip special characters" setting to the game importer to enable imports to FAT-based filesystems
 * Added import rules for the epic system
 * (Linux) Added desktopshortcut import rules for the ps3 system
@@ -54,6 +57,8 @@
 * Added "Native port" as an alternative emulator for the n64 system (for running N64 recompilations)
 * Added "Shortcut or script" as an alternative emulator for the n64 system on Linux, macOS and Windows
 * Added AzaharPlus as an alternative emulator for the n3ds system on Android, Linux and Windows
+* Added Xenia Edge as an alternative emulator for the xbox360 system on Linux and Windows
+* Added 3dSen standalone as an alternative emulator for the famicom and nes systems on Linux and macOS
 * (Android) Added an import rule for the n64 system
 * (Android) Added the .app file extension to the n64 system
 * (Android) Added the .steam file extension to the windows system
@@ -65,6 +70,7 @@
 * (Linux) Added the .AppImage, .desktop and .sh file extensions to the n64 system
 * (Linux) Added find rule entries for the Ryubing Flatpak
 * (macOS) Added Ymir standalone as an alternative emulator for the saturn and saturnjp systems
+* (macOS) Added the .3dsen file extension to the famicom and nes systems
 * (macOS) Added the .app file extension to the n64 system
 * (Windows) Added find rule entries for xenia canary installed via Xenia Manager
 * (Windows) Added "Shortcut or script" as an alternative emulator for the xbox360 system
@@ -101,6 +107,7 @@
 ### Bug fixes
 
 * (Android) Fixed a crash when scraping if the downloaded_media directory had been set to an invalid path
+* (Android) The splash screen progress bar sometimes didn't render correctly when running in multi-window mode or after switching screens
 * (macOS) On macOS 26 Tahoe the ES-DE application window was sometimes not focused on startup and the menu bar was sometimes visible
 * (macOS) The application updater for the x86 release downloaded the ARM package instead of the x86 package
 * Helpsystem icons could sometimes disappear temporarily after closing the media viewer
