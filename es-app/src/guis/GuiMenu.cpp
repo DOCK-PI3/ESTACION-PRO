@@ -2011,10 +2011,10 @@ void GuiMenu::openOtherOptions()
     });
 
 #if defined(__ANDROID__)
-    // Launch games on other screen.
+    // Launch games on the other screen.
     auto launchOnOtherScreen = std::make_shared<SwitchComponent>();
     launchOnOtherScreen->setState(Settings::getInstance()->getBool("LaunchOnOtherScreen"));
-    s->addWithLabel(_("LAUNCH GAMES ON OTHER SCREEN"), launchOnOtherScreen);
+    s->addWithLabel(_("LAUNCH GAMES ON THE OTHER SCREEN"), launchOnOtherScreen);
     s->addSaveFunc([launchOnOtherScreen, s] {
         if (launchOnOtherScreen->getState() !=
             Settings::getInstance()->getBool("LaunchOnOtherScreen")) {
