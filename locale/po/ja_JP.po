@@ -1221,7 +1221,7 @@ msgid "SHOW HIDDEN GAMES"
 msgstr "非表示中のゲームを表示"
 
 msgid "LAUNCH GAMES ON THE OTHER SCREEN"
-msgstr "別の画面でゲームを起動する"
+msgstr "別のスクリーンでゲームを起動"
 
 msgid "ENABLE CUSTOM EVENT SCRIPTS"
 msgstr "カスタムイベントスクリプトを有効に"
