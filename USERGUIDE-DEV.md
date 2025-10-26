@@ -2860,15 +2860,19 @@ For Linux, macOS and Windows there's an alternative to using ScummVM for a limit
 
 ### Sony PlayStation 3
 
-There are three ways to add PS3 games to ES-DE, by using shortcuts, by adding game serial files and by adding game directories directly to the ~/ROMs/ps3 folder and interpreting these as files. Shortcuts is generally the way to go as they're easier to setup. Launching as directories also doesn't work for HDD/pkg games unless you symlink from the internal RPCS3 directory structure. So another benefit with shortcuts and game serials is consistency as both HDD/pkg games and disc-based games will be setup in the same manner. This also means that the same RPCS3 emulator entry can be used to launch every game. The drawback to using shortcuts is that they're not portable, if you change the location of RPCS3 or your games, you need to manually update the shortcut files as well.
+On Android there are three ways to add PS3 games to ES-DE, by adding game serial files, by adding game directories directly to the `~/ROMs/ps3` folder and interpreting these as files, and by adding ISO files to the `~/ROMs/ps3` folder.
 
-Be aware that if you still want to have games installed using the directory method, then you will need to change to the alternative emulator _RPCS3 Directory (Standalone)_ or you won't be able to launch these games. As is the case for all alternative emulator entries, this can be configured system-wide or on a per-game basis.
+On desktop operating systems there are also three ways to add PS3 games to ES-DE, by using shortcuts, by adding game serial files and by adding game directories directly to the `~/ROMs/ps3` folder and interpreting these as files. Shortcuts is generally the way to go as they're easier to setup. Launching as directories also doesn't work for HDD/pkg games unless you symlink from the internal RPCS3 directory structure. So another benefit with shortcuts and game serials is consistency as both HDD/pkg games and disc-based games will be setup in the same manner. This also means that the same RPCS3 emulator entry can be used to launch every game. The drawback to using shortcuts is that they're not portable, if you change the location of RPCS3 or your games, you need to manually update the shortcut files as well.
+
+Be aware that if you want to have games installed using the directory method, then you will need to change to the alternative emulator _aPS3e Directory (Standalone)_ on Android and _RPCS3 Directory (Standalone)_ on desktop operating systems, or you won't be able to launch these games. As is the case for all alternative emulator entries, this can be configured system-wide or on a per-game basis.
 
 If using the Flatpak release of RPCS3 on Linux and your games are stored on an external device (such as a memory card), then you need to give RPCS3 the necessary permissions. The easiest way to do this is by using [Flatseal](https://flathub.org/apps/details/com.github.tchx84.Flatseal). The option you need to enable is _All system files_ in the _Filesystem_ section.
 
-Apart from this you need to install the PS3 system firmware to use the emulator, but that is described in the RPCS3 documentation.
+Apart from this you need to install the PS3 system firmware to use the emulator, but that is described in the aPS3e and RPCS3 documentation.
 
-**Method 1, shortcuts**
+**Shortcuts**
+
+_This method is only available on desktop operating systems_
 
 First install your games inside RPCS3, then right click on each entry and select _Manage Game_ followed by _Create Desktop Shortcut_. On Windows this will create shortcuts with the .lnk extension, on macOS they will have the .app extension and on Linux they will have the .desktop extension.
 
@@ -2894,32 +2898,43 @@ If using the AppImage release of RPCS3 on Linux then another issue may be that t
 
 Regardless of how you've installed RPCS3, make sure to always test the shortcuts outside ES-DE first, because if they don't work from the desktop, then they will not work from inside ES-DE either.
 
-**Method 2, game serial**
+**Game serial files**
 
-First install your games inside RPCS3, then create an empty file in `~/ROMs/ps3` and name it as the game name followed by the .ps3 file extension, such as the following:
+First install your games inside aPS3e or RPCS3, then create an empty file in `~/ROMs/ps3` and name it as the game name followed by the .ps3 file extension, such as the following:
 ```
 ~/ROMs/ps3/Braid.ps3
 ```
 
-Then add the game serial to this file. This ID can be found inside the RPCS3 GUI, in the _Serial_ column. For example the game _Braid_ has a serial that is NPUB30133. So simply add the string NPUB30133 to the `Braid.ps3` file using a text editor or similar and the setup for this game is complete.
+Then add the game serial to this file. This ID can be found inside aPS3e by long clicking on the game and then selecting _Show Game Info_ and it can be found in the RPCS3 GUI in the _Serial_ column. For example the game _Braid_ has a serial that is NPUB30133. So simply add the string NPUB30133 to the `Braid.ps3` file using a text editor or similar and the setup for this game is complete.
 
 To simplify the setup described above there is a convenient archive of .ps3 files available that covers most of the game library for this console. It can be downloaded from here:\
 https://raw.githubusercontent.com/Jetup13/Retroid-Pocket-4-Pro-Wiki/main/Files/ps3serials.zip
 
-Be aware that you need to change to the alternative emulator entry _RPCS3 Game Serial (Standalone)_ for this to work.
+Be aware that you need to change to the alternative emulator entry _RPCS3 Game Serial (Standalone)_ for this to work on desktop operating systems. On Android _aPS3e Game Serial (Standalone)_ is the default emulator for the ps3 system.
 
-**Method 3, directories**
+**Directories**
 
-This approach is only intended for disc-based games as for HDD/pkg games you should use shortcuts instead. When using this method you need to retain the directory structure of the Blu-ray disc, and each directory needs to be renamed by adding the .ps3 extension. This will make ES-DE interpret the directory as if it were a file and pass that directory to the emulator when launching a game.
+This approach is only intended for disc-based games as for HDD/pkg games you should use game serials or shortcuts instead. When using this method you need to retain the directory structure of the Blu-ray disc, and each directory needs to be renamed by adding the .ps3 extension. This will make ES-DE interpret the directory as if it were a file and pass that directory to the emulator when launching a game.
 
 Here's an example of what a game entry could look like:
 ```
 ~/ROMs/ps3/Gran Turismo 5.ps3
 ```
 
-It's possible to create a symlink instead, and in this case only the symlink needs to have the .ps3 extension. But if you want to locate your games outside the `~/ROMs/ps3` directory anyway, then it's probably easier to just use shortcuts.
+On desktop operating systems it's possible to create a symlink instead, and in this case only the symlink needs to have the .ps3 extension. But if you want to locate your games outside the `~/ROMs/ps3` directory anyway, then it's probably easier to just use shortcuts.
 
-When using this setup method you need to set the alternative emulator to _RPCS3 Directory (Standalone)_ or game launching will not work.
+When using this setup method you need to set the alternative emulator _aPS3e Directory (Standalone)_ or _RPCS3 Directory (Standalone)_ or game launching will not work.
+
+**ISO files**
+
+_This method is only available on Android_
+
+On Android you can run ISO files directly using aPS3e, you simply add the files to the _ps3_ directory and use the _aPS3e ISO (Standalone)_ alternative emulator entry to run the file.
+
+Here's an example of what a game entry could look like:
+```
+~/ROMs/ps3/Minecraft.iso
+```
 
 ### Sony PlayStation 4
 

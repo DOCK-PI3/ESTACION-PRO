@@ -223,9 +223,17 @@ If you prefer to apply the NetherSX2 patch yourself (i.e. build the APK) then yo
 
 https://github.com/Trixarian/NetherSX2-patch
 
+### aPS3e
+
+This emulator can be installed from the Play store or downloaded from their GitHub site. There's both a Premium (paid) version and a free version available on the Play store.
+
+https://play.google.com/store/apps/details?id=aenu.aps3e \
+https://play.google.com/store/apps/details?id=aenu.aps3e.premium \
+https://github.com/aenu1/aps3e/releases
+
 ### Azahar
 
-This emulator can be installed from the Play store or from their GitHub site.
+This emulator can be installed from the Play store or downloaded from their GitHub site.
 
 https://play.google.com/store/apps/details?id=io.github.lime3ds.android \
 https://github.com/azahar-emu/azahar/releases
@@ -411,7 +419,7 @@ https://play.google.com/store/apps/details?id=com.pixelrespawn.linkboy
 
 ### MAME4droid Current and MAME4droid
 
-These emulators can be installed from the Play store or from their GitHub sites. It's strongly recommended to go for the _MAME4droid Current_ version (previously named _MAME4droid 2024_) as this is updated with a recent MAME release while the older _MAME4droid_ is using an ancient MAME release.
+These emulators can be installed from the Play store or downloaded from their GitHub sites. It's strongly recommended to go for the _MAME4droid Current_ version (previously named _MAME4droid 2024_) as this is updated with a recent MAME release while the older _MAME4droid_ is using an ancient MAME release.
 
 Note that for MAME4droid Current there's an exception when it comes to setting up the ROM path. Instead of selecting each separate system directory (as is done on most other standalone emulators) you must select the root of the ROMs directory tree. To change the ROM path open _Settings_ in MAME4droid Current, then select _General_ and then _Change ROMs path_. After restarting the emulator choose _External storage_ and then the ROMs directory which contains all your ES-DE system directories. If you instead choose a specific system directory like ROMs/arcade or ROMs/neogeo then only that specific system will work when launching games from ES-DE.
 
@@ -505,7 +513,7 @@ https://play.google.com/store/apps/details?id=it.dbtecno.pizzaboyscpro
 
 ### Play!
 
-This emulator can be installed from the Play store or from their website.
+This emulator can be installed from the Play store or downloaded from their website.
 
 https://play.google.com/store/apps/details?id=com.virtualapplications.play \
 https://www.purei.org/downloads.php
@@ -580,7 +588,7 @@ https://play.google.com/store/apps/details?id=com.issess.flashplayerpro
 
 ### Virtual Virtual Boy
 
-This emulator can be installed from the Play store or from their GitHub site.
+This emulator can be installed from the Play store or downloaded from their GitHub site.
 
 https://play.google.com/store/apps/details?id=com.simongellis.vvb \
 https://github.com/SupernaviX/vvb/releases
@@ -893,7 +901,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | pokemini              | Nintendo Pokémon Mini                          | PokeMini                          |                                   | No           |                                      |
 | ports                 | Ports                                          | ECWolf (Wolfenstein 3D)           | CannonBall (OutRun),<br>Mr.Boom (Bomberman),<br>NXEngine (Cave Story),<br>drs (Cave Story),<br>OpenLara (Tomb Raider),<br>Super Bros War | Yes for ECWolf |                                      |
 | ps2                   | Sony PlayStation 2                             | AetherSX2 **(Standalone)**        | Play! **(Standalone)**            | Yes for AetherSX2 |                                      |
-| ps3                   | Sony PlayStation 3                             | _Placeholder_                     |                                   |              |                                      |
+| ps3                   | Sony PlayStation 3                             | aPS3e Game Serial **(Standalone)** | aPS3e Directory **(Standalone)**,<br>aPS3e ISO **(Standalone)** | Yes          | See the specific _Sony PlayStation 3_ section in the user guide |
 | ps4                   | Sony PlayStation 4                             | _Placeholder_                     |                                   |              |                                      |
 | psp                   | Sony PlayStation Portable                      | PPSSPP                            | PPSSPP **(Standalone)**           | No           | Single disc image file               |
 | psvita                | Sony PlayStation Vita                          | Vita3K **(Standalone)**           |                                   | Yes          | See the specific _Sony PlayStation Vita_ section in the User guide |

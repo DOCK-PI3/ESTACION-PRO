@@ -42,6 +42,7 @@
 * (Linux) Added a ~/Desktop import rule entry for the desktop system
 * (macOS) Added a ~/Applications import rule entry for the steam system
 * (Windows) Added ~\Desktop import rule entries for the desktop, emulators and windows systems
+* (Android) Added support for the Sony PlayStation 3 (ps3) game system (using aPS3e)
 * (Android) Added support for the Valve Steam (steam) game system (using GameNative and GameHub Lite)
 * (Android) Added GameNative and GameHub Lite standalone as alternative emulators for the windows system
 * (Android) Added support for the Epic Games Store (epic) game system
@@ -108,6 +109,7 @@
 
 * (Android) Fixed a crash when scraping if the downloaded_media directory had been set to an invalid path
 * (Android) The splash screen progress bar sometimes didn't render correctly when running in multi-window mode or after switching screens
+* (Android) The Android soft keyboard was always enabled after resizing the ES-DE window when running in multi-window mode
 * (macOS) On macOS 26 Tahoe the ES-DE application window was sometimes not focused on startup and the menu bar was sometimes visible
 * (macOS) The application updater for the x86 release downloaded the ARM package instead of the x86 package
 * Helpsystem icons could sometimes disappear temporarily after closing the media viewer
