@@ -1221,7 +1221,7 @@ msgid "SHOW HIDDEN GAMES"
 msgstr "ПОКАЗЫВАТЬ СКРЫТЫЕ ИГРЫ"
 
 msgid "LAUNCH GAMES ON THE OTHER SCREEN"
-msgstr "ЗАПУСК ИГРЫ НА ДРУГОМ ЭКРАНЕ"
+msgstr "ЗАПУСКАТЬ ИГРЫ НА ДРУГОМ ЭКРАНЕ"
 
 msgid "ENABLE CUSTOM EVENT SCRIPTS"
 msgstr "РАЗРЕШИТЬ ПОЛЬЗ. СЦЕНАРИИ СОБЫТИЙ"
