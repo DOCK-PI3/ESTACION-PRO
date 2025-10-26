@@ -2923,7 +2923,7 @@ Here's an example of what a game entry could look like:
 
 On desktop operating systems it's possible to create a symlink instead, and in this case only the symlink needs to have the .ps3 extension. But if you want to locate your games outside the `~/ROMs/ps3` directory anyway, then it's probably easier to just use shortcuts.
 
-When using this setup method you need to set the alternative emulator _aPS3e Directory (Standalone)_ or _RPCS3 Directory (Standalone)_ or game launching will not work.
+When using this setup method you need to use the alternative emulator _aPS3e Directory (Standalone)_ or _RPCS3 Directory (Standalone)_ or game launching will not work.
 
 **ISO files**
 
@@ -3071,9 +3071,11 @@ Opening the store page entry in the official Steam client on desktop operating s
 As an alternative to manually exporting or creating these files you can find the following repository which contains a set of automatically created .steam files for the entire Steam library:\
 https://github.com/RobZombie9043/steam-files-es-de
 
- Just make sure you **don't add this entire set of files to ES-DE** as that will make the application incredibly slow with hundreds of thousands of Steam game entries.
+Just make sure you **don't add this entire set of files to ES-DE** as that will make the application incredibly slow with hundreds of thousands of Steam game entries.
 
 The .steam files can be launched with both the _GameNative_ and _GameHub Lite_ emulator entries.
+
+Using GameHub Lite it's also possible to run locally installed games. The setup is identical to regular Steam games, you just need to add the local game's ID to a corresponding .steam file and use the alternative emulator entry _GameHub Lite Local (Standalone)_.
 
 ### Symbian and Nokia N-Gage
 
