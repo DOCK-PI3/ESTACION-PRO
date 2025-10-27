@@ -52,6 +52,7 @@
 * (Android) Added Linkboy standalone as an alternative emulator for the gb, gba and gbc systems
 * (Android) Changed Pizza Boy GBA/A to use %ROMSAF% instead of %ROM% as the developer has changed the way games are launched from frontends
 * (Android) Changed Pizza Boy SC to use %ROMSAF% instead of %ROM% as the developer has changed the way games are launched from frontends
+* (Android) Added a find rule entry for the Vita3K ZX fork
 * Added DOSBox Pure Unleashed standalone as an alternative emulator for the dos, pc, windows3x and windows9x systems on Linux, macOS and Windows
 * Added Parallel Launcher standalone as an alternative emulator for the n64 system on Linux, macOS and Windows
 * Added Gopher64 standalone as an alternative emulator for the n64 system on Linux and Windows
