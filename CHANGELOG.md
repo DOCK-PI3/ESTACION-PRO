@@ -58,6 +58,7 @@
 * Added Gopher64 standalone as an alternative emulator for the n64 system on Linux and Windows
 * Added "Native port" as an alternative emulator for the n64 system (for running N64 recompilations)
 * Added "Shortcut or script" as an alternative emulator for the n64 system on Linux, macOS and Windows
+* Added "Shortcut or script" as an alternative emulator for the ps2 system on Linux and Windows
 * Added AzaharPlus as an alternative emulator for the n3ds system on Android, Linux and Windows
 * Added Xenia Edge as an alternative emulator for the xbox360 system on Linux and Windows
 * Added 3dSen standalone as an alternative emulator for the famicom and nes systems on Linux and macOS
@@ -70,13 +71,14 @@
 * (Linux) Added support for the pkgforge-dev AppImage release of MAME
 * (Linux) Added support for the pkgforge-dev AppImage release of xenia (xenia-canary)
 * (Linux) Added the .AppImage, .desktop and .sh file extensions to the n64 system
+* (Linux) Added the .desktop file extension to the ps2 system
 * (Linux) Added find rule entries for the Ryubing Flatpak
 * (macOS) Added Ymir standalone as an alternative emulator for the saturn and saturnjp systems
 * (macOS) Added the .3dsen file extension to the famicom and nes systems
 * (macOS) Added the .app file extension to the n64 system
 * (Windows) Added find rule entries for xenia canary installed via Xenia Manager
 * (Windows) Added "Shortcut or script" as an alternative emulator for the xbox360 system
-* (Windows) Added the .lnk file extension to the xbox360 system
+* (Windows) Added the .lnk file extension to the ps2 and xbox360 systems
 * (Windows) Added the .exe and .LNK file extensions to the n64 system
 * Added ares standalone as an alternative emulator for the psx system on Linux, macOS and Windows
 * Added ares [Mega LD] standalone (Pioneer LaserActive) as an alternative emulator for the daphne and laserdisc systems on Linux, macOS and Windows
