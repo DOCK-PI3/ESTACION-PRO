@@ -44,6 +44,7 @@
 * (Windows) Added ~\Desktop import rule entries for the desktop, emulators and windows systems
 * (Android) Added support for the Sony PlayStation 3 (ps3) game system (using aPS3e)
 * (Android) Added support for the Valve Steam (steam) game system (using GameNative and GameHub Lite)
+* (Android) Added ARMSX2 standalone as an alternative emulator for the ps2 system
 * (Android) Added GameNative and GameHub Lite standalone as alternative emulators for the windows system
 * (Android) Added support for the Epic Games Store (epic) game system
 * (Android) Added Winlator Cmod standalone as the default emulator for the pcarcade, type-x and windows systems

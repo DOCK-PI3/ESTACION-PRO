@@ -231,6 +231,12 @@ https://play.google.com/store/apps/details?id=aenu.aps3e \
 https://play.google.com/store/apps/details?id=aenu.aps3e.premium \
 https://github.com/aenu1/aps3e/releases
 
+### ARMSX2
+
+This emulator can be downloaded from their GitHub site.
+
+https://github.com/ARMSX2/ARMSX2/releases
+
 ### Azahar
 
 This emulator can be installed from the Play store or downloaded from their GitHub site.
@@ -901,7 +907,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | plus4                 | Commodore Plus/4                               | VICE xplus4                       |                                   | No           | Single archive or image file for tape, cartridge or single-diskette games, .m3u playlist for multi-diskette games |
 | pokemini              | Nintendo Pokémon Mini                          | PokeMini                          |                                   | No           |                                      |
 | ports                 | Ports                                          | ECWolf (Wolfenstein 3D)           | CannonBall (OutRun),<br>Mr.Boom (Bomberman),<br>NXEngine (Cave Story),<br>drs (Cave Story),<br>OpenLara (Tomb Raider),<br>Super Bros War | Yes for ECWolf |                                      |
-| ps2                   | Sony PlayStation 2                             | AetherSX2 **(Standalone)**        | Play! **(Standalone)**            | Yes for AetherSX2 |                                      |
+| ps2                   | Sony PlayStation 2                             | AetherSX2 **(Standalone)**        | ARMSX2 **(Standalone)**,<br>Play! **(Standalone)**            | Yes for AetherSX2 and ARMSX2 |                                      |
 | ps3                   | Sony PlayStation 3                             | aPS3e Game Serial **(Standalone)** | aPS3e Directory **(Standalone)**,<br>aPS3e ISO **(Standalone)** | Yes          | See the specific _Sony PlayStation 3_ section in the user guide |
 | ps4                   | Sony PlayStation 4                             | _Placeholder_                     |                                   |              |                                      |
 | psp                   | Sony PlayStation Portable                      | PPSSPP                            | PPSSPP **(Standalone)**           | No           | Single disc image file               |
