@@ -801,6 +801,7 @@ The following emulators are supported in AppImage format when using the bundled 
 | ps3                  | RPCS3               | rpcs3*.AppImage                | Official             |
 | ps4                  | shadPS4             | Shadps4-qt*.AppImage           | Official             |
 | ps4                  | shadPS4             | Shadps4-sdl*.AppImage          | Official             |
+| ps4                  | shadPS4 (GUI)       | shadPS4QtLauncher*.AppImage    | Official             |
 | psp                  | PPSSPP              | PPSSPP*.AppImage               | Official             |
 | psvita               | Vita3K              | Vita3K*.AppImage               | Official             |
 | psx                  | DuckStation         | DuckStation*.AppImage          | Official             |
@@ -2944,6 +2945,8 @@ The drawback to using shortcuts is that they're not portable, if you change the 
 
 Unless you want to run eboot.bin files directly from inside ES-DE it's recommended to install the games outside of the ROMs directory tree so they don't need to be scanned on startup. This could take quite some time as these games may contain many thousands of files each. An alternative would be to place a `noload.txt` file inside each game directory but it's easier to just install the games elsewhere.
 
+At the time of writing there are three separate shadPS4 builds, the GUI release, the legacy Qt release and the CLI release. The _shadPS4 Shortcut (Standalone)_ emulator entry works with all these variants, but if you're using the GUI release and want to use the game serial or eboot.bin methods to launch games from ES-DE then you need to select the _shadPS4 [GUI] Game Serial (Standalone)_ or _shadPS4 [GUI] eboot.bin (Standalone)_ emulator entries respectively.
+
 _On macOS you need to configure shadPS4 to run in fullscreen mode or otherwise window switching will not work when launching games from ES-DE._
 
 **Method 1, shortcuts**
@@ -2967,6 +2970,12 @@ You need to change this to the full path of the AppImage file, such as:
 ```
 Exec=/home/myusername/Applications/Shadps4-qt.AppImage "/home/myusername/ROMs/ps4/CUSA00900/eboot.bin"
 ```
+
+Or if you're using shadPS4 GUI:
+```
+Exec=/home/myusername/Applications/shadPS4QtLauncher-qt.AppImage -d -g "/home/leon/ROMs/ps4/CUSA07010/eboot.bin"
+```
+
 Regardless of how you've installed shadPS4, make sure to always test the shortcuts outside ES-DE first, because if they don't work from the desktop, then they will not work from inside ES-DE either.
 
 **Method 2, game serial**
@@ -2978,13 +2987,13 @@ First install your games inside shadPS4, then create an empty file in `~/ROMs/ps
 
 Then add the game serial to this file. This ID can be found inside the shadPS4 GUI, in the _Serial_ column. For example the game _Sonic Mania_ has a serial that is CUSA07010. So simply add the string CUSA07010 to the `Sonic Mania.ps4` file using a text editor or similar and the setup for this game is complete.
 
-Be aware that you need to change to the alternative emulator entry _shadPS4 Game Serial (Standalone)_ for this to work.
+Be aware that you need to change to the alternative emulator entry _shadPS4 Game Serial (Standalone)_ or _shadPS4 [GUI] Game Serial (Standalone)_ for this to work.
 
 **Method 3, eboot.bin**
 
 This method which is not really recommended requires that you install the games directly to the `~/ROMs/ps4` directory and browse to the eboot.bin file for each game to launch it. You can optionally use the _Folder link_ functionality to launch the games directly from the main gamelist view, as explained elsewhere in this guide.
 
-Be aware that you need to change to the alternative emulator entry _shadPS4 eboot.bin (Standalone)_ for this to work.
+Be aware that you need to change to the alternative emulator entry _shadPS4 eboot.bin (Standalone)_ or _shadPS4 [GUI] eboot.bin (Standalone)_ for this to work.
 
 ### Sony PlayStation Vita
 
@@ -3075,7 +3084,7 @@ Just make sure you **don't add this entire set of files to ES-DE** as that will 
 
 The .steam files can be launched with both the _GameNative_ and _GameHub Lite_ emulator entries.
 
-Using GameHub Lite it's also possible to run locally installed games. The setup is identical to regular Steam games, you just need to add the local game's ID to a corresponding .steam file and use the alternative emulator entry _GameHub Lite Local (Standalone)_.
+Using GameHub Lite it's also possible to run locally installed games. The setup is identical to regular Steam games, you just need to add the local game's ID to a corresponding .steam file and use the alternative emulator entry _GameHub Lite Local (Standalone)_. You can see the local game ID from inside the app and also copy it to the clipboard so that you can easily paste it into a .steam file.
 
 ### Symbian and Nokia N-Gage
 
@@ -4874,7 +4883,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | ports                 | Ports                                          | _Shortcut or script_              | _AppImage_ [L],<br>ECWolf (Wolfenstein 3D),<br>CannonBall (OutRun),<br>Mr.Boom (Bomberman),<br>NXEngine (Cave Story),<br>drs (Cave Story),<br>OpenLara (Tomb Raider) [LW],<br>Super Bros War | Yes for ECWolf | See the specific _Ports and desktop applications_ section elsewhere in this guide |
 | ps2                   | Sony PlayStation 2                             | LRPS2 [LW],<br>PCSX2 **(Standalone)** [M] | PCSX2 [LW] @,<br>PCSX2 **(Standalone)** [LW],<br>PCSX2 Legacy **(Standalone)** @,<br>Play! **(Standalone)**,<br>AetherSX2 **(Standalone)** [M],<br>_Shortcut or script_ [LW] | Yes except for Play! |                                      |
 | ps3                   | Sony PlayStation 3                             | RPCS3 Shortcut **(Standalone)**   | RPCS3 Game Serial **(Standalone)**,<br>RPCS3 Directory **(Standalone)** | Yes    | See the specific _Sony PlayStation 3_ section elsewhere in this guide |
-| ps4                   | Sony PlayStation 4                             | shadPS4 Shortcut **(Standalone)** [LW],<br>shadPS4 Game Serial **(Standalone)** [M] | shadPS4 Game Serial **(Standalone)** [LW],<br>shadPS4 eboot.bin **(Standalone)** | No           | See the specific _Sony PlayStation 4_ section elsewhere in this guide |
+| ps4                   | Sony PlayStation 4                             | shadPS4 Shortcut **(Standalone)** [LW],<br>shadPS4 Game Serial **(Standalone)** [M] | shadPS4 Game Serial **(Standalone)** [LW],<br>shadPS4 eboot.bin **(Standalone)**,<br>shadPS4 [GUI] Game Serial **(Standalone)**,<br>shadPS4 [GUI] eboot.bin **(Standalone)** | No           | See the specific _Sony PlayStation 4_ section elsewhere in this guide |
 | psp                   | Sony PlayStation Portable                      | PPSSPP                            | PPSSPP **(Standalone)**           | No           | Single disc image file      |
 | psvita                | Sony PlayStation Vita                          | Vita3K **(Standalone)**           |                                   | Yes          | See the specific _Sony PlayStation Vita_ section elsewhere in this guide |
 | psx                   | Sony PlayStation                               | Beetle PSX                        | Beetle PSX HW,<br>PCSX ReARMed,<br>SwanStation,<br>DuckStation **(Standalone)**,<br>ares **(Standalone)**,<br>Mednafen **(Standalone)** | Yes          | .chd file for single-disc games, .m3u playlist for multi-disc games |

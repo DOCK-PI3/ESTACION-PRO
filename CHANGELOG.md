@@ -1,15 +1,25 @@
 # ES-DE Frontend - Changelog
 
-## Version 3.4.0 / 3.4.0-xx (in development)
+## Version 3.4.0 / 3.4.0-56 (in development)
 
 **Release date:** TBD
 
 ### Release overview
 
+This release introduces play time tracking to show how long games have been played, using an identical logic to how it works in Steam. This does however require that themes get updated to support this feature. It's now also possible to sort gamelists by play time. A cosmetic change is that the "EmulationStation Desktop Edition" subtitle has been removed from the splash screen, and ES-DE will no longer search for an .emulationstation directory on startup when running on desktop operating systems.
+
+On Android the Sony PlayStation 3 (ps3), Valve Steam (steam) and Epic Games Store (epic) systems have been enabled and there is improved support for running on dual-screen devices. For instance there is a new "Launch games on the other screen" option in the Other settings menu to control on which screen to run games and emulators.
+
+Also on Android there is experimental support for running RetroArch in multi-user setups. This has currently been enabled for a handful of emulator entries to make sure we capture potential firmware bugs and similar that may prevent this from working. If it turns out to be stable across a wide range of hardware this will be rolled out to all emulator entries in the future. Another nice feature is that Samsung DeX is now supported by ES-DE, but this is actually due to a policy change by Samsung and not due to any changes inside ES-DE. Still this release contains some bug fixes that should make the DeX experience better. Just be aware that you need to use One UI 8.0 or later for this to work as Samsung has not backported these changes to earlier OS releases.
+
+Translations to Arabic (ar_SA) has also been added in this release, as well as support for many additional regions when scraping using ScreenScraper. There is now also full support for the WebP image format and the AV1 video codec for scraped media (these are not currently supported by ScreenScraper or TheGamesDB but it allows you to manually download such files and use them in ES-DE, and it can be considered more of a future-proofing feature). You can now also select whether to generate the miximages in PNG or WebP format.
+
+In addition to the above there is support for a lot of new emulators, import rules and file extensions, as well as numerous minor improvements and some bug fixes. See the changelog below for all details.
+
 ### Detailed list of changes
 
 * Added support for play time tracking
-* Added support for sorting the gamelist by play time
+* Added support for sorting gamelists by play time
 * Added play time tracking to the Linear, Modern and Slate themes
 * Changed the "last played" metadata value to always reset when returning from a game rather than when launching a game
 * Removed the "EmulationStation Desktop Edition" subtitle from the splash screen
@@ -18,7 +28,7 @@
 * Added Netherlands, Russia, Sweden, Spain, Taiwan and United Kingdom as additional ScreenScraper regions
 * Changed the media and release date fallback order for the scraper to place Europe prior to Japan, so it matches the game name fallback order
 * Added translations for Arabic (ar_SA)
-* (Android) Added experimental support for Samsung DeX (this requires One UI 8.0 or higher)
+* (Android) Improved support for Samsung DeX (this requires One UI 8.0 or higher)
 * (Android) Added an experimental "Launch games on the other screen" setting for use on dual-screen devices
 * (Android) Added an %EXTRAINTEGER_% launch command variable
 * (Android) Added two new %INTERNALDATA% and %EXTERNALDATA% variables to support launching of RetroArch in multi-user setups
@@ -44,8 +54,8 @@
 * (Windows) Added ~\Desktop import rule entries for the desktop, emulators and windows systems
 * (Android) Added support for the Sony PlayStation 3 (ps3) game system (using aPS3e)
 * (Android) Added support for the Valve Steam (steam) game system (using GameNative and GameHub Lite)
-* (Android) Added ARMSX2 standalone as an alternative emulator for the ps2 system
 * (Android) Added GameNative and GameHub Lite standalone as alternative emulators for the windows system
+* (Android) Added ARMSX2 standalone as an alternative emulator for the ps2 system
 * (Android) Added support for the Epic Games Store (epic) game system
 * (Android) Added Winlator Cmod standalone as the default emulator for the pcarcade, type-x and windows systems
 * (Android) Added Kenji-NX standalone as the default emulator for the switch system
@@ -63,6 +73,8 @@
 * Added AzaharPlus as an alternative emulator for the n3ds system on Android, Linux and Windows
 * Added Xenia Edge as an alternative emulator for the xbox360 system on Linux and Windows
 * Added 3dSen standalone as an alternative emulator for the famicom and nes systems on Linux and macOS
+* Added shadPS4 [GUI] Game Serial standalone as an alternative emulator for the ps4 system on Linux, macOS and Windows
+* Added shadPS4 [GUI] eboot.bin standalone as an alternative emulator for the ps4 system on Linux, macOS and Windows
 * (Android) Added an import rule for the n64 system
 * (Android) Added the .app file extension to the n64 system
 * (Android) Added the .steam file extension to the windows system
