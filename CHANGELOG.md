@@ -6,15 +6,15 @@
 
 ### Release overview
 
-This release introduces play time tracking to show how long games have been played, using an identical logic to how it works in Steam. This does however require that themes get updated to support this feature. It's now also possible to sort gamelists by play time. A cosmetic change in this release is that the "EmulationStation Desktop Edition" subtitle has been removed from the splash screen, and ES-DE will no longer search for an .emulationstation directory on startup when running on desktop operating systems.
+This release introduces play time tracking to show for how long games have been played, using an identical logic to how it works in Steam. This does however require that themes get updated to support this feature. It's now also possible to sort gamelists by play time. A cosmetic change in this release is that the "EmulationStation Desktop Edition" subtitle has been removed from the splash screen, and ES-DE will no longer search for an .emulationstation directory on startup when running on desktop operating systems.
 
 On Android the Sony PlayStation 3 (ps3), Valve Steam (steam) and Epic Games Store (epic) systems have been enabled and there is improved support for running on dual-screen devices. For instance there is a new "Launch games on the other screen" option in the Other settings menu to control on which screen to run games and emulators.
 
-Also on Android there is experimental support for running RetroArch in multi-user setups. This has currently been enabled for a handful of emulator entries to make sure we capture potential firmware bugs and similar that may prevent this from working. If it turns out to be stable across a wide range of hardware this will be rolled out to all emulator entries in the future. Another nice feature is that Samsung DeX is now supported by ES-DE, but this is actually due to a policy change by Samsung and not due to any changes inside ES-DE. Still this release contains some bug fixes that should make the DeX experience better. Just be aware that you need to use One UI 8.0 or later for this to work as Samsung has not enabled this on earlier OS releases.
+Also on Android there is experimental support for running RetroArch in multi-user setups. This has currently been enabled for a handful of emulator entries to make sure we capture potential firmware bugs and similar that may prevent this from working. If it turns out to be stable across a wide range of hardware then this will be rolled out to all emulator entries in the future. Another nice feature is that Samsung DeX is now supported by ES-DE, but this is actually due to a policy change by Samsung and not due to any changes inside ES-DE. Still this release contains some bug fixes that should make the DeX experience better. Just be aware that you need to use One UI 8.0 or later for this to work as Samsung has not enabled this on earlier OS releases.
 
-Translations to Arabic (ar_SA) have also been added in this release, as well as support for many additional regions when scraping using ScreenScraper. There is now also support for the WebP image format and the AV1 video codec for scraped media (these are however not currently supported by ScreenScraper or TheGamesDB so this can be considered more of a future-proofing feature). You can now also select whether to generate the miximages in PNG or WebP format.
+Translations to Arabic (ar_SA) have also been added in this release, as well as support for many additional regions when scraping using ScreenScraper. There is now also support for the WebP image format and the AV1 video codec for scraped media (these are however not currently supported by ScreenScraper or TheGamesDB so this can be considered more of a future-proofing feature). You can now also select whether to generate miximages in PNG or WebP format, with the latter leading to reduced disk usage but slightly slower scraping.
 
-In addition to the above there is support for a lot of new emulators, import rules and file extensions, and there are numerous minor improvements and some bug fixes, see below for all details.
+In addition to the above there is support for a lot of new emulators, import rules and file extensions, and there are numerous minor improvements, as well as some bug fixes. See below for all details.
 
 ### Detailed list of changes
 
@@ -92,7 +92,7 @@ In addition to the above there is support for a lot of new emulators, import rul
 * (Windows) Added find rule entries for xenia canary installed via Xenia Manager
 * (Windows) Added "Shortcut or script" as an alternative emulator for the xbox360 system
 * (Windows) Added the .lnk file extension to the ps2 and xbox360 systems
-* (Windows) Added the .exe and .LNK file extensions to the n64 system
+* (Windows) Added the .exe and .lnk file extensions to the n64 system
 * Added ares standalone as an alternative emulator for the psx system on Linux, macOS and Windows
 * Added ares [Mega LD] standalone (Pioneer LaserActive) as an alternative emulator for the daphne and laserdisc systems on Linux, macOS and Windows
 * Added the .mmi file extension to the daphne and laserdisc systems on Linux, macOS and Windows

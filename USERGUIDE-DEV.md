@@ -800,7 +800,7 @@ The following emulators are supported in AppImage format when using the bundled 
 | ps2                  | Play!               | Play!*.AppImage                | Official             |
 | ps3                  | RPCS3               | rpcs3*.AppImage                | Official             |
 | ps4                  | shadPS4             | Shadps4-qt*.AppImage           | Official             |
-| ps4                  | shadPS4             | Shadps4-sdl*.AppImage          | Official             |
+| ps4                  | shadPS4 (CLI)       | Shadps4-sdl*.AppImage          | Official             |
 | ps4                  | shadPS4 (GUI)       | shadPS4QtLauncher*.AppImage    | Official             |
 | psp                  | PPSSPP              | PPSSPP*.AppImage               | Official             |
 | psvita               | Vita3K              | Vita3K*.AppImage               | Official             |
