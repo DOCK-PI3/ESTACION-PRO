@@ -354,6 +354,12 @@
             <entry>/Applications/shadps4.app/Contents/MacOS/shadps4</entry>
         </rule>
     </emulator>
+    <emulator name="SHADPS4-GUI">
+        <!-- Sony PlayStation 4 emulator shadPS4 (GUI) -->
+        <rule type="staticpath">
+            <entry>/Applications/shadPS4QtLauncher.app/Contents/MacOS/shadPS4QtLauncher</entry>
+        </rule>
+    </emulator>
     <emulator name="SHEEPSHAVER">
         <!-- Apple Macintosh PowerPC emulator SheepShaver -->
         <rule type="staticpath">

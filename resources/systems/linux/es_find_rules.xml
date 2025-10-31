@@ -1112,6 +1112,15 @@
             <entry>~/bin/shadps4/shadps4</entry>
         </rule>
     </emulator>
+    <emulator name="SHADPS4-GUI">
+        <!-- Sony PlayStation 4 emulator shadPS4 (GUI) -->
+        <rule type="staticpath">
+            <entry>~/Applications/shadPS4QtLauncher*.AppImage</entry>
+            <entry>~/.local/share/applications/shadPS4QtLauncher*.AppImage</entry>
+            <entry>~/.local/bin/shadPS4QtLauncher*.AppImage</entry>
+            <entry>~/bin/shadPS4QtLauncher*.AppImage</entry>
+        </rule>
+    </emulator>
     <emulator name="SHEEPSHAVER">
         <!-- Apple Macintosh PowerPC emulator SheepShaver -->
         <rule type="systempath">

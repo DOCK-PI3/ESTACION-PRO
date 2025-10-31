@@ -1656,6 +1656,8 @@
         <command label="shadPS4 Shortcut (Standalone)">%HIDEWINDOW% %ESCAPESPECIALS% %EMULATOR_OS-SHELL% /C %ROM%</command>
         <command label="shadPS4 Game Serial (Standalone)">%STARTDIR%=%EMUDIR% %EMULATOR_SHADPS4% -g %INJECT%=%BASENAME%.ps4</command>
         <command label="shadPS4 eboot.bin (Standalone)">%STARTDIR%=%EMUDIR% %EMULATOR_SHADPS4% %ROM%</command>
+        <command label="shadPS4 [GUI] Game Serial (Standalone)">%STARTDIR%=%EMUDIR% %EMULATOR_SHADPS4-GUI% -d -g %INJECT%=%BASENAME%.ps4</command>
+        <command label="shadPS4 [GUI] eboot.bin (Standalone)">%STARTDIR%=%EMUDIR% %EMULATOR_SHADPS4-GUI% -d -g %ROM%</command>
         <platform>ps4</platform>
         <theme>ps4</theme>
     </system>
