@@ -128,6 +128,7 @@ In addition to the above there is support for a lot of new emulators, import rul
 * (Android) The Android soft keyboard was always enabled after resizing the ES-DE window when running in multi-window mode
 * (macOS) On macOS 26 Tahoe the ES-DE application window was sometimes not focused on startup and the menu bar was sometimes visible
 * (macOS) The application updater for the x86 release downloaded the ARM package instead of the x86 package
+* Invalid media files could get saved to disk when reaching the daily ScreenScraper quota
 * Helpsystem icons could sometimes disappear temporarily after closing the media viewer
 * (Haiku) The reboot and power off entries in the quit menu didn't work as intended
 

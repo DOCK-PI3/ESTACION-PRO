@@ -3086,6 +3086,8 @@ The .steam files can be launched with both the _GameNative_ and _GameHub Lite_ e
 
 Using GameHub Lite it's also possible to run locally installed games. The setup is identical to regular Steam games, you just need to add the local game's ID to a corresponding .steam file and use the alternative emulator entry _GameHub Lite Local (Standalone)_. You can see the local game ID from inside the app and also copy it to the clipboard so that you can easily paste it into a .steam file.
 
+Whenever you're creating a .steam file, make sure that you only place the game ID in the file and no extra spaces or line breaks, as doing that may make the game impossible to launch.
+
 ### Symbian and Nokia N-Gage
 
 **At the time of writing the Linux AppImage release of EKA2L1 is partially broken and can't be used to run N-Gage games, instead an alternative emulator entry to run the Windows version of EKA2L1 can be used. This should only be temporary until the bugs have been resolved by the EKA2L1 team, so detailed instructions on how to setup the Windows version on Linux will not be provided below. The documentation instead assumes that the AppImage works as intended.**
