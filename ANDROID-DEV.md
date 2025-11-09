@@ -201,6 +201,22 @@ Finally, multi-window mode doesn't work when ES-DE has been set as the home app 
 * The Android soft keyboard causes rendering issues when navigating using a controller or physical keyboard, as such the ES-DE built-in keyboard is enabled by default for the time being. For testing purposes the Android soft keyboard can be enabled via the _Enable virtual keyboard_ option in the _UI settings_ menu. If only using touch input the issue is not present. This problem is believed to be caused by a bug in the SDL library so it probably needs to be resolved there.
 * Using a mounted USB storage device for the ES-DE and/or ROMs directories will lead to the configurator exiting after finishing the setup instead of launching ES-DE. Restarting ES-DE manually will lead to a successful startup. If the option to create the system directories was selected in the configurator then this will have to be executed again from inside ES-DE. Note that using a mounted USB storage device leads to a very crippled setup anyway, as for example RetroArch can't read any games from such devices (i.e. from the /mnt/media_rw/ directory tree). Only emulators supporting scoped storage will be usable in such a setup.
 
+## Known problems on specific devices
+
+There are some devices which have specific quirks and issues which may cause problems when running ES-DE. Here are some things to consider and work around.
+
+### AYN Odin 2
+
+This device incorrectly reports two screens as being present even when just one screen is present. This will make game launching fail if the ES-DE setting _Other settings->Launch games on the other screen_ is enabled.
+
+### Logitech G Cloud
+
+This device will by default kill any process that is not currently focused, so if starting a game the OS will kill ES-DE so that it has to start up every time you return from a game. To fix this disable _Settings->Labs->Process protection_.
+
+### Retroid Pocket G2
+
+With its default configuration the theme downloader in ES-DE is unusable, to resolve this enable the setting _Handheld Settings->Advanced->Is it force start selinux_.
+
 ## Emulator installation and setup
 
 Below are specific instructions and considerations for all supported emulators.
