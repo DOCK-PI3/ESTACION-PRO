@@ -217,6 +217,10 @@ This device will by default kill any process that is not currently focused, so i
 
 With its default configuration the theme downloader in ES-DE is unusable, to resolve this enable the setting _Handheld Settings->Advanced->Is it force start selinux_.
 
+### Samsung devices
+
+There seems to be a firmware bug on at least some Samsung devices that may make ES-DE not find RetroArch when attempting to launch a game. This happens very rarely and is seemingly triggered after doing an OS update, or possibly after upgrading RetroArch itself, or due to a combination of the two. It's been observed on the S23 and S25 models. Just starting RetroArch once outside of ES-DE permanently fixes the problem. It's unclear whether this can happen for standalone emulators as well, but this has so far not been observed or reported.
+
 ## Emulator installation and setup
 
 Below are specific instructions and considerations for all supported emulators.
