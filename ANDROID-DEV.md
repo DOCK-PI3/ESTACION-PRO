@@ -383,7 +383,7 @@ https://play.google.com/store/apps/details?id=com.emulator.fpse
 
 This Steam client can be downloaded from their GitHub site.
 
-https://github.com/gamehublite/gamehub-oss/releases
+https://github.com/Producdevity/gamehub-lite/releases
 
 ### GameNative
 

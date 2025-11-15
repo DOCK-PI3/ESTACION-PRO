@@ -1,5 +1,17 @@
 # ES-DE Frontend - Changelog
 
+## Version 3.5.0 / 3.5.0-xx (in development)
+
+**Release date:** TBD
+
+### Release overview
+
+### Detailed list of changes
+
+### Bug fixes
+
+* (Android) The game importer would crash if attempting to open it without any import rules defined
+
 ## Version 3.4.0 / 3.4.0-56
 
 **Release date:** 2025-11-07
