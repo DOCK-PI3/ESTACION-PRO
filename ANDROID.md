@@ -205,6 +205,10 @@ Finally, multi-window mode doesn't work when ES-DE has been set as the home app 
 
 There are some devices which have specific quirks and issues which may cause problems when running ES-DE. Here are some things to consider and work around.
 
+### AYN Thor
+
+The Android task switcher can't be used when setting ES-DE (or other frontends) as the home app.
+
 ### Logitech G Cloud
 
 This device will by default kill any process that is not currently focused, so if starting a game the OS will kill ES-DE so that it has to start up every time you return from a game. To fix this disable _Settings->Labs->Process protection_.
@@ -674,11 +678,12 @@ This is clearly not a complete list of Android devices, but rather those we know
 | AYANEO       | Pocket Micro            | 13              | Yes       | None                |                            |
 | AYANEO       | Pocket S                | 13              | Yes       | None                |                            |
 | AYANEO       | Pocket S2               | 14              | Yes       | None                |                            |
-| Ayn          | Odin (Base/Pro)         | 10              | Yes       | None                |                            |
-| Ayn          | Odin Lite               | 11              | Yes       | None                |                            |
-| Ayn          | Odin 2 (Base/Pro/Max)   | 13              | Yes       | Minor audio issues  |                            |
-| Ayn          | Odin 2 Mini             | 13              | Yes       | None                |                            |
-| Ayn          | Odin 2 Portal           | 13              | Yes       | None                |                            |
+| AYN          | Odin (Base/Pro)         | 10              | Yes       | None                |                            |
+| AYN          | Odin Lite               | 11              | Yes       | None                |                            |
+| AYN          | Odin 2 (Base/Pro/Max)   | 13              | Yes       | Minor audio issues  |                            |
+| AYN          | Odin 2 Mini             | 13              | Yes       | None                |                            |
+| AYN          | Odin 2 Portal           | 13              | Yes       | None                |                            |
+| Ayn          | Thor                    | 13              | Yes       | None                |                            |
 | GKD          | Bubble                  | GammaOS 13 TV   | Yes       | None                | Limited RAM capacity for this device makes it unsuitable for demanding themes and large game collections |
 | Google       | Pixel 2 XL              | 11              | Yes       | None                |                            |
 | Google       | Pixel 3 XL              | 12              | Yes       | None                |                            |
@@ -743,6 +748,7 @@ This is clearly not a complete list of Android devices, but rather those we know
 | Retroid      | Pocket Classic          | 14              | Yes       | None                |                            |
 | Retroid      | Pocket Flip             | 11              | Yes       | None                |                            |
 | Retroid      | Pocket Flip 2           | 13              | Yes       | None                |                            |
+| Retroid      | Pocket G2               | 15              | Yes       | Theme downloader broken with default settings | See _Known problems on specific devices_ for a workaround |
 | Retroid      | Pocket Mini             | 10              | Yes       | None                |                            |
 | Retroid      | Pocket Mini V2          | 13              | Yes       | None                |                            |
 | Samsung      | Galaxy A17              | 11              | Yes       | None                |                            |

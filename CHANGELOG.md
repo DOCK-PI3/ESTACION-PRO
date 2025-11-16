@@ -8,6 +8,10 @@
 
 ### Detailed list of changes
 
+* (Android) Changed all RetroArch emulator entries to use %INTERNALDATA% and %EXTERNALDATA% to support multi-user setups
+* (Android) Added support for using the "Launch games on the other screen" option on devices where both screens have the same display name
+* (Linux) Changed to building the AppImages using appimagetool-uruntime provided by the PkgForge project
+
 ### Bug fixes
 
 * (Android) The game importer would crash if attempting to open it without any import rules defined
