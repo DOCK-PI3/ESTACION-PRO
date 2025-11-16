@@ -683,7 +683,7 @@ This is clearly not a complete list of Android devices, but rather those we know
 | AYN          | Odin 2 (Base/Pro/Max)   | 13              | Yes       | Minor audio issues  |                            |
 | AYN          | Odin 2 Mini             | 13              | Yes       | None                |                            |
 | AYN          | Odin 2 Portal           | 13              | Yes       | None                |                            |
-| Ayn          | Thor                    | 13              | Yes       | None                |                            |
+| AYN          | Thor                    | 13              | Yes       | None                |                            |
 | GKD          | Bubble                  | GammaOS 13 TV   | Yes       | None                | Limited RAM capacity for this device makes it unsuitable for demanding themes and large game collections |
 | Google       | Pixel 2 XL              | 11              | Yes       | None                |                            |
 | Google       | Pixel 3 XL              | 12              | Yes       | None                |                            |
