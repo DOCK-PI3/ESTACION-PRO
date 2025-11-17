@@ -882,55 +882,56 @@ So placing a manually downloaded emulator binary in either of these directories 
 
 The following manually downloaded emulators are supported when using the bundled configuration:
 
-| System                                        | Emulator              | Filename                          |
-| :-------------------------------------------- | :-------------------- | :-------------------------------- |
-| _Multiple_                                    | Mesen                 | Mesen/Mesen                       |
-| adam/colecovision                             | ColEm                 | colem/colem                       |
-| amiga/amiga1200/amiga600/amigacd32/cdtv       | Amiberry              | amiberry/amiberry                 |
-| amstradcpc                                    | ACE-DL                | AceDL/AceDL                       |
-| amstradcpc                                    | CPCemu                | cpcemu/cpcemu                     |
-| apple2                                        | LinApple              | linapple/linapple                 |
-| arcade/consolearcade/mame/saturn/saturnjp/stv | Kronos                | kronos/kronos                     |
-| arcade/mame/model3                            | Supermodel            | Supermodel/supermodel             |
-| arcade/mame/pcarcade                          | Lindbergh Loader      | lindbergh/lindbergh               |
-| atari2600                                     | Gopher2600            | gopher2600/gopher2600_linux_amd64 |
-| atari7800                                     | A7800                 | a7800-linux/a7800                 |
-| atarijaguar/atarijaguarcd                     | BigPEmu               | bigpemu/bigpemu                   |
-| coco/dragon32/tanodragon                      | XRoar                 | xroar/xroar                       |
-| daphne                                        | Hypseus Singe         | hypseus-singe/hypseus.bin         |
-| dos/pc/windows3x/windows9x                    | DOSBox Pure Unleashed | DOSBoxPure/DOSBoxPure             |
-| dreamcast                                     | Redream               | redream/redream                   |
-| easyrpg                                       | EasyRPG               | easyrpg/easyrpg-player            |
-| fbneo/neogeo/neogeocd/neogeocdjp              | FinalBurn Neo         | fbneo/fbneo                       |
-| flash                                         | Lightspark            | lightspark/lightspark             |
-| flash                                         | Ruffle                | ruffle/ruffle                     |
-| fmtowns                                       | Tsugaru               | tsugaru/Tsugaru_CUI               |
-| gb/gba/gbc/nds                                | SkyEmu                | SkyEmu/SkyEmu                     |
-| gb/gbc                                        | Gearboy               | gearboy/gearboy                   |
-| genesis/megadrive/megadrivejp                 | BlastEm               | blastem/blastem                   |
-| famicom/nes                                   | puNES                 | punes/punes                       |
-| mame-advmame                                  | AdvanceMAME           | advancemame/advmame               |
-| n64                                           | Gopher64              | gopher64/gopher64-linux-aarch64   |
-| n64                                           | Gopher64              | gopher64/gopher64-linux-x86_64    |
-| nes/famicon                                   | 3dSen                 | 3dSen/3dSen.exe                   |
-| oric                                          | Oricutron             | oricutron/Oricutron               |
-| pc88                                          | QUASI88               | quasi88/quasi88                   |
-| pico8                                         | PICO-8                | pico-8/pico8                      |
-| ps4                                           | shadPS4               | shadps4/shadps4                   |
-| psvita                                        | Vita3K                | Vita3K/Vita3K                     |
-| samcoupe                                      | SimCoupé              | simcoupe/simcoupe                 |
-| saturn/saturnjp                               | Ymir                  | ymir/ymir-sdl3                    |
-| scummvm                                       | DREAMM                | dreamm/dreamm                     |
-| switch                                        | Ryujinx               | publish/Ryujinx                   |
-| switch                                        | Ryujinx               | publish/Ryujinx.Ava               |
-| trs-80                                        | sdl2trs               | sdl2trs/sdl2trs                   |
-| vpinball                                      | Visual Pinball X      | VPinballX/VPinballX_BGFX          |
-| vpinball                                      | Visual Pinball X      | VPinballX/VPinballX_GL            |
-| wiiu                                          | Cemu                  | Cemu/Cemu                         |
-| xbox360                                       | xenia                 | xenia/xenia                       |
-| xbox360                                       | xenia                 | xenia/xenia_canary                |
-| zxnext                                        | #CSpect               | CSpect/CSpect.exe                 |
-| zxnext                                        | ZEsarUX               | ZEsarUX/zesarux                   |
+| System                                        | Emulator              | Filename                                     |
+| :-------------------------------------------- | :-------------------- | :------------------------------------------- |
+| _Multiple_                                    | Mesen                 | Mesen/Mesen                                  |
+| adam/colecovision                             | ColEm                 | colem/colem                                  |
+| amiga/amiga1200/amiga600/amigacd32/cdtv       | Amiberry              | amiberry/amiberry                            |
+| amiga/amiga1200/amiga600/amigacd32/cdtv       | FS-UAE (Launcher)     | FS-UAE-Launcher/Linux/x86-64/fs-uae-launcher |
+| amstradcpc                                    | ACE-DL                | AceDL/AceDL                                  |
+| amstradcpc                                    | CPCemu                | cpcemu/cpcemu                                |
+| apple2                                        | LinApple              | linapple/linapple                            |
+| arcade/consolearcade/mame/saturn/saturnjp/stv | Kronos                | kronos/kronos                                |
+| arcade/mame/model3                            | Supermodel            | Supermodel/supermodel                        |
+| arcade/mame/pcarcade                          | Lindbergh Loader      | lindbergh/lindbergh                          |
+| atari2600                                     | Gopher2600            | gopher2600/gopher2600_linux_amd64            |
+| atari7800                                     | A7800                 | a7800-linux/a7800                            |
+| atarijaguar/atarijaguarcd                     | BigPEmu               | bigpemu/bigpemu                              |
+| coco/dragon32/tanodragon                      | XRoar                 | xroar/xroar                                  |
+| daphne                                        | Hypseus Singe         | hypseus-singe/hypseus.bin                    |
+| dos/pc/windows3x/windows9x                    | DOSBox Pure Unleashed | DOSBoxPure/DOSBoxPure                        |
+| dreamcast                                     | Redream               | redream/redream                              |
+| easyrpg                                       | EasyRPG               | easyrpg/easyrpg-player                       |
+| fbneo/neogeo/neogeocd/neogeocdjp              | FinalBurn Neo         | fbneo/fbneo                                  |
+| flash                                         | Lightspark            | lightspark/lightspark                        |
+| flash                                         | Ruffle                | ruffle/ruffle                                |
+| fmtowns                                       | Tsugaru               | tsugaru/Tsugaru_CUI                          |
+| gb/gba/gbc/nds                                | SkyEmu                | SkyEmu/SkyEmu                                |
+| gb/gbc                                        | Gearboy               | gearboy/gearboy                              |
+| genesis/megadrive/megadrivejp                 | BlastEm               | blastem/blastem                              |
+| famicom/nes                                   | puNES                 | punes/punes                                  |
+| mame-advmame                                  | AdvanceMAME           | advancemame/advmame                          |
+| n64                                           | Gopher64              | gopher64/gopher64-linux-aarch64              |
+| n64                                           | Gopher64              | gopher64/gopher64-linux-x86_64               |
+| nes/famicon                                   | 3dSen                 | 3dSen/3dSen.exe                              |
+| oric                                          | Oricutron             | oricutron/Oricutron                          |
+| pc88                                          | QUASI88               | quasi88/quasi88                              |
+| pico8                                         | PICO-8                | pico-8/pico8                                 |
+| ps4                                           | shadPS4               | shadps4/shadps4                              |
+| psvita                                        | Vita3K                | Vita3K/Vita3K                                |
+| samcoupe                                      | SimCoupé              | simcoupe/simcoupe                            |
+| saturn/saturnjp                               | Ymir                  | ymir/ymir-sdl3                               |
+| scummvm                                       | DREAMM                | dreamm/dreamm                                |
+| switch                                        | Ryujinx               | publish/Ryujinx                              |
+| switch                                        | Ryujinx               | publish/Ryujinx.Ava                          |
+| trs-80                                        | sdl2trs               | sdl2trs/sdl2trs                              |
+| vpinball                                      | Visual Pinball X      | VPinballX/VPinballX_BGFX                     |
+| vpinball                                      | Visual Pinball X      | VPinballX/VPinballX_GL                       |
+| wiiu                                          | Cemu                  | Cemu/Cemu                                    |
+| xbox360                                       | xenia                 | xenia/xenia                                  |
+| xbox360                                       | xenia                 | xenia/xenia_canary                           |
+| zxnext                                        | #CSpect               | CSpect/CSpect.exe                            |
+| zxnext                                        | ZEsarUX               | ZEsarUX/zesarux                              |
 
 #CSpect requires the Mono .NET framework to run, hence the .exe extension.
 
@@ -1879,6 +1880,8 @@ Setup for the standalone EasyRPG Player is identical with the exception that run
 ~/ROMs/easyrpg/Dreamscape.easyrpg/
 ~/ROMs/easyrpg/The Chimera Report.easyrpg/
 ```
+
+Note that there seems to be something wrong with the Flatpak release of standalone EasyRPG Player in that it will ask for a directory to look for games in on startup, and if you define a directory then you can no longer launch games from ES-DE. So make sure to press the _Cancel_ button every time you start EasyRGP to keep game launching working from ES-DE. It's anyway recommended to use the Linux executable build from the EasyRPG website, which does not have this issue.
 
 ### Fujitsu FM Towns
 
