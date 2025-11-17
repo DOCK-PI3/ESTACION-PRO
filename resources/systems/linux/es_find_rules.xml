@@ -408,6 +408,8 @@
             <entry>~/.local/share/applications/easyrpg/easyrpg-player</entry>
             <entry>~/.local/bin/easyrpg/easyrpg-player</entry>
             <entry>~/bin/easyrpg/easyrpg-player</entry>
+            <entry>/var/lib/flatpak/exports/bin/org.easyrpg.player</entry>
+            <entry>~/.local/share/flatpak/exports/bin/org.easyrpg.player</entry>
         </rule>
     </emulator>
     <emulator name="EKA2L1">
