@@ -477,6 +477,10 @@
             <entry>fsuae.launcher</entry>
         </rule>
         <rule type="staticpath">
+            <entry>~/Applications/FS-UAE-Launcher/Linux/x86-64/fs-uae-launcher</entry>
+            <entry>~/.local/share/applications/FS-UAE-Launcher/Linux/x86-64/fs-uae-launcher</entry>
+            <entry>~/.local/bin/FS-UAE-Launcher/Linux/x86-64/fs-uae-launcher</entry>
+            <entry>~/bin/FS-UAE-Launcher/Linux/x86-64/fs-uae-launcher</entry>
             <entry>/var/lib/flatpak/exports/bin/net.fsuae.FS-UAE|flatpak run --command=fs-uae-launcher net.fsuae.FS-UAE</entry>
             <entry>~/.local/share/flatpak/exports/bin/net.fsuae.FS-UAE|flatpak run --command=fs-uae-launcher net.fsuae.FS-UAE</entry>
         </rule>
