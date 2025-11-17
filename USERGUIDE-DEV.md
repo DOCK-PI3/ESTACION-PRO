@@ -1861,11 +1861,9 @@ For the dragon32 system you can switch to emulating the Dragon 64 model by selec
 
 ### EasyRPG Game Engine
 
-Both the EasyRPG RetroArch core, which is named _RPG Maker 2000/2003 (EasyRPG)_ in the RetroArch GUI, and the standalone EasyRPG Player are supported.
+Both the EasyRPG RetroArch core, which is named _RPG Maker 2000/2003 (EasyRPG)_ in the RetroArch GUI, and the standalone EasyRPG Player are supported (the latter only supported on desktop operating systems).
 
-Some Linux distributions ship with the standalone EasyRPG Player in the repository and on Ubuntu-based systems it's available as a Snap. But for some distributions it may need to be built from source code or manually downloaded. For these scenarios see the [Using manually downloaded emulators on Linux](USERGUIDE-DEV.md#using-manually-downloaded-emulators-on-linux) section of this guide.
-
-If using the RetroArch core you can either launch games compressed as .zip archives, or you can uncompress and rename them by adding .easyrpg to the directory name. The latter alternative is recommended.
+You can either launch games compressed as .zip archives, or you can uncompress and rename them by adding .easyrpg to the directory name.
 
 Using either approach, the games should go into the `~/ROMs/easyrpg` directory. This is all the setup required, and here's an example of what it could look like:
 
@@ -1873,15 +1871,6 @@ Using either approach, the games should go into the `~/ROMs/easyrpg` directory. 
 ~/ROMs/easyrpg/Dreamscape.easyrpg/
 ~/ROMs/easyrpg/The Chimera Report.zip
 ```
-
-Setup for the standalone EasyRPG Player is identical with the exception that running games compressed as .zip files is not supported. So in this case the setup should look like the following:
-
-```
-~/ROMs/easyrpg/Dreamscape.easyrpg/
-~/ROMs/easyrpg/The Chimera Report.easyrpg/
-```
-
-Note that there seems to be something wrong with the Flatpak release of standalone EasyRPG Player in that it will ask for a directory to look for games in on startup, and if you define a directory then you can no longer launch games from ES-DE. So make sure to press the _Cancel_ button every time you start EasyRGP to keep game launching working from ES-DE. It's anyway recommended to use the Linux executable build from the EasyRPG website, which does not have this issue.
 
 ### Fujitsu FM Towns
 
