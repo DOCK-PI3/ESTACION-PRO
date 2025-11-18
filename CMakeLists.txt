@@ -401,7 +401,7 @@ else()
     message("-- Building without application updater")
 endif()
 
-if(CMAKE_SYSTEM_NAME MATCHES Linux AND CMAKE_SYSTEM_PROCESSOR MATCHES aarch64 AND NOT ANDROID AND NOT RPI)
+if(CMAKE_SYSTEM_NAME MATCHES Linux AND CMAKE_SYSTEM_PROCESSOR MATCHES aarch64 AND NOT ANDROID)
     message("-- Building for Linux on ARM (AArch64)")
     add_compile_definitions(LINUX_AARCH64)
 endif()
