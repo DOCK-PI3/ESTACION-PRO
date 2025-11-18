@@ -48,8 +48,8 @@
             {
                 "name": "LinuxAArch64AppImage",
                 "filename": "ES-DE_aarch64.AppImage",
-                "url": "",
-                "md5": "",
+                "url": "dummy",
+                "md5": "dummy",
                 "message": ""
             },
             {
