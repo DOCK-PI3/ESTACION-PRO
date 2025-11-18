@@ -8,6 +8,7 @@
 
 ### Detailed list of changes
 
+* (Linux) Added initial support for the ARM64/AArch64 architecture (including its own set of find rules, import rules and system configuration)
 * (Android) Changed all RetroArch emulator entries to use %INTERNALDATA% and %EXTERNALDATA% to support multi-user setups
 * (Android) Added support for using the "Launch games on the other screen" option on devices where both screens have the same display name
 * (Linux) Added support for the manually downloaded release of FS-UAE Launcher

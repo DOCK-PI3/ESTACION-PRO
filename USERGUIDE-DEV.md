@@ -331,6 +331,13 @@ https://en.wikipedia.org/wiki/Hidden_file_and_hidden_directory#Unix_and_Unix-lik
 https://en.wikipedia.org/wiki/Home_directory#Unix \
 https://en.wikipedia.org/wiki/Symbolic_link
 
+## Specific notes for Linux on ARM
+
+The ARM64/AArch64 build of ES-DE is currently experimental, but it will hopefully mature over time. Note that at the time of writing the RetroArch release on AArch64 does not include any cores, but a somehow limited set of cores can be downloaded from the following repository: \
+https://github.com/christianhaitian/retroarch-cores
+
+For the AArch64 build there is a separate set of find rules, import rules and system configuration in the [resources/systems/linuxarm](https://gitlab.com/es-de/emulationstation-de/-/tree/master/resources/systems/linuxarm) directory.
+
 ## Specific notes for Android
 
 The Android port of ES-DE is quite different than the other versions, so it has its specifics covered by a dedicated [ANDROID.md](ANDROID.md) document.
@@ -358,7 +365,7 @@ The game systems configuration file `es_systems.xml` is located in the ES-DE res
 
 On Linux this means `/home/<username>/ES-DE/custom_systems/es_systems.xml`, on macOS `/Users/<username>/ES-DE/custom_systems/es_systems.xml`, on Windows `C:\Users\<username>\ES-DE\custom_systems\es_systems.xml` or `ES-DE\ES-DE\custom_systems\es_systems.xml` depending on whether the installer release or the portable release is used, and on Android it's `ES-DE/custom_systems/es_systems.xml`.
 
-If you're using the AppImage release of ES-DE then the bundled es_systems.xml file is embedded in the AppImage together with the rest of the resources. You can extract it if you need it as a reference when creating your customized entries, or you can find it [here](https://gitlab.com/es-de/emulationstation-de/-/tree/master/resources/systems/linux).
+If you're using the AppImage release of ES-DE then the bundled es_systems.xml file is embedded in the AppImage together with the rest of the resources. You can extract it if you need it as a reference when creating your customized entries, or you can find it in [resources/systems/linux](https://gitlab.com/es-de/emulationstation-de/-/tree/master/resources/systems/linux) or [resources/systems/linuxarm](https://gitlab.com/es-de/emulationstation-de/-/tree/master/resources/systems/linuxarm).
 
 Although it's possible to make a copy of the bundled configuration file, to modify it and then place it in this directory, that is not how the system customization is designed to be used. Instead the intention is that the file in `custom_systems` complements the bundled configuration, meaning only systems that are to be customized should be included.
 
@@ -1134,7 +1141,7 @@ Below are the import rules that are part of the bundled configuration.
 
 Let's start with the simple scenario of a single ROM file per game, which is the case for the majority of platforms. For this example we're setting up ES-DE to play Nintendo Entertainment System games.
 
-The supported file extensions are listed in [android/es_systems.xml](resources/systems/android/es_systems.xml), [linux/es_systems.xml](resources/systems/linux/es_systems.xml), [macos/es_systems.xml](resources/systems/macos/es_systems.xml) and [windows/es_systems.xml](resources/systems/windows/es_systems.xml) but if you generated the game system directories on first application startup or later via _Create/update system directories_ in the _Utilities_ menu, then there will be a file named systeminfo.txt in each game system directory that includes the list of supported file extensions.
+The supported file extensions are listed in [android/es_systems.xml](resources/systems/android/es_systems.xml), [linux/es_systems.xml](resources/systems/linux/es_systems.xml), [linuxarm/es_systems.xml](resources/systems/linuxarm/es_systems.xml), [macos/es_systems.xml](resources/systems/macos/es_systems.xml) and [windows/es_systems.xml](resources/systems/windows/es_systems.xml) but if you generated the game system directories on first application startup or later via _Create/update system directories_ in the _Utilities_ menu, then there will be a file named systeminfo.txt in each game system directory that includes the list of supported file extensions.
 
 Here is a simplified example from linux/es_systems.xml:
 
