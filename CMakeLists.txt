@@ -401,13 +401,9 @@ else()
     message("-- Building without application updater")
 endif()
 
-# This is needed by the application updater to identify the package type.
-if(CMAKE_SYSTEM_NAME MATCHES Linux)
-    if(LINUX_CPACK_GENERATOR MATCHES DEB)
-        add_compile_definitions(LINUX_DEB_PACKAGE)
-    elseif(LINUX_CPACK_GENERATOR MATCHES RPM)
-        add_compile_definitions(LINUX_RPM_PACKAGE)
-    endif()
+if(CMAKE_SYSTEM_NAME MATCHES Linux AND CMAKE_SYSTEM_PROCESSOR MATCHES aarch64 AND NOT ANDROID AND NOT RPI)
+    message("-- Building for Linux on ARM (AArch64)")
+    add_compile_definitions(LINUX_AARCH64)
 endif()
 
 if(APPLE)
