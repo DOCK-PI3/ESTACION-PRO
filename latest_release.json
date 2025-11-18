@@ -96,14 +96,14 @@
                 "message": ""
             },
             {
-                "name": "LinuxAArch64AppImage",
+                "name": "LinuxAppImage",
                 "filename": "",
                 "url": "",
                 "md5": "",
                 "message": ""
             },
             {
-                "name": "LinuxAppImage",
+                "name": "LinuxAArch64AppImage",
                 "filename": "",
                 "url": "",
                 "md5": "",
