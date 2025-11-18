@@ -775,7 +775,7 @@ cd ~/Applications
 chmod +x rpcs3*.AppImage
 ```
 
-The following emulators are supported in AppImage format when using the bundled configuration:
+The following emulators are supported in AppImage format when using the bundled configuration on **x86-64**:
 
 | System name          | Emulator            | Filename configuration         | Package source       |
 | :------------------- | :------------------ | :----------------------------- | :------------------- |
@@ -820,6 +820,21 @@ The following emulators are supported in AppImage format when using the bundled 
 | wii                  | Dolphin             | Dolphin_Emulator*.AppImage     | Official             |
 | wiiu                 | Cemu                | Cemu*.AppImage                 | Official             |
 | zmachine             | Gargoyle            | Gargoyle*.AppImage             | Official             |
+
+The following emulators are supported in AppImage format when using the bundled configuration on **aarch64**:
+
+| System name          | Emulator            | Filename configuration         | Package source       |
+| :------------------- | :------------------ | :----------------------------- | :------------------- |
+| _Multiple_           | ares                | ares*.AppImage                 | pkgforge-dev         |
+| _Multiple_           | MAME                | MAME*.AppImage                 | pkgforge-dev         |
+| gba                  | mGBA                | mGBA*.AppImage                 | Official             |
+| n3ds                 | Azahar              | Azahar-Enhanced*.AppImage      | pkgforge-dev         |
+| nds                  | DeSmuME             | desmume*.AppImage              | pkgforge-dev         |
+| nds                  | melonDS             | melonDS*.AppImage              | Official             |
+| ps3                  | RPCS3               | rpcs3*.AppImage                | Official             |
+| psp                  | PPSSPP              | PPSSPP*.AppImage               | Official             |
+| psx                  | DuckStation         | DuckStation*.AppImage          | Official             |
+| xbox                 | xemu                | xemu*.AppImage                 | Official             |
 
 Most AppImages are distributed directly by the official projects, but there's also a good selection of AppImages available at https://github.com/pkgforge-dev which includes some emulators that don't ship AppImages themselves.
 
@@ -887,7 +902,7 @@ It's generally recommended to go for the ~/Applications/ directory, but dependin
 
 So placing a manually downloaded emulator binary in either of these directories will make ES-DE able to locate it during game launch.
 
-The following manually downloaded emulators are supported when using the bundled configuration:
+The following manually downloaded emulators are supported when using the bundled configuration on **x86-64**:
 
 | System                                        | Emulator              | Filename                                     |
 | :-------------------------------------------- | :-------------------- | :------------------------------------------- |
@@ -918,7 +933,6 @@ The following manually downloaded emulators are supported when using the bundled
 | genesis/megadrive/megadrivejp                 | BlastEm               | blastem/blastem                              |
 | famicom/nes                                   | puNES                 | punes/punes                                  |
 | mame-advmame                                  | AdvanceMAME           | advancemame/advmame                          |
-| n64                                           | Gopher64              | gopher64/gopher64-linux-aarch64              |
 | n64                                           | Gopher64              | gopher64/gopher64-linux-x86_64               |
 | nes/famicon                                   | 3dSen                 | 3dSen/3dSen.exe                              |
 | oric                                          | Oricutron             | oricutron/Oricutron                          |
@@ -941,6 +955,23 @@ The following manually downloaded emulators are supported when using the bundled
 | zxnext                                        | ZEsarUX               | ZEsarUX/zesarux                              |
 
 #CSpect requires the Mono .NET framework to run, hence the .exe extension.
+
+The following manually downloaded emulators are supported when using the bundled configuration on **aarch64**:
+
+| System                                        | Emulator              | Filename                                     |
+| :-------------------------------------------- | :-------------------- | :------------------------------------------- |
+| _Multiple_                                    | Mesen                 | Mesen/Mesen                                  |
+| amstradcpc                                    | ACE-DL                | AceDL/AceDL                                  |
+| amiga/amiga1200/amiga600/amigacd32/cdtv       | Amiberry              | amiberry/amiberry                            |
+| amiga/amiga1200/amiga600/amigacd32/cdtv       | FS-UAE (Launcher)     | FS-UAE-Launcher/Linux/x86-64/fs-uae-launcher |
+| amstradcpc                                    | CPCemu                | cpcemu/cpcemu                                |
+| atarijaguar/atarijaguarcd                     | BigPEmu               | bigpemu/bigpemu                              |
+| dos/pc/windows3x/windows9x                    | DOSBox Pure Unleashed | DOSBoxPure/DOSBoxPure                        |
+| flash                                         | Ruffle                | ruffle/ruffle                                |
+| n64                                           | Gopher64              | gopher64/gopher64-linux-aarch64              |
+| pico8                                         | PICO-8                | pico-8/pico8                                 |
+| saturn/saturnjp                               | Ymir                  | ymir/ymir-sdl3                               |
+| scummvm                                       | DREAMM                | dreamm/dreamm                                |
 
 Note that the Vita3K binary is not set as executable after unpacking the archive, so you need to do that once before ES-DE can run it:
 ```
@@ -4751,6 +4782,8 @@ Default emulator/Alternative emulators columns: \
 All emulators are RetroArch cores unless marked as **(Standalone)**, **(Wine)** or **(Proton)**
 
 The **@** symbol indicates that the emulator is _deprecated_ and will be removed in a future ES-DE release.
+
+_Note that this table has not been updated for the Linux AArch64 release._
 
 | System name           | Full name                                      | Default emulator                  | Alternative emulators             | Needs BIOS   | Recommended game setup               |
 | :-------------------- | :--------------------------------------------- | :-------------------------------- | :-------------------------------- | :----------- | :----------------------------------- |

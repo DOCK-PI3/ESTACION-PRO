@@ -13,6 +13,8 @@
 * (Android) Added support for using the "Launch games on the other screen" option on devices where both screens have the same display name
 * (Linux) Added support for the manually downloaded release of FS-UAE Launcher
 * (Linux) Added support for the Flatpak release of EasyRPG Player
+* (Linux) Added support for the Flatpak release of VBA-M
+* (Linux) Added support for the Flatpak release of Ymir
 * Changed the launch parameter for EasyRPG Player standalone on Linux, macOS and Windows to support zipped games
 * Added the .bigpimg file extension to the atarijaguar and atarijaguarcd systems on Linux and Windows
 * (Linux) Changed to building the AppImages using appimagetool-uruntime provided by the PkgForge project
