@@ -46,6 +46,13 @@
                 "message": ""
             },
             {
+                "name": "LinuxAArch64AppImage",
+                "filename": "ES-DE_aarch64.AppImage",
+                "url": "",
+                "md5": "",
+                "message": ""
+            },
+            {
                 "name": "LinuxSteamDeckAppImage",
                 "filename": "ES-DE_x64_SteamDeck.AppImage",
                 "url": "https://gitlab.com/es-de/emulationstation-de/-/package_files/246876039/download",
@@ -83,6 +90,13 @@
             },
             {
                 "name": "macOSIntel",
+                "filename": "",
+                "url": "",
+                "md5": "",
+                "message": ""
+            },
+            {
+                "name": "LinuxAArch64AppImage",
                 "filename": "",
                 "url": "",
                 "md5": "",
