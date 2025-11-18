@@ -1449,6 +1449,8 @@
             <entry>~/.local/share/applications/ymir/ymir-sdl3</entry>
             <entry>~/.local/bin/ymir/ymir-sdl3</entry>
             <entry>~/bin/ymir/ymir-sdl3</entry>
+            <entry>/var/lib/flatpak/exports/bin/io.github.strikerx3.ymir</entry>
+            <entry>~/.local/share/flatpak/exports/bin/io.github.strikerx3.ymir</entry>
         </rule>
     </emulator>
     <emulator name="ZESARUX">
