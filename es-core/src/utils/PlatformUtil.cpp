@@ -231,13 +231,6 @@ namespace Utils
 
             returnValue = pclose(commandPipe);
 
-#if defined(RASPBERRY_PI)
-            // Hack to avoid that the application window occasionally loses focus when returning
-            // from a game, which only seems to happen on Raspberry Pi OS 10.
-            SDL_Delay(50);
-            SDL_SetWindowInputFocus(Renderer::getInstance()->getSDLWindow());
-#endif
-
             // We need to shift the return value as it contains some flags (which we don't need).
             returnValue >>= 8;
 

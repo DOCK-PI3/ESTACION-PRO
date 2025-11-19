@@ -44,9 +44,7 @@ option(AUR_BUILD "Set to ON when building for the AUR" OFF)
 option(FLATPAK_BUILD "Set to ON when building as a Flatpak" OFF)
 option(STEAM_DECK "Set to ON to enable a Valve Steam Deck specific build" OFF)
 option(RETRODECK "Set to ON to enable a RetroDECK specific build" OFF)
-option(RPI "Set to ON to enable a Raspberry Pi specific build" OFF)
 option(BUNDLED_CERTS "Set to ON to use bundled TLS/SSL certificates" OFF)
-option(CEC "Set to ON to enable CEC" OFF)
 option(VIDEO_HW_DECODING "Set to ON to enable FFmpeg HW decoding" OFF)
 option(DEINIT_ON_LAUNCH "Set to ON to deinitialize on game launch" OFF)
 option(CLANG_TIDY "Set to ON to build using the clang-tidy static analyzer" OFF)
@@ -74,27 +72,8 @@ if(CLANG_TIDY)
 endif()
 
 #---------------------------------------------------------------------------------------------------
-# Raspberry Pi setup.
+# iOS build.
 
-# Raspberry Pi OS 32-bit (armv7l).
-if(EXISTS ${CMAKE_FIND_ROOT_PATH}/opt/vc/include/bcm_host.h)
-    set(RPI ON)
-    set(RPI_32 ON)
-    set(GLES ON)
-    set(BCMHOST ON)
-    message("-- Building on a Raspberry Pi (32-bit OS)")
-endif()
-
-# Raspberry Pi OS 64-bit (aarch64).
-if(EXISTS /usr/include/bcm_host.h)
-    set(RPI ON)
-    set(RPI_64 ON)
-    set(GLES ON)
-    set(BCMHOST ON)
-    message("-- Building on a Raspberry Pi (64-bit OS)")
-endif()
-
-# iOS.
 if(IOS)
     message("-- Building for iOS (arm64)")
     set(GLES ON)
@@ -155,11 +134,6 @@ elseif(NOT EMSCRIPTEN AND NOT ANDROID AND NOT IOS)
     find_package(Libgit2 REQUIRED)
     find_package(Pugixml REQUIRED)
     find_package(SDL2 REQUIRED)
-endif()
-
-# Add libCEC support.
-if(CEC)
-    find_package(libCEC REQUIRED)
 endif()
 
 # Add ALSA and BlueZ for Linux.
@@ -247,13 +221,6 @@ if(EMSCRIPTEN)
                                 --preload-file ${PROJECT_SOURCE_DIR}/resources@/home/web_user/ES-DE/resources/ \
                                 --preload-file ${PROJECT_SOURCE_DIR}/themes/slate-es-de@/home/web_user/ES-DE/themes/slate-es-de/ \
                                 --preload-file ${PROJECT_SOURCE_DIR}/ROMs@/home/web_user/ROMs/")
-endif()
-
-# Raspberry Pi model 3 and higher (ARM Cortex-A53 minimum).
-if(RPI_32)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -latomic -mcpu=cortex-a53 -mfpu=neon-fp-armv8")
-elseif(RPI_64)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -latomic -mcpu=cortex-a53")
 endif()
 
 if(ASAN AND TSAN)
@@ -364,17 +331,9 @@ if(RETRODECK)
     message("-- Building for RetroDECK")
 endif()
 
-if(RPI)
-    add_compile_definitions(RASPBERRY_PI)
-endif()
-
 if(BUNDLED_CERTS)
     add_compile_definitions(USE_BUNDLED_CERTIFICATES)
     message("-- Building with bundled TLS/SSL certificates")
-endif()
-
-if(DEFINED libCEC_FOUND)
-    add_compile_definitions(HAVE_LIBCEC)
 endif()
 
 if(VIDEO_HW_DECODING)
@@ -391,7 +350,7 @@ if(DEINIT_ON_LAUNCH)
     endif()
 endif()
 
-if(AUR_BUILD OR FLATPAK_BUILD OR RETRODECK OR RPI OR HAIKU OR IOS OR CMAKE_SYSTEM_NAME MATCHES FreeBSD)
+if(AUR_BUILD OR FLATPAK_BUILD OR RETRODECK OR HAIKU OR IOS OR CMAKE_SYSTEM_NAME MATCHES FreeBSD)
     set(APPLICATION_UPDATER OFF)
 endif()
 
@@ -539,21 +498,9 @@ else()
                             ${SDL2_INCLUDE_DIR})
 endif()
 
-# Add libCEC include directory.
-if(DEFINED libCEC_FOUND)
-    list(APPEND COMMON_INCLUDE_DIRS ${libCEC_INCLUDE_DIR})
-endif()
-
 # For Linux, add the ALSA include directory.
 if(CMAKE_SYSTEM_NAME MATCHES Linux)
     list(APPEND COMMON_INCLUDE_DIRS ${ALSA_INCLUDE_DIRS})
-endif()
-
-if(RPI_32)
-    list(APPEND COMMON_INCLUDE_DIRS ${CMAKE_FIND_ROOT_PATH}/opt/vc/include
-                                    ${CMAKE_FIND_ROOT_PATH}/opt/vc/include/interface/vcos
-                                    ${CMAKE_FIND_ROOT_PATH}/opt/vc/include/interface/vmcs_host/linux
-                                    ${CMAKE_FIND_ROOT_PATH}/opt/vc/include/interface/vcos/pthreads)
 endif()
 
 #---------------------------------------------------------------------------------------------------
@@ -723,22 +670,9 @@ if(APPLE AND NOT IOS)
     set(CMAKE_INSTALL_RPATH @executable_path)
 endif()
 
-# Add libCEC libraries.
-if(DEFINED libCEC_FOUND)
-    list(APPEND COMMON_LIBRARIES dl ${libCEC_LIBRARIES})
-endif()
-
 # Add ALSA for Linux libraries.
 if(CMAKE_SYSTEM_NAME MATCHES Linux)
     list(APPEND COMMON_LIBRARIES ${ALSA_LIBRARY})
-endif()
-
-# Raspberry Pi.
-if(BCMHOST)
-    list(APPEND COMMON_LIBRARIES bcm_host vchiq_arm)
-    if(RPI_32)
-        link_directories(${CMAKE_FIND_ROOT_PATH}/opt/vc/lib)
-    endif()
 endif()
 
 # OpenGL.
