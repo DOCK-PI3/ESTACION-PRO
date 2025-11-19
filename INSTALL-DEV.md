@@ -22,10 +22,10 @@ There are some dependencies that need to be fulfilled in order to build ES-DE. T
 
 **Debian/Ubuntu**
 
-All of the required packages can be installed with apt-get:
+All of the required packages can be installed with apt:
 
 ```
-sudo apt-get install build-essential clang-format git cmake gettext libharfbuzz-dev libicu-dev libsdl2-dev libavcodec-dev libavfilter-dev libavformat-dev libavutil-dev libfreeimage-dev libfreetype6-dev libgit2-dev libcurl4-openssl-dev libpugixml-dev libasound2-dev libbluetooth-dev libgl1-mesa-dev libpoppler-cpp-dev
+sudo apt install build-essential clang-format git cmake gettext libharfbuzz-dev libicu-dev libsdl2-dev libavcodec-dev libavfilter-dev libavformat-dev libavutil-dev libfreeimage-dev libfreetype6-dev libgit2-dev libcurl4-openssl-dev libpugixml-dev libasound2-dev libbluetooth-dev libgl1-mesa-dev libpoppler-cpp-dev
 ```
 
 **Fedora**
@@ -53,23 +53,30 @@ sudo pacman -S gcc clang make cmake gettext harfbuzz icu pkgconf sdl2 ffmpeg fre
 
 **Raspberry Pi OS**
 
-All of the required packages can be installed with apt-get:
+All of the required packages can be installed with apt:
 ```
-sudo apt-get install clang-format cmake gettext libharfbuzz-dev libicu-dev libraspberrypi-dev libsdl2-dev libavcodec-dev libavfilter-dev libavformat-dev libavutil-dev libfreeimage-dev libfreetype6-dev libgit2-dev libcurl4-gnutls-dev libpugixml-dev libbluetooth-dev libpoppler-cpp-dev
+sudo apt install clang-format cmake gettext libharfbuzz-dev libicu-dev libsdl2-dev libavcodec-dev libavfilter-dev libavformat-dev libavutil-dev libfreeimage-dev libfreetype6-dev libgit2-dev libcurl4-gnutls-dev libpugixml-dev libbluetooth-dev libpoppler-cpp-dev
 ```
-
-For a 64-bit build it's very important that you include libraspberrypi-dev because if this package is not installed then the file /usr/include/bcm_host.h is not present on the filesystem. This leads to CMake not detecting that it's indeed a Raspberry Pi and it will attempt to make a regular Linux build instead.
-
-To build with CEC support you also need to install these packages:
-```
-sudo apt-get install libcec-dev libp8-platform-dev
-```
-
-The Raspberry Pi 4/400 is the minimum recommended version and earlier boards have not been tested. The GPU memory should be set to at least 256 MB using `raspi-config` and the GL driver must be set to `GL (Fake KMS)` or the performance will be horrible.
 
 Note that low-level ALSA sound support has been removed from ES-DE which means that a sound server like PulseAudio or PipeWire is required. By default a display server (Xorg or Wayland) is also required but by using the DEINIT_ON_LAUNCH build option as explained later in this document KMS/direct framebuffer access can be used.
 
-Only the OpenGL ES 3.0 renderer works on Raspberry Pi and it's enabled by default.
+If you want to use the default OpenGL ES 3.0 driver then you need to build with the GLES option:
+```
+cmake -DGLES=on .
+make -j8
+```
+
+Alternatively you can skip this and run ES-DE by explicitly telling the driver to use regular desktop OpenGL 3.3:
+```
+MESA_GL_VERSION_OVERRIDE=3.3 ./es-de
+```
+
+Yet another alternative would be to use the Zink driver on top of Vulkan, although that could lead to slightly worse performance:
+```
+MESA_GL_VERSION_OVERRIDE=3.3 MESA_LOADER_DRIVER_OVERRIDE=zink ./es-de
+```
+
+Note that you'll probably need a 64-bit operating system to build and run ES-DE as there has been no testing done on 32-bit operating systems.
 
 **FreeBSD**
 
@@ -227,14 +234,6 @@ To build ES-DE with experimental FFmpeg video hardware decoding support, enable 
 cmake -DVIDEO_HW_DECODING=on .
 make -j8
 ```
-
-To build ES-DE with CEC support, enable the corresponding option, for example:
-
-```
-cmake -DCEC=on .
-make -j8
-```
-You will most likely need to install additional packages to get this to build. On Debian-based systems these are _libcec-dev_ and _libp8-platform-dev_. Note that the CEC support is currently untested.
 
 To build with the GLES 3.0 renderer, run the following:
 ```

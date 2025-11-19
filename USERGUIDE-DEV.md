@@ -346,18 +346,26 @@ The Android port of ES-DE is quite different than the other versions, so it has 
 
 The [Haiku](https://www.haiku-os.org) port of ES-DE is currently experimental as the OS itself is experimental and has some issues. Still most functionality is working and there is support for a quite large number of systems and emulators. If you're interested in Haiku it's for sure worth trying it out as ES-DE can be easily installed via HaikuDepot. See the dedicated [HAIKU.md](HAIKU.md) document for more details.
 
-## Specific notes for Raspberry Pi
+## Specific notes for Raspberry Pi and other SBCs
 
 For the best experience with the Raspberry Pi it's adviced to run Android on it. There are custom OS builds available here: \
-https://konstakang.com/
+https://konstakang.com
 
-If instead going for regular Linux, then by default ES-DE on the Raspberry Pi requires a desktop environment to run, or more specifically a window manager and a sound server (like PulseAudio or PipeWire). It is however possible to use KMS/direct framebuffer access if the DEINIT_ON_LAUNCH flag is used when building ES-DE, as documented in the _Building on Unix_ section of the [INSTALL-DEV.md](INSTALL-DEV.md#building-on-unix) document.
+If instead going for regular Linux, then by default ES-DE requires a desktop environment to run, or more specifically a window manager and a sound server (like PulseAudio or PipeWire). It is however possible to use KMS/direct framebuffer access if the DEINIT_ON_LAUNCH flag is used when building ES-DE, as documented in the _Building on Unix_ section of the [INSTALL-DEV.md](INSTALL-DEV.md#building-on-unix) document.
 
-Note that there are no prebuilt Linux packages for the Raspberry Pi, so you will need to compile ES-DE yourself.
+The official AArch64 AppImage has been tested on Raspberry Pi OS and it seems to be working fine, although it does not include support for the OpenGL ES API so you will need to explicitly tell Mesa to use regular desktop OpenGL instead, like so:
+```
+MESA_GL_VERSION_OVERRIDE=3.3 ./ES-DE_aarch64.AppImage
+```
 
-The Raspberry Pi 4/400 is the minimum recommended version and earlier boards have not been tested.
+On some devices that lack driver support for desktop OpenGL you may be able to run Zink on top of Vulkan to translate OpenGL API calls to Vulkan API calls:
+```
+MESA_GL_VERSION_OVERRIDE=3.3 MESA_LOADER_DRIVER_OVERRIDE=zink ./ES-DE_aarch64.AppImage
+```
 
-In general, 720p works fine with the RPi 4, and 1080p is tolerable on the RPi 5, but due to the relative weakness of the Rasperry Pi GPU, the video scanline rendering options for the screensaver and media viewer have been disabled (only for Linux and not for Android). These options can be re-enabled via the menu if you don't mind lower video framerates.
+Using Zink instead of a native OpenGL driver comes with some performance penalties though. So on some SBCs it could be a good idea to instead build ES-DE yourself with OpenGL ES support.
+
+ES-DE likely requires a 64-bit operating system to build and to run and the AppImage certainly requires a 64-bit OS. No testing has been done on 32-bit operating systems.
 
 ## Game system customizations
 
@@ -4230,7 +4238,7 @@ The play time for games launched from ES-DE is tracked and when returning from a
 
 **VRAM limit**
 
-The amount of video RAM to use for the application. Defaults to 512 MiB (192 MiB on the Raspberry Pi) which works fine most of the time when using moderately demanding themes with medium-sized collections at up to 4K display resolution. For large collections (as in many different systems rather than many games per system) in combination with demanding themes which use lots of full-screen images and similar it's recommended to increase this number to 1024 MiB or possibly higher to avoid stuttering and texture pop-in. Enabling the GPU statistics overlay gives some indications regarding the amount of texture memory currently used, which is helpful to determine a reasonable value for this setting. The allowed range for the settings is 128 to 2048 MiB. If you try to set it lower or higher than this by passing such values as command line parameters or by editing the es_settings.xml file manually, ES-DE will log a warning and automatically adjust to a value within the allowable range.
+The amount of video RAM to use for the application. Defaults to 512 MiB which works fine most of the time when using moderately demanding themes with medium-sized collections at up to 4K display resolution. For large collections (as in many different systems rather than many games per system) in combination with demanding themes which use lots of full-screen images and similar it's recommended to increase this number to 1024 MiB or possibly higher to avoid stuttering and texture pop-in. Enabling the GPU statistics overlay gives some indications regarding the amount of texture memory currently used, which is helpful to determine a reasonable value for this setting. The allowed range for the settings is 128 to 2048 MiB. If you try to set it lower or higher than this by passing such values as command line parameters or by editing the es_settings.xml file manually, ES-DE will log a warning and automatically adjust to a value within the allowable range.
 
 **Anti-aliasing (MSAA) (requires restart)** _(All operating systems except Android)_
 
@@ -4254,7 +4262,7 @@ The metadata for a game is updated by scraping or by manual editing it using the
 
 **Check for application updates** _(Not available for some builds)_
 
-By default a check for new ES-DE versions will be done on every application startup and a notification will be displayed if there is a new release available for download. Using this option the frequency of these checks can be set to _Always_, _Daily_, _Weekly_, _Monthly_ or _Never_. This setting is not available on some platforms and package formats such as the Android app store releases, the Linux AUR release and the semi-official FreeBSD and Raspberry Pi releases where pre-built packages are not provided.
+By default a check for new ES-DE versions will be done on every application startup and a notification will be displayed if there is a new release available for download. Using this option the frequency of these checks can be set to _Always_, _Daily_, _Weekly_, _Monthly_ or _Never_. This setting is not available on some platforms and package formats such as the Android app store releases, the Linux AUR release and the semiofficial Haiku and FreeBSD releases.
 
 **Include prereleases in update checks** _(Always enabled for prereleases)_
 

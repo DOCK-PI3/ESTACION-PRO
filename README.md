@@ -2,7 +2,7 @@
 
 ES-DE (EmulationStation Desktop Edition) is a frontend for browsing and launching games from your multi-platform collection.
 
-It's officially supported on Android, Linux, macOS and Windows, and semi-officially supported on Haiku. It can also be used on the Raspberry Pi and similar devices if you build it yourself from source code. There is also a ES-DE package in the FreeBSD ports collection.
+It's officially supported on Android, Linux, macOS and Windows, and semiofficially supported on Haiku. It can also be used on the Raspberry Pi and similar devices if you build it yourself from source code. There is also a ES-DE package in the FreeBSD ports collection.
 
 Website:\
 https://es-de.org

@@ -205,6 +205,10 @@ Finally, multi-window mode doesn't work when ES-DE has been set as the home app 
 
 There are some devices which have specific quirks and issues which may cause problems when running ES-DE. Here are some things to consider and work around.
 
+### AYANEO Pocket DS
+
+The option "Launch games on the other screen" doesn't work on this device as it has the same display name defined for both screens. The next ES-DE release will contain a workaround for this issue, but ideally it should be resolved by AYANEO via a firmware update.
+
 ### AYN Thor
 
 The Android task switcher can't be used when setting ES-DE (or other frontends) as the home app.

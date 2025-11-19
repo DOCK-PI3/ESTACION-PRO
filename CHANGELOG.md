@@ -11,6 +11,7 @@
 * (Linux) Added initial support for the ARM64/AArch64 architecture (including its own set of find rules, import rules and system configuration)
 * (Android) Changed all RetroArch emulator entries to use %INTERNALDATA% and %EXTERNALDATA% to support multi-user setups
 * (Android) Added support for using the "Launch games on the other screen" option on devices where both screens have the same display name
+* Added translations for Vietnamese (vi_VN)
 * (Linux) Added support for the manually downloaded release of FS-UAE Launcher
 * (Linux) Added support for the Flatpak release of EasyRPG Player
 * (Linux) Added support for the Flatpak release of VBA-M
@@ -18,6 +19,8 @@
 * Changed the launch parameter for EasyRPG Player standalone on Linux, macOS and Windows to support zipped games
 * Added the .bigpimg file extension to the atarijaguar and atarijaguarcd systems on Linux and Windows
 * (Linux) Changed to building the AppImages using appimagetool-uruntime provided by the PkgForge project
+* Removed the obsolete and unsupported CEC functionality
+* Removed all specific configuration and code for the Raspberry Pi
 
 ### Bug fixes
 
