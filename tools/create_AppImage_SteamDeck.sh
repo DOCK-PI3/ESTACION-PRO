@@ -67,7 +67,7 @@ rm -rf ./AppDir
 mkdir AppDir
 
 rm -f CMakeCache.txt
-cmake -DAPPIMAGE_BUILD=on -DSTEAM_DECK=on .
+cmake -DAPPIMAGE_BUILD=on -DBUNDLED_CERTS=on -DSTEAM_DECK=on .
 make clean
 make -j${JOBS}
 make install DESTDIR=AppDir
