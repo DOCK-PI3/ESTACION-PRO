@@ -217,6 +217,7 @@
         <!-- EasyRPG game engine -->
         <rule type="systempath">
             <entry>easyrpg-player</entry>
+            <entry>org.easyrpg.player</entry>
         </rule>
         <rule type="staticpath">
             <entry>/var/lib/flatpak/exports/bin/org.easyrpg.player</entry>
@@ -570,6 +571,7 @@
         <!-- Nintendo Game Boy Advance emulator VBA-M -->
         <rule type="systempath">
             <entry>visualboyadvance-m</entry>
+            <entry>com.vba_m.visualboyadvance-m</entry>
         </rule>
         <rule type="staticpath">
             <entry>/var/lib/flatpak/exports/bin/com.vba_m.visualboyadvance-m</entry>
@@ -629,12 +631,15 @@
         <!-- Sega Saturn emulator Ymir -->
         <rule type="systempath">
             <entry>ymir-sdl3</entry>
+            <entry>io.github.strikerx3.ymir</entry>
         </rule>
         <rule type="staticpath">
             <entry>~/Applications/ymir/ymir-sdl3</entry>
             <entry>~/.local/share/applications/ymir/ymir-sdl3</entry>
             <entry>~/.local/bin/ymir/ymir-sdl3</entry>
             <entry>~/bin/ymir/ymir-sdl3</entry>
+            <entry>/var/lib/flatpak/exports/bin/io.github.strikerx3.ymir</entry>
+            <entry>~/.local/share/flatpak/exports/bin/io.github.strikerx3.ymir</entry>
         </rule>
     </emulator>
 </ruleList>
