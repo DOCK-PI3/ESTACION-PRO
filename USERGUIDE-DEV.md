@@ -1,6 +1,6 @@
 # ES-DE Frontend (development version) - User guide
 
-This version of the user guide is only relevant for the current ES-DE development version, if you are using the latest stable release, refer to [USERGUIDE.md](USERGUIDE.md) instead.
+This document is only relevant for the current ES-DE development version, if you are using the latest stable release, refer to [USERGUIDE.md](USERGUIDE.md) instead.
 
 It's generally recommended to read the [Frequently Asked Questions (FAQ)](FAQ.md) document prior to diving into the information in this guide.
 
@@ -333,14 +333,11 @@ https://en.wikipedia.org/wiki/Symbolic_link
 
 ## Specific notes for Linux on ARM
 
-The ARM64/AArch64 build of ES-DE is currently experimental, but it will hopefully mature over time. Note that at the time of writing the RetroArch release on AArch64 does not include any cores, but a somehow limited set of cores can be downloaded from the following repository: \
-https://github.com/christianhaitian/retroarch-cores
-
-For the AArch64 build there is a separate set of find rules, import rules and system configuration in the [resources/systems/linuxarm](https://gitlab.com/es-de/emulationstation-de/-/tree/master/resources/systems/linuxarm) directory.
+The Linux on AArch64 port of ES-DE is covered by the dedicated [LINUX-AARCH64-DEV.md](LINUX-AARCH64-DEV.md) document.
 
 ## Specific notes for Android
 
-The Android port of ES-DE is quite different than the other versions, so it has its specifics covered by a dedicated [ANDROID.md](ANDROID.md) document.
+The Android port of ES-DE is quite different than the other versions, so it has its specifics covered by the dedicated [ANDROID-DEV.md](ANDROID-DEV.md) document.
 
 ## Specific notes for Haiku
 
@@ -4787,11 +4784,11 @@ On Windows the following emulators provide a way to inform ES-DE where they have
 Default emulator/Alternative emulators columns: \
 **[L]**: Linux, **[M]**: macOS, **[W]**: Windows
 
+For a list of supported systems for Linux on AArch64, see the [LINUX-AARCH64-DEV.md](LINUX-AARCH64-DEV.md#supported-game-systems) document.
+
 All emulators are RetroArch cores unless marked as **(Standalone)**, **(Wine)** or **(Proton)**
 
 The **@** symbol indicates that the emulator is _deprecated_ and will be removed in a future ES-DE release.
-
-_Note that this table has not been updated for the Linux AArch64 release._
 
 | System name           | Full name                                      | Default emulator                  | Alternative emulators             | Needs BIOS   | Recommended game setup               |
 | :-------------------- | :--------------------------------------------- | :-------------------------------- | :-------------------------------- | :----------- | :----------------------------------- |
@@ -4809,7 +4806,7 @@ _Note that this table has not been updated for the Linux AArch64 release._
 | apple2                | Apple II                                       | LinApple **(Standalone)** [L],<br>Mednafen **(Standalone)** [M],<br>AppleWin **(Standalone)** [W] | Mednafen **(Standalone)** [LW],<br>MAME - Current,<br>MAME **(Standalone)**,<br>izapple2 **(Standalone)** [LW] | Yes for Mednafen and MAME | See the specific _Apple II_ section elsewhere in this guide |
 | apple2gs              | Apple IIGS                                     | MAME - Current                    | MAME - Current [Software list],<br>MAME **(Standalone)**,<br>MAME [Software list] **(Standalone)** | Yes          | See the specific _Apple IIGS_ section elsewhere in this guide |
 | arcade                | Arcade                                         | MAME - Current                    | MAME 2010,<br>MAME 2003-Plus,<br>MAME 2003,<br>MAME 2000,<br>MAME **(Standalone)**,<br>FinalBurn Neo,<br>FinalBurn Neo **(Standalone)** [LW],<br>FB Alpha 2012,<br>Geolith,<br>Flycast,<br>Flycast **(Standalone)**,<br>Flycast Dojo **(Standalone)**,<br>Kronos [LW],<br>DICE,<br>Model 2 Emulator **(Standalone)** [W],<br>Model 2 Emulator [Suspend ES-DE] **(Standalone)** [W],<br>Supermodel **(Standalone)** [LW],<br>Supermodel Dojo **(Standalone)** [W],<br>Lindbergh Loader **(Standalone)** [L],<br>MFME **(Standalone)** [LW],<br> _Shortcut or script_ | Depends      | See the specific _Arcade and Neo Geo_ section elsewhere in this guide |
-| arcadia               | Emerson Arcadia 2001                           | MAME - Current                    | MAME **(Standalone)**,<br>WinArcadia **(Standalone)** | No           | Single archive or ROM file           |
+| arcadia               | Emerson Arcadia 2001                           | MAME - Current                    | MAME **(Standalone)**,<br>WinArcadia **(Standalone)** [W] | No           | Single archive or ROM file           |
 | archimedes            | Acorn Archimedes                               | MAME [Model A440/1] **(Standalone)** | MAME [Model A3000] **(Standalone)**,<br>MAME [Model A310] **(Standalone)**,<br>MAME [Model A540] **(Standalone)** | Yes          |                                      |
 | arduboy               | Arduboy Miniature Game System                  | Arduous                           | Ardens                            | No           | Single archive or .hex file          |
 | astrocde              | Bally Astrocade                                | MAME - Current                    | MAME **(Standalone)**             | Yes          | Single archive or ROM file           |

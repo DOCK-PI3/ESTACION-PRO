@@ -20,6 +20,7 @@
 * Added the .bigpimg file extension to the atarijaguar and atarijaguarcd systems on Linux and Windows
 * (Linux) Changed to building the AppImages using appimagetool-uruntime provided by the PkgForge project
 * (Linux) Changed the AppImage build scripts to use the bundled TLS/SSL certificates
+* (Linux) Added an AppImage build script for the AArch64 architecture
 * The theme downloader will now use the bundled certificates on all platforms if built with the BUNDLED_CERTS option
 * Removed the obsolete and unsupported CEC functionality
 * Removed all specific configuration and code for the Raspberry Pi
