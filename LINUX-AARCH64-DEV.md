@@ -1,6 +1,6 @@
 # ES-DE Frontend (development version) - Linux on AArch64 documentation
 
-This document is only relevant for the current ES-DE development version.
+This document is only relevant for the current ES-DE development version and it contains information specific to the Linux on AArch64 release, for more general ES-DE documentation refer to the [User guide](USERGUIDE-DEV.md) as well as the general [FAQ](FAQ.md).
 
 Table of contents:
 

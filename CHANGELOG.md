@@ -12,6 +12,7 @@
 * (Android) Changed all RetroArch emulator entries to use %INTERNALDATA% and %EXTERNALDATA% to support multi-user setups
 * (Android) Added support for using the "Launch games on the other screen" option on devices where both screens have the same display name
 * Added translations for Vietnamese (vi_VN)
+* Added America as an additional ScreenScraper region
 * (Linux) Added support for the manually downloaded release of FS-UAE Launcher
 * (Linux) Added support for the Flatpak release of EasyRPG Player
 * (Linux) Added support for the Flatpak release of VBA-M

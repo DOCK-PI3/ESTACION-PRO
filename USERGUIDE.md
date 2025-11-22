@@ -339,7 +339,7 @@ The [Haiku](https://www.haiku-os.org) port of ES-DE is currently experimental as
 
 ## Specific notes for Raspberry Pi
 
-For the best experience with the Raspberry Pi it's adviced to run Android on it. There are custom OS builds available here: \
+For the best experience with the Raspberry Pi it's advised to run Android on it. There are custom OS builds available here: \
 https://konstakang.com/
 
 If instead going for regular Linux, then by default ES-DE on the Raspberry Pi requires a desktop environment to run, or more specifically a window manager and a sound server (like PulseAudio or PipeWire). It is however possible to use KMS/direct framebuffer access if the DEINIT_ON_LAUNCH flag is used when building ES-DE, as documented in the _Building on Unix_ section of the [INSTALL.md](INSTALL.md#building-on-unix) document.
@@ -1886,7 +1886,7 @@ If using Android then make sure you've read the _MAME4droid 2024 and MAME4droid_
 
 **MAME**
 
-When using MAME only CD-ROM games are supported and the .chd format is recommended. It's not adviced to go for game files using MAME software list names as these can't be scraped by either ScreenScraper or TheGames DB. It's instead better to use files with full game names.
+When using MAME only CD-ROM games are supported and the .chd format is recommended. It's not advised to go for game files using MAME software list names as these can't be scraped by either ScreenScraper or TheGames DB. It's instead better to use files with full game names.
 
 You also need the `fmtowns.zip` and/or `fmtownshr.zip` BIOS archives placed in ~/ROMs/fmtowns/ for the games to run.
 
@@ -3723,7 +3723,7 @@ Various scraping settings.
 
 **Region** _(ScreenScraper only)_
 
-The region to scrape for. This affects game names, game media and release dates. Possible options are Europe, Japan, USA and World.
+The region to scrape for. This affects game names, game media and release dates. Possible options are Europe, Japan, USA, World, Asia, Australia, Brazil, Canada, China, Germany, France, Italy, Korea, Netherlands, Russia, Sweden, Spain, Taiwan and United Kingdom.
 
 **Preferred language** _(ScreenScraper only)_
 
