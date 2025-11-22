@@ -48,8 +48,8 @@
             {
                 "name": "LinuxAArch64AppImage",
                 "filename": "ES-DE_aarch64.AppImage",
-                "url": "dummy",
-                "md5": "dummy",
+                "url": "https://gitlab.com/es-de/emulationstation-de/-/package_files/248914983/download",
+                "md5": "cfcdc939df38e1dd7fd0478988b40a80",
                 "message": ""
             },
             {
