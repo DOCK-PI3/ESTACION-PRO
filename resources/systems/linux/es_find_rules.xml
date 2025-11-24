@@ -133,6 +133,9 @@
     </emulator>
     <emulator name="AZAHAR">
         <!-- Nintendo 3DS emulator Azahar -->
+        <rule type="systempath">
+            <entry>azahar</entry>
+        </rule>
         <rule type="staticpath">
             <entry>~/Applications/azahar*.AppImage</entry>
             <entry>~/.local/share/applications/azahar*.AppImage</entry>
