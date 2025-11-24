@@ -31,6 +31,7 @@ MESA_GL_VERSION_OVERRIDE=3.3 MESA_LOADER_DRIVER_OVERRIDE=zink ./ES-DE_aarch64.Ap
 
 Using Zink instead of a native OpenGL driver comes with some performance penalties though. So on some SBCs and handhelds it could be a good idea to instead build ES-DE yourself with OpenGL ES support. Also be aware that not all mobile devices may have a fully conformant Vulkan implementation, which could make Zink misbehave or not work at all.
 
+The AppImage will only run in a desktop environment, if you need KMS/direct framebuffer access you'll need to build ES-DE yourself with the DEINIT_ON_LAUNCH option.
 
 ## Supported game systems
 

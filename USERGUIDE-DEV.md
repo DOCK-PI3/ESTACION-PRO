@@ -3760,7 +3760,7 @@ Various scraping settings.
 
 **Region** _(ScreenScraper only)_
 
-The region to scrape for. This affects game names, game media and release dates. Possible options are Europe, Japan, USA, America, Asia, World, Australia, Brazil, Canada, China, Germany, France, Italy, Korea, Netherlands, Russia, Sweden, Spain, Taiwan and United Kingdom.
+The region to scrape for. This affects game names, game media and release dates. Possible options are Europe, Japan, USA, North America, Asia, World, Australia, Brazil, Canada, China, Germany, France, Italy, Korea, Netherlands, Russia, Sweden, Spain, Taiwan and United Kingdom.
 
 **Preferred language** _(ScreenScraper only)_
 
