@@ -405,6 +405,13 @@
             <entry>/usr/local/bin/Stella</entry>
         </rule>
     </emulator>
+    <emulator name="SUPERMODEL">
+        <!-- Sega Model 3 emulator Supermodel -->
+        <rule type="staticpath">
+            <entry>/opt/homebrew/bin/supermodel</entry>
+            <entry>/usr/local/bin/supermodel</entry>
+        </rule>
+    </emulator>
     <emulator name="TIC-80">
         <!-- TIC-80 Fantasy Computer (game engine) -->
         <rule type="staticpath">
