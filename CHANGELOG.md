@@ -20,6 +20,9 @@
 * (Linux) Added support for the repository/AUR release of azahar
 * Changed the launch parameter for EasyRPG Player standalone on Linux, macOS and Windows to support zipped games
 * Added the .bigpimg file extension to the atarijaguar and atarijaguarcd systems on Linux and Windows
+* Added the .7z and .zip file extensions to the apple2 system
+* (macOS) Added Supermodel standalone as the default emulator for the model3 system
+* (macOS) Added Supermodel standalone as an alternative emulator for the arcade and mame systems
 * (Linux) Changed to building the AppImages using appimagetool-uruntime provided by the PkgForge project
 * (Linux) Changed the AppImage build scripts to use the bundled TLS/SSL certificates
 * (Linux) Added an AppImage build script for the AArch64 architecture
@@ -30,6 +33,7 @@
 ### Bug fixes
 
 * (Android) The game importer would crash if attempting to open it without any import rules defined
+* The apple2gs system had two lowercase .7z extensions instead of one in lowercase and one in uppercase
 * The logo for the Sinclair ZX Spectrum Next (zxnext) system was missing for the Linear and Slate themes
 
 ## Version 3.4.0 / 3.4.0-56
