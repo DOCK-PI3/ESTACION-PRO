@@ -115,7 +115,7 @@
         <name>apple2</name>
         <fullname>Apple II</fullname>
         <path>%ROMPATH%/apple2</path>
-        <extension>.do .DO .dsk .DSK .nib .NIB .po .PO</extension>
+        <extension>.do .DO .dsk .DSK .nib .NIB .po .PO .7z .7Z .zip .ZIP</extension>
         <command label="MAME4droid Current (Standalone)">%EMULATOR_MAME4DROID-CURRENT% %ACTION%=android.intent.action.VIEW %EXTRA_cli_params%="-rompath '%GAMEDIRRAW%;%ROMPATHRAW%/apple2' -gameio joy -flop1 '%ROMRAW%'" %DATA%=apple2e</command>
         <platform>apple2</platform>
         <theme>apple2</theme>
