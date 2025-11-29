@@ -894,6 +894,12 @@
             <entry>~/bin/pico-8/pico8</entry>
         </rule>
     </emulator>
+    <emulator name="PLASTIC">
+        <!-- Nintendo NES and Famicom emulator Plastic -->
+        <rule type="systempath">
+            <entry>plastic</entry>
+        </rule>
+    </emulator>
     <emulator name="PLAY!">
         <!-- Sony PlayStation 2 emulator Play! -->
         <rule type="systempath">
