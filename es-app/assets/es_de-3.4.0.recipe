@@ -3,7 +3,7 @@ DESCRIPTION="ES-DE (EmulationStation Desktop Edition) is a frontend for browsing
 multi-platform collection. It comes preconfigured for use with a large selection \
 of emulators and game engines."
 HOMEPAGE="https://es-de.org"
-COPYRIGHT="2024-2025 Northwestern Software AB"
+COPYRIGHT="2024-2026 Northwestern Software AB"
 LICENSE="MIT"
 REVISION="1"
 srcGitRev="4f2830048ee002fee337cd7affea3d5333f8faf5"
