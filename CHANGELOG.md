@@ -13,6 +13,9 @@
 * (Android) Added support for using the "Launch games on the other screen" option on devices where both screens have the same display name
 * Added translations for Vietnamese (vi_VN)
 * Added North America as an additional ScreenScraper region
+* (Android) Made it possible to run both Steam games and locally installed games using the GameHub Lite emulator entry
+* (Android) Added a find rule entry for the new package name for future GameHub Lite releases
+* (Linux) Added Plastic standalone as an alternative emulator for the famicom and nes systems
 * (Linux) Added support for the manually downloaded release of FS-UAE Launcher
 * (Linux) Added support for the Flatpak release of EasyRPG Player
 * (Linux) Added support for the Flatpak release of VBA-M
