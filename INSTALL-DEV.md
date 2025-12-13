@@ -2362,24 +2362,26 @@ The working directory set when launching scripts differs between operating syste
 
 There are up to four parameters that will be passed to these scripts, as detailed below:
 
-| Event                    | Parameters*                                        | Description                                                                                       |
-| :----------------------- | :------------------------------------------------- | :------------------------------------------------------------------------------------------------ |
-| startup                  |                                                    | Application startup                                                                               |
-| quit                     |                                                    | Application quit/shutdown                                                                         |
-| reboot                   |                                                    | System reboot (quit event triggered as well)                                                      |
-| poweroff                 |                                                    | System power off (quit event triggered as well)                                                   |
-| suspend                  |                                                    | System suspend (on platforms that support suspending)                                             |
-| config-changed           |                                                    | On saving application settings or controller configuration                                        |
-| settings-changed         |                                                    | On saving application settings (config-changed event triggered as well)                           |
-| controls-changed         |                                                    | On saving controller configuration (config-changed event triggered as well)                       |
-| theme-changed            | New theme name, old theme name                     | When manually changing themes in the UI Settings menu                                             |
-| game-start               | ROM path, game name, system name, system full name | On game launch                                                                                    |
-| game-end                 | ROM path, game name, system name, system full name | On game end (or on application wakeup if running in the background)                               |
-| screensaver-start        | _timer_ or _manual_                                | Screensaver started via timer or manually                                                         |
-| screensaver-end          | _cancel_ or _game-jump_ or _game-start_            | Screensaver ended via cancellation, jump to game or start/launch of game                          |
-| screensaver-game-select  | ROM path, game name, system name, system full name | Screensaver selected a new random game                                                            |
-| game-select              | ROM path, game name, system name, system full name | On browsing games in the gamelist view, requires enabling of the _Browsing custom events_ setting |
-| system-select            | System name, system full name, system     ROM path | On browsing systems in the system view, requires enabling of the _Browsing custom events_ setting |
+| Event                    | Parameters*                                                                             | Description                                                                                       |
+| :----------------------- | :-------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------ |
+| startup                  |                                                                                         | Application startup                                                                               |
+| quit                     |                                                                                         | Application quit/shutdown                                                                         |
+| reboot                   |                                                                                         | System reboot (quit event triggered as well)                                                      |
+| poweroff                 |                                                                                         | System power off (quit event triggered as well)                                                   |
+| suspend                  |                                                                                         | System suspend (on platforms that support suspending)                                             |
+| config-changed           |                                                                                         | On saving application settings or controller configuration                                        |
+| settings-changed         |                                                                                         | On saving application settings (config-changed event triggered as well)                           |
+| controls-changed         |                                                                                         | On saving controller configuration (config-changed event triggered as well)                       |
+| theme-changed            | New theme name, old theme name                                                          | When manually changing themes in the UI Settings menu                                             |
+| game-start               | ROM path, game name, system name, system full name                                      | On game launch                                                                                    |
+| game-end                 | ROM path, game name, system name, system full name                                      | On game end (or on application wakeup if running in the background)                               |
+| screensaver-start        | _timer_ or _manual_                                                                     | Screensaver started via timer or manually                                                         |
+| screensaver-end          | _cancel_ or _game-jump_ or _game-start_                                                 | Screensaver ended via cancellation, jump to game or start/launch of game                          |
+| screensaver-game-select  | ROM path, game name, system name, system full name                                      | Screensaver selected a new random game                                                            |
+| scraper-start            | Scraper service, _automatic_ or _interactive_, number of systems, total number of games | On starting the multi-scraper in automatic or interactive mode                                    |
+| scraper-end              | Number of scraped games, number of skipped games, _finished_ or _stopped_               | On ending the multi-scraper (scraping finished or manually stopped by the user)                   |
+| game-select              | ROM path, game name, system name, system full name                                      | On browsing games in the gamelist view, requires enabling of the _Browsing custom events_ setting |
+| system-select            | System name, system full name, system     ROM path                                      | On browsing systems in the system view, requires enabling of the _Browsing custom events_ setting |
 
 ***)** Parameters in _italics_ are literal strings.
 
