@@ -529,6 +529,16 @@
             <entry>%ESPATH%\..\Emulators\jgenesis\jgenesis-cli.exe</entry>
         </rule>
     </emulator>
+    <emulator name="KEGS">
+        <!-- Apple IIGS emulator KEGS -->
+        <rule type="systempath">
+            <entry>kegswin.exe</entry>
+        </rule>
+        <rule type="staticpath">
+            <entry>%ESPATH%\Emulators\kegs\kegswin.exe</entry>
+            <entry>%ESPATH%\..\Emulators\kegs\kegswin.exe</entry>
+        </rule>
+    </emulator>
     <emulator name="KEMULATOR">
         <!-- Java 2 Micro Edition emulator KEmulator -->
         <rule type="systempath">

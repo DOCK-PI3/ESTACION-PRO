@@ -94,6 +94,7 @@ Emulators\hatari\hatari.exe
 Emulators\Hypseus Singe\hypseus.exe
 Emulators\izapple2\izapple2sdl_windows_amd64.exe
 Emulators\jgenesis\jgenesis-cli.exe
+Emulators\kegs\kegswin.exe
 Emulators\KEmulator\KEmulator.exe
 Emulators\kronos\kronos.exe
 Emulators\lime3ds\lime3ds.exe

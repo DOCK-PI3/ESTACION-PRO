@@ -594,6 +594,18 @@
             <entry>~/bin/jgenesis-cli*.AppImage</entry>
         </rule>
     </emulator>
+    <emulator name="KEGS">
+        <!-- Apple IIGS emulator KEGS -->
+        <rule type="systempath">
+            <entry>xkegs</entry>
+        </rule>
+        <rule type="staticpath">
+            <entry>~/Applications/kegs/xkegs</entry>
+            <entry>~/.local/share/applications/kegs/xkegs</entry>
+            <entry>~/.local/bin/kegs/xkegs</entry>
+            <entry>~/bin/kegs/xkegs</entry>
+        </rule>
+    </emulator>
     <emulator name="KRONOS">
         <!-- Sega Saturn emulator Kronos -->
         <rule type="systempath">

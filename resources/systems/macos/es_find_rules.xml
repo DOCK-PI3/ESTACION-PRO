@@ -190,6 +190,12 @@
             <entry>hypseus.bin</entry>
         </rule>
     </emulator>
+    <emulator name="KEGS">
+        <!-- Apple IIGS emulator KEGS -->
+        <rule type="staticpath">
+            <entry>/Applications/KEGSMAC.app/Contents/MacOS/KEGSMAC</entry>
+        </rule>
+    </emulator>
     <emulator name="LIME3DS">
         <!-- Nintendo 3DS emulator Lime3DS -->
         <rule type="staticpath">

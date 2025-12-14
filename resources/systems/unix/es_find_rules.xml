@@ -247,6 +247,12 @@
             <entry>~/bin/izapple2/izapple2sdl_linux_amd64</entry>
         </rule>
     </emulator>
+    <emulator name="KEGS">
+        <!-- Apple IIGS emulator KEGS -->
+        <rule type="systempath">
+            <entry>xkegs</entry>
+        </rule>
+    </emulator>
     <emulator name="LIGHTSPARK">
         <!-- Adobe Flash player Lightspark -->
         <rule type="systempath">
