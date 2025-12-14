@@ -22,6 +22,7 @@
 * (Linux) Added support for the Flatpak release of VBA-M
 * (Linux) Added support for the Flatpak release of Ymir
 * (Linux) Added support for the repository/AUR release of azahar
+* Added KEGS standalone as an alternative emulator for the apple2gs system on Linux, macOS and Windows
 * Changed the launch parameter for EasyRPG Player standalone on Linux, macOS and Windows to support zipped games
 * Added the .bigpimg file extension to the atarijaguar and atarijaguarcd systems on Linux and Windows
 * Added the .7z and .zip file extensions to the apple2 system
