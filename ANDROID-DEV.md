@@ -209,6 +209,10 @@ There are some devices which have specific quirks and issues which may cause pro
 
 This device incorrectly reports two screens as being present even when just one screen is present. This will make game launching fail if the ES-DE setting _Other settings->Launch games on the other screen_ is enabled.
 
+### AYN Odin 3
+
+With its default configuration the theme downloader in ES-DE is unusable, to resolve this enable the setting _Handheld Settings->Advanced->Is it force start selinux_.
+
 ### AYN Thor
 
 The Android task switcher can't be used when setting ES-DE (or other frontends) as the home app.
@@ -687,6 +691,7 @@ This is clearly not a complete list of Android devices, but rather those we know
 | AYN          | Odin 2 (Base/Pro/Max)   | 13              | Yes       | Minor audio issues  |                            |
 | AYN          | Odin 2 Mini             | 13              | Yes       | None                |                            |
 | AYN          | Odin 2 Portal           | 13              | Yes       | None                |                            |
+| AYN          | Odin 3                  | 15              | Yes       | Theme downloader broken with default settings | See _Known problems on specific devices_ for a workaround |
 | AYN          | Thor                    | 13              | Yes       | None                |                            |
 | GKD          | Bubble                  | GammaOS 13 TV   | Yes       | None                | Limited RAM capacity for this device makes it unsuitable for demanding themes and large game collections |
 | Google       | Pixel 2 XL              | 11              | Yes       | None                |                            |

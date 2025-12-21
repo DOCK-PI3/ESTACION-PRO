@@ -424,6 +424,12 @@ These instructions explain how to use Tasker on Android to add frontend music to
 
 https://github.com/RobZombie9043/bgmusic-android-es-de
 
+**RetroDECK ES-DE Background Music** _(Linux only)_
+
+If you run RetroDECK then these instructions will let you use frontend music inside ES-DE. With some effort these scripts could probably be modified to work with regular ES-DE on Linux as well.
+
+https://retrodeck.readthedocs.io/en/latest/wiki_experiments/retrodeck-music-player/retrodeck-music-player
+
 **BG_MPlayer for ES-DE** _(Windows only)_
 
 This adds frontend music to ES-DE on Windows (built-in music support is on the roadmap for a future release).
