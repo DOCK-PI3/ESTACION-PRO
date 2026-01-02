@@ -412,6 +412,13 @@ The list goes on as there are many other differences in addition to those just m
 
 Here is a list of third party tools that provide useful functionality not built into ES-DE itself, or which can be used to curate your games library.
 
+**ES-DE Second Screen Companion** _(Android only)_
+
+This semi-official app will let you display game media on the second screen by using the ES-DE custom event scripts functionality. This allows you to use both screens on dual-screen Android devices when navigating your games and systems.
+
+https://github.com/RobZombie9043/es-de-companion
+
+
 **HandheldExp** _(Android only)_
 
 This adds a game menu with a similar design to the ES-DE user interface which makes it possible to display information about the running game, view its manual, quick save and quick load for supported emulators, and more.
