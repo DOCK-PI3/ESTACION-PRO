@@ -1,6 +1,6 @@
 # ES-DE Frontend - Changelog
 
-## Version 3.5.0 / 3.5.0-xx (in development)
+## Version 3.4.1 / 3.4.1-xx (in development)
 
 **Release date:** TBD
 
