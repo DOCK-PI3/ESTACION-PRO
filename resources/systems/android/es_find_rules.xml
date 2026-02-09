@@ -491,8 +491,8 @@
     <emulator name="VITA3K">
         <!-- Sony PlayStation Vita emulator Vita3K -->
         <rule type="androidpackage">
-            <entry>org.vita3k.emulator.ikhoeyZX/org.vita3k.emulator.Emulator</entry>
             <entry>org.vita3k.emulator/.Emulator</entry>
+            <entry>org.vita3k.emulator.ikhoeyZX/org.vita3k.emulator.Emulator</entry>
         </rule>
     </emulator>
     <emulator name="WINLATOR-CMOD">
