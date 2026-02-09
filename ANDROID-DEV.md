@@ -637,10 +637,10 @@ https://github.com/vpinball/vpinball/actions
 
 ### Vita3K
 
-Two separate Vita3K forks are supported by ES-DE and they share the same emulator entry. The primary find rule is for Vita3K ZX, and the secondary find rule is for the original Vita3K release, which at the time of writing does not appear to be maintained any longer. Both emulators can be downloaded from their GitHub sites. Refer to the User guide for detailed game setup instructions.
+Two separate Vita3K releases are supported by ES-DE and they share the same emulator entry. The primary find rule is for the official Vita3K release and the secondary find rule is for the Vita3K ZX fork. Both emulators can be downloaded from their GitHub sites. Refer to the User guide for detailed game setup instructions.
 
-https://github.com/ikhoeyZX/Vita3K-Android/releases \
-https://github.com/Vita3K/Vita3K-Android/releases
+https://github.com/Vita3K/Vita3K/releases \
+https://github.com/ikhoeyZX/Vita3K-Android/releases
 
 ### Winlator
 

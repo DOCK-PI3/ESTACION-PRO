@@ -16,6 +16,7 @@
 * Added scraper-start and scraper-end custom events for the multi-scraper
 * (Android) Made it possible to run both Steam games and locally installed games using the GameHub Lite emulator entry
 * (Android) Added a find rule entry for the new package name for future GameHub Lite releases
+* (Android) Set the official Vita3K release as the primary find rule entry instead of the Vita3K ZX fork
 * (Linux) Added Plastic standalone as an alternative emulator for the famicom and nes systems
 * (Linux) Added support for the manually downloaded release of FS-UAE Launcher
 * (Linux) Added support for the Flatpak release of EasyRPG Player
