@@ -936,7 +936,7 @@
         <extension>.jar .JAR .7z .7Z .zip .ZIP</extension>
         <command label="SquirrelJME">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\squirreljme_libretro.dll %ROM%</command>
         <command label="KEmulator (Standalone)">%STARTDIR%=%EMUDIR% %RUNINBACKGROUND% %EMULATOR_KEMULATOR% %ROM%</command>
-        <platform>android</platform>
+        <platform>j2me</platform>
         <theme>j2me</theme>
     </system>
     <system>

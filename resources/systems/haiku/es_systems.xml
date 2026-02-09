@@ -746,7 +746,7 @@
         <path>%ROMPATH%/j2me</path>
         <extension>.7z .7Z .zip .ZIP</extension>
         <command>PLACEHOLDER %ROM%</command>
-        <platform>android</platform>
+        <platform>j2me</platform>
         <theme>j2me</theme>
     </system>
     <system>

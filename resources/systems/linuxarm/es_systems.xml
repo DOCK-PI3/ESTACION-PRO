@@ -889,7 +889,7 @@
         <path>%ROMPATH%/j2me</path>
         <extension>.jar .JAR .7z .7Z .zip .ZIP</extension>
         <command label="SquirrelJME">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/squirreljme_libretro.so %ROM%</command>
-        <platform>android</platform>
+        <platform>j2me</platform>
         <theme>j2me</theme>
     </system>
     <system>
