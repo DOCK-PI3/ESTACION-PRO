@@ -14,6 +14,7 @@
 * Added translations for Vietnamese (vi_VN)
 * Added North America as an additional ScreenScraper region
 * Added scraper-start and scraper-end custom events for the multi-scraper
+* (Android) Added SUPER3 standalone as the default emulator for the model3 system
 * (Android) Made it possible to run both Steam games and locally installed games using the GameHub Lite emulator entry
 * (Android) Added a find rule entry for the new package name for future GameHub Lite releases
 * (Android) Set the official Vita3K release as the primary find rule entry instead of the Vita3K ZX fork

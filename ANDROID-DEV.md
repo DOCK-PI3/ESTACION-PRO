@@ -613,6 +613,12 @@ Although this emulator supports both the Sinclar ZX Spectrum and MGT SAM Coupé 
 https://play.google.com/store/apps/details?id=com.fms.speccy \
 https://play.google.com/store/apps/details?id=com.fms.speccy.deluxe
 
+### SUPER3
+
+There are unofficial builds available for SUPER3 on the following GitHub site.
+
+https://github.com/MrDawe/Super3/releases
+
 ### SWF Player
 
 This emulator which is essentially a GUI for Ruffle can be installed for free from the Play store. There's a paid Pro version as well.
@@ -901,7 +907,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | megaduck              | Creatronic Mega Duck                           | SameDuck                          | MAME4droid Current **(Standalone)**  | No           | Single archive or ROM file           |
 | mess                  | Multi Emulator Super System                    | Multi (MESS)                      |                                   | Depends      |                                      |
 | model2                | Sega Model 2                                   | MAME - Current                    | MAME4droid Current **(Standalone)**  | Yes          | See the specific _Arcade and Neo Geo_ section in the user guide |
-| model3                | Sega Model 3                                   | MAME - Current                    | MAME4droid Current **(Standalone)**  | Yes          | See the specific _Arcade and Neo Geo_ section in the user guide |
+| model3                | Sega Model 3                                   | SUPER3                            | MAME - Current,<br>MAME4droid Current **(Standalone)**  | Yes          | See the specific _Arcade and Neo Geo_ section in the user guide |
 | moto                  | Thomson MO/TO Series                           | Theodore                          |                                   |              |                                      |
 | msx                   | MSX                                            | blueMSX                           | fMSX,<br>fMSX **(Standalone)**,<br>MSX.emu **(Standalone)** | Yes except for fMSX standalone |                                      |
 | msx1                  | MSX1                                           | blueMSX                           | fMSX,<br>fMSX **(Standalone)**,<br>MSX.emu **(Standalone)** | Yes except for fMSX standalone |                                      |
