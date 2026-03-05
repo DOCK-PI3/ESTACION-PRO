@@ -534,6 +534,16 @@ This emulator is in early development and there currently seems to be no way to 
 
 https://github.com/wheremyfoodat/Panda3DS/releases
 
+### PICO-8
+
+You can download PICO-8 for Android from their GitHub site.
+
+https://github.com/Macs75/pico8-android/releases
+
+But note that this is only a wrapper for the actual PICO-8 game engine, so you'll also need to purchase PICO-8 from Lexaloffle Games and install the Raspberry Pi build inside the PICO-8 wrapper.
+
+https://www.lexaloffle.com
+
 ### Pizza Boy emulators
 
 The Pizza Boy GBA/A, Pizza Boy GBC/C and Pizza Boy SC emulators can be installed from the Play store. There are Basic (free) versions and Pro (paid) versions available.
@@ -907,7 +917,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | megaduck              | Creatronic Mega Duck                           | SameDuck                          | MAME4droid Current **(Standalone)**  | No           | Single archive or ROM file           |
 | mess                  | Multi Emulator Super System                    | Multi (MESS)                      |                                   | Depends      |                                      |
 | model2                | Sega Model 2                                   | MAME - Current                    | MAME4droid Current **(Standalone)**  | Yes          | See the specific _Arcade and Neo Geo_ section in the user guide |
-| model3                | Sega Model 3                                   | SUPER3                            | MAME - Current,<br>MAME4droid Current **(Standalone)**  | Yes          | See the specific _Arcade and Neo Geo_ section in the user guide |
+| model3                | Sega Model 3                                   | SUPER3 **(Standalone)**           | MAME - Current,<br>MAME4droid Current **(Standalone)**  | Yes          | See the specific _Arcade and Neo Geo_ section in the user guide |
 | moto                  | Thomson MO/TO Series                           | Theodore                          |                                   |              |                                      |
 | msx                   | MSX                                            | blueMSX                           | fMSX,<br>fMSX **(Standalone)**,<br>MSX.emu **(Standalone)** | Yes except for fMSX standalone |                                      |
 | msx1                  | MSX1                                           | blueMSX                           | fMSX,<br>fMSX **(Standalone)**,<br>MSX.emu **(Standalone)** | Yes except for fMSX standalone |                                      |
@@ -940,7 +950,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | pcengine              | NEC PC Engine                                  | Beetle PCE                        | Beetle PCE FAST,<br>Beetle SuperGrafx,<br>Geargrafx,<br>PCE.emu **(Standalone)** | No           | Single archive or ROM file           |
 | pcenginecd            | NEC PC Engine CD                               | Beetle PCE                        | Beetle PCE FAST,<br>Beetle SuperGrafx,<br>PCE.emu **(Standalone)** | Yes          |                                      |
 | pcfx                  | NEC PC-FX                                      | Beetle PC-FX                      |                                   | Yes          |                                      |
-| pico8                 | PICO-8 Fantasy Console                         | Fake-08                           | Retro8,<br>Infinity **(Standalone)** | No           | See the specific _PICO-8_ section in the User guide |
+| pico8                 | PICO-8 Fantasy Console                         | PICO-8 **(Standalone)**           | Fake-08,<br>Retro8,<br>Infinity **(Standalone)** | No           | See the specific _PICO-8_ section in the User guide |
 | plus4                 | Commodore Plus/4                               | VICE xplus4                       |                                   | No           | Single archive or image file for tape, cartridge or single-diskette games, .m3u playlist for multi-diskette games |
 | pokemini              | Nintendo Pokémon Mini                          | PokeMini                          |                                   | No           |                                      |
 | ports                 | Ports                                          | ECWolf (Wolfenstein 3D)           | CannonBall (OutRun),<br>Mr.Boom (Bomberman),<br>NXEngine (Cave Story),<br>drs (Cave Story),<br>OpenLara (Tomb Raider),<br>Super Bros War | Yes for ECWolf |                                      |
