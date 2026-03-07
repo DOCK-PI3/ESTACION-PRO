@@ -14,11 +14,14 @@
 * Added translations for Vietnamese (vi_VN)
 * Added North America as an additional ScreenScraper region
 * Added scraper-start and scraper-end custom events for the multi-scraper
+* (Android) Added support for the Microsoft Xbox 360 (xbox360) system using the aX360e emulator
 * (Android) Added SUPER3 standalone as the default emulator for the model3 system
 * (Android) Added PICO-8 standalone as the default emulator for the pico8 system
 * (Android) Made it possible to run both Steam games and locally installed games using the GameHub Lite emulator entry
 * (Android) Added a find rule entry for the new package name for future GameHub Lite releases
 * (Android) Set the official Vita3K release as the primary find rule entry instead of the Vita3K ZX fork
+* (Android) Added the .pcgame file extension to the steam system
+* (Android) Added the .epic, .gog and .pcgame file extensions to the windows system
 * (Linux) Added Plastic standalone as an alternative emulator for the famicom and nes systems
 * (Linux) Added support for the manually downloaded release of FS-UAE Launcher
 * (Linux) Added support for the Flatpak release of EasyRPG Player

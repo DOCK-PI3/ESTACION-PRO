@@ -2308,7 +2308,9 @@ If you perform the setup as described above you'll have a single entry per game 
 
 ### Microsoft Xbox 360
 
-This system is emulated using [xenia](https://xenia.jp/), and although there are a lot of topics to consider for this emulator such as how to handle multi-disc games, DLCs etc. this section will only cover the basics on how to run single-disc ISO images and XBLA games. For the remaining details there are many resources available online.
+This system is emulated using [xenia](https://xenia.jp/) on desktop operating systems, and although there are a lot of topics to consider for this emulator such as how to handle multi-disc games, DLCs etc. this section will only cover the basics on how to run single-disc ISO images and XBLA games. For the remaining details there are many resources available online.
+
+On Android you can use the aX360e emulator, the game setup is identical to xenia.
 
 **General**
 
