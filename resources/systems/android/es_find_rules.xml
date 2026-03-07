@@ -36,6 +36,13 @@
             <entry>come.nanodata.armsx2.debug/kr.co.iefriends.pcsx2.MainActivity</entry>
         </rule>
     </emulator>
+    <emulator name="AX360E">
+        <!-- Microsoft Xbox 360 emulator aX360e -->
+        <rule type="androidpackage">
+            <entry>aenu.ax360e/aenu.ax360e.EmulatorActivity</entry>
+            <entry>aenu.ax360e.free/aenu.ax360e.EmulatorActivity</entry>
+        </rule>
+    </emulator>
     <emulator name="AZAHAR">
         <!-- Nintendo 3DS emulator Azahar -->
         <rule type="androidpackage">
