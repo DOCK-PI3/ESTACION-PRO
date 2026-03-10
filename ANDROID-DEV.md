@@ -676,6 +676,13 @@ In addition to the official repository there are multiple Winlator builds floati
 
 It's beyond the scope of this document to describe how to install games in Winlator, but once it's done and you've created a shortcut to your game from inside the container you can export it via the _Export for Frontend_ option in the Winlator user interface. This will generate a .desktop file that you can place in the `ROMs/pcarcade`, `ROMs/type-x` or `ROMs/windows` folder and launch from ES-DE. You can alternatively set the _Frontend Export Path_ setting from inside the Winlator Settings screen to avoid the manual step of moving the .desktop file.
 
+### X1 BOX
+
+This emulator can be installed from the Play store (as a paid app) or downloaded from their GitHub site.
+
+https://play.google.com/store/apps/details?id=com.izzy2lost.x1box \
+https://github.com/izzy2lost/xemu/releases
+
 ### Yaba Sanshiro 2
 
 This emulator can be installed from the Play store. Note that only the paid Pro version supports game launching from ES-DE. Also note that .bin/.cue files can't be launched for the time being, only .chd files seem to work. This needs to be fixed in the emulator so nothing can be done in ES-DE to work around that limitation.
@@ -1021,7 +1028,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | wonderswancolor       | Bandai WonderSwan Color                        | Beetle Cygne                      | Swan.emu **(Standalone)**         | No           | Single archive or ROM file           |
 | x1                    | Sharp X1                                       | X Millennium                      | MAME4droid Current [Diskette] **(Standalone)**,<br>MAME4droid Current [Tape] **(Standalone)** | Yes for MAME4droid Current | Single archive or diskette/tape file |
 | x68000                | Sharp X68000                                   | PX68k                             | MAME4droid Current **(Standalone)**  | Yes          |                                      |
-| xbox                  | Microsoft Xbox                                 | _Placeholder_                     |                                   |              |                                      |
+| xbox                  | Microsoft Xbox                                 | X1 BOX **(Standalone)**           |                                   | Yes          |                                      |
 | xbox360               | Microsoft Xbox 360                             | aX360e **(Standalone)**           |                                   | No           | See the specific _Microsoft Xbox 360_ section in the user guide |
 | xboxone               | Microsoft Xbox One                             | _Placeholder_                     |                                   |              |                                      |
 | zmachine              | Infocom Z-machine                              | MojoZork                          |                                   | No           |                                      |

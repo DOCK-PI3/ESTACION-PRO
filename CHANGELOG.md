@@ -14,6 +14,7 @@
 * Added translations for Vietnamese (vi_VN)
 * Added North America as an additional ScreenScraper region
 * Added scraper-start and scraper-end custom events for the multi-scraper
+* (Android) Added support for the Microsoft Xbox (xbox) system using the X1 BOX emulator
 * (Android) Added support for the Microsoft Xbox 360 (xbox360) system using the aX360e emulator
 * (Android) Added SUPER3 standalone as the default emulator for the model3 system
 * (Android) Added PICO-8 standalone as the default emulator for the pico8 system
