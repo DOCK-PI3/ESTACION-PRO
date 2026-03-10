@@ -532,6 +532,12 @@
             <entry>com.cmodded.winlator/com.winlator.XServerDisplayActivity</entry>
         </rule>
     </emulator>
+    <emulator name="X1-BOX">
+        <!-- Microsoft Xbox emulator X1 BOX -->
+        <rule type="androidpackage">
+            <entry>com.izzy2lost.x1box/.LauncherActivity</entry>
+        </rule>
+    </emulator>
     <emulator name="YABASANSHIRO-2">
         <!-- Sega Saturn emulator Yaba Sanshiro 2 -->
         <rule type="androidpackage">
