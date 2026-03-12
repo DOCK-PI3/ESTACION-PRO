@@ -2123,7 +2123,7 @@
         <name>xbox</name>
         <fullname>Microsoft Xbox</fullname>
         <path>%ROMPATH%/xbox</path>
-        <extension>.iso .ISO</extension>
+        <extension>.iso .ISO .xiso .XISO</extension>
         <command label="X1 BOX (Standalone)">%EMULATOR_X1-BOX% %ACTION%=android.intent.action.VIEW %DATA%=%ROMSAF%</command>
         <platform>xbox</platform>
         <theme>xbox</theme>
