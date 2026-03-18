@@ -14,6 +14,7 @@
 * Added translations for Vietnamese (vi_VN)
 * Added North America as an additional ScreenScraper region
 * Added scraper-start and scraper-end custom events for the multi-scraper
+* (Android) Added support for the Namco-Sega-Nintendo Triforce (triforce) system using the Dolphin emulator
 * (Android) Added support for the Microsoft Xbox (xbox) system using the X1 BOX emulator
 * (Android) Added support for the Microsoft Xbox 360 (xbox360) system using the aX360e emulator
 * (Android) Added SUPER3 standalone as the default emulator for the model3 system
@@ -29,11 +30,15 @@
 * (Linux) Added support for the Flatpak release of VBA-M
 * (Linux) Added support for the Flatpak release of Ymir
 * (Linux) Added support for the repository/AUR release of azahar
+* Added Dolphin standalone as the default emulator for the triforce system on Linux and Windows
+* Added Dolphin standalone as an alternative emulator for the consolearcade system
 * Added a j2me platform to the j2me system so that these games can be scraped using TheGamesDB
 * Added KEGS standalone as an alternative emulator for the apple2gs system on Linux, macOS and Windows
 * Changed the launch parameter for EasyRPG Player standalone on Linux, macOS and Windows to support zipped games
 * Added the .bigpimg file extension to the atarijaguar and atarijaguarcd systems on Linux and Windows
 * Added the .7z and .zip file extensions to the apple2 system
+* Added the .xiso file extension to the xbox system
+* (macOS) Added support for the Namco-Sega-Nintendo Triforce (triforce) system using the Dolphin emulator
 * (macOS) Added Supermodel standalone as the default emulator for the model3 system
 * (macOS) Added Supermodel standalone as an alternative emulator for the arcade and mame systems
 * (Linux) Changed to building the AppImages using appimagetool-uruntime provided by the PkgForge project

@@ -1770,25 +1770,25 @@ The _consolearcade_ system is intended for the various arcade boards that were b
 
 The following arcade boards have been considered:
 
-| Arcade board                        | Console                     | Emulator                  |
-| :---------------------------------- | :-------------------------- | :------------------------ |
-| Atari CoJag                         | Atari Jaguar                | MAME                      |
-| Capcom Sony ZN-1/ZN-2               | Sony PlayStation            | MAME                      |
-| Konami M2                           | 3DO Interactive Multiplayer | MAME                      |
-| Konami System 573/GQ/GV/Twinkle     | Sony PlayStation            | MAME                      |
-| Namco System 10/11/12               | Sony PlayStation            | MAME                      |
-| Namco System 147/246/256            | Sony PlayStation 2          | Play!                     |
-| Namco System 357/359/369            | Sony Playstation 3          | RPCS3                     |
-| Namco-Sega-Nintendo Triforce        | Nintendo GameCube           | Triforce (Dolphin)        |
-| Nintendo VS. System/PlayChoice-10   | Nintendo Famicom/NES        | MAME                      |
-| Sammy Corporation Atomiswave        | Sega Dreamcast              | Flycast, Flycast Dojo     |
-| Sega Chihiro                        | Microsoft Xbox              | xemu, Cxbx-Reloaded, MAME |
-| Sega Naomi/Naomi 2/SP               | Sega Dreamcast              | Flycast                   |
-| Sega Mega Play/Mega-Tech/C-2        | Sega Mega Drive/Genesis     | MAME                      |
-| Sega Shooting Zone/System E         | Sega Master System          | MAME                      |
-| Sega Titan Video Game System (ST-V) | Sega Saturn                 | Kronos, Mednafen, MAME    |
-| SETA Aleck 64                       | Nintendo 64                 | MAME                      |
-| Taito FX-1A/FX-1B                   | Sony PlayStation            | MAME                      |
+| Arcade board                        | Console                     | Emulator                    |
+| :---------------------------------- | :-------------------------- | :-------------------------  |
+| Atari CoJag                         | Atari Jaguar                | MAME                        |
+| Capcom Sony ZN-1/ZN-2               | Sony PlayStation            | MAME                        |
+| Konami M2                           | 3DO Interactive Multiplayer | MAME                        |
+| Konami System 573/GQ/GV/Twinkle     | Sony PlayStation            | MAME                        |
+| Namco System 10/11/12               | Sony PlayStation            | MAME                        |
+| Namco System 147/246/256            | Sony PlayStation 2          | Play!                       |
+| Namco System 357/359/369            | Sony Playstation 3          | RPCS3                       |
+| Namco-Sega-Nintendo Triforce        | Nintendo GameCube           | Dolphin, Triforce (Dolphin) |
+| Nintendo VS. System/PlayChoice-10   | Nintendo Famicom/NES        | MAME                        |
+| Sammy Corporation Atomiswave        | Sega Dreamcast              | Flycast, Flycast Dojo       |
+| Sega Chihiro                        | Microsoft Xbox              | xemu, Cxbx-Reloaded, MAME   |
+| Sega Naomi/Naomi 2/SP               | Sega Dreamcast              | Flycast                     |
+| Sega Mega Play/Mega-Tech/C-2        | Sega Mega Drive/Genesis     | MAME                        |
+| Sega Shooting Zone/System E         | Sega Master System          | MAME                        |
+| Sega Titan Video Game System (ST-V) | Sega Saturn                 | Kronos, Mednafen, MAME      |
+| SETA Aleck 64                       | Nintendo 64                 | MAME                        |
+| Taito FX-1A/FX-1B                   | Sony PlayStation            | MAME                        |
 
 Note that not all emulators are supported on all operating systems that ES-DE runs on, see the [Supported game systems](USERGUIDE-DEV.md#supported-game-systems) section for more details.
 
@@ -4842,7 +4842,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | channelf              | Fairchild Channel F                            | FreeChaF                          | MAME - Current,<br>MAME **(Standalone)** | Yes          | Single archive or ROM file           |
 | coco                  | Tandy Color Computer                           | XRoar CoCo 2 NTSC **(Standalone)** | XRoar CoCo 2 PAL **(Standalone)**,<br>MAME [Cartridge] **(Standalone)**,<br>MAME [Tape] **(Standalone)** | Yes           | See the specific _Tandy Color Computer_ section elsewhere in this guide |
 | colecovision          | Coleco ColecoVision                            | blueMSX                           | Gearcoleco,<br>openMSX **(Standalone)**,<br>ares **(Standalone)**,<br>Mesen **(Standalone)** [LW],<br>ColEm **(Standalone)** [LW] | Yes          | Single archive or ROM file |
-| consolearcade         | Console Arcade Systems                         | MAME - Current                    | MAME **(Standalone)**,<br>Flycast,<br>Flycast **(Standalone)**,<br>Flycast Dojo **(Standalone)**,<br>Kronos [LW],<br>Mednafen [Sega Saturn] **(Standalone)**,<br>Play! Arcade **(Standalone)**,<br>Play! Disc **(Standalone)**,<br>RPCS3 Shortcut **(Standalone)**,<br>RPCS3 Game Serial **(Standalone)**,<br>Triforce **(Standalone)** [LW],<br>xemu **(Standalone)**,<br>Cxbx-Reloaded **(Standalone)** [W],<br> _Shortcut or script_ | Depends      | See the specific _Console Arcade Systems_ section elsewhere in this guide |
+| consolearcade         | Console Arcade Systems                         | MAME - Current                    | MAME **(Standalone)**,<br>Flycast,<br>Flycast **(Standalone)**,<br>Flycast Dojo **(Standalone)**,<br>Kronos [LW],<br>Mednafen [Sega Saturn] **(Standalone)**,<br>Play! Arcade **(Standalone)**,<br>Play! Disc **(Standalone)**,<br>RPCS3 Shortcut **(Standalone)**,<br>RPCS3 Game Serial **(Standalone)**,<br>Dolphin **(Standalone)**,<br>Triforce **(Standalone)** [LW] @,<br>xemu **(Standalone)**,<br>Cxbx-Reloaded **(Standalone)** [W],<br> _Shortcut or script_ | Depends      | See the specific _Console Arcade Systems_ section elsewhere in this guide |
 | cps                   | Capcom Play System                             | MAME - Current                    | MAME 2010,<br>MAME 2003-Plus,<br>MAME 2003,<br>MAME 2000,<br>MAME **(Standalone)**,<br>FinalBurn Neo,<br>FinalBurn Neo **(Standalone)** [LW],<br>FB Alpha 2012,<br>FB Alpha 2012 CPS-1,<br>FB Alpha 2012 CPS-2,<br>FB Alpha 2012 CPS-3 | Depends      | See the specific _Arcade and Neo Geo_ section elsewhere in this guide |
 | cps1                  | Capcom Play System I                           | MAME - Current                    | MAME 2010,<br>MAME 2003-Plus,<br>MAME 2003,<br>MAME 2000,<br>MAME **(Standalone)**,<br>FinalBurn Neo,<br>FinalBurn Neo **(Standalone)** [LW],<br>FB Alpha 2012,<br>FB Alpha 2012 CPS-1 | Depends      | See the specific _Arcade and Neo Geo_ section elsewhere in this guide |
 | cps2                  | Capcom Play System II                          | MAME - Current                    | MAME 2010,<br>MAME 2003-Plus,<br>MAME 2003,<br>MAME 2000,<br>MAME **(Standalone)**,<br>FinalBurn Neo,<br>FinalBurn Neo **(Standalone)** [LW],<br>FB Alpha 2012,<br>FB Alpha 2012 CPS-2 | Depends      | See the specific _Arcade and Neo Geo_ section elsewhere in this guide |
@@ -4973,7 +4973,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | ti99                  | Texas Instruments TI-99                        | MAME **(Standalone)**             | MAME Legacy **(Standalone)**      | Yes          | See the specific _Texas Instruments TI-99_ section elsewhere in this guide |
 | tic80                 | TIC-80 Fantasy Computer                        | TIC-80                            | TIC-80 **(Standalone)**           | No           | Single .tic file      |
 | to8                   | Thomson TO8                                    | Theodore                          |                                   |              |                                      |
-| triforce              | Namco-Sega-Nintendo Triforce                   | Triforce **(Standalone)** [LW]    |                                   | No           |                                      |
+| triforce              | Namco-Sega-Nintendo Triforce                   | Dolphin **(Standalone)**          | Triforce **(Standalone)** [LW] @  | No           |                                      |
 | trs-80                | Tandy TRS-80                                   | sdl2trs DOS Diskette **(Standalone)** [LW] | sdl2trs Bootable Diskette **(Standalone)** [LW],<br>sdl2trs CMD File **(Standalone)** [LW] | Yes          | See the specific _Tandy TRS-80_ section elsewhere in this guide |
 | type-x                | Taito Type X                                   | Wine **(Standalone)** [L],<br> _Shortcut or script_ [MW] | Proton **(Standalone)** [L],<br> _AppImage_ [L],<br> _Shortcut or script_ [L] | No          |                                      |
 | uzebox                | Uzebox Open Source Console                     | Uzem                              |                                   |              |                                      |
