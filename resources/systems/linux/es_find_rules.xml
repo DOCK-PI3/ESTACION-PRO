@@ -1392,6 +1392,10 @@
     </emulator>
     <emulator name="XENIA">
         <!-- Microsoft Xbox 360 emulator xenia -->
+        <rule type="systempath">
+            <entry>xenia</entry>
+            <entry>xenia_canary</entry>
+        </rule>
         <rule type="staticpath">
             <entry>~/Applications/xenia/xenia</entry>
             <entry>~/.local/share/applications/xenia/xenia</entry>
