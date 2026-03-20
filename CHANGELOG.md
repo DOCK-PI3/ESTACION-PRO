@@ -30,6 +30,8 @@
 * (Linux) Added support for the Flatpak release of VBA-M
 * (Linux) Added support for the Flatpak release of Ymir
 * (Linux) Added support for the repository/AUR release of azahar
+* (Linux) Added systempath find rules for xenia and xenia_canary
+* (Linux) Added staticpath find rules for the new pkgforge-dev AppImage filename for xenia canary
 * Added Dolphin standalone as the default emulator for the triforce system on Linux and Windows
 * Added Dolphin standalone as an alternative emulator for the consolearcade system
 * Added a j2me platform to the j2me system so that these games can be scraped using TheGamesDB
