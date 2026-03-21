@@ -19,9 +19,11 @@
 * (Android) Added support for the Microsoft Xbox 360 (xbox360) system using the aX360e emulator
 * (Android) Added SUPER3 standalone as the default emulator for the model3 system
 * (Android) Added PICO-8 standalone as the default emulator for the pico8 system
+* (Android) Added aPS3e Game Serial, aPS3e Directory and aPS3e ISO standalone as alternative emulators for the consolearcade system
 * (Android) Made it possible to run both Steam games and locally installed games using the GameHub Lite emulator entry
 * (Android) Added a find rule entry for the new package name for future GameHub Lite releases
 * (Android) Set the official Vita3K release as the primary find rule entry instead of the Vita3K ZX fork
+* (Android) Added the .ps3 file extension to the consolearcade system
 * (Android) Added the .pcgame file extension to the steam system
 * (Android) Added the .epic, .gog and .pcgame file extensions to the windows system
 * (Linux) Added Plastic standalone as an alternative emulator for the famicom and nes systems
@@ -32,6 +34,7 @@
 * (Linux) Added support for the repository/AUR release of azahar
 * (Linux) Added systempath find rules for xenia and xenia_canary
 * (Linux) Added staticpath find rules for the new pkgforge-dev AppImage filename for xenia canary
+* Added RPCS3 ISO standalone as an alternative emulator for the consolearcade and ps3 systems on Linux, macOS and Windows
 * Added Dolphin standalone as the default emulator for the triforce system on Linux and Windows
 * Added Dolphin standalone as an alternative emulator for the consolearcade system
 * Added a j2me platform to the j2me system so that these games can be scraped using TheGamesDB
@@ -39,6 +42,7 @@
 * Changed the launch parameter for EasyRPG Player standalone on Linux, macOS and Windows to support zipped games
 * Added the .bigpimg file extension to the atarijaguar and atarijaguarcd systems on Linux and Windows
 * Added the .7z and .zip file extensions to the apple2 system
+* Added the .iso file extension to the ps3 system
 * Added the .xiso file extension to the xbox system
 * (macOS) Added support for the Namco-Sega-Nintendo Triforce (triforce) system using the Dolphin emulator
 * (macOS) Added Supermodel standalone as the default emulator for the model3 system
