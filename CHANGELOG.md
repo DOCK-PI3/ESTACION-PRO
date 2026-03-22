@@ -54,6 +54,9 @@
 * The theme downloader will now use the bundled certificates on all platforms if built with the BUNDLED_CERTS option
 * Removed the obsolete and unsupported CEC functionality
 * Removed all specific configuration and code for the Raspberry Pi
+* Updated LunaSVG to commit b350c01cb09b48f1e894463dcb54d1b46d407162
+* Updated the MAME index files to include ROMs up to MAME version 0.286
+* Bundled the February 2026 release of the Mozilla TLS/SSL certificates
 
 ### Bug fixes
 
