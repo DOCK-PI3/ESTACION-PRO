@@ -45,6 +45,7 @@
 * Added the .iso file extension to the ps3 system
 * Added the .xiso file extension to the xbox system
 * (macOS) Added support for the Namco-Sega-Nintendo Triforce (triforce) system using the Dolphin emulator
+* (macOS) Added support for the Microsoft Xbox 360 (xbox360) system using the XeniOS emulator
 * (macOS) Added Supermodel standalone as the default emulator for the model3 system
 * (macOS) Added Supermodel standalone as an alternative emulator for the arcade and mame systems
 * (Linux) Changed to building the AppImages using appimagetool-uruntime provided by the PkgForge project
