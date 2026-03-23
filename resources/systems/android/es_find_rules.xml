@@ -299,6 +299,7 @@
         <!-- Nintendo DS and DSi emulator melonDS -->
         <rule type="androidpackage">
             <entry>me.magnum.melonds/.ui.emulator.EmulatorActivity</entry>
+            <entry>me.magnum.melondualds/me.magnum.melonds.ui.emulator.EmulatorActivity</entry>
         </rule>
     </emulator>
     <emulator name="MELONDS-NIGHTLY">
