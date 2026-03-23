@@ -22,6 +22,7 @@
 * (Android) Added aPS3e Game Serial, aPS3e Directory and aPS3e ISO standalone as alternative emulators for the consolearcade system
 * (Android) Made it possible to run both Steam games and locally installed games using the GameHub Lite emulator entry
 * (Android) Added a find rule entry for the new package name for future GameHub Lite releases
+* (Android) Added a find rule entry for the MelonDualDS fork of melonDS
 * (Android) Set the official Vita3K release as the primary find rule entry instead of the Vita3K ZX fork
 * (Android) Added the .ps3 file extension to the consolearcade system
 * (Android) Added the .pcgame file extension to the steam system
@@ -57,10 +58,13 @@
 * Updated LunaSVG to commit b350c01cb09b48f1e894463dcb54d1b46d407162
 * Updated the MAME index files to include ROMs up to MAME version 0.286
 * Bundled the February 2026 release of the Mozilla TLS/SSL certificates
+* Translation updates for all languages
 
 ### Bug fixes
 
 * (Android) The game importer would crash if attempting to open it without any import rules defined
+* Custom event scripts would not run if the path to the application data directory contained spaces
+* Some SVG files would not render if they contained Windows-style line breaks
 * The apple2gs system had two lowercase .7z extensions instead of one in lowercase and one in uppercase
 * The logo for the Sinclair ZX Spectrum Next (zxnext) system was missing for the Linear and Slate themes
 

@@ -491,9 +491,13 @@ https://play.google.com/store/apps/details?id=com.fms.mg
 
 ### melonDS
 
-This emulator can be installed from the Play store but it's quite buggy. Every time you add a new game to the ROM directory you need to start the emulator and manually refresh the game list or you won't be able to launch the game from ES-DE.
+This emulator can be installed from the Play store.
 
 https://play.google.com/store/apps/details?id=me.magnum.melonds
+
+There is also support for the following fork (MelonDualDS).
+
+https://github.com/SapphireRhodonite/melonDS-android/releases
 
 ### M64Plus FZ
 
