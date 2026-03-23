@@ -734,7 +734,7 @@
         <command label="SkyEmu (Standalone)">%EMULATOR_SKYEMU% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %ACTION%=android.intent.action.VIEW %DATA%=%ROMPROVIDER%</command>
         <command label="My OldBoy! (Standalone)">%EMULATOR_MY-OLDBOY% %ACTION%=android.intent.action.VIEW %DATA%=%ROMSAF%</command>
         <command label="Linkboy (Standalone)">%EMULATOR_LINKBOY% %ACTION%=android.intent.action.VIEW %DATA%=%ROMSAF%</command>
-        <command label="Pizza Boy GBC (Standalone)">%EMULATOR_PIZZA-BOY-GBC% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_rom_uri%=%ROM%</command>
+        <command label="Pizza Boy GBC (Standalone)">%EMULATOR_PIZZA-BOY-GBC% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_rom_uri%=%ROMSAF%</command>
         <platform>gb</platform>
         <theme>gb</theme>
     </system>
@@ -775,7 +775,7 @@
         <command label="SkyEmu (Standalone)">%EMULATOR_SKYEMU% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %ACTION%=android.intent.action.VIEW %DATA%=%ROMPROVIDER%</command>
         <command label="My OldBoy! (Standalone)">%EMULATOR_MY-OLDBOY% %ACTION%=android.intent.action.VIEW %DATA%=%ROMSAF%</command>
         <command label="Linkboy (Standalone)">%EMULATOR_LINKBOY% %ACTION%=android.intent.action.VIEW %DATA%=%ROMSAF%</command>
-        <command label="Pizza Boy GBC (Standalone)">%EMULATOR_PIZZA-BOY-GBC% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_rom_uri%=%ROM%</command>
+        <command label="Pizza Boy GBC (Standalone)">%EMULATOR_PIZZA-BOY-GBC% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_rom_uri%=%ROMSAF%</command>
         <platform>gbc</platform>
         <theme>gbc</theme>
     </system>
