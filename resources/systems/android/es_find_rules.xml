@@ -46,6 +46,7 @@
     <emulator name="AZAHAR">
         <!-- Nintendo 3DS emulator Azahar -->
         <rule type="androidpackage">
+            <entry>org.azahar_emu.azahar/org.citra.citra_emu.activities.EmulationActivity</entry>
             <entry>io.github.lime3ds.android/org.citra.citra_emu.activities.EmulationActivity</entry>
         </rule>
     </emulator>
