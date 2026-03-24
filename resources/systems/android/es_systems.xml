@@ -573,7 +573,7 @@
         <name>epic</name>
         <fullname>Epic Games Store</fullname>
         <path>%ROMPATH%/epic</path>
-        <extension>.app .APP</extension>
+        <extension>.app .APP .epic .pcgame</extension>
         <command label="Android Game">%ANDROIDAPP%=%FILEINJECT%</command>
         <platform>android</platform>
         <theme>epic</theme>
