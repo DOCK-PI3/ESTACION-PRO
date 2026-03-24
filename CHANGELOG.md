@@ -20,11 +20,18 @@
 * (Android) Added SUPER3 standalone as the default emulator for the model3 system
 * (Android) Added PICO-8 standalone as the default emulator for the pico8 system
 * (Android) Added aPS3e Game Serial, aPS3e Directory and aPS3e ISO standalone as alternative emulators for the consolearcade system
+* (Android) Added GameNative standalone as an alternative emulator for the epic system
+* (Android) Changed the launch command for GameNative for the steam system to make launching work with their new behavior
+* (Android) Added GameNative emulator entries for Steam, Epic, GOG and Custom games for the windows system
+* (Android) Removed the generic GameNative emulator entry from the windows system
 * (Android) Made it possible to run both Steam games and locally installed games using the GameHub Lite emulator entry
+* (Android) Added a find rule entry for the new package name for Azahar
 * (Android) Added a find rule entry for the new package name for future GameHub Lite releases
 * (Android) Added a find rule entry for the MelonDualDS fork of melonDS
 * (Android) Set the official Vita3K release as the primary find rule entry instead of the Vita3K ZX fork
+* (Android) Changed Pizza Boy GBC/C to use %ROMSAF% instead of %ROM% as the developer has changed the way games are launched from frontends
 * (Android) Added the .ps3 file extension to the consolearcade system
+* (Android) Added the .epic and .pcgame file extensions to the epic system
 * (Android) Added the .pcgame file extension to the steam system
 * (Android) Added the .epic, .gog and .pcgame file extensions to the windows system
 * (Linux) Added Plastic standalone as an alternative emulator for the famicom and nes systems
@@ -45,6 +52,7 @@
 * Added the .7z and .zip file extensions to the apple2 system
 * Added the .iso file extension to the ps3 system
 * Added the .xiso file extension to the xbox system
+* (macOS) Added support for the OpenBOR Game Engine (openbor) system
 * (macOS) Added support for the Namco-Sega-Nintendo Triforce (triforce) system using the Dolphin emulator
 * (macOS) Added support for the Microsoft Xbox 360 (xbox360) system using the XeniOS emulator
 * (macOS) Added Supermodel standalone as the default emulator for the model3 system
@@ -56,6 +64,8 @@
 * Removed the obsolete and unsupported CEC functionality
 * Removed all specific configuration and code for the Raspberry Pi
 * Updated LunaSVG to commit b350c01cb09b48f1e894463dcb54d1b46d407162
+* (macOS) Updated Ogg to 1.3.6
+* (macOS) Removed obsolete entries for the Vorbis and Opus encoders from the build scripts
 * Updated the MAME index files to include ROMs up to MAME version 0.286
 * Bundled the February 2026 release of the Mozilla TLS/SSL certificates
 * Translation updates for all languages

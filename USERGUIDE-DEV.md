@@ -2663,9 +2663,7 @@ Starting ES-DE should now show the _Super Mario 3D World_ entry for the Wii U sy
 
 ### OpenBOR
 
-The Open Beats of Rage (OpenBOR) game engine is available on Android, Windows and Linux. Unfortunately the macOS port seems to have been abandoned.
-
-These games are often but not always distributed together with the game engine as specific engine versions may be required for some games. The setup is slightly different between Windows and Linux so they are described separately here.
+These games are often but not always distributed together with the game engine as specific engine versions may be required for some games. The setup is slightly different between Windows, Linux and macOS so they are described separately here.
 
 **Android**
 
@@ -2678,7 +2676,7 @@ Here's an example setup where the ROMs directory is placed on internal storage:
 /storage/emulated/0/ROMs/openbor/He-Man.openbor
 ```
 
-**Windows:**
+**Windows**
 
 There are two different OpenBOR setup methods supported on Windows, either to place the game directories directly inside the ROMs\openbor directory or to place the games somewhere else on the filesystems and create .lnk shortcuts and place these inside the ROMs\openbor directory.
 
@@ -2714,7 +2712,7 @@ The second option on Windows is to unpack the game somewhere outside the ROMs di
 
 The drawback to using shortcuts is that they're not portable, if you change the location of your games, you will need to manually update the shortcut files as well.
 
-**Linux:**
+**Linux**
 
 On Linux you need to supply your own game engine binary as few (if any) games are distributed with the Linux release of OpenBOR. Download the .7z archive from the https://github.com/DCurrent/openbor repository. The file you want is _OpenBOR_3.0_6391.AppImage_ which is located inside the LINUX/OpenBOR folder. If you need an older engine for some specific game, then you may need to download an earlier release instead.
 
@@ -2745,6 +2743,20 @@ Starting ES-DE and launching the game should now work fine, but a further improv
 ```
 
 Doing this will make the game show up as if it was a single file inside ES-DE and it can be included in automatic collections, custom collections and so on.
+
+**macOS**
+
+OpenBOR for macOS can be downloaded from the following GitHub site:\
+https://github.com/sasus470/OpenBor_on_mac/releases
+
+The setup is different compared to Linux and Windows as there are no per-game engine builds, instead OpenBOR is installed like any regular application.
+
+To run the games you simply execute their .pak file, which can be placed in the root of the `~/ROMs/openbor` directory, here's an example setup:
+
+```
+~/ROMs/openbor/Double Dragon Gold.pak
+~/ROMs/openbor/He-Man.pak
+```
 
 ### PICO-8
 
@@ -4921,7 +4933,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | ngp                   | SNK Neo Geo Pocket                             | Beetle NeoPop                     | RACE,<br>Mednafen **(Standalone)**,<br>ares **(Standalone)** | No           | Single archive or ROM file           |
 | ngpc                  | SNK Neo Geo Pocket Color                       | Beetle NeoPop                     | RACE,<br>Mednafen **(Standalone)**,<br>ares **(Standalone)** | No           | Single archive or ROM file           |
 | odyssey2              | Magnavox Odyssey 2                             | O2EM                              | MAME - Current,<br>MAME **(Standalone)** | Yes          | Single archive or ROM file |
-| openbor               | OpenBOR Game Engine                            | OpenBOR **(Standalone)** [LW]     |                                   | No           | See the specific _OpenBOR_ section elsewhere in this guide |
+| openbor               | OpenBOR Game Engine                            | OpenBOR **(Standalone)**          |                                   | No           | See the specific _OpenBOR_ section elsewhere in this guide |
 | oric                  | Tangerine Computer Systems Oric                | MAME **(Standalone)**             | Oricutron **(Standalone)**        | Yes          | See the specific _Tangerine Computer Systems Oric_ section elsewhere in this guide |
 | palm                  | Palm OS                                        | Mu                                |                                   |              |                                      |
 | pc                    | IBM PC                                         | DOSBox-Pure                       | DOSBox Pure Unleashed **(Standalone)**,<br>DOSBox-Core,<br>DOSBox-SVN,<br>DOSBox-X **(Standalone)**,<br>DOSBox Staging **(Standalone)**,<br>DREAMM **(Standalone)**,<br>VirtualXT | No           | See the specific _DOS / PC_ section elsewhere in this guide |
