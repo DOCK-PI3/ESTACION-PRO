@@ -575,6 +575,7 @@
         <path>%ROMPATH%/epic</path>
         <extension>.app .APP .epic .pcgame</extension>
         <command label="Android Game">%ANDROIDAPP%=%FILEINJECT%</command>
+        <command label="GameNative (Standalone)">%EMULATOR_GAMENATIVE% %ACTION%=app.gamenative.LAUNCH_GAME %EXTRA_game_source%=EPIC %EXTRAINTEGER_app_id%=%INJECT%=%ROM%</command>
         <platform>android</platform>
         <theme>epic</theme>
     </system>
