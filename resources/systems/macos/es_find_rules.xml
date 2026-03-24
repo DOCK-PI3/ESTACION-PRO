@@ -245,6 +245,12 @@
             <entry>/usr/local/bin/mupen64plus</entry>
         </rule>
     </emulator>
+    <emulator name="OPENBOR">
+        <!-- OpenBOR game engine -->
+        <rule type="staticpath">
+            <entry>/Applications/OpenBOR Frontend Launcher.app/Contents/MacOS/OpenBORFrontend</entry>
+        </rule>
+    </emulator>
     <emulator name="OPENMSX">
         <!-- MSX home computer emulator openMSX -->
         <rule type="staticpath">

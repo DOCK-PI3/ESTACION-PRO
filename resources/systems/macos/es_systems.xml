@@ -1385,8 +1385,8 @@
         <name>openbor</name>
         <fullname>OpenBOR Game Engine</fullname>
         <path>%ROMPATH%/openbor</path>
-        <extension>.7z .7Z .zip .ZIP</extension>
-        <command>PLACEHOLDER %ROM%</command>
+        <extension>.pak .PAK</extension>
+        <command label="OpenBOR (Standalone)">%EMULATOR_OPENBOR% %INJECT%=%BASENAME%.commands --pak %ROM%</command>
         <platform>openbor</platform>
         <theme>openbor</theme>
     </system>
