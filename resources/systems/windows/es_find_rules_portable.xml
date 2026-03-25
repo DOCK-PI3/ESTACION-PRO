@@ -316,7 +316,7 @@
         </rule>
     </emulator>
     <emulator name="GEARGRAFX">
-        <!--  PC Engine/TurboGrafx-16 and SuperGrafx emulator Geargrafx -->
+        <!--  NEC PC Engine/TurboGrafx-16 and SuperGrafx emulator Geargrafx -->
         <rule type="staticpath">
             <entry>%ESPATH%\Emulators\Geargrafx\Geargrafx.exe</entry>
             <entry>%ESPATH%\..\Emulators\Geargrafx\Geargrafx.exe</entry>

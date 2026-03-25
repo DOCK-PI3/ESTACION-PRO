@@ -530,7 +530,7 @@
         </rule>
     </emulator>
     <emulator name="GEARGRAFX">
-        <!--  PC Engine/TurboGrafx-16 and SuperGrafx emulator Geargrafx -->
+        <!--  NEC PC Engine/TurboGrafx-16 and SuperGrafx emulator Geargrafx -->
         <rule type="systempath">
             <entry>geargrafx</entry>
         </rule>
