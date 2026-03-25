@@ -217,6 +217,12 @@
             <entry>/Applications/mandarine-qt.app/Contents/MacOS/mandarine-qt</entry>
         </rule>
     </emulator>
+    <emulator name="MARIANI">
+        <!-- Apple II emulator Mariani -->
+        <rule type="staticpath">
+            <entry>/Applications/Mariani.app/Contents/MacOS/Mariani</entry>
+        </rule>
+    </emulator>
     <emulator name="MEDNAFEN">
         <!-- Multi-system emulator Mednafen -->
         <rule type="staticpath">
