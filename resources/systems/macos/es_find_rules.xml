@@ -176,6 +176,12 @@
             <entry>/Applications/Gargoyle.app/Contents/MacOS/Gargoyle</entry>
         </rule>
     </emulator>
+    <emulator name="GEARGRAFX">
+        <!--  PC Engine/TurboGrafx-16 and SuperGrafx emulator Geargrafx -->
+        <rule type="staticpath">
+            <entry>/Applications/Geargrafx.app/Contents/MacOS/geargrafx</entry>
+        </rule>
+    </emulator>
     <emulator name="HATARI">
         <!-- Atari ST/STE/TT/Falcon emulator Hatari -->
         <rule type="staticpath">

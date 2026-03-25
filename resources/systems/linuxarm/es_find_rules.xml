@@ -272,6 +272,18 @@
             <entry>~/.local/share/flatpak/exports/bin/io.github.garglk.Gargoyle</entry>
         </rule>
     </emulator>
+    <emulator name="GEARGRAFX">
+        <!--  PC Engine/TurboGrafx-16 and SuperGrafx emulator Geargrafx -->
+        <rule type="systempath">
+            <entry>geargrafx</entry>
+        </rule>
+        <rule type="staticpath">
+            <entry>~/Applications/geargrafx/geargrafx</entry>
+            <entry>~/.local/share/applications/geargrafx/geargrafx</entry>
+            <entry>~/.local/bin/geargrafx/geargrafx</entry>
+            <entry>~/bin/geargrafx/geargrafx</entry>
+        </rule>
+    </emulator>
     <emulator name="GOPHER64">
         <!-- Nintendo 64 emulator Gopher64 -->
         <rule type="systempath">

@@ -88,6 +88,7 @@ Emulators\Future Pinball\BAM-OpenVR\FPLoader.exe
 Emulators\Future Pinball\BAM-OpenVR-OC\FPLoader.exe
 Emulators\gargoyle\gargoyle.exe
 Emulators\Gearboy\Gearboy.exe
+Emulators\Geargrafx\Geargrafx.exe
 Emulators\gopher2600\gopher2600_windows_amd64.exe
 Emulators\gopher64\gopher64-windows-x86_64.exe
 Emulators\hatari\hatari.exe

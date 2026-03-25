@@ -529,6 +529,18 @@
             <entry>~/bin/gearboy/gearboy</entry>
         </rule>
     </emulator>
+    <emulator name="GEARGRAFX">
+        <!--  PC Engine/TurboGrafx-16 and SuperGrafx emulator Geargrafx -->
+        <rule type="systempath">
+            <entry>geargrafx</entry>
+        </rule>
+        <rule type="staticpath">
+            <entry>~/Applications/geargrafx/geargrafx</entry>
+            <entry>~/.local/share/applications/geargrafx/geargrafx</entry>
+            <entry>~/.local/bin/geargrafx/geargrafx</entry>
+            <entry>~/bin/geargrafx/geargrafx</entry>
+        </rule>
+    </emulator>
     <emulator name="GOPHER2600">
         <!-- Atari 2600 emulator Gopher2600 -->
         <rule type="staticpath">

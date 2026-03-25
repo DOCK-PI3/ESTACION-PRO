@@ -315,6 +315,13 @@
             <entry>%ESPATH%\..\Emulators\Gearboy\Gearboy.exe</entry>
         </rule>
     </emulator>
+    <emulator name="GEARGRAFX">
+        <!--  PC Engine/TurboGrafx-16 and SuperGrafx emulator Geargrafx -->
+        <rule type="staticpath">
+            <entry>%ESPATH%\Emulators\Geargrafx\Geargrafx.exe</entry>
+            <entry>%ESPATH%\..\Emulators\Geargrafx\Geargrafx.exe</entry>
+        </rule>
+    </emulator>
     <emulator name="GOPHER2600">
         <!-- Atari 2600 emulator Gopher2600 -->
         <rule type="staticpath">
