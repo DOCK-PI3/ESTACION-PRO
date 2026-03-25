@@ -42,6 +42,8 @@
 * (Linux) Added support for the repository/AUR release of azahar
 * (Linux) Added systempath find rules for xenia and xenia_canary
 * (Linux) Added staticpath find rules for the new pkgforge-dev AppImage filename for xenia canary
+* Added Geargrafx standalone as an alternative emulator for the pcengine, pcenginecd, supergrafx, tg16 and tg-cd systems on Linux, macOS and Windows
+* Added the Geargrafx RetroArch core as an alternative emulator for the pcenginecd and tg-cd systems
 * Added RPCS3 ISO standalone as an alternative emulator for the consolearcade and ps3 systems on Linux, macOS and Windows
 * Added Dolphin standalone as the default emulator for the triforce system on Linux and Windows
 * Added Dolphin standalone as an alternative emulator for the consolearcade system
@@ -55,6 +57,7 @@
 * (macOS) Added support for the OpenBOR Game Engine (openbor) system
 * (macOS) Added support for the Namco-Sega-Nintendo Triforce (triforce) system using the Dolphin emulator
 * (macOS) Added support for the Microsoft Xbox 360 (xbox360) system using the XeniOS emulator
+* (macOS) Added Mariani standalone as the default emulator for the apple2 system
 * (macOS) Added Supermodel standalone as the default emulator for the model3 system
 * (macOS) Added Supermodel standalone as an alternative emulator for the arcade and mame systems
 * (Linux) Changed to building the AppImages using appimagetool-uruntime provided by the PkgForge project
