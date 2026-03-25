@@ -71,7 +71,7 @@ namespace Utils
 
         int runSuspendCommand()
         {
-#if defined(_APPLE__)
+#if defined(__APPLE__)
             return 0;
 #elif defined(_WIN64)
             return system("rundll32.exe powrprof.dll,SetSuspendState 0,1,0");
