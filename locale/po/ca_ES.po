@@ -1828,7 +1828,7 @@ msgid "ASIA"
 msgstr "ÀSIA"
 
 msgid "WORLD"
-msgstr "MUNDIAL"
+msgstr "GLOBAL"
 
 msgid "AUSTRALIA"
 msgstr "AUSTRÀLIA"
