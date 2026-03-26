@@ -132,6 +132,22 @@
             <entry>com.github.stenzek.duckstation/.EmulationActivity</entry>
         </rule>
     </emulator>
+    <emulator name="EDEN">
+        <!-- Nintendo Switch emulator Eden -->
+        <rule type="androidpackage">
+            <entry>dev.eden.eden_emulator/org.yuzu.yuzu_emu.activities.EmulationActivity</entry>
+            <entry>dev.legacy.eden_emulator/org.yuzu.yuzu_emu.activities.EmulationActivity</entry>
+            <entry>com.miHoYo.Yuanshen/org.yuzu.yuzu_emu.activities.EmulationActivity</entry>
+        </rule>
+    </emulator>
+    <emulator name="EDEN-NIGHTLY">
+        <!-- Nintendo Switch emulator Eden -->
+        <rule type="androidpackage">
+            <entry>dev.eden.eden_emulator.nightly/org.yuzu.yuzu_emu.activities.EmulationActivity</entry>
+            <entry>dev.legacy.eden_emulator.nightly/org.yuzu.yuzu_emu.activities.EmulationActivity</entry>
+            <entry>com.miHoYo.Yuanshen.nightly/org.yuzu.yuzu_emu.activities.EmulationActivity</entry>
+        </rule>
+    </emulator>
     <emulator name="EKA2L1">
         <!-- Symbian and Nokia N-Gage emulator EKA2L1 -->
         <rule type="androidpackage">

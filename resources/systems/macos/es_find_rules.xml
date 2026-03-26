@@ -139,6 +139,12 @@
             <entry>/usr/local/bin/easyrpg-player</entry>
         </rule>
     </emulator>
+    <emulator name="EDEN">
+        <!-- Nintendo Switch emulator Eden -->
+        <rule type="staticpath">
+            <entry>/Applications/eden.app/Contents/MacOS/eden</entry>
+        </rule>
+    </emulator>
     <emulator name="EKA2L1">
         <!-- Symbian and Nokia N-Gage emulator EKA2L1 -->
         <rule type="staticpath">

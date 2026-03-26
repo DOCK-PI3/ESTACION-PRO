@@ -74,6 +74,7 @@ Emulators\dreamm\dreamm.exe
 Emulators\duckstation\duckstation-qt-x64-ReleaseLTCG.exe
 Emulators\duckstation\duckstation-qt-x64-ReleaseLTCG-SSE2.exe
 Emulators\EasyRPG\Player.exe
+Emulators\eden\eden.exe
 Emulators\EKA2L1\eka2l1_qt.exe
 Emulators\fbneo\fbneo64.exe
 Emulators\fbneo\fbneo.exe

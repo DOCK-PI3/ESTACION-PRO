@@ -419,6 +419,18 @@
             <entry>~/.local/share/flatpak/exports/bin/org.easyrpg.player</entry>
         </rule>
     </emulator>
+    <emulator name="EDEN">
+        <!-- Nintendo Switch emulator Eden -->
+        <rule type="systempath">
+            <entry>eden</entry>
+        </rule>
+        <rule type="staticpath">
+            <entry>~/Applications/Eden*.AppImage</entry>
+            <entry>~/.local/share/applications/Eden*.AppImage</entry>
+            <entry>~/.local/bin/Eden*.AppImage</entry>
+            <entry>~/bin/Eden*.AppImage</entry>
+        </rule>
+    </emulator>
     <emulator name="EKA2L1">
         <!-- Symbian and Nokia N-Gage emulator EKA2L1 -->
         <rule type="systempath">
