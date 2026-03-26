@@ -35,6 +35,9 @@
             <entry>/usr/lib64/libretro</entry>
             <!-- Manjaro repository -->
             <entry>/usr/lib/libretro</entry>
+            <!-- NixOS and Nixpkgs repository -->
+            <entry>/run/current-system/sw/lib/retroarch/cores</entry>
+            <entry>~/.nix-profile/lib/retroarch/cores</entry>
         </rule>
     </core>
     <emulator name="ACE-DL">
