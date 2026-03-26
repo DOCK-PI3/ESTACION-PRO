@@ -42,6 +42,7 @@
 * (Linux) Added support for the repository/AUR release of azahar
 * (Linux) Added systempath find rules for xenia and xenia_canary
 * (Linux) Added staticpath find rules for the new pkgforge-dev AppImage filename for xenia canary
+* Added Eden standalone as the default emulator for the switch system
 * Added Geargrafx standalone as an alternative emulator for the pcengine, pcenginecd, supergrafx, tg16 and tg-cd systems on Linux, macOS and Windows
 * Added the Geargrafx RetroArch core as an alternative emulator for the pcenginecd and tg-cd systems
 * Added RPCS3 ISO standalone as an alternative emulator for the consolearcade and ps3 systems on Linux, macOS and Windows
@@ -51,7 +52,7 @@
 * Added KEGS standalone as an alternative emulator for the apple2gs system on Linux, macOS and Windows
 * Changed the launch parameter for EasyRPG Player standalone on Linux, macOS and Windows to support zipped games
 * Added the .bigpimg file extension to the atarijaguar and atarijaguarcd systems on Linux and Windows
-* Added the .7z and .zip file extensions to the apple2 system
+* Added the .7z and .zip file extensions to the apple2 and wasm systems
 * Added the .iso file extension to the ps3 system
 * Added the .xiso file extension to the xbox system
 * (macOS) Added support for the OpenBOR Game Engine (openbor) system
@@ -63,6 +64,8 @@
 * (Linux) Changed to building the AppImages using appimagetool-uruntime provided by the PkgForge project
 * (Linux) Changed the AppImage build scripts to use the bundled TLS/SSL certificates
 * (Linux) Added an AppImage build script for the AArch64 architecture
+* (Linux) Added RetroArch core find rule entries for NixOS and Nixpkgs
+* (linear-es-de) Added an OLED color scheme (thanks c-fan for the patch)
 * The theme downloader will now use the bundled certificates on all platforms if built with the BUNDLED_CERTS option
 * Removed the obsolete and unsupported CEC functionality
 * Removed all specific configuration and code for the Raspberry Pi
