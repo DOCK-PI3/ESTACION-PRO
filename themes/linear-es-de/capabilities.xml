@@ -89,6 +89,10 @@
         <label language="zh_TW">明亮</label>
     </colorScheme>
 
+    <colorScheme name="oled">
+        <label>OLED</label>
+    </colorScheme>
+
     <colorScheme name="nso">
         <label>NSO</label>
     </colorScheme>
