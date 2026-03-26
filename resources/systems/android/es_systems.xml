@@ -2027,7 +2027,7 @@
         <name>wasm4</name>
         <fullname>WASM-4 Fantasy Console</fullname>
         <path>%ROMPATH%/wasm4</path>
-        <extension>.wasm .WASM</extension>
+        <extension>.wasm .WASM .7z .7Z .zip .ZIP</extension>
         <command label="WASM-4">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=%EXTERNALDATA%/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=%INTERNALDATA%/%ANDROIDPACKAGE%/cores/wasm4_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <platform>wasm4</platform>
         <theme>wasm4</theme>
