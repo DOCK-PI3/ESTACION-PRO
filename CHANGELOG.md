@@ -16,6 +16,7 @@
 * Added scraper-start and scraper-end custom events for the multi-scraper
 * (Android) Added support for the Namco-Sega-Nintendo Triforce (triforce) system using the Dolphin emulator
 * (Android) Added support for the Microsoft Xbox (xbox) system using the X1 BOX emulator
+* (Android) Added hakuX standalone as an alternative emulator for the xbox system
 * (Android) Added support for the Microsoft Xbox 360 (xbox360) system using the aX360e emulator
 * (Android) Added SUPER3 standalone as the default emulator for the model3 system
 * (Android) Added PICO-8 standalone as the default emulator for the pico8 system
@@ -42,6 +43,7 @@
 * (Linux) Added support for the repository/AUR release of azahar
 * (Linux) Added systempath find rules for xenia and xenia_canary
 * (Linux) Added staticpath find rules for the new pkgforge-dev AppImage filename for xenia canary
+* Added the Azahar RetroArch core as the default emulator for the n3ds system
 * Added Eden standalone as the default emulator for the switch system
 * Added Geargrafx standalone as an alternative emulator for the pcengine, pcenginecd, supergrafx, tg16 and tg-cd systems on Linux, macOS and Windows
 * Added the Geargrafx RetroArch core as an alternative emulator for the pcenginecd and tg-cd systems
