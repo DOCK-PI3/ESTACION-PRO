@@ -687,17 +687,20 @@ Only the Microsoft Visual C++ (MSVC) compiler is supported on Windows. Although 
 Install Git for Windows: \
 https://gitforwindows.org
 
+You also need 7-Zip installed and the 7z.exe binary location added to your Path environment variable: \
+https://www.7-zip.org
+
 Download the Visual Studio Build Tools (choose Visual Studio Community edition): \
 https://visualstudio.microsoft.com/downloads
 
 During installation, choose the Desktop development with C++ workload with the following options:
 
 ```
-MSVC v143 - VS 2022 C++ x64/x86 build tools (Latest)
+MSVC Build Tools for x64/x86 (Latest)
 Just-In-Time debugger
 C++ CMake tools for Windows
 C++ AddressSanitizer
-Windows 10 SDK (10.0.20348.0)
+Windows 11 SDK (10.0.26100)
 ```
 
 The Windows SDK version is important, it has to be this precise version or some dependencies may not build correctly.

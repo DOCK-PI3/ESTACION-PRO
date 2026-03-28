@@ -43,10 +43,14 @@
 * (Linux) Added support for the repository/AUR release of azahar
 * (Linux) Added systempath find rules for xenia and xenia_canary
 * (Linux) Added staticpath find rules for the new pkgforge-dev AppImage filename for xenia canary
+* Added the AmiArcadia RetroArch core as the default emulator for the arcadia system
+* Added the JollyCV RetroArch core as an alternative emulator for the colecovision system
+* Added the JollyCV RetroArch core as the default emulator for the crvision system
 * Added the Azahar RetroArch core as the default emulator for the n3ds system
 * Added Eden standalone as the default emulator for the switch system
 * Added Geargrafx standalone as an alternative emulator for the pcengine, pcenginecd, supergrafx, tg16 and tg-cd systems on Linux, macOS and Windows
 * Added the Geargrafx RetroArch core as an alternative emulator for the pcenginecd and tg-cd systems
+* Added the Gearlynx RetroArch core as an alternative emulator for the atarilynx system
 * Added RPCS3 ISO standalone as an alternative emulator for the consolearcade and ps3 systems on Linux, macOS and Windows
 * Added Dolphin standalone as the default emulator for the triforce system on Linux and Windows
 * Added Dolphin standalone as an alternative emulator for the consolearcade system
@@ -55,7 +59,9 @@
 * Changed the launch parameter for EasyRPG Player standalone on Linux, macOS and Windows to support zipped games
 * Added the .bigpimg file extension to the atarijaguar and atarijaguarcd systems on Linux and Windows
 * Added the .7z and .zip file extensions to the apple2 and wasm systems
+* Added the .tvc file extension to the arcadia system
 * Added the .iso file extension to the ps3 system
+* Added the .myv file extension to the colecovision system
 * Added the .xiso file extension to the xbox system
 * (macOS) Added support for the OpenBOR Game Engine (openbor) system
 * (macOS) Added support for the Namco-Sega-Nintendo Triforce (triforce) system using the Dolphin emulator
@@ -76,6 +82,7 @@
 * (macOS) Removed obsolete entries for the Vorbis and Opus encoders from the build scripts
 * Updated the MAME index files to include ROMs up to MAME version 0.286
 * Bundled the February 2026 release of the Mozilla TLS/SSL certificates
+* (Windows) Updated OpenSSL to 3.6.1
 * Translation updates for all languages
 
 ### Bug fixes
