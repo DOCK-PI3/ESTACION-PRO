@@ -155,7 +155,8 @@
         <name>arcadia</name>
         <fullname>Emerson Arcadia 2001</fullname>
         <path>%ROMPATH%/arcadia</path>
-        <extension>.bin .BIN .7z .7Z .zip .ZIP</extension>
+        <extension>.bin .BIN .tvc .TVC .7z .7Z .zip .ZIP</extension>
+        <command label="AmiArcadia">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=%EXTERNALDATA%/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=%INTERNALDATA%/%ANDROIDPACKAGE%/cores/amiarcadia_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="DroidArcadia">%EMULATOR_DROIDARCADIA% %MIMETYPE%=application/zip %DATA%=%ROMPROVIDER%</command>
         <command label="MAME4droid Current (Standalone)">%EMULATOR_MAME4DROID-CURRENT% %ACTION%=android.intent.action.VIEW %EXTRA_cli_params%="-rompath '%GAMEDIRRAW%;%ROMPATHRAW%/arcadia' -cart '%ROMRAW%'" %DATA%=arcadia</command>
         <platform>arcadia</platform>

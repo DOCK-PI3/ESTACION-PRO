@@ -175,7 +175,8 @@
         <name>arcadia</name>
         <fullname>Emerson Arcadia 2001</fullname>
         <path>%ROMPATH%\arcadia</path>
-        <extension>.bin .BIN .7z .7Z .zip .ZIP</extension>
+        <extension>.bin .BIN .tvc .TVC .7z .7Z .zip .ZIP</extension>
+        <command label="AmiArcadia">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\amiarcadia_libretro.dll %ROM%</command>
         <command label="MAME - Current">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\mame_libretro.dll "arcadia -rompath \"%GAMEDIRRAW%;%ROMPATH%\arcadia\" -cart \"%ROMRAW%\""</command>
         <command label="MAME (Standalone)">%HIDEWINDOW% %STARTDIR%=%EMUDIR% %EMULATOR_MAME% -rompath %GAMEDIR%\;%ROMPATH%\arcadia arcadia -cart %ROM%</command>
         <command label="WinArcadia (Standalone)">%EMULATOR_WINARCADIA% %ROM%</command>
