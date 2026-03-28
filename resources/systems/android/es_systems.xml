@@ -261,6 +261,7 @@
         <extension>.lnx .LNX .lyx .LYX .o .O .7z .7Z .zip .ZIP</extension>
         <command label="Handy">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=%EXTERNALDATA%/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=%INTERNALDATA%/%ANDROIDPACKAGE%/cores/handy_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="Beetle Lynx">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=%EXTERNALDATA%/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=%INTERNALDATA%/%ANDROIDPACKAGE%/cores/mednafen_lynx_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="Gearlynx">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=%EXTERNALDATA%/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=%INTERNALDATA%/%ANDROIDPACKAGE%/cores/gearlynx_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="Holani">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=%EXTERNALDATA%/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=%INTERNALDATA%/%ANDROIDPACKAGE%/cores/holani_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="Lynx.emu (Standalone)">%EMULATOR_LYNX-EMU% %DATA%=%ROMPROVIDER%</command>
         <platform>atarilynx</platform>
