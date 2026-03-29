@@ -1585,6 +1585,7 @@
         <command label="Shortcut or script">%ENABLESHORTCUTS% %EMULATOR_OS-SHELL% %ROM%</command>
         <command label="ECWolf (Wolfenstein 3D)">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/ecwolf_libretro.so %ROM%</command>
         <command label="CannonBall (OutRun)">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/cannonball_libretro.so %ROM%</command>
+        <command label="Craft (Minecraft)">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/craft_libretro.so %INJECT%=nothing</command>
         <command label="Mr.Boom (Bomberman)">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/mrboom_libretro.so %INJECT%=nothing</command>
         <command label="NXEngine (Cave Story)">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/nxengine_libretro.so %ROM%</command>
         <command label="drs (Cave Story)">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/doukutsu_rs_libretro.so %ROM%</command>

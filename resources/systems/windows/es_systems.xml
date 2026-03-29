@@ -1635,6 +1635,7 @@
         <command label="Shortcut or script">%HIDEWINDOW% %ESCAPESPECIALS% %EMULATOR_OS-SHELL% /C %ROM%</command>
         <command label="ECWolf (Wolfenstein 3D)">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\ecwolf_libretro.dll %ROM%</command>
         <command label="CannonBall (OutRun)">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\cannonball_libretro.dll %ROM%</command>
+        <command label="Craft (Minecraft)">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\craft_libretro.dll %INJECT%=nothing</command>
         <command label="Mr.Boom (Bomberman)">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\mrboom_libretro.dll %INJECT%=nothing</command>
         <command label="NXEngine (Cave Story)">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\nxengine_libretro.dll %ROM%</command>
         <command label="drs (Cave Story)">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\doukutsu_rs_libretro.dll %ROM%</command>
