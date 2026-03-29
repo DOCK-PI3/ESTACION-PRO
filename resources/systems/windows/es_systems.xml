@@ -900,6 +900,7 @@
         <command label="PicoDrive">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\picodrive_libretro.dll %ROM%</command>
         <command label="BlastEm">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\blastem_libretro.dll %ROM%</command>
         <command label="BlastEm (Standalone)">%EMULATOR_BLASTEM% -m gen %ROM%</command>
+        <command label="ClownMDEmu">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\clownmdemu_libretro.dll %ROM%</command>
         <command label="Mednafen (Standalone)">%EMULATOR_MEDNAFEN% -force_module md %ROM%</command>
         <command label="ares (Standalone)">%EMULATOR_ARES% --fullscreen --system "Mega Drive" %ROM%</command>
         <command label="jgenesis (Standalone)">%EMULATOR_JGENESIS% --file-path %ROM%</command>
@@ -1104,6 +1105,7 @@
         <command label="Genesis Plus GX">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\genesis_plus_gx_libretro.dll %ROM%</command>
         <command label="Genesis Plus GX Wide">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\genesis_plus_gx_wide_libretro.dll %ROM%</command>
         <command label="PicoDrive">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\picodrive_libretro.dll %ROM%</command>
+        <command label="ClownMDEmu">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\clownmdemu_libretro.dll %ROM%</command>
         <command label="ares (Standalone)">%EMULATOR_ARES% --fullscreen --system "Mega CD" %ROM%</command>
         <command label="jgenesis (Standalone)">%EMULATOR_JGENESIS% --file-path %ROM%</command>
         <platform>segacd</platform>
@@ -1117,6 +1119,7 @@
         <command label="Genesis Plus GX">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\genesis_plus_gx_libretro.dll %ROM%</command>
         <command label="Genesis Plus GX Wide">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\genesis_plus_gx_wide_libretro.dll %ROM%</command>
         <command label="PicoDrive">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\picodrive_libretro.dll %ROM%</command>
+        <command label="ClownMDEmu">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\clownmdemu_libretro.dll %ROM%</command>
         <command label="ares (Standalone)">%EMULATOR_ARES% --fullscreen --system "Mega CD" %ROM%</command>
         <command label="jgenesis (Standalone)">%EMULATOR_JGENESIS% --file-path %ROM%</command>
         <platform>segacd</platform>
@@ -1132,6 +1135,7 @@
         <command label="PicoDrive">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\picodrive_libretro.dll %ROM%</command>
         <command label="BlastEm">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\blastem_libretro.dll %ROM%</command>
         <command label="BlastEm (Standalone)">%EMULATOR_BLASTEM% -m gen %ROM%</command>
+        <command label="ClownMDEmu">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\clownmdemu_libretro.dll %ROM%</command>
         <command label="Mednafen (Standalone)">%EMULATOR_MEDNAFEN% -force_module md %ROM%</command>
         <command label="ares (Standalone)">%EMULATOR_ARES% --fullscreen --system "Mega Drive" %ROM%</command>
         <command label="jgenesis (Standalone)">%EMULATOR_JGENESIS% --file-path %ROM%</command>
@@ -1148,6 +1152,7 @@
         <command label="PicoDrive">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\picodrive_libretro.dll %ROM%</command>
         <command label="BlastEm">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\blastem_libretro.dll %ROM%</command>
         <command label="BlastEm (Standalone)">%EMULATOR_BLASTEM% -m gen %ROM%</command>
+        <command label="ClownMDEmu">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\clownmdemu_libretro.dll %ROM%</command>
         <command label="Mednafen (Standalone)">%EMULATOR_MEDNAFEN% -force_module md %ROM%</command>
         <command label="ares (Standalone)">%EMULATOR_ARES% --fullscreen --system "Mega Drive" %ROM%</command>
         <command label="jgenesis (Standalone)">%EMULATOR_JGENESIS% --file-path %ROM%</command>
@@ -1858,6 +1863,7 @@
         <command label="Genesis Plus GX">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\genesis_plus_gx_libretro.dll %ROM%</command>
         <command label="Genesis Plus GX Wide">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\genesis_plus_gx_wide_libretro.dll %ROM%</command>
         <command label="PicoDrive">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\picodrive_libretro.dll %ROM%</command>
+        <command label="ClownMDEmu">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\clownmdemu_libretro.dll %ROM%</command>
         <command label="ares (Standalone)">%EMULATOR_ARES% --fullscreen --system "Mega CD" %ROM%</command>
         <command label="jgenesis (Standalone)">%EMULATOR_JGENESIS% --file-path %ROM%</command>
         <platform>segacd</platform>
