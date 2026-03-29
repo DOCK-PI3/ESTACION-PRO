@@ -1292,6 +1292,7 @@
         <command label="melonDS DS">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/melondsds_libretro.dylib %ROM%</command>
         <command label="melonDS">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/melonds_libretro.dylib %ROM%</command>
         <command label="melonDS (Standalone)">%EMULATOR_MELONDS% -f %ROM%</command>
+        <command label="SkyEmu">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/skyemu_libretro.dylib %ROM%</command>
         <command label="SkyEmu (Standalone)">%EMULATOR_SKYEMU% %ROM%</command>
         <platform>nds</platform>
         <theme>nds</theme>

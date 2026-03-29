@@ -1290,6 +1290,7 @@
         <command label="DeSmuME 2015">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/desmume2015_libretro.so %ROM%</command>
         <command label="DeSmuME (Standalone)">%EMULATOR_DESMUME% %ROM%</command>
         <command label="NooDS">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/noods_libretro.so %ROM%</command>
+        <command label="SkyEmu">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/skyemu_libretro.so %ROM%</command>
         <platform>nds</platform>
         <theme>nds</theme>
     </system>

@@ -1372,6 +1372,7 @@
         <command label="DeSmuME 2015">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\desmume2015_libretro.dll %ROM%</command>
         <command label="NooDS">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\noods_libretro.dll %ROM%</command>
         <command label="NooDS (Standalone)">%STARTDIR%=%EMUDIR% %EMULATOR_NOODS% %ROM%</command>
+        <command label="SkyEmu">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\skyemu_libretro.dll %ROM%</command>
         <command label="SkyEmu (Standalone)">%EMULATOR_SKYEMU% %ROM%</command>
         <platform>nds</platform>
         <theme>nds</theme>

@@ -1325,6 +1325,7 @@
         <command label="DeSmuME (Standalone)">%EMULATOR_DESMUME% %ROM%</command>
         <command label="NooDS">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/noods_libretro.so %ROM%</command>
         <command label="NooDS (Standalone)">%EMULATOR_NOODS% %ROM%</command>
+        <command label="SkyEmu">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/skyemu_libretro.so %ROM%</command>
         <command label="SkyEmu (Standalone)">%EMULATOR_SKYEMU% %ROM%</command>
         <platform>nds</platform>
         <theme>nds</theme>
