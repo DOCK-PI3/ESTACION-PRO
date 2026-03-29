@@ -772,7 +772,7 @@
         <name>gb</name>
         <fullname>Nintendo Game Boy</fullname>
         <path>%ROMPATH%/gb</path>
-        <extension>.bs .BS .cgb .CGB .dmg .DMG .gb .GB .gbc .GBC .sgb .SGB .sfc .SFC .smc .SMC .7z .7Z .zip .ZIP</extension>
+        <extension>.bs .BS .cgb .CGB .dmg .DMG .gb .GB .gbc .GBC .gbx .GBX .sgb .SGB .sfc .SFC .smc .SMC .7z .7Z .zip .ZIP</extension>
         <command label="Gambatte">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/gambatte_libretro.so %ROM%</command>
         <command label="SameBoy">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/sameboy_libretro.so %ROM%</command>
         <command label="SameBoy (Standalone)">%EMULATOR_SAMEBOY% -f %ROM%</command>
@@ -786,6 +786,7 @@
         <command label="mGBA (Standalone)">%EMULATOR_MGBA% -f %ROM%</command>
         <command label="VBA-M">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/vbam_libretro.so %ROM%</command>
         <command label="VBA-M (Standalone)">%EMULATOR_VBA-M% -f %ROM%</command>
+        <command label="SkyEmu">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/skyemu_libretro.so %ROM%</command>
         <command label="Mednafen (Standalone)">%EMULATOR_MEDNAFEN% -force_module gb %ROM%</command>
         <command label="ares (Standalone)">%EMULATOR_ARES% --fullscreen --system "Game Boy" %ROM%</command>
         <platform>gb</platform>
