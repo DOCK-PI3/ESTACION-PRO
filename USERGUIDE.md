@@ -428,6 +428,12 @@ This adds frontend music to ES-DE on Windows (built-in music support is on the r
 
 https://github.com/Naprosnia/ES-DE-Background-Music-for-Windows
 
+**ES-DE Music Launcher**
+
+A desktop application that plays background music while you browse your game library in ES-DE, available for Linux and Windows.
+
+https://github.com/cesar-rgon/es-de-music-launcher
+
 **CleanReturn for ES-DE** _(Windows only)_
 
 These scripts add more seamless game launching when using for instance Steam or Epic Games Launcher.

@@ -22,6 +22,7 @@
 * (Android) Added PICO-8 standalone as the default emulator for the pico8 system
 * (Android) Added aPS3e Game Serial, aPS3e Directory and aPS3e ISO standalone as alternative emulators for the consolearcade system
 * (Android) Added GameNative standalone as an alternative emulator for the epic system
+* (Android) Added the Boom 3 RetroArch core as an alternative emulator for the doom system
 * (Android) Changed the launch command for GameNative for the steam system to make launching work with their new behavior
 * (Android) Added GameNative emulator entries for Steam, Epic, GOG and Custom games for the windows system
 * (Android) Removed the generic GameNative emulator entry from the windows system
@@ -32,6 +33,7 @@
 * (Android) Set the official Vita3K release as the primary find rule entry instead of the Vita3K ZX fork
 * (Android) Changed Pizza Boy GBC/C to use %ROMSAF% instead of %ROM% as the developer has changed the way games are launched from frontends
 * (Android) Added the .ps3 file extension to the consolearcade system
+* (Android) Added the .pk4 file extension to the doom system
 * (Android) Added the .epic and .pcgame file extensions to the epic system
 * (Android) Added the .pcgame file extension to the steam system
 * (Android) Added the .epic, .gog and .pcgame file extensions to the windows system
@@ -43,10 +45,13 @@
 * (Linux) Added support for the repository/AUR release of azahar
 * (Linux) Added systempath find rules for xenia and xenia_canary
 * (Linux) Added staticpath find rules for the new pkgforge-dev AppImage filename for xenia canary
+* Added the ClownMDEmu RetroArch core as an alternative emulator for the genesis, megacd, megacdjp, megadrive, megadrivejp and segacd systems
+* Added the SkyEmu RetroArch core as an alternative emulator for the gb, gba, gbc and nds systems
 * Added the AmiArcadia RetroArch core as the default emulator for the arcadia system
 * Added the JollyCV RetroArch core as an alternative emulator for the colecovision system
 * Added the JollyCV RetroArch core as the default emulator for the crvision system
 * Added the Azahar RetroArch core as the default emulator for the n3ds system
+* Added the Craft (Minecraft) RetroArch core as an alternative emulator for the ports system
 * Added Eden standalone as the default emulator for the switch system
 * Added Geargrafx standalone as an alternative emulator for the pcengine, pcenginecd, supergrafx, tg16 and tg-cd systems on Linux, macOS and Windows
 * Added the Geargrafx RetroArch core as an alternative emulator for the pcenginecd and tg-cd systems
@@ -58,6 +63,7 @@
 * Added KEGS standalone as an alternative emulator for the apple2gs system on Linux, macOS and Windows
 * Changed the launch parameter for EasyRPG Player standalone on Linux, macOS and Windows to support zipped games
 * Added the .bigpimg file extension to the atarijaguar and atarijaguarcd systems on Linux and Windows
+* Added the .gbx file extension to the gb, gba and gbc systems
 * Added the .7z and .zip file extensions to the apple2 and wasm systems
 * Added the .tvc file extension to the arcadia system
 * Added the .iso file extension to the ps3 system
