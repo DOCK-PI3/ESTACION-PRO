@@ -504,8 +504,9 @@
         <name>doom</name>
         <fullname>Doom</fullname>
         <path>%ROMPATH%/doom</path>
-        <extension>.iwad .IWAD .pwad .PWAD .wad .WAD</extension>
+        <extension>.iwad .IWAD .pk4 .PK4 .pwad .PWAD .wad .WAD</extension>
         <command label="PrBoom">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=%EXTERNALDATA%/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=%INTERNALDATA%/%ANDROIDPACKAGE%/cores/prboom_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="Boom 3">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=%EXTERNALDATA%/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=%INTERNALDATA%/%ANDROIDPACKAGE%/cores/boom3_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <platform>pc, pcwindows</platform>
         <theme>doom</theme>
     </system>
