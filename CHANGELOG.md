@@ -14,7 +14,7 @@
 * Added translations for Vietnamese (vi_VN)
 * Added North America as an additional ScreenScraper region
 * Added scraper-start and scraper-end custom events for the multi-scraper
-* (Android) Added support for the Namco-Sega-Nintendo Triforce (triforce) system using the Dolphin emulator
+* (Android) Added support for the Namco-Sega-Nintendo Triforce (triforce) system using the Dolphin RetroArch core
 * (Android) Added support for the Microsoft Xbox (xbox) system using the X1 BOX emulator
 * (Android) Added hakuX standalone as an alternative emulator for the xbox system
 * (Android) Added support for the Microsoft Xbox 360 (xbox360) system using the aX360e emulator
@@ -49,7 +49,11 @@
 * Added the SkyEmu RetroArch core as an alternative emulator for the gb, gba, gbc and nds systems
 * Added the AmiArcadia RetroArch core as the default emulator for the arcadia system
 * Added the JollyCV RetroArch core as an alternative emulator for the colecovision system
+* Added the Dolphin RetroArch core as an alternative emulator for the consolearcade system
 * Added the JollyCV RetroArch core as the default emulator for the crvision system
+* Added the Dolphin RetroArch core as the default emulator for the triforce system on Linux and Windows
+* Added Dolphin standalone as an alternative emulator for the triforce system
+* Added the Mini vMac RetroArch core as an alternative emulator for the macintosh system
 * Added the Azahar RetroArch core as the default emulator for the n3ds system
 * Added the Craft (Minecraft) RetroArch core as an alternative emulator for the ports system
 * Added Eden standalone as the default emulator for the switch system
@@ -57,8 +61,8 @@
 * Added the Geargrafx RetroArch core as an alternative emulator for the pcenginecd and tg-cd systems
 * Added the Gearlynx RetroArch core as an alternative emulator for the atarilynx system
 * Added RPCS3 ISO standalone as an alternative emulator for the consolearcade and ps3 systems on Linux, macOS and Windows
-* Added Dolphin standalone as the default emulator for the triforce system on Linux and Windows
 * Added Dolphin standalone as an alternative emulator for the consolearcade system
+* Added Mesen standalone as an alternative emulator for the gba system on Linux and Windows
 * Added a j2me platform to the j2me system so that these games can be scraped using TheGamesDB
 * Added KEGS standalone as an alternative emulator for the apple2gs system on Linux, macOS and Windows
 * Changed the launch parameter for EasyRPG Player standalone on Linux, macOS and Windows to support zipped games
@@ -68,10 +72,13 @@
 * Added the .tvc file extension to the arcadia system
 * Added the .iso file extension to the ps3 system
 * Added the .myv file extension to the colecovision system
+* Added the .img file extension to the macintosh system
 * Added the .xiso file extension to the xbox system
 * (macOS) Added support for the OpenBOR Game Engine (openbor) system
-* (macOS) Added support for the Namco-Sega-Nintendo Triforce (triforce) system using the Dolphin emulator
+* (macOS) Added support for the Namco-Sega-Nintendo Triforce (triforce) system using the Dolphin RetroArch core
 * (macOS) Added support for the Microsoft Xbox 360 (xbox360) system using the XeniOS emulator
+* (macOS) Added the YabaSanshiro RetroArch core as an alternative emulator for the saturn and saturnjp systems
+* (macOS) Added the vitaQuake 3 RetroArch core as an alternative emulator for the quake system
 * (macOS) Added Mariani standalone as the default emulator for the apple2 system
 * (macOS) Added Supermodel standalone as the default emulator for the model3 system
 * (macOS) Added Supermodel standalone as an alternative emulator for the arcade and mame systems
