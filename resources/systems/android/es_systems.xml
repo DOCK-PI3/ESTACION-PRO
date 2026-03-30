@@ -393,6 +393,7 @@
         <command label="aPS3e Game Serial (Standalone)">%EMULATOR_APS3E% %ACTION%=aenu.intent.action.APS3E %EXTRA_game_dir%=%EXTERNALDATA%/Android/data/%ANDROIDPACKAGE%/files/aps3e/config/dev_hdd0/game/%INJECT%=%BASENAME%.ps3</command>
         <command label="aPS3e Directory (Standalone)">%EMULATOR_APS3E% %ACTION%=aenu.intent.action.APS3E %EXTRA_game_dir%=%ROM%</command>
         <command label="aPS3e ISO (Standalone)">%EMULATOR_APS3E% %ACTION%=aenu.intent.action.APS3E %EXTRA_iso_uri%=%ROMSAF%</command>
+        <command label="Dolphin">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=%EXTERNALDATA%/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=%INTERNALDATA%/%ANDROIDPACKAGE%/cores/dolphin_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="Dolphin (Standalone)">%EMULATOR_DOLPHIN% %ACTION%=android.intent.action.MAIN %CATEGORY%=android.intent.category.LEANBACK_LAUNCHER %EXTRA_AutoStartFile%=%ROMSAF%</command>
         <platform>arcade</platform>
         <theme>consolearcade</theme>
