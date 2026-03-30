@@ -917,11 +917,12 @@
         <name>macintosh</name>
         <fullname>Apple Macintosh</fullname>
         <path>%ROMPATH%/macintosh</path>
-        <extension>.dsk .DSK</extension>
+        <extension>.dsk .DSK .img .IMG</extension>
         <command label="MAME4droid Current Mac SE Bootable (Standalone)">%EMULATOR_MAME4DROID-CURRENT% %ACTION%=android.intent.action.VIEW %EXTRA_cli_params%="-rompath '%GAMEDIRRAW%;%ROMPATHRAW%/macintosh' -flop1 '%ROMRAW%'" %DATA%=macse</command>
         <command label="MAME4droid Current Mac SE Boot Disk (Standalone)">%EMULATOR_MAME4DROID-CURRENT% %ACTION%=android.intent.action.VIEW %EXTRA_cli_params%="-rompath '%GAMEDIRRAW%;%ROMPATHRAW%/macintosh' -flop1 %GAMEDIRRAW%/boot.dsk -flop2 '%ROMRAW%'" %DATA%=macse</command>
         <command label="MAME4droid Current Mac Plus Bootable (Standalone)">%EMULATOR_MAME4DROID-CURRENT% %ACTION%=android.intent.action.VIEW %EXTRA_cli_params%="-rompath '%GAMEDIRRAW%;%ROMPATHRAW%/macintosh' -flop1 '%ROMRAW%'" %DATA%=macplus</command>
         <command label="MAME4droid Current Mac Plus Boot Disk (Standalone)">%EMULATOR_MAME4DROID-CURRENT% %ACTION%=android.intent.action.VIEW %EXTRA_cli_params%="-rompath '%GAMEDIRRAW%;%ROMPATHRAW%/macintosh' -flop1 %GAMEDIRRAW%/boot.dsk -flop2 '%ROMRAW%'" %DATA%=macplus</command>
+        <command label="Mini vMac">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=%EXTERNALDATA%/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=%INTERNALDATA%/%ANDROIDPACKAGE%/cores/minivmac_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <platform>macintosh</platform>
         <theme>macintosh</theme>
     </system>
