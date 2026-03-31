@@ -220,6 +220,12 @@
             <entry>com.rfandango.haku_x/.LauncherActivity</entry>
         </rule>
     </emulator>
+    <emulator name="IDTECH4A++">
+        <!-- idTech game engine collection idTech4A++ -->
+        <rule type="androidpackage">
+            <entry>com.karin.idTech4Amm/com.n0n3m4.q3e.Q3EMain</entry>
+        </rule>
+    </emulator>
     <emulator name="INES">
         <!-- Nintendo NES and Famicom emulator iNES -->
         <rule type="androidpackage">

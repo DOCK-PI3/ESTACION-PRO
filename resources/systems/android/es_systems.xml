@@ -505,9 +505,10 @@
         <name>doom</name>
         <fullname>Doom</fullname>
         <path>%ROMPATH%/doom</path>
-        <extension>.iwad .IWAD .pk4 .PK4 .pwad .PWAD .wad .WAD</extension>
+        <extension>.idtech .IDTECH .iwad .IWAD .pk4 .PK4 .pwad .PWAD .wad .WAD</extension>
         <command label="PrBoom">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=%EXTERNALDATA%/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=%INTERNALDATA%/%ANDROIDPACKAGE%/cores/prboom_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="Boom 3">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=%EXTERNALDATA%/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=%INTERNALDATA%/%ANDROIDPACKAGE%/cores/boom3_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="idTech4A++ (Standalone)">%EMULATOR_IDTECH4A++% %ACTIVITY_CLEAR_TASK% %EXTRA_game%=%INJECT%=%ROM% %EXTRA_command%=%INJECT%=%BASENAME%.commands</command>
         <platform>pc, pcwindows</platform>
         <theme>doom</theme>
     </system>
@@ -1479,7 +1480,7 @@
         <name>ports</name>
         <fullname>Ports</fullname>
         <path>%ROMPATH%/ports</path>
-        <extension>.exe .EXE .game .GAME .phd .PHD .psx .PSX</extension>
+        <extension>.idtech .IDTECH .exe .EXE .game .GAME .phd .PHD .psx .PSX</extension>
         <command label="ECWolf (Wolfenstein 3D)">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=%EXTERNALDATA%/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=%INTERNALDATA%/%ANDROIDPACKAGE%/cores/ecwolf_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="CannonBall (OutRun)">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=%EXTERNALDATA%/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=%INTERNALDATA%/%ANDROIDPACKAGE%/cores/cannonball_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="Craft (Minecraft)">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=%EXTERNALDATA%/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=%INTERNALDATA%/%ANDROIDPACKAGE%/cores/craft_libretro_android.so</command>
@@ -1488,6 +1489,7 @@
         <command label="drs (Cave Story)">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=%EXTERNALDATA%/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=%INTERNALDATA%/%ANDROIDPACKAGE%/cores/doukutsu_rs_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="OpenLara (Tomb Raider)">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=%EXTERNALDATA%/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=%INTERNALDATA%/%ANDROIDPACKAGE%/cores/openlara_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="Super Bros War">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=%EXTERNALDATA%/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=%INTERNALDATA%/%ANDROIDPACKAGE%/cores/superbroswar_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="idTech4A++ (Standalone)">%EMULATOR_IDTECH4A++% %ACTIVITY_CLEAR_TASK% %EXTRA_game%=%INJECT%=%ROM% %EXTRA_command%=%INJECT%=%BASENAME%.commands</command>
         <platform>pc, pcwindows</platform>
         <theme>ports</theme>
     </system>
@@ -1570,12 +1572,13 @@
         <name>quake</name>
         <fullname>Quake</fullname>
         <path>%ROMPATH%/quake</path>
-        <extension>.pak .PAK .pk3 .PK3</extension>
+        <extension>.idtech .IDTECH .pak .PAK .pk3 .PK3</extension>
         <command label="TyrQuake">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=%EXTERNALDATA%/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=%INTERNALDATA%/%ANDROIDPACKAGE%/cores/tyrquake_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="vitaQuake 2">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=%EXTERNALDATA%/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=%INTERNALDATA%/%ANDROIDPACKAGE%/cores/vitaquake2_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="vitaQuake 2 [Rogue]">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=%EXTERNALDATA%/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=%INTERNALDATA%/%ANDROIDPACKAGE%/cores/vitaquake2-rogue_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="vitaQuake 2 [Xatrix]">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=%EXTERNALDATA%/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=%INTERNALDATA%/%ANDROIDPACKAGE%/cores/vitaquake2-xatrix_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <command label="vitaQuake 2 [Zaero]">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=%EXTERNALDATA%/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=%INTERNALDATA%/%ANDROIDPACKAGE%/cores/vitaquake2-zaero_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="idTech4A++ (Standalone)">%EMULATOR_IDTECH4A++% %ACTIVITY_CLEAR_TASK% %EXTRA_game%=%INJECT%=%ROM% %EXTRA_command%=%INJECT%=%BASENAME%.commands</command>
         <platform>pc, pcwindows</platform>
         <theme>quake</theme>
     </system>
