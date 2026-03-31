@@ -22,6 +22,7 @@
 * (Android) Added PICO-8 standalone as the default emulator for the pico8 system
 * (Android) Added aPS3e Game Serial, aPS3e Directory and aPS3e ISO standalone as alternative emulators for the consolearcade system
 * (Android) Added GameNative standalone as an alternative emulator for the epic system
+* (Android) Added idTech4A++ standalone as an alternative emulator for the doom, ports and quake systems
 * (Android) Added the Boom 3 RetroArch core as an alternative emulator for the doom system
 * (Android) Changed the launch command for GameNative for the steam system to make launching work with their new behavior
 * (Android) Added GameNative emulator entries for Steam, Epic, GOG and Custom games for the windows system
@@ -30,13 +31,16 @@
 * (Android) Added a find rule entry for the new package name for Azahar
 * (Android) Added a find rule entry for the new package name for future GameHub Lite releases
 * (Android) Added a find rule entry for the MelonDualDS fork of melonDS
+* (Android) Added a find rule entry for the GL build of Visual Pinball
 * (Android) Set the official Vita3K release as the primary find rule entry instead of the Vita3K ZX fork
 * (Android) Changed Pizza Boy GBC/C to use %ROMSAF% instead of %ROM% as the developer has changed the way games are launched from frontends
+* (Android) Added the .idtech file extension to the doom, ports and quake systems
 * (Android) Added the .ps3 file extension to the consolearcade system
 * (Android) Added the .pk4 file extension to the doom system
 * (Android) Added the .epic and .pcgame file extensions to the epic system
 * (Android) Added the .pcgame file extension to the steam system
 * (Android) Added the .epic, .gog and .pcgame file extensions to the windows system
+* (Android) Added support for escaping forward slashes in %EXTRA% and %EXTRAARRAY% variable definitions
 * (Linux) Added Plastic standalone as an alternative emulator for the famicom and nes systems
 * (Linux) Added support for the manually downloaded release of FS-UAE Launcher
 * (Linux) Added support for the Flatpak release of EasyRPG Player

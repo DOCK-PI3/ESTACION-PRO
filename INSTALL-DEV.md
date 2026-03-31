@@ -1830,6 +1830,8 @@ https://developer.android.com/reference/android/content/Intent
 
 `%EXTRAARRAY_` - Defines an array of comma-separated string values following the key name. Only literal strings and special variables are supported, so this can't be used in combination with any ROM variables. As commas are used as separator characters, you'll need to escape any comma signs that you want to include in the actual value. For example %EXTRAARRAY_Parameters%=pone,p\\,two,pthree will pass the extra named _Parameters_ with the three separate array entries _pone_, _p,two_ and _pthree_. It's also possible to use the `%BASENAME%`, `%GAMEDIRRAW%`, `%ROMPATHRAW%`, `%ROMRAW%` and `%ROMRAWWIN%` variables inside an `%EXTRAARRAY_` variable definition. This will expand to the basename of the game file, the directory of the game file, the ROM directory, the path to the game file with standard forward slashes as directory separators, and the path to the game file with Windows backslashes as directory separators, respectively.
 
+_Note that multiple forward slashes are automatically replaced with single forward slashes for the %EXTRA% and %EXTRARRAY% values, if you want to pass multiple forward slashes you will need to escape them such as_ `\/\/`
+
 `%EXTRAINTEGER_` - Sets an extra with an integer value.
 
 `%EXTRABOOL_` - Sets an extra with a boolean value, i.e. true/1 or false/0.

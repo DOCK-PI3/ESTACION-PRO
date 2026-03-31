@@ -592,11 +592,9 @@ https://buildbot.scummvm.org/#/dailybuilds
 
 ### SkyEmu
 
-Note that frontend support was added to SkyEmu in version 4 so you need that to be able to use it with ES-DE.
+This emulator can be downloaded from their GitHub site.
 
-At the time of writing this version can only be downloaded from their GitHub automatic build system.
-
-https://github.com/skylersaleh/SkyEmu/actions
+https://github.com/skylersaleh/SkyEmu/releases
 
 ### Skyline
 
