@@ -535,6 +535,7 @@
         <rule type="androidpackage">
             <entry>org.vpinball.vpinball_bgfx/org.vpinball.app.VPinballActivity</entry>
             <entry>org.vpinball.app/.VpxLauncherActivity</entry>
+            <entry>org.vpinball.app.gl/org.vpinball.app.VPinballActivity</entry>
         </rule>
     </emulator>
     <emulator name="VITA3K">
