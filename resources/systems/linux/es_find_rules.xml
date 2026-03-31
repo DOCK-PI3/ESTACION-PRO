@@ -1432,6 +1432,10 @@
             <entry>~/.local/share/applications/xenia/xenia_canary</entry>
             <entry>~/.local/bin/xenia/xenia_canary</entry>
             <entry>~/bin/xenia/xenia_canary</entry>
+            <entry>~/Applications/xenia_canary*.AppImage</entry>
+            <entry>~/.local/share/applications/xenia_canary*.AppImage</entry>
+            <entry>~/.local/bin/xenia_canary*.AppImage</entry>
+            <entry>~/bin/xenia_canary*.AppImage</entry>
             <entry>~/Applications/Xenia_Canary*.AppImage</entry>
             <entry>~/.local/share/applications/Xenia_Canary*.AppImage</entry>
             <entry>~/.local/bin/Xenia_Canary*.AppImage</entry>
