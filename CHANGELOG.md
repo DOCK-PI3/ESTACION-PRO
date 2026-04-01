@@ -49,6 +49,7 @@
 * (Linux) Added support for the repository/AUR release of azahar
 * (Linux) Added systempath find rules for xenia and xenia_canary
 * (Linux) Added staticpath find rules for the new pkgforge-dev AppImage filename for xenia canary
+* (Linux) Added staticpath find rules for the new official xenia canary AppImage
 * Added the ClownMDEmu RetroArch core as an alternative emulator for the genesis, megacd, megacdjp, megadrive, megadrivejp and segacd systems
 * Added the SkyEmu RetroArch core as an alternative emulator for the gb, gba, gbc and nds systems
 * Added the AmiArcadia RetroArch core as the default emulator for the arcadia system
@@ -90,6 +91,7 @@
 * (Linux) Changed the AppImage build scripts to use the bundled TLS/SSL certificates
 * (Linux) Added an AppImage build script for the AArch64 architecture
 * (Linux) Added RetroArch core find rule entries for NixOS and Nixpkgs
+* (linear-es-de) Updated the system metadata from the upstream system-metadata repository
 * (linear-es-de) Added an OLED color scheme (thanks c-fan for the patch)
 * The theme downloader will now use the bundled certificates on all platforms if built with the BUNDLED_CERTS option
 * Removed the obsolete and unsupported CEC functionality

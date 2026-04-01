@@ -840,6 +840,7 @@ The following emulators are supported in AppImage format when using the bundled 
 | switch               | Eden                | Eden*.AppImage                 | Official             |
 | switch               | Ryujinx             | \*yujinx\*.AppImage            | Community            |
 | xbox                 | xemu                | xemu*.AppImage                 | Official             |
+| xbox360              | xenia               | xenia_canary*.AppImage         | Official             |
 | xbox360              | xenia               | Xenia_Canary*.AppImage         | pkgforge-dev         |
 | xbox360              | xenia               | xenia-canary*.AppImage         | pkgforge-dev         |
 | xbox360              | Xenia Edge          | xenia_edge*.AppImage           | Official             |
@@ -2897,6 +2898,16 @@ Here's an example setup:
 ```
 
 Note that while the games start directly on desktop operating systems when launched from ES-DE, on Android you will need to select _Start Core_ inside RetroArch after having launched the file.
+
+**idTech4A++ on Android**
+
+On Android specifically there's support for the idTech game engine collection [idTech4A++](https://github.com/glKarin/com.n0n3m4.diii4a) which allows you to run a number of Doom games and Quake games and much more. To launch these games from ES-DE simply create a file with the .idtech extension in the ports directory (it's also the same setup for the doom and quake systems) containing the short name of the game as a single entry in the file. For example to run Doom you'd enter _zdoom_ and for Quake you'd enter _quake1_. Refer to the idTech4A++ documentation for more information.
+
+Here's an example setup:
+```
+~/ROMs/ports/Doom.idtech
+~/ROMs/ports/Quake.idtech
+```
 
 ### ScummVM
 
