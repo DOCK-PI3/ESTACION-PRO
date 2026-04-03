@@ -41,6 +41,7 @@
 * (Android) Added the .pcgame file extension to the steam system
 * (Android) Added the .epic, .gog and .pcgame file extensions to the windows system
 * (Android) Added support for escaping forward slashes in %EXTRA% and %EXTRAARRAY% variable definitions
+* (Linux) Added UMU standalone as an alternative emulator for the pcarcade and type-x systems
 * (Linux) Added Plastic standalone as an alternative emulator for the famicom and nes systems
 * (Linux) Added support for the manually downloaded release of FS-UAE Launcher
 * (Linux) Added support for the Flatpak release of EasyRPG Player
@@ -61,7 +62,7 @@
 * Added the Mini vMac RetroArch core as an alternative emulator for the macintosh system
 * Added the Azahar RetroArch core as the default emulator for the n3ds system
 * Added the Craft (Minecraft) RetroArch core as an alternative emulator for the ports system
-* Added Eden standalone as the default emulator for the switch system
+* Added a popular standalone emulator as the default emulator for the switch system
 * Added Geargrafx standalone as an alternative emulator for the pcengine, pcenginecd, supergrafx, tg16 and tg-cd systems on Linux, macOS and Windows
 * Added the Geargrafx RetroArch core as an alternative emulator for the pcenginecd and tg-cd systems
 * Added the Gearlynx RetroArch core as an alternative emulator for the atarilynx system
