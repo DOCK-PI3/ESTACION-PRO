@@ -458,6 +458,10 @@
             <entry>umu-run</entry>
         </rule>
         <rule type="staticpath">
+            <entry>~/Applications/umu/umu-run</entry>
+            <entry>~/.local/share/applications/umu/umu-run</entry>
+            <entry>~/.local/bin/umu/umu-run</entry>
+            <entry>~/bin/umu/umu-run</entry>
             <entry>~/.var/app/io.github.Faugus.faugus-launcher/data/faugus-launcher/umu-run</entry>
         </rule>
     </emulator>
