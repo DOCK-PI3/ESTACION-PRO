@@ -1565,6 +1565,7 @@
         <extension>.AppImage .desktop .exe .EXE .lindbergh .sh</extension>
         <command label="Wine (Standalone)">%STARTDIR%=%GAMEDIR% %EMULATOR_WINE% %ROM%</command>
         <command label="Proton (Standalone)">%STARTDIR%=%GAMEDIR% %EMULATOR_PROTON% %ROM%</command>
+        <command label="UMU (Standalone)">%STARTDIR%=%GAMEDIR% %EMULATOR_UMU% %INJECT%=%BASENAME%.commands %ROM%</command>
         <command label="Lindbergh Loader (Standalone)">%STARTDIR%=%GAMEENTRYDIR% %EMULATOR_LINDBERGH-LOADER% %INJECT%=%BASENAME%/%BASENAME%.commands</command>
         <command label="AppImage">%EMULATOR_OS-SHELL% -c "%ROM%"</command>
         <command label="Shortcut or script">%ENABLESHORTCUTS% %EMULATOR_OS-SHELL% %ROM%</command>
@@ -2195,6 +2196,7 @@
         <extension>.AppImage .desktop .exe .EXE .sh</extension>
         <command label="Wine (Standalone)">%STARTDIR%=%GAMEDIR% %EMULATOR_WINE% %ROM%</command>
         <command label="Proton (Standalone)">%STARTDIR%=%GAMEDIR% %EMULATOR_PROTON% %ROM%</command>
+        <command label="UMU (Standalone)">%STARTDIR%=%GAMEDIR% %EMULATOR_UMU% %INJECT%=%BASENAME%.commands %ROM%</command>
         <command label="AppImage">%EMULATOR_OS-SHELL% -c "%ROM%"</command>
         <command label="Shortcut or script">%ENABLESHORTCUTS% %EMULATOR_OS-SHELL% %ROM%</command>
         <platform>arcade</platform>
