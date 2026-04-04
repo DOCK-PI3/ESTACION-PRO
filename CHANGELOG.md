@@ -14,6 +14,8 @@ On macOS three new systems have been enabled as well, those being OpenBOR Game E
 
 As for general cross-platform topics, a new language has been added, which is Vietnamese. There are also a couple of general bug fixes and translation updates as well as some dependency library updates. There are also quite a number of new RetroArch cores supported for many systems, see below for all details.
 
+Under the hood the remaining ancient Raspberry Pi specific code and configuration has now been fully removed, meaning there is no longer any device-specific code or configuration whatsoever in ES-DE and everything is instead completely generalized.
+
 ### Detailed list of changes
 
 * (Linux) Added initial support for the ARM64/AArch64 architecture (including its own set of find rules, import rules and system configuration)
