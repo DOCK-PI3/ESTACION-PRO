@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  AudioManager.cpp
 //
 //  Low-level audio functions (using SDL2).

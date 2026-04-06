@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  ScrollIndicatorComponent.h
 //
 //  Visually indicates whether a menu can be scrolled (up, up/down or down).

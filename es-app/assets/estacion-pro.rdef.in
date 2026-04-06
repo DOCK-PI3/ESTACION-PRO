@@ -6,8 +6,8 @@ resource app_version {
         minor  = @MINOR@,
         variety = B_APPV_FINAL,
         internal = 0,
-        short_info = "ES-DE",
-        long_info = "ES-DE Frontend"
+    short_info = "ESTACION-PRO",
+    long_info = "ESTACION-PRO Frontend"
 };
 
 resource app_signature "@APP_SIGNATURE@";

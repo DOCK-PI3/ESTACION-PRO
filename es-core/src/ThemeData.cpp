@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  ThemeData.cpp
 //
 //  Finds available themes on the file system and loads and parses these.

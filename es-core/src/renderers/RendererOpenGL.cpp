@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  RendererOpenGL.cpp
 //
 //  OpenGL / OpenGL ES renderering functions.

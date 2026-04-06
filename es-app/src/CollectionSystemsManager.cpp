@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  CollectionSystemsManager.cpp
 //
 //  Manages collections of the following two types:

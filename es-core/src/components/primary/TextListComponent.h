@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  TextListComponent.h
 //
 //  Text list, usable in both the system and gamelist views.

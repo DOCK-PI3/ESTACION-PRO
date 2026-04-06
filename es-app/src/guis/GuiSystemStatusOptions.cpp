@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  GuiSystemStatusOptions.cpp
 //
 //  User interface for the system status options.

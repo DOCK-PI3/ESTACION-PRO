@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  GuiOfflineGenerator.cpp
 //
 //  User interface for the miximage offline generator.

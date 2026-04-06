@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  GuiLaunchScreen.cpp
 //
 //  Screen shown when launching a game.

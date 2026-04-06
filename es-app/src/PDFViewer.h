@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  PDFViewer.h
 //
 //  Parses and renders pages using the Poppler library via the external es-pdf-convert binary.

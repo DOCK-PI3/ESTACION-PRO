@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  IList.h
 //
 //  List base class, used by the system view, gamelist view and menu system.

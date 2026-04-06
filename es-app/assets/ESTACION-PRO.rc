@@ -20,14 +20,14 @@ BEGIN
         BLOCK "040904E4"
         BEGIN
             VALUE "Comments", "\0"
-            VALUE "CompanyName", "es-de.org\0"
-            VALUE "FileDescription", "ES-DE\0"
+            VALUE "CompanyName", "estacion-pro\0"
+            VALUE "FileDescription", "ESTACION-PRO\0"
             VALUE "FileVersion", RESOURCE_VERSION_STRING
-            VALUE "InternalName", "ES-DE.exe\0"
+            VALUE "InternalName", "ESTACION-PRO.exe\0"
             VALUE "LegalCopyright", "Copyright (c) 2024-2026 Northwestern Software AB\0"
             VALUE "LegalTrademarks", "\0"
-            VALUE "OriginalFilename", "ES-DE.exe\0"
-            VALUE "ProductName", "ES-DE\0"
+            VALUE "OriginalFilename", "ESTACION-PRO.exe\0"
+            VALUE "ProductName", "ESTACION-PRO\0"
             VALUE "ProductVersion", PROGRAM_VERSION_STRING
         END
     END
@@ -37,4 +37,4 @@ BEGIN
     END
 END
 
-IDI_ES_LOGO ICON DISCARDABLE "ES-DE.ico"
+IDI_ES_LOGO ICON DISCARDABLE "ESTACION-PRO.ico"

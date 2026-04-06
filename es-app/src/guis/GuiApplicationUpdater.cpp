@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  GuiApplicationUpdater.cpp
 //
 //  Installs application updates.
@@ -71,8 +71,8 @@ GuiApplicationUpdater::GuiApplicationUpdater()
                                                     mMenuColorPrimary, ALIGN_LEFT);
     mGrid.setEntry(mProcessStep2, glm::ivec2 {1, 3}, false, true, glm::ivec2 {2, 1});
 
-    const std::string step3Text {mLinuxAppImage ? _("QUIT AND MANUALLY RESTART ES-DE") :
-                                                  _("QUIT AND MANUALLY UPGRADE ES-DE")};
+    const std::string step3Text {mLinuxAppImage ? _("QUIT AND MANUALLY RESTART ESTACION-PRO") :
+                                                  _("QUIT AND MANUALLY UPGRADE ESTACION-PRO")};
     mProcessStep3 = std::make_shared<TextComponent>(step3Text, Font::get(FONT_SIZE_MEDIUM),
                                                     mMenuColorPrimary, ALIGN_LEFT);
     mGrid.setEntry(mProcessStep3, glm::ivec2 {1, 4}, false, true, glm::ivec2 {2, 1});

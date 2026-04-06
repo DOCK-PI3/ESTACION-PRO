@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  ShaderOpenGL.h
 //
 //  OpenGL / OpenGL ES shader functions.

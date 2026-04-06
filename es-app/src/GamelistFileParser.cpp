@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  GamelistFileParser.cpp
 //
 //  Parses and updates the gamelist.xml files.

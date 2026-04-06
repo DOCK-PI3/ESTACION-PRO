@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
-    <id>org.es_de.frontend</id>
-    <name>ES-DE Frontend</name>
+    <id>org.estacion_pro.frontend</id>
+    <name>ESTACION-PRO Frontend</name>
     <summary>Gaming frontend</summary>
     <description>
-        <p>ES-DE is a frontend for browsing and launching games from your
+        <p>ESTACION-PRO is a frontend for browsing and launching games from your
             multi-platform collection.</p>
     </description>
-    <launchable type="desktop-id">org.es_de.frontend.desktop</launchable>
+    <launchable type="desktop-id">org.estacion_pro.frontend.desktop</launchable>
     <categories>
         <category>Game</category>
         <category>Emulator</category>
     </categories>
-    <developer id="es-de.org">
+    <developer id="org.estacion_pro.frontend">
         <name>Northwestern Software AB</name>
     </developer>
     <content_rating type="oars-1.0" />
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>MIT</project_license>
-    <url type="homepage">https://es-de.org</url>
+    <url type="homepage">https://gitlab.com/es-de/emulationstation-de</url>
     <url type="bugtracker">https://gitlab.com/es-de/emulationstation-de/-/issues</url>
     <url type="help">https://gitlab.com/es-de/emulationstation-de/-/blob/master/USERGUIDE.md</url>
-    <url type="donation">https://es-de.org/</url>
+    <url type="donation">https://gitlab.com/es-de/emulationstation-de</url>
     <screenshots>
         <screenshot type="default">
-            <caption>ES-DE System View</caption>
+            <caption>ESTACION-PRO System View</caption>
             <image type="source" width="1280" height="720">https://gitlab.com/es-de/emulationstation-de/-/raw/master/images/es-de_system_view.png</image>
         </screenshot>
         <screenshot>
-            <caption>ES-DE Gamelist View</caption>
+            <caption>ESTACION-PRO Gamelist View</caption>
             <image type="source" width="1280" height="720">https://gitlab.com/es-de/emulationstation-de/-/raw/master/images/es-de_gamelist_view.png</image>
         </screenshot>
         <screenshot>
-            <caption>ES-DE Scraper</caption>
+            <caption>ESTACION-PRO Scraper</caption>
             <image type="source" width="1280" height="720">https://gitlab.com/es-de/emulationstation-de/-/raw/master/images/es-de_scraper_running.png</image>
         </screenshot>
         <screenshot>
-            <caption>ES-DE Theme Support</caption>
+            <caption>ESTACION-PRO Theme Support</caption>
             <image type="source" width="1280" height="720">https://gitlab.com/es-de/emulationstation-de/-/raw/master/images/es-de_ui_theme_support.png</image>
         </screenshot>
     </screenshots>

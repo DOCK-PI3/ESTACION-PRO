@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  BluetoothStatusApple.m
 //
 //  Gets the Bluetooth adapter status on macOS.

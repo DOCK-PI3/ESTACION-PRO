@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  FileData.h
 //
 //  Provides game file data structures and functions to access and sort this information.

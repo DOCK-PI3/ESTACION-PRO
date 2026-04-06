@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  Window.cpp
 //
 //  Window management, screensaver management, help prompts and splash screen.

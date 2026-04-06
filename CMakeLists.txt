@@ -1,6 +1,6 @@
 #  SPDX-License-Identifier: MIT
 #
-#  ES-DE Frontend
+#  ESTACION-PRO Frontend
 #  CMakeLists.txt
 #
 #  Main CMake configuration file.
@@ -14,12 +14,16 @@ if(CMAKE_SYSTEM_NAME MATCHES iOS)
     set(CMAKE_OSX_DEPLOYMENT_TARGET 14.0 CACHE STRING "iOS deployment target")
 elseif(APPLE)
     # Set this to the minimum supported macOS version, and also update
-    # es-app/assets/ES-DE_Info.plist accordingly.
+    # es-app/assets/ESTACION-PRO_Info.plist accordingly.
     set(CMAKE_OSX_DEPLOYMENT_TARGET 11.0 CACHE STRING "macOS deployment target")
     # This optional variable is used for code signing the DMG installer.
     set(MACOS_CODESIGN_IDENTITY "" CACHE STRING "macOS code signing certificate identity")
 endif()
-project(es-de)
+project(ESTACION-PRO LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Application version, update this when making a new release.
 set(ES_VERSION 3.4.1)
@@ -148,12 +152,12 @@ endif()
 if(CMAKE_CXX_COMPILER_ID MATCHES Clang)
     message("-- Compiler is Clang/LLVM")
     if(CMAKE_CXX_COMPILER_VERSION VERSION_LESS 5.0.0)
-        message(SEND_ERROR "You need at least Clang 5.0.0 to compile ES-DE")
+        message(SEND_ERROR "You need at least Clang 5.0.0 to compile ESTACION-PRO")
     endif()
 elseif(CMAKE_CXX_COMPILER_ID MATCHES GNU)
     message("-- Compiler is GNU/GCC")
     if(CMAKE_CXX_COMPILER_VERSION VERSION_LESS 7.1)
-        message(SEND_ERROR "You need at least GCC 7.1 to compile ES-DE")
+        message(SEND_ERROR "You need at least GCC 7.1 to compile ESTACION-PRO")
     endif()
 elseif(CMAKE_CXX_COMPILER_ID MATCHES MSVC)
     message("-- Compiler is MSVC")
@@ -167,11 +171,11 @@ endif()
 
 # Set up compiler and linker flags for debug, profiling or release builds.
 if(CMAKE_BUILD_TYPE MATCHES Debug)
-    # Enable the C++17 standard and disable optimizations as it's a debug build.
+    # Enable the C++20 standard and disable optimizations as it's a debug build.
     if(CMAKE_CXX_COMPILER_ID MATCHES MSVC)
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++17 /Od /DEBUG:FULL")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++20 /Od /DEBUG:FULL")
     else()
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -O0 -g3 -Wall -Wpedantic -Wsign-compare -Wnarrowing -Wmissing-field-initializers -Wunused-macros")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20 -O0 -g3 -Wall -Wpedantic -Wsign-compare -Wnarrowing -Wmissing-field-initializers -Wunused-macros")
         set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -O0")
     endif()
     # If using Clang, then add additional debug data needed by GDB.
@@ -184,18 +188,18 @@ if(CMAKE_BUILD_TYPE MATCHES Debug)
 elseif(CMAKE_BUILD_TYPE MATCHES Profiling)
     # For the profiling build, we enable optimizations and supply the required profiler flags.
     if(CMAKE_CXX_COMPILER_ID MATCHES MSVC)
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++17 /O2 /DEBUG:FULL")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++20 /O2 /DEBUG:FULL")
     else()
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -O2 -g3 -Wall -Wpedantic -Wsign-compare -Wnarrowing -Wmissing-field-initializers -Wunused-macros")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20 -O2 -g3 -Wall -Wpedantic -Wsign-compare -Wnarrowing -Wmissing-field-initializers -Wunused-macros")
         set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -O2")
     endif()
 else()
-    # Enable the C++17 standard and enable optimizations as it's a release build.
+    # Enable the C++20 standard and enable optimizations as it's a release build.
     # This will also disable all assert() macros. Strip the binary too.
     if(CMAKE_CXX_COMPILER_ID MATCHES MSVC)
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DNDEBUG /std:c++17 /O2 /DEBUG:NONE")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DNDEBUG /std:c++20 /O2 /DEBUG:NONE")
     else()
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -O2 -DNDEBUG -Wall -Wpedantic -Wsign-compare -Wnarrowing -Wmissing-field-initializers -Wunused-macros")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20 -O2 -DNDEBUG -Wall -Wpedantic -Wsign-compare -Wnarrowing -Wmissing-field-initializers -Wunused-macros")
         if(APPLE)
             set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -O2")
         else()
@@ -218,8 +222,8 @@ if(EMSCRIPTEN)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -s USE_SDL=2 -pthread")
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -s INITIAL_MEMORY=33554432 -s ALLOW_MEMORY_GROWTH=1 -s WASM=1 -s ASSERTIONS=1 -s EXIT_RUNTIME=1 -s USE_SDL=2 \
                                 -pthread -s PTHREAD_POOL_SIZE=4 -s DEMANGLE_SUPPORT=1 -s USE_WEBGL2=1 -s FULL_ES3=1 -s ERROR_ON_UNDEFINED_SYMBOLS=1 -s ASYNCIFY \
-                                --preload-file ${PROJECT_SOURCE_DIR}/resources@/home/web_user/ES-DE/resources/ \
-                                --preload-file ${PROJECT_SOURCE_DIR}/themes/slate-es-de@/home/web_user/ES-DE/themes/slate-es-de/ \
+                                --preload-file ${PROJECT_SOURCE_DIR}/resources@/home/web_user/ESTACION-PRO/resources/ \
+                                --preload-file ${PROJECT_SOURCE_DIR}/themes/slate-es-de@/home/web_user/ESTACION-PRO/themes/slate-es-de/ \
                                 --preload-file ${PROJECT_SOURCE_DIR}/ROMs@/home/web_user/ROMs/")
 endif()
 
@@ -276,7 +280,7 @@ if(ANDROID)
     set(BUNDLED_CERTS ON)
     set(COMPILE_LOCALIZATIONS OFF)
     add_compile_definitions(ANDROID_VERSION_CODE=${ANDROID_VERSION_CODE})
-    add_compile_definitions(ANDROID_APPLICATION_ID="org.es_de.frontend")
+    add_compile_definitions(ANDROID_APPLICATION_ID="org.estacion_pro.frontend")
 endif()
 
 if(WIN32)
@@ -395,7 +399,7 @@ if(ES_VERSION MATCHES alpha OR ES_VERSION MATCHES beta OR ES_VERSION MATCHES dev
 endif()
 
 # GLM library options.
-add_compile_definitions(GLM_FORCE_CXX17)
+add_compile_definitions(GLM_FORCE_CXX20)
 add_compile_definitions(GLM_FORCE_XYZW_ONLY)
 
 # For Unix systems, assign the installation prefix. If it's not explicitly set,
@@ -662,7 +666,7 @@ endif()
 if(APPLE AND NOT IOS)
     # See es-app/CMakeLists.txt for an explation for why an extra "Resources" directory
     # has been added to the install prefix.
-    set(CMAKE_INSTALL_PREFIX "/Applications/ES-DE.app/Contents/Resources")
+    set(CMAKE_INSTALL_PREFIX "/Applications/ESTACION-PRO.app/Contents/Resources")
 
     # Set the same rpath links for the install executable as for the build executable.
     set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)

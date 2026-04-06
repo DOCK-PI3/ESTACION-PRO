@@ -1,16 +1,16 @@
 #  SPDX-License-Identifier: MIT
 #
-#  ES-DE
-#  org.es_de.frontend.yml
+#  ESTACION-PRO
+#  org.estacion_pro.frontend.yml
 #
 #  Flatpak manifest file for use with flatpak-builder.
 #
 
-app-id: org.es_de.frontend-de
+app-id: org.estacion_pro.frontend
 sdk: org.freedesktop.Sdk
 runtime: org.freedesktop.Platform
 runtime-version: '21.08'
-command: es-de
+command: ESTACION-PRO
 finish-args:
   - --share=ipc
   - --socket=x11
@@ -74,7 +74,7 @@ modules:
       url: https://github.com/zeux/pugixml/releases/download/v1.11.4/pugixml-1.11.4.tar.gz
       sha256: 8ddf57b65fb860416979a3f0640c2ad45ddddbbafa82508ef0a0af3ce7061716
 
-  - name: es-de
+  - name: estacion-pro
     buildsystem: cmake-ninja
     config-opts:
     - -DFLATPAK_BUILD=on

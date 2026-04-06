@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  AnimatedImageComponent.h
 //
 //  Creates animation from multiple images files.

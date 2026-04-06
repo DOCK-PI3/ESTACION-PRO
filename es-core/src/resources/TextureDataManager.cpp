@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  TextureDataManager.cpp
 //
 //  Loading and unloading of texture data.

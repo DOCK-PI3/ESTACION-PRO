@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  ScreenScraper.cpp
 //
 //  Functions for scraping from ScreenScraper (screenscraper.fr).

@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  GuiScraperSearch.h
 //
 //  User interface for the scraper where the user is able to see an overview

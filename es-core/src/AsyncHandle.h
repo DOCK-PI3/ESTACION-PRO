@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  AsyncHandle.h
 //
 //  Asynchronous operations used by GuiScraperSearch and Scraper.

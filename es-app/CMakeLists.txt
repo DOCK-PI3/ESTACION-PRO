@@ -1,13 +1,15 @@
 #  SPDX-License-Identifier: MIT
 #
-#  ES-DE Frontend
+#  ESTACION-PRO Frontend
 #  CMakeLists.txt (es-app)
 #
 #  CMake configuration for es-app
 #  Also contains the application packaging configuration.
 #
 
-project(es-de)
+project(ESTACION-PRO)
+
+set(ESTACION_PRO_TARGET ESTACION-PRO)
 
 set(ES_HEADERS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ApplicationUpdater.h
@@ -115,7 +117,7 @@ set(ES_SOURCES
 )
 
 if(WIN32)
-    list(APPEND ES_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/assets/ES-DE.rc)
+    list(APPEND ES_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/assets/ESTACION-PRO.rc)
 endif()
 
 #---------------------------------------------------------------------------------------------------
@@ -126,19 +128,19 @@ if(IOS)
     include(${CMAKE_SOURCE_DIR}/ios/cmake/ios.cmake)
 elseif(APPLE)
     include_directories(${COMMON_INCLUDE_DIRS} ${CMAKE_CURRENT_SOURCE_DIR}/src)
-    add_executable(ES-DE ${ES_SOURCES} ${ES_HEADERS})
-    target_link_libraries(ES-DE ${COMMON_LIBRARIES} "-framework CoreFoundation -framework IOKit"
-                                                    "-framework SystemConfiguration"
-                                                    "-framework IOBluetooth" es-core lunasvg::lunasvg)
-    set_target_properties(ES-DE PROPERTIES INSTALL_RPATH_USE_LINK_PATH TRUE)
+    add_executable(${ESTACION_PRO_TARGET} ${ES_SOURCES} ${ES_HEADERS})
+    target_link_libraries(${ESTACION_PRO_TARGET} ${COMMON_LIBRARIES} "-framework CoreFoundation -framework IOKit"
+                                                                  "-framework SystemConfiguration"
+                                                                  "-framework IOBluetooth" es-core lunasvg::lunasvg)
+    set_target_properties(${ESTACION_PRO_TARGET} PROPERTIES INSTALL_RPATH_USE_LINK_PATH TRUE)
     if(CMAKE_CXX_COMPILER_VERSION GREATER_EQUAL 15.0.0)
-        target_link_options(ES-DE PRIVATE LINKER:-no_warn_duplicate_libraries)
+        target_link_options(${ESTACION_PRO_TARGET} PRIVATE LINKER:-no_warn_duplicate_libraries)
     endif()
 elseif(WIN32)
     include_directories(${COMMON_INCLUDE_DIRS} ${CMAKE_CURRENT_SOURCE_DIR}/src)
-    add_executable(ES-DE WIN32 ${ES_SOURCES} ${ES_HEADERS})
-    target_link_libraries(ES-DE ${COMMON_LIBRARIES} es-core lunasvg::lunasvg)
-    set_target_properties(ES-DE PROPERTIES INSTALL_RPATH_USE_LINK_PATH TRUE)
+    add_executable(${ESTACION_PRO_TARGET} WIN32 ${ES_SOURCES} ${ES_HEADERS})
+    target_link_libraries(${ESTACION_PRO_TARGET} ${COMMON_LIBRARIES} es-core lunasvg::lunasvg)
+    set_target_properties(${ESTACION_PRO_TARGET} PROPERTIES INSTALL_RPATH_USE_LINK_PATH TRUE)
 elseif(ANDROID)
     include_directories(${COMMON_INCLUDE_DIRS} ${CMAKE_CURRENT_SOURCE_DIR}/src)
     add_library(main MODULE ${ES_SOURCES} ${ES_HEADERS})
@@ -146,14 +148,14 @@ elseif(ANDROID)
                           es-core es-pdf-convert lunasvg::lunasvg)
 else()
     include_directories(${COMMON_INCLUDE_DIRS} ${CMAKE_CURRENT_SOURCE_DIR}/src)
-    add_executable(es-de ${ES_SOURCES} ${ES_HEADERS})
-    target_link_libraries(es-de ${COMMON_LIBRARIES} ${CMAKE_DL_LIBS} es-core lunasvg::lunasvg)
-    set_target_properties(es-de PROPERTIES INSTALL_RPATH_USE_LINK_PATH TRUE)
+    add_executable(${ESTACION_PRO_TARGET} ${ES_SOURCES} ${ES_HEADERS})
+    target_link_libraries(${ESTACION_PRO_TARGET} ${COMMON_LIBRARIES} ${CMAKE_DL_LIBS} es-core lunasvg::lunasvg)
+    set_target_properties(${ESTACION_PRO_TARGET} PROPERTIES INSTALL_RPATH_USE_LINK_PATH TRUE)
 endif()
 
 # Setup for installation and package generation.
 if(WIN32)
-    install(TARGETS ES-DE RUNTIME DESTINATION .)
+    install(TARGETS ${ESTACION_PRO_TARGET} RUNTIME DESTINATION .)
     install(TARGETS es-pdf-convert RUNTIME DESTINATION es-pdf-converter)
     set(CMAKE_INSTALL_SYSTEM_RUNTIME_DESTINATION .)
     if(CMAKE_BUILD_TYPE MATCHES Debug)
@@ -219,10 +221,10 @@ elseif(APPLE AND NOT IOS)
     # So an extra 'Resources' directory was added to the CMAKE_INSTALL_PREFIX variable as well
     # to compensate for this. It's a bad solution to the problem and there must surely be a
     # better way to fix this.
-    install(TARGETS ES-DE RUNTIME DESTINATION ../MacOS)
+    install(TARGETS ${ESTACION_PRO_TARGET} RUNTIME DESTINATION ../MacOS)
     install(TARGETS es-pdf-convert RUNTIME DESTINATION ../MacOS)
-    install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/assets/ES-DE.icns DESTINATION ../Resources)
-    install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/assets/ES-DE_Info.plist DESTINATION .. RENAME Info.plist)
+    install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/assets/ESTACION-PRO.icns DESTINATION ../Resources)
+    install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/assets/ESTACION-PRO_Info.plist DESTINATION .. RENAME Info.plist)
 
     set(APPLE_DYLIB_PERMISSIONS OWNER_WRITE OWNER_READ OWNER_EXECUTE
                                 GROUP_READ GROUP_EXECUTE
@@ -280,52 +282,52 @@ elseif(APPLE AND NOT IOS)
     install(DIRECTORY ${CMAKE_SOURCE_DIR}/themes/slate-es-de DESTINATION ../Resources/themes)
     install(DIRECTORY ${CMAKE_SOURCE_DIR}/licenses DESTINATION ../Resources)
 elseif(HAIKU)
-    install(TARGETS es-de RUNTIME DESTINATION apps)
+    install(TARGETS ${ESTACION_PRO_TARGET} RUNTIME DESTINATION apps)
     install(TARGETS es-pdf-convert RUNTIME DESTINATION apps)
-    install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/assets/es-de.6.gz
+        install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/assets/estacion-pro.6.gz
         DESTINATION documentation/man/man6)
     install(FILES ${CMAKE_SOURCE_DIR}/LICENSE
-        DESTINATION data/es-de)
+        DESTINATION data/estacion-pro)
     install(DIRECTORY ${CMAKE_SOURCE_DIR}/licenses
-        DESTINATION data/es-de)
+        DESTINATION data/estacion-pro)
     install(DIRECTORY ${CMAKE_SOURCE_DIR}/themes/linear-es-de
-        DESTINATION data/es-de/themes)
+        DESTINATION data/estacion-pro/themes)
     install(DIRECTORY ${CMAKE_SOURCE_DIR}/themes/modern-es-de
-        DESTINATION data/es-de/themes)
+        DESTINATION data/estacion-pro/themes)
     install(DIRECTORY ${CMAKE_SOURCE_DIR}/themes/slate-es-de
-        DESTINATION data/es-de/themes)
+        DESTINATION data/estacion-pro/themes)
     install(DIRECTORY ${CMAKE_SOURCE_DIR}/resources
-        DESTINATION data/es-de)
+        DESTINATION data/estacion-pro)
 elseif(NOT ANDROID AND NOT IOS)
-    install(TARGETS es-de RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+    install(TARGETS ${ESTACION_PRO_TARGET} RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
     install(TARGETS es-pdf-convert RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
     if(CMAKE_SYSTEM_NAME MATCHES Linux OR CMAKE_SYSTEM_NAME MATCHES FreeBSD)
-        install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/assets/es-de.6.gz
+        install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/assets/estacion-pro.6.gz
             DESTINATION ${CMAKE_INSTALL_PREFIX}/share/man/man6)
     else()
-        install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/assets/es-de.6.gz
+        install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/assets/estacion-pro.6.gz
             DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man6)
     endif()
     install(FILES ${CMAKE_SOURCE_DIR}/LICENSE
-        DESTINATION ${CMAKE_INSTALL_PREFIX}/share/es-de)
-    install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/assets/org.es_de.frontend.desktop
+        DESTINATION ${CMAKE_INSTALL_PREFIX}/share/estacion-pro)
+    install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/assets/org.estacion_pro.frontend.desktop
         DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
-    install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/assets/org.es_de.frontend.svg
+    install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/assets/org.estacion_pro.frontend.svg
         DESTINATION ${CMAKE_INSTALL_PREFIX}/share/pixmaps)
-    install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/assets/org.es_de.frontend.svg
+    install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/assets/org.estacion_pro.frontend.svg
         DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/scalable/apps)
-    install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/assets/org.es_de.frontend.appdata.xml
+    install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/assets/org.estacion_pro.frontend.appdata.xml
         DESTINATION ${CMAKE_INSTALL_PREFIX}/share/metainfo)
     install(DIRECTORY ${CMAKE_SOURCE_DIR}/licenses
-        DESTINATION ${CMAKE_INSTALL_PREFIX}/share/es-de)
+        DESTINATION ${CMAKE_INSTALL_PREFIX}/share/estacion-pro)
     install(DIRECTORY ${CMAKE_SOURCE_DIR}/themes/linear-es-de
-        DESTINATION ${CMAKE_INSTALL_PREFIX}/share/es-de/themes)
+        DESTINATION ${CMAKE_INSTALL_PREFIX}/share/estacion-pro/themes)
     install(DIRECTORY ${CMAKE_SOURCE_DIR}/themes/modern-es-de
-        DESTINATION ${CMAKE_INSTALL_PREFIX}/share/es-de/themes)
+        DESTINATION ${CMAKE_INSTALL_PREFIX}/share/estacion-pro/themes)
     install(DIRECTORY ${CMAKE_SOURCE_DIR}/themes/slate-es-de
-        DESTINATION ${CMAKE_INSTALL_PREFIX}/share/es-de/themes)
+        DESTINATION ${CMAKE_INSTALL_PREFIX}/share/estacion-pro/themes)
     install(DIRECTORY ${CMAKE_SOURCE_DIR}/resources
-        DESTINATION ${CMAKE_INSTALL_PREFIX}/share/es-de)
+        DESTINATION ${CMAKE_INSTALL_PREFIX}/share/estacion-pro)
 endif()
 
 include(InstallRequiredSystemLibraries)
@@ -333,17 +335,17 @@ include(InstallRequiredSystemLibraries)
 #---------------------------------------------------------------------------------------------------
 # General CPack settings.
 
-set(CPACK_PACKAGE_NAME es-de)
+set(CPACK_PACKAGE_NAME estacion-pro)
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Gaming frontend")
-set(CPACK_PACKAGE_DESCRIPTION "ES-DE is a frontend for browsing and launching games from your multi-platform collection.")
+set(CPACK_PACKAGE_DESCRIPTION "ESTACION-PRO is a frontend for browsing and launching games from your multi-platform collection.")
 set(CPACK_PACKAGE_VERSION ${ES_VERSION})
 
 if(APPLE)
     # Shorter line length license file to be able to fit inside the drag-and-drop installer window without introducing extra line breaks.
-    set(CPACK_RESOURCE_FILE_LICENSE ${CMAKE_CURRENT_SOURCE_DIR}/assets/ES-DE_LICENSE_macOS)
+    set(CPACK_RESOURCE_FILE_LICENSE ${CMAKE_CURRENT_SOURCE_DIR}/assets/ESTACION-PRO_LICENSE_macOS)
 elseif(WIN32)
     # The installer window looks a bit different on Windows so a specific file for this OS is required.
-    set(CPACK_RESOURCE_FILE_LICENSE ${CMAKE_CURRENT_SOURCE_DIR}/assets/ES-DE_LICENSE_Windows)
+    set(CPACK_RESOURCE_FILE_LICENSE ${CMAKE_CURRENT_SOURCE_DIR}/assets/ESTACION-PRO_LICENSE_Windows)
 else()
     set(CPACK_RESOURCE_FILE_LICENSE ${CMAKE_SOURCE_DIR}/LICENSE)
 endif()
@@ -364,49 +366,49 @@ if(APPLE)
     endif()
 
     set(CPACK_GENERATOR Bundle)
-    set(CPACK_PACKAGE_FILE_NAME ES-DE_${CPACK_PACKAGE_VERSION}-${CPU_ARCHITECTURE})
-    set(CPACK_DMG_VOLUME_NAME "ES-DE ${CPACK_PACKAGE_VERSION}")
-    set(CPACK_PACKAGE_ICON ${CMAKE_CURRENT_SOURCE_DIR}/assets/ES-DE.icns)
-    set(CPACK_DMG_DS_STORE ${CMAKE_CURRENT_SOURCE_DIR}/assets/ES-DE_DS_Store)
-    set(CPACK_BUNDLE_NAME "ES-DE")
-    set(CPACK_BUNDLE_ICON ${CMAKE_CURRENT_SOURCE_DIR}/assets/ES-DE.icns)
-    set(CPACK_BUNDLE_PLIST ${CMAKE_CURRENT_SOURCE_DIR}/assets/ES-DE_Info.plist)
+    set(CPACK_PACKAGE_FILE_NAME ESTACION-PRO_${CPACK_PACKAGE_VERSION}-${CPU_ARCHITECTURE})
+    set(CPACK_DMG_VOLUME_NAME "ESTACION-PRO ${CPACK_PACKAGE_VERSION}")
+    set(CPACK_PACKAGE_ICON ${CMAKE_CURRENT_SOURCE_DIR}/assets/ESTACION-PRO.icns)
+    set(CPACK_DMG_DS_STORE ${CMAKE_CURRENT_SOURCE_DIR}/assets/ESTACION-PRO_DS_Store)
+    set(CPACK_BUNDLE_NAME "ESTACION-PRO")
+    set(CPACK_BUNDLE_ICON ${CMAKE_CURRENT_SOURCE_DIR}/assets/ESTACION-PRO.icns)
+    set(CPACK_BUNDLE_PLIST ${CMAKE_CURRENT_SOURCE_DIR}/assets/ESTACION-PRO_Info.plist)
     if(MACOS_CODESIGN_IDENTITY)
         set(CPACK_BUNDLE_APPLE_CERT_APP "Developer ID Application: ${MACOS_CODESIGN_IDENTITY}")
         set(CPACK_BUNDLE_APPLE_CODESIGN_PARAMETER "--deep --force --options runtime")
     endif()
 elseif(WIN32)
     set(CPACK_GENERATOR NSIS)
-    set(CPACK_PACKAGE_FILE_NAME ES-DE_${CPACK_PACKAGE_VERSION}-${CPU_ARCHITECTURE})
-    set(CPACK_PACKAGE_INSTALL_DIRECTORY ES-DE)
-    set(CPACK_PACKAGE_EXECUTABLES ES-DE ES-DE)
+    set(CPACK_PACKAGE_FILE_NAME ESTACION-PRO_${CPACK_PACKAGE_VERSION}-${CPU_ARCHITECTURE})
+    set(CPACK_PACKAGE_INSTALL_DIRECTORY ESTACION-PRO)
+    set(CPACK_PACKAGE_EXECUTABLES ${ESTACION_PRO_TARGET} "ESTACION-PRO")
     set(CPACK_NSIS_INSTALL_ROOT ${PROGRAMFILES64})
     set(CPACK_NSIS_EXECUTABLES_DIRECTORY .)
-    set(CPACK_NSIS_MUI_ICON ${CMAKE_CURRENT_SOURCE_DIR}/assets/ES-DE.ico)
+    set(CPACK_NSIS_MUI_ICON ${CMAKE_CURRENT_SOURCE_DIR}/assets/ESTACION-PRO.ico)
     set(CPACK_NSIS_ENABLE_UNINSTALL_BEFORE_INSTALL ON)
-    set(CPACK_NSIS_DISPLAY_NAME "ES-DE ${CPACK_PACKAGE_VERSION}")
-    set(CPACK_NSIS_PACKAGE_NAME "ES-DE")
-    set(CPACK_NSIS_INSTALLED_ICON_NAME ES-DE.exe)
-    set(CPACK_NSIS_WELCOME_TITLE "ES-DE Installer")
-    set(CPACK_NSIS_FINISH_TITLE "ES-DE Installation Completed")
+    set(CPACK_NSIS_DISPLAY_NAME "ESTACION-PRO ${CPACK_PACKAGE_VERSION}")
+    set(CPACK_NSIS_PACKAGE_NAME "ESTACION-PRO")
+    set(CPACK_NSIS_INSTALLED_ICON_NAME ESTACION-PRO.exe)
+    set(CPACK_NSIS_WELCOME_TITLE "ESTACION-PRO Installer")
+    set(CPACK_NSIS_FINISH_TITLE "ESTACION-PRO Installation Completed")
     set(CPACK_NSIS_MANIFEST_DPI_AWARE ON)
-    set(CPACK_NSIS_MENU_LINKS "https://es-de.org" "ES-DE Website")
+    set(CPACK_NSIS_MENU_LINKS "https://gitlab.com/es-de/emulationstation-de" "ESTACION-PRO Website")
 else()
-    set(CPACK_PACKAGE_INSTALL_DIRECTORY es-de_${CMAKE_PACKAGE_VERSION})
-    set(CPACK_PACKAGE_EXECUTABLES es-de es-de)
+    set(CPACK_PACKAGE_INSTALL_DIRECTORY estacion-pro_${CMAKE_PACKAGE_VERSION})
+    set(CPACK_PACKAGE_EXECUTABLES ${ESTACION_PRO_TARGET} "ESTACION-PRO")
     if(LINUX_CPACK_GENERATOR MATCHES DEB)
         set(CPACK_GENERATOR DEB)
     endif()
-    set(CPACK_DEBIAN_FILE_NAME es-de_${CPACK_PACKAGE_VERSION}-${CPU_ARCHITECTURE}.deb)
+    set(CPACK_DEBIAN_FILE_NAME estacion-pro_${CPACK_PACKAGE_VERSION}-${CPU_ARCHITECTURE}.deb)
     set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Leon Styhre <leon.styhre@nw-soft.com>")
-    set(CPACK_DEBIAN_PACKAGE_HOMEPAGE https://es-de.org)
+    set(CPACK_DEBIAN_PACKAGE_HOMEPAGE https://gitlab.com/es-de/emulationstation-de)
     set(CPACK_DEBIAN_PACKAGE_SECTION games)
     set(CPACK_DEBIAN_PACKAGE_PRIORITY optional)
     set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
     if(LINUX_CPACK_GENERATOR MATCHES RPM)
         set(CPACK_GENERATOR RPM)
     endif()
-    set(CPACK_RPM_FILE_NAME es-de_${CPACK_PACKAGE_VERSION}-${CPU_ARCHITECTURE}.rpm)
+    set(CPACK_RPM_FILE_NAME estacion-pro_${CPACK_PACKAGE_VERSION}-${CPU_ARCHITECTURE}.rpm)
     set(CPACK_RPM_PACKAGE_DESCRIPTION ${CPACK_PACKAGE_DESCRIPTION})
     set(CPACK_RPM_PACKAGE_LICENSE MIT)
     list(APPEND CPACK_RPM_EXCLUDE_FROM_AUTO_FILELIST_ADDITION ${CMAKE_INSTALL_PREFIX})

@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  ImageComponent.h
 //
 //  Handles images: loading, resizing, cropping, color shifting etc.

@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  DateTimeComponent.cpp
 //
 //  Provides the date and time, in absolute (actual date) or relative

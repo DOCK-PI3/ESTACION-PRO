@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  ComponentList.cpp
 //
 //  Used to lay out and navigate lists in GUI menus.

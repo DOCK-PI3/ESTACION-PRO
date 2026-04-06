@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  ButtonComponent.cpp
 //
 //  Basic button, used as a GUI element and for the virtual keyboard buttons.

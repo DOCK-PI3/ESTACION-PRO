@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  ComponentGrid.h
 //
 //  Provides basic layout of components in an X*Y grid.

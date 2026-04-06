@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  UIModeController.h
 //
 //  Handling of application user interface modes (full, kiosk and kid).

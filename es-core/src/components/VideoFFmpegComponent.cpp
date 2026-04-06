@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  VideoFFmpegComponent.cpp
 //
 //  Video player based on FFmpeg.

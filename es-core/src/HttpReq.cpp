@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  HttpReq.cpp
 //
 //  HTTP requests using libcurl.
@@ -84,7 +84,7 @@ HttpReq::HttpReq(const std::string& url, bool scraperRequest)
     }
 
     // Set User-Agent.
-    std::string userAgent {"ES-DE Frontend/"};
+    std::string userAgent {"ESTACION-PRO Frontend/"};
     userAgent.append(PROGRAM_VERSION_STRING).append(" (");
 #if defined(__FreeBSD__)
     userAgent.append("FreeBSD");

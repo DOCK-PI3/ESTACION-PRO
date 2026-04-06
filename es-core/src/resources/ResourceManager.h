@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  ResourceManager.h
 //
 //  Handles the application resources (fonts, graphics, sounds etc.).

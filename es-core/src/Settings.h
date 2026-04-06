@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  Settings.h
 //
 //  Functions to read from and write to the configuration file es_settings.xml.

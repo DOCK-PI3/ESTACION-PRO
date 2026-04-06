@@ -1,5 +1,5 @@
 SUMMARY="Gaming frontend for your multi-platform collection"
-DESCRIPTION="ES-DE (EmulationStation Desktop Edition) is a frontend for browsing and launching games from your \
+DESCRIPTION="ESTACION-PRO (EmulationStation Desktop Edition base) is a frontend for browsing and launching games from your \
 multi-platform collection. It comes preconfigured for use with a large selection \
 of emulators and game engines."
 HOMEPAGE="https://es-de.org"
@@ -11,14 +11,14 @@ SOURCE_URI="https://gitlab.com/es-de/emulationstation-de/-/archive/$srcGitRev/em
 CHECKSUM_SHA256="efcac5c885d8b76d532e96498268c5393aa6552e3b06a4d259f196ebbe79f4f4"
 SOURCE_FILENAME="emulationstation-de-$portVersion-$srcGitRev.tar.gz"
 SOURCE_DIR="emulationstation-de-$srcGitRev"
-ADDITIONAL_FILES="es-de.rdef.in"
+ADDITIONAL_FILES="estacion-pro.rdef.in"
 
 ARCHITECTURES="all !x86_gcc2"
 SECONDARY_ARCHITECTURES="x86"
 
 PROVIDES="
-	es_de$secondaryArchSuffix = $portVersion
-	app:es_de = $portVersion
+	estacion_pro$secondaryArchSuffix = $portVersion
+	app:estacion_pro = $portVersion
 	"
 
 REQUIRES="
@@ -76,7 +76,7 @@ INSTALL()
 {
 	make install
 
-	local APP_SIGNATURE="application/x-vnd.ES-DE"
+	local APP_SIGNATURE="application/x-vnd.ESTACION-PRO"
 	local MAJOR="`echo "$portVersion" | cut -d. -f1`"
 	local MIDDLE="`echo "$portVersion" | cut -d. -f2`"
 	local MINOR="`echo "$portVersion" | cut -d. -f3`"
@@ -85,10 +85,10 @@ INSTALL()
 		-e "s|@MAJOR@|$MAJOR|" \
 		-e "s|@MIDDLE@|$MIDDLE|" \
 		-e "s|@MINOR@|$MINOR|" \
-		$portDir/additional-files/es-de.rdef.in > es-de.rdef
+		$portDir/additional-files/estacion-pro.rdef.in > estacion-pro.rdef
 
-	addResourcesToBinaries es-de.rdef \
-		"$appsDir"/es-de
+	addResourcesToBinaries estacion-pro.rdef \
+			"$appsDir"/ESTACION-PRO
 
-	addAppDeskbarSymlink "$appsDir"/es-de "ES-DE"
+	addAppDeskbarSymlink "$appsDir"/ESTACION-PRO "ESTACION-PRO"
 }

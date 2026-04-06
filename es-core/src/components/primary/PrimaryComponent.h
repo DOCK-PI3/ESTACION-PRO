@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  PrimaryComponent.h
 //
 //  Base class for the primary components (carousel, grid and textlist).

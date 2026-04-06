@@ -1,7 +1,7 @@
-ES-DE Frontend - Portable installation on Windows
+ESTACION-PRO Frontend - Portable installation on Windows
 -------------------------------------------------
 
-ES-DE release:
+ESTACION-PRO release:
 3.4.1
 
 The latest version can be downloaded from https://es-de.org
@@ -11,21 +11,21 @@ Instructions:
 If upgrading from a previous release, then don't unpack this ZIP archive on top of your old installation, instead follow the upgrade instructions below.
 
 New installation:
-1) The ROMs_ALL directory contains all the systems that ES-DE supports, but to decrease application startup time only copy the folders you need to the ROMs directory
+1) The ROMs_ALL directory contains all the systems that ESTACION-PRO supports, but to decrease application startup time only copy the folders you need to the ROMs directory
 2) Place your games into their respective folders in the ROMs directory tree or optionally import some using the built-in game importer
 3) Place your emulators inside the Emulators directory
-4) Start ES-DE using ES-DE.exe and enjoy some retrogaming!
+4) Start ESTACION-PRO using ESTACION-PRO.exe and enjoy some retrogaming!
 
 Upgrading from an older release:
-1) Rename your old ES-DE directory, for example to ES-DE_OLD
-2) Move your games from ES-DE_OLD\ROMs\ to ES-DE\ROMs\
-3) Move your emulators from ES-DE_OLD\Emulators\ to ES-DE\Emulators\
-4) Move the contents of ES-DE_OLD\ES-DE\ to ES-DE\ES-DE\
+1) Rename your old ESTACION-PRO directory, for example to ESTACION-PRO_OLD
+2) Move your games from ESTACION-PRO_OLD\ROMs\ to ESTACION-PRO\ROMs\
+3) Move your emulators from ESTACION-PRO_OLD\Emulators\ to ESTACION-PRO\Emulators\
+4) Move the contents of ESTACION-PRO_OLD\ESTACION-PRO\ to ESTACION-PRO\ESTACION-PRO\
    This last step includes your settings, custom collections, custom systems, scraped/downloaded media, gamelist.xml files, scripts and themes
 5) Update your themes using the theme downloader to get support for all the latest systems and features
 
-In case of issues, check ES-DE\es_log.txt for clues as to what went wrong.
-Enabling the "Debug mode" setting in the "Other settings" menu or starting ES-DE.exe with the --debug flag will provide additional details.
+In case of issues, check ESTACION-PRO\es_log.txt for clues as to what went wrong.
+Enabling the "Debug mode" setting in the "Other settings" menu or starting ESTACION-PRO.exe with the --debug flag will provide additional details.
 
 Refer to the FAQ and user guide for more detailed instructions and documentation:
 https://gitlab.com/es-de/emulationstation-de/-/blob/master/FAQ.md

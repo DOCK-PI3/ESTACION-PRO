@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  GuiGamelistOptions.cpp
 //
 //  Gamelist options menu for the 'Jump to...' quick selector,

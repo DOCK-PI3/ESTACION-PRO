@@ -1,6 +1,6 @@
 //  SPDX-License-Identifier: MIT
 //
-//  ES-DE Frontend
+//  ESTACION-PRO Frontend
 //  GuiDetectDevice.cpp
 //
 //  Detect input devices (keyboards, joysticks and gamepads).
