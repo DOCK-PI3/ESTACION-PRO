@@ -1233,15 +1233,15 @@ std::shared_ptr<SystemView> ViewController::getSystemListView()
 bool ViewController::input(InputConfig* config, Input input)
 {
     // If using the %RUNINBACKGROUND% variable in a launch command or if enabling the
-    // RunInBackground setting, ES-DE will run in the background while a game is launched.
-    // If we're in this state and then register some input, it means that the user is back in ES-DE.
+    // RunInBackground setting, ESTACION-PRO will run in the background while a game is launched.
+    // If we're in this state and then register some input, it means that the user is back in ESTACION-PRO.
     // Therefore unset the game launch flag and update all the GUI components. This will re-enable
     // the video player and scrolling of game names and game descriptions as well as letting the
     // screensaver start on schedule. On Android the onResume() method will normally call the native
     // onResume function which will perform the same steps as shown below (on Android we always keep
     // running when launching games). But there is a special case when using Samsung DeX or when
     // launching apps to another screen on multi-screen devices, in this case there will be no
-    // onResume() call as ES-DE was technically still running in the foreground, so we need to
+    // onResume() call as ESTACION-PRO was technically still running in the foreground, so we need to
     // handle the launch state here in a similar manner as on desktop operating systems.
     if (mWindow->getGameLaunchedState()) {
         mWindow->setAllowTextScrolling(true);

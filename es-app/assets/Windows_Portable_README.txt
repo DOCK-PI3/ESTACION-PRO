@@ -4,7 +4,7 @@ ESTACION-PRO Frontend - Portable installation on Windows
 ESTACION-PRO release:
 3.4.1
 
-The latest version can be downloaded from https://es-de.org
+The latest version can be downloaded from https://github.com/DOCK-PI3/ESTACION-PRO/releases
 
 Instructions:
 
@@ -28,8 +28,8 @@ In case of issues, check ESTACION-PRO\es_log.txt for clues as to what went wrong
 Enabling the "Debug mode" setting in the "Other settings" menu or starting ESTACION-PRO.exe with the --debug flag will provide additional details.
 
 Refer to the FAQ and user guide for more detailed instructions and documentation:
-https://gitlab.com/es-de/emulationstation-de/-/blob/master/FAQ.md
-https://gitlab.com/es-de/emulationstation-de/-/blob/master/USERGUIDE.md
+https://github.com/DOCK-PI3/ESTACION-PRO/blob/main/FAQ.md
+https://github.com/DOCK-PI3/ESTACION-PRO/blob/main/USERGUIDE.md
 
 This portable release contains a specific es_find_rules.xml file that will only look for emulators inside the portable directory tree.
 If you would like to use the installer release configuration file instead which will also look for emulators elsewhere on your system then go to

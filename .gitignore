@@ -22,6 +22,9 @@
 /es-de
 /ES-DE
 /ES-DE.exe
+/estacion-pro
+/ESTACION-PRO
+/ESTACION-PRO.exe
 /es-pdf-convert
 /es-pdf-converter/es-pdf-convert.exe
 
@@ -66,6 +69,7 @@ gmon.out
 
 # Build directories
 build
+build-estacion-pro
 Debug
 Release
 MinSizeRel
@@ -85,6 +89,10 @@ es-de*.deb
 es-de*.rpm
 ES-DE*.dmg
 ES-DE*.exe
+estacion-pro*.deb
+estacion-pro*.rpm
+ESTACION-PRO*.dmg
+ESTACION-PRO*.exe
 
 # macOS
 .DS_Store
@@ -92,6 +100,8 @@ ES-DE*.exe
 # MSVC
 ES-DE.ilk
 ES-DE.pdb
+ESTACION-PRO.ilk
+ESTACION-PRO.pdb
 es-pdf-convert.ilk
 es-pdf-convert.pdb
 lunasvg.exp

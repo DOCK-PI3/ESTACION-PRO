@@ -492,7 +492,8 @@ void GuiApplicationUpdater::update(int deltaTime)
             mProcessStep1->setText(ViewController::TICKMARK_CHAR + " " + mProcessStep1->getValue());
             mProcessStep1->setColor(mMenuColorGreen);
         }
-        mChangelogMessage->setText(_("Find the detailed changelog at") + " https://es-de.org");
+        mChangelogMessage->setText(
+            _("Find the detailed changelog at") + " https://github.com/DOCK-PI3/ESTACION-PRO/releases");
         mGrid.removeEntry(mButtons);
         mGrid.setEntry(MenuComponent::makeButtonGrid(std::vector<std::shared_ptr<ButtonComponent>> {
                            std::make_shared<ButtonComponent>(_("QUIT"), _("quit application"),

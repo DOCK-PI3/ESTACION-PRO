@@ -441,7 +441,7 @@ void ApplicationUpdater::compareVersions()
                 .append("release is available: ")
 #else
                 .append(releaseType == &mStableRelease ? "stable release" : "prerelease")
-                .append(" is available for download at https://es-de.org: ")
+                .append(" is available for download at https://github.com/DOCK-PI3/ESTACION-PRO/releases: ")
 #endif
                 .append(releaseType->version)
                 .append(" (r")
@@ -467,7 +467,7 @@ void ApplicationUpdater::compareVersions()
                 mResults.append("\n")
                     .append(_("For more information visit"))
                     .append("\n")
-                    .append("https://es-de.org");
+                    .append("https://github.com/DOCK-PI3/ESTACION-PRO/releases");
 
             if (mPackage.message != "")
                 mResults.append("\n").append(mPackage.message);
