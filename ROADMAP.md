@@ -1,8 +1,8 @@
-# ES-DE Frontend - Feature roadmap
+# ESTACION-PRO Frontend - Feature roadmap
 
-ES-DE is developed using an agile methodology so which features to include per release is reviewed and adjusted continuously. As such this document is basically a list of the main features that are planned to be added eventually.
+ESTACION-PRO is developed using an agile methodology so which features to include per release is reviewed and adjusted continuously. As such this document is basically a list of the main features that are planned to be added eventually.
 
-A more detailed breakdown can be found on the [Kanban](https://gitlab.com/es-de/emulationstation-de/-/boards/1823720) board, and for previous releases the [Changelog](CHANGELOG.md) contains all relevant details.
+A more detailed breakdown can be found on the [Kanban](https://github.com/DOCK-PI3/ESTACION-PRO/-/boards/1823720) board, and for previous releases the [Changelog](CHANGELOG.md) contains all relevant details.
 
 **General functionality**
 

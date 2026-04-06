@@ -1,8 +1,8 @@
-# ES-DE Frontend (development version) - Themes
+# ESTACION-PRO Frontend (development version) - Themes
 
-This document is only relevant for the current ES-DE development version, if you would like to see the documentation for the latest stable release, refer to [THEMES.md](THEMES.md) instead.
+This document is only relevant for the current ESTACION-PRO development version, if you would like to see the documentation for the latest stable release, refer to [THEMES.md](THEMES.md) instead.
 
-If creating themes for ES-DE, please add `-es-de` to the repository/directory name to clearly indicate that it's a theme for this frontend. Two examples would be `linear-es-de` and `modern-es-de`. The actual theme name as defined using the `themeName` tag in capabilities.xml does of course not need to include the `-es-de` extension as that's the actual theme name that will be displayed when selecting themes from the _UI Settings_ menu. For example linear-es-de will be listed simply as _Linear_ in this menu.
+If creating themes for ESTACION-PRO, please add `-es-de` to the repository/directory name to clearly indicate that it's a theme for this frontend. Two examples would be `linear-es-de` and `modern-es-de`. The actual theme name as defined using the `themeName` tag in capabilities.xml does of course not need to include the `-es-de` extension as that's the actual theme name that will be displayed when selecting themes from the _UI Settings_ menu. For example linear-es-de will be listed simply as _Linear_ in this menu.
 
 Before your start, make sure to download the _Theme engine examples_ theme that contains a number of example variants for things like vertical and horizontal carousels, wheel carousels, system view text lists, grids etc:
 
@@ -12,11 +12,11 @@ More themes to use as a starting point can be found on the official themes list:
 
 https://gitlab.com/es-de/themes/themes-list
 
-There is also some documentation written by lilbud covering general tips and tricks as well as how to port themes from the legacy RetroPie theme engine to ES-DE:
+There is also some documentation written by lilbud covering general tips and tricks as well as how to port themes from the legacy RetroPie theme engine to ESTACION-PRO:
 
 https://github.com/lilbud/es-de-theme-stuff
 
-To test whether your theme includes support for all ES-DE systems, download one of the following archives which contain ROM directory trees fully populated with dummy files:
+To test whether your theme includes support for all ESTACION-PRO systems, download one of the following archives which contain ROM directory trees fully populated with dummy files:
 
 [ROMs_ALL_Linux.zip](tools/system-dirs-dummy-files/ROMs_ALL_Linux.zip)\
 [ROMs_ALL_macOS.zip](tools/system-dirs-dummy-files/ROMs_ALL_macOS.zip)\
@@ -26,7 +26,7 @@ If you unzip and temporarily replace your ROMs directory with one of these, ever
 
 It's recommended to use a proper code editor for theme development, such as [VSCode](https://code.visualstudio.com) with the [Red Hat XML extension](https://github.com/redhat-developer/vscode-xml).
 
-A general comment regarding SVG graphic files is that fonts are not supported by the LunaSVG library so these need to be converted to paths in order for them to get rendered inside ES-DE. In Inkscape the relevant command is named _Object to Path_ but there should be equivalent functionality in other vector graphics editors. Embedded bitmaps are also not supported but this is generally a good thing as it's sometimes abused by simply embedding a raster image inside an SVG file, which is very misleading.
+A general comment regarding SVG graphic files is that fonts are not supported by the LunaSVG library so these need to be converted to paths in order for them to get rendered inside ESTACION-PRO. In Inkscape the relevant command is named _Object to Path_ but there should be equivalent functionality in other vector graphics editors. Embedded bitmaps are also not supported but this is generally a good thing as it's sometimes abused by simply embedding a raster image inside an SVG file, which is very misleading.
 
 Another general remark is that Linux almost always uses case-sensitive file systems (that's sometimes true for macOS as well). Therefore it's a good idea to always name files with lowercase characters only. Also make sure to regularly test on Linux if that's not your primary operating system.
 
@@ -36,11 +36,11 @@ Table of contents:
 
 ## Introduction
 
-An ES-DE theme is a collection of assets like images, videos and fonts as well as XML configuration files which contain various **elements**, each with their own **properties** that define the way the theme looks and behaves. These elements include things like text, images, videos, animations, carousels, grids etc.
+An ESTACION-PRO theme is a collection of assets like images, videos and fonts as well as XML configuration files which contain various **elements**, each with their own **properties** that define the way the theme looks and behaves. These elements include things like text, images, videos, animations, carousels, grids etc.
 
-Internally ES-DE uses the concept of **components** to actually implement the necessary building blocks to parse and render the elements, and although this is normally beyond the scope of what a theme author needs to consider, it's still good to be aware of the term as it's sometimes used in the documentation.
+Internally ESTACION-PRO uses the concept of **components** to actually implement the necessary building blocks to parse and render the elements, and although this is normally beyond the scope of what a theme author needs to consider, it's still good to be aware of the term as it's sometimes used in the documentation.
 
-Every game system may have its own subdirectory within the theme directory tree, and these directory names are defined in the systems configuration file `es_systems.xml` either via the optional `<theme>` tag, or otherwise via the mandatory `<name>` tag. When ES-DE populates a system on startup it will look for a file named `theme.xml` in each such directory.
+Every game system may have its own subdirectory within the theme directory tree, and these directory names are defined in the systems configuration file `es_systems.xml` either via the optional `<theme>` tag, or otherwise via the mandatory `<name>` tag. When ESTACION-PRO populates a system on startup it will look for a file named `theme.xml` in each such directory.
 
 By placing a theme.xml file directly in the root of the theme directory, that file will be processed as a default if there is no system-specific theme.xml file available. This means that the structure of having a separate directory per supported game system is entirely optional.
 
@@ -94,26 +94,26 @@ themes/
       theme.xml
 ```
 
-The ES-DE theme functionality makes it easy for users to install different themes and to choose between them from the _UI Settings_ menu.
+The ESTACION-PRO theme functionality makes it easy for users to install different themes and to choose between them from the _UI Settings_ menu.
 
-There are two places that ES-DE can load themes from:
-* `[HOME]/ES-DE/themes/`
+There are two places that ESTACION-PRO can load themes from:
+* `[HOME]/ESTACION-PRO/themes/`
 * `[INSTALLATION PATH]/themes/`
 
 An installation path could be something like this:
 ```
 /usr/share/es-de/themes/
-/Applications/ES-DE.app/Contents/Resources/themes/
-C:\Program Files\ES-DE\themes\
+/Applications/ESTACION-PRO.app/Contents/Resources/themes/
+C:\Program Files\ESTACION-PRO\themes\
 ```
 
 If a theme with the same name exists in both locations, the one in the home directory will be loaded and the other one will be skipped.
 
 ## Differences to legacy RetroPie themes
 
-If you are not familiar with theming for RetroPie or similar forks of EmulationStation then you can skip this section as it only describes the key differences between the updated ES-DE themes and these legacy themes. The term _legacy_ is used throughout this document to refer to this older style of themes. ES-DE as of 2.2.0 can no longer load legacy themes, so if you need to view them when porting them to ES-DE, either use a legacy EmulationStation fork or ES-DE 2.1.1.
+If you are not familiar with theming for older versions of EmulationStation or RetroPie, you can skip this section as it only describes the key differences between current ESTACION-PRO theme format and the legacy theme format used by older EmulationStation implementations. The term _legacy_ is used throughout this document to refer to this older theme style. ESTACION-PRO as of version 2.2.0 no longer supports legacy themes. If you need to view or port legacy themes to the current ESTACION-PRO format, you can either use an older EmulationStation fork or ESTACION-PRO version 2.1.1.
 
-With ES-DE 2.0.0 a new theme engine was introduced that fundamentally changed some aspects of how theming works. The previous design used specific view styles (basic, detailed, video and grid) and this was dropped completely and replaced with _variants_ that can accomplish the same thing while being much more powerful and flexible.
+With ESTACION-PRO 2.0.0 a new theme engine was introduced that fundamentally changed some aspects of how theming works. The previous design used specific view styles (basic, detailed, video and grid) and this was dropped completely and replaced with _variants_ that can accomplish the same thing while being much more powerful and flexible.
 
 In the past EmulationStation basically had hardcoded view styles with certain elements always being present and only a limited ability to manipulate these via positioning, resizing, coloring etc. As well so-called _extras_ were provided to expand theming support somehow but even this was quite limited.
 
@@ -123,7 +123,7 @@ In addition to _variants_, support for _color schemes_ and _aspect ratios_ was i
 
 New theming abilities like GIF and Lottie animations were also added to the new theme engine.
 
-The NanoSVG rendering library has been replaced with [LunaSVG](https://github.com/sammycage/lunasvg) which greatly improves SVG file support as NanoSVG had issues with rendering quite some files. There might be some slight regressions with LunaSVG, but most of these are probably due to issues in NanoSVG that caused some non-conformant files to render seemingly correct. Make sure to compare any SVG files that don't seem to render correctly in ES-DE with what they look like if opened in for example Firefox or Chrome/Chromium.
+The NanoSVG rendering library has been replaced with [LunaSVG](https://github.com/sammycage/lunasvg) which greatly improves SVG file support as NanoSVG had issues with rendering quite some files. There might be some slight regressions with LunaSVG, but most of these are probably due to issues in NanoSVG that caused some non-conformant files to render seemingly correct. Make sure to compare any SVG files that don't seem to render correctly in ESTACION-PRO with what they look like if opened in for example Firefox or Chrome/Chromium.
 
 As for more specific changes, the following are the most important ones compared to legacy themes:
 
@@ -160,7 +160,7 @@ Note that the legacy theme engine had quite inaccurate text sizing and font rend
 
 ## Theme assets repositories
 
-There are several useful repositories hosted by the ES-DE project that provide system metadata and system graphics files. Using these greatly simplifies the work of adding support for all ES-DE systems to your theme.
+There are several useful repositories hosted by the ESTACION-PRO project that provide system metadata and system graphics files. Using these greatly simplifies the work of adding support for all ESTACION-PRO systems to your theme.
 
 Make sure to regularly check for updates in these repositories as corrections, improvements and additions of new systems are made continuously.
 
@@ -255,11 +255,11 @@ After doing this you'll be able to pull repository updates as described above.
 
 ### External repositories
 
-In addition to the official asset repositories there are some external theme resources that are not maintained by the ES-DE project.
+In addition to the official asset repositories there are some external theme resources that are not maintained by the ESTACION-PRO project.
 
 System icon set by Zoidburg:
 
-https://github.com/Zoidburg13/ES-DE-System-Icon-Set
+https://github.com/Zoidburg13/ESTACION-PRO-System-Icon-Set
 
 Pixel system icon set by Rob Zombie:
 
@@ -302,7 +302,7 @@ Here is a very simple theme that changes the color of the game name text:
 
 All configuration must be contained within a `<theme>` tag pair. That is true for each separate .xml file used to build the complete theme.
 
-The `<view>` tag pair refers to the available views within ES-DE, which is either _system_ or _gamelist_. There is a special _all_ view available as well, but that is only used for defining the navigation sounds as these are always applied globally to both view types.
+The `<view>` tag pair refers to the available views within ESTACION-PRO, which is either _system_ or _gamelist_. There is a special _all_ view available as well, but that is only used for defining the navigation sounds as these are always applied globally to both view types.
 
 Views are defined like this:
 
@@ -312,7 +312,7 @@ Views are defined like this:
 </view>
 ```
 
-An element is a particular visual component such as an image, an animation or a piece of text. It has a mandatory _name_ attribute which is used by ES-DE to track each element entry. By using this name attribute it's possible to split up the definition of an element to different locations. For example you may want to define the color properties separately from where the size and position are configured (see the example below). The name attribute can be set to any string value.
+An element is a particular visual component such as an image, an animation or a piece of text. It has a mandatory _name_ attribute which is used by ESTACION-PRO to track each element entry. By using this name attribute it's possible to split up the definition of an element to different locations. For example you may want to define the color properties separately from where the size and position are configured (see the example below). The name attribute can be set to any string value.
 
 This is the element structure:
 
@@ -400,16 +400,16 @@ In addition to this, if the name is used for the same element type but for diffe
 
 ## Debugging during theme development
 
-If you are writing a theme it's recommended to enable the _Debug mode_ setting from the _Other settings_ menu or to launch ES-DE with the `--debug` flag from a terminal window. You can also pass the `--resolution` flag to avoid having the application window fill the entire screen. By doing so you can read error messages directly in the terminal window without having to open the es_log.txt file. With debug mode enabled you can also reload the current gamelist or system view with `Ctrl + r` and you can highlight the size and position of each image and animation element by using the `Ctrl + i` key combination. Likewise you can highlight each text element via `Ctrl + t`.
+If you are writing a theme it's recommended to enable the _Debug mode_ setting from the _Other settings_ menu or to launch ESTACION-PRO with the `--debug` flag from a terminal window. You can also pass the `--resolution` flag to avoid having the application window fill the entire screen. By doing so you can read error messages directly in the terminal window without having to open the es_log.txt file. With debug mode enabled you can also reload the current gamelist or system view with `Ctrl + r` and you can highlight the size and position of each image and animation element by using the `Ctrl + i` key combination. Likewise you can highlight each text element via `Ctrl + t`.
 
-Here's an example of launching ES-DE in debug mode at a limited resolution, which will make it run in a window:
+Here's an example of launching ESTACION-PRO in debug mode at a limited resolution, which will make it run in a window:
 ```
 es-de --debug --resolution 1280 720
 ```
 
 Enforcement of a correct theme configuration is quite strict, and most errors will abort the theme loading, leading to an unthemed system. In each such situation the log output will be very clear of what happened, for instance:
 ```
-Jan 28 17:17:30 Error:  ThemeData::parseElement(): "/home/myusername/ES-DE/themes/mytheme-es-de/theme.xml": Property "origin" for element "image" has no value defined (system "collections", theme "custom-collections")
+Jan 28 17:17:30 Error:  ThemeData::parseElement(): "/home/myusername/ESTACION-PRO/themes/mytheme-es-de/theme.xml": Property "origin" for element "image" has no value defined (system "collections", theme "custom-collections")
 ```
 
 Note that an unthemed system means precisely that, the specific system where the error occured will be unthemed but not necessarily the entire theme. The latter can still happen if the error is global such as a missing variable used by all XML files or an error in a file included by all XML files. The approach is to only untheme relevant sections of the theme to be able to pinpoint precisely where the problem lies.
@@ -430,12 +430,12 @@ Jan 28 17:29:11 Error:  VideoComponent: Invalid theme configuration, property "i
 Error handling for missing files is handled a bit differently depending on whether the paths have been defined explicitly or via a variable. For explicitly defined paths a warning will be logged for element properties and an error will be triggered for include files. Here's an example of the latter case:
 
 ```
-Jan 28 17:32:29 Error:  ThemeData::parseIncludes(): "/home/myusername/ES-DE/themes/mytheme-es-de/theme.xml" -> "./colors_dark.xml" not found (resolved to "/home/myusername/ES-DE/themes/mytheme-es-de/colors_dark.xml")
+Jan 28 17:32:29 Error:  ThemeData::parseIncludes(): "/home/myusername/ESTACION-PRO/themes/mytheme-es-de/theme.xml" -> "./colors_dark.xml" not found (resolved to "/home/myusername/ESTACION-PRO/themes/mytheme-es-de/colors_dark.xml")
 ```
 
 However, if a variable has been used to define the include file, only a debug message will be generated if the file is not found:
 ```
-Jan 28 17:34:03 Debug:  ThemeData::parseIncludes(): "/home/myusername/ES-DE/themes/mytheme-es-de/theme.xml": Couldn't find file "./${system.theme}/colors.xml" which resolves to "/home/myusername/ES-DE/themes/mytheme-es-de/amiga/colors.xml"
+Jan 28 17:34:03 Debug:  ThemeData::parseIncludes(): "/home/myusername/ESTACION-PRO/themes/mytheme-es-de/theme.xml": Couldn't find file "./${system.theme}/colors.xml" which resolves to "/home/myusername/ESTACION-PRO/themes/mytheme-es-de/amiga/colors.xml"
 ```
 
 It works essentially the same way for element path properties as for include files. This distinction between explicit values and variables makes it possible to create a theme configuration where both include files and files for fonts, images, videos etc. will be used if found, and if not found a fallback configuration can still be applied so the system will be themed.
@@ -444,7 +444,7 @@ By default all debug messages regarding missing files will be logged for regular
 
 ## Variants
 
-A core concept of ES-DE is the use of theme _variants_ to provide different theme profiles. These are not fixed presets and a theme author can instead name and define whatever variants he wants for his theme (or possibly use no variants at all as they are optional).
+A core concept of ESTACION-PRO is the use of theme _variants_ to provide different theme profiles. These are not fixed presets and a theme author can instead name and define whatever variants he wants for his theme (or possibly use no variants at all as they are optional).
 
 The variants could be purely cosmetic, such as providing different designs for a theme, or they could provide distinctive functionality by for instance using different primary elements like a carousel or a text list.
 
@@ -771,7 +771,7 @@ Here's an example configuration:
 
 Multilingual support works very similarly to color schemes and font sizes in that it's a variable-based configuration. Due to this you can set any arbitrary property values you want for a certain language, such as different texts or different images and so on. The supported languages for use in themes are the same as for the overall application.
 
-Note that the word _language_ is not technically the correct term as it's rather _locales_ that are used within ES-DE. For instance the en_US and en_GB locales are both for the English language but rather variations for different countries (United States and United Kingdom). Still, as the term _language_ is colloquially used to describe locales in many applications and operating systems this is also used in ES-DE even if it's not entirely correct. The term _language_ is as such also used throughout this document.
+Note that the word _language_ is not technically the correct term as it's rather _locales_ that are used within ESTACION-PRO. For instance the en_US and en_GB locales are both for the English language but rather variations for different countries (United States and United Kingdom). Still, as the term _language_ is colloquially used to describe locales in many applications and operating systems this is also used in ESTACION-PRO even if it's not entirely correct. The term _language_ is as such also used throughout this document.
 
 While it's possible to use the theme engine language support to set language-specific date formats this is generally discouraged as it's better to use the ISO 8601 (YYYY-MM-DD) standard instead. This is an international standard that makes sense to use in all countries in the world.
 
@@ -822,7 +822,7 @@ The languages a theme supports need to be declared in the `capabilities.xml` fil
 </themeCapabilities>
 ```
 
-Although language support is optional for a theme, if you have declared at least one language then you have to include support for en_US as well. Attempting to skip an entry for this language will output an error message and the language configuration will not get loaded. The reason for this is that en_US is the default language for the ES-DE application so all themes have to support it, either implicitly (by not having any multilingual support) or explicitly by declaring it and providing localization for it.
+Although language support is optional for a theme, if you have declared at least one language then you have to include support for en_US as well. Attempting to skip an entry for this language will output an error message and the language configuration will not get loaded. The reason for this is that en_US is the default language for the ESTACION-PRO application so all themes have to support it, either implicitly (by not having any multilingual support) or explicitly by declaring it and providing localization for it.
 
 It's also possible to provide label translations for variants, color schemes and transitions, as displayed in the _UI Settings_ menu. This is done using the `language` attribute for these `label` entries, as in this example `capabilities.xml` file:
 
@@ -863,7 +863,7 @@ It's also possible to provide label translations for variants, color schemes and
 </themeCapabilities>
 ```
 
-Leaving out the `language` property will make ES-DE set the language to en_US.
+Leaving out the `language` property will make ESTACION-PRO set the language to en_US.
 
 The actual language-specific values in the theme configuration are defined using variables, like the following example:
 
@@ -974,7 +974,7 @@ auto-allgames-sv-se.webp
 
 ## Aspect ratios
 
-The aspect ratio support works almost identically to the variants and color schemes with the main difference that the available aspect ratios are hardcoded into ES-DE. The theme can still decide which of the aspect ratios to support (or none at all in which case the theme aspect ratio is left undefined) but it can't create entirely new aspect ratio entries.
+The aspect ratio support works almost identically to the variants and color schemes with the main difference that the available aspect ratios are hardcoded into ESTACION-PRO. The theme can still decide which of the aspect ratios to support (or none at all in which case the theme aspect ratio is left undefined) but it can't create entirely new aspect ratio entries.
 
 In the same manner as for the variants and color schemes, the aspect ratios that the theme provides need to be declared in the `capabilities.xml` file that must be located in the root of the theme directory tree. How to setup this file is described in detailed later in this document.
 
@@ -1055,7 +1055,7 @@ Once the aspect ratios have been defined, they are applied to the theme configur
 
 ## Transitions (animation profiles)
 
-Using the `capabilities.xml` file it's possible to define granular transition animation profiles. Prior to ES-DE 2.0 there was only a user-selectable option for _Instant_, _Slide_ or _Fade_ animations that was applied globally. It's now possible to select each of these animation types individually for the following transitions:
+Using the `capabilities.xml` file it's possible to define granular transition animation profiles. Prior to ESTACION-PRO 2.0 there was only a user-selectable option for _Instant_, _Slide_ or _Fade_ animations that was applied globally. It's now possible to select each of these animation types individually for the following transitions:
 
 * System to system
 * System to gamelist
@@ -1132,10 +1132,10 @@ Finally it's possible to apply theme-defined transition profiles on a per-varian
 
 Variants, variant triggers, color schemes, font sizes, languages, aspect ratios and transition animation profiles need to be declared before they can be used inside the actual theme configuration files and that is done in the `capabilities.xml` file. This file needs to be located in the root of the theme directory, for example:
 ```
-~/ES-DE/themes/mytheme-es-de/capabilities.xml
+~/ESTACION-PRO/themes/mytheme-es-de/capabilities.xml
 ```
 
-The capabilities.xml file is mandatory and if it doesn't exist ES-DE will not attempt to load the theme.
+The capabilities.xml file is mandatory and if it doesn't exist ESTACION-PRO will not attempt to load the theme.
 
 The structure of the file is simple, as can be seen in this example:
 
@@ -1233,13 +1233,13 @@ The declared aspect ratios will always get displayed in the _UI settings_ menu i
 
 The use of variants, variant triggers, color schemes, font sizes, languages, aspect ratios and transition animation profiles is optional, i.e. a theme does not need to provide any of them. There must however be a capabilities.xml file present in the root of the theme directory. So if you don't wish to provide this functionality, simply create an empty file or perhaps add a short XML comment to clarify that the theme does not provide this functionality. In this case the theme will still load and work correctly but the menu options for selecting variants, color schemes and aspect ratios will be grayed out.
 
-Note that changes to the capabilities.xml file are not reloaded when using the Ctrl + r key combination, instead ES-DE needs to be restarted to reload any changes to this file.
+Note that changes to the capabilities.xml file are not reloaded when using the Ctrl + r key combination, instead ESTACION-PRO needs to be restarted to reload any changes to this file.
 
 ## The \<include\> tag
 
 You can include theme files within theme files, for example:
 
-`~/ES-DE/themes/mytheme-es-de/fonts.xml`:
+`~/ESTACION-PRO/themes/mytheme-es-de/fonts.xml`:
 ```xml
 <theme>
     <view name="gamelist">
@@ -1252,7 +1252,7 @@ You can include theme files within theme files, for example:
 </theme>
 ```
 
-`~/ES-DE/themes/mytheme-es-de/snes/theme.xml`:
+`~/ESTACION-PRO/themes/mytheme-es-de/snes/theme.xml`:
 ```xml
 <theme>
     <include>./../fonts.xml</include>
@@ -1452,7 +1452,7 @@ Just remember, _this only works if the elements have the same type._
 ## Navigation sounds
 
 Navigation sounds are configured globally per theme, so it needs to be defined using the special `all` view.
-It's recommended to put these elements in a separate file and include it from the main theme file (e.g. `<include>./navigationsounds.xml</include>`). Enabling the _Debug mode_ setting in the _Other settings_ menu or starting ES-DE with the --debug flag will provide feedback on whether the navigation sound elements were parsed correctly. If no navigation sounds are provided by the theme, then ES-DE will use the bundled navigation sounds as a fallback. This is done per sound file, so the theme could provide for example one or two custom sounds while using the bundled ES-DE sounds for the rest.
+It's recommended to put these elements in a separate file and include it from the main theme file (e.g. `<include>./navigationsounds.xml</include>`). Enabling the _Debug mode_ setting in the _Other settings_ menu or starting ESTACION-PRO with the --debug flag will provide feedback on whether the navigation sound elements were parsed correctly. If no navigation sounds are provided by the theme, then ESTACION-PRO will use the bundled navigation sounds as a fallback. This is done per sound file, so the theme could provide for example one or two custom sounds while using the bundled ESTACION-PRO sounds for the rest.
 
 When fast-scrolling the textlist (by holding the up/down or shoulder buttons) the _scroll_ and _systembrowse_ sounds always play to completion before being played again, so it will sound weird if you have long samples such as those with reverb or silence added to the end. As such make sure to always use short samples for these sounds and test thoroughly with fast-scrolling. This is not an issue if using the carousel or grid elements.
 
@@ -1546,7 +1546,7 @@ System variables are system-specific and derived from values defined in es_syste
 
 Note that all _name_ and _fullName_ values for the built-in collections _all games, favorites, last played and collections_ are translated to the language selected via the _Application Language_ option in the _UI Settings_ menu.
 
-If using variables to load theme assets like images and videos, then use the `.name` versions of these variables as short system names should be stable and not change over time. The `.fullName` values could change in future ES-DE releases or they could be user-customized which would break your theme.
+If using variables to load theme assets like images and videos, then use the `.name` versions of these variables as short system names should be stable and not change over time. The `.fullName` values could change in future ESTACION-PRO releases or they could be user-customized which would break your theme.
 
 The `.autoCollections`, `.customCollections` and `.noCollections` versions of the variables make it possible to differentiate between regular systems, automatic collections (_all games, favorites_ and _last played_) and custom collections. This can for example be used to apply different formatting to the names of the collections as opposed to regular systems.
 
@@ -2559,7 +2559,7 @@ Properties:
 
 #### video
 
-Plays a video and provides support for displaying a static image for a defined time period before starting the video player. Although an unlimited number of videos could in theory be defined per view it's recommended to keep it at a single instance as playing videos takes a lot of CPU resources. But if still going for multiple videos, make sure to use the `audio` property to disable audio on all but one video as ES-DE currently has no audio mixing capabilities so the sound would not play correctly. To use videos in the `system` view, you either need to set a static video using the `path` property, or you need to create a `gameselector` element so game videos can be used.
+Plays a video and provides support for displaying a static image for a defined time period before starting the video player. Although an unlimited number of videos could in theory be defined per view it's recommended to keep it at a single instance as playing videos takes a lot of CPU resources. But if still going for multiple videos, make sure to use the `audio` property to disable audio on all but one video as ESTACION-PRO currently has no audio mixing capabilities so the sound would not play correctly. To use videos in the `system` view, you either need to set a static video using the `path` property, or you need to create a `gameselector` element so game videos can be used.
 
 Supported views:
 * `system `
@@ -2732,7 +2732,7 @@ Properties:
 
 GIF and Lottie (vector graphics) animations. The animation type is automatically selected based on the file extension with `.gif` for GIF animations and `.json` for Lottie animations. Note that Lottie animations take a lot of memory and CPU resources if scaled up to large sizes so it's advised to not add too many of these to the same view and to not make them too large. GIF animations on the other hand are not as demanding except if they're really long and/or of high resolution.
 
-Also be aware that the [rlottie](https://github.com/Samsung/rlottie) library used by ES-DE is not compatible with all Lottie animations out there so you may need to convert them to a format that rlottie can read, or use some other animations altogether.
+Also be aware that the [rlottie](https://github.com/Samsung/rlottie) library used by ESTACION-PRO is not compatible with all Lottie animations out there so you may need to convert them to a format that rlottie can read, or use some other animations altogether.
 
 Supported views:
 * `system `
@@ -2883,7 +2883,7 @@ Properties:
     - `controller` - Will be shown and overlaid by the corresponding controller icon if a controller type has been selected for the game (using the metadata editor or via scraping).
     - `altemulator` - Will be shown when an alternative emulator is setup for the game.
     - `manual` - Will be shown when a PDF manual has been downloaded for the game.
-    - `all` - Including this value will enable all badges. If some badges have been added already they will be shown in the order they were defined and the remaining ones will be added at the end, in the order listed above. Using the `all` value can be used as a way to future-proof the theme, because if additional badges are added in future ES-DE releases, no theme updates would be needed to accomodate them. Just make sure to include space for a few extra badges in the layout, and increase the `lines` and `itemsPerLine` accordingly.
+    - `all` - Including this value will enable all badges. If some badges have been added already they will be shown in the order they were defined and the remaining ones will be added at the end, in the order listed above. Using the `all` value can be used as a way to future-proof the theme, because if additional badges are added in future ESTACION-PRO releases, no theme updates would be needed to accomodate them. Just make sure to include space for a few extra badges in the layout, and increase the `lines` and `itemsPerLine` accordingly.
 * `controllerPos` - type: NORMALIZED_PAIR
     - The position of the controller icon relative to the parent `controller` badge.
     - Minimum value per axis is `-1` and maximum value per axis is `2`

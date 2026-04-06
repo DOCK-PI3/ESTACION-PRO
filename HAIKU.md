@@ -1,6 +1,6 @@
-# ES-DE Frontend - Haiku documentation
+# ESTACION-PRO Frontend - Haiku documentation
 
-ES-DE is available via HaikuDepot but if you still want to build it yourself then you can find detailed instructions in the _Building on Haiku_ section of the [INSTALL.md](INSTALL.md#building-on-haiku) document.
+ESTACION-PRO is available via HaikuDepot but if you still want to build it yourself then you can find detailed instructions in the _Building on Haiku_ section of the [INSTALL.md](INSTALL.md#building-on-haiku) document.
 
 Note that support for Haiku is currently experimental as the operating system itself is experimental.
 
@@ -8,17 +8,17 @@ Table of contents:
 
 [[_TOC_]]
 
-## Known ES-DE problems
+## Known ESTACION-PRO problems
 
 * Key repeat doesn't work in text editing fields (but it works elsewhere in the application)
 
 * There is no 3D acceleration as the operating system does not support that
 
-* ES-DE may crash or behave strange when used on Haiku Nightly (i.e. it's due to operating system issues, make sure to run R1/beta5 which should work fine)
+* ESTACION-PRO may crash or behave strange when used on Haiku Nightly (i.e. it's due to operating system issues, make sure to run R1/beta5 which should work fine)
 
 ## Emulator problems
 
-In contrast with all other platforms which ES-DE runs on, on Haiku emulators which are not working correctly are still included in the configuration. This is done with the belief that things will improve in the future as the operating system matures.
+In contrast with all other platforms which ESTACION-PRO runs on, on Haiku emulators which are not working correctly are still included in the configuration. This is done with the belief that things will improve in the future as the operating system matures.
 
 ### Atari800
 
@@ -50,7 +50,7 @@ Can't run compressed game files such as those with the .zip extension.
 
 ### DOSBox-X (Standalone)
 
-Games can only be launched if ES-DE has been started from the command line, i.e. from a _Terminal_ window. And when existing a game the OS screen resolution is sometimes not reset back to its previous state meaning it has to be manually set to the correct resolution using the operating system's _Screen_ utility.
+Games can only be launched if ESTACION-PRO has been started from the command line, i.e. from a _Terminal_ window. And when existing a game the OS screen resolution is sometimes not reset back to its previous state meaning it has to be manually set to the correct resolution using the operating system's _Screen_ utility.
 
 ### EasyRPG
 
@@ -70,7 +70,7 @@ Can't run compressed game files such as those with the .zip extension.
 
 ### FS-UAE (Standalone)
 
-This emulator does not seem to accept command-line arguments, meaning games can't be launched from ES-DE.
+This emulator does not seem to accept command-line arguments, meaning games can't be launched from ESTACION-PRO.
 
 ### Genesis Plus GX Wide
 
@@ -110,7 +110,7 @@ Crashes on game start.
 
 ### ScummVM (Standalone)
 
-Games can only be launched if ES-DE has been started from the command line, i.e. from a _Terminal_ window.
+Games can only be launched if ESTACION-PRO has been started from the command line, i.e. from a _Terminal_ window.
 
 ### Stella
 
@@ -122,7 +122,7 @@ Crashes on game start.
 
 ## Supported game systems
 
-The **@** symbol indicates that the emulator is _deprecated_ and will be removed in a future ES-DE release.
+The **@** symbol indicates that the emulator is _deprecated_ and will be removed in a future ESTACION-PRO release.
 
 | System name           | Full name                                      | Default emulator                  | Alternative emulators             | Needs BIOS   | Recommended game setup               |
 | :-------------------- | :--------------------------------------------- | :-------------------------------- | :-------------------------------- | :----------- | :----------------------------------- |
@@ -169,14 +169,14 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | cps3                  | Capcom Play System III                         | MAME 2003-Plus                    | MAME **(Standalone)**,<br>FinalBurn Neo,<br>FinalBurn Neo **(Standalone)** | Depends      | See the specific _Arcade and Neo Geo_ section in the user guide |
 | crvision              | VTech CreatiVision                             | MAME **(Standalone)**             |                                   | Yes          | Single archive or ROM file           |
 | daphne                | Daphne Arcade LaserDisc Emulator               | MAME **(Standalone)**             |                                   | Depends      | See the specific _LaserDisc Games_ section in the user guide |
-| desktop               | Desktop Applications                           | _Suspend ES-DE_                   | _Keep ES-DE running_              | No           | See the specific _Ports and desktop applications_ section in the user guide |
+| desktop               | Desktop Applications                           | _Suspend ES-DE_                   | _Keep ESTACION-PRO running_              | No           | See the specific _Ports and desktop applications_ section in the user guide |
 | doom                  | Doom                                           | _Script_                          |                                   | No           |                                      |
 | dos                   | DOS (PC)                                       | DOSBox-Pure                       | DOSBox,<br>DOSBox-X **(Standalone)** | No           | See the specific _DOS / PC_ section in the user guide |
 | dragon32              | Dragon Data Dragon 32                          | MAME Dragon 32 [Tape] **(Standalone)** | MAME Dragon 32 [Cartridge] **(Standalone)**,<br>MAME Dragon 64 [Tape] **(Standalone)**,<br>MAME Dragon 64 [Cartridge] **(Standalone)** | Yes          | See the specific _Dragon 32 and Tano Dragon_ section in the user guide |
 | dreamcast             | Sega Dreamcast                                 | Flycast                           |                                   | No           | In separate folder interpreted as a file, with .m3u playlist if multi-disc game |
 | easyrpg               | EasyRPG Game Engine                            | EasyRPG                           |                                   | No           | See the specific _EasyRPG Game Engine_ section in the user guide |
 | electron              | Acorn Electron                                 | MAME [Tape] **(Standalone)**      | MAME [Diskette DFS] **(Standalone)**,<br>MAME [Diskette ADFS] **(Standalone)** | Yes          | Single archive, or single tape or diskette image file |
-| emulators             | Emulators                                      | _Suspend ES-DE_                   | _Keep ES-DE running_              | No           | See the specific _Ports and desktop applications_ section in the user guide |
+| emulators             | Emulators                                      | _Suspend ES-DE_                   | _Keep ESTACION-PRO running_              | No           | See the specific _Ports and desktop applications_ section in the user guide |
 | epic                  | Epic Games Store                               | _Placeholder_                     |                                   |              |                                      |
 | famicom               | Nintendo Family Computer                       | Mesen                             | Nestopia UE,<br>FCEUmm,<br>Mednafen **(Standalone)** | No           | Single archive or ROM file           |
 | fba                   | FinalBurn Alpha                                | _Placeholder_                     |                                   |              |                                      |
@@ -306,8 +306,8 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | wii                   | Nintendo Wii                                   | _Placeholder_                     |                                   |              |                                      |
 | wiiu                  | Nintendo Wii U                                 | _Placeholder_                     |                                   |              |                                      |
 | windows               | Microsoft Windows                              | _Placeholder_                     |                                   |              |                                      |
-| windows3x             | Microsoft Windows 3.x                          | DOSBox-X **(Standalone)**         | DOSBox-Pure,<br> _Script (Suspend ES-DE)_,<br> _Script (Keep ES-DE running)_ | No           | See the specific _Microsoft Windows 3.x and 9x_ section in the user guide |
-| windows9x             | Microsoft Windows 9x                           | DOSBox-X **(Standalone)**         | DOSBox-Pure,<br> _Script (Suspend ES-DE)_,<br> _Script (Keep ES-DE running)_ | No           | See the specific _Microsoft Windows 3.x and 9x_ section in the user guide |
+| windows3x             | Microsoft Windows 3.x                          | DOSBox-X **(Standalone)**         | DOSBox-Pure,<br> _Script (Suspend ESTACION-PRO)_,<br> _Script (Keep ESTACION-PRO running)_ | No           | See the specific _Microsoft Windows 3.x and 9x_ section in the user guide |
+| windows9x             | Microsoft Windows 9x                           | DOSBox-X **(Standalone)**         | DOSBox-Pure,<br> _Script (Suspend ESTACION-PRO)_,<br> _Script (Keep ESTACION-PRO running)_ | No           | See the specific _Microsoft Windows 3.x and 9x_ section in the user guide |
 | wonderswan            | Bandai WonderSwan                              | Beetle Cygne                      | Mednafen **(Standalone)**         | No           | Single archive or ROM file           |
 | wonderswancolor       | Bandai WonderSwan Color                        | Beetle Cygne                      | Mednafen **(Standalone)**         | No           | Single archive or ROM file           |
 | x1                    | Sharp X1                                       | MAME [Diskette] **(Standalone)**  | MAME [Tape] **(Standalone)**      | Yes          | Single archive or diskette/tape file |

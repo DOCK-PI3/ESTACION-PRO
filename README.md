@@ -2,15 +2,15 @@
 
 ESTACION-PRO es un frontend multiplataforma para explorar y lanzar juegos de una coleccion multi-sistema.
 
-Este repositorio es un fork directo de ES-DE (EmulationStation Desktop Edition):
-- Upstream oficial: https://gitlab.com/es-de/emulationstation-de
-- Fork/derivado: ESTACION-PRO
+Este es el repositorio actual del proyecto:
+- Repositorio GitHub: https://github.com/DOCK-PI3/ESTACION-PRO
+- Proyecto base/origen: ES-DE (EmulationStation Desktop Edition)
 
-La base se mantiene compatible con la arquitectura multiplataforma de ES-DE, aplicando renombrado de producto y ajustes de build para esta distribucion.
+La base se mantiene compatible con la arquitectura multiplataforma original de ES-DE, aplicando el renombrado del producto y ajustes de build para esta distribucion.
 
 ## Estado de esta base
 
-- Base sincronizada desde ES-DE
+- Base sincronizada desde el proyecto base ES-DE
 - Nombre del proyecto ajustado a ESTACION-PRO en CMake y empaquetado principal
 - Estandar de compilacion migrado a C++20
 - Estructura multiplataforma preservada (Linux, Windows, macOS, Android, etc.)
@@ -38,13 +38,15 @@ El binario principal se genera con el nombre ESTACION-PRO (segun plataforma y ge
 
 Si compilas dentro de `build`, ubica el ejecutable en la salida del generador (por ejemplo `build/` o segun configuracion de CMake/IDE).
 
-## Documentacion base heredada
+## Documentación completa de ESTACION-PRO
 
-- [FAQ.md](FAQ.md)
-- [USERGUIDE.md](USERGUIDE.md)
-- [INSTALL.md](INSTALL.md)
-- [THEMES.md](THEMES.md)
-- [CHANGELOG.md](CHANGELOG.md)
+La siguiente es la documentación técnica y de usuario completa:
+
+- [FAQ.md](FAQ.md) - Preguntas frecuentes
+- [USERGUIDE.md](USERGUIDE.md) - Guía de usuario
+- [INSTALL.md](INSTALL.md) - Instrucciones de instalación
+- [THEMES.md](THEMES.md) - Temas y personalización
+- [CHANGELOG.md](CHANGELOG.md) - Historial de versiones
 
 ## Convenciones de codigo para esta rama
 
