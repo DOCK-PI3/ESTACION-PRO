@@ -154,6 +154,7 @@ void Settings::setDefaults()
     mBoolMap["ScraperIncludeFolders"] = {true, true};
     mBoolMap["ScraperInteractive"] = {false, false};
     mBoolMap["ScraperSemiautomatic"] = {true, true};
+    mBoolMap["ScraperBackgroundMode"] = {true, true};
     mBoolMap["ScraperRespectExclusions"] = {true, true};
     mBoolMap["ScraperExcludeRecursively"] = {true, true};
     mBoolMap["ScraperConvertUnderscores"] = {true, true};

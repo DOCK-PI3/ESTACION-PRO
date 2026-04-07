@@ -40,6 +40,7 @@ Window::Window() noexcept
     , mPDFViewer {nullptr}
     , mLaunchScreen {nullptr}
     , mInfoPopup {nullptr}
+    , mPersistentInfoPopup {false}
     , mGameLaunched {nullptr}
     , mListScrollOpacity {0.0f}
     , mFrameTimeElapsed {0}
@@ -351,9 +352,16 @@ void Window::input(InputConfig* config, Input input)
                                          !Settings::getInstance()->getBool("DebugImage"));
     }
     else {
-        if (peekGui())
+        if (peekGui()) {
             // This is where the majority of inputs will be consumed: the GuiComponent Stack.
-            this->peekGui()->input(config, input);
+            GuiComponent* topGui {this->peekGui()};
+            const bool consumed {topGui->input(config, input)};
+
+            // Allow certain top-level overlays to run in the background while keeping
+            // navigation active in the system and gamelist views.
+            if (!consumed && mGuiStack.size() > 1 && topGui->allowInputToUnderlyingView())
+                mGuiStack.front()->input(config, input);
+        }
     }
 }
 
@@ -436,7 +444,7 @@ void Window::update(int deltaTime)
     mTimeSinceLastInput += deltaTime;
 
     // If there is a popup notification queued, then display it.
-    if (mInfoPopupQueue.size() > 0) {
+    if (!mPersistentInfoPopup && mInfoPopupQueue.size() > 0) {
         bool popupIsRunning = false;
 
         // If uncommenting the following, new popups will not be displayed until the one
@@ -491,6 +499,28 @@ void Window::update(int deltaTime)
     if (Settings::getInstance()->getBool("InputTouchOverlay"))
         InputOverlay::getInstance().update(deltaTime);
 #endif
+}
+
+void Window::setPersistentInfoPopup(const std::string& message, int progress)
+{
+    if (!mInfoPopup || !mPersistentInfoPopup) {
+        delete mInfoPopup;
+        mInfoPopup = new GuiInfoPopup(message, 0, true, progress);
+        mPersistentInfoPopup = true;
+        return;
+    }
+
+    mInfoPopup->setPersistent(true);
+    mInfoPopup->setMessage(message);
+    mInfoPopup->setProgress(progress);
+}
+
+void Window::clearPersistentInfoPopup()
+{
+    mPersistentInfoPopup = false;
+
+    if (mInfoPopup)
+        mInfoPopup->stop();
 }
 
 bool Window::isBackgroundDimmed()
@@ -951,6 +981,8 @@ void Window::setHelpPrompts(const std::vector<HelpPrompt>& prompts)
 
 void Window::stopInfoPopup()
 {
+    mPersistentInfoPopup = false;
+
     if (mInfoPopup)
         mInfoPopup->stop();
 

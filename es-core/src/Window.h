@@ -134,6 +134,8 @@ public:
     {
         mInfoPopupQueue.emplace(std::make_pair(message, duration));
     }
+    void setPersistentInfoPopup(const std::string& message, int progress = -1);
+    void clearPersistentInfoPopup();
     void stopInfoPopup();
 
     void startScreensaver(bool onTimer);
@@ -247,6 +249,7 @@ private:
     PDFViewer* mPDFViewer;
     GuiLaunchScreen* mLaunchScreen;
     GuiInfoPopup* mInfoPopup;
+    bool mPersistentInfoPopup;
     FileData* mGameLaunched;
 
     std::queue<std::pair<std::string, int>> mInfoPopupQueue;
