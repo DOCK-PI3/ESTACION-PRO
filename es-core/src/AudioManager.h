@@ -39,10 +39,16 @@ public:
     void muteStream() { sMuteStream = true; }
     void unmuteStream() { sMuteStream = false; }
 
+    // Used for streaming background music.
+    void setupMusicStream(int sampleRate);
+    static void processMusicStream(const void* samples, unsigned count);
+    static void clearMusicStream();
+
     bool getHasAudioDevice() { return sHasAudioDevice; }
 
     static inline SDL_AudioDeviceID sAudioDevice {0};
     static inline SDL_AudioSpec sAudioFormat;
+    static inline SDL_AudioStream* sMusicStream {nullptr};
 
 private:
     AudioManager() noexcept;

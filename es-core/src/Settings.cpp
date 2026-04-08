@@ -238,6 +238,8 @@ void Settings::setDefaults()
 #endif
     mIntMap["SoundVolumeNavigation"] = {70, 70};
     mIntMap["SoundVolumeVideos"] = {80, 80};
+    mIntMap["SoundVolumeMusic"] = {80, 80};
+    mBoolMap["BackgroundMusic"] = {false, false};
     mBoolMap["ViewsVideoAudio"] = {true, true};
     mBoolMap["MediaViewerVideoAudio"] = {true, true};
     mBoolMap["ScreensaverVideoAudio"] = {true, true};

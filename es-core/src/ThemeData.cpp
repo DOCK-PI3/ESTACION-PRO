@@ -893,8 +893,7 @@ void ThemeData::populateThemes()
     const std::vector<std::string> themePaths {Utils::FileSystem::getExePath() + "/themes",
                                                userThemeDirectory};
 #else
-    const std::vector<std::string> themePaths {Utils::FileSystem::getExePath() + "/themes",
-                                               Utils::FileSystem::getProgramDataPath() + "/themes",
+    const std::vector<std::string> themePaths {Utils::FileSystem::getProgramDataPath() + "/themes",
                                                userThemeDirectory};
 #endif
 

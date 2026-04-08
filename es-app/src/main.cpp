@@ -20,6 +20,7 @@
 #include "Log.h"
 #include "MameNames.h"
 #include "MediaViewer.h"
+#include "MusicManager.h"
 #include "PDFViewer.h"
 #include "Screensaver.h"
 #include "Scripting.h"
@@ -1146,6 +1147,9 @@ int main(int argc, char* argv[])
 #endif
 
     AudioManager::getInstance();
+
+    // Initialize background music manager after AudioManager is ready.
+    MusicManager::getInstance().init();
 
     SDL_version version;
     SDL_GetVersion(&version);

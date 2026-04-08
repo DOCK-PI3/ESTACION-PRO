@@ -16,6 +16,7 @@
 #include "FileSorts.h"
 #include "Log.h"
 #include "MameNames.h"
+#include "MusicManager.h"
 #include "Scripting.h"
 #include "SystemData.h"
 #include "SystemStatus.h"
@@ -2114,6 +2115,9 @@ void FileData::launchGame()
     if (!runInBackground)
         Renderer::getInstance()->swapBuffers();
 
+    // Stop background music before handing control to the game.
+    MusicManager::getInstance().stopPlayback();
+
     Scripting::fireEvent("game-start", romPath, getSourceFileData()->metadata.get("name"),
                          getSourceFileData()->getSystem()->getName(),
                          getSourceFileData()->getSystem()->getFullName());
@@ -2195,8 +2199,14 @@ window->deinit();
 returnValue = Utils::Platform::launchGameUnix(command, startDirectory, false);
 AudioManager::getInstance().init();
 window->init();
+// Restart background music after AudioManager has been reinitialized.
+if (Settings::getInstance()->getBool("BackgroundMusic"))
+    MusicManager::getInstance().startPlayback();
 #else
 returnValue = Utils::Platform::launchGameUnix(command, startDirectory, runInBackground);
+// Restart background music for the blocking (non-runInBackground) case.
+if (!runInBackground && Settings::getInstance()->getBool("BackgroundMusic"))
+    MusicManager::getInstance().startPlayback();
 #endif
 
 #endif
