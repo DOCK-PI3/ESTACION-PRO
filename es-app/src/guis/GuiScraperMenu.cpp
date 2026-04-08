@@ -18,7 +18,9 @@
 #include "guis/GuiMsgBox.h"
 #include "guis/GuiOfflineGenerator.h"
 #include "guis/GuiScraperMulti.h"
+#include "scrapers/ThreadedScraper.h"
 #include "utils/LocalizationUtil.h"
+#include "views/ViewController.h"
 
 GuiScraperMenu::GuiScraperMenu(std::string title)
     : mRenderer {Renderer::getInstance()}
@@ -1053,6 +1055,19 @@ void GuiScraperMenu::openOtherOptions()
         }
     });
 
+    // Keep navigation active while automatic multi-scraping is running.
+    auto scraperBackgroundMode = std::make_shared<SwitchComponent>();
+    scraperBackgroundMode->setState(Settings::getInstance()->getBool("ScraperBackgroundMode"));
+    s->addWithLabel(_("BACKGROUND SCRAPING (ALLOW NAVIGATION)"), scraperBackgroundMode);
+    s->addSaveFunc([scraperBackgroundMode, s] {
+        if (scraperBackgroundMode->getState() !=
+            Settings::getInstance()->getBool("ScraperBackgroundMode")) {
+            Settings::getInstance()->setBool("ScraperBackgroundMode",
+                                             scraperBackgroundMode->getState());
+            s->setNeedsSaving();
+        }
+    });
+
     // Semi-automatic scraping.
     auto scraperSemiautomatic = std::make_shared<SwitchComponent>();
     scraperSemiautomatic->setState(Settings::getInstance()->getBool("ScraperSemiautomatic"));
@@ -1284,6 +1299,13 @@ void GuiScraperMenu::pressedStart()
 
 void GuiScraperMenu::start()
 {
+    if (ThreadedScraper::isRunning()) {
+        mWindow->pushGui(new GuiMsgBox(
+            _("SCRAPING IS ALREADY RUNNING IN THE BACKGROUND\nSTOP IT?"), _("YES"),
+            [] { ThreadedScraper::stop(); }, _("NO"), nullptr));
+        return;
+    }
+
     if (mSystems->getSelectedObjects().empty()) {
         mWindow->pushGui(new GuiMsgBox(_("PLEASE SELECT AT LEAST ONE SYSTEM TO SCRAPE")));
         return;
@@ -1369,11 +1391,25 @@ void GuiScraperMenu::start()
         mWindow->pushGui(new GuiMsgBox(_("ALL GAMES WERE FILTERED, NOTHING TO SCRAPE")));
     }
     else {
-        GuiScraperMulti* gsm {
-            new GuiScraperMulti(searches, Settings::getInstance()->getBool("ScraperInteractive"))};
-        mWindow->pushGui(gsm);
-        mMenu.setCursorToList();
-        mMenu.setCursorToFirstListEntry();
+        const bool interactive {Settings::getInstance()->getBool("ScraperInteractive")};
+        const bool backgroundMode {Settings::getInstance()->getBool("ScraperBackgroundMode")};
+
+        if (!interactive && backgroundMode) {
+            Window* window {mWindow};
+            ThreadedScraper::start(searches);
+
+            // Close menus and return to the view so the user can keep navigating immediately.
+            while (window->peekGui() != ViewController::getInstance())
+                delete window->peekGui();
+
+            return;
+        }
+        else {
+            GuiScraperMulti* gsm {new GuiScraperMulti(searches, interactive)};
+            mWindow->pushGui(gsm);
+            mMenu.setCursorToList();
+            mMenu.setCursorToFirstListEntry();
+        }
     }
 }
 

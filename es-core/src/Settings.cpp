@@ -154,6 +154,7 @@ void Settings::setDefaults()
     mBoolMap["ScraperIncludeFolders"] = {true, true};
     mBoolMap["ScraperInteractive"] = {false, false};
     mBoolMap["ScraperSemiautomatic"] = {true, true};
+    mBoolMap["ScraperBackgroundMode"] = {true, true};
     mBoolMap["ScraperRespectExclusions"] = {true, true};
     mBoolMap["ScraperExcludeRecursively"] = {true, true};
     mBoolMap["ScraperConvertUnderscores"] = {true, true};
@@ -237,6 +238,8 @@ void Settings::setDefaults()
 #endif
     mIntMap["SoundVolumeNavigation"] = {70, 70};
     mIntMap["SoundVolumeVideos"] = {80, 80};
+    mIntMap["SoundVolumeMusic"] = {80, 80};
+    mBoolMap["BackgroundMusic"] = {false, false};
     mBoolMap["ViewsVideoAudio"] = {true, true};
     mBoolMap["MediaViewerVideoAudio"] = {true, true};
     mBoolMap["ScreensaverVideoAudio"] = {true, true};

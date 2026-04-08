@@ -1,11 +1,14 @@
-# ES-DE Frontend - Credits
+# ESTACION-PRO Frontend - Credits
 
 # Programming
 
-**ES-DE**\
+**ESTACION-PRO** (Current Development & Maintenance)\
 Leon Styhre
 
-**RetroPie EmulationStation**\
+**ES-DE Foundation** (Original ESTACION-PRO Base)\
+Leon Styhre & Contributors
+
+**RetroPie EmulationStation** (Historical Base)\
 RetroPie community
 
 **Original EmulationStation**\
@@ -68,7 +71,7 @@ Hsin Chiang
 
 # Licenses
 
-Please find the individual license files inside the [licenses](https://gitlab.com/es-de/emulationstation-de/-/tree/master/licenses) directory. There is also additional license information in the headers of most source files.
+Please find the individual license files inside the [licenses](https://github.com/DOCK-PI3/ESTACION-PRO/tree/master/licenses) directory. There is also additional license information in the headers of most source files.
 
 # Libraries
 
@@ -215,11 +218,11 @@ https://wiki.mozilla.org/CA
 
 The Linear theme is based on [ESonline](https://github.com/Weestuarty/esonline-es-de) by Weestuarty.
 
-[Carousel icons](https://github.com/szymon-kulak/es-de-moderntheme-nsoicons) originally made by Szymon Kulak and modified by the ES-DE project.
+[Carousel icons](https://github.com/szymon-kulak/es-de-moderntheme-nsoicons) originally made by Szymon Kulak and modified by the ESTACION-PRO project.
 
 # Modern Theme
 
-The Modern theme is based on [es-theme-switch](https://github.com/lilbud/es-theme-switch) by lilbud, and it was modified for ES-DE by Sophia Hadash.
+The Modern theme is based on [es-theme-switch](https://github.com/lilbud/es-theme-switch) by lilbud, and it was modified for ESTACION-PRO by Sophia Hadash.
 
 Default [carousel icons](https://github.com/szymon-kulak/es-de-moderntheme-nsoicons) by Szymon Kulak.
 

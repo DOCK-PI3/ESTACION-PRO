@@ -12,20 +12,23 @@
 #include "components/TextComponent.h"
 
 #include <SDL2/SDL_timer.h>
+#include <algorithm>
 
-GuiInfoPopup::GuiInfoPopup(std::string message, int duration)
+GuiInfoPopup::GuiInfoPopup(std::string message, int duration, bool persistent, int progress)
     : mRenderer {Renderer::getInstance()}
     , mMessage {message}
     , mDuration {duration}
     , mAlpha {1.0f}
     , mRunning {true}
+    , mPersistent {persistent}
+    , mProgress {progress}
 {
     mBackground = new BackgroundComponent(glm::vec2 {24.0f, 24.0f});
     float maxWidth {Renderer::getScreenWidth() * 0.9f};
     float maxHeight {Renderer::getScreenHeight() * 0.2f};
 
-    std::shared_ptr<TextComponent> s {std::make_shared<TextComponent>(
-        "", Font::get(FONT_SIZE_MINI), mMenuColorPopupText, ALIGN_CENTER)};
+    mText = std::make_shared<TextComponent>("", Font::get(FONT_SIZE_MINI), mMenuColorPopupText, ALIGN_CENTER);
+    std::shared_ptr<TextComponent> s {mText};
 
     // We do this to force the text container to resize and return the actual expected popup size.
     s->setSize(0.0f, 0.0f);
@@ -72,6 +75,13 @@ GuiInfoPopup::~GuiInfoPopup()
     delete mBackground;
 }
 
+void GuiInfoPopup::setMessage(const std::string& message)
+{
+    mMessage = message;
+    if (mText)
+        mText->setText(message);
+}
+
 void GuiInfoPopup::render(const glm::mat4& /*parentTrans*/)
 {
     // We use getIdentity() as we want to render on a specific window position, not on the view.
@@ -80,6 +90,28 @@ void GuiInfoPopup::render(const glm::mat4& /*parentTrans*/)
         // If we're still supposed to be rendering it.
         mRenderer->setMatrix(trans);
         renderChildren(trans);
+
+        if (mProgress >= 0) {
+            const float clampedProgress {
+                static_cast<float>(std::clamp(mProgress, 0, 100)) / 100.0f};
+
+            const float barWidth {mSize.x * 0.82f};
+            const float barHeight {std::max(3.0f, mSize.y * 0.08f)};
+            const float barX {(mSize.x - barWidth) * 0.5f};
+            const float barY {mSize.y - barHeight - mSize.y * 0.12f};
+
+            mRenderer->drawRect(barX, barY, barWidth, barHeight,
+                                (mMenuColorFrame & 0xFFFFFF00) |
+                                    static_cast<unsigned char>(mAlpha * 110.0f),
+                                (mMenuColorFrame & 0xFFFFFF00) |
+                                    static_cast<unsigned char>(mAlpha * 110.0f));
+
+            mRenderer->drawRect(barX, barY, barWidth * clampedProgress, barHeight,
+                                (mMenuColorPrimary & 0xFFFFFF00) |
+                                    static_cast<unsigned char>(mAlpha * 255.0f),
+                                (mMenuColorPrimary & 0xFFFFFF00) |
+                                    static_cast<unsigned char>(mAlpha * 255.0f));
+        }
     }
 }
 
@@ -92,7 +124,13 @@ bool GuiInfoPopup::updateState()
         mStartTime = curTime;
 
     // Compute fade-in effect.
-    if (curTime - mStartTime > mDuration) {
+    if (mPersistent) {
+        if (curTime - mStartTime <= 500)
+            mAlpha = static_cast<float>((curTime - mStartTime) / 500.0f);
+        else
+            mAlpha = 1.0f;
+    }
+    else if (curTime - mStartTime > mDuration) {
         // We're past the popup duration, no need to render.
         mRunning = false;
         return false;

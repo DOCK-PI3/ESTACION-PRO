@@ -32,9 +32,11 @@ public:
 
     virtual ~GuiScraperMulti();
 
+    bool input(InputConfig* config, Input input) override;
     void onSizeChanged() override;
 
     std::vector<HelpPrompt> getHelpPrompts() override;
+    bool allowInputToUnderlyingView() const override;
 
 private:
     void acceptResult(const ScraperSearchResult& result);
@@ -64,6 +66,7 @@ private:
     unsigned int mTotalSuccessful;
     unsigned int mTotalSkipped;
     bool mApproveResults;
+    bool mBackgroundScrapeMode;
 };
 
 #endif // ES_APP_GUIS_GUI_SCRAPER_MULTI_H

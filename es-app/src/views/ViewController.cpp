@@ -18,6 +18,7 @@
 #include "FileFilterIndex.h"
 #include "InputManager.h"
 #include "Log.h"
+#include "MusicManager.h"
 #include "Scripting.h"
 #include "Settings.h"
 #include "Sound.h"
@@ -1639,6 +1640,9 @@ void ViewController::checkWindowSizeChanged()
     while (mWindow->getGuiStackSize() > 1)
         mWindow->removeGui(mWindow->peekGui());
 
+    // Stop background music before reinitializing the audio subsystem.
+    MusicManager::getInstance().stopPlayback();
+
     AudioManager::getInstance().deinit();
     mWindow->deinit();
     SDL_Delay(20);
@@ -1646,6 +1650,10 @@ void ViewController::checkWindowSizeChanged()
     mWindow->init(true);
 
     mWindow->setLaunchedGame(false);
+
+    // Restart background music after the audio subsystem is back up.
+    if (Settings::getInstance()->getBool("BackgroundMusic"))
+        MusicManager::getInstance().startPlayback();
     mWindow->invalidateCachedBackground();
     mWindow->renderSplashScreen(Window::SplashScreenState::RELOADING, 0.0f);
 

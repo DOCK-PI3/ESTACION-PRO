@@ -18,6 +18,7 @@
 #include "CollectionSystemsManager.h"
 #include "FileFilterIndex.h"
 #include "FileSorts.h"
+#include "MusicManager.h"
 #include "Scripting.h"
 #include "SystemData.h"
 #include "UIModeController.h"
@@ -1358,6 +1359,40 @@ void GuiMenu::openSoundOptions()
             }
         });
     }
+
+    // Background music toggle.
+    auto backgroundMusic = std::make_shared<SwitchComponent>();
+    backgroundMusic->setState(Settings::getInstance()->getBool("BackgroundMusic"));
+    s->addWithLabel(_("ENABLE BACKGROUND MUSIC"), backgroundMusic);
+    s->addSaveFunc([backgroundMusic, s] {
+        if (backgroundMusic->getState() !=
+            Settings::getInstance()->getBool("BackgroundMusic")) {
+            Settings::getInstance()->setBool("BackgroundMusic", backgroundMusic->getState());
+            s->setNeedsSaving();
+            if (backgroundMusic->getState()) {
+                MusicManager::getInstance().setEnabled(true);
+                MusicManager::getInstance().startPlayback();
+            }
+            else {
+                MusicManager::getInstance().setEnabled(false);
+                MusicManager::getInstance().stopPlayback();
+            }
+        }
+    });
+
+    // Background music volume.
+    auto soundVolumeMusic = std::make_shared<SliderComponent>(0.0f, 100.0f, 1.0f, "%");
+    soundVolumeMusic->setValue(
+        static_cast<float>(Settings::getInstance()->getInt("SoundVolumeMusic")));
+    s->addWithLabel(_("BACKGROUND MUSIC VOLUME"), soundVolumeMusic);
+    s->addSaveFunc([soundVolumeMusic, s] {
+        if (soundVolumeMusic->getValue() !=
+            static_cast<float>(Settings::getInstance()->getInt("SoundVolumeMusic"))) {
+            Settings::getInstance()->setInt("SoundVolumeMusic",
+                                            static_cast<int>(soundVolumeMusic->getValue()));
+            s->setNeedsSaving();
+        }
+    });
 
     s->setSize(mSize);
     mWindow->pushGui(s);

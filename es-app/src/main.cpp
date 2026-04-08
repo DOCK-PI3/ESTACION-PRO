@@ -20,6 +20,7 @@
 #include "Log.h"
 #include "MameNames.h"
 #include "MediaViewer.h"
+#include "MusicManager.h"
 #include "PDFViewer.h"
 #include "Screensaver.h"
 #include "Scripting.h"
@@ -27,6 +28,7 @@
 #include "Sound.h"
 #include "SystemData.h"
 #include "SystemStatus.h"
+#include "scrapers/ThreadedScraper.h"
 #include "guis/GuiDetectDevice.h"
 #include "guis/GuiLaunchScreen.h"
 #include "utils/FileSystemUtil.h"
@@ -568,6 +570,7 @@ void applicationLoop()
         }
 #endif
         window->update(deltaTime);
+    ThreadedScraper::update();
         window->render();
 
         renderer->swapBuffers();
@@ -1145,6 +1148,9 @@ int main(int argc, char* argv[])
 
     AudioManager::getInstance();
 
+    // Initialize background music manager after AudioManager is ready.
+    MusicManager::getInstance().init();
+
     SDL_version version;
     SDL_GetVersion(&version);
 
@@ -1294,6 +1300,7 @@ int main(int argc, char* argv[])
 
     while (window->peekGui() != ViewController::getInstance())
         delete window->peekGui();
+    ThreadedScraper::stop();
     window->deinit();
 
     HttpReq::cleanupCurlMulti();

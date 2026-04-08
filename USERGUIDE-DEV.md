@@ -1,6 +1,6 @@
-# ES-DE Frontend (development version) - User guide
+# ESTACION-PRO Frontend (development version) - User guide
 
-This document is only relevant for the current ES-DE development version, if you are using the latest stable release, refer to [USERGUIDE.md](USERGUIDE.md) instead.
+This document is only relevant for the current ESTACION-PRO development version, if you are using the latest stable release, refer to [USERGUIDE.md](USERGUIDE.md) instead.
 
 It's generally recommended to read the [Frequently Asked Questions (FAQ)](FAQ.md) document prior to diving into the information in this guide.
 
@@ -12,25 +12,25 @@ Table of contents:
 
 If you just want to get started as quickly as possible, simply follow these steps:
 
-1) Install ES-DE
+1) Install ESTACION-PRO
 2) Start the application and press the _Create directories_ button to generate the ROM directory structure
 3) Put your game ROMs in the directories created by the previous step, or see [here](USERGUIDE-DEV.md#supported-game-systems) for additional details
 4) Install [RetroArch](https://www.retroarch.com)
 5) Start RetroArch and install the required emulator cores
-6) Start ES-DE, scrape game media for your collection and play some games!
+6) Start ESTACION-PRO, scrape game media for your collection and play some games!
 
 You can always close the application immediately using the keyboard, by default the quit shortcut is Alt + F4 on Windows and Linux and Command + Q on macOS. This shortcut can also be changed using the _Keyboard quit shortcut_ menu option.
 
 For additional details, read on below.
 
-There are also installation videos available at the ES-DE YouTube channel:\
+There are also installation videos available at the ESTACION-PRO YouTube channel:\
 https://www.youtube.com/channel/UCosLuC9yIMQPKFBJXgDpvVQ
 
 ## Installation and first startup
 
-To install ES-DE, just download the package or installer from https://es-de.org and follow the brief instructions below.
+To install ESTACION-PRO, just download the package or installer from https://es-de.org and follow the brief instructions below.
 
-As for display resolutions, the minimum pixel value is 224 and the maximum is 7680. This means that you can run ES-DE at for instance 320x224 all the way up to 7680x4320 (8K UHD). Vertical screen orientation is also supported, as well as ultra-wide resolutions like 3840x1440.
+As for display resolutions, the minimum pixel value is 224 and the maximum is 7680. This means that you can run ESTACION-PRO at for instance 320x224 all the way up to 7680x4320 (8K UHD). Vertical screen orientation is also supported, as well as ultra-wide resolutions like 3840x1440.
 
 The installation procedure is just covered briefly here and may differ a bit for your specific operating system, so in case of problems refer to your system documentation.
 
@@ -55,23 +55,23 @@ Of course, if you're not using a Debian-based distribution, you may need to use 
 
 **Installing on macOS and Windows**
 
-There's not really much to say about these operating systems, just install ES-DE as you would any other application. On macOS it's via the .dmg drag-and-drop installer, and on Windows via the normal application installer or by unpacking the portable zip file somewhere on your filesystem.
+There's not really much to say about these operating systems, just install ESTACION-PRO as you would any other application. On macOS it's via the .dmg drag-and-drop installer, and on Windows via the normal application installer or by unpacking the portable zip file somewhere on your filesystem.
 
 **On first application startup**
 
-_This section primarily covers the desktop ports of ES-DE, for Android there's a separate document with its own section for the onboarding and first startup that you can find [here](ANDROID-DEV.md#first-startup-and-onboarding)._
+_This section primarily covers the desktop ports of ESTACION-PRO, for Android there's a separate document with its own section for the onboarding and first startup that you can find [here](ANDROID-DEV.md#first-startup-and-onboarding)._
 
-Upon first startup, ES-DE will create its `~/ES-DE` application data directory.
+Upon first startup, ESTACION-PRO will create its `~/ESTACION-PRO` application data directory.
 
-On Linux this means `/home/<username>/ES-DE`, on macOS `/Users/<username>/ES-DE` and on Windows `C:\Users\<username>\ES-DE` or `ES-DE\ES-DE` depending on whether the installer release or the portable release is used.
+On Linux this means `/home/<username>/ESTACION-PRO`, on macOS `/Users/<username>/ESTACION-PRO` and on Windows `C:\Users\<username>\ESTACION-PRO` or `ESTACION-PRO\ESTACION-PRO` depending on whether the installer release or the portable release is used.
 
-Also on first startup the configuration file `es_settings.xml` will be generated in the `ES-DE/settings` directory, containing all the application settings at their default values. Following this, a file named `es_systems.xml` will be loaded from the resources directory (which is part of the ES-DE installation). This file contains the game system definitions including which emulator to use per platform. For many systems there are also alternative emulators defined which can be applied system-wide or per game. How that works is explained later in this guide. A customized systems configuration file can also be used, as described in the next section below.
+Also on first startup the configuration file `es_settings.xml` will be generated in the `ESTACION-PRO/settings` directory, containing all the application settings at their default values. Following this, a file named `es_systems.xml` will be loaded from the resources directory (which is part of the ESTACION-PRO installation). This file contains the game system definitions including which emulator to use per platform. For many systems there are also alternative emulators defined which can be applied system-wide or per game. How that works is explained later in this guide. A customized systems configuration file can also be used, as described in the next section below.
 
 In addition to es_systems.xml there's an `es_find_rules.xml` file that gets loaded as well and which contains rules on how to locate the emulators, i.e. how to find out where they've been installed.
 
-There's also a log file created in the `ES-DE/logs` directory named `es_log.txt`, refer to this in case of any issues as it should hopefully provide information on what went wrong. Enabling _Debug mode_ in the _Other settings_ menu or starting ES-DE with the --debug flag outputs even more detailed information to this log file.
+There's also a log file created in the `ESTACION-PRO/logs` directory named `es_log.txt`, refer to this in case of any issues as it should hopefully provide information on what went wrong. Enabling _Debug mode_ in the _Other settings_ menu or starting ESTACION-PRO with the --debug flag outputs even more detailed information to this log file.
 
-After ES-DE finds at least one game file, it will populate that game system and the application will start. If there are no game files, a dialog will be shown explaining that you need to install your game files into your ROM directory. You will also be given a choice to import games using the built-in game importer, or change the ROM directory path if you don't want to use the default one. As well you have the option to generate the complete game systems directory structure based on information in es_systems.xml.
+After ESTACION-PRO finds at least one game file, it will populate that game system and the application will start. If there are no game files, a dialog will be shown explaining that you need to install your game files into your ROM directory. You will also be given a choice to import games using the built-in game importer, or change the ROM directory path if you don't want to use the default one. As well you have the option to generate the complete game systems directory structure based on information in es_systems.xml.
 
 When generating the directory structure, a file named systeminfo.txt will be created in each game system folder which will provide you with some information about the system. Here's an example for the _dos_ system as seen on Linux:
 ```
@@ -100,7 +100,7 @@ Theme folder:
 dos
 ```
 
-This file is not needed to run ES-DE, it's only a convenience to easily see which emulators and file extensions are supported per system.
+This file is not needed to run ESTACION-PRO, it's only a convenience to easily see which emulators and file extensions are supported per system.
 
 In addition to this, a file named systems.txt will be created in the root of the ROM directory which shows the mapping between the directory names and the full system names.
 
@@ -115,24 +115,24 @@ epic: Epic Games Store
 famicom: Nintendo Family Computer
 ```
 
-If a custom es_systems.xml file is present in ~/ES-DE/custom_systems/ any entries from this file will have their names trailed by the text _(custom system)_. So if the _dos_ system in the example above would be present in the custom systems configuration file, the system would be shown as _dos (custom system)_ instead of simply _dos_. This is only applicable for the systems.txt and systeminfo.txt files, the trailing text is not applied or used anywhere else in the application.
+If a custom es_systems.xml file is present in ~/ESTACION-PRO/custom_systems/ any entries from this file will have their names trailed by the text _(custom system)_. So if the _dos_ system in the example above would be present in the custom systems configuration file, the system would be shown as _dos (custom system)_ instead of simply _dos_. This is only applicable for the systems.txt and systeminfo.txt files, the trailing text is not applied or used anywhere else in the application.
 
-![alt text](images/es-de_ui_easy_setup.png "ES-DE Easy Setup")
+![alt text](images/es-de_ui_easy_setup.png "ESTACION-PRO Easy Setup")
 _This is the dialog shown on desktop operating systems if no game files were found. It lets you import games, change the ROM directory if you don't want to use the default one, and you can also generate the game systems directory structure. Note that the directory is the physical path, and that your operating system may present this as a localized path if you are using a language other than English._
 
 ## Upgrading to a newer release
 
 **Linux, macOS and Windows**
 
-**Note:** Before upgrading ES-DE, make sure that you have not made any system customizations anywhere in the installation directory structure as these files will be overwritten during the upgrade process. All customizations should go into ~/ES-DE/custom_systems/ as described elsewhere in this guide. None of the upgrade methods mentioned below will ever touch any files inside your ES-DE directory tree.
+**Note:** Before upgrading ESTACION-PRO, make sure that you have not made any system customizations anywhere in the installation directory structure as these files will be overwritten during the upgrade process. All customizations should go into ~/ESTACION-PRO/custom_systems/ as described elsewhere in this guide. None of the upgrade methods mentioned below will ever touch any files inside your ESTACION-PRO directory tree.
 
-There is a built-in application updater that can automatically upgrade the Linux AppImages, and for Windows and macOS there is support for downloading the packages directly inside ES-DE. Just be aware that these will need to be manually installed. Using the application updater is straightforward, just follow the on-screen instructions. For the AppImage releases the old file is retained by renaming it, adding its version to the filename followed by the .OLD extension, for example `ES-DE_x64_SteamDeck.AppImage_3.0.0.OLD`
+There is a built-in application updater that can automatically upgrade the Linux AppImages, and for Windows and macOS there is support for downloading the packages directly inside ESTACION-PRO. Just be aware that these will need to be manually installed. Using the application updater is straightforward, just follow the on-screen instructions. For the AppImage releases the old file is retained by renaming it, adding its version to the filename followed by the .OLD extension, for example `ES-DE_x64_SteamDeck.AppImage_3.0.0.OLD`
 
 Note that the updater will keep whatever filename you had for your running AppImage file, which could potentially be confusing if you for example added version information to the filename. It's always recommend to keep the default AppImage filenames, i.e. `ES-DE_x64.AppImage` and `ES-DE_x64_SteamDeck.AppImage`
 
 On Windows and macOS you can specify to which directory you want to save the downloaded file. The default is `C:\Users\myusername\Downloads` on Windows and `/Users/myusername/Downloads` on macOS.
 
-To perform the upgrade on macOS simply open the .dmg file and install ES-DE on top of the old installation (i.e. replacing it).
+To perform the upgrade on macOS simply open the .dmg file and install ESTACION-PRO on top of the old installation (i.e. replacing it).
 
 For the Windows installer release simply run the .exe file and select uninstallation of the old version before installing the new version. For the Windows portable release refer to the README.txt file in the zip archive for instructions on how to perform the update.
 
@@ -147,11 +147,11 @@ https://resend.es-de.org
 
 **After the upgrade**
 
-Regardless of package format and operating system it's a good idea to update the ROM directory tree after upgrading to a new version. It's possible that the new ES-DE release adds support for more systems and emulators compared to the version you previously had installed. The easiest way to do this is via the _Create/update system directories_ entry in the _Utilities_ menu. Alternatively the _--create-system-dirs_ command line option can be used. Both methods work identically and will create any missing system directories and also update the systems.txt and systeminfo.txt files. This is a safe operation as it will not overwrite or delete your game files.
+Regardless of package format and operating system it's a good idea to update the ROM directory tree after upgrading to a new version. It's possible that the new ESTACION-PRO release adds support for more systems and emulators compared to the version you previously had installed. The easiest way to do this is via the _Create/update system directories_ entry in the _Utilities_ menu. Alternatively the _--create-system-dirs_ command line option can be used. Both methods work identically and will create any missing system directories and also update the systems.txt and systeminfo.txt files. This is a safe operation as it will not overwrite or delete your game files.
 
-Likewise it's a good idea to update your themes using the theme downloader after upgrading ES-DE as support for any new systems is likely to have been added.
+Likewise it's a good idea to update your themes using the theme downloader after upgrading ESTACION-PRO as support for any new systems is likely to have been added.
 
-![alt text](images/es-de_application_updater.png "ES-DE Application Updater")
+![alt text](images/es-de_application_updater.png "ESTACION-PRO Application Updater")
 _This is what the application updater looks like when the update process has been completed for the Linux AppImage release._
 
 **Linux AppImage**
@@ -172,18 +172,18 @@ Just run the installer for the new release. A question will be asked whether you
 
 **Windows portable**
 
-Refer to the README.txt file inside the ES-DE ZIP archive as it contains instructions on how to safely perform the upgrade. Just make sure to not unpack this archive on top of the old installation as that may lead to all sorts of problems.
+Refer to the README.txt file inside the ESTACION-PRO ZIP archive as it contains instructions on how to safely perform the upgrade. Just make sure to not unpack this archive on top of the old installation as that may lead to all sorts of problems.
 
 ## Placing games into non-standard directories
 
-As explained above, the basic logic for how ES-DE works is that it expects game files to be placed into a standardized directory structure under the ROMs directory. The location of this directory is configurable so it could for instance be placed on an external storage device or on a file share served by a NAS. The way it's implemented is via the %ROMPATH% variable in the es_systems.xml file which will always point to this ROM directory. For example this is an entry for the Super Nintendo system:
+As explained above, the basic logic for how ESTACION-PRO works is that it expects game files to be placed into a standardized directory structure under the ROMs directory. The location of this directory is configurable so it could for instance be placed on an external storage device or on a file share served by a NAS. The way it's implemented is via the %ROMPATH% variable in the es_systems.xml file which will always point to this ROM directory. For example this is an entry for the Super Nintendo system:
 ```
 <path>%ROMPATH%/snes</path>
 ```
 
 In theory it's possible to make a custom system entry and hardcode the path to a specific directory instead of using the %ROMPATH% variable, but this is not really supported and it also makes custom collections non-portable as the path to every game will be an absolute path rather than a path relative to the %ROMPATH% variable. So if you move your games to a different directory, you would manually need to modify all your custom collections configuration files as well as your custom es_systems.xml file.
 
-If you really insist on not placing your games into the ES-DE standard directory structure, a much better solution is to symlink the game directories into the standard directory. In this way you don't need to make a custom es_systems.xml file and any additional emulators and other configuration added to future ES-DE releases will just work after upgrading.
+If you really insist on not placing your games into the ESTACION-PRO standard directory structure, a much better solution is to symlink the game directories into the standard directory. In this way you don't need to make a custom es_systems.xml file and any additional emulators and other configuration added to future ESTACION-PRO releases will just work after upgrading.
 
 This is an example of symlinking the Super Nintendo game directory on Linux and macOS:
 ```
@@ -199,34 +199,34 @@ mklink /D snes "C:\My Games\Super Nintendo\"
 
 ## Disabling game systems
 
-The way ES-DE works is that it will always try to load any system for which there are game files available, so to disable a system it needs to be hidden from ES-DE. This is easily accomplished by renaming the system directory to something that is not recognized, for example changing `~/ROMs/c64` to `~/ROMs/c64_DISABLED`. Another approach is to create a subdirectory named DISABLED (or whatever name you prefer that is not matching a supported system) in the ROMs directory and move the system folder there, such as `~/ROMs/DISABLED/c64`. This makes it easy to disable and re-enable systems in ES-DE. Note that the gamelist.xml file and any game media files are retained while the system is disabled so this is an entirely safe thing to do.
+The way ESTACION-PRO works is that it will always try to load any system for which there are game files available, so to disable a system it needs to be hidden from ESTACION-PRO. This is easily accomplished by renaming the system directory to something that is not recognized, for example changing `~/ROMs/c64` to `~/ROMs/c64_DISABLED`. Another approach is to create a subdirectory named DISABLED (or whatever name you prefer that is not matching a supported system) in the ROMs directory and move the system folder there, such as `~/ROMs/DISABLED/c64`. This makes it easy to disable and re-enable systems in ESTACION-PRO. Note that the gamelist.xml file and any game media files are retained while the system is disabled so this is an entirely safe thing to do.
 
-For very specific situations such as when the ROM directory tree is shared with another frontend, you may want to exclude some systems from loading even though their directories exist. In this case simply create an empty file named `noload.txt` in the root of the directory and the system will not get populated when ES-DE is started. For example:
+For very specific situations such as when the ROM directory tree is shared with another frontend, you may want to exclude some systems from loading even though their directories exist. In this case simply create an empty file named `noload.txt` in the root of the directory and the system will not get populated when ESTACION-PRO is started. For example:
 ```
 ~/ROMs/nes/noload.txt
 ```
 
-Note that if the setting _Only show games from gamelist.xml files_ has been enabled then the noload.txt logic is completely bypassed as this option will make ES-DE load anything present in the gamelist.xml files, regardless of whether the files and directories actually exist.
+Note that if the setting _Only show games from gamelist.xml files_ has been enabled then the noload.txt logic is completely bypassed as this option will make ESTACION-PRO load anything present in the gamelist.xml files, regardless of whether the files and directories actually exist.
 
 ## Skip loading of individual subdirectories
 
-Sometimes you need to place things inside the ROMs directory tree that will not be visible inside ES-DE, such as texture packs and similar. But as ES-DE always scans all files to determine which ones are valid game files this can add significantly to the application startup time. However loading of such subdirectories can be skipped by placing a `noload.txt` file in the root of the directory, in the same manner as documented in the previous section above regarding disabling of game systems. For example:
+Sometimes you need to place things inside the ROMs directory tree that will not be visible inside ESTACION-PRO, such as texture packs and similar. But as ESTACION-PRO always scans all files to determine which ones are valid game files this can add significantly to the application startup time. However loading of such subdirectories can be skipped by placing a `noload.txt` file in the root of the directory, in the same manner as documented in the previous section above regarding disabling of game systems. For example:
 
 ```
 ~/ROMs/psx/textures/noload.txt
 ```
 
-Just note that you can't clean out stale entries from the gamelist.xml files for any directories that have been hidden in this way. So to get rid of any gamelist.xml entries for such files temporarily remove the noload.txt file, restart or reload ES-DE, run the _Orphaned data cleanup_ utility, then create a new noload.txt file and finally reload or restart ES-DE again.
+Just note that you can't clean out stale entries from the gamelist.xml files for any directories that have been hidden in this way. So to get rid of any gamelist.xml entries for such files temporarily remove the noload.txt file, restart or reload ESTACION-PRO, run the _Orphaned data cleanup_ utility, then create a new noload.txt file and finally reload or restart ESTACION-PRO again.
 
-Note that if the setting _Only show games from gamelist.xml files_ has been enabled then the noload.txt logic is completely bypassed as this option will make ES-DE load anything present in the gamelist.xml files.
+Note that if the setting _Only show games from gamelist.xml files_ has been enabled then the noload.txt logic is completely bypassed as this option will make ESTACION-PRO load anything present in the gamelist.xml files.
 
 ## Placing games and other resources on network shares
 
-Although ES-DE does support placing game ROMs, the `ES-DE` application data directory and the `downloaded_media` directory on network shares, this can lead to serious performance problems in some instances. Especially problematic is the Microsoft SMB protocol as it offers abysmal performance for some disk operations on which ES-DE relies heavily. For small game libraries this can still be acceptable, but for libraries with hundreds or thousands of games the application startup time and overall usage will be very painful or even unusable. Similar issues could occur when using file hosting services like Google Drive.
+Although ESTACION-PRO does support placing game ROMs, the `ESTACION-PRO` application data directory and the `downloaded_media` directory on network shares, this can lead to serious performance problems in some instances. Especially problematic is the Microsoft SMB protocol as it offers abysmal performance for some disk operations on which ESTACION-PRO relies heavily. For small game libraries this can still be acceptable, but for libraries with hundreds or thousands of games the application startup time and overall usage will be very painful or even unusable. Similar issues could occur when using file hosting services like Google Drive.
 
-A general recommendation is to place all game files and other data on drives connected directly to the machine where ES-DE is running. Even using low speed technology like USB thumb drives, SD cards etc. is generally fine and leads to acceptable performance in most instances.
+A general recommendation is to place all game files and other data on drives connected directly to the machine where ESTACION-PRO is running. Even using low speed technology like USB thumb drives, SD cards etc. is generally fine and leads to acceptable performance in most instances.
 
-If you insist on placing games and other resources on network drives such as a NAS, the NFS protocol has to be used instead of SMB as testing has shown between 10 and 30 times better performance with this protocol. Starting ES-DE with a certain game collection size could easily take minutes using SMB while it takes just seconds when using the NFS protocol. This is not a network throughput issue and using something like a 2.5 Gigabit or even 10 Gigabit wired interface will not help you as the SMB protocol has exceedingly bad latency regardless of physical adapter speed.
+If you insist on placing games and other resources on network drives such as a NAS, the NFS protocol has to be used instead of SMB as testing has shown between 10 and 30 times better performance with this protocol. Starting ESTACION-PRO with a certain game collection size could easily take minutes using SMB while it takes just seconds when using the NFS protocol. This is not a network throughput issue and using something like a 2.5 Gigabit or even 10 Gigabit wired interface will not help you as the SMB protocol has exceedingly bad latency regardless of physical adapter speed.
 
 Unix-based operating systems like Linux and macOS ship with an NFS client built-in.
 
@@ -254,74 +254,74 @@ Note that the above are only examples to illustrate the general approach, you ma
 
 ## Specific notes for Windows
 
-In general it should be straightforward to run ES-DE on Windows. Almost all emulators are available on this operating system and driver quality and controller support is normally very good.
+In general it should be straightforward to run ESTACION-PRO on Windows. Almost all emulators are available on this operating system and driver quality and controller support is normally very good.
 
 Just make sure to never place games or other resources on network shares using the Microsoft SMB protocol as that will lead to unacceptable performance degradations and extremely long startup times if you have a large collection. See the point above on how to setup an NFS share if you insist on placing files or other resources on network drives.
 
-Also make sure that you don't use the exFAT filesystem as its very poor disk I/O performance will make ES-DE run really slowly. Using this filesystem will make the theme downloader fail as well.
+Also make sure that you don't use the exFAT filesystem as its very poor disk I/O performance will make ESTACION-PRO run really slowly. Using this filesystem will make the theme downloader fail as well.
 
-There is also a limitation in Windows where the complete file path can't exceed 260 characters. So if you have files with extremely long names ES-DE may state that there are file permission problems for various operations such as when scraping or when running the orphaned data cleanup utility. In this case simply renaming the problematic game files to use shorter names should resolve the situation. If you use the portable release of ES-DE you could also relocate the entire application directory closer to the root of the filesystem to have shorter overall paths.
+There is also a limitation in Windows where the complete file path can't exceed 260 characters. So if you have files with extremely long names ESTACION-PRO may state that there are file permission problems for various operations such as when scraping or when running the orphaned data cleanup utility. In this case simply renaming the problematic game files to use shorter names should resolve the situation. If you use the portable release of ESTACION-PRO you could also relocate the entire application directory closer to the root of the filesystem to have shorter overall paths.
 
-In order for ES-DE to run, graphics drivers with OpenGL support have to be installed. If not, the application simply won't start. For really old graphics cards the available drivers may not provide an OpenGL version that is modern enough for ES-DE to work, and in this case a last resort solution would be to install the _Mesa3D for Windows_ library which provides software-based OpenGL rendering. The 64-bit version of this library can be downloaded from https://fdossena.com/?p=mesa/index.frag and you simply extract the opengl32.dll file into the ES-DE installation directory. Just be aware that the performance may be quite bad.
+In order for ESTACION-PRO to run, graphics drivers with OpenGL support have to be installed. If not, the application simply won't start. For really old graphics cards the available drivers may not provide an OpenGL version that is modern enough for ESTACION-PRO to work, and in this case a last resort solution would be to install the _Mesa3D for Windows_ library which provides software-based OpenGL rendering. The 64-bit version of this library can be downloaded from https://fdossena.com/?p=mesa/index.frag and you simply extract the opengl32.dll file into the ESTACION-PRO installation directory. Just be aware that the performance may be quite bad.
 
-On some GPUs with buggy drivers, ES-DE may only display a black screen on startup or when launching a game. The problem can be worked around by specifying a window size for ES-DE that is a single pixel wider than the actual screen resolution. So for example for a 1280x800 display, the resolution can be set to 1281x800 and then rendering should work correctly. This is applied using the --resolution command line option, for example:
+On some GPUs with buggy drivers, ESTACION-PRO may only display a black screen on startup or when launching a game. The problem can be worked around by specifying a window size for ESTACION-PRO that is a single pixel wider than the actual screen resolution. So for example for a 1280x800 display, the resolution can be set to 1281x800 and then rendering should work correctly. This is applied using the --resolution command line option, for example:
 ```
-ES-DE.exe --resolution 1281 800
+ESTACION-PRO.exe --resolution 1281 800
 ```
 
-Another potential workaround for some buggy drivers is to set ES-DE to compatibility mode and/or select _Disable full-screen optimizations_. These options are available when right-clicking on ES-DE.exe in the file manager and chosing _Properties_ and then selecting the _Compatibility_ tab.
+Another potential workaround for some buggy drivers is to set ESTACION-PRO to compatibility mode and/or select _Disable full-screen optimizations_. These options are available when right-clicking on ESTACION-PRO.exe in the file manager and chosing _Properties_ and then selecting the _Compatibility_ tab.
 
-Yet another issue with buggy GPU drivers is that for computers with multiple GPUs such as gaming laptops with integrated Intel graphics in addition to a discrete GPU (e.g. from Nvidia) there may be issues when window switching between ES-DE and other applications. In such cases severe screen flickering may get introduced. This is normally worked around by explicitly setting ES-DE to use the discrete GPU in the Windows graphics settings.
+Yet another issue with buggy GPU drivers is that for computers with multiple GPUs such as gaming laptops with integrated Intel graphics in addition to a discrete GPU (e.g. from Nvidia) there may be issues when window switching between ESTACION-PRO and other applications. In such cases severe screen flickering may get introduced. This is normally worked around by explicitly setting ESTACION-PRO to use the discrete GPU in the Windows graphics settings.
 
-It also seems like Microsoft broke the Intel GPU drivers with the KB5048685 update, which causes excessive flickering and makes ES-DE unresponsive under some circumstances. However it seems like changing the _Anti-aliasing (MSAA) (requires restart)_ setting in the _Other settings_ menu to _2X_ works around this bug. This may also be an alternative solution to the problem mentioned just above for devices with multiple GPUs.
+It also seems like Microsoft broke the Intel GPU drivers with the KB5048685 update, which causes excessive flickering and makes ESTACION-PRO unresponsive under some circumstances. However it seems like changing the _Anti-aliasing (MSAA) (requires restart)_ setting in the _Other settings_ menu to _2X_ works around this bug. This may also be an alternative solution to the problem mentioned just above for devices with multiple GPUs.
 
-Some computers using Intel Iris Xe GPUs refuse to start ES-DE or display excessive graphics corruption. These problems are seemingly caused by driver bugs and do not occur when using Linux with the same hardware. There is no known solution or workaround to this issue other than switching to Linux or waiting for Intel to resolve the problem with a driver update.
+Some computers using Intel Iris Xe GPUs refuse to start ESTACION-PRO or display excessive graphics corruption. These problems are seemingly caused by driver bugs and do not occur when using Linux with the same hardware. There is no known solution or workaround to this issue other than switching to Linux or waiting for Intel to resolve the problem with a driver update.
 
-Some older games (and possibly emulators too) may not work correctly or even start at all if ES-DE is set to run in the background while a game is launched. So if you experience strange issues with some games, make sure that the setting _Run in background (while game is launched)_ is disabled. If launching any of these problematic games from the _desktop_ system, also make sure to use the default emulator entry _Suspend ES-DE_ and not the alternative emulator _Keep ES-DE running_.
+Some older games (and possibly emulators too) may not work correctly or even start at all if ESTACION-PRO is set to run in the background while a game is launched. So if you experience strange issues with some games, make sure that the setting _Run in background (while game is launched)_ is disabled. If launching any of these problematic games from the _desktop_ system, also make sure to use the default emulator entry _Suspend ES-DE_ and not the alternative emulator _Keep ESTACION-PRO running_.
 
-In a similar fashion, some older games may require the compatibility mode to be set to an older Windows release. This is done by right clicking on the .exe file or .lnk shortcut for the game or emulator, selecting _Properties_ and then the _Compatibility_ tab, then checking the box named _Run this program in compatibility mode for:_ and finally selecting an appropriate Windows release. Some experimentation with different Windows versions may be required. Don't attempt to change the compatibility mode for ES-DE itself though as that may cause any types of unforeseen issues.
+In a similar fashion, some older games may require the compatibility mode to be set to an older Windows release. This is done by right clicking on the .exe file or .lnk shortcut for the game or emulator, selecting _Properties_ and then the _Compatibility_ tab, then checking the box named _Run this program in compatibility mode for:_ and finally selecting an appropriate Windows release. Some experimentation with different Windows versions may be required. Don't attempt to change the compatibility mode for ESTACION-PRO itself though as that may cause any types of unforeseen issues.
 
-Installing DS4Windows may break controller input in ES-DE for unknown reasons. Uninstalling this software should resolve the issue. On Windows 11 both DualShock 4 (PS4) and DualSense (PS5) controllers have been tested wired and via Bluetooth and both work fine in both ES-DE and RetroArch without any special drivers or configuration.
+Installing DS4Windows may break controller input in ESTACION-PRO for unknown reasons. Uninstalling this software should resolve the issue. On Windows 11 both DualShock 4 (PS4) and DualSense (PS5) controllers have been tested wired and via Bluetooth and both work fine in both ESTACION-PRO and RetroArch without any special drivers or configuration.
 
-There are two ES-DE releases available for Windows; a regular installer and a portable/ZIP version. If going for the first option, an issue is that many emulators are not shipped with proper installers that implement any mechanism to inform ES-DE where they have been installed (like adding a Registry key with their installation path). These emulators are commonly shipped as a ZIP file that can be unpacked anywhere on the filesystem.
+There are two ESTACION-PRO releases available for Windows; a regular installer and a portable/ZIP version. If going for the first option, an issue is that many emulators are not shipped with proper installers that implement any mechanism to inform ESTACION-PRO where they have been installed (like adding a Registry key with their installation path). These emulators are commonly shipped as a ZIP file that can be unpacked anywhere on the filesystem.
 
-In order for ES-DE to find these emulators you need to add their directories to the operating system's Path environment variable. This is very easy to do, just open the _Settings_ application and then search for _path_ in the _Find a setting_ search box. Select the _Edit the system environment variables_ entry and then click the _Environment variables..._ button and add the emulator directory to the _Path_ variable. You need to restart ES-DE after changing the variable, but following this the emulator should be found when launching a game. If running ES-DE via Steam, you need to restart Steam as well to apply the changes to the Path variable.
+In order for ESTACION-PRO to find these emulators you need to add their directories to the operating system's Path environment variable. This is very easy to do, just open the _Settings_ application and then search for _path_ in the _Find a setting_ search box. Select the _Edit the system environment variables_ entry and then click the _Environment variables..._ button and add the emulator directory to the _Path_ variable. You need to restart ESTACION-PRO after changing the variable, but following this the emulator should be found when launching a game. If running ESTACION-PRO via Steam, you need to restart Steam as well to apply the changes to the Path variable.
 
-The second alternative is to use the portable/ZIP release of ES-DE. This can be unzipped anywhere, including to removable devices such as hard drives or USB memory sticks. Together with games and emulators this makes for a fully portable retrogaming solution. There is a README.txt file distributed with this release that describes the setup, but essentially you just place your games in the ROMs directory and your emulators in the Emulators directory, both of which are included in the portable release.
+The second alternative is to use the portable/ZIP release of ESTACION-PRO. This can be unzipped anywhere, including to removable devices such as hard drives or USB memory sticks. Together with games and emulators this makes for a fully portable retrogaming solution. There is a README.txt file distributed with this release that describes the setup, but essentially you just place your games in the ROMs directory and your emulators in the Emulators directory, both of which are included in the portable release.
 
 If you want to create your own portable installation from scratch or customize the setup, [INSTALL-DEV.md](INSTALL-DEV.md#portable-installation-on-windows) provides additional details.
 
-A number of systems have alternative emulator entries named _Shortcut or script_ which allows the direct execution of .lnk shortcut files or .bat batch files. It's not possible by default to directly launch .ps1 PowerShell scripts. As running PowerShell scripts is not even enabled by default on Windows they are for sure not recommended. If you still want to use them the best approach is to execute them via either a .lnk shortcut file or a .bat wrapper script where you explicitly call powershell.exe with the -command flag. If you instead insist on running them directly from ES-DE, you'll need to add a custom system or find rule configuration where you execute powershell.exe instead of cmd.exe and you'll also need to add .ps1 as a file extension for each relevant system.
+A number of systems have alternative emulator entries named _Shortcut or script_ which allows the direct execution of .lnk shortcut files or .bat batch files. It's not possible by default to directly launch .ps1 PowerShell scripts. As running PowerShell scripts is not even enabled by default on Windows they are for sure not recommended. If you still want to use them the best approach is to execute them via either a .lnk shortcut file or a .bat wrapper script where you explicitly call powershell.exe with the -command flag. If you instead insist on running them directly from ESTACION-PRO, you'll need to add a custom system or find rule configuration where you execute powershell.exe instead of cmd.exe and you'll also need to add .ps1 as a file extension for each relevant system.
 
-Some disk operations can have abysmal performance on Windows, and this may be especially obvious for the theme downloader. This is often caused by anti-virus software like Microsoft Defender. If it takes say 30 seconds rather than 300 milliseconds to open the theme downloader then it may be a good idea to add an exlusion for the ES-DE\themes\ directory to Microsoft Defender. The same may also be true for other directories like the ROMs folder if disk performance is terrible. Refer to your anti-virus software documentation on how to setup such exclusions.
+Some disk operations can have abysmal performance on Windows, and this may be especially obvious for the theme downloader. This is often caused by anti-virus software like Microsoft Defender. If it takes say 30 seconds rather than 300 milliseconds to open the theme downloader then it may be a good idea to add an exlusion for the ESTACION-PRO\themes\ directory to Microsoft Defender. The same may also be true for other directories like the ROMs folder if disk performance is terrible. Refer to your anti-virus software documentation on how to setup such exclusions.
 
 ## Specific notes for macOS
 
-As macOS does not support Vulkan some emulators are not available, and some that do exist have not been updated for this operating system in recent years. But emulator support is steadily improving and native ARM releases ("Apple Silicon") are also getting more common. One issue though is that some emulators are not codesigned and notarized so macOS refuses to run them by default. You can override the operating system's security settings however, which will work around this problem. Some emulators are also available via the [Homebrew](https://brew.sh) package manager and in many instances ES-DE includes support for these releases using the bundled configuration.
+As macOS does not support Vulkan some emulators are not available, and some that do exist have not been updated for this operating system in recent years. But emulator support is steadily improving and native ARM releases ("Apple Silicon") are also getting more common. One issue though is that some emulators are not codesigned and notarized so macOS refuses to run them by default. You can override the operating system's security settings however, which will work around this problem. Some emulators are also available via the [Homebrew](https://brew.sh) package manager and in many instances ESTACION-PRO includes support for these releases using the bundled configuration.
 
 Lack of controller support is a bit of a problem on macOS, and in some instances controller drivers are available but quite buggy. In general it seems as if Sony PlayStation controllers are better supported than Microsoft Xbox controllers. For third party controllers you need to investigate macOS support as it seems to be quite limited.
 
 There is a very annoying default configuration when using Sony controllers like the DualShock 4 and DualSense (and possibly others) where double tapping the Share button starts the screen recording functionality of the operating system. This normally presents a popup window for whether to approve the screen recording. To disable this functionality you need to create a custom controller profile and assign that to your specific controller. This is done via _System Settings_ and then the _Game Controllers_ entry. You'll find the relevant setting under the _Share Gestures_ section of the controller profile configuration screen. Refer to your operating system documentation for more details about this topic.
 
-One macOS-specific requirement is that the RetroArch setting _Start in Fullscreen mode_ is enabled or ES-DE will not be able to switch to the emulator window when launching games. As a workaround you can switch to the window manually using Command + Tab but it probably doesn't make sense to run emulators in windowed mode anyway. This issue has not been observed with any other emulators.
+One macOS-specific requirement is that the RetroArch setting _Start in Fullscreen mode_ is enabled or ESTACION-PRO will not be able to switch to the emulator window when launching games. As a workaround you can switch to the window manually using Command + Tab but it probably doesn't make sense to run emulators in windowed mode anyway. This issue has not been observed with any other emulators.
 
-The first time you launch a RetroArch-emulated game from within ES-DE the operating system will present you with a security option with the following description:
+The first time you launch a RetroArch-emulated game from within ESTACION-PRO the operating system will present you with a security option with the following description:
 
-`"ES-DE" would like to access files in your Documents folder.`
+`"ESTACION-PRO" would like to access files in your Documents folder.`
 
-If you don't allow this, you will not be able to place system BIOS ROMs in the RetroArch default system directory `~/Documents/RetroArch/system` even if you've already given RetroArch access to this folder. This is so because RetroArch runs as a subprocess to ES-DE and therefore inherits the security settings from the parent application. Attempting to launch a game without enabling the access will simply display an error message in the emulator that the BIOS files are missing. This of course only applies to emulators that require BIOS ROMs, all other games should work fine regardless of this security setting.
+If you don't allow this, you will not be able to place system BIOS ROMs in the RetroArch default system directory `~/Documents/RetroArch/system` even if you've already given RetroArch access to this folder. This is so because RetroArch runs as a subprocess to ESTACION-PRO and therefore inherits the security settings from the parent application. Attempting to launch a game without enabling the access will simply display an error message in the emulator that the BIOS files are missing. This of course only applies to emulators that require BIOS ROMs, all other games should work fine regardless of this security setting.
 
-If you accidentally refused ES-DE the folder access, you can fix this by opening _System Settings_, selecting _Privacy & Security_ and within the GUI choose _Files and Folders_. The option you need to enable is _Documents Folder_ under _ES-DE_.
+If you accidentally refused ESTACION-PRO the folder access, you can fix this by opening _System Settings_, selecting _Privacy & Security_ and within the GUI choose _Files and Folders_. The option you need to enable is _Documents Folder_ under _ES-DE_.
 
-A minor annoyance is that macOS creates metadata files starting with ._ in the filename when placing game/ROM files on some filesystem types such as exFAT. This means that you will see double entries inside ES-DE for all such games. To hide these extra files, the option _Show hidden files and folders (requires restart)_ in the _Other settings_ menu can be set to disabled.
+A minor annoyance is that macOS creates metadata files starting with ._ in the filename when placing game/ROM files on some filesystem types such as exFAT. This means that you will see double entries inside ESTACION-PRO for all such games. To hide these extra files, the option _Show hidden files and folders (requires restart)_ in the _Other settings_ menu can be set to disabled.
 
 ## Specific notes for Steam Deck
 
-As the Steam Deck is essentially a Linux desktop computer with a custom user interface, there is really not much to consider when running ES-DE on this device, except that SteamOS uses an immutable filesystem which adds some restrictions not present in most other Linux distributions. There is a specific AppImage available for the Steam Deck though that is recommended to use, as some settings have been tuned for the best possible experience on this device.
+As the Steam Deck is essentially a Linux desktop computer with a custom user interface, there is really not much to consider when running ESTACION-PRO on this device, except that SteamOS uses an immutable filesystem which adds some restrictions not present in most other Linux distributions. There is a specific AppImage available for the Steam Deck though that is recommended to use, as some settings have been tuned for the best possible experience on this device.
 
-Another way to install ES-DE is via [RetroDECK](http://retrodeck.net) which is shipped as a Flatpak and can be easily installed via Discover. As RetroDECK bundles both ES-DE and all its emulators inside the Flatpak you don't need to update any emulators separately or set Flatpak permissions manually. The drawback compared to running ES-DE standalone is that less systems and emulators are supported. Most popular systems should work fine though and more emulators are getting added continuously so the situation will improve over time. Also note that if going for RetroDECK you will have a non-standard ES-DE installation so some parts of this user guide will no longer apply. For documentation specific to RetroDECK, refer to their [wiki](https://github.com/XargonWan/RetroDECK/wiki).
+Another way to install ESTACION-PRO is via [RetroDECK](http://retrodeck.net) which is shipped as a Flatpak and can be easily installed via Discover. As RetroDECK bundles both ESTACION-PRO and all its emulators inside the Flatpak you don't need to update any emulators separately or set Flatpak permissions manually. The drawback compared to running ESTACION-PRO standalone is that less systems and emulators are supported. Most popular systems should work fine though and more emulators are getting added continuously so the situation will improve over time. Also note that if going for RetroDECK you will have a non-standard ESTACION-PRO installation so some parts of this user guide will no longer apply. For documentation specific to RetroDECK, refer to their [wiki](https://github.com/XargonWan/RetroDECK/wiki).
 
-It's also possible to install ES-DE using [EmuDeck](https://www.emudeck.com) which will automatically download the latest Steam Deck-specific AppImage. Just be aware that if using EmuDeck you will have a non-standard ES-DE installation as their installer makes some customizations to paths and other settings. For this and other reasons it's therefore not recommended to use EmuDeck, it's generally better to make a manual installation of ES-DE and your emulators and set everything up exactly to your liking.
+It's also possible to install ESTACION-PRO using [EmuDeck](https://www.emudeck.com) which will automatically download the latest Steam Deck-specific AppImage. Just be aware that if using EmuDeck you will have a non-standard ESTACION-PRO installation as their installer makes some customizations to paths and other settings. For this and other reasons it's therefore not recommended to use EmuDeck, it's generally better to make a manual installation of ESTACION-PRO and your emulators and set everything up exactly to your liking.
 
 Unless RetroDECK is used, Flatpak releases of some emulators may need some extra permissions to be able to launch games placed on external devices such as a memory card. This is the case for instance for melonDS and RPCS3. The easiest way to do this is by using [Flatseal](https://flathub.org/apps/details/com.github.tchx84.Flatseal). The option you need to enable is generally _All system files_ in the _Filesystem_ section. If using EmuDeck some of these settings will be applied automatically via their installer.
 
@@ -333,22 +333,22 @@ https://en.wikipedia.org/wiki/Symbolic_link
 
 ## Specific notes for Linux on ARM
 
-The Linux on AArch64 port of ES-DE is covered by the dedicated [LINUX-AARCH64-DEV.md](LINUX-AARCH64-DEV.md) document.
+The Linux on AArch64 port of ESTACION-PRO is covered by the dedicated [LINUX-AARCH64-DEV.md](LINUX-AARCH64-DEV.md) document.
 
 ## Specific notes for Android
 
-The Android port of ES-DE is quite different than the other versions, so it has its specifics covered by the dedicated [ANDROID-DEV.md](ANDROID-DEV.md) document.
+The Android port of ESTACION-PRO is quite different than the other versions, so it has its specifics covered by the dedicated [ANDROID-DEV.md](ANDROID-DEV.md) document.
 
 ## Specific notes for Haiku
 
-The [Haiku](https://www.haiku-os.org) port of ES-DE is currently experimental as the OS itself is experimental and has some issues. Still most functionality is working and there is support for a quite large number of systems and emulators. If you're interested in Haiku it's for sure worth trying it out as ES-DE can be easily installed via HaikuDepot. See the dedicated [HAIKU.md](HAIKU.md) document for more details.
+The [Haiku](https://www.haiku-os.org) port of ESTACION-PRO is currently experimental as the OS itself is experimental and has some issues. Still most functionality is working and there is support for a quite large number of systems and emulators. If you're interested in Haiku it's for sure worth trying it out as ESTACION-PRO can be easily installed via HaikuDepot. See the dedicated [HAIKU.md](HAIKU.md) document for more details.
 
 ## Specific notes for Raspberry Pi and other SBCs
 
 For the best experience with the Raspberry Pi it's advised to run Android on it. There are custom OS builds available here: \
 https://konstakang.com
 
-If instead going for regular Linux, then by default ES-DE requires a desktop environment to run, or more specifically a window manager and a sound server (like PulseAudio or PipeWire). It is however possible to use KMS/direct framebuffer access if the DEINIT_ON_LAUNCH flag is used when building ES-DE, as documented in the _Building on Unix_ section of the [INSTALL-DEV.md](INSTALL-DEV.md#building-on-unix) document.
+If instead going for regular Linux, then by default ESTACION-PRO requires a desktop environment to run, or more specifically a window manager and a sound server (like PulseAudio or PipeWire). It is however possible to use KMS/direct framebuffer access if the DEINIT_ON_LAUNCH flag is used when building ESTACION-PRO, as documented in the _Building on Unix_ section of the [INSTALL-DEV.md](INSTALL-DEV.md#building-on-unix) document.
 
 The official AArch64 AppImage has been tested on Raspberry Pi OS and it seems to be working fine, although it does not include support for the OpenGL ES API so you will need to explicitly tell Mesa to use regular desktop OpenGL instead, like so:
 ```
@@ -360,17 +360,17 @@ On some devices that lack driver support for desktop OpenGL you may be able to r
 MESA_GL_VERSION_OVERRIDE=3.3 MESA_LOADER_DRIVER_OVERRIDE=zink ./ES-DE_aarch64.AppImage
 ```
 
-Using Zink instead of a native OpenGL driver comes with some performance penalties though. So on some SBCs it could be a good idea to instead build ES-DE yourself with OpenGL ES support.
+Using Zink instead of a native OpenGL driver comes with some performance penalties though. So on some SBCs it could be a good idea to instead build ESTACION-PRO yourself with OpenGL ES support.
 
-ES-DE likely requires a 64-bit operating system to build and to run and the AppImage certainly requires a 64-bit OS. No testing has been done on 32-bit operating systems.
+ESTACION-PRO likely requires a 64-bit operating system to build and to run and the AppImage certainly requires a 64-bit OS. No testing has been done on 32-bit operating systems.
 
 ## Game system customizations
 
-The game systems configuration file `es_systems.xml` is located in the ES-DE resources directory which is part of the application installation. As such this file is not intended to be modified directly. If system customizations are required, a separate es_systems.xml file should instead be placed in the `custom_systems` folder in the ES-DE application data directory.
+The game systems configuration file `es_systems.xml` is located in the ESTACION-PRO resources directory which is part of the application installation. As such this file is not intended to be modified directly. If system customizations are required, a separate es_systems.xml file should instead be placed in the `custom_systems` folder in the ESTACION-PRO application data directory.
 
-On Linux this means `/home/<username>/ES-DE/custom_systems/es_systems.xml`, on macOS `/Users/<username>/ES-DE/custom_systems/es_systems.xml`, on Windows `C:\Users\<username>\ES-DE\custom_systems\es_systems.xml` or `ES-DE\ES-DE\custom_systems\es_systems.xml` depending on whether the installer release or the portable release is used, and on Android it's `ES-DE/custom_systems/es_systems.xml`.
+On Linux this means `/home/<username>/ESTACION-PRO/custom_systems/es_systems.xml`, on macOS `/Users/<username>/ESTACION-PRO/custom_systems/es_systems.xml`, on Windows `C:\Users\<username>\ESTACION-PRO\custom_systems\es_systems.xml` or `ESTACION-PRO\ESTACION-PRO\custom_systems\es_systems.xml` depending on whether the installer release or the portable release is used, and on Android it's `ESTACION-PRO/custom_systems/es_systems.xml`.
 
-If you're using the AppImage release of ES-DE then the bundled es_systems.xml file is embedded in the AppImage together with the rest of the resources. You can extract it if you need it as a reference when creating your customized entries, or you can find it in [resources/systems/linux](https://gitlab.com/es-de/emulationstation-de/-/tree/master/resources/systems/linux) or [resources/systems/linuxarm](https://gitlab.com/es-de/emulationstation-de/-/tree/master/resources/systems/linuxarm).
+If you're using the AppImage release of ESTACION-PRO then the bundled es_systems.xml file is embedded in the AppImage together with the rest of the resources. You can extract it if you need it as a reference when creating your customized entries, or you can find it in [resources/systems/linux](https://github.com/DOCK-PI3/ESTACION-PRO/tree/master/resources/systems/linux) or [resources/systems/linuxarm](https://github.com/DOCK-PI3/ESTACION-PRO/tree/master/resources/systems/linuxarm).
 
 Although it's possible to make a copy of the bundled configuration file, to modify it and then place it in this directory, that is not how the system customization is designed to be used. Instead the intention is that the file in `custom_systems` complements the bundled configuration, meaning only systems that are to be customized should be included.
 
@@ -384,82 +384,82 @@ While the es_systems.xml and es_find_rules.xml files for Android in principle wo
 
 ## Migrating from EmulationStation
 
-Although ES-DE is partially compatible with EmulationStation as both frontends originally shared the same source code it's actually quite different now as ES-DE has evolved substantially. So don't expect data, system names, directory structures and similar to be identical or transferable between ES-DE and legacy EmulationStation.
+Although ESTACION-PRO is partially compatible with EmulationStation as both frontends originally shared the same source code it's actually quite different now as ESTACION-PRO has evolved substantially. So don't expect data, system names, directory structures and similar to be identical or transferable between ESTACION-PRO and legacy EmulationStation.
 
-ES-DE also has its own theme engine so only themes made specifically for ES-DE will work. The way that downloaded media is handled is very different too as ES-DE does not use tags inside the gamelist.xml files to find game media but instead matches the media to the names of the game/ROM files.
+ESTACION-PRO also has its own theme engine so only themes made specifically for ESTACION-PRO will work. The way that downloaded media is handled is very different too as ESTACION-PRO does not use tags inside the gamelist.xml files to find game media but instead matches the media to the names of the game/ROM files.
 
-It's not a goal for ES-DE to be compatible with EmulationStation and although you may be able to transfer some data from a legacy installation to ES-DE, the opposite is often not true and it's for example a one-way ticket for your gamelist.xml files and your custom collection files when migrating to ES-DE as they will be modified in ways that EmulationStation will see as data loss.
+It's not a goal for ESTACION-PRO to be compatible with EmulationStation and although you may be able to transfer some data from a legacy installation to ESTACION-PRO, the opposite is often not true and it's for example a one-way ticket for your gamelist.xml files and your custom collection files when migrating to ESTACION-PRO as they will be modified in ways that EmulationStation will see as data loss.
 
-One potential issue when migrating gamelist.xml files from EmulationStation is that the path tag requires a leading ./ in ES-DE while that may not be present in files coming from EmulationStation. If you don't see any metadata for your games inside ES-DE, then simply add the ./ characters to each path tag and it should hopefully work.
+One potential issue when migrating gamelist.xml files from EmulationStation is that the path tag requires a leading ./ in ESTACION-PRO while that may not be present in files coming from EmulationStation. If you don't see any metadata for your games inside ESTACION-PRO, then simply add the ./ characters to each path tag and it should hopefully work.
 
 Example of an unreadable path tag:
 ```
 <path>Another World.lha</path>
 ```
 
-Example of a correct path tag readable by ES-DE:
+Example of a correct path tag readable by ESTACION-PRO:
 ```
 <path>./Another World.lha</path>
 ```
 
-And if you have gamelist.xml files in your ROMs directory tree then ES-DE will ignore those by default, so you need to move them to the ~/ES-DE/gamelists/ tree.
+And if you have gamelist.xml files in your ROMs directory tree then ESTACION-PRO will ignore those by default, so you need to move them to the ~/ESTACION-PRO/gamelists/ tree.
 
-If migrating from Batocera, RetroBat or Recalbox, be aware that ES-DE does not always use the same system names as those frontends. This means that your game files may not be found unless the folders are renamed accordingly. Such an example is the Sega SG-1000 system which in Batocera, RetroBat and Recalbox has the _sg1000_ system name, but is _sg-1000_ in ES-DE. See the [Supported game systems](USERGUIDE-DEV.md#supported-game-systems) table at the bottom of this guide for the correct system names in ES-DE.
+If migrating from Batocera, RetroBat or Recalbox, be aware that ESTACION-PRO does not always use the same system names as those frontends. This means that your game files may not be found unless the folders are renamed accordingly. Such an example is the Sega SG-1000 system which in Batocera, RetroBat and Recalbox has the _sg1000_ system name, but is _sg-1000_ in ESTACION-PRO. See the [Supported game systems](USERGUIDE-DEV.md#supported-game-systems) table at the bottom of this guide for the correct system names in ESTACION-PRO.
 
 The list goes on as there are many other differences in addition to those just mentioned.
 
 ## Third party tools and applications
 
-Here is a list of third party tools that provide useful functionality not built into ES-DE itself, or which can be used to curate your games library.
+Here is a list of third party tools that provide useful functionality not built into ESTACION-PRO itself, or which can be used to curate your games library.
 
-**ES-DE Second Screen Companion** _(Android only)_
+**ESTACION-PRO Second Screen Companion** _(Android only)_
 
-This semi-official app will let you display game media on the second screen by using the ES-DE custom event scripts functionality. This allows you to use both screens on dual-screen Android devices when navigating your games and systems.
+This semi-official app will let you display game media on the second screen by using the ESTACION-PRO custom event scripts functionality. This allows you to use both screens on dual-screen Android devices when navigating your games and systems.
 
 https://github.com/RobZombie9043/es-de-companion
 
 
 **HandheldExp** _(Android only)_
 
-This adds a game menu with a similar design to the ES-DE user interface which makes it possible to display information about the running game, view its manual, quick save and quick load for supported emulators, and more.
+This adds a game menu with a similar design to the ESTACION-PRO user interface which makes it possible to display information about the running game, view its manual, quick save and quick load for supported emulators, and more.
 
 https://github.com/Teppichseite/HandheldExp
 
-**Background Music for ES-DE on Android Using Tasker** _(Android only)_
+**Background Music for ESTACION-PRO on Android Using Tasker** _(Android only)_
 
-These instructions explain how to use Tasker on Android to add frontend music to ES-DE (built-in music support is on the roadmap for a future release).
+These instructions explain how to use Tasker on Android to add frontend music to ESTACION-PRO (built-in music support is on the roadmap for a future release).
 
 https://github.com/RobZombie9043/bgmusic-android-es-de
 
-**RetroDECK ES-DE Background Music** _(Linux only)_
+**RetroDECK ESTACION-PRO Background Music** _(Linux only)_
 
-If you run RetroDECK then these instructions will let you use frontend music inside ES-DE. With some effort these scripts could probably be modified to work with regular ES-DE on Linux as well.
+If you run RetroDECK then these instructions will let you use frontend music inside ESTACION-PRO. With some effort these scripts could probably be modified to work with regular ESTACION-PRO on Linux as well.
 
 https://retrodeck.readthedocs.io/en/latest/wiki_experiments/retrodeck-music-player/retrodeck-music-player
 
-**BG_MPlayer for ES-DE** _(Windows only)_
+**BG_MPlayer for ESTACION-PRO** _(Windows only)_
 
-This adds frontend music to ES-DE on Windows (built-in music support is on the roadmap for a future release).
+This adds frontend music to ESTACION-PRO on Windows (built-in music support is on the roadmap for a future release).
 
-https://github.com/Naprosnia/ES-DE-Background-Music-for-Windows
+https://github.com/Naprosnia/ESTACION-PRO-Background-Music-for-Windows
 
-**ES-DE Music Launcher**
+**ESTACION-PRO Music Launcher**
 
-A desktop application that plays background music while you browse your game library in ES-DE, available for Linux and Windows.
+A desktop application that plays background music while you browse your game library in ESTACION-PRO, available for Linux and Windows.
 
 https://github.com/cesar-rgon/es-de-music-launcher
 
-**CleanReturn for ES-DE** _(Windows only)_
+**CleanReturn for ESTACION-PRO** _(Windows only)_
 
 These scripts add more seamless game launching when using for instance Steam or Epic Games Launcher.
 
-https://github.com/Pirate-ai001/CleanReturn-for-ES-DE
+https://github.com/Pirate-ai001/CleanReturn-for-ESTACION-PRO
 
-**ES-DE-Roms-Renamer**
+**ESTACION-PRO-Roms-Renamer**
 
 This Python project can be used to rename ROM files, which will also rename the media files and update the gamelist.xml entries.
 
-https://github.com/mirai-toto/ES-DE-Roms-Renamer
+https://github.com/mirai-toto/ESTACION-PRO-Roms-Renamer
 
 **M3U files generator**
 
@@ -467,62 +467,62 @@ A Python script is linked from this repository that automates the creation of .m
 
 https://github.com/Jetup13/Retroid-Pocket-4-Pro-Wiki/wiki/Emulators-and-Formats#m3u-file-generator-python-script
 
-**ES-DE - Vita3K**
+**ESTACION-PRO - Vita3K**
 
-This Python script generates .psvita files that can be used to populate the psvita system in ES-DE.
+This Python script generates .psvita files that can be used to populate the psvita system in ESTACION-PRO.
 
 https://github.com/BinaryQuantumSoul/esde-vita3k
 
 **GameList.xml to RetroArch Playlist Converter**
 
-This tool makes it possible to convert ES-DE gamelist.xml files to the RetroArch playlist format.
+This tool makes it possible to convert ESTACION-PRO gamelist.xml files to the RetroArch playlist format.
 
 https://github.com/bnovakovic/GameList_Converter
 
 ## Removing orphaned data
 
-Manually removing game files from the ROMs directory tree instead of deleting them from ES-DE using the metadata editor will make any corresponding scraped media files, gamelist.xml entries and custom collection entries orphaned, i.e. they will refer to non-existent files. Although this is correctly handled by ES-DE and is not causing any serious issues, it does lead to unnecessary disk space usage and it does produce log warnings in es_log.txt on application startup. If a huge amount of game files have been manually removed it can also lead to performance problems.
+Manually removing game files from the ROMs directory tree instead of deleting them from ESTACION-PRO using the metadata editor will make any corresponding scraped media files, gamelist.xml entries and custom collection entries orphaned, i.e. they will refer to non-existent files. Although this is correctly handled by ESTACION-PRO and is not causing any serious issues, it does lead to unnecessary disk space usage and it does produce log warnings in es_log.txt on application startup. If a huge amount of game files have been manually removed it can also lead to performance problems.
 
-In order to remove such unnecessary media files and configuration file entries, the _Orphaned data cleanup_ utility in the _Utilities_ menu can be used. This tool should be largely self-explanatory. And although it should generally be safe to use, unforeseen issues can occur so make sure to make backups of at least your `ES-DE/gamelists` and `ES-DE/collections` directories before attempting to use this tool.
+In order to remove such unnecessary media files and configuration file entries, the _Orphaned data cleanup_ utility in the _Utilities_ menu can be used. This tool should be largely self-explanatory. And although it should generally be safe to use, unforeseen issues can occur so make sure to make backups of at least your `ESTACION-PRO/gamelists` and `ESTACION-PRO/collections` directories before attempting to use this tool.
 
 It's recommended to run this utility with the _Show hidden games_ setting enabled as orphaned gamelist.xml folder entries may otherwise not get purged.
 
 If a system has a flatten.txt file present in the root of its directory, then the system will be completely skipped and an error will be logged (using folder flattening is strongly discouraged in general).
 
-Note that there are no guarantees that any processed gamelist.xml files will be usable in any other applications than ES-DE. An attempt is made to retain the file structure but data unknown to ES-DE may get purged during cleanup.
+Note that there are no guarantees that any processed gamelist.xml files will be usable in any other applications than ESTACION-PRO. An attempt is made to retain the file structure but data unknown to ESTACION-PRO may get purged during cleanup.
 
 If the utility finds any data to be removed, a backup of the old files will be made. This will end up in a `CLEANUP` directory and will contain a date and time stamp. For example:
 ```
-~/ES-DE/gamelists/CLEANUP/2023-07-27_142830/dos/gamelist.xml
-~/ES-DE/gamelists/CLEANUP/2023-07-27_142830/ports/gamelist.xml
-~/ES-DE/collections/CLEANUP/2023-07-27_143216/custom-Action.cfg
-~/ES-DE/collections/CLEANUP/2023-07-27_143216/custom-Fighting.cfg
-~/ES-DE/downloaded_media/CLEANUP/2023-07-27_123406/atari2600/titlescreens/H.E.R.O..png
-~/ES-DE/downloaded_media/CLEANUP/2023-07-27_123406/c64/3dboxes/Minerer 2049.crt.png
+~/ESTACION-PRO/gamelists/CLEANUP/2023-07-27_142830/dos/gamelist.xml
+~/ESTACION-PRO/gamelists/CLEANUP/2023-07-27_142830/ports/gamelist.xml
+~/ESTACION-PRO/collections/CLEANUP/2023-07-27_143216/custom-Action.cfg
+~/ESTACION-PRO/collections/CLEANUP/2023-07-27_143216/custom-Fighting.cfg
+~/ESTACION-PRO/downloaded_media/CLEANUP/2023-07-27_123406/atari2600/titlescreens/H.E.R.O..png
+~/ESTACION-PRO/downloaded_media/CLEANUP/2023-07-27_123406/c64/3dboxes/Minerer 2049.crt.png
 ```
 
 This means that you will need to manually delete these backup directories to free up disk space when you are certain that you no longer need the data.
 
-All files and entries that are removed are logged to `~/ES-DE/logs/es_log.txt` so it could be a good idea to make a backup copy of this file after running the cleanup, for future reference.
+All files and entries that are removed are logged to `~/ESTACION-PRO/logs/es_log.txt` so it could be a good idea to make a backup copy of this file after running the cleanup, for future reference.
 
 Any media directories that are empty after the cleanup will also be removed by this utility.
 
 Note that only systems and collections that are currently enabled will be processed by the utility.
 
-![alt text](images/es-de_orphaned_data_cleanup.png "ES-DE Orphaned Data Cleanup")
+![alt text](images/es-de_orphaned_data_cleanup.png "ESTACION-PRO Orphaned Data Cleanup")
 _The Orphaned data cleanup utility after successfully removing some gamelist.xml entries._
 
 ## Running on high resolution displays
 
-ES-DE fully supports high resolution displays such as 1440p, 4K, 6K, 8K, ultrawide monitors etc. But many emulators (e.g. RetroArch) will also run using the same resolution which may cause performance problems on slower machines or when using resource intensive shaders. Although some emulator cores will have options to set their internal resolution, they still need to be scaled up to the screen resolution.
+ESTACION-PRO fully supports high resolution displays such as 1440p, 4K, 6K, 8K, ultrawide monitors etc. But many emulators (e.g. RetroArch) will also run using the same resolution which may cause performance problems on slower machines or when using resource intensive shaders. Although some emulator cores will have options to set their internal resolution, they still need to be scaled up to the screen resolution.
 
-A solution to this is to use the custom event scripts functionality to set a temporary resolution upon launching a game that will be reverted when returning to ES-DE. Such a setup is detailed in [INSTALL-DEV.md](INSTALL-DEV.md#custom-event-scripts) for Linux, but should hopefully be possible to implement similarly on Windows. When going for this setup it's important that the setting _Run in background (while game is launched)_ is disabled or ES-DE may not be able to correctly switch to the emulator window when launching games.
+A solution to this is to use the custom event scripts functionality to set a temporary resolution upon launching a game that will be reverted when returning to ESTACION-PRO. Such a setup is detailed in [INSTALL-DEV.md](INSTALL-DEV.md#custom-event-scripts) for Linux, but should hopefully be possible to implement similarly on Windows. When going for this setup it's important that the setting _Run in background (while game is launched)_ is disabled or ESTACION-PRO may not be able to correctly switch to the emulator window when launching games.
 
-On macOS it's problematic to change screen resolutions on the fly or on a per-application basis as Apple has seemingly disabled most of this functionality in recent operating system releases. The only real option here is to lower the display resolution prior to launching ES-DE.
+On macOS it's problematic to change screen resolutions on the fly or on a per-application basis as Apple has seemingly disabled most of this functionality in recent operating system releases. The only real option here is to lower the display resolution prior to launching ESTACION-PRO.
 
 ## Advanced display configuration
 
-ES-DE supports a number of advanced settings to fine-tune the display output. By default the application will run in fullscreen mode at the native display resolution, but using the --resolution command line option it's possible to set this to an arbitrary resolution. By default this will change ES-DE into running in windowed mode, but if also using the --fullscreen-padding command line option the window will be fullscreen with the application contents centered, padded on a black background. This can be useful for displays where a bezel or similar covers parts of the monitor, and it can be combined with the --screenoffset command line option to adjust the positioning within the application window.
+ESTACION-PRO supports a number of advanced settings to fine-tune the display output. By default the application will run in fullscreen mode at the native display resolution, but using the --resolution command line option it's possible to set this to an arbitrary resolution. By default this will change ESTACION-PRO into running in windowed mode, but if also using the --fullscreen-padding command line option the window will be fullscreen with the application contents centered, padded on a black background. This can be useful for displays where a bezel or similar covers parts of the monitor, and it can be combined with the --screenoffset command line option to adjust the positioning within the application window.
 
 Tate mode (vertical screen orientation) is also fully supported including both running at a vertical resolution as set on the OS level, or to rotate the screen contents within the application window and keep the display resolution at its non-rotated default state. The latter is sometimes required as some emulators don't work well on rotated screen layouts. Screen rotation can be applied either via the --screenrotate command line option or via the corresponding setting in the _Other settings_ menu.
 
@@ -550,44 +550,44 @@ es-de --screenrotate 90
 
 ## Input device configuration
 
-ES-DE automatically configures the keyboard and any connected controllers using default button mappings, and normally no additional setup is required. But if you would like to apply custom button mappings for your devices or if you have an unusual device which isn't automatically configured, you can run the _Configure keyboard and controllers_ tool from the _Input device settings_ entry on the main menu.
+ESTACION-PRO automatically configures the keyboard and any connected controllers using default button mappings, and normally no additional setup is required. But if you would like to apply custom button mappings for your devices or if you have an unusual device which isn't automatically configured, you can run the _Configure keyboard and controllers_ tool from the _Input device settings_ entry on the main menu.
 
 You can also force a run of this tool directly on startup via the command line argument `--force-input-config`.
 
 The actual procedure to map the inputs should be self-explanatory, just follow the on-screen instructions. Note that custom button mappings will not change the help system entries.
 
-Any custom configuration is applied per unique device ID (GUID). So if two identical controllers are used with ES-DE, both will have the same configuration applied. If connecting controllers of the same type but of different revisions, the GUID may differ and therefore the custom configuration would need to be applied to each device individually.
+Any custom configuration is applied per unique device ID (GUID). So if two identical controllers are used with ESTACION-PRO, both will have the same configuration applied. If connecting controllers of the same type but of different revisions, the GUID may differ and therefore the custom configuration would need to be applied to each device individually.
 
-If you have issues with your input configuration, as a last resort you can reset all mappings by deleting or renaming the file `~/ES-DE/settings/es_input.xml`
+If you have issues with your input configuration, as a last resort you can reset all mappings by deleting or renaming the file `~/ESTACION-PRO/settings/es_input.xml`
 
 ## System view (main screen)
 
-When starting ES-DE with the default settings, you will see the System view first. From here you can navigate your game systems and enter their respective gamelists.
+When starting ESTACION-PRO with the default settings, you will see the System view first. From here you can navigate your game systems and enter their respective gamelists.
 
 Systems are sorted by their full names by default, as defined in the es_systems.xml file. It's however possible to change their sorting using the _Systems sorting_ option in the _UI settings_ menu, or to create a custom sorting configuration file as documented in the [INSTALL-DEV.md](INSTALL-DEV.md#es_systems_sortingxml) document.
 
-![alt text](images/es-de_system_view.png "ES-DE System View")
+![alt text](images/es-de_system_view.png "ESTACION-PRO System View")
 _The **System view** is the default starting point for the application, it's here that you browse through your game systems._
 
 ## Gamelist view
 
-The gamelist view is where you browse and start your games, and it's where you will spend most of your time using ES-DE.
+The gamelist view is where you browse and start your games, and it's where you will spend most of your time using ESTACION-PRO.
 
 For themes that include variant trigger configuration you may see different layouts per system depending on whether you have scraped game media or not. This functionality can be disabled via the _Enable theme variant triggers_ option in the _UI Settings_ menu.
 
-If the theme supports it, there's a gamelist information field displayed in the gamelist view, showing the number of games for the system (total and favorites) as well as a folder icon if a folder has been entered. When applying any filters to the gamelist, the game counter is replaced with the amount of games filtered, as in 'filtered / total games', e.g. '19 / 77'. If there are game entries in the filter result that are marked not to be counted as games, the number of such files will be indicated as 'filtered + filtered non-games / total games', for example '23 + 4 / 77' indicating 23 normal games, 4 non-games out of a total of 77. Due to this approach it's theoretically possible that the combined filtered game amount exceeds the number of counted games in the collection, for instance '69 + 11 / 77'. This is not considered a bug and is so by design. This gamelist information field functionality is specific to ES-DE so older themes will not support this.
+If the theme supports it, there's a gamelist information field displayed in the gamelist view, showing the number of games for the system (total and favorites) as well as a folder icon if a folder has been entered. When applying any filters to the gamelist, the game counter is replaced with the amount of games filtered, as in 'filtered / total games', e.g. '19 / 77'. If there are game entries in the filter result that are marked not to be counted as games, the number of such files will be indicated as 'filtered + filtered non-games / total games', for example '23 + 4 / 77' indicating 23 normal games, 4 non-games out of a total of 77. Due to this approach it's theoretically possible that the combined filtered game amount exceeds the number of counted games in the collection, for instance '69 + 11 / 77'. This is not considered a bug and is so by design. This gamelist information field functionality is specific to ESTACION-PRO so older themes will not support this.
 
 Another feature which requires theme support is _badges_, which is a set of icons displaying the status for various metadata fields. The currently supported badge types are _favorite, completed, kidgame, broken, collection, folder, manual, controller_ and _alternative emulator_. If any of the first four metadata fields have been set for a game, their corresponding badges will be displayed. If a game-specific controller has been selected via the metadata editor, the corresponding controller badge will be shown, and if an alternative emulator has been selected for the specific game, that badge will be displayed. Setting an alternative emulator system-wide will not display this badge as it's only intended to indicate game-specific overrides. As well, disabling the option _Enable alternative emulators per game_ will also hide the alternative emulator badges.
 
-![alt text](images/es-de_gamelist_view.png "ES-DE Gamelist View")
+![alt text](images/es-de_gamelist_view.png "ESTACION-PRO Gamelist View")
 _The **Gamelist view** is where you browse the games for a specific system._
 
-![alt text](images/es-de_basic_view_style.png "ES-DE Basic View Style")
+![alt text](images/es-de_basic_view_style.png "ESTACION-PRO Basic View Style")
 _Here's an example of a theme variant trigger applying a simplified layout if there is no scraped game media available for the system. After scraping at least one game the layout will automatically change to the full design._
 
 ## UI modes
 
-ES-DE supports three separate modes, **Full**, **Kiosk** and **Kid**.
+ESTACION-PRO supports three separate modes, **Full**, **Kiosk** and **Kid**.
 
 These modes modify the application behavior in the following way:
 
@@ -603,16 +603,16 @@ The application can also be forced into any of the three modes via the command l
 
 There is a help system available throughout the application that provides an overview of possible actions and buttons that can be used. Note that some general actions are never shown, such as the ability to quick jump in gamelists, menus and text input fields using the shoulder and trigger buttons. It's possible to disable the help system via the _Display on-screen help_ option in the _UI settings_ menu.
 
-![alt text](images/es-de_folder_support.png "ES-DE Help System")
+![alt text](images/es-de_folder_support.png "ESTACION-PRO Help System")
 _The help system is displayed at the bottom of the screen for this theme, although it could be positioned elsewhere for other themes._
 
 ## General navigation
 
-The built-in help system will provide a contextual summary of the available navigation options, but here's still a general overview. These are the buttons mappings automatically applied by ES-DE, but they can be customized using the input configurator as described earlier in this document. It's not an exhaustive list, but it covers most situations. The button names are based on the Xbox 360 controller as that is the naming convention used by the SDL library which handles the controller input in ES-DE.
+The built-in help system will provide a contextual summary of the available navigation options, but here's still a general overview. These are the buttons mappings automatically applied by ESTACION-PRO, but they can be customized using the input configurator as described earlier in this document. It's not an exhaustive list, but it covers most situations. The button names are based on the Xbox 360 controller as that is the naming convention used by the SDL library which handles the controller input in ESTACION-PRO.
 
 When editing text using the virtual keyboard but using a physical keyboard as input device instead of a controller, then there are some slight exceptions to the normal input logic. The _Enter_ key will always apply the changes and the _Escape_ key will always go back. As well, if you have mapped any regular keys to the _left_, _right_ or _down_ buttons or to the _shoulder_ or _trigger_ buttons, then these will not be usable in the text input field. You will instead have to use the virtual keyboard buttons to enter these characters. Note that this is not an issue if using the default keyboard configuration as the buttons just mentioned are then mapped to special keys only, as detailed below.
 
-When editing text it's also possible to paste from the clipboard into ES-DE using Command + V on macOS and Ctrl + V or Shift + Insert on all other operating systems.
+When editing text it's also possible to paste from the clipboard into ESTACION-PRO using Command + V on macOS and Ctrl + V or Shift + Insert on all other operating systems.
 
 Default keyboard mappings are shown in brackets below.
 
@@ -679,25 +679,25 @@ Quits the application. This key combination can be changed to Ctrl + Q, Alt + Q 
 
 ## Themes
 
-ES-DE ships with the Linear, Modern and Slate themes and additional ones can be installed using the built-in theme downloader. More themes made specifically for ES-DE can be found on the Internet, and you can customize or create your own ones too. Note that on Android specifically only the Linear theme is bundled with the application, but Modern and Slate can be installed via the theme downloader.
+ESTACION-PRO ships with the Linear, Modern and Slate themes and additional ones can be installed using the built-in theme downloader. More themes made specifically for ESTACION-PRO can be found on the Internet, and you can customize or create your own ones too. Note that on Android specifically only the Linear theme is bundled with the application, but Modern and Slate can be installed via the theme downloader.
 
-ES-DE does not support EmulationStation themes, such as those from RetroPie, Recalbox, RetroBat or Batocera.
+ESTACION-PRO does not support EmulationStation themes, such as those from RetroPie, Recalbox, RetroBat or Batocera.
 
 There are several user-selectable theme options in the _UI Settings_ menu, most notably _Theme variant_ which is essentially a form of theme profile. This could be anything, like different ways to navigate the themes, different layouts and designs etc. Additionally the _Theme color scheme_ setting makes it possible to select between different color schemes, if supported by the theme. You can change the font size too for themes that offer this, via the _Theme font size_ setting. The two remaining options _Theme aspect ratio_ and _Theme transitions_ are also important but you can normally leave them at their default _Automatic_ values, especially the _Theme aspect ratio_ option as it will be automatically detected. Be aware that all these theme settings are optional, it's up to the theme developer whether to add support for them to their themes.
 
-Themes are most easily installed using the built-in theme downloader, but you can also manually add them to your ES-DE home directory, i.e. `ES-DE/themes/`. By just adding them there, one folder each, they will be found during startup and you can then choose between them via the _UI Settings_ menu on the main menu. If using the portable release of ES-DE on Windows, the ES-DE application data can be found in the root of the ES-DE directory.
+Themes are most easily installed using the built-in theme downloader, but you can also manually add them to your ESTACION-PRO home directory, i.e. `ESTACION-PRO/themes/`. By just adding them there, one folder each, they will be found during startup and you can then choose between them via the _UI Settings_ menu on the main menu. If using the portable release of ESTACION-PRO on Windows, the ESTACION-PRO application data can be found in the root of the ESTACION-PRO directory.
 
-Although you should place additional themes in your ES-DE application data directory, the Linear, Modern and Slate themes are located in the installation folder as they come bundled with the application. For example this could be `/usr/share/es-de/themes/` on Linux, `/Applications/ES-DE.app/Contents/Resources/themes/` on macOS or `C:\Program Files\ES-DE\themes\` on Windows. If using the portable ES-DE release on Windows, the themes folder will be located in the root of the ES-DE directory.
+Although you should place additional themes in your ESTACION-PRO application data directory, the Linear, Modern and Slate themes are located in the installation folder as they come bundled with the application. For example this could be `/usr/share/es-de/themes/` on Linux, `/Applications/ESTACION-PRO.app/Contents/Resources/themes/` on macOS or `C:\Program Files\ESTACION-PRO\themes\` on Windows. If using the portable ESTACION-PRO release on Windows, the themes folder will be located in the root of the ESTACION-PRO directory.
 
 Note that if using the AppImage release on Linux, then there is no installation folder as all files are contained inside the AppImage file.
 
-If you would like to customize the Linear, Modern or Slate themes, simply make a copy of their directories to `ES-DE/themes/` and then those copies will take precedence over the ones in the application installation directory.
+If you would like to customize the Linear, Modern or Slate themes, simply make a copy of their directories to `ESTACION-PRO/themes/` and then those copies will take precedence over the ones in the application installation directory.
 
 Refer to the official themes list for a selection of high-quality themes (these are also available via the built-in theme downloader):\
 https://gitlab.com/es-de/themes/themes-list
 
-![alt text](images/es-de_ui_theme_support.png "ES-DE Theme Support")
-_This is a screenshot of the Slate theme that is bundled with ES-DE for desktop operating systems (in addition to the default Linear theme)._
+![alt text](images/es-de_ui_theme_support.png "ESTACION-PRO Theme Support")
+_This is a screenshot of the Slate theme that is bundled with ESTACION-PRO for desktop operating systems (in addition to the default Linear theme)._
 
 ## Theme downloader
 
@@ -707,43 +707,43 @@ The basic functionality is hopefully largely self-explanatory, check the on-scre
 
 Information about each theme is displayed in the user interface including the number of available variants, color schemes and aspect ratios as well as a screenshot. You can also view additional screenshots in fullscreen mode by pressing the _X_ button.
 
-Themes are downloaded from their respective GitHub or GitLab sites using _Git_ (or more specifically using _libgit2_) so apart from the initial download, subsequent updates should be fast as only new or modified files will be fetched. Compression is also applied during transfer to speed up things further. Due to the complex nature of Git repositories it's not possible to abort downloads as that could lead to data corruption. If that would still happen, such as if you have a power failure or kill the ES-DE process while a download is running, the theme downloader should detect the corrupt repository on next startup and display an error message. It will in this case also rename the theme directory by adding the _CORRUPT_DISABLED extension to it and start a new fresh download.
+Themes are downloaded from their respective GitHub or GitLab sites using _Git_ (or more specifically using _libgit2_) so apart from the initial download, subsequent updates should be fast as only new or modified files will be fetched. Compression is also applied during transfer to speed up things further. Due to the complex nature of Git repositories it's not possible to abort downloads as that could lead to data corruption. If that would still happen, such as if you have a power failure or kill the ESTACION-PRO process while a download is running, the theme downloader should detect the corrupt repository on next startup and display an error message. It will in this case also rename the theme directory by adding the _CORRUPT_DISABLED extension to it and start a new fresh download.
 
-If you have manually downloaded any of the themes from the [official themes list](https://gitlab.com/es-de/themes/themes-list) then these would need to be downloaded again as they will not contain the necessary information required by the theme downloader. A dialog will be presented to inform you about this and the theme directory will be renamed by adding the _DISABLED extension to its name. To conserve disk space it's a good idea to manually delete these _DISABLED directories outside of ES-DE. Alternatively you could just completely delete the theme from the user interface using the _Y_ button and start a fresh download.
+If you have manually downloaded any of the themes from the [official themes list](https://gitlab.com/es-de/themes/themes-list) then these would need to be downloaded again as they will not contain the necessary information required by the theme downloader. A dialog will be presented to inform you about this and the theme directory will be renamed by adding the _DISABLED extension to its name. To conserve disk space it's a good idea to manually delete these _DISABLED directories outside of ESTACION-PRO. Alternatively you could just completely delete the theme from the user interface using the _Y_ button and start a fresh download.
 
 On Android specifically all theme directories that were previously renamed with the _DISABLED suffix are automatically deleted every time the theme downloader is started. This is the case as Android prevents direct access to the theme directory due to it being located on application-internal storage, meaning it's not possible to manually delete these directories.
 
 If you have customized a theme by for instance modifying any of its XML files, then this will be highlighted with an exclamation mark and the text _LOCAL CHANGES_ in the theme downloader interface. If you attempt to fetch updates for such a theme you will be asked a question of whether to overwrite your local changes, or whether to cancel. If you have however added additional files to the theme that are not included in the theme repository, then these will not interfere and you can go ahead and fetch theme updates without any risk of having your local files being deleted. But there is a special (although unlikely) situation, if you add files that are not part of the theme repository but that are later added by the theme developer as well, then your local copies of any such files will be ovewritten when fetching theme updates.
 
-In worst case there could be a situation where a repository is corrupted and the theme downloader can't properly identify or handle the corruption. In this case you will have to rename or delete that directory. This could also apply to the actual themes list repository. The latter is named _themes-list_ so by just deleting this directory (i.e. `~/ES-DE/themes/themes-list`) you'll reset the theme downloader to its initial state.
+In worst case there could be a situation where a repository is corrupted and the theme downloader can't properly identify or handle the corruption. In this case you will have to rename or delete that directory. This could also apply to the actual themes list repository. The latter is named _themes-list_ so by just deleting this directory (i.e. `~/ESTACION-PRO/themes/themes-list`) you'll reset the theme downloader to its initial state.
 
-Note that the exFAT filesystem can't be used as it makes the theme downloader fail. But using this filesystem is strongly discouraged anyway as it offers very poor disk I/O performance which makes ES-DE run really slowly.
+Note that the exFAT filesystem can't be used as it makes the theme downloader fail. But using this filesystem is strongly discouraged anyway as it offers very poor disk I/O performance which makes ESTACION-PRO run really slowly.
 
-![alt text](images/es-de_theme_downloader.png "ES-DE Theme Downloader")
+![alt text](images/es-de_theme_downloader.png "ESTACION-PRO Theme Downloader")
 _The theme downloader with a number of installed themes._
 
 ## Emulator setup
 
-ES-DE is a frontend application and does not provide any emulation by itself. It does however come preconfigured for use with emulators as setup in the `es_systems.xml` file. Most systems are by default configured to use [RetroArch](https://www.retroarch.com) but in many instances alternative standalone emulators can be selected instead as described elsewhere in this guide.
+ESTACION-PRO is a frontend application and does not provide any emulation by itself. It does however come preconfigured for use with emulators as setup in the `es_systems.xml` file. Most systems are by default configured to use [RetroArch](https://www.retroarch.com) but in many instances alternative standalone emulators can be selected instead as described elsewhere in this guide.
 
 Installation and configuration of RetroArch and other emulators is beyond the scope of this guide, but many good resources can be found online on how to do this.
 
-Keep in mind that ES-DE will not install any RetroArch cores, you need to do this manually from within the RetroArch user interface.
+Keep in mind that ESTACION-PRO will not install any RetroArch cores, you need to do this manually from within the RetroArch user interface.
 
-If ES-DE is unable to find an emulator when a game is launched, a notification popup will be shown. Likewise a notification will be shown if the defined emulator core is not installed. The es_log.txt file will also provide additional details.
+If ESTACION-PRO is unable to find an emulator when a game is launched, a notification popup will be shown. Likewise a notification will be shown if the defined emulator core is not installed. The es_log.txt file will also provide additional details.
 
 ## Using the Steam release of RetroArch
 
-As this release of RetroArch is executed via the Steam application it's behaving a bit glitchy and strange with ES-DE (which is due to the nature of Steam). The following issues have been observed:
+As this release of RetroArch is executed via the Steam application it's behaving a bit glitchy and strange with ESTACION-PRO (which is due to the nature of Steam). The following issues have been observed:
 
-* ES-DE will continue to run in the background due to the way that Steam works
+* ESTACION-PRO will continue to run in the background due to the way that Steam works
 * Game launching may not be seamless, with screen flickering and similar on some devices and operating systems
-* If the Steam GUI is visible, focus may not return to ES-DE when exiting a game (this seems to be caused by the Steam overlay)
+* If the Steam GUI is visible, focus may not return to ESTACION-PRO when exiting a game (this seems to be caused by the Steam overlay)
 * There may be additional focusing and window switching issues caused by the Steam overlay
-* Core searches will not work, if an emulator core is missing there will be no error notification inside ES-DE and game launching will just silently fail
-* Logging output from emulators is not possible due to ES-DE running in the background
+* Core searches will not work, if an emulator core is missing there will be no error notification inside ESTACION-PRO and game launching will just silently fail
+* Logging output from emulators is not possible due to ESTACION-PRO running in the background
 
-As well, adding support for the Steam release of RetroArch for all systems that ES-DE supports requires hundreds of additional alternative emulator entries. For all these reasons there will be no official support for this release of RetroArch. If you insist on still using it, it's quite easy to make [custom system configuration](USERGUIDE-DEV.md#game-system-customizations) entries as the setup has been partly prepared for in the bundled configuration.
+As well, adding support for the Steam release of RetroArch for all systems that ESTACION-PRO supports requires hundreds of additional alternative emulator entries. For all these reasons there will be no official support for this release of RetroArch. If you insist on still using it, it's quite easy to make [custom system configuration](USERGUIDE-DEV.md#game-system-customizations) entries as the setup has been partly prepared for in the bundled configuration.
 
 Simply add alternative emulator entries such as the following example (which enables support for the Nestopia UE core for the nes system):
 ```xml
@@ -768,7 +768,7 @@ A complete entry for the nes system could look like the following:
 
 ## Using emulators in AppImage format on Linux
 
-AppImages is a great way to package emulators on Linux as they work across many different distributions. There is one small problem though in that there is no standardized directory for storing these files, meaning ES-DE could have issues locating them.
+AppImages is a great way to package emulators on Linux as they work across many different distributions. There is one small problem though in that there is no standardized directory for storing these files, meaning ESTACION-PRO could have issues locating them.
 
 Therefore all bundled emulator configuration entries that support AppImages will look for these files in the following locations:
 
@@ -789,11 +789,11 @@ This approach also works when using [AppImageLauncher](https://github.com/TheAss
 ```
 rpcs3-v0.0.19-13103-cc21d1b3_linux64_54579676ed3fa60dafec7188286495e4.AppImage
 ```
-Again, the wildcard matching means this filename should be found by ES-DE when launching a game so no additional setup should be required.
+Again, the wildcard matching means this filename should be found by ESTACION-PRO when launching a game so no additional setup should be required.
 
 Just be aware that AppImageLauncher causes multiple issues and its use is therefore not recommended. You can read more about this in the next section below.
 
-If not using AppImageLauncher, then make sure to set the AppImages as executable or ES-DE will not be able to launch them. For example:
+If not using AppImageLauncher, then make sure to set the AppImages as executable or ESTACION-PRO will not be able to launch them. For example:
 ```
 cd ~/Applications
 chmod +x rpcs3*.AppImage
@@ -870,9 +870,9 @@ Most AppImages are distributed directly by the official projects, but there's al
 
 [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher) will by default move any AppImage you attempt to run to the root of the ~/Applications directory and integreate it into the desktop environment's application menu. While this may sound convenient it causes multiple issues.
 
-It's a gross oversimplification to assume that people want all their AppImages in the ~/Applications directory. For example OpenBOR games are supposed to be packaged as standalone units with the AppImage game engine together with all game assets as different games may require different game engine versions. Another example would be Windows games that are packaged together with Wine or Proton into an AppImage. In ES-DE there are multiple systems that can scrape and launch AppImages directly, which means they need to be placed into the ROMs directory tree.
+It's a gross oversimplification to assume that people want all their AppImages in the ~/Applications directory. For example OpenBOR games are supposed to be packaged as standalone units with the AppImage game engine together with all game assets as different games may require different game engine versions. Another example would be Windows games that are packaged together with Wine or Proton into an AppImage. In ESTACION-PRO there are multiple systems that can scrape and launch AppImages directly, which means they need to be placed into the ROMs directory tree.
 
-For these and other reasons it's not recommended to use AppImageLauncher. If you still insist on using it you will need to setup some symlinks to point the relocated AppImages back to their expected locations. This is covered in some specific sections of this user guide, but not everywhere as AppImageLauncher is not a recommended solution for ES-DE.
+For these and other reasons it's not recommended to use AppImageLauncher. If you still insist on using it you will need to setup some symlinks to point the relocated AppImages back to their expected locations. This is covered in some specific sections of this user guide, but not everywhere as AppImageLauncher is not a recommended solution for ESTACION-PRO.
 
 ## AppImage vs Flatpak search order on Linux
 
@@ -900,7 +900,7 @@ The _staticpath_ rules are always parsed in the order they are defined, and as t
 
 There is however a workaround available to launch the Flatpak first, should you prefer that. As you can see in the above example there is also a _systempath_ entry for the Flatpak launch file, and by manually defining the path to your Flatpak bin directory you can make use of this systempath entry instead, which will always be executed before the staticpath entries.
 
-For example if using the ES-DE AppImage release, this would be the command to execute:
+For example if using the ESTACION-PRO AppImage release, this would be the command to execute:
 ```
 PATH=/var/lib/flatpak/exports/bin:~/.local/share/flatpak/exports/bin:$PATH ./ES-DE_x64.AppImage
 ```
@@ -916,9 +916,9 @@ Refer to your operating system documentation for more details on how the PATH en
 
 ## Using manually downloaded emulators on Linux
 
-Normally on Linux you would install emulators using either one of the established cross-distribution package formats, i.e. AppImage, Snap or Flatpak, or you would install them using the operating system repository (including the AUR if available on your OS). Less likely would be to manually build from source code and install to a standard system directory. In all these instances ES-DE should be able to find the emulator when launching a game. But in some cases you may instead manually download an emulator as an archive file to unzip somewhere on the file system. Normally you would want to place these files in your home directory, and if running a distribution that has an immutable filesystem (such as SteamOS or Fedora Silverblue), you don't even have the choice to install them to a standard system directory.
+Normally on Linux you would install emulators using either one of the established cross-distribution package formats, i.e. AppImage, Snap or Flatpak, or you would install them using the operating system repository (including the AUR if available on your OS). Less likely would be to manually build from source code and install to a standard system directory. In all these instances ESTACION-PRO should be able to find the emulator when launching a game. But in some cases you may instead manually download an emulator as an archive file to unzip somewhere on the file system. Normally you would want to place these files in your home directory, and if running a distribution that has an immutable filesystem (such as SteamOS or Fedora Silverblue), you don't even have the choice to install them to a standard system directory.
 
-For these situations ES-DE looks for emulators in the same directories where it looks for AppImages, meaning:
+For these situations ESTACION-PRO looks for emulators in the same directories where it looks for AppImages, meaning:
 ```
 ~/Applications/
 ~/.local/share/applications/
@@ -928,7 +928,7 @@ For these situations ES-DE looks for emulators in the same directories where it 
 
 It's generally recommended to go for the ~/Applications/ directory, but depending on your Linux distribution this may or may not exist by default. If the directory doesn't exist, then just go ahead and create it. Keep in mind that Linux is case-sensitive so make sure to spell it with a capital A.
 
-So placing a manually downloaded emulator binary in either of these directories will make ES-DE able to locate it during game launch.
+So placing a manually downloaded emulator binary in either of these directories will make ESTACION-PRO able to locate it during game launch.
 
 The following manually downloaded emulators are supported when using the bundled configuration on **x86-64**:
 
@@ -1004,7 +1004,7 @@ The following manually downloaded emulators are supported when using the bundled
 | saturn/saturnjp                               | Ymir                  | ymir/ymir-sdl3                               |
 | scummvm                                       | DREAMM                | dreamm/dreamm                                |
 
-Note that the Vita3K binary is not set as executable after unpacking the archive, so you need to do that once before ES-DE can run it:
+Note that the Vita3K binary is not set as executable after unpacking the archive, so you need to do that once before ESTACION-PRO can run it:
 ```
 cd ~/Applications/Vita3K
 chmod +x Vita3K
@@ -1038,7 +1038,7 @@ chmod +x VPinballX_GL
 
 On Linux it's possible to run emulators developed specifically for Microsoft Windows via the Wine compatibility layer. Support is also included for the Proton fork of Wine.
 
-ES-DE will look for Wine, Proton and the Windows emulators in the same directories where it looks for emulator AppImages and manually downloaded emulators (as explained in the sections above), meaning:
+ESTACION-PRO will look for Wine, Proton and the Windows emulators in the same directories where it looks for emulator AppImages and manually downloaded emulators (as explained in the sections above), meaning:
 ```
 ~/Applications/
 ~/.local/share/applications/
@@ -1073,7 +1073,7 @@ The find rules for Wine and Proton look like the following, so the AppImage file
 <entry>~/Applications/Proton/wine*.AppImage</entry>
 ```
 
-As an optional final touch it's a good idea to add entries for the Wine configuration tool WineCfg so it can be easily launched from inside ES-DE. The _desktop_ system is most suitable for this. Simply create two .sh files for this purpose, for example:
+As an optional final touch it's a good idea to add entries for the Wine configuration tool WineCfg so it can be easily launched from inside ESTACION-PRO. The _desktop_ system is most suitable for this. Simply create two .sh files for this purpose, for example:
 ```
 ~/ROMs/desktop/WineCfg (Wine).sh
 ~/ROMs/desktop/WineCfg (Proton).sh
@@ -1129,11 +1129,11 @@ An alternative and recommended solution to avoid the symlinking would be to not 
 
 ## Running emulators in fullscreen mode
 
-In general ES-DE does not pass command line parameters to emulators to start them in fullscreen mode. This is so as for most (if not all) emulators, command line arguments overrides the settings the user has defined. This means that windowed mode would become impossible to achieve without creating custom systems configuration entries if ES-DE enforced fullscreen mode. There are only a very few exceptions for emulators where there is no other way to enter fullscreen mode than by passing such options during game launch.
+In general ESTACION-PRO does not pass command line parameters to emulators to start them in fullscreen mode. This is so as for most (if not all) emulators, command line arguments overrides the settings the user has defined. This means that windowed mode would become impossible to achieve without creating custom systems configuration entries if ESTACION-PRO enforced fullscreen mode. There are only a very few exceptions for emulators where there is no other way to enter fullscreen mode than by passing such options during game launch.
 
 So if an emulator starts in windowed mode and you prefer to have it running in fullscreen mode instead, make sure to enable that option in the emulator settings or configuration file (which should be a one-time job).
 
-## Getting your games into ES-DE
+## Getting your games into ESTACION-PRO
 
 For most systems game setup is straightforward, just put your game files into the folder corresponding to the platform name (these names can be found at the [end](USERGUIDE-DEV.md#supported-game-systems) of this guide) and you're good to go.
 
@@ -1145,24 +1145,24 @@ There's also a built-in game importer that can be used for some systems, and whi
 
 The built-in game importer makes it possible to import games for some systems. This is intended for things like native Android apps, Steam games, desktop applications and similar. So it's not really intended for emulated games, for these the setup procedure is documented in various sections later in this document.
 
-You can access the game importer either from the _Utilities_ menu on the main menu, or from the _"No ROMs"_ interface that is shown on application startup if ES-DE can't find any games.
+You can access the game importer either from the _Utilities_ menu on the main menu, or from the _"No ROMs"_ interface that is shown on application startup if ESTACION-PRO can't find any games.
 
 The importer is configured using an es_import_rules.xml file that can also be user-customized in the same way as the find rules. If you're interested in doing that you can find more information in the _es_import_rules.xml_ section of the [INSTALL-DEV.md](INSTALL-DEV.md#es_import_rulesxml) document.
 
 On Android the game importer offers the ability to import icons, banners and logos for native apps and games, and on desktop operating systems the importer is simplified and allows you to simply import the games and applications.
 
-![alt text](images/es-de_game_importer_android.png "ES-DE Game Importer Android")
+![alt text](images/es-de_game_importer_android.png "ESTACION-PRO Game Importer Android")
 _Game importer main screen on Android._
 
-![alt text](images/es-de_game_importer_selection_android.png "ES-DE Game Importer Android")
+![alt text](images/es-de_game_importer_selection_android.png "ESTACION-PRO Game Importer Android")
 _Game importer selection screen on Android._
 
-![alt text](images/es-de_game_importer_desktop.png "ES-DE Game Importer Desktop")
+![alt text](images/es-de_game_importer_desktop.png "ESTACION-PRO Game Importer Desktop")
 _Game importer main screen on desktop operating systems._
 
 To see detailed explanations for every setting refer to the _Game importer_ section of the _Main menu_ reference section elsewhere in this document.
 
-Hopefully using the game importer should be pretty self-explanatory, you select the target system to import to, decide whether to remove all entries you're not importing and then you press _Start_. Assuming ES-DE finds something to import you'll next be presented with a selection screen of what entries to actually import. Just tick the games or applications you're interested in getting into ES-DE and press the _Import_ button.
+Hopefully using the game importer should be pretty self-explanatory, you select the target system to import to, decide whether to remove all entries you're not importing and then you press _Start_. Assuming ESTACION-PRO finds something to import you'll next be presented with a selection screen of what entries to actually import. Just tick the games or applications you're interested in getting into ESTACION-PRO and press the _Import_ button.
 
 If there are multiple apps or games with the same name, then a sequence number will be appended to any additional entries, for example _TMNT Shredder's Revenge_ and _TMNT Shredder's Revenge (1)_ if there are two games which are both named _TMNT Shredder's Revenge_.
 
@@ -1170,9 +1170,9 @@ On Android you can also select whether to import media from the actual app packa
 
 And although Android is a Linux-based operating system it restricts the use of some special characters in filenames that are normally allowed on Linux but that are not allowed on Windows. This is because some people will mount their Android storage devices from a Windows computer. The characters :|"/\\?*<> will be filtered out for any apps that have any of these in their names before they're presented in the selection screen. This means that the actual imported files will have these characters filtered out as well.
 
-Once the import has finished a popup notification will be displayed telling you how many entries were imported. You can proceed to import games for additional systems if you want to, or you can leave the game importer in which case ES-DE will reload, populating the systems with your newly imported games or applications.
+Once the import has finished a popup notification will be displayed telling you how many entries were imported. You can proceed to import games for additional systems if you want to, or you can leave the game importer in which case ESTACION-PRO will reload, populating the systems with your newly imported games or applications.
 
-Note that for the desktop operating systems, the import rules for most systems rely on shortcut files, so to for example import your Steam games into ES-DE you first need to create such shortcut files from within Steam.
+Note that for the desktop operating systems, the import rules for most systems rely on shortcut files, so to for example import your Steam games into ESTACION-PRO you first need to create such shortcut files from within Steam.
 
 Below are the import rules that are part of the bundled configuration.
 
@@ -1201,7 +1201,7 @@ Below are the import rules that are part of the bundled configuration.
 
 ### Single game file installation
 
-Let's start with the simple scenario of a single ROM file per game, which is the case for the majority of platforms. For this example we're setting up ES-DE to play Nintendo Entertainment System games.
+Let's start with the simple scenario of a single ROM file per game, which is the case for the majority of platforms. For this example we're setting up ESTACION-PRO to play Nintendo Entertainment System games.
 
 The supported file extensions are listed in [android/es_systems.xml](resources/systems/android/es_systems.xml), [linux/es_systems.xml](resources/systems/linux/es_systems.xml), [linuxarm/es_systems.xml](resources/systems/linuxarm/es_systems.xml), [macos/es_systems.xml](resources/systems/macos/es_systems.xml) and [windows/es_systems.xml](resources/systems/windows/es_systems.xml) but if you generated the game system directories on first application startup or later via _Create/update system directories_ in the _Utilities_ menu, then there will be a file named systeminfo.txt in each game system directory that includes the list of supported file extensions.
 
@@ -1222,13 +1222,13 @@ Here is a simplified example from linux/es_systems.xml:
 </system>
 ```
 
-The ROM files must be named using one of the supported file extensions, or ES-DE won't find them.
+The ROM files must be named using one of the supported file extensions, or ESTACION-PRO won't find them.
 
 It's highly recommended to use filenames that correspond to the full name of the game (except for special cases like arcade games), otherwise you may need to manually feed the scraper the game name when scraping which is very tedious.
 
 Symlinks are supported for both ROM directories and individual game files on desktop operating systems, but make sure to never symlink between files within the same system directory or there may be undefined application behavior when scraping, launching games etc.
 
-The default game folder is ~/ROMs. On Linux this defaults to `/home/<username>/ROMs`, on macOS `/Users/<username>/ROMs` and on Windows `C:\Users\<username>\ROMs` or `ES-DE\ROMs` depending on whether the installer release or the portable release is used. If the --home command line option was used to start ES-DE, the tilde symbol will resolve to whatever directory was passed as an argument to this option.
+The default game folder is ~/ROMs. On Linux this defaults to `/home/<username>/ROMs`, on macOS `/Users/<username>/ROMs` and on Windows `C:\Users\<username>\ROMs` or `ESTACION-PRO\ROMs` depending on whether the installer release or the portable release is used. If the --home command line option was used to start ESTACION-PRO, the tilde symbol will resolve to whatever directory was passed as an argument to this option.
 
 Assuming the default ROM directory is used, we need to create a subdirectory corresponding to the \<path\> tag in es_systems.xml, for this example it's `nes`.
 
@@ -1238,7 +1238,7 @@ So it would look something like the following for desktop operating systems:
 /home/myusername/ROMs/nes     # Linux
 /Users/myusername/ROMs/nes    # macOS
 C:\Users\myusername\ROMs\nes  # Windows installer
-ES-DE\ROMs\nes                # Windows portable
+ESTACION-PRO\ROMs\nes                # Windows portable
 ```
 
 On Android it works slightly different as you select the ROMs directory during the onboarding process. The actual paths may look something like the following:
@@ -1257,7 +1257,7 @@ Now simply copy your game ROMs into this folder, and you should end up with some
 
 Note that these directories are case sensitive on Linux/Unix, so creating a directory named `Nes` instead of `nes` won't work.
 
-That's it, start ES-DE and the NES game system should be populated. You can now scrape information and media for the games, and assuming you've setup RetroArch correctly with the Mesen core, you can launch games. If you instead prefer to use any of the three alternative emulators listed above (Nestopia UE, FCEUmm or QuickNES) then you can install one of those cores instead and change your emulator preference using the _Alternative emulators_ interface in the _Other settings_ menu or on a per-game basis via the metadata editor. Note that alternative emulators are only available for some game systems.
+That's it, start ESTACION-PRO and the NES game system should be populated. You can now scrape information and media for the games, and assuming you've setup RetroArch correctly with the Mesen core, you can launch games. If you instead prefer to use any of the three alternative emulators listed above (Nestopia UE, FCEUmm or QuickNES) then you can install one of those cores instead and change your emulator preference using the _Alternative emulators_ interface in the _Other settings_ menu or on a per-game basis via the metadata editor. Note that alternative emulators are only available for some game systems.
 
 ### Multiple game files installation
 
@@ -1288,17 +1288,17 @@ LNINJA2A.D64
 LNINJA2B.D64
 ```
 
-Setting the directories to the same name as the .m3u files will interpret them as files, meaning they will behave just like any normal files inside ES-DE instead of being displayed as folders. When launching such a game, the file inside the directory that matches the directory name will be passed to the emulator. See the following section below for more information about this functionality.
+Setting the directories to the same name as the .m3u files will interpret them as files, meaning they will behave just like any normal files inside ESTACION-PRO instead of being displayed as folders. When launching such a game, the file inside the directory that matches the directory name will be passed to the emulator. See the following section below for more information about this functionality.
 
 This setup is of course entirely optional, you can also leave the directories as normal folders, meaning they will behave just like you would expect, i.e. you will have to enter them and select the file you want to launch. If going for this setup it's possible to easily hide the files that are not relevant using the metadata editor.
 
 ### Directories interpreted as files
 
-There are two scenarios where it's useful to interpret directories as files inside ES-DE. The first one is to hide the directory structure for multi-file/multi-disc games while still being able to directly launch files inside these folders, and the second is that some emulators support passing a directory rather than an individual file as the game ROM argument.
+There are two scenarios where it's useful to interpret directories as files inside ESTACION-PRO. The first one is to hide the directory structure for multi-file/multi-disc games while still being able to directly launch files inside these folders, and the second is that some emulators support passing a directory rather than an individual file as the game ROM argument.
 
-In both cases, renaming a directory to one of the supported file extensions will automatically make ES-DE interpret it as a file. This also means that the directory can be part of the automatic collections and any custom collections.
+In both cases, renaming a directory to one of the supported file extensions will automatically make ESTACION-PRO interpret it as a file. This also means that the directory can be part of the automatic collections and any custom collections.
 
-The only difference between a real file and a directory interpreted as a file is that the _Delete_ button in the metadata editor will be disabled as ES-DE does not support deletion of directories for safety reasons.
+The only difference between a real file and a directory interpreted as a file is that the _Delete_ button in the metadata editor will be disabled as ESTACION-PRO does not support deletion of directories for safety reasons.
 
 For the first scenario, to automatically launch a file inside a directory, just rename the directory to the same name as the file inside the folder that you would like to launch. For example:
 ```
@@ -1336,23 +1336,23 @@ It's possible to combine these types of special directories with normal director
 ~/ROMs/ps3/racing/Gran Turismo 5.ps3
 ```
 
-Also in this case the directory will be displayed as a regular game file inside ES-DE and when launching the game the directory is passed as the game ROM argument to RPCS3.
+Also in this case the directory will be displayed as a regular game file inside ESTACION-PRO and when launching the game the directory is passed as the game ROM argument to RPCS3.
 
 ### Folder flattening
 
 **This functionality is experimental and may cause all sorts of issues like corrupting your gamelist.xml files, so make sure to have backups of your data prior to attempting to use this.**
 
-ES-DE works according to the filesystem paradigm used on most operating systems, meaning the file and directory structure of your ROMs directory is reflected inside the application. So if you create a directory on the filesystem and place some games in there, it will be reflected inside ES-DE as a folder that you can enter and launch games from.
+ESTACION-PRO works according to the filesystem paradigm used on most operating systems, meaning the file and directory structure of your ROMs directory is reflected inside the application. So if you create a directory on the filesystem and place some games in there, it will be reflected inside ESTACION-PRO as a folder that you can enter and launch games from.
 
 A slight exception to this is the _Directories interpreted as files_ functionality where you can display a folder as a single entry. But even then, the basic directory structure is retained.
 
-However, some users have a setup where they have separated games inside their systems into folders but would still want to see these as a flat structure in ES-DE. While this is possible to accomplish, it's discouraged as it will cause multiple issues:
+However, some users have a setup where they have separated games inside their systems into folders but would still want to see these as a flat structure in ESTACION-PRO. While this is possible to accomplish, it's discouraged as it will cause multiple issues:
 * It completely disables folder support for the system
 * Any identically named files will be added only once in a semi-random fashion, meaning you could miss some games
 * If there is metadata available for multiple games with the same filename (which could happen if scraping was done prior to flattening the folders) then the behavior is undefined and metadata from the wrong game may get used
 * Some systems like MS-DOS and ScummVM may be completely broken
 * The Orphaned data cleanup utility will not process the system
-* The setup may cause confusion when reorganizing your collection and similar because what you'll see inside ES-DE will not reflect what you see when navigating the ROM directory in your operating system's file manager
+* The setup may cause confusion when reorganizing your collection and similar because what you'll see inside ESTACION-PRO will not reflect what you see when navigating the ROM directory in your operating system's file manager
 
 Only enable this functionality if you know exactly what you're doing and understand the adverse side effects mentioned above. If you have any name collisions in your directory structure then make sure to rename each file to have a unique name. Also delete your gamelist.xml file and rescrape the entire system after fixing any collisions as it's otherwise random which metadata will be used for those games.
 
@@ -1369,7 +1369,7 @@ Here's an example setup:
 ~/ROMs/nes/flatten.txt
 ```
 
-For this example the following entries will show up inside ES-DE:
+For this example the following entries will show up inside ESTACION-PRO:
 ```
 Contra
 Kid Icarus
@@ -1382,7 +1382,7 @@ Note that _Kid Icarus_ will only show up once since there is a name collision pr
 
 ### RetroArch ROM hacks
 
-The easiest way to setup RetroArch ROM hacks in ES-DE is to use the _directories interpreted as files_ functionality described elsewhere in this document. This way you can have separate entries in your gamelist for each patch, which will be applied automatically by RetroArch on game launch.
+The easiest way to setup RetroArch ROM hacks in ESTACION-PRO is to use the _directories interpreted as files_ functionality described elsewhere in this document. This way you can have separate entries in your gamelist for each patch, which will be applied automatically by RetroArch on game launch.
 
 Here's an example of the _Contra_ game for the Nintendo Entertainment System:
 ```
@@ -1413,7 +1413,7 @@ On Linux the default emulator for the apple2 system is [LinApple](http://linappl
 
 Depending on which Linux operating system you're using, LinApple may not be readily available and you may have to build it from source code or obtain a binary from somewhere on the Internet. See the [Using manually downloaded emulators on Linux](USERGUIDE-DEV.md#using-manually-downloaded-emulators-on-linux) section of this guide for more details on where it needs to be installed. If you're using an OS with access to the AUR, such as Arch or Manjaro, then LinApple is available there. Note that you need to use the _linapple-git_ package as the regular _linapple_ package does not work correctly.
 
-Once the LinApple or AppleWin emulator is installed no additional configuration is required, just drop your games into the ~/ROMs/apple2 folder and launch them from inside ES-DE.
+Once the LinApple or AppleWin emulator is installed no additional configuration is required, just drop your games into the ~/ROMs/apple2 folder and launch them from inside ESTACION-PRO.
 
 If using Mednafen you need to place some Apple II ROM files in the emulator firmware directory, refer to the Mednafen documentation for details about this.
 
@@ -1464,7 +1464,7 @@ Note that on Android these emulator entries are named slightly differently as th
 
 To use these you need the MAME files adbmodem.zip, macse.zip and macplus.zip placed in the `~/ROMs/macintosh/` directory.
 
-The _Bootable_ entries are straightforward, these are games that are self-contained on a single diskette and that can simply be booted as-is. The _Boot Disk_ entries are games that can't be booted directly but instead require a separate boot diskette. To run these you need to place a disk image named `boot.dsk` together with the game files and ES-DE will then insert this into the first floppy drive on game launch and place the game diskette in the second floppy drive. Once Mac OS has started up you can then start the game from inside the operating system. Basically any bootable diskette can be used as long as it's 400K or 800K in size and runs a Mac OS release compatible with the game you intend to play. For example the _System Tools_ diskette from the System 6.0.8 installation media works fine for this purpose.
+The _Bootable_ entries are straightforward, these are games that are self-contained on a single diskette and that can simply be booted as-is. The _Boot Disk_ entries are games that can't be booted directly but instead require a separate boot diskette. To run these you need to place a disk image named `boot.dsk` together with the game files and ESTACION-PRO will then insert this into the first floppy drive on game launch and place the game diskette in the second floppy drive. Once Mac OS has started up you can then start the game from inside the operating system. Basically any bootable diskette can be used as long as it's 400K or 800K in size and runs a Mac OS release compatible with the game you intend to play. For example the _System Tools_ diskette from the System 6.0.8 installation media works fine for this purpose.
 
 This is an example of what the game setup could look like:
 ```
@@ -1481,7 +1481,7 @@ For this example _Shufflepuck Cafe_ requires a boot disk to run and _StuntCopter
 
 The second approach to Macintosh emulation is to setup a hard disk image, boot into this and run the games from there. For this setup the Basilisk II emulator is used for older Macintosh II and Quadra computers and SheepShaver for more modern PowerPC-based models.
 
-Emulation for this system works quite differently than other platforms as ES-DE only acts as a game browser which simply launches the emulator. The game then needs to be manually started from inside Mac OS.
+Emulation for this system works quite differently than other platforms as ESTACION-PRO only acts as a game browser which simply launches the emulator. The game then needs to be manually started from inside Mac OS.
 
 As for how to setup the Basilisk II emulator the following YouTube video is a good resource:\
 https://www.youtube.com/watch?v=QSWWZ4hkvVk
@@ -1494,7 +1494,7 @@ The setup of SheepShaver is essentially identical to that of Basilisk II as thes
 
 On macOS you need to download the separate Basilisk II GUI application to configure the emulator and with SheepShaver you need to start the emulator using a command line option to point to a valid ROM file. Only then can you reach the Preferences from the menu (this is however only needed the first time you setup SheepShaver). Quite a strange and unusual approach.
 
-To add a game entry in ES-DE just create an empty file with the .game extension, for example `Marathon.game`. This entry can then be scraped and edited in the same way as any regular system. But as mentioned above, ES-DE will only act as a browser and individual games cannot be started directly. So when you launch a game, the emulator will boot into the Mac OS desktop and you will have to manually navigate to your game folder to run the game.
+To add a game entry in ESTACION-PRO just create an empty file with the .game extension, for example `Marathon.game`. This entry can then be scraped and edited in the same way as any regular system. But as mentioned above, ESTACION-PRO will only act as a browser and individual games cannot be started directly. So when you launch a game, the emulator will boot into the Mac OS desktop and you will have to manually navigate to your game folder to run the game.
 
 To launch a game entry using SheepShaver instead of Basilisk II you just need to select the alternative emulator _SheepShaver (Standalone)_.
 
@@ -1513,13 +1513,13 @@ If using Android then make sure you've read the _MAME4droid Current and MAME4dro
 
 **General**
 
-For all the supported MAME variants as well as Final Burn Alpha/FinalBurn Neo and Neo Geo, single file archives should be used. These files should retain the MAME software list filenames as ES-DE ships with MAME lookup tables, meaning the software list names are automatically expanded to full game names.
+For all the supported MAME variants as well as Final Burn Alpha/FinalBurn Neo and Neo Geo, single file archives should be used. These files should retain the MAME software list filenames as ESTACION-PRO ships with MAME lookup tables, meaning the software list names are automatically expanded to full game names.
 
 For instance `topgunnr.7z` will be expanded to `Top Gunner`.
 
 This is required by the TheGamesDB scraper where the expanded filenames are used for game searches. (Screenscraper natively supports searches using the MAME names). It's also quite nice to have the gamelist populated with the expanded game names even before any scraping has taken place.
 
-BIOS and device files must be placed together with the ROM files in the game system directory and not in the MAME configuration/home directory. It's pointless to separate potentially hundreds of BIOS and device files from the game files, and ES-DE will also automatically filter out such files. This means they will never show up in the gamelist. But this only applies to files that are listed in the regular MAME driver file, so BIOSes and devices for systems like MESS will not be filtered out. You'll instead need to manually hide these files using the _Hidden_ option in the metadata editor.
+BIOS and device files must be placed together with the ROM files in the game system directory and not in the MAME configuration/home directory. It's pointless to separate potentially hundreds of BIOS and device files from the game files, and ESTACION-PRO will also automatically filter out such files. This means they will never show up in the gamelist. But this only applies to files that are listed in the regular MAME driver file, so BIOSes and devices for systems like MESS will not be filtered out. You'll instead need to manually hide these files using the _Hidden_ option in the metadata editor.
 
 If using the standalone release of FinalBurn Neo you need to define the ROM directory in the fbneo.ini file or via the user interface as this emulator does not support passing the full path to the game ROM on game launch (see the comments about Model 2 Emulator below for more details).
 
@@ -1537,7 +1537,7 @@ On Linux it could look something like the following:
 Dir1=/home/myusername/ROMs/model2
 ```
 
-If you're using a portable ES-DE installation on Windows, then you can set the ROM directory path to be relative, for example:
+If you're using a portable ESTACION-PRO installation on Windows, then you can set the ROM directory path to be relative, for example:
 ```
 [RomDirs]
 Dir1=..\..\ROMs\arcade\Sega Model 2
@@ -1545,7 +1545,7 @@ Dir1=..\..\ROMs\arcade\Sega Model 2
 
 The EMULATOR.INI file is found in the _Model 2 Emulator_ installation directory.
 
-Note that Model 2 Emulator is a bit broken and on Windows most GPU drivers it will only work correctly if ES-DE keeps running in the background while the game is launched. However, for some GPU drivers the opposite is true and the emulator will only work if ES-DE is suspended. To use the latter setup, switch to the alternative emulator entry _Model 2 Emulator [Suspend ES-DE] (Standalone)_.
+Note that Model 2 Emulator is a bit broken and on Windows most GPU drivers it will only work correctly if ESTACION-PRO keeps running in the background while the game is launched. However, for some GPU drivers the opposite is true and the emulator will only work if ESTACION-PRO is suspended. To use the latter setup, switch to the alternative emulator entry _Model 2 Emulator [Suspend ESTACION-PRO] (Standalone)_.
 
 To run Model 2 Emulator on Linux you need Wine or Proton, how to setup this is covered in the [Running Windows emulators on Linux using Wine or Proton](USERGUIDE-DEV.md#running-windows-emulators-on-linux-using-wine-or-proton) section.
 
@@ -1565,7 +1565,7 @@ On macOS, the only available emulator for Sega Model 2 is MAME, either the Retro
 
 These games can be emulated using MAME or Supermodel, note however that MAME support for this platform is still not very mature.
 
-In the past a custom Supermodel build was provided for Linux as there was no other way to run this emulator on devices like the Steam Deck. As there is now a Flatpak available this should be used instead and no further custom builds will be provided by the ES-DE project.
+In the past a custom Supermodel build was provided for Linux as there was no other way to run this emulator on devices like the Steam Deck. As there is now a Flatpak available this should be used instead and no further custom builds will be provided by the ESTACION-PRO project.
 
 However, for this Flatpak to work you need to copy the Assets and Config directories from the Flatpak installation folder to the model3 ROM directory, for example:
 ```
@@ -1574,7 +1574,7 @@ cp -r /var/lib/flatpak/app/com.supermodel3.Supermodel/x86_64/stable/active/files
 cp -r /var/lib/flatpak/app/com.supermodel3.Supermodel/x86_64/stable/active/files/bin/Config .
 ```
 
-An alternative approach which is recommended is to download the ES-DE specific [Supermodel_config_2023-10-29.zip](https://gitlab.com/es-de/emulationstation-de/-/package_files/99624455/download) configuration package. Follow the instructions in the included Readme.txt file, in summary you need to place the `Assets`, `Config` and `NVRAM` directories into `~/ROMs/model3/` and you should be good to go. This package provides per-game button mappings and NVRAM files.
+An alternative approach which is recommended is to download the ESTACION-PRO specific [Supermodel_config_2023-10-29.zip](https://github.com/DOCK-PI3/ESTACION-PRO/-/package_files/99624455/download) configuration package. Follow the instructions in the included Readme.txt file, in summary you need to place the `Assets`, `Config` and `NVRAM` directories into `~/ROMs/model3/` and you should be good to go. This package provides per-game button mappings and NVRAM files.
 
 This approach should hopefully work fine if you have installed Supermodel via the AUR as well, and it may work on macOS and Windows too although you probably need to customize the Supermodel.ini file a bit. However, on Windows the files should go into the emulator installation directory and not into the ~/ROMs/model3/ directory.
 
@@ -1600,7 +1600,7 @@ By default this Flatpak does not have the necessary permissions to run games fro
 
 The setup is quite particular, the games need to be unpacked first. You can see an example below for the game 2Spicy (Too Spicy).
 
-First rename the game directory by adding .lindbergh to the name. This will make ES-DE use the _directories interpreted as files_ functionality which will make the games appear like single entries. It will speed up scanning of the games significantly during startup, and it's also a requirement in this case to make game launching work correctly.
+First rename the game directory by adding .lindbergh to the name. This will make ESTACION-PRO use the _directories interpreted as files_ functionality which will make the games appear like single entries. It will speed up scanning of the games significantly during startup, and it's also a requirement in this case to make game launching work correctly.
 
 Following this you need to create a .commands file inside the game directory that contains a relative link to the actual ELF/game file that Lindbergh Loader should run. For the 2Spicy game it's the following game file that should be executed:
 ```
@@ -1617,7 +1617,7 @@ The content of this file should be the relative path to the ELF/game file to lau
 disk0/elf/apacheM.elf
 ```
 
-That's it, launching the _2spicy_ entry in ES-DE should now run the game, although you obviously need to change to the alternative emulator _Lindbergh Loader (Standalone)_ for game launching to work.
+That's it, launching the _2spicy_ entry in ESTACION-PRO should now run the game, although you obviously need to change to the alternative emulator _Lindbergh Loader (Standalone)_ for game launching to work.
 
 The root directory for the game will look something like this:
 
@@ -1685,16 +1685,16 @@ That's basically it, for the atarijaguar system just make sure to select _BigPEm
 
 There are many settings in Wine that may affect compatibility, performance etc. but covering all that is beyond the scope of this guide.
 
-In addition to the above instructions there's an unofficial YouTube video available on how to setup the Windows release of BigPEmu with ES-DE:\
+In addition to the above instructions there's an unofficial YouTube video available on how to setup the Windows release of BigPEmu with ESTACION-PRO:\
 https://www.youtube.com/watch?v=GuPAjgICc-4
 
 ### Commodore Amiga and CDTV
 
-There are multiple ways to run these games, for the computer models like the A500, A1200 etc. it's either via diskette images, hard disk images or using specially packaged WHDLoad games. For the CD32 and CDTV you normally run games via CD-ROM disc images. As for emulators all operating systems that ES-DE runs on support the PAUE RetroArch core and the FS-UAE standalone emulator. On Linux and macOS there is also support for the Amiberry standalone emulator.
+There are multiple ways to run these games, for the computer models like the A500, A1200 etc. it's either via diskette images, hard disk images or using specially packaged WHDLoad games. For the CD32 and CDTV you normally run games via CD-ROM disc images. As for emulators all operating systems that ESTACION-PRO runs on support the PAUE RetroArch core and the FS-UAE standalone emulator. On Linux and macOS there is also support for the Amiberry standalone emulator.
 
 **PUAE**
 
-This emulator is by far the most straightforward Amiga emulator to use, it's easy to configure and it runs all file types that ES-DE supports. It can run zipped files too for all supported formats.
+This emulator is by far the most straightforward Amiga emulator to use, it's easy to configure and it runs all file types that ESTACION-PRO supports. It can run zipped files too for all supported formats.
 
 PUAE requires Amiga Kickstart ROMs to run, you can find more information about that topic here:\
 https://github.com/libretro/libretro-uae/blob/master/README.md
@@ -1714,7 +1714,7 @@ Here's an example of what the file structure could look like:
 ~/ROMs/amiga/Robbeary.ipf
 ```
 
-For the Amiga CD32 and Commodore CDTV you can run games in several disc image formats like .chd, .cue and .iso. The setup is straightforward, just add an image file per game or make a subdirectory for games with multiple files and use the _directories interpreted as files_ functionality to present these games as single entries inside ES-DE. Here's an example setup:
+For the Amiga CD32 and Commodore CDTV you can run games in several disc image formats like .chd, .cue and .iso. The setup is straightforward, just add an image file per game or make a subdirectory for games with multiple files and use the _directories interpreted as files_ functionality to present these games as single entries inside ESTACION-PRO. Here's an example setup:
 
 ```
 ~/ROMs/amigacd32/James Pond 2 - Robocod.cue/James Pond 2 - Robocod.cue
@@ -1730,7 +1730,7 @@ https://docs.libretro.com/library/puae/
 
 **FS-UAE**
 
-This emulator is a bit confusing in that both the core FS-UAE binary as well as the separate FS-UAE Launcher binary are needed in order for it to by usable be ES-DE. Adding to to the confusion is the fact that sometimes these two are packaged together and sometimes they aren't.
+This emulator is a bit confusing in that both the core FS-UAE binary as well as the separate FS-UAE Launcher binary are needed in order for it to by usable be ESTACION-PRO. Adding to to the confusion is the fact that sometimes these two are packaged together and sometimes they aren't.
 
 If installing FS-UAE from the AUR then the Launcher is not included, but if you instead install the FS-UAE Launcher specifically then FS-UAE will be installed as it's a dependency. For the Flatpak release the Launcher is included together with the emulator even though the Flatpak doesn't mention this fact.
 
@@ -1740,7 +1740,7 @@ https://github.com/FrodeSolheim/fs-uae-launcher/releases
 
 If you however install the fs-uae-launcher Cask via Homebrew in macOS then it will also install the emulator.
 
-On Windows you need to place FS-UAE and FS-UAE Launcher next to each other on the filesystem or it will not work. If using the portable release this is clearly indicated in the README.txt file bundled with ES-DE, like so:
+On Windows you need to place FS-UAE and FS-UAE Launcher next to each other on the filesystem or it will not work. If using the portable release this is clearly indicated in the README.txt file bundled with ESTACION-PRO, like so:
 ```
 Emulators\FS-UAE\Windows\x86-64\fs-uae.exe
 Emulators\FS-UAE-Launcher\Windows\x86-64\fs-uae-launcher.exe
@@ -1769,7 +1769,7 @@ For example game setups refer to the PUAE section above as it's virtually identi
 
 **Amiberry**
 
-The Amiberry emulator is only available on Linux and macOS and it's a bit limited at the time of writing. So for the time being ES-DE only supports WHDLoad games when using it for the Amiga computer models. Although the official emulator documentation states that it should work to launch WHDLoad-packaged games in .zip format this does not seem to be the case. Instead only the .lha format seems to work.
+The Amiberry emulator is only available on Linux and macOS and it's a bit limited at the time of writing. So for the time being ESTACION-PRO only supports WHDLoad games when using it for the Amiga computer models. Although the official emulator documentation states that it should work to launch WHDLoad-packaged games in .zip format this does not seem to be the case. Instead only the .lha format seems to work.
 
 For the Amiga CD32 and Commodore CDTV you can run games in the .cue and .iso formats.
 
@@ -1804,7 +1804,7 @@ The following arcade boards have been considered:
 | SETA Aleck 64                       | Nintendo 64                 | MAME                        |
 | Taito FX-1A/FX-1B                   | Sony PlayStation            | MAME                        |
 
-Note that not all emulators are supported on all operating systems that ES-DE runs on, see the [Supported game systems](USERGUIDE-DEV.md#supported-game-systems) section for more details.
+Note that not all emulators are supported on all operating systems that ESTACION-PRO runs on, see the [Supported game systems](USERGUIDE-DEV.md#supported-game-systems) section for more details.
 
 You can also read more about the console arcade boards here:\
 http://system16.com/base.php
@@ -1825,14 +1825,14 @@ The required setup for this emulator is very particular. There are two Play! emu
 
 https://github.com/jpd002/Play-/tree/master/arcadedefs
 
-The shortnames for these two games are bldyr3b and cobrata so download the corresponding .arcadedef files and place them in the ES-DE ROMs directory. As these are System 246 games we have named the directory _Namco System 246_:
+The shortnames for these two games are bldyr3b and cobrata so download the corresponding .arcadedef files and place them in the ESTACION-PRO ROMs directory. As these are System 246 games we have named the directory _Namco System 246_:
 
 ```
 ~/ROMs/consolearcade/Namco System 246/bldyr3b.arcadedef
 ~/ROMs/consolearcade/Namco System 246/cobrata.arcadedef
 ```
 
-Next make a subdirectory that will contain the ROMs files, and place a noload.txt file inside this directory so that ES-DE will skip it completely when scanning for games on application startup:
+Next make a subdirectory that will contain the ROMs files, and place a noload.txt file inside this directory so that ESTACION-PRO will skip it completely when scanning for games on application startup:
 
 ```
 ~/ROMs/consolearcade/Namco System 246/Play! ROMs/noload.txt
@@ -1864,7 +1864,7 @@ How to configure all other emulators is beyond the scope of this document, but t
 
 ### DOS / PC
 
-For this platform there are two basic approaches for how the setup could be done; either to present each game as a single entry inside ES-DE, or to retain each game's directory structure. The first alternative is more user-friendly, tidy and requires less setup but basically restricts the emulator selection to the DOSBox-Pure RetroArch core and DOSBox Pure Unleashed (the latter is only available on desktop operating systems). There is an alternative way to setup single entries to work with all DOSBox forks, but it has some drawbacks as discussed below.
+For this platform there are two basic approaches for how the setup could be done; either to present each game as a single entry inside ESTACION-PRO, or to retain each game's directory structure. The first alternative is more user-friendly, tidy and requires less setup but basically restricts the emulator selection to the DOSBox-Pure RetroArch core and DOSBox Pure Unleashed (the latter is only available on desktop operating systems). There is an alternative way to setup single entries to work with all DOSBox forks, but it has some drawbacks as discussed below.
 
 If you want to emulate older DOS games and applications then there's also support for the VirtualXT RetroArch core, but this emulator can only run .img and .zip files and it probably won't be able to run most games from the 1990s. For these reasons this documentation does not cover VirtualXT in more detail.
 
@@ -1902,7 +1902,7 @@ For this example, the contents of Tyrian.bat could look like the following:
 TYRIAN.EXE
 ```
 
-The second approach for DOS games is to keep the directory structure intact for each game, just as if running the game on a real DOS PC. If going for this approach it's recommended to set the metadata field _Exclude from game counter_ to enabled for all files except the actual file used to launch the game, i.e. the binary or the .bat batch file. This is done so that the game counter correctly reflects the number of games you have installed. It's also possible to mark files and subdirectories as hidden to avoid seeing them in ES-DE. Both of these fields can be set using the metadata editor. While this setup is a bit tedious and not as tidy, it can be used with all DOSBox forks while still being able to easily access all files inside the game directory, such as any game configuration utilities.
+The second approach for DOS games is to keep the directory structure intact for each game, just as if running the game on a real DOS PC. If going for this approach it's recommended to set the metadata field _Exclude from game counter_ to enabled for all files except the actual file used to launch the game, i.e. the binary or the .bat batch file. This is done so that the game counter correctly reflects the number of games you have installed. It's also possible to mark files and subdirectories as hidden to avoid seeing them in ESTACION-PRO. Both of these fields can be set using the metadata editor. While this setup is a bit tedious and not as tidy, it can be used with all DOSBox forks while still being able to easily access all files inside the game directory, such as any game configuration utilities.
 
 When going for this approach the game folders can be scraped so that it looks nice when browsing the gamelist, but make sure to also scrape the files used to launch the games or otherwise their entries in the collections _All games, Favorites_ and _Last played_ as well as any custom collections will miss the game metadata and game media. If you don't have these collections activated, then this can of course be skipped.
 
@@ -1969,7 +1969,7 @@ https://docs.mamedev.org/usingmame/defaultkeys.html
 
 The Tsugaru emulator is available for Linux and Windows and can be downloaded from https://github.com/captainys/TOWNSEMU
 
-While there's a macOS release available it's not packaged properly and it does not include a command line binary which makes it unusable with ES-DE. Also note that there is no AppImage release for Linux and the binary build is made specifically for Ubuntu. It may work on other distributions but you'll need to test it.
+While there's a macOS release available it's not packaged properly and it does not include a command line binary which makes it unusable with ESTACION-PRO. Also note that there is no AppImage release for Linux and the binary build is made specifically for Ubuntu. It may work on other distributions but you'll need to test it.
 
 For both the Windows and Linux release you need to create a `roms` subdirectory inside the emulator directory where the system BIOS/ROM files need to be located. These are the required files, and they have to be named in uppercase:
 
@@ -2019,7 +2019,7 @@ To map the controller to the keyboard and to set a 33 MHz CPU speed, the file co
 
 Note that on Android the Hypseus Singe emulator is not available. However the setup for MAME (using MAME4droid Current) and DirkSimple still applies. If using Android also make sure you've read the _MAME4droid Current and MAME4droid_ section of the [Android documentation](ANDROID-DEV.md#mame4droid-current-and-mame4droid) and that your ROM directory is configured correctly inside the emulator.
 
-There are three ways to run LaserDisc games in ES-DE, via MAME, via Hypseus Singe or via the DirkSimple RetroArch core. There are also two separate systems available, _daphne_ and _laserdisc_. The latter is recommended as the _daphne_ system is mostly existing for legacy reasons and may be removed in a future ES-DE release. The configuration for these two systems is identical as they are essentially clones.
+There are three ways to run LaserDisc games in ESTACION-PRO, via MAME, via Hypseus Singe or via the DirkSimple RetroArch core. There are also two separate systems available, _daphne_ and _laserdisc_. The latter is recommended as the _daphne_ system is mostly existing for legacy reasons and may be removed in a future ESTACION-PRO release. The configuration for these two systems is identical as they are essentially clones.
 
 At the time of writing MAME and Hypseus Singe are mostly mutually exlusive as MAME tends to primarily support the games that Hypseus Singe doesn't support. In the future this is likely to change with MAME getting support for more LaserDisc games.
 
@@ -2065,14 +2065,14 @@ https://github.com/DirtBagXon/hypseus-singe/releases
 
 The first step is to install the emulator. On Windows download the win64 release and unpack it and you're good to go.
 
-Similarly on Linux, download the ES-DE specific build that contains an AppImage of the emulator as well as some additional required files. It should be unpacked into the ~/Applications directory, such as:
+Similarly on Linux, download the ESTACION-PRO specific build that contains an AppImage of the emulator as well as some additional required files. It should be unpacked into the ~/Applications directory, such as:
 ```
 /home/myusername/Applications/hypseus-singe/
 ```
 
 If the Applications directory doesn't exist yet, then just go ahead and create it and unpack the emulator inside it. Just be aware that the name has to start with a capital A.
 
-Although there is an official Hypseus Singe release available for macOS ARM this appears somehow broken so you may need to compile it yourself. This is a bit involved so it's beyond the scope of this document to describe it. For this reason macOS is not listed as supported but the configuration is still bundled so if you're persistent and manage to get the emulator to work, it will hopefully work from within ES-DE as well.
+Although there is an official Hypseus Singe release available for macOS ARM this appears somehow broken so you may need to compile it yourself. This is a bit involved so it's beyond the scope of this document to describe it. For this reason macOS is not listed as supported but the configuration is still bundled so if you're persistent and manage to get the emulator to work, it will hopefully work from within ESTACION-PRO as well.
 
 After the emulator has been installed, copy the required BIOS ROMs into `Hypseus Singe\roms\` on Windows or `~/Applications/hypseus-singe/roms/` on Linux.
 
@@ -2107,7 +2107,7 @@ END
 
 With this configuration, pressing the _Back_ and _Start_ buttons (or equivalent on non-Xbox 360 controllers) at the same time exits the emulator.
 
-There are two types of games supported by Hypseus and these are _Daphne_ and _Singe_. It's beyond the scope of this document to describe these game formats in detail but there are many resources available online for this. The setup differs a bit between these two types however, and you need to use an alternative emulator entry in ES-DE to launch Singe games.
+There are two types of games supported by Hypseus and these are _Daphne_ and _Singe_. It's beyond the scope of this document to describe these game formats in detail but there are many resources available online for this. The setup differs a bit between these two types however, and you need to use an alternative emulator entry in ESTACION-PRO to launch Singe games.
 
 In addition to the above instructions there's an unofficial YouTube video available on how to setup Hypseus Singe on the Steam Deck: \
 https://www.youtube.com/watch?v=mO2UiI6byJo
@@ -2129,7 +2129,7 @@ For Daphne games the structure will look something like the following, which is 
 The directory name has to keep this naming convention with the name consisting of the Daphne game type (_lair_ for this example) followed by the .daphne extension. This name logic with a short name per game is similar to how it works in MAME and ScummVM. A list of available games can be found here: \
 https://www.daphne-emu.com:9443/mediawiki/index.php/CmdLine
 
-In order to get the games to work, simply create an empty file named _\<game\>.daphne_ inside the game directory, for example `lair.daphne` in this case. The _Directories interpreted as files_ functionality will then allow the game to be launched even though it shows up as a single entry inside ES-DE.
+In order to get the games to work, simply create an empty file named _\<game\>.daphne_ inside the game directory, for example `lair.daphne` in this case. The _Directories interpreted as files_ functionality will then allow the game to be launched even though it shows up as a single entry inside ESTACION-PRO.
 
 There is also the option to add command line parameters for each game which is somehow important as different games may require different DIP switches to be set and you may also want to apply general options like fullscreen mode.
 
@@ -2213,7 +2213,7 @@ For MAME standalone there are two options available for the artwork location in 
 ~/ROMs/gameandwatch/artwork/gnw_dkong.zip
 ```
 
-As the artwork files also come with the .zip file extension they will show up inside ES-DE as if they were game files. So it's recommended to hide the entire artwork directory using the _Hidden_ option in the metadata editor, or alternatively exclude them from the multi-scraper using the _Exclude from multi-scraper_ option.
+As the artwork files also come with the .zip file extension they will show up inside ESTACION-PRO as if they were game files. So it's recommended to hide the entire artwork directory using the _Hidden_ option in the metadata editor, or alternatively exclude them from the multi-scraper using the _Exclude from multi-scraper_ option.
 
 Be aware that neither ScreenScraper nor TheGamesDB currently support the MAME software list names natively so you'll need to refine the searches or the scraper services are unlikely to return any results at all (or very inaccurate results at best). However, if you have game files that match the MD5 hashes in the ScreenScraper database, then the games will scrape correctly regardless of their names.
 
@@ -2227,7 +2227,7 @@ Simulation is done via the Handheld Electronic (GW) RetroArch core, in which cas
 
 ### Lutris
 
-Adding these games is most easily accomplished by using .desktop shortcut files that can be created from inside the Lutris application. Right click on each game you would like to add to ES-DE and select _Create desktop shortcut_. Following this it's recommend to use the built-in game importer (accessible from the _Utilities_ menu) to import the .desktop files into ES-DE. If doing this then ES-DE will take the actual game name that is defined inside the .desktop file and rename the entry to that as part of the import process.
+Adding these games is most easily accomplished by using .desktop shortcut files that can be created from inside the Lutris application. Right click on each game you would like to add to ESTACION-PRO and select _Create desktop shortcut_. Following this it's recommend to use the built-in game importer (accessible from the _Utilities_ menu) to import the .desktop files into ESTACION-PRO. If doing this then ESTACION-PRO will take the actual game name that is defined inside the .desktop file and rename the entry to that as part of the import process.
 
 You could alternatively manually move the .desktop files to the `lutris` system directory, but if doing so you may also want to rename some of the files as their names may be a bit cryptic which could confuse the scraper.
 
@@ -2243,7 +2243,7 @@ As an alternative you can add Lutris games to the Ports system using the procedu
 
 There are multiple ways to run Windows 3.x and Windows 9x games and two different approaches are covered here. The first option is to run these games inside a complete operating system emulated via DOSBox and the second option is to use shortcuts, scripts or AppImages to run the games separately via applications like Wine or Lutris or by using source ports and similar. It may also be possible to run these games as zip files via DOSBox-Pure or DOSBox Pure Unleashed (which are available as alternative emulators for these systems), but it's not covered here. Note that DOSBox Pure Unleashed is only available on desktop operating systems.
 
-The second approach is very flexible but does not lead to the most authentic experience in many cases. It will also not be covered in detail here. As long as you have a script, shortcut or AppImage that can be launched outside ES-DE you should be able to place it into the `~/ROMs/windows3x` or `~/ROMs/windows9x` directories and launch it inside ES-DE as well (assuming you have selected the correct alternative emulator entry). If you've named the files appropriately it should also be possible to scrape them.
+The second approach is very flexible but does not lead to the most authentic experience in many cases. It will also not be covered in detail here. As long as you have a script, shortcut or AppImage that can be launched outside ESTACION-PRO you should be able to place it into the `~/ROMs/windows3x` or `~/ROMs/windows9x` directories and launch it inside ESTACION-PRO as well (assuming you have selected the correct alternative emulator entry). If you've named the files appropriately it should also be possible to scrape them.
 
 As for the default approach which is to emulate an entire operating system and launch games from there, the DOSBox-X standalone emulator is required. Although it should be possible to use another DOSBox fork, this is something that would need a custom system configuration entry and possibly a slightly different configuration than what is described below.
 
@@ -2349,7 +2349,7 @@ For this example it's F9432A7FE407A3C196C95D0FFD4A540937FD4EEC58 that is the act
 ~/ROMs/xbox360/Gears of War 3.iso
 ```
 
-Note again that the Castle Crashers game does not have a file extension, this is correct and the game can still be launched from inside ES-DE.
+Note again that the Castle Crashers game does not have a file extension, this is correct and the game can still be launched from inside ESTACION-PRO.
 
 There is also a handy tool available to automate the XBLA renaming process, you can find it here:\
 https://github.com/cmclark00/XBLA-Automation
@@ -2365,7 +2365,7 @@ And this is the content of the .commands file:
 --user_language=5
 ```
 
-On Windows it's also possible to install xenia via Xenia Manager and export .lnk shortcut files that can be launched from ES-DE. Just move the shortcut files to the xbox360 directory and use the _Shortcut or script_ alternative emulator entry:
+On Windows it's also possible to install xenia via Xenia Manager and export .lnk shortcut files that can be launched from ESTACION-PRO. Just move the shortcut files to the xbox360 directory and use the _Shortcut or script_ alternative emulator entry:
 
 ```
 ~/ROMs/xbox360/Gears of War.lnk
@@ -2373,7 +2373,7 @@ On Windows it's also possible to install xenia via Xenia Manager and export .lnk
 
 Note that launching shortcut files can't be combined with injection of .commands files, you instead define per-game settings from inside Xenia Manager and these will then be applied when launching the shortcut.
 
-Although we have not tried to run Xenia Manager via Lutris or Bottles or similar translation layers on Linux, this could perhaps be done. Normally such applications allow the export of .desktop shortcut files that could be executed from ES-DE in the same way as on Windows.
+Although we have not tried to run Xenia Manager via Lutris or Bottles or similar translation layers on Linux, this could perhaps be done. Normally such applications allow the export of .desktop shortcut files that could be executed from ESTACION-PRO in the same way as on Windows.
 
 **Running xenia on Linux**
 
@@ -2391,7 +2391,7 @@ Also create an empty file named `portable.txt` inside this directory. You should
 ~/Applications/xenia/xenia.pdb
 ```
 
-Make sure that you have placed a valid game file into `~/ROMs/xbox360` and then go ahead and start ES-DE and run the game. You should see xenia starting up and you may hear some sound from the loaded game, but the screen will be black. Quit xenia and check inside the `~/Applications/xenia` directory where there should now be a file named `xenia.config.toml`
+Make sure that you have placed a valid game file into `~/ROMs/xbox360` and then go ahead and start ESTACION-PRO and run the game. You should see xenia starting up and you may hear some sound from the loaded game, but the screen will be black. Quit xenia and check inside the `~/Applications/xenia` directory where there should now be a file named `xenia.config.toml`
 
 You'll need to modify the following lines in this file:
 ```
@@ -2425,7 +2425,7 @@ On Windows, go into the game directory, right click on the `Ikemen_GO.exe` file,
 
 On Linux and macOS, go into the game directory and rename the `Ikemen_GO_Linux` or `Ikemen_GO_MacOS` binary to the name of the game and add the .mugen extension to the filename, for example `Ultimate Sonic Mugen.mugen`. Try to run this file to make sure that the game starts and runs correctly.
 
-Starting ES-DE and launching the game should now work fine, but a further improvement is to use the _directories interpreted as files_ functionality to display the game as a single entry instead of a directory. To accomplish this, simply rename the game directory to the same name as the game file, which for this example would be `Ultimate Sonic Mugen.lnk` or `Ultimate Sonic Mugen.mugen` depending on which operating system you use.
+Starting ESTACION-PRO and launching the game should now work fine, but a further improvement is to use the _directories interpreted as files_ functionality to display the game as a single entry instead of a directory. To accomplish this, simply rename the game directory to the same name as the game file, which for this example would be `Ultimate Sonic Mugen.lnk` or `Ultimate Sonic Mugen.mugen` depending on which operating system you use.
 
 The setup should now look something like the following on Windows:
 ```
@@ -2494,11 +2494,11 @@ Like mentioned you need to supply your own game ROM file as the recompilation do
 
 First download and install the APK, then import the game into the Nintendo 64 system via the _Game importer_ that can be found in the _Utilities_ menu.
 
-After ES-DE has reloaded set the alternative emulator to _Native port_ via the metadata editor. The game should now run correctly and you should be able to scrape it like any regular game.
+After ESTACION-PRO has reloaded set the alternative emulator to _Native port_ via the metadata editor. The game should now run correctly and you should be able to scrape it like any regular game.
 
 **Linux**
 
-Download the pd-x86_64-linux.tar.gz release and unpack it into `~/ROMs/n64`. Rename the directory from _pd-x86_64-linux_ to _Perfect Dark.n64_. The .n64 extension is optional but if adding it you can use the _directories interpreted as files_ functionality in ES-DE to present the folder as if it was a single game file, which is normally what you want.
+Download the pd-x86_64-linux.tar.gz release and unpack it into `~/ROMs/n64`. Rename the directory from _pd-x86_64-linux_ to _Perfect Dark.n64_. The .n64 extension is optional but if adding it you can use the _directories interpreted as files_ functionality in ESTACION-PRO to present the folder as if it was a single game file, which is normally what you want.
 
 Inside the Perfect Dark.n64 directory rename the file _pd.x86_64_ to _Perfect Dark.n64_ and place your game ROM into the data directory, it needs to be named _pd.ntsc-final.z64_
 
@@ -2509,7 +2509,7 @@ The directory structure should look like the following (some files left out):
 ~/ROMs/n64/Perfect Dark.n64/Perfect Dark.n64
 ```
 
-Now start ES-DE and set the alternative emulator to _Native port_ via the metadata editor. The game should now run correctly and you should be able to scrape it like any regular game.
+Now start ESTACION-PRO and set the alternative emulator to _Native port_ via the metadata editor. The game should now run correctly and you should be able to scrape it like any regular game.
 
 There is also a _Shortcut or script_ alternative emulator entry available in case you prefer to install your recompilations in this way, but this type of setup is not covered in detail in this section.
 
@@ -2517,7 +2517,7 @@ Finally some recompilations are distributed as AppImages, and these can be run u
 
 **macOS**
 
-Download the pd-arm64-osx.tar.xz release and unpack it into `~/ROMs/n64`. Rename the directory from _pd-arm64-osx_ to _Perfect Dark.n64_. The .n64 extension is optional but if adding it you can use the _directories interpreted as files_ functionality in ES-DE to present the folder as if it was a single game file, which is normally what you want.
+Download the pd-arm64-osx.tar.xz release and unpack it into `~/ROMs/n64`. Rename the directory from _pd-arm64-osx_ to _Perfect Dark.n64_. The .n64 extension is optional but if adding it you can use the _directories interpreted as files_ functionality in ESTACION-PRO to present the folder as if it was a single game file, which is normally what you want.
 
 Inside the Perfect Dark.n64 directory rename the file _pd.arm64_ to _Perfect Dark.n64_ and place your game ROM into the data directory, it needs to be named _pd.ntsc-final.z64_
 
@@ -2528,7 +2528,7 @@ The directory structure should look like the following (some files left out):
 ~/ROMs/n64/Perfect Dark.n64/Perfect Dark.n64
 ```
 
-Now start ES-DE and set the alternative emulator to _Native port_ via the metadata editor. The game should now run correctly and you should be able to scrape it like any regular game.
+Now start ESTACION-PRO and set the alternative emulator to _Native port_ via the metadata editor. The game should now run correctly and you should be able to scrape it like any regular game.
 
 Note that some recompilations on macOS are packaged properly as app bundles, these will be named something like _Game name.app_ and they can be placed either directly into the `~/ROMs/n64` directory or under `/Applications`. In the latter case you'll need to make an alias to this directory and place this into the `~/ROMs/n64` directory. When launching such an app bundle you'll need to set the alternative emulator to _Shortcut or script_ instead of _Native port_.
 
@@ -2539,7 +2539,7 @@ The directory structure should simply look like the following for such a game:
 
 **Windows**
 
-Download the pd-x86_64-windows.zip release and unpack it into `~/ROMs/n64`. Rename the directory from _pd-x86_64-windows_ to _Perfect Dark.exe_. The .exe extension is optional but if adding it you can use the _directories interpreted as files_ functionality in ES-DE to present the directory as if it was a single game file, which is normally what you want.
+Download the pd-x86_64-windows.zip release and unpack it into `~/ROMs/n64`. Rename the directory from _pd-x86_64-windows_ to _Perfect Dark.exe_. The .exe extension is optional but if adding it you can use the _directories interpreted as files_ functionality in ESTACION-PRO to present the directory as if it was a single game file, which is normally what you want.
 
 Inside the Perfect Dark.n64 directory rename the file _pd.x86_64.exe_ to _Perfect Dark.exe_ and place your game ROM into the data directory, it needs to be named _pd.ntsc-final.z64_
 
@@ -2550,13 +2550,13 @@ The directory structure should look like the following (some files left out):
 ~/ROMs/n64/Perfect Dark.exe/Perfect Dark.exe
 ```
 
-Now start ES-DE and set the alternative emulator to _Native port_ via the metadata editor. The game should now run correctly and you should be able to scrape it like any regular game.
+Now start ESTACION-PRO and set the alternative emulator to _Native port_ via the metadata editor. The game should now run correctly and you should be able to scrape it like any regular game.
 
 There is also a _Shortcut or script_ alternative emulator entry available in case you prefer to install your recompilations in this way, but this type of setup is not covered in detail in this section.
 
 ### Nintendo 64DD
 
-The Japan-only 64DD floppy disk addon for the Nintendo 64 is of limited use since there were almost no games released for it, but ES-DE still supports it. The setup below is applicable to both the regular n64 system and the specific n64dd system, with the exception of ares which can't launch 64DD games if they are placed in the regular n64 system.
+The Japan-only 64DD floppy disk addon for the Nintendo 64 is of limited use since there were almost no games released for it, but ESTACION-PRO still supports it. The setup below is applicable to both the regular n64 system and the specific n64dd system, with the exception of ares which can't launch 64DD games if they are placed in the regular n64 system.
 
 The setup is quite particular and works differently between the four supported emulators ParaLLEl N64, Mupen64Plus-Next, Rosalie's Mupen GUI and ares.
 
@@ -2608,13 +2608,13 @@ Simply move 3dSen.app to the `/Applications/` directory.
 
 **Windows**
 
-If using the installer release of ES-DE you need to add the location of the 3dSen directory to your Path environment variable and if using the portable release you need to move or copy the 3dSen files to the `Emulators\3dSen\` folder.
+If using the installer release of ESTACION-PRO you need to add the location of the 3dSen directory to your Path environment variable and if using the portable release you need to move or copy the 3dSen files to the `Emulators\3dSen\` folder.
 
 **Game setup**
 
 In order to launch games using 3dSen you first need to add each game to the emulator interface. This is required as 3dSen does not support passing a game file location from the command line. Refer to the 3dSen documentation on how to accomplish this.
 
-After adding the games inside 3dSen you need to create launch files for use with ES-DE. These are simply named the same as the game files, but with the .3dsen extension:
+After adding the games inside 3dSen you need to create launch files for use with ESTACION-PRO. These are simply named the same as the game files, but with the .3dsen extension:
 
 ```
 ~/ROMs/nes/Contra.3dsen
@@ -2646,7 +2646,7 @@ The .wua archive format is the preferred method to use for Wii U games, but the 
 
 Start Cemu and install the game, any updates as well as optional DLCs to the Cemu NAND. After the installation is completed, open the _Title Manager_ from the _Tools_ menu, select your game, right click and select _Convert to compressed Wii U archive (.wua)_ and select your `wiiu` system directory as the target. You can modify the file name if you want to, or keep it at its default value. Press the _Save_ button and the game will be automatically packaged as a .wua file.
 
-Following this just start ES-DE and the game should be shown as a single entry that can be launched using Cemu.
+Following this just start ESTACION-PRO and the game should be shown as a single entry that can be launched using Cemu.
 
 **Method 2, unpacked games**
 
@@ -2672,7 +2672,7 @@ C:\Users\myusername\ROMs\wiiu\Super Mario 3D World\content
 C:\Users\myusername\ROMs\wiiu\Super Mario 3D World\meta
 ```
 
-Starting ES-DE should now show the _Super Mario 3D World_ entry for the Wii U system. The actual game file with the extension .rpx is stored inside the _code_ directory, and does not normally match the name of the game. For this example it's named `RedCarpet.rpx`. When scraping the .rpx file you therefore need to refine the search and manually enter the game name. ES-DE fully supports scraping of directories, so you can scrape the _Super Mario 3D World_ folder as well.
+Starting ESTACION-PRO should now show the _Super Mario 3D World_ entry for the Wii U system. The actual game file with the extension .rpx is stored inside the _code_ directory, and does not normally match the name of the game. For this example it's named `RedCarpet.rpx`. When scraping the .rpx file you therefore need to refine the search and manually enter the game name. ESTACION-PRO fully supports scraping of directories, so you can scrape the _Super Mario 3D World_ folder as well.
 
 ### OpenBOR
 
@@ -2680,7 +2680,7 @@ These games are often but not always distributed together with the game engine a
 
 **Android**
 
-Unfortunately there does not seem to be a way to launch individual OpenBOR games from ES-DE on Android, instead the OpenBOR user interface will open on game launch and you need to manually start your game from there. This means games need to be installed upfront in OpenBOR and .openbor dummy files should be added to the `~/ROMs/openbor` directory. These will then appear as individual games inside ES-DE and you can add metadata to them, scrape them etc. Refer to the OpenBOR documentation on how to add your game PAKs.
+Unfortunately there does not seem to be a way to launch individual OpenBOR games from ESTACION-PRO on Android, instead the OpenBOR user interface will open on game launch and you need to manually start your game from there. This means games need to be installed upfront in OpenBOR and .openbor dummy files should be added to the `~/ROMs/openbor` directory. These will then appear as individual games inside ESTACION-PRO and you can add metadata to them, scrape them etc. Refer to the OpenBOR documentation on how to add your game PAKs.
 
 Here's an example setup where the ROMs directory is placed on internal storage:
 
@@ -2704,18 +2704,18 @@ Let's use the game _Knights & Dragons The Endless Quest_ as an example. When the
 ~\ROMs\openbor\D&D - K&D - The Endless Quest LNS\OpenBOR.exe
 ```
 
-Starting ES-DE with this setup actually works fine, you can enter the game folder and launch the OpenBOR.exe file which will run the game. But to make it a bit tidier you can rename the OpenBOR.exe file to the name of the game, such as:
+Starting ESTACION-PRO with this setup actually works fine, you can enter the game folder and launch the OpenBOR.exe file which will run the game. But to make it a bit tidier you can rename the OpenBOR.exe file to the name of the game, such as:
 ```
 ~\ROMs\openbor\D&D - K&D - The Endless Quest LNS\The Endless Quest.exe
 ```
 
-This will make the game show up with that name inside ES-DE and it will also make it easy to scrape. A further improvement is to use the _directories interpreted as files_ functionality to display the game as a single entry instead of a directory. To accomplish this, simply rename the game directory to the same name as the .exe file, for example:
+This will make the game show up with that name inside ESTACION-PRO and it will also make it easy to scrape. A further improvement is to use the _directories interpreted as files_ functionality to display the game as a single entry instead of a directory. To accomplish this, simply rename the game directory to the same name as the .exe file, for example:
 
 ```
 ~\ROMs\openbor\The Endless Quest.exe\The Endless Quest.exe
 ```
 
-Doing this will make the game show up as if it was a single file inside ES-DE and it can be included in automatic collections, custom collections and so on.
+Doing this will make the game show up as if it was a single file inside ESTACION-PRO and it can be included in automatic collections, custom collections and so on.
 
 The second option on Windows is to unpack the game somewhere outside the ROMs directory tree and make a shortcut to the OpenBOR.exe binary. Just right click on this file in Explorer and select _Create shortcut_. You can then rename this .lnk file to the name of the game and move it to the ROMs\openbor directory, for example:
 
@@ -2749,13 +2749,13 @@ You can delete the OpenBOR.exe file since you don't need it, and it's recommende
 ~/ROMs/openbor/D&D - K&D - The Endless Quest LNS/The Endless Quest.AppImage
 ```
 
-Starting ES-DE and launching the game should now work fine, but a further improvement is to use the _directories interpreted as files_ functionality to display the game as a single entry instead of a directory. To accomplish this, simply rename the game directory to the same name as the .AppImage file, such as:
+Starting ESTACION-PRO and launching the game should now work fine, but a further improvement is to use the _directories interpreted as files_ functionality to display the game as a single entry instead of a directory. To accomplish this, simply rename the game directory to the same name as the .AppImage file, such as:
 
 ```
 ~/ROMs/openbor/The Endless Quest.AppImage/The Endless Quest.AppImage
 ```
 
-Doing this will make the game show up as if it was a single file inside ES-DE and it can be included in automatic collections, custom collections and so on.
+Doing this will make the game show up as if it was a single file inside ESTACION-PRO and it can be included in automatic collections, custom collections and so on.
 
 **macOS**
 
@@ -2773,11 +2773,11 @@ To run the games you simply execute their .pak file, which can be placed in the 
 
 ### PICO-8
 
-PICO-8 Fantasy Console is a game engine developed by [Lexaloffle Games](https://www.lexaloffle.com/pico-8.php) that you need to buy a license to use. Doing so will provide you with download links to releases for Linux, macOS and Windows. Make sure to use the 64-bit release as the 32-bit release reportedly has some technical issues. On macOS and Windows the installation is straightforward, but on Linux you need to place PICO-8 in a location recognized by ES-DE. See the [Using manually downloaded emulators on Linux](USERGUIDE-DEV.md#using-manually-downloaded-emulators-on-linux) section of this guide for more details.
+PICO-8 Fantasy Console is a game engine developed by [Lexaloffle Games](https://www.lexaloffle.com/pico-8.php) that you need to buy a license to use. Doing so will provide you with download links to releases for Linux, macOS and Windows. Make sure to use the 64-bit release as the 32-bit release reportedly has some technical issues. On macOS and Windows the installation is straightforward, but on Linux you need to place PICO-8 in a location recognized by ESTACION-PRO. See the [Using manually downloaded emulators on Linux](USERGUIDE-DEV.md#using-manually-downloaded-emulators-on-linux) section of this guide for more details.
 
 On Android it's recommended to use the [unofficial PICO-8 wrapper](https://github.com/Macs75/pico8-android) together with the official Raspberry Pi build of PICO-8. Alternatively you could use the Fake-08 RetroArch core, although this needs to be manually downloaded. How that is done is covered briefly in the [ANDROID.md](ANDROID.md#fake-08) document.
 
-After the emulator has been installed you are ready to add some games. There are two ways to play games using PICO-8, either to add them to ES-DE as for any other system, or using the built-in Splore tool to explore and run games all through the PICO-8 user interface.
+After the emulator has been installed you are ready to add some games. There are two ways to play games using PICO-8, either to add them to ESTACION-PRO as for any other system, or using the built-in Splore tool to explore and run games all through the PICO-8 user interface.
 
 For the first approach you can download games from the [PICO-8 forum](https://www.lexaloffle.com/bbs/?cat=7) and these are quite uniquely distributed as .png images. You just download these and place them inside the `~/ROMs/pico8` directory, for example:
 ```
@@ -2798,7 +2798,7 @@ This is what the complete setup could look like:
 
 **Using the Fake-08 and Retro8 RetroArch cores**
 
-On Android the Fake-08 core provides a good alternative to the official PICO-8 engine which is not available on this operating system. ES-DE also includes support for the Retro8 RetroArch core across all platforms, but it's borderline unusable and does not seem to be actively developed any longer.
+On Android the Fake-08 core provides a good alternative to the official PICO-8 engine which is not available on this operating system. ESTACION-PRO also includes support for the Retro8 RetroArch core across all platforms, but it's borderline unusable and does not seem to be actively developed any longer.
 
 To use the .png file extension with Fake-08 and Retro8 you need to disable the built-in image viewer in RetroArch, otherwise you'll have to rename your game files to only use the .p8 extension, such as this:
 
@@ -2811,18 +2811,18 @@ To use the .png file extension with Fake-08 and Retro8 you need to disable the b
 
 _The emulators system is essentially a clone of the desktop system so it's not discussed specifically in this section._
 
-As ports and desktop applications are handled in almost exactly the same way in ES-DE both of these are described in this section. For these systems it's generally native applications rather that emulated games that are executed. There are two main approaches to setting up such entries and these are _shortcuts_ and _scripts_. Note that these can be mixed in the same system, you can have some entries that are shortcuts and some that are scripts and they will still all work. On Linux there is also a third option to launch AppImages directly, which is covered below as well.
+As ports and desktop applications are handled in almost exactly the same way in ESTACION-PRO both of these are described in this section. For these systems it's generally native applications rather that emulated games that are executed. There are two main approaches to setting up such entries and these are _shortcuts_ and _scripts_. Note that these can be mixed in the same system, you can have some entries that are shortcuts and some that are scripts and they will still all work. On Linux there is also a third option to launch AppImages directly, which is covered below as well.
 
 For the _ports_ system specifically there are also some alternative emulator entries which run RetroArch cores for source ports/game engines. How to setup these is beyond the scope of this document, but it's described in detail in the RetroArch documentation:\
 https://docs.libretro.com/
 
-For the _desktop_ system specifically, you can choose to suspend ES-DE while an application or game is launched, or you can choose to keep ES-DE running in the background. This is controlled by the selection of either the default emulator _Suspend ES-DE_ or the alternative emulator _Keep ES-DE running_. As is the case for all alternative emulator entries, this can be configured system-wide or on a per-game basis.
+For the _desktop_ system specifically, you can choose to suspend ESTACION-PRO while an application or game is launched, or you can choose to keep ESTACION-PRO running in the background. This is controlled by the selection of either the default emulator _Suspend ES-DE_ or the alternative emulator _Keep ESTACION-PRO running_. As is the case for all alternative emulator entries, this can be configured system-wide or on a per-game basis.
 
 **Method 1, shortcuts**
 
-Shortcuts are very easy to setup, on Windows you can simply copy any .lnk file from the Start Menu into the `ports` or `desktop` system folders and then you can launch them directly from inside ES-DE. You can also create shortcuts manually to any file by right clicking on it in Explorer and selecting _Create shortcut_.
+Shortcuts are very easy to setup, on Windows you can simply copy any .lnk file from the Start Menu into the `ports` or `desktop` system folders and then you can launch them directly from inside ESTACION-PRO. You can also create shortcuts manually to any file by right clicking on it in Explorer and selecting _Create shortcut_.
 
-Likewise on Linux you can copy any .desktop shortcut into these system directories and they can then be launched by ES-DE.
+Likewise on Linux you can copy any .desktop shortcut into these system directories and they can then be launched by ESTACION-PRO.
 
 Here's an example on Windows:
 ```
@@ -2836,7 +2836,7 @@ And here's an example on Linux:
 ~/ROMs/desktop/spotify.desktop
 ```
 
-On macOS there are two ways to create shortcuts to applications, the first option is .app folders which can be directly executed by ES-DE and the second option is aliases. The easiest way to create an alias is to open two Finder windows, one for your Applications folder and one for your `~/ROMs/desktop` folder. Then you can simply drag an application over to the desktop folder which will automatically create an alias file. Alternatively you can right click on an application and select _Make Alias_ and then copy the file over. As a final step you need to add the .app extension to the alias file so that ES-DE can find it on startup. Note that this extension will not be visible in Finder, but if you right click on the file and select _Get Info_ you will see the .app extension in the info window.
+On macOS there are two ways to create shortcuts to applications, the first option is .app folders which can be directly executed by ESTACION-PRO and the second option is aliases. The easiest way to create an alias is to open two Finder windows, one for your Applications folder and one for your `~/ROMs/desktop` folder. Then you can simply drag an application over to the desktop folder which will automatically create an alias file. Alternatively you can right click on an application and select _Make Alias_ and then copy the file over. As a final step you need to add the .app extension to the alias file so that ESTACION-PRO can find it on startup. Note that this extension will not be visible in Finder, but if you right click on the file and select _Get Info_ you will see the .app extension in the info window.
 
 Here's an example using alias files on macOS:
 ```
@@ -2882,7 +2882,7 @@ vkquake_arcane_dimensions.sh:
 ~/Applications/vkquake/vkquake.AppImage -basedir ~/ROMs/ports/vkQuake/GameData/Quake -game ad
 ```
 
-You don't need to set execution permissions for these scripts, ES-DE will run them anyway.
+You don't need to set execution permissions for these scripts, ESTACION-PRO will run them anyway.
 
 **Method 3, AppImages** _(Linux only)_
 
@@ -2898,11 +2898,11 @@ Here's an example setup:
 ~/ROMs/ports/Minecraft.game
 ```
 
-Note that while the games start directly on desktop operating systems when launched from ES-DE, on Android you will need to select _Start Core_ inside RetroArch after having launched the file.
+Note that while the games start directly on desktop operating systems when launched from ESTACION-PRO, on Android you will need to select _Start Core_ inside RetroArch after having launched the file.
 
 **idTech4A++ on Android**
 
-On Android specifically there's support for the idTech game engine collection [idTech4A++](https://github.com/glKarin/com.n0n3m4.diii4a) which allows you to run a number of Doom games and Quake games and much more. To launch these games from ES-DE simply create a file with the .idtech extension in the ports directory (it's also the same setup for the doom and quake systems) containing the short name of the game as a single entry in the file. For example to run Doom you'd enter _zdoom_ and for Quake you'd enter _quake1_. Refer to the idTech4A++ documentation for more information.
+On Android specifically there's support for the idTech game engine collection [idTech4A++](https://github.com/glKarin/com.n0n3m4.diii4a) which allows you to run a number of Doom games and Quake games and much more. To launch these games from ESTACION-PRO simply create a file with the .idtech extension in the ports directory (it's also the same setup for the doom and quake systems) containing the short name of the game as a single entry in the file. For example to run Doom you'd enter _zdoom_ and for Quake you'd enter _quake1_. Refer to the idTech4A++ documentation for more information.
 
 Here's an example setup:
 ```
@@ -2912,11 +2912,11 @@ Here's an example setup:
 
 ### ScummVM
 
-Note that the Android release of ScummVM standalone differs from the releases for desktop operating systems in that all games need to be installed in the app before they can be launched from ES-DE. There are some very specific configuration steps that need to be followed to get this to work, but they are thoroughly described in the ScummVM user interface the first time you launch the app, and there is also a built-in help system that you can peruse. Apart from that the setup is identical to the other platforms.
+Note that the Android release of ScummVM standalone differs from the releases for desktop operating systems in that all games need to be installed in the app before they can be launched from ESTACION-PRO. There are some very specific configuration steps that need to be followed to get this to work, but they are thoroughly described in the ScummVM user interface the first time you launch the app, and there is also a built-in help system that you can peruse. Apart from that the setup is identical to the other platforms.
 
 ScummVM overlaps a bit with DOS when it comes to the logic of setting it up. It's recommended to keep games in separate folders, so if you have a game distributed as a ZIP file, uncompress it to its own directory.
 
-Although ScummVM supports launching of .exe files, ES-DE is currently not configured as such and it's instead recommended to create a .scummvm file in each game directory and launch that. This makes for a cleaner setup as you don't need to run game configuration utilities like INSTALL.EXE or SETUP.EXE directly as you would with DOSBox. Rather the game configuration is done within the ScummVM emulator.
+Although ScummVM supports launching of .exe files, ESTACION-PRO is currently not configured as such and it's instead recommended to create a .scummvm file in each game directory and launch that. This makes for a cleaner setup as you don't need to run game configuration utilities like INSTALL.EXE or SETUP.EXE directly as you would with DOSBox. Rather the game configuration is done within the ScummVM emulator.
 
 The .scummvm file must be named using the correct _Game Short Name_ and it must also contain this short name as a single string/word. You can find the complete list of supported ScummVM games with their corresponding short names here:\
 https://www.scummvm.org/compatibility
@@ -2931,13 +2931,13 @@ To clarify, the sky.scummvm file should contain just the single word _sky_ and l
 
 However, note that ScummVM on Android (and possibly on other operating systems as well) sometimes changes the short name inside its user interface, for example an index could be added so that instead of _sky_ it says _sky-1_ or some variation of that. In this case you need to have this exact string inside the .scummvm file instead of the default name from the compatibility list linked above.
 
-In order to avoid having to display each game as a directory inside ES-DE (that needs to be entered each time you want to launch a game), you can optionally interpret each game directory as a file. Make sure to read the _Directories interpreted as files_ section [here](USERGUIDE-DEV.md#directories-interpreted-as-files) to understand how this functionality works, but essentially the following would be the setup required for our example:
+In order to avoid having to display each game as a directory inside ESTACION-PRO (that needs to be entered each time you want to launch a game), you can optionally interpret each game directory as a file. Make sure to read the _Directories interpreted as files_ section [here](USERGUIDE-DEV.md#directories-interpreted-as-files) to understand how this functionality works, but essentially the following would be the setup required for our example:
 ```
 ~/ROMs/scummvm/sky.scummvm/sky.scummvm
 ~/ROMs/scummvm/queen.scummvm/queen.scummvm
 ```
 
-In this case the two entries _sky_ and _queen_ will show up inside ES-DE and these will be handled like any other game files and can be part of automatic and custom collections for instance.
+In this case the two entries _sky_ and _queen_ will show up inside ESTACION-PRO and these will be handled like any other game files and can be part of automatic and custom collections for instance.
 
 The only drawback of this approach is that when scraping using TheGamesDB you will get very inaccurate results as this scraper service does not support ScummVM short names. It can however be worked around by refining the searches. ScreenScraper does natively support ScummVM short names and you should get very accurate results with this scraper service.
 
@@ -2945,12 +2945,12 @@ A final alternative is to use _folder links_ to keep the directory structure int
 
 If you're using the Flatpak release of ScummVM on Linux then you need to manually grant the application the necessary permissions using Flatseal or similar, otherwise you won't be able to launch any games.
 
-There's also an unofficial Python script available that can help with automating the ScummVM game setup for ES-DE, you can find it here:\
+There's also an unofficial Python script available that can help with automating the ScummVM game setup for ESTACION-PRO, you can find it here:\
 https://gist.github.com/ssokolow/3fd6744f6af428c477b0f1b11b35cdac
 
 **DREAMM**
 
-For Linux, macOS and Windows there's an alternative to using ScummVM for a limited set of games, more specifically those from LucasArts. For these games [DREAMM](https://aarongiles.com/dreamm) can be used instead. It works a bit differently than ScummVM in that games will be autodetected based on the content of the game directory. So the way ES-DE launches these games is to pass the directory of the launched game file to DREAMM which will then autodetect which game it is. This means the ScummVM setup described above can be used without any extra configuration. Here's an example setup of two games, one using a game file inside a normal folder, and one using the _directories interpreted as a files_ approach:
+For Linux, macOS and Windows there's an alternative to using ScummVM for a limited set of games, more specifically those from LucasArts. For these games [DREAMM](https://aarongiles.com/dreamm) can be used instead. It works a bit differently than ScummVM in that games will be autodetected based on the content of the game directory. So the way ESTACION-PRO launches these games is to pass the directory of the launched game file to DREAMM which will then autodetect which game it is. This means the ScummVM setup described above can be used without any extra configuration. Here's an example setup of two games, one using a game file inside a normal folder, and one using the _directories interpreted as a files_ approach:
 ```
 ~/ROMs/scummvm/dott/dott.scummvm
 ~/ROMs/scummvm/monkey.scummvm/monkey.scummvm
@@ -2958,9 +2958,9 @@ For Linux, macOS and Windows there's an alternative to using ScummVM for a limit
 
 ### Sony PlayStation 3
 
-On Android there are three ways to add PS3 games to ES-DE, by adding game serial files, by adding game directories directly to the `~/ROMs/ps3` folder and interpreting these as files, and by adding ISO files to the `~/ROMs/ps3` folder.
+On Android there are three ways to add PS3 games to ESTACION-PRO, by adding game serial files, by adding game directories directly to the `~/ROMs/ps3` folder and interpreting these as files, and by adding ISO files to the `~/ROMs/ps3` folder.
 
-On desktop operating systems there are four ways to add PS3 games to ES-DE, by using shortcuts, by adding game serial files, by adding game directories directly to the `~/ROMs/ps3` folder and interpreting these as files, and by adding ISO files to the `~/ROMs/ps3` folder. Shortcuts is generally the way to go as they're easier to setup. Launching as directories also doesn't work for HDD/pkg games unless you symlink from the internal RPCS3 directory structure. So another benefit with shortcuts and game serials is consistency as both HDD/pkg games and disc-based games will be setup in the same manner. This also means that the same RPCS3 emulator entry can be used to launch every game. The drawback to using shortcuts is that they're not portable, if you change the location of RPCS3 or your games, you need to manually update the shortcut files as well.
+On desktop operating systems there are four ways to add PS3 games to ESTACION-PRO, by using shortcuts, by adding game serial files, by adding game directories directly to the `~/ROMs/ps3` folder and interpreting these as files, and by adding ISO files to the `~/ROMs/ps3` folder. Shortcuts is generally the way to go as they're easier to setup. Launching as directories also doesn't work for HDD/pkg games unless you symlink from the internal RPCS3 directory structure. So another benefit with shortcuts and game serials is consistency as both HDD/pkg games and disc-based games will be setup in the same manner. This also means that the same RPCS3 emulator entry can be used to launch every game. The drawback to using shortcuts is that they're not portable, if you change the location of RPCS3 or your games, you need to manually update the shortcut files as well.
 
 Be aware that if you want to have games installed using the directory method, then you will need to change to the alternative emulator _aPS3e Directory (Standalone)_ on Android and _RPCS3 Directory (Standalone)_ on desktop operating systems, or you won't be able to launch these games. As is the case for all alternative emulator entries, this can be configured system-wide or on a per-game basis.
 
@@ -2994,7 +2994,7 @@ Exec="/var/lib/flatpak/exports/bin/net.rpcs3.RPCS3" --no-gui "/home/myusername/.
 
 If using the AppImage release of RPCS3 on Linux then another issue may be that the path to the emulator could change when upgrading to a newer release, which may or may not require manual updates to the desktop files.
 
-Regardless of how you've installed RPCS3, make sure to always test the shortcuts outside ES-DE first, because if they don't work from the desktop, then they will not work from inside ES-DE either.
+Regardless of how you've installed RPCS3, make sure to always test the shortcuts outside ESTACION-PRO first, because if they don't work from the desktop, then they will not work from inside ESTACION-PRO either.
 
 **Game serial files**
 
@@ -3012,7 +3012,7 @@ Be aware that you need to change to the alternative emulator entry _RPCS3 Game S
 
 **Directories**
 
-This approach is only intended for disc-based games as for HDD/pkg games you should use game serials or shortcuts instead. When using this method you need to retain the directory structure of the Blu-ray disc, and each directory needs to be renamed by adding the .ps3 extension. This will make ES-DE interpret the directory as if it were a file and pass that directory to the emulator when launching a game.
+This approach is only intended for disc-based games as for HDD/pkg games you should use game serials or shortcuts instead. When using this method you need to retain the directory structure of the Blu-ray disc, and each directory needs to be renamed by adding the .ps3 extension. This will make ESTACION-PRO interpret the directory as if it were a file and pass that directory to the emulator when launching a game.
 
 Here's an example of what a game entry could look like:
 ```
@@ -3036,15 +3036,15 @@ Here's an example of what a game entry could look like:
 
 ### Sony PlayStation 4
 
-There are three ways to add PS4 games to ES-DE, by using shortcuts, by adding game serial files and by running the eboot.bin files directly. Running eboot.bin files is not really recommended though and it's better to go for one of the other alternatives.
+There are three ways to add PS4 games to ESTACION-PRO, by using shortcuts, by adding game serial files and by running the eboot.bin files directly. Running eboot.bin files is not really recommended though and it's better to go for one of the other alternatives.
 
 The drawback to using shortcuts is that they're not portable, if you change the location of shadPS4, you need to manually update the shortcut files as well.
 
-Unless you want to run eboot.bin files directly from inside ES-DE it's recommended to install the games outside of the ROMs directory tree so they don't need to be scanned on startup. This could take quite some time as these games may contain many thousands of files each. An alternative would be to place a `noload.txt` file inside each game directory but it's easier to just install the games elsewhere.
+Unless you want to run eboot.bin files directly from inside ESTACION-PRO it's recommended to install the games outside of the ROMs directory tree so they don't need to be scanned on startup. This could take quite some time as these games may contain many thousands of files each. An alternative would be to place a `noload.txt` file inside each game directory but it's easier to just install the games elsewhere.
 
-At the time of writing there are three separate shadPS4 builds, the GUI release, the legacy Qt release and the CLI release. The _shadPS4 Shortcut (Standalone)_ emulator entry works with all these variants, but if you're using the GUI release and want to use the game serial or eboot.bin methods to launch games from ES-DE then you need to select the _shadPS4 [GUI] Game Serial (Standalone)_ or _shadPS4 [GUI] eboot.bin (Standalone)_ emulator entries respectively.
+At the time of writing there are three separate shadPS4 builds, the GUI release, the legacy Qt release and the CLI release. The _shadPS4 Shortcut (Standalone)_ emulator entry works with all these variants, but if you're using the GUI release and want to use the game serial or eboot.bin methods to launch games from ESTACION-PRO then you need to select the _shadPS4 [GUI] Game Serial (Standalone)_ or _shadPS4 [GUI] eboot.bin (Standalone)_ emulator entries respectively.
 
-_On macOS you need to configure shadPS4 to run in fullscreen mode or otherwise window switching will not work when launching games from ES-DE._
+_On macOS you need to configure shadPS4 to run in fullscreen mode or otherwise window switching will not work when launching games from ESTACION-PRO._
 
 **Method 1, shortcuts**
 
@@ -3073,7 +3073,7 @@ Or if you're using shadPS4 GUI:
 Exec=/home/myusername/Applications/shadPS4QtLauncher-qt.AppImage -d -g "/home/leon/ROMs/ps4/CUSA07010/eboot.bin"
 ```
 
-Regardless of how you've installed shadPS4, make sure to always test the shortcuts outside ES-DE first, because if they don't work from the desktop, then they will not work from inside ES-DE either.
+Regardless of how you've installed shadPS4, make sure to always test the shortcuts outside ESTACION-PRO first, because if they don't work from the desktop, then they will not work from inside ESTACION-PRO either.
 
 **Method 2, game serial**
 
@@ -3094,21 +3094,21 @@ Be aware that you need to change to the alternative emulator entry _shadPS4 eboo
 
 ### Sony PlayStation Vita
 
-There is also a video on the official ES-DE YouTube channel on how to setup Vita3K:\
+There is also a video on the official ESTACION-PRO YouTube channel on how to setup Vita3K:\
 https://www.youtube.com/watch?v=4U8yAUJ9-Tk
 
-On Android, macOS and Windows the Vita3K installation is straightforward, but on Linux you may need to place the emulator in a location recognized by ES-DE. See the [Using manually downloaded emulators on Linux](USERGUIDE-DEV.md#using-manually-downloaded-emulators-on-linux) section of this guide for more details. If using a Linux distribution that provides Vita3K via the repository (such as the AUR on Arch/Manjaro) then you can skip this step and install the emulator using your OS package manager.
+On Android, macOS and Windows the Vita3K installation is straightforward, but on Linux you may need to place the emulator in a location recognized by ESTACION-PRO. See the [Using manually downloaded emulators on Linux](USERGUIDE-DEV.md#using-manually-downloaded-emulators-on-linux) section of this guide for more details. If using a Linux distribution that provides Vita3K via the repository (such as the AUR on Arch/Manjaro) then you can skip this step and install the emulator using your OS package manager.
 
 After you've installed Vita3K, add your games via the GUI and make sure that they work correctly when launched from inside the emulator.
 
-To add an installed game to ES-DE, create an empty file in `~/ROMs/psvita` and name it as the game name followed by the .psvita file extension, such as the following:
+To add an installed game to ESTACION-PRO, create an empty file in `~/ROMs/psvita` and name it as the game name followed by the .psvita file extension, such as the following:
 ```
 ~/ROMs/psvita/WipEout 2048.psvita
 ```
 
 Then add the game Title ID to this file. This ID can be found inside the Vita3K GUI, in the _Title ID_ column. For example the game _WipEout 2048_ has an ID that is PCSF00007. So simply add the string PCSF00007 to the `WipEout 2048.psvita` file and the setup for this game is complete.
 
-Game launching and scraping should now work fine in ES-DE.
+Game launching and scraping should now work fine in ESTACION-PRO.
 
 To simplify the setup described above there is a convenient archive of .psvita files available that covers most of the game library for this console. It can be downloaded from here:\
 https://github.com/Jetup13/Retroid-Pocket-5-Wiki/wiki/Emulators-and-Formats#vita3k-frontend-support
@@ -3117,7 +3117,7 @@ Just extract the corresponding file for any game you have installed in Vita3K an
 
 ### Steam
 
-On desktop operating systems these games can easily be added to ES-DE using shortcuts, just be aware that this requires that the games have been installed locally. For the setup on Android see the relevant section below.
+On desktop operating systems these games can easily be added to ESTACION-PRO using shortcuts, just be aware that this requires that the games have been installed locally. For the setup on Android see the relevant section below.
 
 You can use the built-in game importer to populate your steam system on desktop operating systems. This tool is available from the _Utilities_ menu and you can find an in-depth description of it elsewhere in this document. Note that you still need to create shortcut files prior to running this tool.
 
@@ -3125,7 +3125,7 @@ If using macOS then the importer will symlink to your .app shortcut directories 
 
 **Windows**
 
-Simply copy the Start Menu entries for your Steam games into the ~\ROMs\steam directory or use the built-in game importer to accomplish the same thing. These files have the .url extension and can be launched directly from within ES-DE. For example you may end up with something like the following:
+Simply copy the Start Menu entries for your Steam games into the ~\ROMs\steam directory or use the built-in game importer to accomplish the same thing. These files have the .url extension and can be launched directly from within ESTACION-PRO. For example you may end up with something like the following:
 
 ```
 ~\ROMs\steam\Axiom Verge.url
@@ -3177,7 +3177,7 @@ Opening the store page entry in the official Steam client on desktop operating s
 As an alternative to manually exporting or creating these files you can find the following repository which contains a set of automatically created .steam files for the entire Steam library:\
 https://github.com/RobZombie9043/steam-files-es-de
 
-Just make sure you **don't add this entire set of files to ES-DE** as that will make the application incredibly slow with hundreds of thousands of Steam game entries.
+Just make sure you **don't add this entire set of files to ESTACION-PRO** as that will make the application incredibly slow with hundreds of thousands of Steam game entries.
 
 The .steam files can be launched with both the _GameNative_ and _GameHub Lite_ emulator entries.
 
@@ -3193,9 +3193,9 @@ As the Nokia N-Gage was running Symbian it may seem like the _ngage_ and _symbia
 
 **Android**
 
-For both the ngage and symbian systems it's possible to launch individual games directly from ES-DE, although they need to be installed upfront in EKA2L1.
+For both the ngage and symbian systems it's possible to launch individual games directly from ESTACION-PRO, although they need to be installed upfront in EKA2L1.
 
-After installing the games in EKA2L1, long press the game icon and select _Create launch file_ from the popup list which will export a JSON file for the game. Then select the directory where the file should be saved, i.e. `~/ROMs/ngage` or `~/ROMs/symbian`. Following this, game launching from ES-DE will work as expected.
+After installing the games in EKA2L1, long press the game icon and select _Create launch file_ from the popup list which will export a JSON file for the game. Then select the directory where the file should be saved, i.e. `~/ROMs/ngage` or `~/ROMs/symbian`. Following this, game launching from ESTACION-PRO will work as expected.
 
 Here's an example setup where the ROMs directory is placed on internal storage:
 ```
@@ -3210,7 +3210,7 @@ Here's an example setup where the ROMs directory is placed on internal storage:
 
 The EKA2L1 installation should be fairly straightforward, for Linux there is an official AppImage, for macOS there is a DMG installer and for Windows a zip archive release.
 
-After you have the emulator up and running you need to install ROMs for the devices you want to emulate. For the _ngage_ system you want to use the RH-29 ROM, and for the _symbian_ system ES-DE comes preconfigured with emulator entries for the RH-29 (Nokia N-Gage), RM-84 (Nokia N70) and RM-507 (Nokia N97) models. In addition to those there's a custom device entry that is explained in more depth later below. The details of ROM installation and how to setup the emulator is covered by this official YouTube video by the EKA2L1 team:
+After you have the emulator up and running you need to install ROMs for the devices you want to emulate. For the _ngage_ system you want to use the RH-29 ROM, and for the _symbian_ system ESTACION-PRO comes preconfigured with emulator entries for the RH-29 (Nokia N-Gage), RM-84 (Nokia N70) and RM-507 (Nokia N97) models. In addition to those there's a custom device entry that is explained in more depth later below. The details of ROM installation and how to setup the emulator is covered by this official YouTube video by the EKA2L1 team:
 
 https://www.youtube.com/watch?v=rFUlsSGkRjc&list=PLkrpMo4_xadtJ_Kqvc5BSTSi39ollsAbR
 
@@ -3222,7 +3222,7 @@ In summary EKA2L1 works quite differently than other emulators, when you install
 
 **Nokia N-Gage**
 
-These games were shipped as MMC cards, and there are two ways to run them from ES-DE, either to install them in EKA2L1 first and call the game name when launching the game, or to mount a .zip file for the game and run it directly. The latter is the recommended approach and it's provided by the default emulator entry _EKA2L1 [Mounted] (Standalone)_. As long as you have the RH-29 ROM installed in EKA2L1 and games properly packaged in zip format you can just launch the files in ES-DE and everything should work fine.
+These games were shipped as MMC cards, and there are two ways to run them from ESTACION-PRO, either to install them in EKA2L1 first and call the game name when launching the game, or to mount a .zip file for the game and run it directly. The latter is the recommended approach and it's provided by the default emulator entry _EKA2L1 [Mounted] (Standalone)_. As long as you have the RH-29 ROM installed in EKA2L1 and games properly packaged in zip format you can just launch the files in ESTACION-PRO and everything should work fine.
 
 There is however two specific requirements when it comes to this approach. First the games need to be packaged properly, and this means that each zip archive needs to contain the `system` folder directly in the root of the archive. Take this example for the game Bomberman, the zip contents need to look like the following:
 ```
@@ -3254,7 +3254,7 @@ The table below shows the game name from this list and the required filenames. I
 
 Note that the case has to be right, naming Bomberman.zip as BomberMan.zip will for instance not work. The emulator is completely unforgiving and will hang forever if you attempt to launch a game with the wrong filename.
 
-The second approach of installing the games first in EKA2L1 is essentially identical to the zip archive approach. You'll use the alternative emulator entry _EKA2L1 [Installed] (Standalone)_ to lauch such games. Only difference is that you'll have the option between running the zip files as for the primary approach, or you can setup an empty dummy file in ES-DE and run that instead. Such dummy files must have the .ngage extension. But regardless of method the game files need to follow the naming described above.
+The second approach of installing the games first in EKA2L1 is essentially identical to the zip archive approach. You'll use the alternative emulator entry _EKA2L1 [Installed] (Standalone)_ to lauch such games. Only difference is that you'll have the option between running the zip files as for the primary approach, or you can setup an empty dummy file in ESTACION-PRO and run that instead. Such dummy files must have the .ngage extension. But regardless of method the game files need to follow the naming described above.
 
 A minor drawback is that scraping can be a bit problematic for some games like _CallofDuty_ which may require you to refine the name to find a match. However most filenames will correspond closely enough to their real names that the scraper service should be able to identify them correctly.
 
@@ -3267,9 +3267,9 @@ Here's an example of what an installation could look like:
 
 **Symbian**
 
-Symbian games are shipped as _Software Installation Script_ files with the .sis or .sisx extension. You always need to install these games in EKA2L1 before they can be launched from ES-DE. In the same manner as for N-Gage games, you can then decide to run the actual game file from inside ES-DE or a dummy file. Dummy files must have the .symbian extension.
+Symbian games are shipped as _Software Installation Script_ files with the .sis or .sisx extension. You always need to install these games in EKA2L1 before they can be launched from ESTACION-PRO. In the same manner as for N-Gage games, you can then decide to run the actual game file from inside ESTACION-PRO or a dummy file. Dummy files must have the .symbian extension.
 
-As is the case for N-Gage games, whatever file you launch from ES-DE has to perfectly match the name that you see for the installed game inside EKA2L1. If even a single character is wrong the emulator will hang forever on game launch.
+As is the case for N-Gage games, whatever file you launch from ESTACION-PRO has to perfectly match the name that you see for the installed game inside EKA2L1. If even a single character is wrong the emulator will hang forever on game launch.
 
 ```
 ~/ROMs/symbian/Animal Farm.sis
@@ -3312,7 +3312,7 @@ Two emulator entries are available for this system, _XRoar CoCo 2 NTSC (Standalo
 
 ### Tandy TRS-80
 
-Tandy Corporation made the somewhat dumb decision of naming several unrelated computers as TRS-80 which has caused decades of confusion. The _Tandy TRS-80_ system in ES-DE emulates the original black-and-white TRS-80 Model I. If you want to emulate the TRS-80 Color Computer then you'll want to use the _Tandy Color Computer_ system instead.
+Tandy Corporation made the somewhat dumb decision of naming several unrelated computers as TRS-80 which has caused decades of confusion. The _Tandy TRS-80_ system in ESTACION-PRO emulates the original black-and-white TRS-80 Model I. If you want to emulate the TRS-80 Color Computer then you'll want to use the _Tandy Color Computer_ system instead.
 
 The TRS-80 is emulated using [sdl2trs](https://gitlab.com/jengun/sdltrs) which is available for Linux and Windows, seemingly there is no macOS port. If you use a Debian-based Linux distribution there is a .deb package made by the developers and if you're using an Arch-based distribution you can install it using the AUR. For other distributions you may have to build from source code or download a pre-built binary from some other location.  See the [Using manually downloaded emulators on Linux](USERGUIDE-DEV.md#using-manually-downloaded-emulators-on-linux) section of this guide for more details on where sdl2trs will need to be installed in that case.
 
@@ -3320,7 +3320,7 @@ On Windows only the 64-bit release of the emulator is supported, with the filena
 
 The setup requires the files `level2.rom` and `boot.dsk` to be placed in the root of the `~/ROMs/trs-80` directory. Note that both filenames are case sensitive. The boot.dsk file has to be a copy of one of the supported DOS operating systems for the TRS-80, but _NewDos/80 v2.0_ is recommended.
 
-The setup in ES-DE supports three types of game files:
+The setup in ESTACION-PRO supports three types of game files:
 * Diskette images (.dsk extension) that have to be accessed via DOS
 * Diskette images (.dsk extension) that can be booted directly
 * Direct launch of program files (.cmd extension)
@@ -3376,11 +3376,11 @@ Once the emulator is up and running there is not really much else to consider, s
 
 ### Texas Instruments TI-99
 
-The TI-99 is emulated via MAME, and only the standalone release of this emulator is supported. Unfortunately it seems as if the Homebrew build on macOS is broken as no TI-99 games can be launched. As such this system is unsupported on macOS, but the configuration entries still exist in the bundled es_find_rules.xml and es_systems.xml files so if you manage to get the emulator to run, ES-DE should work with these games.
+The TI-99 is emulated via MAME, and only the standalone release of this emulator is supported. Unfortunately it seems as if the Homebrew build on macOS is broken as no TI-99 games can be launched. As such this system is unsupported on macOS, but the configuration entries still exist in the bundled es_find_rules.xml and es_systems.xml files so if you manage to get the emulator to run, ESTACION-PRO should work with these games.
 
 If using Android then make sure you've read the _MAME4droid Current and MAME4droid_ section of the [Android documentation](ANDROID-DEV.md#mame4droid-current-and-mame4droid) and that your ROM directory is configured correctly inside the emulator.
 
-Emulating the TI-99 can be quite confusing as games are available in various incompatible formats, and most emulators are particular when it comes to what file types they support. In ES-DE only cartridge-based games are supported, so you can't for instance play games distributed as floppy disk images. And only games packaged for MAME using the MAME software list name standard can be used. This includes .7z and .zip files as well as .rpk cartridge images. It's strongly recommended to go for the MAME TI-99 ROM set that consists only of .zip files as these have the highest chance of working correctly.
+Emulating the TI-99 can be quite confusing as games are available in various incompatible formats, and most emulators are particular when it comes to what file types they support. In ESTACION-PRO only cartridge-based games are supported, so you can't for instance play games distributed as floppy disk images. And only games packaged for MAME using the MAME software list name standard can be used. This includes .7z and .zip files as well as .rpk cartridge images. It's strongly recommended to go for the MAME TI-99 ROM set that consists only of .zip files as these have the highest chance of working correctly.
 
 In addition to the game files you need the `ti99_4a.zip` archive which contains the TI-99 system ROMs. This file has to be placed in the root of the `~/ROMs/ti99` directory.
 
@@ -3393,7 +3393,7 @@ Scraping can also be a bit challenging as MAME software list names are used and 
 
 **Android**
 
-Unfortunately there does not seem to be a way to launch individual Visual Pinball tables from ES-DE on Android, instead the Visual Pinball user interface will open on game launch and you need to manually start your table from there. This means tables need to be installed upfront in Visual Pinball and .vpinball dummy files should be added to the `~/ROMs/vpinball` directory. These will then appear as individual games inside ES-DE and you can add metadata to them, scrape them etc.
+Unfortunately there does not seem to be a way to launch individual Visual Pinball tables from ESTACION-PRO on Android, instead the Visual Pinball user interface will open on game launch and you need to manually start your table from there. This means tables need to be installed upfront in Visual Pinball and .vpinball dummy files should be added to the `~/ROMs/vpinball` directory. These will then appear as individual games inside ESTACION-PRO and you can add metadata to them, scrape them etc.
 
 Here's an example setup where the ROMs directory is placed on internal storage:
 
@@ -3424,7 +3424,7 @@ chmod +x VPinballX_GL
 
 On macOS there is a DMG package that you simply install.
 
-Once you've installed Visual Pinball start it once outside ES-DE and its .ini configuration file will be created. On Linux and macOS this is `~/.vpinball/VPinballX.ini`
+Once you've installed Visual Pinball start it once outside ESTACION-PRO and its .ini configuration file will be created. On Linux and macOS this is `~/.vpinball/VPinballX.ini`
 
 Set the following entries in this file:
 ```
@@ -3435,7 +3435,7 @@ PinMAMEIniPath = ./
 
 If you don't do this the table may still start but won't work properly and you'll not be able to actually start a game.
 
-ES-DE launches .vpx and .vpt files for the vpinball system, but most tables come shipped with multiple additional files that are needed for the table to work, for example:
+ESTACION-PRO launches .vpx and .vpt files for the vpinball system, but most tables come shipped with multiple additional files that are needed for the table to work, for example:
 ```
 ~/ROMs/vpinball/fh/pinmame/
 ~/ROMs/vpinball/fh/Funhouse (Williams 1990)_Bigus(MOD)1.6.directb2s
@@ -3476,10 +3476,10 @@ With folder flattening in place the .vpx and .vpt files will show up as file ent
 
 Scraping means downloading metadata and game media files (images and videos) for the games in your collection.
 
-In addition to this document there is a video on the official ES-DE YouTube channel on how to use the scraper:\
+In addition to this document there is a video on the official ESTACION-PRO YouTube channel on how to use the scraper:\
 https://www.youtube.com/watch?v=js_m_jVnX2s
 
-ES-DE supports the two scraper services [ScreenScraper.fr](https://www.screenscraper.fr) and [TheGamesDB.net](https://thegamesdb.net). In general TheGamesDB supports less formats and less systems but in some areas such PC gaming the quality is better and sometimes ScreenScraper is missing some specific information such as release dates where TheGamesDB may be able to fill in the gaps.
+ESTACION-PRO supports the two scraper services [ScreenScraper.fr](https://www.screenscraper.fr) and [TheGamesDB.net](https://thegamesdb.net). In general TheGamesDB supports less formats and less systems but in some areas such PC gaming the quality is better and sometimes ScreenScraper is missing some specific information such as release dates where TheGamesDB may be able to fill in the gaps.
 
 Here's an overview of what's supported when using these scrapers:
 
@@ -3509,7 +3509,7 @@ The **Multi-language** support includes translated game genres and game descript
 
 There are two approaches to scraping, either for a single game from the metadata editor, or for multiple games and systems using the multi-scraper.
 
-![alt text](images/es-de_scraper_running.png "ES-DE Scraper Running")
+![alt text](images/es-de_scraper_running.png "ESTACION-PRO Scraper Running")
 _Here's an example of the multi-scraper running in interactive mode, asking the user to make a selection from the multiple matching games returned by the scraper service._
 
 ### Single-game scraper
@@ -3524,7 +3524,7 @@ The multi-scraper is accessed from the main menu by entering the _Scraper_ menu 
 
 The default mode for the scraper is _Non-interactive_ mode, also referred to as _Automatic_ mode. When using this mode the selected systems are scraped without requiring any user input. This is quite convenient, but has the drawback of not asking for input if there are multiple matching games. In this case the game that the scraper service thinks is the most accurate match will be returned. However, if the _Search using file hashes_ scraper option is enabled and you're using ScreenScraper, then a hash value will be calculated from the actual game file and searches will be performed based on this. When using hash searches it's often a good idea to uncompress zip archives for systems with single game files (for instance a .bin file inside a .zip archive) as it's more likely that there's a match for such a file than for a compressed archive. Assuming there is a match for your file in the ScreenScraper database, this will lead to 100% accurate results. But if no matching file is found then it's possible that the fallback name search will return the wrong game, and therefore leading to the wrong game metadata and media being downloaded. In practice this issue is quite rare so it's generally recommended to keep the automatic mode enabled. If no result is found for a game, the scraper will skip to the next one in queue.
 
-If _interactive mode_ is instead enabled, the process of scraping games is basically identical between the single-game scraper and the multi-scraper. You're presented with the returned scraper results, and you're able to refine the search if the scraper could not find your game. Sometimes small changes like adding or removing a colon or a minus sign can yield better results. Note that searches are handled entirely by the scraper service, ES-DE just presents the results returned from the service. File hash searching is not supported by ScreenScraper if using this search method.
+If _interactive mode_ is instead enabled, the process of scraping games is basically identical between the single-game scraper and the multi-scraper. You're presented with the returned scraper results, and you're able to refine the search if the scraper could not find your game. Sometimes small changes like adding or removing a colon or a minus sign can yield better results. Note that searches are handled entirely by the scraper service, ESTACION-PRO just presents the results returned from the service. File hash searching is not supported by ScreenScraper if using this search method.
 
 When scraping in interactive mode it's recommended to keep the _Auto-accept single game matches_ option enabled as it will run the scraper in semi-automatic mode, only stopping to ask for user input if there are multiple results returned or if no game was found. If this option is disabled, the scraper will stop and ask for confirmation for every game.
 
@@ -3532,19 +3532,19 @@ Under normal circumstances the scraper service will only return games for the pl
 
 It's also possible to apply a filter for which games to scrape, which is very useful if for example continuing scraping a system that was previously not fully completed, or for re-scraping after new games have been added. This is accomplished using the _Scrape these games_ option in the main scraper menu. Possible values are _All games, Favorite games, No metadata, No game image, No game video_ or _Folders only_.
 
-By default, ES-DE will search using the metadata name of the game. If no name has previously been defined via scraping or via manually entering it using the metadata editor, then the name used for searching will correspond to the physical filename minus all text inside either normal brackets `()` or square brackets `[]`. So for example the physical filename `Mygame (U) [v2].zip` will be stripped to simply `Mygame` when performing the scraper search.
+By default, ESTACION-PRO will search using the metadata name of the game. If no name has previously been defined via scraping or via manually entering it using the metadata editor, then the name used for searching will correspond to the physical filename minus all text inside either normal brackets `()` or square brackets `[]`. So for example the physical filename `Mygame (U) [v2].zip` will be stripped to simply `Mygame` when performing the scraper search.
 
 By disabling the option _Search using metadata name_, the physical filename will be used even if there is a scraped or manually entered name for the game.
 
-There is however an exception to this for arcade games (MAME and Neo Geo) when using the TheGamesDB scraper. As this service does not support searches using the short software list MAME names, these will instead be automatically expanded to their full game names. This is done via a MAME name translation file supplied with the ES-DE installation. But when using ScreenScraper the _Search using metadata name_ option is always respected as this service fully support scraping based on the software list MAME names.
+There is however an exception to this for arcade games (MAME and Neo Geo) when using the TheGamesDB scraper. As this service does not support searches using the short software list MAME names, these will instead be automatically expanded to their full game names. This is done via a MAME name translation file supplied with the ESTACION-PRO installation. But when using ScreenScraper the _Search using metadata name_ option is always respected as this service fully support scraping based on the software list MAME names.
 
 Apart from this, hopefully the scraping process should be self-explanatory.
 
 ### Manually copying game media files
 
-If you already have a library of game media (images, videos and PDF manuals) you can manually copy these files into ES-DE. The same procedure applies if you want to add media for individual games, for instance when the scraper did not return any results or if you didn't like the media it provided.
+If you already have a library of game media (images, videos and PDF manuals) you can manually copy these files into ESTACION-PRO. The same procedure applies if you want to add media for individual games, for instance when the scraper did not return any results or if you didn't like the media it provided.
 
-The default media directory is `~/ES-DE/downloaded_media/<system name>/<media type>`
+The default media directory is `~/ESTACION-PRO/downloaded_media/<system name>/<media type>`
 
 This directory can however be changed using the _Game media directory_ setting in the _Other settings_ menu so make sure to check this setting before attempting to follow the instructions below. If the setting is blank, then the default directory is in use.
 
@@ -3552,30 +3552,30 @@ See the [Supported game systems](USERGUIDE-DEV.md#supported-game-systems) table 
 
 An example on Android:
 ```
-/storage/emulated/0/ES-DE/downloaded_media/c64/screenshots/
+/storage/emulated/0/ESTACION-PRO/downloaded_media/c64/screenshots/
 ```
 
 An example on Linux:
 ```
-/home/myusername/ES-DE/downloaded_media/c64/screenshots/
+/home/myusername/ESTACION-PRO/downloaded_media/c64/screenshots/
 ```
 
 An example on macOS:
 
 ```
-/Users/myusername/ES-DE/downloaded_media/c64/screenshots/
+/Users/myusername/ESTACION-PRO/downloaded_media/c64/screenshots/
 ```
 
 An example on Windows (installer release):
 
 ```
-C:\Users\Myusername\ES-DE\downloaded_media\c64\screenshots\
+C:\Users\Myusername\ESTACION-PRO\downloaded_media\c64\screenshots\
 ```
 
 An example on Windows (portable release):
 
 ```
-ES-DE\ES-DE\downloaded_media\c64\screenshots\
+ESTACION-PRO\ESTACION-PRO\downloaded_media\c64\screenshots\
 ```
 
 The media directories per game system are:
@@ -3593,7 +3593,7 @@ The media directories per game system are:
 * titlescreens
 * videos
 
-The miximages are generated by ES-DE. Normally that takes place automatically when scraping, but in this example of manually copying existing media files, the miximage offline generator should be used instead. This tool can generate the miximages for the complete game collection in one go. How that works is explained elsewhere in this guide.
+The miximages are generated by ESTACION-PRO. Normally that takes place automatically when scraping, but in this example of manually copying existing media files, the miximage offline generator should be used instead. This tool can generate the miximages for the complete game collection in one go. How that works is explained elsewhere in this guide.
 
 The `custom` directory is not created automatically, it's an optional folder where it's possible to place an image per game that can be viewed as the last entry in the media viewer. It's intended for things like diagrams of game controller mappings that you may want to consult before starting a game. These files have to be saved with the .jpg, .png or .webp extension and they follow the same naming logic as all other media files, as explained next.
 
@@ -3609,8 +3609,8 @@ The media files must correspond exactly to the game files. Take for example this
 For this example, the filename structure needs to look like the following:
 
 ```
-~/ES-DE/downloaded_media/c64/screenshots/Multidisk/Last Ninja 2/Last Ninja 2.jpg
-~/ES-DE/downloaded_media/c64/videos/Multidisk/Last Ninja 2/Last Ninja 2.mp4
+~/ESTACION-PRO/downloaded_media/c64/screenshots/Multidisk/Last Ninja 2/Last Ninja 2.jpg
+~/ESTACION-PRO/downloaded_media/c64/videos/Multidisk/Last Ninja 2/Last Ninja 2.mp4
 ```
 
 Note that there is seemingly an exception to this logic if the _Directories interpreted as files_ functionality has been used, in which case the "file extension" added to the directory is also included in the game media filenames. Take for example the following ScummVM game:
@@ -3621,8 +3621,8 @@ Note that there is seemingly an exception to this logic if the _Directories inte
 The media files for this directory which is interpreted as a file will be:
 
 ```
-~/ES-DE/downloaded_media/scummvm/screenshots/dig.scummvm.png
-~/ES-DE/downloaded_media/scummvm/videos/dig.scummvm.mp4
+~/ESTACION-PRO/downloaded_media/scummvm/screenshots/dig.scummvm.png
+~/ESTACION-PRO/downloaded_media/scummvm/videos/dig.scummvm.mp4
 ```
 
 This is not a bug as these are not really file extensions after all, it's just a directory with a dot in the filename that happens to look like a file extension because that's how the _Directories interpreted as files_ logic works.
@@ -3631,16 +3631,16 @@ For images .jpg, .png and .webp file extensions are supported and for videos .mp
 
 Remember that on Linux filenames are case sensitive, and as well the file extensions must be in lower case, such as .png instead of .PNG or .Png or the file won't be found.
 
-It's possible to change the game media directory location from within ES-DE, for this see the option _Game media directory_ in the _Other settings_ menu.
+It's possible to change the game media directory location from within ESTACION-PRO, for this see the option _Game media directory_ in the _Other settings_ menu.
 
 ## Main menu
 
 This menu can be accessed from both the system view and gamelist view. It contains the scraper, application settings and various tools such as the input configurator and the miximage generator. Settings are saved when navigating back from any menu screen, assuming at least one setting was changed. Using the keyboard quit shortcut (Alt + F4 / Command + Q by default) will also save any pending changes.
 
-![alt text](images/es-de_main_menu.png "ES-DE Main Menu")
+![alt text](images/es-de_main_menu.png "ESTACION-PRO Main Menu")
 _The main menu with its multiple submenus using the default dark menu color scheme._
 
-![alt text](images/es-de_main_menu_light.png "ES-DE Main Menu, Light")
+![alt text](images/es-de_main_menu_light.png "ESTACION-PRO Main Menu, Light")
 _The main menu using the alternative light menu color scheme._
 
 Following is a breakdown of the main menu entries.
@@ -3649,7 +3649,7 @@ Following is a breakdown of the main menu entries.
 
 This menu contains the various options for the scraper, which is used to download metadata, images, videos and PDF manuals for your games.
 
-![alt text](images/es-de_scraper_settings.png "ES-DE Scraper Settings")
+![alt text](images/es-de_scraper_settings.png "ESTACION-PRO Scraper Settings")
 _Some of the scraper settings._
 
 **Scrape from**
@@ -3678,7 +3678,7 @@ The password as registered on screenscraper.fr. This is masked using asterisks o
 
 **Use this account for ScreenScraper**
 
-Whether to use the account that has been configured. If this is disabled, the username and password setup on this screen will be ignored during scraping. This can be useful if you have scraping issues and want to check whether it's related to your account or if it's a general problem. Note that screenscraper.fr does not return a proper error message regarding incorrect username and password, but enabling the _Debug mode_ setting in the _Other settings_ menu or starting ES-DE with the --debug flag will indicate in the es_log.txt file whether the username was included in the server response.
+Whether to use the account that has been configured. If this is disabled, the username and password setup on this screen will be ignored during scraping. This can be useful if you have scraping issues and want to check whether it's related to your account or if it's a general problem. Note that screenscraper.fr does not return a proper error message regarding incorrect username and password, but enabling the _Debug mode_ setting in the _Other settings_ menu or starting ESTACION-PRO with the --debug flag will indicate in the es_log.txt file whether the username was included in the server response.
 
 #### Content settings
 
@@ -3742,7 +3742,7 @@ These are the settings for the miximage generator, which can either be run from 
 
 **Miximage resolution**
 
-It's possible to select betweeen the 1280x960, 1920x1440 and 640x480 resolutions for the generated miximages. It's normally recommended to use the default option 1280x960 which gives good image quality without slowing down ES-DE too much. But for very weak machines, 640x480 may be a better option. The 1920x1440 resolution is normally not recommended as it brings little quality improvements over 1280x960 while slowing down the application and taking up more disk space.
+It's possible to select betweeen the 1280x960, 1920x1440 and 640x480 resolutions for the generated miximages. It's normally recommended to use the default option 1280x960 which gives good image quality without slowing down ESTACION-PRO too much. But for very weak machines, 640x480 may be a better option. The 1920x1440 resolution is normally not recommended as it brings little quality improvements over 1280x960 while slowing down the application and taking up more disk space.
 
 **Miximage file format**
 
@@ -3826,7 +3826,7 @@ The region to scrape for. This affects game names, game media and release dates.
 
 **Preferred language** _(ScreenScraper only)_
 
-Multiple languages are supported by ScreenScraper, and this affects translations of game genres and game descriptions. As the option name implies this is the preferred language only as not all games have had their metadata translated. Unfortunately some less used languages have quite few games translated, but hopefully this will improve over time as there's an ongoing community effort to make more translations. If the preferred language is not available for a game, ES-DE will fall back to using the English metadata.
+Multiple languages are supported by ScreenScraper, and this affects translations of game genres and game descriptions. As the option name implies this is the preferred language only as not all games have had their metadata translated. Unfortunately some less used languages have quite few games translated, but hopefully this will improve over time as there's an ongoing community effort to make more translations. If the preferred language is not available for a game, ESTACION-PRO will fall back to using the English metadata.
 
 **Automatic retries on error**
 
@@ -3850,7 +3850,7 @@ When running the non-interactive scraper it's possible to search using a hash va
 
 **Search using metadata names**
 
-By default ES-DE will perform scraper searches based on the game name that has been manually set in the metadata editor, or that has been previously scraped. If you prefer to search using the physical filename regardless of such data being available, then disable this option. Note that when using TheGamesDB as scraper service for arcade games, the MAME software list name will always be expanded to the full game name as this scraper service does not support searches using software list names. In general it's recommended to disable this option if scraping arcade games using ScreenScraper as the MAME software list names are much more reliable than using the metadata names.
+By default ESTACION-PRO will perform scraper searches based on the game name that has been manually set in the metadata editor, or that has been previously scraped. If you prefer to search using the physical filename regardless of such data being available, then disable this option. Note that when using TheGamesDB as scraper service for arcade games, the MAME software list name will always be expanded to the full game name as this scraper service does not support searches using software list names. In general it's recommended to disable this option if scraping arcade games using ScreenScraper as the MAME software list names are much more reliable than using the metadata names.
 
 **Scrape actual folders** _(Multi-scraper only)_
 
@@ -3882,7 +3882,7 @@ ScreenScraper has issues with some game names containing dots, such as _Super Ma
 
 **Enable fallback to additional regions** _(ScreenScraper only)_
 
-When a certain game media file does not exist for the selected region, ES-DE automatically performs a fallback to the regions _world_, _USA_, _EU_, _Japan_ and _custom_ in this specific order. If this setting is enabled then an additional fallback is performed to all other country-specific regions. This makes it possible to scrape media for some games only released in specific countries like Brazil or South Korea. It may also make it possible to scrape some game media that have been uploaded to ScreenScraper using the wrong region. The special _ss/ScreenScraper_ region is also enabled via this option, and among other things it contains media for games that never had official releases. This is relevant for instance for OpenBOR and PICO-8 games where 3D boxes and other images may become available. The drawback for this setting is that you may get inaccurate data such as box art in the wrong language or unofficial box art for arcade games, so you may want to experiment with this option on a per-system basis.
+When a certain game media file does not exist for the selected region, ESTACION-PRO automatically performs a fallback to the regions _world_, _USA_, _EU_, _Japan_ and _custom_ in this specific order. If this setting is enabled then an additional fallback is performed to all other country-specific regions. This makes it possible to scrape media for some games only released in specific countries like Brazil or South Korea. It may also make it possible to scrape some game media that have been uploaded to ScreenScraper using the wrong region. The special _ss/ScreenScraper_ region is also enabled via this option, and among other things it contains media for games that never had official releases. This is relevant for instance for OpenBOR and PICO-8 games where 3D boxes and other images may become available. The drawback for this setting is that you may get inaccurate data such as box art in the wrong language or unofficial box art for arcade games, so you may want to experiment with this option on a per-system basis.
 
 ### UI settings
 
@@ -3910,7 +3910,7 @@ If the theme author has included support for multiple font/text sizes, then thes
 
 **Theme aspect ratio**
 
-Themes could optionally be optimized for different screen aspect ratios. ES-DE supports 16:9, 16:10, 3:2, 4:3, 5:4, 21:9 and 32:9 in both horizontal and vertical orientation, but it's completely up to the theme author which of these are actually supported by the theme. It's normally best to leave this setting at _Automatic_ in which case ES-DE will automatically select the aspect ratio that most closely matches the screen resolution. The _Automatic_ option is however only available if the theme supports at least two aspect ratios.
+Themes could optionally be optimized for different screen aspect ratios. ESTACION-PRO supports 16:9, 16:10, 3:2, 4:3, 5:4, 21:9 and 32:9 in both horizontal and vertical orientation, but it's completely up to the theme author which of these are actually supported by the theme. It's normally best to leave this setting at _Automatic_ in which case ESTACION-PRO will automatically select the aspect ratio that most closely matches the screen resolution. The _Automatic_ option is however only available if the theme supports at least two aspect ratios.
 
 **Theme transitions**
 
@@ -3918,11 +3918,11 @@ Transition animations to play when navigating between different gamelists, betwe
 
 **Theme language**
 
-If the selected theme has multilingual support then you can select between its supported languages here. This setting is primarily intended for testing purposes and for theme developers, and should as such usually be left at _automatic_ which will select the same theme language as the overall application language (see the next setting below). Note that not all themes may support all languages that the ES-DE application supports. Also note that a portion of the theme translations are contained within the base application itself and as such will not switch language unless you also change the _Application language_ setting accordingly.
+If the selected theme has multilingual support then you can select between its supported languages here. This setting is primarily intended for testing purposes and for theme developers, and should as such usually be left at _automatic_ which will select the same theme language as the overall application language (see the next setting below). Note that not all themes may support all languages that the ESTACION-PRO application supports. Also note that a portion of the theme translations are contained within the base application itself and as such will not switch language unless you also change the _Application language_ setting accordingly.
 
 **Application language**
 
-Sets the language for the application user interface. If this option is set to _automatic_ then the language will be autodetected, which means ES-DE will attempt to use whatever language has been selected in the operating system language settings. If there are no translations available in ES-DE for this precise language then a fallback will be done to the closest match, such as _Svenska_ instead of _Svenska (Finland)_. If no close match is available then ES-DE will revert to the default language which is _English (United States)_. It's also possible to explicitly select a supported language, which will override whatever has been set by the operating system. Note that the onboarding configurator for the Android release is unaffected by this setting. Also note that language autodetection does not work on the Steam Deck when running in game mode, so there it's necessary to select a language explicitly. If you accidentally select a language you didn't intend to, then you can access the application language setting via the second menu entry from the top after opening the main menu, and then after entering this sub-menu by pressing the down button eight times.
+Sets the language for the application user interface. If this option is set to _automatic_ then the language will be autodetected, which means ESTACION-PRO will attempt to use whatever language has been selected in the operating system language settings. If there are no translations available in ESTACION-PRO for this precise language then a fallback will be done to the closest match, such as _Svenska_ instead of _Svenska (Finland)_. If no close match is available then ESTACION-PRO will revert to the default language which is _English (United States)_. It's also possible to explicitly select a supported language, which will override whatever has been set by the operating system. Note that the onboarding configurator for the Android release is unaffected by this setting. Also note that language autodetection does not work on the Steam Deck when running in game mode, so there it's necessary to select a language explicitly. If you accidentally select a language you didn't intend to, then you can access the application language setting via the second menu entry from the top after opening the main menu, and then after entering this sub-menu by pressing the down button eight times.
 
 **Quick system select**
 
@@ -3938,7 +3938,7 @@ Which view to go to on startup, i.e. the system view or the gamelist view. This 
 
 **Systems sorting**
 
-The order in which to sort the game systems. The default option is _Full names or custom_ which will sort by full system names, unless there is a ~/ES-DE/custom_systems/es_systems_sorting.xml file present which will then be used instead. The other options are using the bundled sorting configuration files for _Release year_ or _Manufacturer, release year_ or _HW type, release year_ or _Manufacturer, HW type, release year_. If using any of these bundled sorting files, then any ~/ES-DE/custom_systems/es_systems_sorting.xml will be ignored. When changing this setting ES-DE will automatically reload.
+The order in which to sort the game systems. The default option is _Full names or custom_ which will sort by full system names, unless there is a ~/ESTACION-PRO/custom_systems/es_systems_sorting.xml file present which will then be used instead. The other options are using the bundled sorting configuration files for _Release year_ or _Manufacturer, release year_ or _HW type, release year_ or _Manufacturer, HW type, release year_. If using any of these bundled sorting files, then any ~/ESTACION-PRO/custom_systems/es_systems_sorting.xml will be ignored. When changing this setting ESTACION-PRO will automatically reload.
 
 **Game default sort order**
 
@@ -4118,7 +4118,7 @@ Whether to use a shader to render scanlines for the images.
 
 **Use custom images**
 
-Using this option it's possible to use custom images instead of random images from the game library. As is the case with the rest of ES-DE, the supported file formats are JPG and PNG.
+Using this option it's possible to use custom images instead of random images from the game library. As is the case with the rest of ESTACION-PRO, the supported file formats are JPG and PNG.
 
 **Custom image directory recursive search**
 
@@ -4126,7 +4126,7 @@ Whether to search the custom image directory recursively.
 
 **Custom image directory**
 
-The directory for custom images. The tilde `~` symbol can be used which will expand to the user home directory. It's also possible to use the %ESPATH% and %ROMPATH% variables which will set the directory relative to the ES-DE binary directory or the ROM directory. Images in the .jpg, .png, .webp, .svg and unanimated .gif formats are supported.
+The directory for custom images. The tilde `~` symbol can be used which will expand to the user home directory. It's also possible to use the %ESPATH% and %ROMPATH% variables which will set the directory relative to the ESTACION-PRO binary directory or the ROM directory. Images in the .jpg, .png, .webp, .svg and unanimated .gif formats are supported.
 
 #### Video screensaver settings
 
@@ -4162,11 +4162,11 @@ Various sound settings.
 
 **Audio driver (requires restart)** _(Android only)_
 
-This setting makes it possible to select between the _OpenSL ES_ and _AAudio_ audio drivers. Note that this is a preference only, if OpenSL ES is not available on your device then ES-DE will automatically revert to using AAudio and log that a fallback took place to the es_log.txt file. It's generally recommended to keep the driver set to its default value OpenSL ES as that offers lower audio latency for most devices.
+This setting makes it possible to select between the _OpenSL ES_ and _AAudio_ audio drivers. Note that this is a preference only, if OpenSL ES is not available on your device then ESTACION-PRO will automatically revert to using AAudio and log that a fallback took place to the es_log.txt file. It's generally recommended to keep the driver set to its default value OpenSL ES as that offers lower audio latency for most devices.
 
 **System volume** _(Linux and Windows only)_
 
-As the name implies, this sets the overall system volume and not the volume specifically for ES-DE. The volume change is applied when leaving the sound settings menu and not immediately when moving the slider.
+As the name implies, this sets the overall system volume and not the volume specifically for ESTACION-PRO. The volume change is applied when leaving the sound settings menu and not immediately when moving the slider.
 
 **Navigation sounds volume**
 
@@ -4190,7 +4190,7 @@ With this turned off, audio won't play for videos when using the video screensav
 
 **Enable navigation sounds**
 
-Enables or disables navigation sounds throughout the application. Sounds are played when browsing systems and lists, starting games, adding and removing games as favorites etc. The sounds can be customized per theme, and if the theme does not support navigation sounds, ES-DE will fall back to its built-in samples.
+Enables or disables navigation sounds throughout the application. Sounds are played when browsing systems and lists, starting games, adding and removing games as favorites etc. The sounds can be customized per theme, and if the theme does not support navigation sounds, ESTACION-PRO will fall back to its built-in samples.
 
 ### Input device settings
 
@@ -4214,11 +4214,11 @@ How long, in seconds, to display the overlay before fading it. Tapping anywhere 
 
 **Enable touch overlay** _(Android only)_
 
-The touch overlay applies a layer of virtual buttons on top of the ES-DE window. This makes it possible to use the application on devices that lack physical buttons, such as a mobile phone or tablet. Be careful to not accidentally disable this setting as you may lock yourself out of the application. If you do that, you'll need to temporarily plug in a controller or keyboard to enable the setting again, or you could clear the ES-DE storage in the Android App settings which will force the configurator to run on next startup.
+The touch overlay applies a layer of virtual buttons on top of the ESTACION-PRO window. This makes it possible to use the application on devices that lack physical buttons, such as a mobile phone or tablet. Be careful to not accidentally disable this setting as you may lock yourself out of the application. If you do that, you'll need to temporarily plug in a controller or keyboard to enable the setting again, or you could clear the ESTACION-PRO storage in the Android App settings which will force the configurator to run on next startup.
 
 **Only accept input from first controller**
 
-If enabling this option, only the first controller detected during startup will send its input to ES-DE (the keyboard input is unaffected by this setting and will be enabled regardless). This is a good way to limit potential chaos with multiple persons fighting over which games to play. Note that disconnecting and reconnecting controllers while ES-DE is running may change what is considered the first controller. This setting does not affect the emulators in any way, it's only applied to ES-DE. Another issue is that some wireless controllers have buggy drivers and will register as two devices, meaning all button presses will be registered twice inside ES-DE. Using this option is one solution to the problem, although it's also possible to blacklist the extra controller entry, as described [here](INSTALL-DEV.md#adding-custom-controller-profiles).
+If enabling this option, only the first controller detected during startup will send its input to ESTACION-PRO (the keyboard input is unaffected by this setting and will be enabled regardless). This is a good way to limit potential chaos with multiple persons fighting over which games to play. Note that disconnecting and reconnecting controllers while ESTACION-PRO is running may change what is considered the first controller. This setting does not affect the emulators in any way, it's only applied to ESTACION-PRO. Another issue is that some wireless controllers have buggy drivers and will register as two devices, meaning all button presses will be registered twice inside ESTACION-PRO. Using this option is one solution to the problem, although it's also possible to blacklist the extra controller entry, as described [here](INSTALL-DEV.md#adding-custom-controller-profiles).
 
 **Swap the A/B and X/Y buttons**
 
@@ -4226,7 +4226,7 @@ When enabling this setting the functions for the A/B and X/Y buttons will be swa
 
 **Ignore keyboard input**
 
-If this setting is enabled then all keyboard input will be ignored, except the quit shortcut used to shut down the application. The main reason for ignoring keyboard input is if running Steam in parallel to ES-DE and you need to use the Steam Input's _Desktop Layout_ functionality to send keyboard input using the controller. In this case double or conflicting input will be sent to ES-DE as both the controller and keyboard events are read by the application. It's however generally a better idea to disable this functionality altogether in Steam and leave the ES-DE setting untouched. If you accidentally enable this setting when using a keyboard as input device, then you'll either need to plug in a controller to disable it again, or you'll need to modify the _InputIgnoreKeyboard_ entry in the ~/ES-DE/settings/es_settings.xml configuration file.
+If this setting is enabled then all keyboard input will be ignored, except the quit shortcut used to shut down the application. The main reason for ignoring keyboard input is if running Steam in parallel to ESTACION-PRO and you need to use the Steam Input's _Desktop Layout_ functionality to send keyboard input using the controller. In this case double or conflicting input will be sent to ESTACION-PRO as both the controller and keyboard events are read by the application. It's however generally a better idea to disable this functionality altogether in Steam and leave the ESTACION-PRO setting untouched. If you accidentally enable this setting when using a keyboard as input device, then you'll either need to plug in a controller to disable it again, or you'll need to modify the _InputIgnoreKeyboard_ entry in the ~/ESTACION-PRO/settings/es_settings.xml configuration file.
 
 **Input device notifications**
 
@@ -4234,7 +4234,7 @@ Whether to display on-screen notification popups when plugging in and removing i
 
 **Configure keyboard and controllers**
 
-This tool provides configuration of button mappings for the keyboard and controllers, as explained [here](USERGUIDE-DEV.md#input-device-configuration). Normally this is not required as ES-DE automatically configures all input devices, but button customizations may be useful in some special situations. You may also need to run this tool if you have an unusual controller which could not be automatically configured. Be aware that custom button mappings will not change the icons or text for the helpsystem.
+This tool provides configuration of button mappings for the keyboard and controllers, as explained [here](USERGUIDE-DEV.md#input-device-configuration). Normally this is not required as ESTACION-PRO automatically configures all input devices, but button customizations may be useful in some special situations. You may also need to run this tool if you have an unusual controller which could not be automatically configured. Be aware that custom button mappings will not change the icons or text for the helpsystem.
 
 ### Game collection settings
 
@@ -4284,20 +4284,20 @@ These are mostly technical settings.
 
 Using this interface it's possible to select alternative emulators to use per game system, which requires that these alternatives have been defined in the es_systems.xml file. Note that only systems that you have currently populated will be listed. To change to an alternative emulator, you simply select a system from the list and choose which alternative to use from the presented options. If you select an alternative emulator and later remove its corresponding entry from the es_systems.xml file, an error message will be shown on application startup telling you to review your invalid emulator selection. Games will still launch, but the default emulator will be used in this case. How to clear an invalid entry should be self-explanatory once you access the interface. It's also possible to set alternative emulators per game using the metadata editor. If this is done, it will take precedence and override the system-wide emulator selection for the specific game. The alternative emulator badges and the corresponding gamelist filter are controlled by these per-game alternative emulator values and not by the system-wide option.
 
-![alt text](images/es-de_alternative_emulators.png "ES-DE Scraper Settings")
+![alt text](images/es-de_alternative_emulators.png "ESTACION-PRO Scraper Settings")
 _The system-wide alternative emulators interface. An entry in bold and with a gear symbol indicates that an alternative emulator has been selected._
 
 **Game media directory**
 
-This setting defines the directory for game media, i.e. images, videos and PDF manuals that have normally been downloaded by the scraper. The default location is _~/ES-DE/downloaded_media_
+This setting defines the directory for game media, i.e. images, videos and PDF manuals that have normally been downloaded by the scraper. The default location is _~/ESTACION-PRO/downloaded_media_
 
 **Max play time tracking**
 
-The play time for games launched from ES-DE is tracked and when returning from a game the corresponding metadata value is updated with the amount of seconds spent in-game. However you may launch a game and then put your device to sleep or lock the screen while the game is running and not return to ES-DE until many hours later. In this case the play time would jump significantly to include the sleep time for your device. This setting limits the amount of hours that will be tracked for each game launch from 1 to 23 hours, which means that whatever play time is measured will be ignored if it exceeds the selected value. It can also be set to 0 to disable play time tracking entirely and to 24 to have no limit for how long ES-DE will track the play time.
+The play time for games launched from ESTACION-PRO is tracked and when returning from a game the corresponding metadata value is updated with the amount of seconds spent in-game. However you may launch a game and then put your device to sleep or lock the screen while the game is running and not return to ESTACION-PRO until many hours later. In this case the play time would jump significantly to include the sleep time for your device. This setting limits the amount of hours that will be tracked for each game launch from 1 to 23 hours, which means that whatever play time is measured will be ignored if it exceeds the selected value. It can also be set to 0 to disable play time tracking entirely and to 24 to have no limit for how long ESTACION-PRO will track the play time.
 
 **VRAM limit**
 
-The amount of video RAM to use for the application. Defaults to 512 MiB which works fine most of the time when using moderately demanding themes with medium-sized collections at up to 4K display resolution. For large collections (as in many different systems rather than many games per system) in combination with demanding themes which use lots of full-screen images and similar it's recommended to increase this number to 1024 MiB or possibly higher to avoid stuttering and texture pop-in. Enabling the GPU statistics overlay gives some indications regarding the amount of texture memory currently used, which is helpful to determine a reasonable value for this setting. The allowed range for the settings is 128 to 2048 MiB. If you try to set it lower or higher than this by passing such values as command line parameters or by editing the es_settings.xml file manually, ES-DE will log a warning and automatically adjust to a value within the allowable range.
+The amount of video RAM to use for the application. Defaults to 512 MiB which works fine most of the time when using moderately demanding themes with medium-sized collections at up to 4K display resolution. For large collections (as in many different systems rather than many games per system) in combination with demanding themes which use lots of full-screen images and similar it's recommended to increase this number to 1024 MiB or possibly higher to avoid stuttering and texture pop-in. Enabling the GPU statistics overlay gives some indications regarding the amount of texture memory currently used, which is helpful to determine a reasonable value for this setting. The allowed range for the settings is 128 to 2048 MiB. If you try to set it lower or higher than this by passing such values as command line parameters or by editing the es_settings.xml file manually, ESTACION-PRO will log a warning and automatically adjust to a value within the allowable range.
 
 **Anti-aliasing (MSAA) (requires restart)** _(All operating systems except Android)_
 
@@ -4305,7 +4305,7 @@ Sets the level of anti-aliasing for the application. You can select between _dis
 
 **Display/monitor index (requires restart)** _(All operating systems except Android)_
 
-This option sets the display to use for ES-DE for multi-monitor setups. The possible values are the monitor index numbers 1, 2, 3 or 4. If a value is set here for a display that does not actually exist, then ES-DE will set it to 1 upon startup. Index 1 is the primary display for the computer. It's also possible to override the setting by passing the --display command line argument. Doing so will also overwrite the display index setting in es_settings.xml. The Display/monitor index option only changes the display used by ES-DE, emulators need to be configured separately.
+This option sets the display to use for ESTACION-PRO for multi-monitor setups. The possible values are the monitor index numbers 1, 2, 3 or 4. If a value is set here for a display that does not actually exist, then ESTACION-PRO will set it to 1 upon startup. Index 1 is the primary display for the computer. It's also possible to override the setting by passing the --display command line argument. Doing so will also overwrite the display index setting in es_settings.xml. The Display/monitor index option only changes the display used by ESTACION-PRO, emulators need to be configured separately.
 
 **Rotate screen (requires restart)**
 
@@ -4321,19 +4321,19 @@ The metadata for a game is updated by scraping or by manual editing it using the
 
 **Check for application updates** _(Not available for some builds)_
 
-By default a check for new ES-DE versions will be done on every application startup and a notification will be displayed if there is a new release available for download. Using this option the frequency of these checks can be set to _Always_, _Daily_, _Weekly_, _Monthly_ or _Never_. This setting is not available on some platforms and package formats such as the Android app store releases, the Linux AUR release and the semiofficial Haiku and FreeBSD releases.
+By default a check for new ESTACION-PRO versions will be done on every application startup and a notification will be displayed if there is a new release available for download. Using this option the frequency of these checks can be set to _Always_, _Daily_, _Weekly_, _Monthly_ or _Never_. This setting is not available on some platforms and package formats such as the Android app store releases, the Linux AUR release and the semiofficial Haiku and FreeBSD releases.
 
 **Include prereleases in update checks** _(Always enabled for prereleases)_
 
-For platforms and package formats where the previous setting above is available there is also the option of whether to include prereleases when checking for application updates. Note that this is always enabled when running an ES-DE prerelease so in this case the setting will be grayed out.
+For platforms and package formats where the previous setting above is available there is also the option of whether to include prereleases when checking for application updates. Note that this is always enabled when running an ESTACION-PRO prerelease so in this case the setting will be grayed out.
 
 **Hide taskbar (requires restart)** _(Windows only)_
 
-With this setting enabled, the taskbar will be hidden when launching ES-DE, and it will be restored when the application exits. This can make for a more seamless experience as the taskbar could otherwise flash by briefly when launching and returning from games.
+With this setting enabled, the taskbar will be hidden when launching ESTACION-PRO, and it will be restored when the application exits. This can make for a more seamless experience as the taskbar could otherwise flash by briefly when launching and returning from games.
 
 **Run in background (while game is launched)** _(All operating systems except Android)_
 
-Enabling this option makes ES-DE continue to run while a game is launched. This is normally not recommended as it leads to a slightly strange application behavior and it also removes the ability to capture return codes and log output from the emulators. Generally this option should only be enabled if there are issues with launching games while suspending ES-DE. Note however that some systems like Valve Steam will always keep ES-DE running in the background because they require it for technical reasons (i.e. those systems will override this menu option).
+Enabling this option makes ESTACION-PRO continue to run while a game is launched. This is normally not recommended as it leads to a slightly strange application behavior and it also removes the ability to capture return codes and log output from the emulators. Generally this option should only be enabled if there are issues with launching games while suspending ESTACION-PRO. Note however that some systems like Valve Steam will always keep ESTACION-PRO running in the background because they require it for technical reasons (i.e. those systems will override this menu option).
 
 **Upscale video frame rate to 60 FPS**
 
@@ -4345,19 +4345,19 @@ If enabled, you will be able to select alternative emulators per game using the 
 
 **Show hidden files and folders**
 
-If this option is disabled, hidden files and folders within the ROM directory tree are excluded from ES-DE. On Linux and macOS this means those starting with a dot, and on Windows it's those set as hidden by using an NTFS attribute. This setting is only intended for special situations and is not to be confused with the next option below which hides files based on metadata configuration within ES-DE. When changing this setting ES-DE will automatically reload.
+If this option is disabled, hidden files and folders within the ROM directory tree are excluded from ESTACION-PRO. On Linux and macOS this means those starting with a dot, and on Windows it's those set as hidden by using an NTFS attribute. This setting is only intended for special situations and is not to be confused with the next option below which hides files based on metadata configuration within ESTACION-PRO. When changing this setting ESTACION-PRO will automatically reload.
 
 **Show hidden games**
 
-You can mark games as hidden in the metadata editor, which is useful for instance for DOS games where you may not want to see some batch files and executables inside ES-DE, or for multi-disc games where you may only want to show the .m3u playlists and not the individual game files. By disabling this option these files will not be processed at all when ES-DE starts up. If you enable the option you will see the files, but their name entries will be almost transparent in the gamelist view to visually indicate that they are hidden. When changing this setting ES-DE will automatically reload.
+You can mark games as hidden in the metadata editor, which is useful for instance for DOS games where you may not want to see some batch files and executables inside ESTACION-PRO, or for multi-disc games where you may only want to show the .m3u playlists and not the individual game files. By disabling this option these files will not be processed at all when ESTACION-PRO starts up. If you enable the option you will see the files, but their name entries will be almost transparent in the gamelist view to visually indicate that they are hidden. When changing this setting ESTACION-PRO will automatically reload.
 
 **Launch games on the other screen** _(Android only)_
 
-If using a dual-screen device then enabling this setting will launch the games on the other screen from where ES-DE is running. Note that on some devices you may need to manually tap the primary screen after exiting the game to direct your controller input back to ES-DE. This setting has no effect on single-screen devices.
+If using a dual-screen device then enabling this setting will launch the games on the other screen from where ESTACION-PRO is running. Note that on some devices you may need to manually tap the primary screen after exiting the game to direct your controller input back to ESTACION-PRO. This setting has no effect on single-screen devices.
 
 **Enable custom event scripts**
 
-It's possible to trigger custom scripts for a number of actions in ES-DE, as is discussed [below](USERGUIDE-DEV.md#custom-event-scripts), and this setting decides whether this functionality is enabled.
+It's possible to trigger custom scripts for a number of actions in ESTACION-PRO, as is discussed [below](USERGUIDE-DEV.md#custom-event-scripts), and this setting decides whether this functionality is enabled.
 
 **Browsing custom events**
 
@@ -4365,7 +4365,7 @@ This option, which depends on _Enable custom event scripts_ being activated, wil
 
 **Only show games from gamelist.xml files**
 
-If enabled, only games that have metadata saved to the gamelist.xml files will be shown in ES-DE. This option is intended primarily for testing and debugging purposes so it should normally not be enabled. When changing this setting ES-DE will automatically reload.
+If enabled, only games that have metadata saved to the gamelist.xml files will be shown in ESTACION-PRO. This option is intended primarily for testing and debugging purposes so it should normally not be enabled. When changing this setting ESTACION-PRO will automatically reload.
 
 **Strip extra MAME name info (requires restart)**
 
@@ -4373,7 +4373,7 @@ MAME software list names for all arcade systems are automatically expanded to th
 
 **Disable desktop composition (requires restart)** _(Linux and X11/Xorg only)_
 
-The window manager desktop composition can adversely affect the framerate of ES-DE, especially on weaker graphics cards and when running at higher resolution. As such the desktop compositor can be disabled when running ES-DE, although the window manager has to be configured to allow applications to do this for the option to have any effect. Note that enabling this setting can cause problems with some graphics drivers so if you experience strange flickering and similar, then make sure to keep this setting disabled. In case of such issues, make sure that the emulator is also not blocking the composition (e.g. RetroArch has a corresponding option). This setting has no effect if using Wayland, it only applies to X11/Xorg.
+The window manager desktop composition can adversely affect the framerate of ESTACION-PRO, especially on weaker graphics cards and when running at higher resolution. As such the desktop compositor can be disabled when running ESTACION-PRO, although the window manager has to be configured to allow applications to do this for the option to have any effect. Note that enabling this setting can cause problems with some graphics drivers so if you experience strange flickering and similar, then make sure to keep this setting disabled. In case of such issues, make sure that the emulator is also not blocking the composition (e.g. RetroArch has a corresponding option). This setting has no effect if using Wayland, it only applies to X11/Xorg.
 
 **Back button/back swipe exits app** _(Android only)_
 
@@ -4393,7 +4393,7 @@ Enabling or disabling the menu when the UI mode is set to _Kid_. Mostly intended
 
 **Show quit menu (reboot and power off entries)** _(All operating systems except macOS and Android)_
 
-With this setting enabled, there is a Quit menu shown as the last entry on the main menu which provides options to quit ES-DE, to reboot the computer or to power off the computer. With this setting disabled, there will simply be an entry to quit the application instead of the complete quit menu.
+With this setting enabled, there is a Quit menu shown as the last entry on the main menu which provides options to quit ESTACION-PRO, to reboot the computer or to power off the computer. With this setting disabled, there will simply be an entry to quit the application instead of the complete quit menu.
 
 ### Utilities
 
@@ -4413,11 +4413,11 @@ This utility will create all game system directories inside your ROM directory t
 
 **Rescan ROM directory**
 
-This utility will rescan the ROM directory for any changes such as added or removed games and systems without having to restart the application. But don't use this utility to reload changes to gamelist.xml files that you have made outside ES-DE as this can lead to data corruption. If you need to manually edit your gamelist.xml files then do this while ES-DE is shut down.
+This utility will rescan the ROM directory for any changes such as added or removed games and systems without having to restart the application. But don't use this utility to reload changes to gamelist.xml files that you have made outside ESTACION-PRO as this can lead to data corruption. If you need to manually edit your gamelist.xml files then do this while ESTACION-PRO is shut down.
 
 #### Game importer
 
-This tool makes it possible to import games and apps into ES-DE. It's fully configurable via XML files so the available systems will differ between operating systems. If there are no import rules available for your operating system, then all entries in this menu will be grayed out.
+This tool makes it possible to import games and apps into ESTACION-PRO. It's fully configurable via XML files so the available systems will differ between operating systems. If there are no import rules available for your operating system, then all entries in this menu will be grayed out.
 
 **Import to system**
 
@@ -4429,7 +4429,7 @@ Whether to remove entries during the import process. Can be set to _Never_ or _A
 
 **Strip special characters** _(Linux only)_
 
-Whether to strip the special characters :|"?*<> from the names extracted from .desktop files when using the desktopshortcut rule. This is normally not required as all these characters are supported on proper filesystems like ext4, XFS and btrfs. But if using a FAT-based fileystem such as exFAT this option needs to be enabled as the importer will otherwise not be able to import any such entries. Note however that it's strongly recommended to use a proper filesystem with ES-DE in the first place, and not a FAT-based filesystem.
+Whether to strip the special characters :|"?*<> from the names extracted from .desktop files when using the desktopshortcut rule. This is normally not required as all these characters are supported on proper filesystems like ext4, XFS and btrfs. But if using a FAT-based fileystem such as exFAT this option needs to be enabled as the importer will otherwise not be able to import any such entries. Note however that it's strongly recommended to use a proper filesystem with ESTACION-PRO in the first place, and not a FAT-based filesystem.
 
 **Media target type** _(Android only)_
 
@@ -4441,7 +4441,7 @@ Whether to also import media when importing games. It's generally best to use th
 
 **Import banners or logos if available** _(Android only)_
 
-There are three types of possible media files available for Android apps, the app icon, a banner and a logotype. If this option is disabled then the icon is always selected, and if the setting is enabled the banner will be tried first and if that does not exist the logo will be checked for. If neither of these two images are available then ES-DE will fall back to importing the app icon.
+There are three types of possible media files available for Android apps, the app icon, a banner and a logotype. If this option is disabled then the icon is always selected, and if the setting is enabled the banner will be tried first and if that does not exist the logo will be checked for. If neither of these two images are available then ESTACION-PRO will fall back to importing the app icon.
 
 **Overwrite media files** _(Android only)_
 
@@ -4451,13 +4451,13 @@ Whether to overwrite existing media files during the import process.
 
 On Android apps can be categorized as games, and by enabling this option you'll only see such apps in the selection screen. Note that this is not very consistent as some apps and emulators are categorized as games and some aren't. Most real games are hopefully categorized correctly however.
 
-### Quit / Quit ES-DE
+### Quit / Quit ESTACION-PRO
 
 The _Quit_ menu or _Quit ES-DE_ entry as described by the _Show quit menu (reboot and power off entries)_ option above.
 
 If the menu is enabled, these are its entries:
 
-**Quit ES-DE**
+**Quit ESTACION-PRO**
 
 If the option _When to save game metadata_ has been set to _On exit_, the gamelist.xml files will be updated at this point. This applies also if the Quit menu is disabled and replaced by the _Quit ES-DE_ entry.
 
@@ -4479,7 +4479,7 @@ This menu is opened from the gamelist view, and can't be accessed from the syste
 
 You open the menu using the _Back_ button, and by pressing _B_ or selecting the _Apply_ button any settings such as letter jumping using the quick selector or sorting changes are applied. If you instead press the _Back_ button again or select the _Cancel_ button, the menu is closed without applying any changes.
 
-![alt text](images/es-de_gamelist_options_menu.png "ES-DE Gamelist Options Menu")
+![alt text](images/es-de_gamelist_options_menu.png "ESTACION-PRO Gamelist Options Menu")
 _The gamelist options menu as laid out when opening it from within a custom collection, which adds the menu entry to add or remove games from the collection._
 
 Here's a summary of the menu entries:
@@ -4512,7 +4512,7 @@ The secondary sorting is always in ascending name order.
 
 Choosing this entry opens a separate screen where it's possible to apply a filter to the gamelist. The filter is persistent throughout the program session, or until it's manually reset. The option to reset all filters is shown on the same screen.
 
-![alt text](images/es-de_gamelist_filters.png "ES-DE Gamelist Filters")
+![alt text](images/es-de_gamelist_filters.png "ESTACION-PRO Gamelist Filters")
 _The gamelist filter screen, accessible from the gamelist options menu._
 
 The following filters can be applied:
@@ -4573,7 +4573,7 @@ If the current game is a folder which has a _folder link_ configured (meaning it
 
 In the metadata editor you can modify game metadata, scrape metadata and media, clear the entry which will delete all metadata and game media files, or delete the entire game which also removes its file on the filesystem. When manually modifying a value, it will change color from gray to blue, and if the scraper has changed a value, it will change to red. When leaving the metadata editor you will be asked whether you want to save any settings done manually or by the scraper.
 
-![alt text](images/es-de_metadata_editor.png "ES-DE Metadata Editor")
+![alt text](images/es-de_metadata_editor.png "ESTACION-PRO Metadata Editor")
 _The metadata editor._
 
 ### Metadata entries
@@ -4598,7 +4598,7 @@ Usually provided by the scraper although it's possible to update this manually o
 
 **Rating**
 
-Rating in half-star increments. This can be set as such manually or it can be scraped, assuming the scraper service provides ratings (currently only ScreenScraper does). If an external scraper application such as [Skyscraper](https://github.com/muldjord/skyscraper) has been used that may set the ratings in fractional values such as three-quarter stars, then ES-DE will round them to the nearest half-star. When this happens, the rating stars will be colored green to notify that a rounding has taken place and a question will be asked whether to save the changes even if no other manual changes were performed.
+Rating in half-star increments. This can be set as such manually or it can be scraped, assuming the scraper service provides ratings (currently only ScreenScraper does). If an external scraper application such as [Skyscraper](https://github.com/muldjord/skyscraper) has been used that may set the ratings in fractional values such as three-quarter stars, then ESTACION-PRO will round them to the nearest half-star. When this happens, the rating stars will be colored green to notify that a rounding has taken place and a question will be asked whether to save the changes even if no other manual changes were performed.
 
 **Release date**
 
@@ -4630,7 +4630,7 @@ A flag to indicate whether you have completed the game.
 
 **Kidgame**
 
-A flag to mark whether the game is suitable for children. This will be applied as a filter when starting ES-DE in _Kid_ mode. Although it's possible to also set this flag for folders, this will **not** affect the actual files inside those folders. It will instead only be used to display the Kidgame badge for the folders themselves.
+A flag to mark whether the game is suitable for children. This will be applied as a filter when starting ESTACION-PRO in _Kid_ mode. Although it's possible to also set this flag for folders, this will **not** affect the actual files inside those folders. It will instead only be used to display the Kidgame badge for the folders themselves.
 
 **Hidden**
 
@@ -4642,7 +4642,7 @@ A flag to indicate whether the game is broken. Useful for MAME games for instanc
 
 **Exclude from game counter** _(files only)_
 
-A flag to indicate whether the game should be excluded from being counted. If this is set for a game, then it will not be included in the game counter shown per system in the system view, and it will not be included in the gamelistinfo element in the gamelist view. As well, it will be excluded from all automatic and custom collections. This option is for example useful for DOS games where you may want to exclude setup programs and similar but still need them available in ES-DE and therefore can't hide them. Files that have this flag set will have a lower opacity in the gamelists, making them easy to spot.
+A flag to indicate whether the game should be excluded from being counted. If this is set for a game, then it will not be included in the game counter shown per system in the system view, and it will not be included in the gamelistinfo element in the gamelist view. As well, it will be excluded from all automatic and custom collections. This option is for example useful for DOS games where you may want to exclude setup programs and similar but still need them available in ESTACION-PRO and therefore can't hide them. Files that have this flag set will have a lower opacity in the gamelists, making them easy to spot.
 
 **Exclude from multi-scraper**
 
@@ -4662,7 +4662,7 @@ A statistics counter that tracks how many seconds you have played the game. You 
 
 **Controller**
 
-This entry provides a selection of controller icons that are built into ES-DE (although the theme can override the actual graphics files). The selected icon will be displayed as a badge if the theme supports badges. The gamelist can also be filtered based on the controllers, but apart from this the functionality is cosmetic and will not affect the actual emulators.
+This entry provides a selection of controller icons that are built into ESTACION-PRO (although the theme can override the actual graphics files). The selected icon will be displayed as a badge if the theme supports badges. The gamelist can also be filtered based on the controllers, but apart from this the functionality is cosmetic and will not affect the actual emulators.
 
 **Alternative emulator** _(files only)_
 
@@ -4708,7 +4708,7 @@ The _custom_ image is not scraped, but can be manually added to the downloaded_m
 
 If the game has a downloaded PDF manual then you can view it by pressing the _up_ button which will change the media viewer to PDF viewing mode. To get back to displaying videos and images when in this mode, press the _down_ button. Pages are navigated using the _left_ and _right_ buttons, and the trigger buttons can additionally be used to jump to the first and last page. When in PDF viewing mode it's possible to zoom in and out using the shoulder buttons. When zoomed in, the left, right, up and down buttons will pan the view. To re-enable page navigation either zoom out completely or reset the view by pressing the left or right trigger button.
 
-There is also a video on the official ES-DE YouTube channel on how to download and view PDF manuals:\
+There is also a video on the official ESTACION-PRO YouTube channel on how to download and view PDF manuals:\
 https://www.youtube.com/watch?v=AH_gTWv4ZUM
 
 Pressing any other button than those mentioned closes the media viewer.
@@ -4717,7 +4717,7 @@ The settings for the media viewer are similar to what is available for the scree
 
 ## Screensaver
 
-There are four types of screensavers built into ES-DE: _Dim, Black, Slideshow_ and _Video_.
+There are four types of screensavers built into ESTACION-PRO: _Dim, Black, Slideshow_ and _Video_.
 
 Numerous options can be set for these screensavers, as detailed [here](USERGUIDE-DEV.md#screensaver-settings).
 
@@ -4729,12 +4729,12 @@ For the video and slideshow screensavers, an overlay can be enabled via the scre
 
 If the Video screensaver has been selected and there are no videos available, a fallback to the Dim screensaver will take place. The same is true for the Slideshow screensaver if no game images are available.
 
-![alt text](images/es-de_screensaver.png "ES-DE Screensaver")
+![alt text](images/es-de_screensaver.png "ESTACION-PRO Screensaver")
 _An example of what the video screensaver looks like._
 
 ## Game collections
 
-ES-DE provides two types of collections, _Automatic collections_ and _Custom collections_, the latter being defined by the user. Collections are as the name implies only collections of games already present in your actual game systems, so they're basically playlists. As such the use of collections is entirely optional, but especially the custom collection support is a very nice feature which is worth some effort to setup.
+ESTACION-PRO provides two types of collections, _Automatic collections_ and _Custom collections_, the latter being defined by the user. Collections are as the name implies only collections of games already present in your actual game systems, so they're basically playlists. As such the use of collections is entirely optional, but especially the custom collection support is a very nice feature which is worth some effort to setup.
 
 The numerous collection settings available are covered [here](USERGUIDE-DEV.md#game-collection-settings).
 
@@ -4748,7 +4748,7 @@ These automatic collections can be individually enabled or disabled by going to 
 
 These are collections that you create yourself. Examples could be grouping in genres like _Shoot 'em up_, _Fighting games_ etc. or perhaps a time period like _1980s_, _1990s_ and so on.
 
-If the theme in use supports it you can create a custom collection directly from a system provided by the theme. However, Linear, Modern and Slate do not provide such systems as it's believed that grouping them together in a dedicated _Collections_ system is a more elegant solution. Especially since the theme would need to ship with an almost endless amount of collection systems for whatever categories all ES-DE users combined would like to use for their libraries.
+If the theme in use supports it you can create a custom collection directly from a system provided by the theme. However, Linear, Modern and Slate do not provide such systems as it's believed that grouping them together in a dedicated _Collections_ system is a more elegant solution. Especially since the theme would need to ship with an almost endless amount of collection systems for whatever categories all ESTACION-PRO users combined would like to use for their libraries.
 
 So if you have set the option _Group custom collections_ to _If unthemed_ or _Always_, any collections you add will show up in the special _Collections_ system. Here you can access them just as you would access folders inside a regular gamelist. The amount of games per collection is shown in the description, and a random game is displayed each time you browse through the list. You can also quick jump to this random game by pressing the _Y_ button.
 
@@ -4772,16 +4772,16 @@ When you are done adding games, you can either open the main menu and go to _Gam
 
 You can later add additional games to the collection by navigating to it, bringing up the gamelist options menu and choosing _Add/remove games to this game collection_.
 
-![alt text](images/es-de_custom_collections.png "ES-DE Custom Collections")
+![alt text](images/es-de_custom_collections.png "ESTACION-PRO Custom Collections")
 _Example of custom collections, here configured as genres._
 
-![alt text](images/es-de_custom_collections_editing.png "ES-DE Custom Collections")
+![alt text](images/es-de_custom_collections_editing.png "ESTACION-PRO Custom Collections")
 _When editing a custom collection and the theme uses a textlist, then a tick symbol will be displayed for any game that is part of the collection._
 
 
-The way that custom collections are implemented is very simple. There is a single configuration file per collection inside the folder `~/ES-DE/collections`
+The way that custom collections are implemented is very simple. There is a single configuration file per collection inside the folder `~/ESTACION-PRO/collections`
 
-For this example a file will have been created named `~/ES-DE/collections/custom-Platform.cfg`
+For this example a file will have been created named `~/ESTACION-PRO/collections/custom-Platform.cfg`
 
 The file contents is simply a list of ROM files, such as the following:
 
@@ -4797,13 +4797,13 @@ The file contents is simply a list of ROM files, such as the following:
 
 Any changes to custom collections, for example adding or removing a game, will be immediately written to the corresponding collection configuration file.
 
-If you copy or migrate a collection from a previous version of EmulationStation or if you're setting up ES-DE on a new computer, the collection will not be enabled by just copying its configuration file to the `~/ES-DE/collections` directory. You always need to explicitly enable each collection via the menu.
+If you copy or migrate a collection from a previous version of EmulationStation or if you're setting up ESTACION-PRO on a new computer, the collection will not be enabled by just copying its configuration file to the `~/ESTACION-PRO/collections` directory. You always need to explicitly enable each collection via the menu.
 
 If you're migrating from a previous version of EmulationStation that has absolute paths in the collection files, then these will be rewritten with the %ROMPATH% variable the first time you make a change to the collection.
 
 ## Custom event scripts
 
-There are numerous locations throughout ES-DE where custom scripts will be executed if the option to do so has been enabled in the settings. By default it's deactivated so be sure to enable it to use this feature.
+There are numerous locations throughout ESTACION-PRO where custom scripts will be executed if the option to do so has been enabled in the settings. By default it's deactivated so be sure to enable it to use this feature.
 
 The setup for event scripts is a bit technical, so refer to the [INSTALL-DEV.md](INSTALL-DEV.md#custom-event-scripts) document to see how it's configured.
 
@@ -4823,16 +4823,16 @@ The **Alternative emulators** column lists additional emulators configured in es
 
 The **Needs BIOS** column indicates if any BIOS/system ROMs are required. Additional details should be covered by the emulator documentation.
 
-As for file extensions, normally those configured in ES-DE should cover everything that all emulators combined support for a given system.
+As for file extensions, normally those configured in ESTACION-PRO should cover everything that all emulators combined support for a given system.
 
 In general .zip or .7z files are recommended for smaller-sized games like those from older systems (assuming the emulator supports it). But for disc-based systems it's not a good approach as decompression of these large files lead to delayed game launches. For such systems it's instead generally recommended to use CHD files as this format offers effective compression while providing decompression on the fly. The CHD format is supported by many emulators.
 
-The following standalone emulators can't accept full paths to ROM files so you'll need to configure each ROM directory via the emulator GUI or configuration file, otherwise ES-DE will not be able to launch the games:
+The following standalone emulators can't accept full paths to ROM files so you'll need to configure each ROM directory via the emulator GUI or configuration file, otherwise ESTACION-PRO will not be able to launch the games:
 * Demul _(not required for Dreamcast games)_
 * FinalBurn Neo
 * Model 2 Emulator
 
-On Windows the following emulators provide a way to inform ES-DE where they have been installed, meaning you don't need to add them to your Path environment variable as described elsewhere in this guide (this is only relevant for the installer release of ES-DE, not the portable release):
+On Windows the following emulators provide a way to inform ESTACION-PRO where they have been installed, meaning you don't need to add them to your Path environment variable as described elsewhere in this guide (this is only relevant for the installer release of ESTACION-PRO, not the portable release):
 * BlueStacks
 * CPCemu
 * DOSBox-X
@@ -4850,7 +4850,7 @@ For a list of supported systems for Linux on AArch64, see the [LINUX-AARCH64-DEV
 
 All emulators are RetroArch cores unless marked as **(Standalone)**, **(Wine)** or **(Proton)**
 
-The **@** symbol indicates that the emulator is _deprecated_ and will be removed in a future ES-DE release.
+The **@** symbol indicates that the emulator is _deprecated_ and will be removed in a future ESTACION-PRO release.
 
 | System name           | Full name                                      | Default emulator                  | Alternative emulators             | Needs BIOS   | Recommended game setup               |
 | :-------------------- | :--------------------------------------------- | :-------------------------------- | :-------------------------------- | :----------- | :----------------------------------- |
@@ -4867,7 +4867,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | androidgames          | Android Games                                  | _Placeholder_                     |                                   |              |                                      |
 | apple2                | Apple II                                       | LinApple **(Standalone)** [L],<br>Mariani **(Standalone)** [M],<br>AppleWin **(Standalone)** [W] | Mednafen **(Standalone)**,<br>MAME - Current,<br>MAME **(Standalone)**,<br>izapple2 **(Standalone)** [LW] | Yes for Mednafen and MAME | See the specific _Apple II_ section elsewhere in this guide |
 | apple2gs              | Apple IIGS                                     | MAME - Current                    | MAME - Current [Software list],<br>MAME **(Standalone)**,<br>MAME [Software list] **(Standalone)**,<br>KEGS **(Standalone)** | Yes          | See the specific _Apple IIGS_ section elsewhere in this guide |
-| arcade                | Arcade                                         | MAME - Current                    | MAME 2010,<br>MAME 2003-Plus,<br>MAME 2003,<br>MAME 2000,<br>MAME **(Standalone)**,<br>FinalBurn Neo,<br>FinalBurn Neo **(Standalone)** [LW],<br>FB Alpha 2012,<br>Geolith,<br>Flycast,<br>Flycast **(Standalone)**,<br>Flycast Dojo **(Standalone)**,<br>Kronos [LW],<br>DICE,<br>Model 2 Emulator **(Standalone)** [W],<br>Model 2 Emulator [Suspend ES-DE] **(Standalone)** [W],<br>Supermodel **(Standalone)**,<br>Supermodel Dojo **(Standalone)** [W],<br>Lindbergh Loader **(Standalone)** [L],<br>MFME **(Standalone)** [LW],<br> _Shortcut or script_ | Depends      | See the specific _Arcade and Neo Geo_ section elsewhere in this guide |
+| arcade                | Arcade                                         | MAME - Current                    | MAME 2010,<br>MAME 2003-Plus,<br>MAME 2003,<br>MAME 2000,<br>MAME **(Standalone)**,<br>FinalBurn Neo,<br>FinalBurn Neo **(Standalone)** [LW],<br>FB Alpha 2012,<br>Geolith,<br>Flycast,<br>Flycast **(Standalone)**,<br>Flycast Dojo **(Standalone)**,<br>Kronos [LW],<br>DICE,<br>Model 2 Emulator **(Standalone)** [W],<br>Model 2 Emulator [Suspend ESTACION-PRO] **(Standalone)** [W],<br>Supermodel **(Standalone)**,<br>Supermodel Dojo **(Standalone)** [W],<br>Lindbergh Loader **(Standalone)** [L],<br>MFME **(Standalone)** [LW],<br> _Shortcut or script_ | Depends      | See the specific _Arcade and Neo Geo_ section elsewhere in this guide |
 | arcadia               | Emerson Arcadia 2001                           | AmiArcadia                        | MAME - Current,<br>MAME **(Standalone)**,<br>WinArcadia **(Standalone)** [W] | No           | Single archive or ROM file           |
 | archimedes            | Acorn Archimedes                               | MAME [Model A440/1] **(Standalone)** | MAME [Model A3000] **(Standalone)**,<br>MAME [Model A310] **(Standalone)**,<br>MAME [Model A540] **(Standalone)** | Yes          |                                      |
 | arduboy               | Arduboy Miniature Game System                  | Arduous                           | Ardens                            | No           | Single archive or .hex file          |
@@ -4897,14 +4897,14 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | cps3                  | Capcom Play System III                         | MAME - Current                    | MAME 2010,<br>MAME 2003-Plus,<br>MAME 2003,<br>MAME 2000,<br>MAME **(Standalone)**,<br>FinalBurn Neo,<br>FinalBurn Neo **(Standalone)** [LW],<br>FB Alpha 2012,<br>FB Alpha 2012 CPS-3 | Depends      | See the specific _Arcade and Neo Geo_ section elsewhere in this guide |
 | crvision              | VTech CreatiVision                             | JollyCV                           | MAME - Current,<br>MAME **(Standalone)** | Yes          | Single archive or ROM file           |
 | daphne                | Daphne Arcade LaserDisc Emulator               | Hypseus [Daphne] **(Standalone)** | Hypseus [Singe] **(Standalone)**,<br>MAME - Current,<br>MAME **(Standalone)**,<br>DirkSimple,<br>ares [Mega LD] **(Standalone)** | Depends     | See the specific _LaserDisc Games_ section elsewhere in this guide |
-| desktop               | Desktop Applications                           | _Suspend ES-DE_                   | _Keep ES-DE running_,<br> _AppImage (Suspend ES-DE)_ [L],<br> _AppImage (Keep ES-DE running)_ [L] | No           | See the specific _Ports and desktop applications_ section elsewhere in this guide |
+| desktop               | Desktop Applications                           | _Suspend ES-DE_                   | _Keep ESTACION-PRO running_,<br> _AppImage (Suspend ESTACION-PRO)_ [L],<br> _AppImage (Keep ESTACION-PRO running)_ [L] | No           | See the specific _Ports and desktop applications_ section elsewhere in this guide |
 | doom                  | Doom                                           | PrBoom                            | PrBoom+ **(Standalone)**,<br>Boom 3 [LW],<br>Boom 3 xp [LW],<br> _Shortcut or script_ | No           |                                      |
 | dos                   | DOS (PC)                                       | DOSBox-Pure                       | DOSBox Pure Unleashed **(Standalone)**,<br>DOSBox-Core,<br>DOSBox-SVN,<br>DOSBox-X **(Standalone)**,<br>DOSBox Staging **(Standalone)**,<br>DREAMM **(Standalone)**,<br>VirtualXT | No           | See the specific _DOS / PC_ section elsewhere in this guide |
 | dragon32              | Dragon Data Dragon 32                          | MAME Dragon 32 [Tape] **(Standalone)** | MAME Dragon 32 [Cartridge] **(Standalone)**,<br>MAME Dragon 64 [Tape] **(Standalone)**,<br>MAME Dragon 64 [Cartridge] **(Standalone)**,<br>XRoar Dragon 32 **(Standalone)**,<br>XRoar Dragon 64 **(Standalone)** | Yes          | See the specific _Dragon 32 and Tano Dragon_ section elsewhere in this guide |
 | dreamcast             | Sega Dreamcast                                 | Flycast                           | Flycast **(Standalone)**,<br>Flycast Dojo **(Standalone)**,<br>Redream **(Standalone)**,<br>Demul **(Standalone)** [W] | No           | In separate folder interpreted as a file, with .m3u playlist if multi-disc game |
 | easyrpg               | EasyRPG Game Engine                            | EasyRPG                           | EasyRPG Player **(Standalone)** | No           | See the specific _EasyRPG Game Engine_ section elsewhere in this guide |
 | electron              | Acorn Electron                                 | MAME [Tape] **(Standalone)**      | MAME [Diskette DFS] **(Standalone)**,<br>MAME [Diskette ADFS] **(Standalone)** | Yes          | Single archive, or single tape or diskette image file |
-| emulators             | Emulators                                      | _Suspend ES-DE_                   | _Keep ES-DE running_,<br> _AppImage (Suspend ES-DE)_ [L],<br> _AppImage (Keep ES-DE running)_ [L] | No           | See the specific _Ports and desktop applications_ section elsewhere in this guide |
+| emulators             | Emulators                                      | _Suspend ES-DE_                   | _Keep ESTACION-PRO running_,<br> _AppImage (Suspend ESTACION-PRO)_ [L],<br> _AppImage (Keep ESTACION-PRO running)_ [L] | No           | See the specific _Ports and desktop applications_ section elsewhere in this guide |
 | epic                  | Epic Games Store                               | Epic Games Store **(Standalone)** |                       | No           | Shortcut (.desktop/.app/.lnk) file |
 | famicom               | Nintendo Family Computer                       | Mesen                             | Mesen **(Standalone)** [LW],<br>Nestopia UE,<br>Nestopia UE **(Standalone)** [L],<br>FCEUmm,<br>QuickNES,<br>puNES **(Standalone)** [LW],<br>Mednafen **(Standalone)**,<br>ares **(Standalone)**,<br>ares FDS **(Standalone)**,<br>jgenesis **(Standalone)** [LW],<br>Plastic **(Standalone)** [L],<br>3dSen **(Standalone)**,<br>3dSen **(Wine)** [L],<br>3dSen **(Proton)** [L] | No           | Single archive or ROM file. For Famicom games in 3D see the specific _Nintendo NES and Famicom in 3D_ section elsewhere in this guide |
 | fba                   | FinalBurn Alpha                                | FB Alpha 2012                     | FB Alpha 2012 Neo Geo,<br>FB Alpha 2012 CPS-1,<br>FB Alpha 2012 CPS-2,<br>FB Alpha 2012 CPS-3 | Yes          | See the specific _Arcade and Neo Geo_ section elsewhere in this guide |
@@ -4934,7 +4934,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | lutris                | Lutris Open Gaming Platform                    | Lutris **(Standalone)** [L]       |                                   | No           | See the specific _Lutris_ section elsewhere in this guide |
 | lutro                 | Lutro Game Engine                              | Lutro                             |                                   |              |                                      |
 | macintosh             | Apple Macintosh                                | MAME Mac SE Bootable **(Standalone)** | MAME Mac SE Boot Disk **(Standalone)**,<br>MAME Mac Plus Bootable **(Standalone)**,<br>MAME Mac Plus Boot Disk **(Standalone)**,<br>Basilisk II **(Standalone)**,<br>SheepShaver **(Standalone)**,<br>Mini vMac | Yes          | See the specific _Apple Macintosh_ section elsewhere in this guide |
-| mame                  | Multiple Arcade Machine Emulator               | MAME - Current                    | MAME 2010,<br>MAME 2003-Plus,<br>MAME 2003,<br>MAME 2000,<br>MAME **(Standalone)**,<br>FinalBurn Neo,<br>FinalBurn Neo **(Standalone)** [LW],<br>FB Alpha 2012,<br>Geolith,<br>Flycast,<br>Flycast **(Standalone)**,<br>Flycast Dojo **(Standalone)**,<br>Kronos [LW],<br>DICE,<br>Model 2 Emulator **(Standalone)** [W],<br>Model 2 Emulator [Suspend ES-DE] **(Standalone)** [W],<br>Supermodel **(Standalone)**,<br>Supermodel Dojo **(Standalone)** [W],<br>Lindbergh Loader **(Standalone)** [L],<br>MFME **(Standalone)** [LW],<br> _Shortcut or script_ | Depends      | See the specific _Arcade and Neo Geo_ section elsewhere in this guide |
+| mame                  | Multiple Arcade Machine Emulator               | MAME - Current                    | MAME 2010,<br>MAME 2003-Plus,<br>MAME 2003,<br>MAME 2000,<br>MAME **(Standalone)**,<br>FinalBurn Neo,<br>FinalBurn Neo **(Standalone)** [LW],<br>FB Alpha 2012,<br>Geolith,<br>Flycast,<br>Flycast **(Standalone)**,<br>Flycast Dojo **(Standalone)**,<br>Kronos [LW],<br>DICE,<br>Model 2 Emulator **(Standalone)** [W],<br>Model 2 Emulator [Suspend ESTACION-PRO] **(Standalone)** [W],<br>Supermodel **(Standalone)**,<br>Supermodel Dojo **(Standalone)** [W],<br>Lindbergh Loader **(Standalone)** [L],<br>MFME **(Standalone)** [LW],<br> _Shortcut or script_ | Depends      | See the specific _Arcade and Neo Geo_ section elsewhere in this guide |
 | mame-advmame          | AdvanceMAME                                    | AdvanceMAME **(Standalone)** [LW] |                                   | Depends      | See the specific _Arcade and Neo Geo_ section elsewhere in this guide |
 | mark3                 | Sega Mark III                                  | Genesis Plus GX                   | Genesis Plus GX Wide,<br>SMS Plus GX,<br>Gearsystem,<br>PicoDrive,<br>Mednafen **(Standalone)**,<br>Mesen **(Standalone)** [LW],<br>ares **(Standalone)**,<br>jgenesis **(Standalone)** [LW] | No           | Single archive or ROM file |
 | mastersystem          | Sega Master System                             | Genesis Plus GX                   | Genesis Plus GX Wide,<br>SMS Plus GX,<br>Gearsystem,<br>PicoDrive,<br>Mednafen **(Standalone)**,<br>Mesen **(Standalone)** [LW],<br>ares **(Standalone)**,<br>jgenesis **(Standalone)** [LW] | No           | Single archive or ROM file |
@@ -4944,7 +4944,7 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | megadrivejp           | Sega Mega Drive [Japan]                        | Genesis Plus GX                   | Genesis Plus GX Wide,<br>PicoDrive,<br>BlastEm,<br>BlastEm **(Standalone)** [LW],<br>ClownMDEmu,<br>Mednafen **(Standalone)**,<br>ares **(Standalone)**,<br>jgenesis **(Standalone)** [LW] | No           | Single archive or ROM file |
 | megaduck              | Creatronic Mega Duck                           | SameDuck                          | MAME - Current,<br>MAME **(Standalone)** | No           | Single archive or ROM file |
 | mess                  | Multi Emulator Super System                    | MESS 2015                         |                                   |              |                                      |
-| model2                | Sega Model 2                                   | MAME - Current                    | MAME **(Standalone)**,<br>Model 2 Emulator **(Standalone)** [W],<br>Model 2 Emulator [Suspend ES-DE] **(Standalone)** [W],<br>Model 2 Emulator **(Wine)** [L],<br>Model 2 Emulator **(Proton)** [L] | Yes for MAME | See the specific _Arcade and Neo Geo_ section elsewhere in this guide |
+| model2                | Sega Model 2                                   | MAME - Current                    | MAME **(Standalone)**,<br>Model 2 Emulator **(Standalone)** [W],<br>Model 2 Emulator [Suspend ESTACION-PRO] **(Standalone)** [W],<br>Model 2 Emulator **(Wine)** [L],<br>Model 2 Emulator **(Proton)** [L] | Yes for MAME | See the specific _Arcade and Neo Geo_ section elsewhere in this guide |
 | model3                | Sega Model 3                                   | Supermodel **(Standalone)**       | Supermodel Dojo **(Standalone)** [W],<br>MAME - Current,<br>MAME **(Standalone)** | No           | See the specific _Arcade and Neo Geo_ section elsewhere in this guide |
 | moto                  | Thomson MO/TO Series                           | Theodore                          |                                   |              |                                      |
 | msx                   | MSX                                            | blueMSX                           | fMSX,<br>openMSX **(Standalone)**,<br>openMSX No Machine **(Standalone)**,<br>ares **(Standalone)** | Yes          |                                      |
@@ -5035,9 +5035,9 @@ The **@** symbol indicates that the emulator is _deprecated_ and will be removed
 | wasm4                 | WASM-4 Fantasy Console                         | WASM-4                            |                                   | No           | Single .wasm file                    |
 | wii                   | Nintendo Wii                                   | Dolphin                           | Dolphin **(Standalone)**,<br>PrimeHack **(Standalone)** [LW] | No           |                                      |
 | wiiu                  | Nintendo Wii U                                 | Cemu **(Standalone)**             |                                   | No           | See the specific _Nintendo Wii U_ section elsewhere in this guide |
-| windows               | Microsoft Windows                              | _Suspend ES-DE_                   | _Keep ES-DE running_,<br> _AppImage (Suspend ES-DE)_ [L],<br> _AppImage (Keep ES-DE running)_ [L] | No           | Shortcut (.desktop/.app/.lnk) file, script or AppImage |
-| windows3x             | Microsoft Windows 3.x                          | DOSBox-X **(Standalone)**         | DOSBox-Pure,<br>DOSBox Pure Unleashed **(Standalone)**,<br> _Shortcut or script (Suspend ES-DE)_,<br> _Shortcut or script (Keep ES-DE running)_,<br> _AppImage (Suspend ES-DE)_ [L],<br> _AppImage (Keep ES-DE running)_ [L] | No           | See the specific _Microsoft Windows 3.x and 9x_ section elsewhere in this guide |
-| windows9x             | Microsoft Windows 9x                           | DOSBox-X **(Standalone)**         | DOSBox-Pure,<br>DOSBox Pure Unleashed **(Standalone)**,<br> _Shortcut or script (Suspend ES-DE)_,<br> _Shortcut or script (Keep ES-DE running)_,<br> _AppImage (Suspend ES-DE)_ [L],<br> _AppImage (Keep ES-DE running)_ [L] | No           | See the specific _Microsoft Windows 3.x and 9x_ section elsewhere in this guide |
+| windows               | Microsoft Windows                              | _Suspend ES-DE_                   | _Keep ESTACION-PRO running_,<br> _AppImage (Suspend ESTACION-PRO)_ [L],<br> _AppImage (Keep ESTACION-PRO running)_ [L] | No           | Shortcut (.desktop/.app/.lnk) file, script or AppImage |
+| windows3x             | Microsoft Windows 3.x                          | DOSBox-X **(Standalone)**         | DOSBox-Pure,<br>DOSBox Pure Unleashed **(Standalone)**,<br> _Shortcut or script (Suspend ESTACION-PRO)_,<br> _Shortcut or script (Keep ESTACION-PRO running)_,<br> _AppImage (Suspend ESTACION-PRO)_ [L],<br> _AppImage (Keep ESTACION-PRO running)_ [L] | No           | See the specific _Microsoft Windows 3.x and 9x_ section elsewhere in this guide |
+| windows9x             | Microsoft Windows 9x                           | DOSBox-X **(Standalone)**         | DOSBox-Pure,<br>DOSBox Pure Unleashed **(Standalone)**,<br> _Shortcut or script (Suspend ESTACION-PRO)_,<br> _Shortcut or script (Keep ESTACION-PRO running)_,<br> _AppImage (Suspend ESTACION-PRO)_ [L],<br> _AppImage (Keep ESTACION-PRO running)_ [L] | No           | See the specific _Microsoft Windows 3.x and 9x_ section elsewhere in this guide |
 | wonderswan            | Bandai WonderSwan                              | Beetle Cygne                      | Mednafen **(Standalone)**,<br>ares **(Standalone)**,<br>ares [Benesse Pocket Challenge V2] **(Standalone)**,<br>Mesen **(Standalone)** [LW] | No           | Single archive or ROM file    |
 | wonderswancolor       | Bandai WonderSwan Color                        | Beetle Cygne                      | Mednafen **(Standalone)**,<br>ares **(Standalone)**,<br>Mesen **(Standalone)** [LW] | No           | Single archive or ROM file    |
 | x1                    | Sharp X1                                       | X Millennium                      | MAME [Diskette] **(Standalone)**,<br>MAME [Tape] **(Standalone)** | Yes for MAME | Single archive or diskette/tape file |

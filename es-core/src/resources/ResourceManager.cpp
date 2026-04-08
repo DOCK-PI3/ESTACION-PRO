@@ -67,16 +67,18 @@ std::string ResourceManager::getResourcePath(const std::string& path, bool termi
         }
         else {
 #else
-        // Check under the ES executable directory.
-        std::string testExePath {Utils::FileSystem::getExePath() + "/resources/" + &path[2]};
+#if !(defined(__unix__) && !defined(APPIMAGE_BUILD))
+    // Check under the ES executable directory.
+    std::string testExePath {Utils::FileSystem::getExePath() + "/resources/" + &path[2]};
 
-        if (Utils::FileSystem::exists(testExePath)) {
-            return testExePath;
-        }
-        // For missing resources, log an error and terminate the application. This should
-        // indicate that we have a broken ES-DE installation. If the argument
-        // terminateOnFailure is set to false though, then skip this step.
-        else {
+    if (Utils::FileSystem::exists(testExePath)) {
+        return testExePath;
+    }
+#endif
+    // For missing resources, log an error and terminate the application. This should
+    // indicate that we have a broken ESTACION-PRO installation. If the argument
+    // terminateOnFailure is set to false though, then skip this step.
+    else {
 #endif
             if (terminateOnFailure) {
                 LOG(LogError) << "Program resource missing: " << path;
@@ -89,10 +91,10 @@ std::string ResourceManager::getResourcePath(const std::string& path, bool termi
 #elif defined(__unix__) && !defined(APPIMAGE_BUILD)
             LOG(LogError) << testDataPath;
 #endif
-#if !defined(__ANDROID__)
+#if !defined(__ANDROID__) && !(defined(__unix__) && !defined(APPIMAGE_BUILD))
                 LOG(LogError) << testExePath;
 #endif
-                LOG(LogError) << "Has ES-DE been properly installed?";
+                LOG(LogError) << "Has ESTACION-PRO been properly installed?";
                 Utils::Platform::emergencyShutdown();
             }
             else {

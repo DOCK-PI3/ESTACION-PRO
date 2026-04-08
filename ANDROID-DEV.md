@@ -1,6 +1,6 @@
-# ES-DE Frontend (development version) - Android documentation
+# ESTACION-PRO Frontend (development version) - Android documentation
 
-This document contains information specific to the Android release, for more general ES-DE documentation refer to the [User guide](USERGUIDE-DEV.md) as well as the general [FAQ](FAQ.md).
+This document contains information specific to the Android release, for more general ESTACION-PRO documentation refer to the [User guide](USERGUIDE-DEV.md) as well as the general [FAQ](FAQ.md).
 
 It's also generally recommended to read the [Frequently Asked Questions (FAQ) for Android](FAQ-ANDROID.md) document prior to diving into the information in this document.
 
@@ -12,31 +12,31 @@ Table of contents:
 
 ## First startup and onboarding
 
-When you first start ES-DE you will be greeted by a welcome screen, this is part of the _configurator_, the ES-DE onboarding interface. The configurator is easy to use and will guide you through the necessary setup steps.
+When you first start ESTACION-PRO you will be greeted by a welcome screen, this is part of the _configurator_, the ESTACION-PRO onboarding interface. The configurator is easy to use and will guide you through the necessary setup steps.
 
-As a first step you need to give ES-DE the required storage access permission or it will not be able to function. Just enable the setting and the configurator will proceed to the next step. Next you will need to define an application data directory where your settings, scraped media, custom collections and so on will be stored. By default this will be placed in the _ES-DE_ directory in the root of your device's internal storage, and this directory will be created for you automatically.
+As a first step you need to give ESTACION-PRO the required storage access permission or it will not be able to function. Just enable the setting and the configurator will proceed to the next step. Next you will need to define an application data directory where your settings, scraped media, custom collections and so on will be stored. By default this will be placed in the _ES-DE_ directory in the root of your device's internal storage, and this directory will be created for you automatically.
 
 After this step you need to select a ROMs directory where your game files will be stored, by default this will be named _ROMs_ and will be located in the root of you device's internal storage. You can however choose to place this on an SD card if you want to, just change the path using the Android file selector GUI. If you do change the path to the SD card you will however need to manually create the ROMs directory as well as to delete the empty directory that was created for you on the built-in storage.
 
 The next step is optional, and it's whether to create the game systems directory structure inside your ROMs folder. Performing this will also create _systeminfo.txt_ files in each system directory. These files contain information about the system such as what file extensions and emulators that are supported. They are not mandatory for the app to function, they are only there for your convenience. In general it's recommended to create the system directories, although you could remove the ones you don't need afterwards for a slightly faster app startup speed.
 
-This is basically the onboarding process, and ES-DE should now start up. Just be aware that you need to place at least one game with a supported file extension in the ROMs directory tree or ES-DE will only show an information dialog about missing games. You can however import native Android apps and games directly from this interface. The game import process is explained elsewhere in this document.
+This is basically the onboarding process, and ESTACION-PRO should now start up. Just be aware that you need to place at least one game with a supported file extension in the ROMs directory tree or ESTACION-PRO will only show an information dialog about missing games. You can however import native Android apps and games directly from this interface. The game import process is explained elsewhere in this document.
 
-Also note that ES-DE does not install any emulators, you need to install those separately. There is more information about that topic later in this document.
+Also note that ESTACION-PRO does not install any emulators, you need to install those separately. There is more information about that topic later in this document.
 
-If you need to re-run the configurator for some reason then the easiest way is to go into the Android Apps setting screen and revoke the storage access permissions under _Special app access_. This will make the configurator run automatically next time you start ES-DE. Another way to force it to start is to clear the app's storage under _Storage & cache_ but this is normally not recommended as it also deletes all themes you have downloaded using the theme downloader. A third option would be to rename either the ES-DE or ROMs directory as this will also trigger the configurator on next app startup.
+If you need to re-run the configurator for some reason then the easiest way is to go into the Android Apps setting screen and revoke the storage access permissions under _Special app access_. This will make the configurator run automatically next time you start ESTACION-PRO. Another way to force it to start is to clear the app's storage under _Storage & cache_ but this is normally not recommended as it also deletes all themes you have downloaded using the theme downloader. A third option would be to rename either the ESTACION-PRO or ROMs directory as this will also trigger the configurator on next app startup.
 
 ## Touch input overlay
 
-By default the touch input overlay will be enabled which makes it possible to use ES-DE without a controller or physical keyboard by overlaying virtual buttons on top of the ES-DE interface. If you are using a device which has a built-in controller you may however want to disable this feature. That is done via the _Enable touch overlay_ option in the _Input device settings_ menu on the main menu. Just be aware that disabling this option on a device where you have no other input method than touch will lock you out of the application.
+By default the touch input overlay will be enabled which makes it possible to use ESTACION-PRO without a controller or physical keyboard by overlaying virtual buttons on top of the ESTACION-PRO interface. If you are using a device which has a built-in controller you may however want to disable this feature. That is done via the _Enable touch overlay_ option in the _Input device settings_ menu on the main menu. Just be aware that disabling this option on a device where you have no other input method than touch will lock you out of the application.
 
-If you accidentally disable the touch overlay you can force the configurator to run as explained in the previous section above, this will reset the touch overlay setting as long as you have at least pressed the _Begin setup_ button. Another option would of course be to temporarily plug in a controller or keyboard to enable the setting via its menu entry. A third option would be to manually edit the es_settings.xml file in the ES-DE application data directory. The setting you are after is named _InputTouchOverlay_ which should be changed from _false_ to _true_.
+If you accidentally disable the touch overlay you can force the configurator to run as explained in the previous section above, this will reset the touch overlay setting as long as you have at least pressed the _Begin setup_ button. Another option would of course be to temporarily plug in a controller or keyboard to enable the setting via its menu entry. A third option would be to manually edit the es_settings.xml file in the ESTACION-PRO application data directory. The setting you are after is named _InputTouchOverlay_ which should be changed from _false_ to _true_.
 
 Apart from this there are numerous options for the touch overlay, like the ability to change its size, opacity and fade-out time. Setting the fade-out to zero will make it permanently visible. See the [User guide](USERGUIDE-DEV.md) for a complete reference of all app settings and features.
 
 ## Retention of files and data
 
-Almost all files saved and used by ES-DE are kept in the shared storage on either the device's built-in storage or on the SD card. This means that uninstalling the ES-DE app will not remove any of that data. The only thing that will be deleted are themes that have been downloaded using the built-in theme downloader, as it's not possible to store these in the ES-DE application data directory for technical reasons.
+Almost all files saved and used by ESTACION-PRO are kept in the shared storage on either the device's built-in storage or on the SD card. This means that uninstalling the ESTACION-PRO app will not remove any of that data. The only thing that will be deleted are themes that have been downloaded using the built-in theme downloader, as it's not possible to store these in the ESTACION-PRO application data directory for technical reasons.
 
 ## Emulation on Android in general
 
@@ -46,7 +46,7 @@ Thankfully sideloading emulators is easy to do, the exact producedure for how to
 
 There is also the [F-Droid](https://f-droid.org/) app store as an alternative to Google Play, and this service contains a couple of emulators that are not present on the Play store, or that are present there but haven't been updated for a very long time.
 
-A number of emulators support the [FileProvider](https://developer.android.com/reference/androidx/core/content/FileProvider) API which makes it possible for ES-DE to temporarily provide storage access to the game file on launch. This means that most of the time no access permission needs to be setup in the emulator upfront. Access can however only be passed for single files, so for systems that support multi-file games such as disc-based games in .bin/.cue format SAF URIs are often used instead. For those emulators you will therefore generally need to manually provide scoped storage access to each game system directory. Note that it's not supported to give access to the root of the entire ROM directory for most emulators that use scoped storage, it has to be for the specific system. For instance `/storage/emulated/0/ROMs/n64` rather than `/storage/emulated/0/ROMs`. The MAME4droid emulator is an exception to this rule though, as explained elsewhere in this document.
+A number of emulators support the [FileProvider](https://developer.android.com/reference/androidx/core/content/FileProvider) API which makes it possible for ESTACION-PRO to temporarily provide storage access to the game file on launch. This means that most of the time no access permission needs to be setup in the emulator upfront. Access can however only be passed for single files, so for systems that support multi-file games such as disc-based games in .bin/.cue format SAF URIs are often used instead. For those emulators you will therefore generally need to manually provide scoped storage access to each game system directory. Note that it's not supported to give access to the root of the entire ROM directory for most emulators that use scoped storage, it has to be for the specific system. For instance `/storage/emulated/0/ROMs/n64` rather than `/storage/emulated/0/ROMs`. The MAME4droid emulator is an exception to this rule though, as explained elsewhere in this document.
 
 Adding to the FileProvider API confusion is the fact that some emulators will only launch games when using this API, but they still need to have scoped storage access setup within the emulator interface. FPseNG and FPse are two examples of this. So there is unfortunately no definitive rule regarding the use of the FileProvider API, it all depends on how the emulator has implemented this functionality.
 
@@ -78,13 +78,13 @@ The following emulators are configured for FileProvider access:
 * SWF Player
 * Virtual Virtual Boy
 
-Some of these emulators require BIOS files, so they still need to be configured before they can be used with ES-DE.
+Some of these emulators require BIOS files, so they still need to be configured before they can be used with ESTACION-PRO.
 
 ## Splitting system directories across multiple storage devices
 
-While it's possible to split the game system directories across multiple storage devices this is not recommended. First it's tedious to setup, but more importantly it breaks portability for the installation. For instance you can't easily migrate between the different operating systems that ES-DE support and your custom collections will not be portable at all, as they will instead contain absolute paths to your games.
+While it's possible to split the game system directories across multiple storage devices this is not recommended. First it's tedious to setup, but more importantly it breaks portability for the installation. For instance you can't easily migrate between the different operating systems that ESTACION-PRO support and your custom collections will not be portable at all, as they will instead contain absolute paths to your games.
 
-The way ES-DE works is that you have a defined ROMs directory which corresponds to the %ROMPATH% variable that is used throughout the es_systems.xml file and the custom collections files. For example this is the system configuration for the samcoupe system:
+The way ESTACION-PRO works is that you have a defined ROMs directory which corresponds to the %ROMPATH% variable that is used throughout the es_systems.xml file and the custom collections files. For example this is the system configuration for the samcoupe system:
 ```xml
 <system>
     <name>samcoupe</name>
@@ -97,7 +97,7 @@ The way ES-DE works is that you have a defined ROMs directory which corresponds 
 </system>
 ```
 
-Here the path tag is using the %ROMPATH% variable to keep it relative to the base ROMs directory as selected via the onboarding configurator when you first installed ES-DE. If you relocate your ROMs directory to a different storage device, or copy it to another device altogether or if you synchronize your games across Android and Linux, macOS or Windows then everything will still work correctly.
+Here the path tag is using the %ROMPATH% variable to keep it relative to the base ROMs directory as selected via the onboarding configurator when you first installed ESTACION-PRO. If you relocate your ROMs directory to a different storage device, or copy it to another device altogether or if you synchronize your games across Android and Linux, macOS or Windows then everything will still work correctly.
 
 Similarly custom collection files contain the %ROMPATH% variable too, such as this:
 ```
@@ -109,10 +109,10 @@ Similarly custom collection files contain the %ROMPATH% variable too, such as th
 
 This makes your custom collections portable if you move your ROMs directory and you can also transfer the collections between various devices and operating systems while keeping everything working seamlessly.
 
-If you still insist on relocating some game system directories to another storage device then you need to make custom system configuration entries for them. See the _Game system customization_ section of the [User guide](USERGUIDE.md#game-system-customizations) for details on how this is accomplished. In short you need to create an es_systems.xml file in the ES-DE/custom_systems directory and replace the %ROMPATH% variable with an absolute path for the specific systems you want to relocate.
+If you still insist on relocating some game system directories to another storage device then you need to make custom system configuration entries for them. See the _Game system customization_ section of the [User guide](USERGUIDE.md#game-system-customizations) for details on how this is accomplished. In short you need to create an es_systems.xml file in the ESTACION-PRO/custom_systems directory and replace the %ROMPATH% variable with an absolute path for the specific systems you want to relocate.
 
 You can find the bundled es_systems.xml file for Android here (which contains configuration for all supported systems):\
-https://gitlab.com/es-de/emulationstation-de/-/tree/stable-3.0/resources/systems/android
+https://github.com/DOCK-PI3/ESTACION-PRO/tree/stable-3.0/resources/systems/android
 
 Here's an example of a custom es_systems.xml file that relocates the samcoupe system:
 
@@ -163,11 +163,11 @@ If going for this configuration, adding samcoupe games to a custom collection wo
 
 This is obviously a non-portable collection.
 
-You can relocate as many systems as you want, you just need to place them all within the systemList tag pairs in ES-DE/custom_systems/es_systems.xml.
+You can relocate as many systems as you want, you just need to place them all within the systemList tag pairs in ESTACION-PRO/custom_systems/es_systems.xml.
 
 ## Launching native Android apps and games
 
-You can import native Android apps and games into ES-DE using the built-in _Game importer_ which is available from the _Utilities_ menu and from the _"No ROMs"_ interface if you attempt to start ES-DE without having any games in your ROMs directory.
+You can import native Android apps and games into ESTACION-PRO using the built-in _Game importer_ which is available from the _Utilities_ menu and from the _"No ROMs"_ interface if you attempt to start ESTACION-PRO without having any games in your ROMs directory.
 
 It's also possible to import app icons as well as banners or logos if they are available for the apps. For further details refer to the _Game importer_ section of the [User guide](USERGUIDE-DEV.md#game-importer).
 
@@ -175,59 +175,59 @@ Note that your imported apps and games are not automatically updated when you ad
 
 It's possible to scrape Android apps and games using ScreenScraper, but at the time of writing the amount of entries in their database is somehow limited. It's therefore encouraged to participate in improving this situation by contributing metadata and media to their database.
 
-## Running ES-DE as the Android home app
+## Running ESTACION-PRO as the Android home app
 
-To run ES-DE as the home app (launcher) you'll select it accordingly from the Apps section of the Android Settings app. When in this mode the ability to quit the app is completely disabled as it doesn't make sense to exit the home app. Therefore the _Quit ES-DE_ entry on the main menu is removed and the _Back button/back swipe exits app_ option in the _Other settings_ menu and its corresponding functionality is disabled.
+To run ESTACION-PRO as the home app (launcher) you'll select it accordingly from the Apps section of the Android Settings app. When in this mode the ability to quit the app is completely disabled as it doesn't make sense to exit the home app. Therefore the _Quit ES-DE_ entry on the main menu is removed and the _Back button/back swipe exits app_ option in the _Other settings_ menu and its corresponding functionality is disabled.
 
-Apart from this it works as you'd expect, ES-DE will start automatically when rebooting the device and pressing the home button will return to ES-DE regardless of which app you have running.
+Apart from this it works as you'd expect, ESTACION-PRO will start automatically when rebooting the device and pressing the home button will return to ESTACION-PRO regardless of which app you have running.
 
-If the operating system runs out of memory when a game is running it will kill ES-DE even if it's set as home app. If this happens ES-DE will reload whenever you return from the game or if you press the home button. This is simply how Android works.
+If the operating system runs out of memory when a game is running it will kill ESTACION-PRO even if it's set as home app. If this happens ESTACION-PRO will reload whenever you return from the game or if you press the home button. This is simply how Android works.
 
-Also be aware that the version check that runs on app startup may not be able to complete successfully when ES-DE is set as the home app, as the device may not have network connectivity enabled yet just after rebooting.
+Also be aware that the version check that runs on app startup may not be able to complete successfully when ESTACION-PRO is set as the home app, as the device may not have network connectivity enabled yet just after rebooting.
 
-It's generally a very good idea to import your native Android apps into ES-DE prior to setting it as the home app, this way you can easily access things like the Settings app. Note however that even if you somehow lock yourself out of the system by setting ES-DE as the home app and not having any native apps added you can still always access the Settings app via the Android notification shade. On most devices you access this by swiping down from the top of the screen. After swiping down, just select the cogwheel icon to start the Settings app. From there you can change the home app to something else than ES-DE, should you need to.
+It's generally a very good idea to import your native Android apps into ESTACION-PRO prior to setting it as the home app, this way you can easily access things like the Settings app. Note however that even if you somehow lock yourself out of the system by setting ESTACION-PRO as the home app and not having any native apps added you can still always access the Settings app via the Android notification shade. On most devices you access this by swiping down from the top of the screen. After swiping down, just select the cogwheel icon to start the Settings app. From there you can change the home app to something else than ESTACION-PRO, should you need to.
 
-## Running ES-DE in multi-window mode
+## Running ESTACION-PRO in multi-window mode
 
-On tablets and other devices that support it, ES-DE can be run in multi-window mode. This does come with some caveats though, most importantly that changing to or from multi-window mode or changing the size of the ES-DE window when running in multi-window mode will trigger a reload of the application. When this happens any menu that is open will get unceremoniously closed, so make sure to never do this when for instance the scraper or theme downloader is running as they will get instantly stopped.
+On tablets and other devices that support it, ESTACION-PRO can be run in multi-window mode. This does come with some caveats though, most importantly that changing to or from multi-window mode or changing the size of the ESTACION-PRO window when running in multi-window mode will trigger a reload of the application. When this happens any menu that is open will get unceremoniously closed, so make sure to never do this when for instance the scraper or theme downloader is running as they will get instantly stopped.
 
-Also be aware that running in multi-window mode obviously changes the ES-DE window size and therefore likely the window aspect ratio as well, so it may not look good with some themes that do not support the new aspect ratio.
+Also be aware that running in multi-window mode obviously changes the ESTACION-PRO window size and therefore likely the window aspect ratio as well, so it may not look good with some themes that do not support the new aspect ratio.
 
-Finally, multi-window mode doesn't work when ES-DE has been set as the home app as Android does not allow that.
+Finally, multi-window mode doesn't work when ESTACION-PRO has been set as the home app as Android does not allow that.
 
-## Known ES-DE problems
+## Known ESTACION-PRO problems
 
 * Poor performance/low frame rate after startup on some devices, which seems to happen randomly and is usually resolved by itself within 10 to 30 seconds.
-* The Android soft keyboard causes rendering issues when navigating using a controller or physical keyboard, as such the ES-DE built-in keyboard is enabled by default for the time being. For testing purposes the Android soft keyboard can be enabled via the _Enable virtual keyboard_ option in the _UI settings_ menu. If only using touch input the issue is not present. This problem is believed to be caused by a bug in the SDL library so it probably needs to be resolved there.
-* Using a mounted USB storage device for the ES-DE and/or ROMs directories will lead to the configurator exiting after finishing the setup instead of launching ES-DE. Restarting ES-DE manually will lead to a successful startup. If the option to create the system directories was selected in the configurator then this will have to be executed again from inside ES-DE. Note that using a mounted USB storage device leads to a very crippled setup anyway, as for example RetroArch can't read any games from such devices (i.e. from the /mnt/media_rw/ directory tree). Only emulators supporting scoped storage will be usable in such a setup.
+* The Android soft keyboard causes rendering issues when navigating using a controller or physical keyboard, as such the ESTACION-PRO built-in keyboard is enabled by default for the time being. For testing purposes the Android soft keyboard can be enabled via the _Enable virtual keyboard_ option in the _UI settings_ menu. If only using touch input the issue is not present. This problem is believed to be caused by a bug in the SDL library so it probably needs to be resolved there.
+* Using a mounted USB storage device for the ESTACION-PRO and/or ROMs directories will lead to the configurator exiting after finishing the setup instead of launching ESTACION-PRO. Restarting ESTACION-PRO manually will lead to a successful startup. If the option to create the system directories was selected in the configurator then this will have to be executed again from inside ESTACION-PRO. Note that using a mounted USB storage device leads to a very crippled setup anyway, as for example RetroArch can't read any games from such devices (i.e. from the /mnt/media_rw/ directory tree). Only emulators supporting scoped storage will be usable in such a setup.
 
 ## Known problems on specific devices
 
-There are some devices which have specific quirks and issues which may cause problems when running ES-DE. Here are some things to consider and work around.
+There are some devices which have specific quirks and issues which may cause problems when running ESTACION-PRO. Here are some things to consider and work around.
 
 ### AYN Odin 2
 
-This device incorrectly reports two screens as being present even when just one screen is present. This will make game launching fail if the ES-DE setting _Other settings->Launch games on the other screen_ is enabled.
+This device incorrectly reports two screens as being present even when just one screen is present. This will make game launching fail if the ESTACION-PRO setting _Other settings->Launch games on the other screen_ is enabled.
 
 ### AYN Odin 3
 
-With its default configuration the theme downloader in ES-DE is unusable, to resolve this enable the setting _Handheld Settings->Advanced->Is it force start selinux_.
+With its default configuration the theme downloader in ESTACION-PRO is unusable, to resolve this enable the setting _Handheld Settings->Advanced->Is it force start selinux_.
 
 ### AYN Thor
 
-The Android task switcher can't be used when setting ES-DE (or other frontends) as the home app.
+The Android task switcher can't be used when setting ESTACION-PRO (or other frontends) as the home app.
 
 ### Logitech G Cloud
 
-This device will by default kill any process that is not currently focused, so if starting a game the OS will kill ES-DE so that it has to start up every time you return from a game. To fix this disable _Settings->Labs->Process protection_.
+This device will by default kill any process that is not currently focused, so if starting a game the OS will kill ESTACION-PRO so that it has to start up every time you return from a game. To fix this disable _Settings->Labs->Process protection_.
 
 ### Retroid Pocket G2
 
-With its default configuration the theme downloader in ES-DE is unusable, to resolve this enable the setting _Handheld Settings->Advanced->Is it force start selinux_.
+With its default configuration the theme downloader in ESTACION-PRO is unusable, to resolve this enable the setting _Handheld Settings->Advanced->Is it force start selinux_.
 
 ### Samsung devices
 
-There seems to be a firmware bug on at least some Samsung devices that may make ES-DE not find RetroArch when attempting to launch a game. This happens very rarely and is seemingly triggered after doing an OS update, or possibly after upgrading RetroArch itself, or due to a combination of the two. It's been observed on the S23 and S25 models. Just starting RetroArch once outside of ES-DE permanently fixes the problem. It's unclear whether this can happen for standalone emulators as well, but this has so far not been observed or reported.
+There seems to be a firmware bug on at least some Samsung devices that may make ESTACION-PRO not find RetroArch when attempting to launch a game. This happens very rarely and is seemingly triggered after doing an OS update, or possibly after upgrading RetroArch itself, or due to a combination of the two. It's been observed on the S23 and S25 models. Just starting RetroArch once outside of ESTACION-PRO permanently fixes the problem. It's unclear whether this can happen for standalone emulators as well, but this has so far not been observed or reported.
 
 ## Emulator installation and setup
 
@@ -235,7 +235,7 @@ Below are specific instructions and considerations for all supported emulators.
 
 ### RetroArch
 
-The RetroArch release from the Google Play store is problematic. It does not contain all emulator cores and a number of people have reported issues launching games from ES-DE (apparently it doesn't work at all on some devices). For these reasons it's strongly recommended to use the 64-bit release from the RetroArch website instead, or to install it from the Samsung Galaxy Store or the F-Droid store.
+The RetroArch release from the Google Play store is problematic. It does not contain all emulator cores and a number of people have reported issues launching games from ESTACION-PRO (apparently it doesn't work at all on some devices). For these reasons it's strongly recommended to use the 64-bit release from the RetroArch website instead, or to install it from the Samsung Galaxy Store or the F-Droid store.
 
 https://retroarch.com \
 https://galaxystore.samsung.com/detail/com.retroarch \
@@ -245,7 +245,7 @@ Be aware that you need to manually install every core you want to use from insid
 
 ### AetherSX2 / NetherSX2
 
-Although the emulator entry is named AetherSX2 the recommended release of this emulator is actually the NetherSX2 patched version as the AetherSX2 release on the Google Play store doesn't work correctly and probably can't be used with ES-DE at all. You'll need to search for this APK online, the filename you'll want is `15210-v1.5-4248-noads.apk`
+Although the emulator entry is named AetherSX2 the recommended release of this emulator is actually the NetherSX2 patched version as the AetherSX2 release on the Google Play store doesn't work correctly and probably can't be used with ESTACION-PRO at all. You'll need to search for this APK online, the filename you'll want is `15210-v1.5-4248-noads.apk`
 
 If you prefer to apply the NetherSX2 patch yourself (i.e. build the APK) then you can find all relevant information here:
 
@@ -302,7 +302,7 @@ https://github.com/weihuoya/citra/releases
 
 This emulator can be installed from the Play store. There is a paid version as well named ColEm Deluxe (ColEm+ ColecoVision Emulator is the store listing name).
 
-Although this emulator supports both the Adam and ColecoVision systems it can unfortunately not do both interchangeably. In order to play Adam games you need to go into the Emulation settings in ColEm and tick the _Coleco Adam_ box. And likewise you'll need to untick it any time you want to play a ColecoVision game. This is true for launching games from ES-DE as well as starting them from inside the emulator GUI.
+Although this emulator supports both the Adam and ColecoVision systems it can unfortunately not do both interchangeably. In order to play Adam games you need to go into the Emulation settings in ColEm and tick the _Coleco Adam_ box. And likewise you'll need to untick it any time you want to play a ColecoVision game. This is true for launching games from ESTACION-PRO as well as starting them from inside the emulator GUI.
 
 https://play.google.com/store/apps/details?id=com.fms.colem \
 https://play.google.com/store/apps/details?id=com.fms.colem.deluxe
@@ -319,7 +319,7 @@ https://dolphin-emu.org/download
 
 Although it's not normally recommended to use the unofficial Dolphin forks because they are mostly ancient and have been surpassed by the mainline Dolphin releases, there could still be situations where it's useful. For example on weaker devices where the older release would work better.
 
-There are multiple MMJR forks in existence, but the ones supported by ES-DE are `Dolphin.MMJR.v11505.apk` and `MMJR.v2.0-17878.apk` which can be downloaded from here:
+There are multiple MMJR forks in existence, but the ones supported by ESTACION-PRO are `Dolphin.MMJR.v11505.apk` and `MMJR.v2.0-17878.apk` which can be downloaded from here:
 
 https://archive.org/details/dolphin-and-citra-fork-backup
 
@@ -440,13 +440,13 @@ This PICO-8 game engine/emulator can be installed from the Play store.
 
 https://play.google.com/store/apps/details?id=me.dt2dev.infinity
 
-Note that since a recent emulator update it seems like individual games can no longer be launched from ES-DE, instead you'll just see the list of carts and you need to manually start the game from inside Infinity.
+Note that since a recent emulator update it seems like individual games can no longer be launched from ESTACION-PRO, instead you'll just see the list of carts and you need to manually start the game from inside Infinity.
 
 ### IrataJaguar
 
 This Atari Jaguar emulator can be downloaded from their website. Just be aware that it's very old and has not been updated for modern Android releases, so it may be finicky on some devices or it may not work at all.
 
-After installing the emulator, open it and go to the settings tab, then choose "Select ISO and BIOS directory" and navigate to the ROMs/atarijaguar folder. It seems like you also need to start the game from inside the emulator before you can run it from ES-DE. Starting a game will create a savestate file. If you now exit the emulator and run the game from ES-DE you'll see a list of savestate files, just select the correct one to start the game.
+After installing the emulator, open it and go to the settings tab, then choose "Select ISO and BIOS directory" and navigate to the ROMs/atarijaguar folder. It seems like you also need to start the game from inside the emulator before you can run it from ESTACION-PRO. Starting a game will create a savestate file. If you now exit the emulator and run the game from ESTACION-PRO you'll see a list of savestate files, just select the correct one to start the game.
 
 http://www.arts-union.ru/node/23
 
@@ -484,7 +484,7 @@ https://play.google.com/store/apps/details?id=com.pixelrespawn.linkboy
 
 These emulators can be installed from the Play store or downloaded from their GitHub sites. It's strongly recommended to go for the _MAME4droid Current_ version (previously named _MAME4droid 2024_) as this is updated with a recent MAME release while the older _MAME4droid_ is using an ancient MAME release.
 
-Note that for MAME4droid Current there's an exception when it comes to setting up the ROM path. Instead of selecting each separate system directory (as is done on most other standalone emulators) you must select the root of the ROMs directory tree. To change the ROM path open _Settings_ in MAME4droid Current, then select _General_ and then _Change ROMs path_. After restarting the emulator choose _External storage_ and then the ROMs directory which contains all your ES-DE system directories. If you instead choose a specific system directory like ROMs/arcade or ROMs/neogeo then only that specific system will work when launching games from ES-DE.
+Note that for MAME4droid Current there's an exception when it comes to setting up the ROM path. Instead of selecting each separate system directory (as is done on most other standalone emulators) you must select the root of the ROMs directory tree. To change the ROM path open _Settings_ in MAME4droid Current, then select _General_ and then _Change ROMs path_. After restarting the emulator choose _External storage_ and then the ROMs directory which contains all your ESTACION-PRO system directories. If you instead choose a specific system directory like ROMs/arcade or ROMs/neogeo then only that specific system will work when launching games from ESTACION-PRO.
 
 https://play.google.com/store/apps/details?id=com.seleuco.mame4d2024 \
 https://play.google.com/store/apps/details?id=com.seleuco.mame4droid \
@@ -536,7 +536,7 @@ https://github.com/mupen64plus-ae/mupen64plus-ae/actions
 
 ### My Boy! and My OldBoy!
 
-These emulators can be installed from the Play store as paid apps. There are also free/Lite versions available for these emulators but they have not been updated in years and don't run on modern devices. As such they are not supported by ES-DE.
+These emulators can be installed from the Play store as paid apps. There are also free/Lite versions available for these emulators but they have not been updated in years and don't run on modern devices. As such they are not supported by ESTACION-PRO.
 
 https://play.google.com/store/apps/details?id=com.fastemulator.gba \
 https://play.google.com/store/apps/details?id=com.fastemulator.gbc
@@ -549,13 +549,13 @@ https://github.com/proninyaroslav/nesoid/releases
 
 ### NooDS
 
-Although NooDS is available via the Play store that version does not allow game launching from ES-DE. To get that to work instead use the version from their GitHub site. Also note that this emulator does not support launching of zipped game files.
+Although NooDS is available via the Play store that version does not allow game launching from ESTACION-PRO. To get that to work instead use the version from their GitHub site. Also note that this emulator does not support launching of zipped game files.
 
 https://github.com/Hydr8gon/NooDS/releases
 
 ### OpenBOR
 
-Although OpenBOR is working fine on Android it's not possible to properly integrate it with a frontend, you'll instead need to install your game PAKs into the `/sdcard/OpenBOR/Paks` directory and create dummy .openbor files for your games in `ROMs/openbor` and after launching a game from ES-DE you need to manually start it from inside the OpenBOR GUI. There are more detailed setup instructions in the _OpenBOR_ section of the [User guide](USERGUIDE-DEV.md#openbor).
+Although OpenBOR is working fine on Android it's not possible to properly integrate it with a frontend, you'll instead need to install your game PAKs into the `/sdcard/OpenBOR/Paks` directory and create dummy .openbor files for your games in `ROMs/openbor` and after launching a game from ESTACION-PRO you need to manually start it from inside the OpenBOR GUI. There are more detailed setup instructions in the _OpenBOR_ section of the [User guide](USERGUIDE-DEV.md#openbor).
 
 You can download OpenBOR from their GitHub site, the version named _OpenBOR v3.0 Build 6391_ has for example been proven to work well.
 
@@ -563,7 +563,7 @@ https://github.com/DCurrent/openbor/releases
 
 ### Panda3DS (pandroid)
 
-This emulator is in early development and there currently seems to be no way to run a game directly from ES-DE. Instead the emulator GUI will be displayed on game launch and you will need to manually select the game from there. Note that the Android build of this emulator is named _pandroid_, but as the overall project name is Panda3DS it will be referred to as such in ES-DE. This emulator can be downloaded from their GitHub site.
+This emulator is in early development and there currently seems to be no way to run a game directly from ESTACION-PRO. Instead the emulator GUI will be displayed on game launch and you will need to manually select the game from there. Note that the Android build of this emulator is named _pandroid_, but as the overall project name is Panda3DS it will be referred to as such in ESTACION-PRO. This emulator can be downloaded from their GitHub site.
 
 https://github.com/wheremyfoodat/Panda3DS/releases
 
@@ -599,7 +599,7 @@ https://www.purei.org/downloads.php
 
 The Play store version of this emulator is getting frequent updates and is therefore recommended. There is a paid Gold version as well which is functionally identical to the free version.
 
-Make sure that you press the _Browse_ button in PPSSPP when you're adding scoped storage access to your games directory or you will not be able to launch any games from ES-DE.
+Make sure that you press the _Browse_ button in PPSSPP when you're adding scoped storage access to your games directory or you will not be able to launch any games from ESTACION-PRO.
 
 https://play.google.com/store/apps/details?id=org.ppsspp.ppsspp \
 https://play.google.com/store/apps/details?id=org.ppsspp.ppssppgold
@@ -616,7 +616,7 @@ This 3DO Interactive Multiplayer emulator can be downloaded from their website. 
 
 You need to place the BIOS file in the game system directory, i.e. in the ROMs/3do folder. The file panafz10.bin with MD5 checksum 51f2f43ae2f3508a14d9f56597e2d3ce has been proven to work.
 
-After installing the emulator, open it and go to the settings tab, then choose "Select ISO and BIOS directory" and navigate to the ROMs/3do folder. It seems like you also need to start the game from inside the emulator before you can run it from ES-DE. Starting a game will create a savestate file. If you now exit the emulator and run the game from ES-DE you'll see a list of savestate files, just select the correct one to start the game.
+After installing the emulator, open it and go to the settings tab, then choose "Select ISO and BIOS directory" and navigate to the ROMs/3do folder. It seems like you also need to start the game from inside the emulator before you can run it from ESTACION-PRO. Starting a game will create a savestate file. If you now exit the emulator and run the game from ESTACION-PRO you'll see a list of savestate files, just select the correct one to start the game.
 
 http://www.arts-union.ru/node/23
 
@@ -649,7 +649,7 @@ https://archive.org/details/skyline-edge-all-versions
 
 This emulator can be installed from the Play store. There is a paid version as well named Speccy Deluxe (Speccy+ ZX Spectrum Emulator is the store listing name).
 
-Although this emulator supports both the Sinclar ZX Spectrum and MGT SAM Coupé systems it can unfortunately not do both interchangeably. In order to play SAM Coupé games you need to go into the Emulation settings in Speccy and select _Sam Coupe_ from the _Computer Model_ selection screen. And likewise you'll need to change it back any time you want to play a ZX Spectrum game. This is true for launching games from ES-DE as well as starting them from inside the emulator GUI.
+Although this emulator supports both the Sinclar ZX Spectrum and MGT SAM Coupé systems it can unfortunately not do both interchangeably. In order to play SAM Coupé games you need to go into the Emulation settings in Speccy and select _Sam Coupe_ from the _Computer Model_ selection screen. And likewise you'll need to change it back any time you want to play a ZX Spectrum game. This is true for launching games from ESTACION-PRO as well as starting them from inside the emulator GUI.
 
 https://play.google.com/store/apps/details?id=com.fms.speccy \
 https://play.google.com/store/apps/details?id=com.fms.speccy.deluxe
@@ -676,7 +676,7 @@ https://github.com/SupernaviX/vvb/releases
 
 ### Visual Pinball
 
-Although Visual Pinball is working fine on Android it's not possible to properly integrate it with a frontend, you'll instead need to install your tables inside the app and create dummy .vpinball files for your games in ROMs/vpinball and after launching a table from ES-DE you need to manually start it from inside the Visual Pinball GUI. There are more detailed setup instructions in the Visual Pinball section of the User guide.
+Although Visual Pinball is working fine on Android it's not possible to properly integrate it with a frontend, you'll instead need to install your tables inside the app and create dummy .vpinball files for your games in ROMs/vpinball and after launching a table from ESTACION-PRO you need to manually start it from inside the Visual Pinball GUI. There are more detailed setup instructions in the Visual Pinball section of the User guide.
 
 You can download Visual Pinball from their GitHub automatic build system.
 
@@ -684,7 +684,7 @@ https://github.com/vpinball/vpinball/actions
 
 ### Vita3K
 
-Two separate Vita3K releases are supported by ES-DE and they share the same emulator entry. The primary find rule is for the official Vita3K release and the secondary find rule is for the Vita3K ZX fork. Both emulators can be downloaded from their GitHub sites. Refer to the User guide for detailed game setup instructions.
+Two separate Vita3K releases are supported by ESTACION-PRO and they share the same emulator entry. The primary find rule is for the official Vita3K release and the secondary find rule is for the Vita3K ZX fork. Both emulators can be downloaded from their GitHub sites. Refer to the User guide for detailed game setup instructions.
 
 https://github.com/Vita3K/Vita3K/releases \
 https://github.com/ikhoeyZX/Vita3K-Android/releases
@@ -694,11 +694,11 @@ https://github.com/ikhoeyZX/Vita3K-Android/releases
 In order to use Winlator to run Windows games you need to use a specific fork named _Winlator Cmod_ as mainline [Winlator](https://winlator.com/) does not offer frontend support. The Cmod fork can be downloaded from their GitHub page:\
 https://github.com/coffincolors/winlator
 
-There are three variants of the fork, the main one (aka Bionic) as well as the Glibc and PRoot builds. The main variant is the default emulator in ES-DE, so to use Glibc or PRoot instead you'll need to select either of these alternative emulator entries.
+There are three variants of the fork, the main one (aka Bionic) as well as the Glibc and PRoot builds. The main variant is the default emulator in ESTACION-PRO, so to use Glibc or PRoot instead you'll need to select either of these alternative emulator entries.
 
-In addition to the official repository there are multiple Winlator builds floating around the Internet, but these have not been extensively tested with ES-DE.
+In addition to the official repository there are multiple Winlator builds floating around the Internet, but these have not been extensively tested with ESTACION-PRO.
 
-It's beyond the scope of this document to describe how to install games in Winlator, but once it's done and you've created a shortcut to your game from inside the container you can export it via the _Export for Frontend_ option in the Winlator user interface. This will generate a .desktop file that you can place in the `ROMs/pcarcade`, `ROMs/type-x` or `ROMs/windows` folder and launch from ES-DE. You can alternatively set the _Frontend Export Path_ setting from inside the Winlator Settings screen to avoid the manual step of moving the .desktop file.
+It's beyond the scope of this document to describe how to install games in Winlator, but once it's done and you've created a shortcut to your game from inside the container you can export it via the _Export for Frontend_ option in the Winlator user interface. This will generate a .desktop file that you can place in the `ROMs/pcarcade`, `ROMs/type-x` or `ROMs/windows` folder and launch from ESTACION-PRO. You can alternatively set the _Frontend Export Path_ setting from inside the Winlator Settings screen to avoid the manual step of moving the .desktop file.
 
 ### X1 BOX
 
@@ -709,7 +709,7 @@ https://github.com/izzy2lost/xemu/releases
 
 ### Yaba Sanshiro 2
 
-This emulator can be installed from the Play store. Note that only the paid Pro version supports game launching from ES-DE. Also note that .bin/.cue files can't be launched for the time being, only .chd files seem to work. This needs to be fixed in the emulator so nothing can be done in ES-DE to work around that limitation.
+This emulator can be installed from the Play store. Note that only the paid Pro version supports game launching from ESTACION-PRO. Also note that .bin/.cue files can't be launched for the time being, only .chd files seem to work. This needs to be fixed in the emulator so nothing can be done in ESTACION-PRO to work around that limitation.
 
 https://play.google.com/store/apps/details?id=org.devmiyax.yabasanshioro2.pro
 
@@ -717,7 +717,7 @@ https://play.google.com/store/apps/details?id=org.devmiyax.yabasanshioro2.pro
 
 ## Device compatibility
 
-This is clearly not a complete list of Android devices, but rather those we know have been tested with ES-DE and for which there is a known status.
+This is clearly not a complete list of Android devices, but rather those we know have been tested with ESTACION-PRO and for which there is a known status.
 
 | Manufacturer | Model                   | Android release | Supported | Known issues        | Comment                    |
 | :----------- | :---------------------- | :-------------- | :-------- | :------------------ | :------------------------- |
@@ -797,7 +797,7 @@ This is clearly not a complete list of Android devices, but rather those we know
 | Orange Pi    | Pi 5                    | 12 (TV)         | Yes       | None                |                            |
 | Orange Pi    | Pi Zero3                | 12              | Yes       | None                |                            |
 | Powkiddy     | RGB (RK3566) series     | GammaOS 13 TV   | Yes       | None                | Limited RAM capacity for this device makes it unsuitable for demanding themes and large game collections |
-| Raspberry    | Pi 4/400                | 13, 14          | Yes       | None                | Low-power GPU so ES-DE may run a bit sluggish |
+| Raspberry    | Pi 4/400                | 13, 14          | Yes       | None                | Low-power GPU so ESTACION-PRO may run a bit sluggish |
 | Raspberry    | Pi 5                    | 15              | Yes       | None                | Very poor GPU performance, runs at almost double speed in Raspberry Pi OS so likely a driver issue |
 | Razer        | Edge                    | 13              | Yes       | None                |                            |
 | Realme       | GT2                     | 12              | Yes       | None                |                            |
@@ -860,7 +860,7 @@ This is clearly not a complete list of Android devices, but rather those we know
 
 All emulators are RetroArch cores unless marked as **(Standalone)**
 
-The **@** symbol indicates that the emulator is _deprecated_ and will be removed in a future ES-DE release.
+The **@** symbol indicates that the emulator is _deprecated_ and will be removed in a future ESTACION-PRO release.
 
 | System name           | Full name                                      | Default emulator                  | Alternative emulators             | Needs BIOS   | Recommended game setup               |
 | :-------------------- | :--------------------------------------------- | :-------------------------------- | :-------------------------------- | :----------- | :----------------------------------- |

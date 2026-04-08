@@ -1,4 +1,4 @@
-# ES-DE Frontend - Changelog
+# ESTACION-PRO Frontend - Changelog
 
 ## Version 3.4.1 / 3.4.1-58 (in development)
 
@@ -8,13 +8,13 @@
 
 This release adds official (although experimental) support for Linux on AArch64, which is aiming for operating systems such as the upcoming SteamOS release for ARM. It also adds support for a lot of new emulators across all the main supported operating systems.
 
-For Android specifically there are multiple new systems enabled, those being Namco-Sega-Nintendo Triforce (triforce), Microsoft Xbox (xbox) and Microsoft Xbox 360 (xbox360). And although the Sega Model 3 (model3) system was technically supported in the previous release, it wasn't really very usable in practice due to only MAME being available for these games, but now this system is also fully usable due to the new SUPER3 emulator. Support for multi-user setups has also been fully rolled out for all RetroArch cores as of this release, meaning ES-DE should now work correctly in Android multi-user environments.
+For Android specifically there are multiple new systems enabled, those being Namco-Sega-Nintendo Triforce (triforce), Microsoft Xbox (xbox) and Microsoft Xbox 360 (xbox360). And although the Sega Model 3 (model3) system was technically supported in the previous release, it wasn't really very usable in practice due to only MAME being available for these games, but now this system is also fully usable due to the new SUPER3 emulator. Support for multi-user setups has also been fully rolled out for all RetroArch cores as of this release, meaning ESTACION-PRO should now work correctly in Android multi-user environments.
 
 On macOS three new systems have been enabled as well, those being OpenBOR Game Engine (openbor), Namco-Sega-Nintendo Triforce (triforce) and Microsoft Xbox 360 (xbox360).
 
 As for general cross-platform topics, a new language has been added, which is Vietnamese. There are also a couple of general bug fixes and translation updates as well as some dependency library updates. There are also quite a number of new RetroArch cores supported for many systems, see below for all details.
 
-Under the hood the remaining ancient Raspberry Pi specific code and configuration has now been fully removed, meaning there is no longer any device-specific code or configuration whatsoever in ES-DE and everything is instead completely generalized.
+Under the hood the remaining ancient Raspberry Pi specific code and configuration has now been fully removed, meaning there is no longer any device-specific code or configuration whatsoever in ESTACION-PRO and everything is instead completely generalized.
 
 ### Detailed list of changes
 
@@ -129,11 +129,11 @@ Under the hood the remaining ancient Raspberry Pi specific code and configuratio
 
 ### Release overview
 
-This release introduces play time tracking to show for how long games have been played, using an identical logic to how it works in Steam. This does however require that themes get updated to support this feature. It's now also possible to sort gamelists by play time. A cosmetic change in this release is that the "EmulationStation Desktop Edition" subtitle has been removed from the splash screen, and ES-DE will no longer search for an .emulationstation directory on startup when running on desktop operating systems.
+This release introduces play time tracking to show for how long games have been played, using an identical logic to how it works in Steam. This does however require that themes get updated to support this feature. It's now also possible to sort gamelists by play time. A cosmetic change in this release is that the "EmulationStation Desktop Edition" subtitle has been removed from the splash screen, and ESTACION-PRO will no longer search for an .emulationstation directory on startup when running on desktop operating systems.
 
 On Android the Sony PlayStation 3 (ps3), Valve Steam (steam) and Epic Games Store (epic) systems have been enabled and there is improved support for running on dual-screen devices. For instance there is a new "Launch games on the other screen" option in the Other settings menu to control on which screen to run games and emulators.
 
-Also on Android there is experimental support for running RetroArch in multi-user setups. This has currently been enabled for a handful of emulator entries to make sure we capture potential firmware bugs and similar that may prevent this from working. If it turns out to be stable across a wide range of hardware then this will be rolled out to all emulator entries in the future. Another nice feature is that Samsung DeX is now supported by ES-DE, but this is actually due to a policy change by Samsung and not due to any changes inside ES-DE. Still this release contains some bug fixes that should make the DeX experience better. Just be aware that you need to use One UI 8.0 or later for this to work as Samsung has not enabled this on earlier OS releases.
+Also on Android there is experimental support for running RetroArch in multi-user setups. This has currently been enabled for a handful of emulator entries to make sure we capture potential firmware bugs and similar that may prevent this from working. If it turns out to be stable across a wide range of hardware then this will be rolled out to all emulator entries in the future. Another nice feature is that Samsung DeX is now supported by ESTACION-PRO, but this is actually due to a policy change by Samsung and not due to any changes inside ESTACION-PRO. Still this release contains some bug fixes that should make the DeX experience better. Just be aware that you need to use One UI 8.0 or later for this to work as Samsung has not enabled this on earlier OS releases.
 
 Translations to Arabic (ar_SA) have also been added in this release, as well as support for many additional regions when scraping using ScreenScraper. There is now also support for the WebP image format and the AV1 video codec for scraped media (these are however not currently supported by ScreenScraper or TheGamesDB so this can be considered more of a future-proofing feature). You can now also select whether to generate miximages in PNG or WebP format, with the latter leading to reduced disk usage but slightly slower scraping.
 
@@ -248,8 +248,8 @@ In addition to the above there is support for a lot of new emulators, import rul
 
 * (Android) Fixed a crash when scraping if the downloaded_media directory had been set to an invalid path
 * (Android) The splash screen progress bar sometimes didn't render correctly when running in multi-window mode or after switching screens
-* (Android) The Android soft keyboard was always enabled after resizing the ES-DE window when running in multi-window mode
-* (macOS) On macOS 26 Tahoe the ES-DE application window was sometimes not focused on startup and the menu bar was sometimes visible
+* (Android) The Android soft keyboard was always enabled after resizing the ESTACION-PRO window when running in multi-window mode
+* (macOS) On macOS 26 Tahoe the ESTACION-PRO application window was sometimes not focused on startup and the menu bar was sometimes visible
 * (macOS) The application updater for the x86 release downloaded the ARM package instead of the x86 package
 * Invalid media files could get saved to disk when reaching the daily ScreenScraper quota
 * Helpsystem icons could sometimes disappear temporarily after closing the media viewer
@@ -274,9 +274,9 @@ Android-specific hotfix release that fixes two issues with the game importer.
 
 ### Release overview
 
-This release introduces a cross-platform game importer tool that makes it possible to import games and apps into ES-DE. This is especially useful on Android where native apps and games can now be loaded into the androidapps, androidgames and emulators systems and launched from inside ES-DE. But the game importer is also available on Linux, macOS and Windows where it can import things like desktop applications, emulators and Steam games.
+This release introduces a cross-platform game importer tool that makes it possible to import games and apps into ESTACION-PRO. This is especially useful on Android where native apps and games can now be loaded into the androidapps, androidgames and emulators systems and launched from inside ESTACION-PRO. But the game importer is also available on Linux, macOS and Windows where it can import things like desktop applications, emulators and Steam games.
 
-Support for a number of new emulators has been added across all operating systems, and on Android the Sega Model 3 (model3) system has been enabled. Also on Android the MAME4droid 2024 emulator entries have been removed since the emulator has been renamed to MAME4droid Current by its developer. Replacement entries with the new name were added already in ES-DE 3.2.0-45.
+Support for a number of new emulators has been added across all operating systems, and on Android the Sega Model 3 (model3) system has been enabled. Also on Android the MAME4droid 2024 emulator entries have been removed since the emulator has been renamed to MAME4droid Current by its developer. Replacement entries with the new name were added already in ESTACION-PRO 3.2.0-45.
 
 Translations to four new languages are also included, these being Bosnian, Croatian, Serbian and Portugues (Portugal).
 
@@ -309,7 +309,7 @@ Apart from the above this release includes a large amount of internal changes as
 * Changed the MAME "speech" parameter to "speechadapter" for the ti99 system due to changes introduced in MAME 0.276
 * Added MAME Legacy (Standalone) as an alternative emulator for the ti99 system on Linux, macOS and Windows
 * Added find rule entries for the bgfx release of Visual Pinball
-* (Android) Removed all MAME4droid 2024 emulator entries (replacement MAME4droid Current entries were added in ES-DE 3.2.0-45)
+* (Android) Removed all MAME4droid 2024 emulator entries (replacement MAME4droid Current entries were added in ESTACION-PRO 3.2.0-45)
 * (Linux) Added the native xenia release as the default emulator for the xbox360 system
 * (Linux) Added Lindbergh Loader standalone as an alternative emulator for the arcade, mame and pcarcade systems
 * (Linux) Added a RetroArch core find rule entry for ~/.config/retroarch/libretro
@@ -365,7 +365,7 @@ Apart from the above this release includes a large amount of internal changes as
 * Under some circumstances duplicate system-select events could be generated
 * Some orphaned data cleanup utility fields were not displayed correctly at some aspect ratios like 8:7
 * Sorting configuration was missing for the mark3 and vircon32 systems
-* (Windows) Custom event scripts would not work if the path to the ES-DE directory contained spaces
+* (Windows) Custom event scripts would not work if the path to the ESTACION-PRO directory contained spaces
 
 ## Version 3.2.0 / 3.2.0-45
 
@@ -471,7 +471,7 @@ The game launch screen can also be completely disabled as of this release, and t
 
 This release adds support for four more languages, reduces the memory footprint under some circumstances and enables a number of new emulators.
 
-On Android the default audio driver has been changed from AAudio to OpenSL ES which should decrease audio latency on many devices. There is however a new menu entry in the Sound settings menu that makes it possible to easily revert to AAudio in case of issues with the OpenSL ES driver. Also for Android there is now experimental support for running ES-DE in multi-window mode on tablets and other devices that support this.
+On Android the default audio driver has been changed from AAudio to OpenSL ES which should decrease audio latency on many devices. There is however a new menu entry in the Sound settings menu that makes it possible to easily revert to AAudio in case of issues with the OpenSL ES driver. Also for Android there is now experimental support for running ESTACION-PRO in multi-window mode on tablets and other devices that support this.
 
 In addition to the above there are a number of bug fixes and other improvements.
 
@@ -505,7 +505,7 @@ In addition to the above there are a number of bug fixes and other improvements.
 * (Android) Removed the built-in application update check for the Samsung Galaxy Store and Huawei AppGallery builds
 * (Linux) Added support for the AppImage release of melonDS
 * (macOS) Added support for the Sony PlayStation Vita (psvita) game system
-* (macOS) Added the %RUNINBACKGROUND% variable for RPCS3 to work around an emulator issue where ES-DE would directly resume on game launch
+* (macOS) Added the %RUNINBACKGROUND% variable for RPCS3 to work around an emulator issue where ESTACION-PRO would directly resume on game launch
 * (Windows) Added FinalBurn Neo standalone as an alternative emulator for the neogeocd and neogeocdjp systems
 * (Windows) Added Yaba Sanshiro 2 standalone as an alternative emulator for the saturn and saturnjp systems
 * (Windows) Added BeebEm standalone as an alternative emulator for the bbcmicro system
@@ -529,8 +529,8 @@ In addition to the above there are a number of bug fixes and other improvements.
 * Pressing the "Clear" button in the text editor and then entering some value in the input field crashed the application
 * Placing a directory with no access permissions inside a system folder crashed the application on startup
 * (Android) Audio was not working correctly on some Android 15 devices (fixed by updating SDL to 2.30.9)
-* (Android) Switching from ES-DE to another app and back again while the "no ROMs" dialog was shown crashed the application
-* (Android) Switching from ES-DE to the home app and back again while the onboarding configurator was running crashed the application
+* (Android) Switching from ESTACION-PRO to another app and back again while the "no ROMs" dialog was shown crashed the application
+* (Android) Switching from ESTACION-PRO to the home app and back again while the onboarding configurator was running crashed the application
 * (Android) On some devices, disabling the "Blur background when menu is open" option led to rendering issues
 * (Windows) The video and slideshow screensavers didn't work if a custom game media directory had been configured
 * There was a regression where filesystem case-sensitivity was not considered when looking for media files for the screensaver
@@ -648,11 +648,11 @@ See the full list below for all changes and bug fixes.
 
 ### Release overview
 
-This release enables a lot of new systems on Android which brings this platform much closer to the desktop ports as far as system support is concerned. It also brings experimental support for setting ES-DE as the Android home app. Outside of Android a number of new features have been added to the theme engine, ES-DE can now be built for KMS/direct framebuffer access on Linux and several new emulators have been added. A couple of bugs have been fixed as well, in addition to some other minor improvements.
+This release enables a lot of new systems on Android which brings this platform much closer to the desktop ports as far as system support is concerned. It also brings experimental support for setting ESTACION-PRO as the Android home app. Outside of Android a number of new features have been added to the theme engine, ESTACION-PRO can now be built for KMS/direct framebuffer access on Linux and several new emulators have been added. A couple of bugs have been fixed as well, in addition to some other minor improvements.
 
 ### Detailed list of changes
 
-* (Android) Added experimental support for running ES-DE as the home app
+* (Android) Added experimental support for running ESTACION-PRO as the home app
 * (Android) The touch overlay is no longer reset by the onboarding configurator unless the "Begin setup" button was pressed
 * (Linux) Added a DEINIT_ON_LAUNCH CMake build flag to support KMS/direct framebuffer access
 * Added support for the new Lime3DS binary names on Linux, macOS and Windows
@@ -717,7 +717,7 @@ This release enables a lot of new systems on Android which brings this platform 
 * Added an "imageCropPos" property to the grid element
 * Added a "cropPos" property to the image element
 * Added a "cropPos" property to the video element
-* SDL_HINT_APP_NAME is now explicitly set to "ES-DE" to display the correct name in the OS sound settings interface and similar
+* SDL_HINT_APP_NAME is now explicitly set to "ESTACION-PRO" to display the correct name in the OS sound settings interface and similar
 * (macOS) Changed the minimum required OS version from 10.15 "Catalina" to 11 "Big Sur"
 
 ### Bug fixes
@@ -755,7 +755,7 @@ This release improves scraping speed under some circumstances, adds experimental
 * (Linux/Unix) Changed the application summary from "Emulator Frontend" to "Gaming Frontend"
 * (Windows) Changed some log entries to use backslashes instead of forward slashes as directory separators
 * Windows carriage return characters are now filtered out when reading custom collection files and inject files
-* Changed the application description to "ES-DE Frontend" for the -h/--help command line option
+* Changed the application description to "ESTACION-PRO Frontend" for the -h/--help command line option
 * Added support for marking themes as deprecated in the theme downloader
 * Added support for the androidapps and androidgames systems to the Linear, Modern and Slate themes
 * (modern-es-de) Converted all carousel icons from JPG to WebP format
@@ -784,7 +784,7 @@ This release adds support for Android 10, removes support for the Yuzu emulator 
 * Added support for Android 10
 * Removed Yuzu from the switch system
 * Added Panda3DS standalone as an alternative emulator for the n3ds system
-* (Android) Added support for placing the ES-DE and ROMs directories on mounted USB storage (/mnt/media_rw/)
+* (Android) Added support for placing the ESTACION-PRO and ROMs directories on mounted USB storage (/mnt/media_rw/)
 * (Android) Added support for network mounted storage on the Nvidia Shield Pro (and possibly other devices)
 * Added a more informative error message than "HTTP error code 430" when exceeding the daily ScreenScraper quota
 * Added the Snes9x 2005 Plus RetroArch core as an alternative emulator for the satellaview, sfc, snes, snesna and sufami systems
@@ -858,7 +858,7 @@ This release adds support for Android 10, removes support for the Yuzu emulator 
 
 ### Release overview
 
-The main feature of the 3.0 release is that it adds support for the Android operating system. It also rebrands the application from EmulationStation Desktop Edition to simply ES-DE. As part of this the application data directory has changed from .emulationstation to ES-DE and its internal structure has been improved. There is also a new default theme named Linear that is bundled with the application.
+The main feature of the 3.0 release is that it adds support for the Android operating system. It also rebrands the application from EmulationStation Desktop Edition to simply ESTACION-PRO. As part of this the application data directory has changed from .emulationstation to ESTACION-PRO and its internal structure has been improved. There is also a new default theme named Linear that is bundled with the application.
 
 Support for configurable font sizes has also been added, so assuming the theme supports it, it's now possible to select between these sizes from the _UI settings_ menu.
 
@@ -867,8 +867,8 @@ A number of minor improvements and bug fixes are also part of this release.
 ### Detailed list of changes
 
 * Added support for the Android operating system
-* Renamed the application from EmulationStation Desktop Edition to ES-DE
-* Renamed the application data directory from .emulationstation to ES-DE
+* Renamed the application from EmulationStation Desktop Edition to ESTACION-PRO
+* Renamed the application data directory from .emulationstation to ESTACION-PRO
 * Updated the splash screen to reflect the new application name
 * Added a new default theme named "Linear"
 * Split the es_find_rules.xml and es_systems.xml files for Linux and BSD Unix into separate directories
@@ -1009,8 +1009,8 @@ In addition to the above many bugs have been fixed and the application has recei
 * Enabled the setting "Show hidden games" to be changed without requiring an application restart
 * Enabled the setting "Only show ROMs from gamelist.xml files" to be changed without requiring an application restart
 * Renamed the setting "Only show ROMs from gamelist.xml files" to "Only show games from gamelist.xml files
-* Added event polling when suspending ES-DE on game launch to avoid various issues primarily on Windows
-* Adding and removing controllers when a game is launched is now always handled directly rather than on return to ES-DE
+* Added event polling when suspending ESTACION-PRO on game launch to avoid various issues primarily on Windows
+* Adding and removing controllers when a game is launched is now always handled directly rather than on return to ESTACION-PRO
 * Added support for deleting installed themes from the theme downloader interface
 * Added support for the Coleco Adam (adam) game system
 * Added support for the Acorn Archimedes (archimedes) game system
@@ -1047,7 +1047,7 @@ In addition to the above many bugs have been fixed and the application has recei
 * Added SkyEmu standalone as an alternative emulator for the gb, gba, gbc and nds systems
 * Added FS-UAE standalone as an alternative emulator for the amiga, amiga1200, amiga600, amigacd32 and cdtv systems
 * Added Amiberry standalone as an alternative emulator for the amiga, amiga1200, amiga600, amigacd32 and cdtv systems on Linux and macOS
-* Set %STARTDIR%=%GAMEDIR% for the X Millennium RetroArch core as it created temporary files in the ES-DE directory
+* Set %STARTDIR%=%GAMEDIR% for the X Millennium RetroArch core as it created temporary files in the ESTACION-PRO directory
 * Added the ECWolf, NXEngine, OpenLara and Super Bros War RetroArch cores as alternative emulators for the ports system on Unix and Windows
 * Added the ECWolf, NXEngine and Super Bros War RetroArch cores as alternative emulators for the ports system on macOS
 * Added TIC-80 standalone as an alternative emulator for the tic80 system
@@ -1180,7 +1180,7 @@ In addition to the above many bugs have been fixed and the application has recei
 * The video player would not play the last couple of frames for any videos
 * Starting the media viewer did not pause fallback game videos (defined using the "default" video property)
 * Quotation marks in the launch command were not always handled correctly when combined with the %CORE% variable
-* The %STARTDIR% variable could not be combined with running ES-DE in the background when launching games on Linux and macOS
+* The %STARTDIR% variable could not be combined with running ESTACION-PRO in the background when launching games on Linux and macOS
 * Directories interpreted as files entries could not be removed from custom collections
 * Duplicate ScreenScraper game entries could show up in the interactive scraper if multiple platforms were defined for the system
 * ScreenScraper API calls were slightly malformed for systems where multiple platforms were defined
@@ -1225,7 +1225,7 @@ In addition to the above many bugs have been fixed and the application has recei
 
 ### Release overview
 
-The 2.1 release brings a new look to ES-DE by changing the default menu color scheme from light to dark. There is however a setting to revert to the light color scheme if that's preferred. Scraping and viewing of PDF game manuals has also been added, with the PDF viewer being reachable from the gamelist media viewer.
+The 2.1 release brings a new look to ESTACION-PRO by changing the default menu color scheme from light to dark. There is however a setting to revert to the light color scheme if that's preferred. Scraping and viewing of PDF game manuals has also been added, with the PDF viewer being reachable from the gamelist media viewer.
 
 Miximages will now be generated with a proper image fit if the screenshot aspect ratio doesn't match the miximage frame. This will for instance occur for widescreen systems and vertically oriented arcade shooters. There are multiple new options to control this behavior in the miximage settings menu. System sorting has also been improved, making it possible to use a separate es_systems_sorting.xml file in the custom_systems directory, meaning it's no longer required to add systemsortname tags to the es_systems.xml file.
 
@@ -1236,7 +1236,7 @@ For the Linux AppImage releases a built-in application updater has been added so
 * Added support for changing between dark and light color schemes for the menu system (with dark being the new default)
 * Added a PDF game manual viewer, accessible from the media viewer
 * Added support for scraping game manuals using ScreenScraper
-* Added an application updater which downloads and installs ES-DE updates (currently only the AppImage releases are supported)
+* Added an application updater which downloads and installs ESTACION-PRO updates (currently only the AppImage releases are supported)
 * Added options to the miximage generator for how to fit screenshots that do not match the aspect ratio of the miximage frame
 * Added support for a dedicated es_systems_sorting.xml file to change systems sorting without having to modify es_systems.xml
 * Bundled four complete es_systems_sorting.xml files with the application (they can be found in the resources/sorting/ directory)
@@ -1265,7 +1265,7 @@ For the Linux AppImage releases a built-in application updater has been added so
 * Added the .sh file extension to the ags system on Unix and macOS and set the %STARTDIR% variable to the game directory
 * (Linux) Changed a lot of find rules so that emulator AppImages are always searched before Flatpaks
 * (Linux) Removed the AppImage systempath find rule entry for RetroArch
-* (Linux) Added "AppImage (Suspend ES-DE)" and "AppImage (Keep ES-DE running)" as alternative emulators for the desktop and windows system
+* (Linux) Added "AppImage (Suspend ESTACION-PRO)" and "AppImage (Keep ESTACION-PRO running)" as alternative emulators for the desktop and windows system
 * (Linux) Added "AppImage" as an alternative emulator for the ports system
 * (Linux) Added the .AppImage file extension to the desktop, ports and windows systems
 * (Linux) Added support for the official Citra AppImage release
@@ -1327,7 +1327,7 @@ Catch-up release which implements some things that didn't make it into 2.0.0. Mo
 * Added the PicoDrive RetroArch core as an alternative emulator for the gamegear system
 * Added the LRPS2 RetroArch core as the default emulator for the ps2 system on Linux and Windows
 * (macOS) Added the Mupen64Plus-Next RetroArch core as the default emulator for the n64 and n64dd systems
-* Set the Neko Project II RetroArch core to start in the game directory as it created a config file in the ES-DE binary directory
+* Set the Neko Project II RetroArch core to start in the game directory as it created a config file in the ESTACION-PRO binary directory
 * Added "Shortcut or script" as an alternative emulator for the arcade and mame systems
 * (Unix) Added the .desktop and .sh file extensions to the arcade and mame systems
 * (macOS) Added the .app and .sh file extensions to the arcade and mame systems
@@ -1787,7 +1787,7 @@ This release enables a lot of systems by adding new platforms altogether and by 
 * Added Atari800 standalone as an alternative emulator for the a5200 system
 * Added the Kronos RetroArch core as an alternative emulator for the arcade and mame systems
 * Added KEmulator standalone as an alternative emulator for the j2me system on Windows
-* Added Model 2 Emulator [Suspend ES-DE] as an alternative emulator for the arcade, mame and model2 systems on Windows
+* Added Model 2 Emulator [Suspend ESTACION-PRO] as an alternative emulator for the arcade, mame and model2 systems on Windows
 * Added "Shortcut or script" as an alternative emulator for the doom system
 * Added the Boom 3 and Boom 3 xp RetroArch cores as alternative emulators for the doom system on Unix and Windows
 * Added support for the repository-installed PPSSPP standalone (SDL and Qt) on Unix
@@ -1825,7 +1825,7 @@ v1.2 maintenance release. Shortcut support has been added on Unix and macOS whic
 * Added an %ENABLESHORTCUTS% variable to support launching of .desktop files on Unix and apps and aliases on macOS
 * Added support for launching .desktop files to the desktop, epic, kodi, lutris, ports and steam systems on Unix
 * Added support for launching .app directories and alias files to the desktop, epic, kodi, ports and steam systems on macOS
-* Setup two emulator entries for the desktop system, "Suspend ES-DE" and "Keep ES-DE running" to control the launch behavior
+* Setup two emulator entries for the desktop system, "Suspend ESTACION-PRO" and "Keep ESTACION-PRO running" to control the launch behavior
 * Changed the ps3 system to use shortcuts by default and created an alternative emulator entry for the old directory approach
 * Added the .lnk file extension to the epic system on Windows
 * Added support for the PICO-8 (pico8) game system
@@ -1860,7 +1860,7 @@ v1.2 maintenance release. Shortcut support has been added on Unix and macOS whic
 
 ### Bug fixes
 
-* When running ES-DE in the background, quitting a game or application using Alt + F4 sometimes made ES-DE quit as well
+* When running ESTACION-PRO in the background, quitting a game or application using Alt + F4 sometimes made ESTACION-PRO quit as well
 * Thumbnails were not included in theme sets that used them for the Detailed view style (affected RetroPie ES compatibility)
 * Game images were not included in theme sets that used them for the Video view style (affected RetroPie ES compatibility)
 * Themes with large pixelated fonts sometimes displayed too many textlist rows (affected RetroPie ES compatibility)
@@ -1938,7 +1938,7 @@ v1.2 maintenance release. Support has been added for multiple systems such as Da
 * The %BASENAME% variable didn't work correctly with the "Directories interpreted as files" functionality
 * The scroll indicators would sometimes not work correctly in the Alternative Emulators screen
 * Fixed a minor rounding issue which sometimes led to the menu scroll indicators not being positioned correctly
-* The game-end event was triggered immediately on game launch if running ES-DE in the background
+* The game-end event was triggered immediately on game launch if running ESTACION-PRO in the background
 * The "quit" custom event script trigger was not executed when quitting the application using the quit key combo
 * Chinese characters would sometimes not render correctly
 * The "Jump to.." quick selector didn't work correctly with multi-byte Unicode characters
@@ -2200,7 +2200,7 @@ Apart from all the above, a huge amount of work has gone into fixing bugs, refac
 * When scraping in interactive mode, the first result row would get focused after the search completed even if the cursor was moved to a button beneath the list
 * The multi-scraper did not update the filter index
 * Multi-scraping and aborting before any games were fully scraped but after some game media was downloaded did not trigger a gamelist reload
-* (Windows) Launching a game that changed the screen resolution would offset the ES-DE application window when exiting
+* (Windows) Launching a game that changed the screen resolution would offset the ESTACION-PRO application window when exiting
 * (Windows) Enabling the option to hide the taskbar would sometimes not focus the application window on startup (possibly only an issue on Windows 8.1)
 * If there were gamelist.xml entries for existing files whose extensions were not setup in es_systems.xml, these would still get loaded and displayed
 * Fixed multiple minor rendering issues where graphics would be slightly cut off or incorrectly sized
@@ -2277,7 +2277,7 @@ Apart from this, numerous small improvements and bug fixes are part of the relea
 * Moved to the SDL GameController API which gives numerous improvements to the controller handling
 * Default controller configuration is now automatically applied, input configuration should rarely if ever be required any longer except for deliberate button customization
 * Added support for selecting the controller type (Xbox, Xbox 360, PS4, PS5 and SNES), which changes the help icons, help text and the input configuration tool icons and text
-* Added an option to limit the input in ES-DE to only the first controller (this does not affect the emulators)
+* Added an option to limit the input in ESTACION-PRO to only the first controller (this does not affect the emulators)
 * Switched the order of the "Back" and "Start" buttons (or equivalents) in the input configurator to align with the other button entries which go from left to right
 * Added separate controller deadzone values for the triggers and thumbsticks
 * Removed the startup notification regarding default keyboard mappings being in use, instead default mappings are now considered the recommended input configuration
@@ -2396,7 +2396,7 @@ Many bugs have been fixed, and numerous features that were only partially implem
 * Added extensive es_systems.cfg templates for Unix, macOS and Windows that are automatically installed on first application startup
 * Added support for generating the ROM directory structure from within the application based on information in es_systems.cfg
 * Added full navigation sound support, configurable per theme set with a fallback to the built-in sounds if there is no theme support
-* Added multi-monitor support by giving the option to define on which display to run ES-DE
+* Added multi-monitor support by giving the option to define on which display to run ESTACION-PRO
 * Improved input device configuration and default keyboard mappings are now applied if the keyboard has not been configured by the user
 * Reorganization and general overhaul of the menu system, hopefully making it more intuitive to navigate and easier to understand the menu entries
 * New game media file logic using a media directory with files matching the ROM names instead of explicitly pointing to the media files from the gamelist.xml files
@@ -2448,7 +2448,7 @@ Many bugs have been fixed, and numerous features that were only partially implem
 * Made the ScrollableContainer scroll speed adaptive depending on the font size and width of the text container
 * Moved all resources to a subdirectory structure and enabled the CMake install prefix variable to generate the resources search path
 * Changed the theme set directory to the install prefix (e.g. /usr/share/emulationstation/themes) with themes in the home directory taking precedence
-* No more attempts to open files directly under /etc, instead only the install prefix directory, the ES-DE executable directory and the home directory are used
+* No more attempts to open files directly under /etc, instead only the install prefix directory, the ESTACION-PRO executable directory and the home directory are used
 * Added proper error handling for missing resource files and improved overall logging
 * Refactoring, cleanup and documentation of the source code, removal of deprecated files etc.
 * Speed improvements and optimizations, the application now starts faster and feels more responsive
@@ -2468,7 +2468,7 @@ Many bugs have been fixed, and numerous features that were only partially implem
 * Added support for both MSVC and MinGW (GCC) on Windows
 * License files are now included for all the libraries and resources that are bundled with the application
 * Updated the MAME index files to include ROMs up to MAME version 0.230 and created scripts to easily generate these index files in the future
-* Greatly expanded the application documentation (which is hosted in the ES-DE repository on GitLab)
+* Greatly expanded the application documentation (which is hosted in the ESTACION-PRO repository on GitLab)
 
 ### Bug fixes
 
@@ -2479,7 +2479,7 @@ Many bugs have been fixed, and numerous features that were only partially implem
 * Large text sizes at higher resolutions (such as 4K) would crash the application as fixed-size texture buffers were used which weren't big enough to hold the larger font textures
 * Fixed a massive memory leak related to SVG images
 * Fixed an issue where SVG images would sometimes be cut off slightly on the right side (e.g. logos on the system view carousel)
-* The audio volume control did not detect if there was a new default audio device or if the audio volume had been changed outside ES-DE
+* The audio volume control did not detect if there was a new default audio device or if the audio volume had been changed outside ESTACION-PRO
 * The scraper didn't handle error conditions correctly
 * The metadata editor insisted that changes had been made although nothing was updated
 * Sorting by number of players did not work properly for games with ranges such as 1-2 or 1-8

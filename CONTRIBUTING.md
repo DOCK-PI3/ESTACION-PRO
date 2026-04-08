@@ -1,10 +1,10 @@
-# ES-DE Frontend - Contributing
+# ESTACION-PRO Frontend - Contributing
 
-There are many ways to contribute to ES-DE:
+There are many ways to contribute to ESTACION-PRO:
 
 * Adding translations to more languages
 * Creating themes
-* Creating third party applications and scripts to be used with ES-DE
+* Creating third party applications and scripts to be used with ESTACION-PRO
 * Testing and reporting bugs and issues
 * Providing feedback and proposing new functionality and features
 * Helping with user support in our Discord server

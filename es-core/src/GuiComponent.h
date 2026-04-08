@@ -341,6 +341,9 @@ public:
     // Returns a list of help prompts.
     virtual std::vector<HelpPrompt> getHelpPrompts() { return std::vector<HelpPrompt>(); }
 
+    // Allows input passthrough to the bottom component in the GUI stack.
+    virtual bool allowInputToUnderlyingView() const { return false; }
+
     // Called whenever help prompts change.
     void updateHelpPrompts();
 

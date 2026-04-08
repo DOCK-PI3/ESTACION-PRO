@@ -55,6 +55,90 @@ namespace Utils
 {
     namespace FileSystem
     {
+        static void migrateLegacyAppDataDirectory(const std::string& sourcePath,
+                                                  const std::string& destinationPath)
+        {
+            if (!Utils::FileSystem::exists(sourcePath))
+                return;
+
+            if (!Utils::FileSystem::exists(destinationPath)) {
+                try {
+                    std::filesystem::rename(sourcePath, destinationPath);
+                    LOG(LogInfo) << "Migrated legacy app data directory from \"" << sourcePath
+                                 << "\" to \"" << destinationPath << "\"";
+                    return;
+                }
+                catch (...) {
+                    // Try a copy-based migration when rename fails across filesystems.
+                }
+            }
+
+            try {
+                std::filesystem::create_directories(destinationPath);
+                std::filesystem::copy(
+                    sourcePath, destinationPath,
+                    std::filesystem::copy_options::recursive |
+                        std::filesystem::copy_options::overwrite_existing);
+                std::filesystem::remove_all(sourcePath);
+                LOG(LogInfo) << "Migrated legacy app data directory from \"" << sourcePath
+                             << "\" to \"" << destinationPath << "\"";
+            }
+            catch (std::filesystem::filesystem_error& error) {
+                LOG(LogError) << "FileSystemUtil::migrateLegacyAppDataDirectory(): "
+                              << error.what();
+            }
+        }
+
+        static void ensureUserDataSeeded(const std::string& appDataDirectory)
+        {
+            const std::vector<std::string> requiredDirectories {"resources", "themes"};
+
+            for (const auto& directoryName : requiredDirectories) {
+                const std::string destinationPath {appDataDirectory + "/" + directoryName};
+
+                if (Utils::FileSystem::exists(destinationPath))
+                    continue;
+
+                // Prefer installed system data for the initial seed.
+                const std::string systemSourcePath {installPrefix + "/share/estacion-pro/" +
+                                                    directoryName};
+                std::string sourcePath;
+
+                if (Utils::FileSystem::exists(systemSourcePath)) {
+                    sourcePath = systemSourcePath;
+                }
+                else {
+                    // Fallback when running from build trees or portable layouts.
+                    const std::string exeSourcePath {getExePath() + "/" + directoryName};
+                    if (Utils::FileSystem::exists(exeSourcePath))
+                        sourcePath = exeSourcePath;
+                }
+
+                if (sourcePath.empty())
+                    continue;
+
+                try {
+                    std::filesystem::create_directories(destinationPath);
+                    std::filesystem::copy(
+                        sourcePath, destinationPath,
+                        std::filesystem::copy_options::recursive |
+                            std::filesystem::copy_options::overwrite_existing);
+                    LOG(LogInfo) << "Initialized \"" << destinationPath
+                                 << "\" from \"" << sourcePath << "\"";
+                }
+                catch (std::filesystem::filesystem_error& error) {
+                    LOG(LogError) << "FileSystemUtil::ensureUserDataSeeded(): "
+                                  << error.what();
+                }
+            }
+
+            // Create the music directory (not seeded from system, just empty).
+            const std::string musicDir {appDataDirectory + "/musica"};
+            if (!Utils::FileSystem::exists(musicDir)) {
+                Utils::FileSystem::createDirectory(musicDir);
+            }
+        }
+
         static std::string homePath;
         static std::string exePath;
         static std::string esBinary;
@@ -261,24 +345,28 @@ namespace Utils
 #if defined(__ANDROID__)
             return getHomePath();
 #elif defined(__IOS__)
-            return getHomePath() + "/Documents/ES-DE";
+            return getHomePath() + "/Documents/ES-PRO";
 #endif
 
             if (FileSystemVariables::sAppDataDirectory.empty()) {
+                const std::string appDataDirectory {getHomePath() + "/ES-PRO"};
+                const std::string legacyAppDataDirectory {getHomePath() + "/ES-DE"};
+
 #if !defined(_WIN64)
-                if (getenv("ESDE_APPDATA_DIR") != nullptr) {
-                    const std::string envAppDataDir {getenv("ESDE_APPDATA_DIR")};
+                if (getenv("ESPRO_APPDATA_DIR") != nullptr) {
+                    const std::string envAppDataDir {getenv("ESPRO_APPDATA_DIR")};
                     FileSystemVariables::sAppDataDirectory = expandHomePath(envAppDataDir);
                 }
-                else if (Utils::FileSystem::exists(getHomePath() + "/ES-DE")) {
 #else
-                if (Utils::FileSystem::exists(getHomePath() + "/ES-DE")) {
 #endif
-                    FileSystemVariables::sAppDataDirectory = getHomePath() + "/ES-DE";
+
+                if (FileSystemVariables::sAppDataDirectory.empty()) {
+                    migrateLegacyAppDataDirectory(legacyAppDataDirectory, appDataDirectory);
+                    FileSystemVariables::sAppDataDirectory = appDataDirectory;
                 }
-                else {
-                    FileSystemVariables::sAppDataDirectory = getHomePath() + "/ES-DE";
-                }
+
+                if (!FileSystemVariables::sAppDataDirectory.empty())
+                    ensureUserDataSeeded(FileSystemVariables::sAppDataDirectory);
             }
 
             return FileSystemVariables::sAppDataDirectory;
@@ -428,11 +516,11 @@ namespace Utils
 #if defined(__ANDROID__)
             return AndroidVariables::sInternalDataDirectory;
 #elif defined(__HAIKU__)
-            return "/boot/system/data/es-de";
+            return getAppDataDirectory();
 #elif defined(__unix__)
-    return installPrefix + "/share/es-de";
+            return getAppDataDirectory();
 #else
-    return "";
+            return "";
 #endif
         }
 

@@ -32,6 +32,8 @@ GuiScraperMulti::GuiScraperMulti(
     , mGrid {glm::ivec2 {2, 6}}
     , mSearchQueue {searches.first}
     , mApproveResults {approveResults}
+    , mBackgroundScrapeMode {!approveResults &&
+                             Settings::getInstance()->getBool("ScraperBackgroundMode")}
 {
     assert(mSearchQueue.size());
 
@@ -170,6 +172,13 @@ GuiScraperMulti::GuiScraperMulti(
     mButtonGrid = MenuComponent::makeButtonGrid(buttons);
     mGrid.setEntry(mButtonGrid, glm::ivec2 {0, 5}, true, false, glm::ivec2 {2, 1});
 
+    if (mBackgroundScrapeMode) {
+        mSearchComp->setVisible(false);
+        mScrollUp->setVisible(false);
+        mScrollDown->setVisible(false);
+        mButtonGrid->setVisible(false);
+    }
+
     // Limit the width of the GUI on ultrawide monitors. The 1.778 aspect ratio value is
     // the 16:9 reference.
     float aspectValue {1.778f / mRenderer->getScreenAspectRatio()};
@@ -184,12 +193,26 @@ GuiScraperMulti::GuiScraperMulti(
                   mSubtitle->getFont()->getHeight() * 1.75f + (mButtonGrid->getSize().y * 1.1f) +
                   Font::get(FONT_SIZE_MEDIUM)->getHeight() * 7.0f};
 
+    if (mBackgroundScrapeMode) {
+        width = glm::clamp(0.42f * aspectValue, 0.30f, 0.42f) * mRenderer->getScreenWidth();
+        height = (mTitle->getFont()->getLetterHeight() + titleHeight) +
+                 mSystem->getFont()->getLetterHeight() +
+                 mSubtitle->getFont()->getHeight() * 1.75f;
+    }
+
     // TODO: Temporary hack, see below.
-    height -= 7.0f * mRenderer->getScreenResolutionModifier();
+    if (!mBackgroundScrapeMode)
+        height -= 7.0f * mRenderer->getScreenResolutionModifier();
 
     setSize(width, height);
-    setPosition((mRenderer->getScreenWidth() - mSize.x) / 2.0f,
-                (mRenderer->getScreenHeight() - mSize.y) / 2.0f);
+    if (mBackgroundScrapeMode) {
+        const float margin {glm::round(18.0f * mRenderer->getScreenResolutionModifier())};
+        setPosition(mRenderer->getScreenWidth() - mSize.x - margin, margin);
+    }
+    else {
+        setPosition((mRenderer->getScreenWidth() - mSize.x) / 2.0f,
+                    (mRenderer->getScreenHeight() - mSize.y) / 2.0f);
+    }
 
     doNextSearch();
 }
@@ -205,6 +228,30 @@ GuiScraperMulti::~GuiScraperMulti()
     }
 }
 
+bool GuiScraperMulti::input(InputConfig* config, Input input)
+{
+    // In automatic mode, allow navigating systems and gamelists while scraping.
+    // Keep the back button to stop the current scraping session.
+    if (!mApproveResults) {
+        if (config->isMappedTo("b", input) && input.value != 0) {
+            finish();
+            return true;
+        }
+
+        if (mBackgroundScrapeMode)
+            return false;
+
+        return GuiComponent::input(config, input);
+    }
+
+    return GuiComponent::input(config, input);
+}
+
+bool GuiScraperMulti::allowInputToUnderlyingView() const
+{
+    return mBackgroundScrapeMode;
+}
+
 void GuiScraperMulti::onSizeChanged()
 {
     const float screenSize {mRenderer->getIsVerticalOrientation() ? mRenderer->getScreenWidth() :
@@ -215,12 +262,19 @@ void GuiScraperMulti::onSizeChanged()
                                   mSize.y / 2.0f);
     mGrid.setRowHeightPerc(2, (mSystem->getFont()->getLetterHeight()) / mSize.y, false);
     mGrid.setRowHeightPerc(3, mSubtitle->getFont()->getHeight() * 1.75f / mSize.y, false);
-    mGrid.setRowHeightPerc(4, ((Font::get(FONT_SIZE_MEDIUM)->getHeight() * 7.0f)) / mSize.y, false);
+    if (mBackgroundScrapeMode) {
+        mGrid.setRowHeightPerc(4, 0.0f, false);
+        mGrid.setRowHeightPerc(5, 0.0f, false);
+    }
+    else {
+        mGrid.setRowHeightPerc(4, ((Font::get(FONT_SIZE_MEDIUM)->getHeight() * 7.0f)) / mSize.y,
+                               false);
+    }
 
     // TODO: Replace this temporary hack with a proper solution. There is some kind of rounding
     // issue somewhere that causes a small alignment error. This code partly compensates for this
     // at higher resolutions than 1920x1080.
-    if (mRenderer->getScreenResolutionModifier() > 1.0f)
+    if (!mBackgroundScrapeMode && mRenderer->getScreenResolutionModifier() > 1.0f)
         mSize.y -= 3.0f * mRenderer->getScreenResolutionModifier();
 
     mGrid.setColWidthPerc(1, 0.04f);

@@ -1,6 +1,6 @@
-# ES-DE Frontend (development version) - Building and advanced configuration
+# ESTACION-PRO Frontend (development version) - Building and advanced configuration
 
-This document is only relevant for the current ES-DE development version, if you would like to see the documentation for the latest stable release, refer to [INSTALL.md](INSTALL.md) instead.
+This document is only relevant for the current ESTACION-PRO development version, if you would like to see the documentation for the latest stable release, refer to [INSTALL.md](INSTALL.md) instead.
 
 Table of contents:
 
@@ -8,9 +8,9 @@ Table of contents:
 
 ## Development environment
 
-ES-DE is developed and compiled using GCC and Clang/LLVM on Unix/Linux, Clang/LLVM on macOS and MSVC on Windows.
+ESTACION-PRO is developed and compiled using GCC and Clang/LLVM on Unix/Linux, Clang/LLVM on macOS and MSVC on Windows.
 
-CMake is the build system for all the supported operating systems, used in conjunction with `make` on Unix and macOS and `jom` on Windows. Xcode on macOS or Visual Studio on Windows are not required for building ES-DE.
+CMake is the build system for all the supported operating systems, used in conjunction with `make` on Unix and macOS and `jom` on Windows. Xcode on macOS or Visual Studio on Windows are not required for building ESTACION-PRO.
 
 For automatic code formatting [clang-format](https://clang.llvm.org/docs/ClangFormat.html) is used.
 
@@ -18,7 +18,7 @@ Any code editor can be used, but [VSCode](https://code.visualstudio.com) is reco
 
 ## Building on Linux and Unix
 
-There are some dependencies that need to be fulfilled in order to build ES-DE. These are detailed per operating system below.
+There are some dependencies that need to be fulfilled in order to build ESTACION-PRO. These are detailed per operating system below.
 
 **Debian/Ubuntu**
 
@@ -58,7 +58,7 @@ All of the required packages can be installed with apt:
 sudo apt install clang-format cmake gettext libharfbuzz-dev libicu-dev libsdl2-dev libavcodec-dev libavfilter-dev libavformat-dev libavutil-dev libfreeimage-dev libfreetype6-dev libgit2-dev libcurl4-gnutls-dev libpugixml-dev libbluetooth-dev libpoppler-cpp-dev
 ```
 
-Note that low-level ALSA sound support has been removed from ES-DE which means that a sound server like PulseAudio or PipeWire is required. By default a display server (Xorg or Wayland) is also required but by using the DEINIT_ON_LAUNCH build option as explained later in this document KMS/direct framebuffer access can be used.
+Note that low-level ALSA sound support has been removed from ESTACION-PRO which means that a sound server like PulseAudio or PipeWire is required. By default a display server (Xorg or Wayland) is also required but by using the DEINIT_ON_LAUNCH build option as explained later in this document KMS/direct framebuffer access can be used.
 
 If you want to use the default OpenGL ES 3.0 driver then you need to build with the GLES option:
 ```
@@ -66,7 +66,7 @@ cmake -DGLES=on .
 make -j8
 ```
 
-Alternatively you can skip this and run ES-DE by explicitly telling the driver to use regular desktop OpenGL 3.3:
+Alternatively you can skip this and run ESTACION-PRO by explicitly telling the driver to use regular desktop OpenGL 3.3:
 ```
 MESA_GL_VERSION_OVERRIDE=3.3 ./es-de
 ```
@@ -76,7 +76,7 @@ Yet another alternative would be to use the Zink driver on top of Vulkan, althou
 MESA_GL_VERSION_OVERRIDE=3.3 MESA_LOADER_DRIVER_OVERRIDE=zink ./es-de
 ```
 
-Note that you'll probably need a 64-bit operating system to build and run ES-DE as there has been no testing done on 32-bit operating systems.
+Note that you'll probably need a 64-bit operating system to build and run ESTACION-PRO as there has been no testing done on 32-bit operating systems.
 
 **FreeBSD**
 
@@ -87,11 +87,11 @@ pkg install llvm-devel git pkgconf cmake gettext harfbuzz icu sdl2 ffmpeg freeim
 
 Clang/LLVM and curl should already be included in the base OS installation.
 
-**Cloning and compiling ES-DE**
+**Cloning and compiling ESTACION-PRO**
 
 To clone the source repository, run the following:
 ```
-git clone https://gitlab.com/es-de/emulationstation-de.git
+git clone https://github.com/DOCK-PI3/ESTACION-PRO.git
 ```
 
 Then generate the Makefile and build the software:
@@ -112,13 +112,13 @@ make
 
 Note that the application updater is always disabled when building for the AUR, RetroDECK, Raspberry Pi or FreeBSD.
 
-On Linux specifically you can build with the DEINIT_ON_LAUNCH option which will deinit the renderer, application window and audio when an emulator is launched. This makes it possible to use ES-DE with KMS/direct framebuffer access to for example make ES-DE a drop-in replacement for RetroPie EmulationStation:
+On Linux specifically you can build with the DEINIT_ON_LAUNCH option which will deinit the renderer, application window and audio when an emulator is launched. This makes it possible to use ESTACION-PRO with KMS/direct framebuffer access to for example make ESTACION-PRO a drop-in replacement for RetroPie EmulationStation:
 ```
 cmake -DDEINIT_ON_LAUNCH=on .
 make
 ```
 
-When this flag is enabled the menu option _Run in background (while game is launched)_ in the Other settings menu is disabled and all functionality related to running ES-DE in the background is also disabled.
+When this flag is enabled the menu option _Run in background (while game is launched)_ in the Other settings menu is disabled and all functionality related to running ESTACION-PRO in the background is also disabled.
 
 By default the master branch will be used, which is where development takes place. To instead build a stable release, switch to the `stable-x.x` branch for the version, for example:
 
@@ -165,7 +165,7 @@ It could also be a good idea to use the `TSAN_suppressions` file included in the
 TSAN_OPTIONS="suppressions=tools/TSAN_suppressions" ./es-de --debug --resolution 2560 1440
 ```
 
-On some Linux distributions you need to modify the _vm.mmap_rnd_bits_ kernel runtime parameter or you'll see an error message such as _FATAL: ThreadSanitizer: unexpected memory mapping 0x58bd90d75000-0x58bd90dbe000_ when attempting to start ES-DE. Setting the parameter to 28 should make ThreadSanitizer work correctly. The following is how it's done on Ubuntu:
+On some Linux distributions you need to modify the _vm.mmap_rnd_bits_ kernel runtime parameter or you'll see an error message such as _FATAL: ThreadSanitizer: unexpected memory mapping 0x58bd90d75000-0x58bd90dbe000_ when attempting to start ESTACION-PRO. Setting the parameter to 28 should make ThreadSanitizer work correctly. The following is how it's done on Ubuntu:
 ```
 sudo sysctl vm.mmap_rnd_bits=28
 ```
@@ -228,7 +228,7 @@ cmake -DCLANG_TIDY=on .
 
 Even though many irrelevant checks are filtered out via the configuration, this will still likely produce a quite huge report (at least until most of the recommendations have been implemented). In the same manner as for scan-view, the compilation time is much longer when using this static analyzer compared to a normal build.
 
-To build ES-DE with experimental FFmpeg video hardware decoding support, enable the following option:
+To build ESTACION-PRO with experimental FFmpeg video hardware decoding support, enable the following option:
 
 ```
 cmake -DVIDEO_HW_DECODING=on .
@@ -243,7 +243,7 @@ make -j8
 
 This renderer is generally only needed on the Raspberry Pi and the desktop OpenGL renderer should otherwise be used.
 
-By default ES-DE will install under /usr on Linux and /usr/local on FreeBSD although this can be changed by setting the `CMAKE_INSTALL_PREFIX` variable.
+By default ESTACION-PRO will install under /usr on Linux and /usr/local on FreeBSD although this can be changed by setting the `CMAKE_INSTALL_PREFIX` variable.
 
 The following example will build the application for installtion under /opt:
 
@@ -251,13 +251,13 @@ The following example will build the application for installtion under /opt:
 cmake -DCMAKE_INSTALL_PREFIX=/opt .
 ```
 
-It's important to understand that this is not only the directory used by the install script, the CMAKE_INSTALL_PREFIX variable also modifies code inside ES-DE used to locate the required program resources. So it's necessary that the install prefix corresponds to the location where the application will actually be installed.
+It's important to understand that this is not only the directory used by the install script, the CMAKE_INSTALL_PREFIX variable also modifies code inside ESTACION-PRO used to locate the required program resources. So it's necessary that the install prefix corresponds to the location where the application will actually be installed.
 
 On Linux, if you're not building a package and instead intend to install using `make install` it's recommended to set the installation prefix to /usr/local instead of /usr.
 
 **Compilers**
 
-Both Clang/LLVM and GCC work fine for building ES-DE, and on Ubuntu it's easy to switch between the two using `update-alternatives`:
+Both Clang/LLVM and GCC work fine for building ESTACION-PRO, and on Ubuntu it's easy to switch between the two using `update-alternatives`:
 
 ```
 myusername@computer:~$ sudo update-alternatives --config c++
@@ -302,25 +302,25 @@ Assuming the default installation prefix /usr has been used, this is the directo
 
 However, when installing manually instead of building a package, it's recommended to change the install prefix to /usr/local instead of /usr.
 
-Be aware that if using the GNOME desktop environment, /usr/share/pixmaps/org.es_de.frontend.svg must exist in order for the ES-DE icon to be shown in the Dash and task switcher.
+Be aware that if using the GNOME desktop environment, /usr/share/pixmaps/org.es_de.frontend.svg must exist in order for the ESTACION-PRO icon to be shown in the Dash and task switcher.
 
-ES-DE will look in the following locations for application resources, in the listed order:
+ESTACION-PRO will look in the following locations for application resources, in the listed order:
 
-* \<home\>/ES-DE/resources/
+* \<home\>/ESTACION-PRO/resources/
 * \<install prefix\>/share/es-de/resources/
-* \<ES-DE executable directory\>/resources/
+* \<ESTACION-PRO executable directory\>/resources/
 
 The resources directory is critical, without it the application won't start.
 
 As well the following locations will be searched for themes, also in the listed order:
 
-* \<home\>/ES-DE/themes/
+* \<home\>/ESTACION-PRO/themes/
 * \<install prefix\>/share/es-de/themes/
-* \<ES-DE executable directory\>/themes/
+* \<ESTACION-PRO executable directory\>/themes/
 
-A theme is not mandatory to start the application, but ES-DE will be basically useless without it.
+A theme is not mandatory to start the application, but ESTACION-PRO will be basically useless without it.
 
-As indicated above, the home directory will always take precedence and any resources or themes located there will override the ones in the installation path, or in the path of the ES-DE executable.
+As indicated above, the home directory will always take precedence and any resources or themes located there will override the ones in the installation path, or in the path of the ESTACION-PRO executable.
 
 **Creating .deb and .rpm packages**
 
@@ -425,9 +425,9 @@ Use pkgman to install the required dependencies:
 pkgman install cmake gettext curl_devel harfbuzz_devel freeimage_devel pugixml_devel libsdl2_devel libgit2_devel freetype_devel ffmpeg6_devel poppler24_devel
 ```
 
-To clone the ES-DE source repository, run the following:
+To clone the ESTACION-PRO source repository, run the following:
 ```
-git clone https://gitlab.com/es-de/emulationstation-de.git
+git clone https://github.com/DOCK-PI3/ESTACION-PRO.git
 ```
 You can then go ahead and build the application:
 ```
@@ -451,7 +451,7 @@ haikuporter --purge es_de
 haikuporter -S --no-source-packages --get-dependencies -j8 es_de
 ```
 
-The first time you run haikuporter it will take a while as dependencies for all ports will get updated before the ES-DE build process starts.
+The first time you run haikuporter it will take a while as dependencies for all ports will get updated before the ESTACION-PRO build process starts.
 
 Following this you can install the package into the running system:
 ```
@@ -460,7 +460,7 @@ cp ~/haikuports/packages/es_de-3.1.1-1-x86_64.hpkg /boot/system/packages
 
 ## Building on macOS
 
-ES-DE for macOS is built using Clang/LLVM which is the default compiler for this operating system. It's pretty straightforward to build software on this OS. The main problem is that there is no native package manager, but as there are several third party package managers available, this can be partly compensated for. The use of one of them, [Homebrew](https://brew.sh), is detailed below.
+ESTACION-PRO for macOS is built using Clang/LLVM which is the default compiler for this operating system. It's pretty straightforward to build software on this OS. The main problem is that there is no native package manager, but as there are several third party package managers available, this can be partly compensated for. The use of one of them, [Homebrew](https://brew.sh), is detailed below.
 
 **Setting up the build tools**
 
@@ -496,7 +496,7 @@ sudo /usr/sbin/DevToolsSecurity --enable
 To clone the source repository, run the following:
 
 ```
-git clone https://gitlab.com/es-de/emulationstation-de.git
+git clone https://github.com/DOCK-PI3/ESTACION-PRO.git
 ```
 
 On macOS all dependencies are built in-tree in the `external` directory tree. There are two scripts in the tools directory that automate this entirely and they are executed such as this:
@@ -523,7 +523,7 @@ make -j8
 cp libpugixml.a ../..
 ```
 
-After all dependencies have been built, generate the Makefile and build ES-DE:
+After all dependencies have been built, generate the Makefile and build ESTACION-PRO:
 
 ```
 cmake .
@@ -578,7 +578,7 @@ Specifically on macOS it seems as if AddressSanitizer generates a lot of false p
 export ASAN_OPTIONS=detect_container_overflow=0
 ```
 
-Running ES-DE from the build directory may be a bit flaky as there is no Info.plist file available which is required for setting the proper window mode and such. It's therefore recommended to run the application from the installation directory for any more in-depth testing. But normal debugging can of course be done from the build directory.
+Running ESTACION-PRO from the build directory may be a bit flaky as there is no Info.plist file available which is required for setting the proper window mode and such. It's therefore recommended to run the application from the installation directory for any more in-depth testing. But normal debugging can of course be done from the build directory.
 
 **Cross-compiling for x86_64**
 
@@ -620,51 +620,51 @@ make install
 This will be the directory structure for the installation:
 
 ```
-/Applications/ES-DE.app/Contents/Info.plist
-/Applications/ES-DE.app/Contents/MacOS/ES-DE
-/Applications/ES-DE.app/Contents/MacOS/es-pdf-convert
-/Applications/ES-DE.app/Contents/MacOS/libSDL2-2.0.0.dylib
-/Applications/ES-DE.app/Contents/MacOS/libavcodec.60.dylib
-/Applications/ES-DE.app/Contents/MacOS/libavfilter.9.dylib
-/Applications/ES-DE.app/Contents/MacOS/libavformat.60.dylib
-/Applications/ES-DE.app/Contents/MacOS/libavutil.58.dylib
-/Applications/ES-DE.app/Contents/MacOS/libfontconfig.1.dylib
-/Applications/ES-DE.app/Contents/MacOS/libfreetype.6.dylib
-/Applications/ES-DE.app/Contents/MacOS/libgit2.1.6.dylib
-/Applications/ES-DE.app/Contents/MacOS/libjpeg.62.dylib
-/Applications/ES-DE.app/Contents/MacOS/libopenjp2.7.dylib
-/Applications/ES-DE.app/Contents/MacOS/libpoppler-cpp.0.dylib
-/Applications/ES-DE.app/Contents/MacOS/libpoppler.129.dylib
-/Applications/ES-DE.app/Contents/MacOS/libpostproc.57.dylib
-/Applications/ES-DE.app/Contents/MacOS/libswresample.4.dylib
-/Applications/ES-DE.app/Contents/MacOS/libswscale.7.dylib
-/Applications/ES-DE.app/Contents/MacOS/libtiff.6.dylib
-/Applications/ES-DE.app/Contents/MacOS/libvorbis.0.4.9.dylib
-/Applications/ES-DE.app/Contents/MacOS/libvorbisenc.2.0.12.dylib
-/Applications/ES-DE.app/Contents/Resources/ES-DE.icns
-/Applications/ES-DE.app/Contents/Resources/LICENSE
-/Applications/ES-DE.app/Contents/Resources/licenses/*
-/Applications/ES-DE.app/Contents/Resources/resources/*
-/Applications/ES-DE.app/Contents/Resources/themes/*
+/Applications/ESTACION-PRO.app/Contents/Info.plist
+/Applications/ESTACION-PRO.app/Contents/MacOS/ESTACION-PRO
+/Applications/ESTACION-PRO.app/Contents/MacOS/es-pdf-convert
+/Applications/ESTACION-PRO.app/Contents/MacOS/libSDL2-2.0.0.dylib
+/Applications/ESTACION-PRO.app/Contents/MacOS/libavcodec.60.dylib
+/Applications/ESTACION-PRO.app/Contents/MacOS/libavfilter.9.dylib
+/Applications/ESTACION-PRO.app/Contents/MacOS/libavformat.60.dylib
+/Applications/ESTACION-PRO.app/Contents/MacOS/libavutil.58.dylib
+/Applications/ESTACION-PRO.app/Contents/MacOS/libfontconfig.1.dylib
+/Applications/ESTACION-PRO.app/Contents/MacOS/libfreetype.6.dylib
+/Applications/ESTACION-PRO.app/Contents/MacOS/libgit2.1.6.dylib
+/Applications/ESTACION-PRO.app/Contents/MacOS/libjpeg.62.dylib
+/Applications/ESTACION-PRO.app/Contents/MacOS/libopenjp2.7.dylib
+/Applications/ESTACION-PRO.app/Contents/MacOS/libpoppler-cpp.0.dylib
+/Applications/ESTACION-PRO.app/Contents/MacOS/libpoppler.129.dylib
+/Applications/ESTACION-PRO.app/Contents/MacOS/libpostproc.57.dylib
+/Applications/ESTACION-PRO.app/Contents/MacOS/libswresample.4.dylib
+/Applications/ESTACION-PRO.app/Contents/MacOS/libswscale.7.dylib
+/Applications/ESTACION-PRO.app/Contents/MacOS/libtiff.6.dylib
+/Applications/ESTACION-PRO.app/Contents/MacOS/libvorbis.0.4.9.dylib
+/Applications/ESTACION-PRO.app/Contents/MacOS/libvorbisenc.2.0.12.dylib
+/Applications/ESTACION-PRO.app/Contents/Resources/ESTACION-PRO.icns
+/Applications/ESTACION-PRO.app/Contents/Resources/LICENSE
+/Applications/ESTACION-PRO.app/Contents/Resources/licenses/*
+/Applications/ESTACION-PRO.app/Contents/Resources/resources/*
+/Applications/ESTACION-PRO.app/Contents/Resources/themes/*
 ```
 
-ES-DE will look in the following locations for application resources, in the listed order:
+ESTACION-PRO will look in the following locations for application resources, in the listed order:
 
-* \<home\>/ES-DE/resources/
-* \<ES-DE executable directory\>/../Resources/resources/
-* \<ES-DE executable directory\>/resources/
+* \<home\>/ESTACION-PRO/resources/
+* \<ESTACION-PRO executable directory\>/../Resources/resources/
+* \<ESTACION-PRO executable directory\>/resources/
 
 The resources directory is critical, without it the application won't start.
 
 As well the following locations will be searched for themes, also in the listed order:
 
-* \<HOME\>/ES-DE/themes/
-* \<ES-DE executable directory\>/../Resources/themes/
-* \<ES-DE executable directory\>/themes/
+* \<HOME\>/ESTACION-PRO/themes/
+* \<ESTACION-PRO executable directory\>/../Resources/themes/
+* \<ESTACION-PRO executable directory\>/themes/
 
-A theme is not mandatory to start the application, but ES-DE will be basically useless without it.
+A theme is not mandatory to start the application, but ESTACION-PRO will be basically useless without it.
 
-As indicated above, the home directory will always take precedence and any resources or themes located there will override the ones in the path of the ES-DE executable.
+As indicated above, the home directory will always take precedence and any resources or themes located there will override the ones in the path of the ESTACION-PRO executable.
 
 **Creating a .dmg installer**
 
@@ -682,7 +682,7 @@ CPack: - package: /Users/myusername/emulationstation-de/ES-DE_3.0.0-arm64.dmg ge
 
 ## Building on Windows
 
-Only the Microsoft Visual C++ (MSVC) compiler is supported on Windows. Although MinGW/GCC produces higher quality code with ES-DE running around 10% to 25% faster it's unfortunately not sustainable to use it. There are multiple technical issues with third party libraries like severe threading issues with FFmpeg and some libraries like Poppler not being readily available.
+Only the Microsoft Visual C++ (MSVC) compiler is supported on Windows. Although MinGW/GCC produces higher quality code with ESTACION-PRO running around 10% to 25% faster it's unfortunately not sustainable to use it. There are multiple technical issues with third party libraries like severe threading issues with FFmpeg and some libraries like Poppler not being readily available.
 
 Install Git for Windows: \
 https://gitforwindows.org
@@ -715,7 +715,7 @@ https://docs.microsoft.com/en-us/cpp/windows/latest-supported-vc-redis
 
 The way the MSVC environment works is that a specific developer shell is provided where the build environment is properly configured. You open this from the Start menu via `Visual Studio 2022` -> `Visual Studio tools` -> `VC` -> `x64 Native Tools Command Prompt for VS 2022 Current`.
 
-It's important to choose the x64-specific shell and not the x86 variant, as ES-DE will only compile as a 64-bit application.
+It's important to choose the x64-specific shell and not the x86 variant, as ESTACION-PRO will only compile as a 64-bit application.
 
 **Other preparations**
 
@@ -739,7 +739,7 @@ The instructions below assume all build steps for MSVC are done in the MSVC deve
 To clone the source repository, run the following:
 
 ```
-git clone https://gitlab.com/es-de/emulationstation-de.git
+git clone https://github.com/DOCK-PI3/ESTACION-PRO.git
 ```
 
 By default the master branch will be used, which is where development takes place. To instead build a stable release, switch to the `stable-x.x` branch for the version, for example:
@@ -761,9 +761,9 @@ Re-running the setup script will delete and download all dependencies again, and
 
 The setup scripts will download and launch an installer for OpenSSL for Windows if this has not already been installed on the build machine. Just run through the installer using the default settings and everything should work fine.
 
-Following these preparations, ES-DE should be ready to be compiled.
+Following these preparations, ESTACION-PRO should be ready to be compiled.
 
-**Building ES-DE**
+**Building ESTACION-PRO**
 
 It's assumed that [Jom](https://wiki.qt.io/Jom) is used, but if instead using nmake then just remove _JOM_ from the -G flag argument and remove the -j flag as nmake does not support building in parallel.
 
@@ -796,15 +796,15 @@ There are a number of compiler warnings for the bundled rlottie library. Unfortu
 
 **TLS/SSL certificates**
 
-On Windows the certificates supplied with the operating system will not be utilized, instead TLS/SSL certificates bundled with ES-DE will be used.
+On Windows the certificates supplied with the operating system will not be utilized, instead TLS/SSL certificates bundled with ESTACION-PRO will be used.
 
 **Running with OpenGL software rendering**
 
 If you are running Windows in a virtualized environment such as QEMU-KVM that does not support HW accelerated OpenGL, you can install the Mesa3D for Windows library, which can be downloaded at https://fdossena.com/?p=mesa/index.frag
 
-You simply extract the opengl32.dll file into the ES-DE directory and this will enable the llvmpipe renderer. The performance will be terrible of course, but everything should work and it should be good enough for test building on Windows without having to reboot your computer to a native Windows installation. (Note that you may need to copy opengl32.dll to your RetroArch installation directory as well to get the emulators to work somehow correctly.)
+You simply extract the opengl32.dll file into the ESTACION-PRO directory and this will enable the llvmpipe renderer. The performance will be terrible of course, but everything should work and it should be good enough for test building on Windows without having to reboot your computer to a native Windows installation. (Note that you may need to copy opengl32.dll to your RetroArch installation directory as well to get the emulators to work somehow correctly.)
 
-Obviously this library is only intended for development and will not be shipped with ES-DE.
+Obviously this library is only intended for development and will not be shipped with ESTACION-PRO.
 
 **Creating an NSIS installer**
 
@@ -826,27 +826,27 @@ CPack: Create package
 CPack: - package: C:/Programming/emulationstation-de/ES-DE_3.0.0-x64.exe generated.
 ```
 
-The default installation directory suggested by the installer is `C:\Program Files\ES-DE` but this can of course be changed by the user.
+The default installation directory suggested by the installer is `C:\Program Files\ESTACION-PRO` but this can of course be changed by the user.
 
-ES-DE will look in the following locations for application resources, in the listed order:
+ESTACION-PRO will look in the following locations for application resources, in the listed order:
 
-* \<home\>\\ES-DE\resources\
-* \<ES-DE executable directory\>\resources\
+* \<home\>\\ESTACION-PRO\resources\
+* \<ESTACION-PRO executable directory\>\resources\
 
 The resources directory is critical, without it the application won't start.
 
 As well the following locations will be searched for themes, also in the listed order:
 
-* \<home\>\\ES-DE\themes\
-* \<ES-DE executable directory\>\themes\
+* \<home\>\\ESTACION-PRO\themes\
+* \<ESTACION-PRO executable directory\>\themes\
 
-A theme is not mandatory to start the application, but ES-DE will be basically useless without it.
+A theme is not mandatory to start the application, but ESTACION-PRO will be basically useless without it.
 
-As indicated above, the home directory will always take precedence and any resources or themes located there will override the ones in the path of the ES-DE executable.
+As indicated above, the home directory will always take precedence and any resources or themes located there will override the ones in the path of the ESTACION-PRO executable.
 
 ## Working with Git subtrees
 
-There are a couple of Git subtrees in the ES-DE repository for some bundled dependencies. In order to pull updates from these you'll need to add their respective remotes to your local ES-DE repository:
+There are a couple of Git subtrees in the ESTACION-PRO repository for some bundled dependencies. In order to pull updates from these you'll need to add their respective remotes to your local ESTACION-PRO repository:
 
 ```
 git remote add CImg-external https://github.com/dtschump/CImg.git
@@ -867,11 +867,11 @@ Or to pull at a specific commit:
 git subtree add --prefix=external/glm --squash glm-external bf71a834948186f4097caa076cd2663c69a10e1e
 ```
 
-Note that none of this is needed to build ES-DE, it's only needed when working on the project and updating any of the bundled dependencies.
+Note that none of this is needed to build ESTACION-PRO, it's only needed when working on the project and updating any of the bundled dependencies.
 
 ## Using clang-format for automatic code formatting
 
-The entire ES-DE codebase is formatted using clang-format and all new code must be formatted using this tool before being committed.
+The entire ESTACION-PRO codebase is formatted using clang-format and all new code must be formatted using this tool before being committed.
 
 There is a style configuration file named .clang-format located directly at the root of the repository which contains the formatting rules. How to install clang-format is detailed per operating system earlier in this document.
 
@@ -952,9 +952,9 @@ Of course you would like to get the code formatted according to the clang-format
 
 **CA certificates**
 
-There are some files shipped with ES-DE that need to be pulled from external resources, the first one being the CA certificate bundle to get TLS/SSL support working on Windows.
+There are some files shipped with ESTACION-PRO that need to be pulled from external resources, the first one being the CA certificate bundle to get TLS/SSL support working on Windows.
 
-The CA certificates shipped with ES-DE come directly from the curl project but they're originally supplied by the Mozilla foundation. See https://wiki.mozilla.org/CA for more information about this certificate bundle.
+The CA certificates shipped with ESTACION-PRO come directly from the curl project but they're originally supplied by the Mozilla foundation. See https://wiki.mozilla.org/CA for more information about this certificate bundle.
 
 The latest version can be downloaded from https://curl.se/docs/caextract.html
 
@@ -966,11 +966,11 @@ emulationstation-de/resources/certificates/curl-ca-bundle.crt
 
 **MAME ROM info**
 
-ES-DE automatically identifies and excludes MAME BIOS and device files, as well as translating the short MAME ROM names to their full game names. This is done using information from the MAME driver file shipped with the official MAME distribution. The file needs to be converted to an internal format used by ES-DE as the original file is huge and most of the information is not required.
+ESTACION-PRO automatically identifies and excludes MAME BIOS and device files, as well as translating the short MAME ROM names to their full game names. This is done using information from the MAME driver file shipped with the official MAME distribution. The file needs to be converted to an internal format used by ESTACION-PRO as the original file is huge and most of the information is not required.
 
 To get hold of the driver file, go to https://www.mamedev.org/release.php and select the Windows version, but only download the driver information in XML format and not MAME itself. This file will be named something like `mame0226lx.zip` and unzipping it will give you a filename such as `mame0226.xml`.
 
-Move the XML driver file to the resources/MAME directory and then convert it to the ES-DE internal files:
+Move the XML driver file to the resources/MAME directory and then convert it to the ESTACION-PRO internal files:
 
 ```
 cd emulationstation-de/resources/MAME
@@ -1005,21 +1005,21 @@ git diff mamebioses
 git diff mamedevices
 ```
 
-The reason to not simply replace the BIOS and devices files with the new version is that we want to retain entries from all older MAME versions as otherwise older ROM sets used on older MAME versions would have missing information. This is so as the MAME project sometimes removes older entries when they're reorganizing the ROM sets. By merging the files we retain backward compatibility but still support the latest MAME version. To clarify, this of course does not affect the emulation itself, but rather the filtering of BIOS and device files inside ES-DE. The mamenames.xml file containing the translation of MAME ROM names to the full game names does not suffer from this problem as it's cumulative, which is why it is simply overwritten.
+The reason to not simply replace the BIOS and devices files with the new version is that we want to retain entries from all older MAME versions as otherwise older ROM sets used on older MAME versions would have missing information. This is so as the MAME project sometimes removes older entries when they're reorganizing the ROM sets. By merging the files we retain backward compatibility but still support the latest MAME version. To clarify, this of course does not affect the emulation itself, but rather the filtering of BIOS and device files inside ESTACION-PRO. The mamenames.xml file containing the translation of MAME ROM names to the full game names does not suffer from this problem as it's cumulative, which is why it is simply overwritten.
 
 ## Configuration
 
-**~/ES-DE/settings/es_settings.xml**
+**~/ESTACION-PRO/settings/es_settings.xml**
 
-When ES-DE is first started, a configuration file will be created as `~/ES-DE/settings/es_settings.xml`
+When ESTACION-PRO is first started, a configuration file will be created as `~/ESTACION-PRO/settings/es_settings.xml`
 
-This file will contain all supported settings at their default values. Normally you shouldn't need to modify this file manually, instead you should be able to use the menu inside ES-DE to update all the necessary settings.
+This file will contain all supported settings at their default values. Normally you shouldn't need to modify this file manually, instead you should be able to use the menu inside ESTACION-PRO to update all the necessary settings.
 
 **Setting the ROM directory in es_settings.xml**
 
 This complete configuration step can normally be skipped as you're presented with a dialog to change the ROM directory upon application startup if no game files are found.
 
-By default, ES-DE looks in `~/ROMs` for the ROM files, where they are expected to be grouped into directories corresponding to the game systems, for example:
+By default, ESTACION-PRO looks in `~/ROMs` for the ROM files, where they are expected to be grouped into directories corresponding to the game systems, for example:
 
 ```
 myusername@computer:~ROMs$ ls -1
@@ -1037,17 +1037,17 @@ Here's an example:
 
 Keep in mind that you still need to group the ROMs into directories corresponding to the `<path>` tags in es_systems.xml.
 
-There is also support to add the variable %ESPATH% to the ROM directory setting, this will expand to the path where the ES-DE executable is started from. You should normally not need this, but the option is there for special cases. For example:
+There is also support to add the variable %ESPATH% to the ROM directory setting, this will expand to the path where the ESTACION-PRO executable is started from. You should normally not need this, but the option is there for special cases. For example:
 
 ```xml
 <string name="ROMDirectory" value="%ESPATH%/../ROMs" />
 ```
 
-**~/ES-DE/settings/es_input.xml**
+**~/ESTACION-PRO/settings/es_input.xml**
 
-As ES-DE auto-configures the keyboard and controllers, neither the input configuration step or manual adjustments to the es_input.xml file should normally be needed. Actually, unless the button layout has been customized using the input configurator, the es_input.xml file will not even exist.
+As ESTACION-PRO auto-configures the keyboard and controllers, neither the input configuration step or manual adjustments to the es_input.xml file should normally be needed. Actually, unless the button layout has been customized using the input configurator, the es_input.xml file will not even exist.
 
-But if you have customized your button layout and your controller or keyboard stop working, you can delete the `~/ES-DE/settings/es_input.xml` file to remove the customizations, or you can start ES-DE with the `--force-input-config` command line option to make the input configurator appear.
+But if you have customized your button layout and your controller or keyboard stop working, you can delete the `~/ESTACION-PRO/settings/es_input.xml` file to remove the customizations, or you can start ESTACION-PRO with the `--force-input-config` command line option to make the input configurator appear.
 
 The input configuration is described in the [User guide](USERGUIDE-DEV.md#input-device-configuration).
 
@@ -1083,15 +1083,15 @@ You can use **--help** or **-h** to view the list of command line options, as sh
 --help, -h                            Summon a sentient, angry tuba
 ```
 
-_The --anti-aliasing option is not available if ES-DE is built using the OpenGL ES renderer and the --no-update-check option is not available for builds where the application updater is disabled._
+_The --anti-aliasing option is not available if ESTACION-PRO is built using the OpenGL ES renderer and the --no-update-check option is not available for builds where the application updater is disabled._
 
-As you can see above, you can override the home directory path using the `--home` flag. So by running for instance the command `es-de --home ~/games/emulation`, ES-DE will use `~/games/emulation/ES-DE` as its application data directory. Be aware that this option completely replaces what is considered the home directory, meaning the default ROM directory ~/ROMs would be resolved to ~/games/emulation/ROMs. The same is true for the emulator core locations if es_find_rules.xml is configured to look for them relative to the home directory. So of course RetroArch and other emulators would also need to be configured to use ~/games/emulation as its base directory in this instance.
+As you can see above, you can override the home directory path using the `--home` flag. So by running for instance the command `ESTACION-PRO --home ~/games/emulation`, ESTACION-PRO will use `~/games/emulation/ESTACION-PRO` as its application data directory. Be aware that this option completely replaces what is considered the home directory, meaning the default ROM directory ~/ROMs would be resolved to ~/games/emulation/ROMs. The same is true for the emulator core locations if es_find_rules.xml is configured to look for them relative to the home directory. So of course RetroArch and other emulators would also need to be configured to use ~/games/emulation as its base directory in this instance.
 
 Setting --resolution to a lower or higher value than the display resolution will add a border to the application window. The exception is if defining a lower resolution than the display resolution in combination with the --fullscreen-padding flag as this will pad the screen contents on a black background. This can be combined with the --screenoffset option for exact positioning on displays where bezels or similar may obstruct part of the viewable area.
 
 The --no-update-check option only disabled the application updater for the current startup. To permanently disable this functionality use the _Check for application updates_ option in the _Other settings_ menu. The command line option is primarily intended for the unlikely event that the application updater breaks the application and makes it impossible to start.
 
-Running with the --create-system-dirs option will generate all the game system directories in the ROMs folder. This is equivalent to starting ES-DE with no game ROMs present and pressing the _Create directories_ button. Detailed output for the directory creation will be available in es_log.txt and the application will quit immediately after the directories have been created. By default placeholder entries will be skipped, if you want to still create these directories then set the CreatePlaceholderSystemDirectories option to true in es_settings.xml.
+Running with the --create-system-dirs option will generate all the game system directories in the ROMs folder. This is equivalent to starting ESTACION-PRO with no game ROMs present and pressing the _Create directories_ button. Detailed output for the directory creation will be available in es_log.txt and the application will quit immediately after the directories have been created. By default placeholder entries will be skipped, if you want to still create these directories then set the CreatePlaceholderSystemDirectories option to true in es_settings.xml.
 
 For the following options, the es_settings.xml file is immediately updated/saved when passing the parameter:
 ```
@@ -1106,40 +1106,40 @@ For the following options, the es_settings.xml file is immediately updated/saved
 
 As well, passing the option --ignore-gamelist will disable the ParseGamelistOnly setting controlled by --gamelist-only and immediately save the es_settings.xml file. If passing both the --ignore-gamelist and --gamelist-only parameters then --ignore-gamelist will take precedence and --gamelist-only will be ignored.
 
-The --ignore-gamelist option is only active during the program session and is not saved to es_settings.xml. But --gamelist-only is however saved, so in order to return to the normal operation of parsing the gamelist.xml files after starting ES-DE with the --gamelist-only option, you will need to disable the setting _Only show games from gamelist.xml files_ in the _Other settings_ menu (or manually change the ParseGamelistOnly entry in es_settings.xml).
+The --ignore-gamelist option is only active during the program session and is not saved to es_settings.xml. But --gamelist-only is however saved, so in order to return to the normal operation of parsing the gamelist.xml files after starting ESTACION-PRO with the --gamelist-only option, you will need to disable the setting _Only show games from gamelist.xml files_ in the _Other settings_ menu (or manually change the ParseGamelistOnly entry in es_settings.xml).
 
 ## Changing the application data directory
 
-On all platforms except Android and Windows it's possible to change the application data directory to something else than ~/ES-DE if you prefer that. This is accomplished using the ESDE_APPDATA_DIR environment variable, for example like the following:
+On all platforms except Android and Windows it's possible to change the application data directory to something else than ~/ESTACION-PRO if you prefer that. This is accomplished using the ESDE_APPDATA_DIR environment variable, for example like the following:
 
 ```
-ESDE_APPDATA_DIR=~/.config/ES-DE ./ES-DE_x64.AppImage
+ESDE_APPDATA_DIR=~/.config/ESTACION-PRO ./ES-DE_x64.AppImage
 ```
 
 Or like this:
 ```
-export ESDE_APPDATA_DIR=~/.config/ES-DE
+export ESDE_APPDATA_DIR=~/.config/ESTACION-PRO
 ./ES-DE_x64.AppImage
 ```
 
 ## Overriding resource files
 
-Although not normally needed, it's possible to override the bundled resource files on a per-file basis. To do so simply create the resource path inside the ES-DE application data directory and place a file there with the same name as the file you intend to override.
+Although not normally needed, it's possible to override the bundled resource files on a per-file basis. To do so simply create the resource path inside the ESTACION-PRO application data directory and place a file there with the same name as the file you intend to override.
 
 Here's an example where the splash screen has been overridden with a custom image:
 
 ```
-ES-DE/resources/graphics/splash.svg
+ESTACION-PRO/resources/graphics/splash.svg
 ```
 
 And here's a custom MAME name translation file in use:
 ```
-ES-DE/resources/MAME/mamenames.xml
+ESTACION-PRO/resources/MAME/mamenames.xml
 ```
 Overriding resource files is supported on all operating systems including Android.
 
 Here's the bundled resources directory for reference: \
-https://gitlab.com/es-de/emulationstation-de/-/tree/master/resources?ref_type=heads
+https://github.com/DOCK-PI3/ESTACION-PRO/tree/master/resources?ref_type=heads
 
 Note that it's a bad idea to override the es_find_rules.xml, es_systems.xml and es_import_rules.xml files as for these there are better mechanisms available to customize the configuration. How that works is covered elsewhere in this document.
 
@@ -1165,7 +1165,7 @@ Enabling this will skip all debug messages about missing files specifically for 
 
 **LegacyGamelistFileLocation**
 
-As of ES-DE 2.0.0 any gamelist.xml files stored in the game system directories (e.g. under `~/ROMs/`) will not get loaded, they are instead required to be placed in the `~/ES-DE/gamelists/` directory tree. By setting this option to `true` it's however possible to retain the old behavior of first looking for gamelist.xml files in the system directories on startup. Note that even if this setting is enabled ES-DE will still always create new gamelist.xml files under `~/ES-DE/gamelists/` which was the case also for the 1.x.x releases.
+As of ESTACION-PRO 2.0.0 any gamelist.xml files stored in the game system directories (e.g. under `~/ROMs/`) will not get loaded, they are instead required to be placed in the `~/ESTACION-PRO/gamelists/` directory tree. By setting this option to `true` it's however possible to retain the old behavior of first looking for gamelist.xml files in the system directories on startup. Note that even if this setting is enabled ESTACION-PRO will still always create new gamelist.xml files under `~/ESTACION-PRO/gamelists/` which was the case also for the 1.x.x releases.
 
 **LottieMaxFileCache**
 
@@ -1201,18 +1201,18 @@ The passkey to use to change from the _Kiosk_ or _Kid_ UI modes to the _Full_ UI
 
 **UserThemeDirectory** _(All operating systems except Android)_
 
-Sets the user theme directory. If left blank it will default to `~/ES-DE/themes/`
+Sets the user theme directory. If left blank it will default to `~/ESTACION-PRO/themes/`
 
 ## es_find_rules.xml
 
 This file makes it possible to define rules for where to search for the emulator binaries and emulator cores.
 
-The file is located in the resources directory in the same location as the es_systems.xml file, but a customized copy can be placed in ~/ES-DE/custom_systems, which will complement the bundled file.
+The file is located in the resources directory in the same location as the es_systems.xml file, but a customized copy can be placed in ~/ESTACION-PRO/custom_systems, which will complement the bundled file.
 
-Here's an example es_find_rules.xml file for Linux (this is not the complete file shipped with ES-DE as that would be too large to include here):
+Here's an example es_find_rules.xml file for Linux (this is not the complete file shipped with ESTACION-PRO as that would be too large to include here):
 ```xml
 <?xml version="1.0"?>
-<!-- This is the ES-DE find rules configuration file for Linux -->
+<!-- This is the ESTACION-PRO find rules configuration file for Linux -->
 <ruleList>
     <emulator name="OS-SHELL">
         <!-- Operating system shell -->
@@ -1297,9 +1297,9 @@ The find rules can also be used by the %PRECOMMAND_ variable, which is for insta
 <command label="xenia (Wine)">%STARTDIR%=%EMUDIR% %PRECOMMAND_WINE% %EMULATOR_XENIA-WINDOWS% %ROM%</command>
 ```
 
-The `winregistrypath` rule searches the Windows Registry "App Paths" keys for the emulators defined in the `<entry>` tags. If for example this tag is set to `retroarch.exe`, a search will be performed for the key `SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\retroarch.exe`. HKEY_CURRENT_USER is tried first, and if no key is found there, HKEY_LOCAL_MACHINE is tried as well. In addition to this, ES-DE will check that the binary defined in the default value for the key actually exists. If not, it will proceed with the next rule. Be aware that the App Paths keys are added by the emulators during their installation, and although RetroArch does add this key, not all emulators do.
+The `winregistrypath` rule searches the Windows Registry "App Paths" keys for the emulators defined in the `<entry>` tags. If for example this tag is set to `retroarch.exe`, a search will be performed for the key `SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\retroarch.exe`. HKEY_CURRENT_USER is tried first, and if no key is found there, HKEY_LOCAL_MACHINE is tried as well. In addition to this, ESTACION-PRO will check that the binary defined in the default value for the key actually exists. If not, it will proceed with the next rule. Be aware that the App Paths keys are added by the emulators during their installation, and although RetroArch does add this key, not all emulators do.
 
-The `winregistryvalue` rule will search for the specific registry value, and if it exists, it will use that value as the path to the emulator binary. HKEY_CURRENT_USER will be tried first, followed by HKEY_LOCAL_MACHINE. In the same manner as `winregistrypath`, ES-DE will check that the binary defined in the registry value actually exists. If not, it will proceed with the next rule. For example, if setting the `<entry>` tag for this rule to `SOFTWARE\Valve\Steam\SteamExe`, the emulator binary would be set to `c:\program files (x86)\steam\steam.exe`, assuming that's where Steam has been installed. As this rule can be used to query any value in the Registry, it's a quite powerful tool to locate various emulators and applications. In addition to this it's posssible to append an arbitrary string to the key value if it's found and use that as the emulator binary path. This is accomplished by using the pipe sign, so for example the entry `SOFTWARE\PCSX2\Install_Dir|\pcsx2.exe` will look for the key `SOFTWARE\PCSX2\Install_Dir` and if it's found it will take the value of that key and append the string `\pcsx2.exe` to it. This could for example result in `C:\Program Files (x86)\PCSX2\pcsx2.exe`. Also for this setup, ES-DE will check that the emulator binary actually exists, or it will proceed to the next rule.
+The `winregistryvalue` rule will search for the specific registry value, and if it exists, it will use that value as the path to the emulator binary. HKEY_CURRENT_USER will be tried first, followed by HKEY_LOCAL_MACHINE. In the same manner as `winregistrypath`, ESTACION-PRO will check that the binary defined in the registry value actually exists. If not, it will proceed with the next rule. For example, if setting the `<entry>` tag for this rule to `SOFTWARE\Valve\Steam\SteamExe`, the emulator binary would be set to `c:\program files (x86)\steam\steam.exe`, assuming that's where Steam has been installed. As this rule can be used to query any value in the Registry, it's a quite powerful tool to locate various emulators and applications. In addition to this it's posssible to append an arbitrary string to the key value if it's found and use that as the emulator binary path. This is accomplished by using the pipe sign, so for example the entry `SOFTWARE\PCSX2\Install_Dir|\pcsx2.exe` will look for the key `SOFTWARE\PCSX2\Install_Dir` and if it's found it will take the value of that key and append the string `\pcsx2.exe` to it. This could for example result in `C:\Program Files (x86)\PCSX2\pcsx2.exe`. Also for this setup, ESTACION-PRO will check that the emulator binary actually exists, or it will proceed to the next rule.
 
 The other rules are probably self-explanatory with `systempath` searching the PATH environment variable for the binary names defined by the `<entry>` tags and `staticpath` defines absolute paths to the emulators. For staticpath, the actual emulator binary must be included in the entry tag. Wildcards (*) are supported for the emulator binary, but not for directories. Wildcards are very useful for AppImages which often embed version information into the filenames. Note that if multiple files match a wildcard pattern, the first file returned by the operating system will be selected.
 
@@ -1333,7 +1333,7 @@ Each rule supports multiple entry tags which are tried in the order that they ar
 
 The %ESPATH% and %ROMPATH% variables can be used inside the staticpath rules and the %ESPATH% and %EMUPATH% variables can be used inside the corepath rules.
 
-The tilde symbol `~` is supported for the staticpath and corepath rules and will expand to the user home directory. Be aware that if ES-DE has been started with the --home command line option, the home directory is considered to be whatever path was passed as an argument to that option. The same is true if using a portable.txt file.
+The tilde symbol `~` is supported for the staticpath and corepath rules and will expand to the user home directory. Be aware that if ESTACION-PRO has been started with the --home command line option, the home directory is considered to be whatever path was passed as an argument to that option. The same is true if using a portable.txt file.
 
 All these options combined makes it possible to create quite powerful find rules.
 
@@ -1341,7 +1341,7 @@ For reference, here are also example es_find_rules.xml files for macOS and Windo
 
 ```xml
 <?xml version="1.0"?>
-<!-- This is the ES-DE find rules configuration file for macOS -->
+<!-- This is the ESTACION-PRO find rules configuration file for macOS -->
 <ruleList>
     <emulator name="OS-SHELL">
         <!-- Operating system shell -->
@@ -1389,7 +1389,7 @@ For reference, here are also example es_find_rules.xml files for macOS and Windo
 
 ```xml
 <?xml version="1.0"?>
-<!-- This is the ES-DE find rules configuration file for Windows -->
+<!-- This is the ESTACION-PRO find rules configuration file for Windows -->
 <ruleList>
     <emulator name="OS-SHELL">
         <!-- Operating system shell -->
@@ -1459,17 +1459,17 @@ For reference, here are also example es_find_rules.xml files for macOS and Windo
 
 ## es_systems.xml
 
-The es_systems.xml file contains the game systems configuration data for ES-DE, written in XML format. This defines the system name, the full system name, the ROM path, the allowed file extensions, the launch command, the platform (for scraping) and the theme to use.
+The es_systems.xml file contains the game systems configuration data for ESTACION-PRO, written in XML format. This defines the system name, the full system name, the ROM path, the allowed file extensions, the launch command, the platform (for scraping) and the theme to use.
 
-ES-DE ships with a comprehensive `es_systems.xml` file and most users will probably never need to make any customizations. But there may be special circumstances such as wanting to use different emulators for some game systems or perhaps to add additional systems altogether.
+ESTACION-PRO ships with a comprehensive `es_systems.xml` file and most users will probably never need to make any customizations. But there may be special circumstances such as wanting to use different emulators for some game systems or perhaps to add additional systems altogether.
 
-To accomplish this, ES-DE supports customizations via a separate es_systems.xml file that is to be placed in the `custom_systems` folder in the application home directory, i.e. `~/ES-DE/custom_systems/es_systems.xml`. (The tilde symbol `~` translates to `$HOME` on Unix and macOS, and to `%HOMEPATH%` on Windows unless overridden via the --home command line option.)
+To accomplish this, ESTACION-PRO supports customizations via a separate es_systems.xml file that is to be placed in the `custom_systems` folder in the application home directory, i.e. `~/ESTACION-PRO/custom_systems/es_systems.xml`. (The tilde symbol `~` translates to `$HOME` on Unix and macOS, and to `%HOMEPATH%` on Windows unless overridden via the --home command line option.)
 
-This custom file functionality is designed to be complementary to the bundled es_systems.xml file, meaning you should only add entries to the custom configuration file for game systems that you actually want to add or override. So to for example customize a single system, this file should only contain a single `<system>` tag. The structure of the custom file is identical to the bundled file with the exception of an additional optional tag named `<loadExclusive/>`. If this is placed in the custom es_systems.xml file, ES-DE will not load the bundled file. This is normally not recommended and should only be used for special situations. At the end of this section you can find an example of a custom es_systems.xml file.
+This custom file functionality is designed to be complementary to the bundled es_systems.xml file, meaning you should only add entries to the custom configuration file for game systems that you actually want to add or override. So to for example customize a single system, this file should only contain a single `<system>` tag. The structure of the custom file is identical to the bundled file with the exception of an additional optional tag named `<loadExclusive/>`. If this is placed in the custom es_systems.xml file, ESTACION-PRO will not load the bundled file. This is normally not recommended and should only be used for special situations. At the end of this section you can find an example of a custom es_systems.xml file.
 
-The bundled es_systems.xml file is located in the resources directory that is part of the application installation. For example this could be `/usr/share/es-de/resources/systems/linux/es_systems.xml` on Linux, `/Applications/ES-DE.app/Contents/Resources/resources/systems/macos/es_systems.xml` on macOS or `C:\Program Files\ES-DE\resources\systems\windows\es_systems.xml` on Windows. The actual location may differ from these examples of course, depending on where ES-DE has been installed.
+The bundled es_systems.xml file is located in the resources directory that is part of the application installation. For example this could be `/usr/share/es-de/resources/systems/linux/es_systems.xml` on Linux, `/Applications/ESTACION-PRO.app/Contents/Resources/resources/systems/macos/es_systems.xml` on macOS or `C:\Program Files\ESTACION-PRO\resources\systems\windows\es_systems.xml` on Windows. The actual location may differ from these examples of course, depending on where ESTACION-PRO has been installed.
 
-If you're using the AppImage release of ES-DE then the bundled es_systems.xml file is embedded in the AppImage together with the rest of the resources.
+If you're using the AppImage release of ESTACION-PRO then the bundled es_systems.xml file is embedded in the AppImage together with the rest of the resources.
 
 It doesn't matter in which order you define the systems as they will be sorted by the `<fullname>` tag or by the optional `<systemsortname>` tag when displayed inside the application. But it's still a good idea to add the systems in alphabetical order to make the configuration file easier to maintain.
 
@@ -1489,16 +1489,16 @@ Wildcards are supported for emulator binaries, but not for directories:
 
 There is a special case when it comes to file extensions where it's possible to use extensionless files if required. To accomplish this simply add a dot (.) to the list of extensions in the `<extension>` tag. Obviously this makes it impossible to use the _directories interpreted as files_ functionality as there is no file extension, but apart from that everything should work the same as for regular files.
 
-Keep in mind that you have to set up your emulators separately from ES-DE as the es_systems.xml file assumes that your emulator environment is properly configured.
+Keep in mind that you have to set up your emulators separately from ESTACION-PRO as the es_systems.xml file assumes that your emulator environment is properly configured.
 
 Below is an overview of the file layout with various examples. For the command tag, the newer es_find_rules.xml logic described later in this document removes the need for most of the legacy options, but they are still supported for special configurations and for backward compatibility with old configuration files.
 
 ```xml
 <?xml version="1.0"?>
-<!-- This is the ES-DE game systems configuration file. -->
+<!-- This is the ESTACION-PRO game systems configuration file. -->
 <systemList>
     <!-- Any tag not explicitly described as optional in the description is mandatory.
-    If omitting a mandatory tag, ES-DE will skip the system entry during startup. -->
+    If omitting a mandatory tag, ESTACION-PRO will skip the system entry during startup. -->
     <system>
         <!-- A short name. Although there can be multiple identical <name> tags in the file, upon successful loading of a system,
         any succeeding entries with identical <name> tags will be skipped. Multiple identical name tags is only required for very
@@ -1570,7 +1570,7 @@ Below is an overview of the file layout with various examples. For the command t
         <command>"C:\My Games\RetroArch\retroarch.exe" -L "%EMUPATH%\cores\snes9x_libretro.dll" %ROM%</command>
 
         <!-- An example for use in a portable Windows emulator installation, for instance on a USB memory stick. The %ESPATH% variable is
-        expanded to the directory of the ES-DE executable. -->
+        expanded to the directory of the ESTACION-PRO executable. -->
         <command>"%ESPATH%\RetroArch\retroarch.exe" -L "%ESPATH%\RetroArch\cores\snes9x_libretro.dll" %ROM%</command>
 
         <!-- An example of setting the start directory to the directory of the emulator binary, which is required for standalone MAME
@@ -1581,7 +1581,7 @@ Below is an overview of the file layout with various examples. For the command t
         <command label="MAME (Standalone)">%EMULATOR_MAME% %STARTDIR%=~/.mame -rompath %ROMPATH%/arcade %BASENAME%</command>
 
         <!-- An example on Unix which launches either a .desktop file or a shell script. This is for example used by the ports system.
-        The %RUNINBACKGROUND% variable does exactly what it sounds like, it keeps ES-DE running in the background while the game is
+        The %RUNINBACKGROUND% variable does exactly what it sounds like, it keeps ESTACION-PRO running in the background while the game is
         launched. This is required for launching Steam games properly as well as for some other systems. -->
         <command>%RUNINBACKGROUND% %ENABLESHORTCUTS% %EMULATOR_OS-SHELL% %ROM%</command>
 
@@ -1603,7 +1603,7 @@ Below is an overview of the file layout with various examples. For the command t
         You can use multiple platforms too, delimited with any of the whitespace characters (", \r\n\t"), e.g. "megadrive, genesis". -->
         <platform>snes</platform>
 
-        <!-- The theme system name, see THEMES.md for more information. This tag is optional and if it doesn't exist, ES-DE will
+        <!-- The theme system name, see THEMES.md for more information. This tag is optional and if it doesn't exist, ESTACION-PRO will
         use the system name instead. It's still recommended to include this tag even if it's just to clarify that it should
         correspond to the system name. -->
         <theme>snes</theme>
@@ -1641,7 +1641,7 @@ The following variables are expanded for the `command` tag:
 
 `%GAMEDIRRAW%` - Replaced with the unescaped path to the game.
 
-`%ESPATH%` - Replaced with the path to the ES-DE binary. Mostly useful for portable emulator installations, for example on a USB memory stick.
+`%ESPATH%` - Replaced with the path to the ESTACION-PRO binary. Mostly useful for portable emulator installations, for example on a USB memory stick.
 
 `%EMULATOR_` - This utilizes the emulator find rules as defined in `es_find_rules.xml`. This is the recommended way to configure the launch command. The find rules are explained in more detail below.
 
@@ -1649,13 +1649,13 @@ The following variables are expanded for the `command` tag:
 
 `%CORE_` - This utilizes the core find rules as defined in `es_find_rules.xml`. This is the recommended way to configure the launch command.
 
-`%RUNINBACKGROUND%` - When this variable is present, ES-DE will continue to run in the background while a game is launched. This will also prevent the gamelist video from playing, the screensaver from starting, and the game name and game description from scrolling. This functionality is required for some systems such as Valve Steam. The variable can be placed anywhere in the launch command.
+`%RUNINBACKGROUND%` - When this variable is present, ESTACION-PRO will continue to run in the background while a game is launched. This will also prevent the gamelist video from playing, the screensaver from starting, and the game name and game description from scrolling. This functionality is required for some systems such as Valve Steam. The variable can be placed anywhere in the launch command.
 
 `%HIDEWINDOW%` - This variable is only available on Windows and is used primarily for hiding console windows when launching scripts (used for example by Steam games and source ports). If not defining this, the console window will be visible when launching games. The variable can be placed anywhere in the launch command.
 
 `%ESCAPESPECIALS%` - This variable is only available on Windows and is used to escape the characters &()^=;, for the %ROM% variable, which would otherwise make binaries like cmd.exe fail when launching scripts or links. The variable can be placed anywhere in the launch command.
 
-`%ENABLESHORTCUTS%` - This variable is only available on Unix and macOS and is used to enable shortcuts to games and applications. On Unix these come in the form of .desktop files and ES-DE has a simple parser which essentially extracts the command defined in the Exec key and then executes it. Although some basic file structure checks are performed, the actual command listed with the Exec key is blindly executed. In addition to this the variables %F, %f, %U and %u are removed from the Exec key entry. On macOS shortcuts in the form of .app directories and alias files are executed using the `open -W -a` command. This makes it possible to launch shortcuts to emulators and applications like Steam as well as aliases for any application. However the latter need to be renamed to the .app file extension or it won't work. When a file is matching the .desktop or .app extension respectively, the emulator command defined using the %EMULATOR% variable will be stripped. An %EMULATOR% entry is however still required for the %ENABLESHORTCUTS% variable to work as the intention is to combine shortcuts with the ability to launch shell scripts without having to setup alternative emulators. The %ROM% variable is expanded to the command to execute when using %ENABLESHORTCUTS%, which also means that this variable has to be used, and for example %ROMRAW% will not work.
+`%ENABLESHORTCUTS%` - This variable is only available on Unix and macOS and is used to enable shortcuts to games and applications. On Unix these come in the form of .desktop files and ESTACION-PRO has a simple parser which essentially extracts the command defined in the Exec key and then executes it. Although some basic file structure checks are performed, the actual command listed with the Exec key is blindly executed. In addition to this the variables %F, %f, %U and %u are removed from the Exec key entry. On macOS shortcuts in the form of .app directories and alias files are executed using the `open -W -a` command. This makes it possible to launch shortcuts to emulators and applications like Steam as well as aliases for any application. However the latter need to be renamed to the .app file extension or it won't work. When a file is matching the .desktop or .app extension respectively, the emulator command defined using the %EMULATOR% variable will be stripped. An %EMULATOR% entry is however still required for the %ENABLESHORTCUTS% variable to work as the intention is to combine shortcuts with the ability to launch shell scripts without having to setup alternative emulators. The %ROM% variable is expanded to the command to execute when using %ENABLESHORTCUTS%, which also means that this variable has to be used, and for example %ROMRAW% will not work.
 
 Here are some additional real world examples of system entries, the first one for Unix:
 
@@ -1702,10 +1702,10 @@ And finally one for Windows:
 </system>
 ```
 
-As well, here's an example for Linux of a custom es_systems.xml file placed in ~/ES-DE/custom_systems/ that overrides a single game system from the bundled configuration file:
+As well, here's an example for Linux of a custom es_systems.xml file placed in ~/ESTACION-PRO/custom_systems/ that overrides a single game system from the bundled configuration file:
 ```xml
 <?xml version="1.0"?>
-<!-- This is a custom ES-DE game systems configuration file for Linux -->
+<!-- This is a custom ESTACION-PRO game systems configuration file for Linux -->
 <systemList>
     <system>
         <name>nes</name>
@@ -1719,11 +1719,11 @@ As well, here's an example for Linux of a custom es_systems.xml file placed in ~
 </systemList>
 ```
 
-If adding the `<loadExclusive/>` tag to the file, the bundled es_systems.xml file will not be processed. For this example it wouldn't be a very good idea as NES would then be the only platform that could be used in ES-DE.
+If adding the `<loadExclusive/>` tag to the file, the bundled es_systems.xml file will not be processed. For this example it wouldn't be a very good idea as NES would then be the only platform that could be used in ESTACION-PRO.
 
 ```xml
 <?xml version="1.0"?>
-<!-- This is a custom ES-DE game systems configuration file for Unix -->
+<!-- This is a custom ESTACION-PRO game systems configuration file for Unix -->
 <loadExclusive/>
 <systemList>
     <system>
@@ -1742,7 +1742,7 @@ Here is yet another example with the addition of the `snes` system where some fi
 
 ```xml
 <?xml version="1.0"?>
-<!-- This is a custom ES-DE game systems configuration file for Unix -->
+<!-- This is a custom ESTACION-PRO game systems configuration file for Unix -->
 <systemList>
     <system>
         <name>nes</name>
@@ -1770,19 +1770,19 @@ Here is yet another example with the addition of the `snes` system where some fi
 
 ## es_find_rules.xml and es_systems.xml on Android
 
-ES-DE works a bit differently on Android which is also reflected in the es_find_rules.xml and es_systems.xml configuration. Emulators on Android are launched via so-called _Intents_ which is an API rather than the typical command line approach used on Unix systems. Although ES-DE on Windows also uses an API call to launch emulators it's still closely connected to the regular operating system paradigms on how to start binaries and pass application options so the systems configuration still looks quite traditional. On Android this is not the case and there is therefore a heavy use of variables to reflect the Intent API functionality.
+ESTACION-PRO works a bit differently on Android which is also reflected in the es_find_rules.xml and es_systems.xml configuration. Emulators on Android are launched via so-called _Intents_ which is an API rather than the typical command line approach used on Unix systems. Although ESTACION-PRO on Windows also uses an API call to launch emulators it's still closely connected to the regular operating system paradigms on how to start binaries and pass application options so the systems configuration still looks quite traditional. On Android this is not the case and there is therefore a heavy use of variables to reflect the Intent API functionality.
 
 To better understand the configuration in this section it could be a good idea to refer the official Android documentation:\
 https://developer.android.com/reference/android/content/Intent
 
-There is a command line tool in Android named _am_ which implements the _Intent_ API and can be used to test emulator launching, but this is not intended to be used by other applications and therefore ES-DE implements direct (albeit partial) support for the Intent API. Testing the modern FileProvider interface using the _am_ utility is unfortunately not really possible as access permission is provided by the calling process, i.e. ES-DE.
+There is a command line tool in Android named _am_ which implements the _Intent_ API and can be used to test emulator launching, but this is not intended to be used by other applications and therefore ESTACION-PRO implements direct (albeit partial) support for the Intent API. Testing the modern FileProvider interface using the _am_ utility is unfortunately not really possible as access permission is provided by the calling process, i.e. ESTACION-PRO.
 
 The es_find_rules.xml and es_systems.xml files are kept in an Android-internal directory and can't be accessed directly, but you can find them at the following location:\
-https://gitlab.com/es-de/emulationstation-de/-/tree/master/resources/systems/android
+https://github.com/DOCK-PI3/ESTACION-PRO/tree/master/resources/systems/android
 
 **es_find_rules.xml**
 
-The es_find_rules.xml file is structured the same as for the other operating systems but there'a special _androidpackage_ find rule where you define the name of the emulator package as well as optionally which _activity_ to launch. If the activity is not defined then the default one for the package will be used. Although this may work in some instances it's usually a good idea to explicity set it. Apart from that the find rules work as on the other platforms, i.e. they will be traversed in the order they are defined. So by adding multiple _androidpackage_ entries for an emulator it's possible to look for multiple releases or forks without having to create separate emulator entries in es_systems.xml. It's also possible to override find rules by adding an ES-DE/custom_systems/es_find_rules.xml file, again the same logic applies as for all other platforms.
+The es_find_rules.xml file is structured the same as for the other operating systems but there'a special _androidpackage_ find rule where you define the name of the emulator package as well as optionally which _activity_ to launch. If the activity is not defined then the default one for the package will be used. Although this may work in some instances it's usually a good idea to explicity set it. Apart from that the find rules work as on the other platforms, i.e. they will be traversed in the order they are defined. So by adding multiple _androidpackage_ entries for an emulator it's possible to look for multiple releases or forks without having to create separate emulator entries in es_systems.xml. It's also possible to override find rules by adding an ESTACION-PRO/custom_systems/es_find_rules.xml file, again the same logic applies as for all other platforms.
 
 The _androidpackage_ find rule entries are structured as `<entry>packagename/activity</entry>` and if only a package is defined then the forward slash can be omitted, i.e. only `<entry>packagename</entry>` is needed.
 
@@ -1790,7 +1790,7 @@ Here's an example es_find_rules.xml file defining two emulators:
 
 ```xml
 <?xml version="1.0"?>
-<!-- This is the ES-DE find rules configuration file for Android -->
+<!-- This is the ESTACION-PRO find rules configuration file for Android -->
 <ruleList>
     <emulator name="RETROARCH">
         <rule type="androidpackage">
@@ -1811,7 +1811,7 @@ Here's an example es_find_rules.xml file defining two emulators:
 
 **es_systems.xml**
 
-The es_systems.xml file on Android utilizes variables heavily to implement the _Intent_ API and these variables are covered in detail below. It's possible to override the systems configuration by adding an ES-DE/custom_systems/es_systems.xml file, the same logic applies as for all other platforms.
+The es_systems.xml file on Android utilizes variables heavily to implement the _Intent_ API and these variables are covered in detail below. It's possible to override the systems configuration by adding an ESTACION-PRO/custom_systems/es_systems.xml file, the same logic applies as for all other platforms.
 
 `%EMULATOR_` - This utilizes the emulator find rules as defined in `es_find_rules.xml`. This is the only way to configure the launch command on Android and it works identically to the other platforms.
 
@@ -1845,7 +1845,7 @@ There are three approaches to passing game ROMs to emulators by using the follow
 `%ROMSAF%` - Replaced with an Android Storage Access Framework (SAF) document URI which always starts with the _content://com.android.externalstorage.documents/_ string. You can read more about the SAF here:\
 https://developer.android.com/guide/topics/providers/document-provider
 
-`%ROMPROVIDER%` - This is the most modern approach to passing game ROMs to emulators. It uses the _FileProvider_ API to provide permissions to the file. This means that you generally don't need to setup the emulator upfront to have access to the directory where the game file is stored, access is instead temporarily granted by ES-DE. This will however only work for games that consist of a single file, for multi-file games such as .cue/.bin and similar %ROMSAF% has to be used instead. Adding to the confusion is however the fact that some emulators like FPseNG and FPse can only be launched using %ROMPROVIDER% even though you need to setup scoped storage access in the emulator upfront. So there are unfortunately no definitive rules regarding the use of %ROMPROVIDER%, it all depends on how the emulator has implemented the functionality. You can read more about the FileProvider API here:\
+`%ROMPROVIDER%` - This is the most modern approach to passing game ROMs to emulators. It uses the _FileProvider_ API to provide permissions to the file. This means that you generally don't need to setup the emulator upfront to have access to the directory where the game file is stored, access is instead temporarily granted by ESTACION-PRO. This will however only work for games that consist of a single file, for multi-file games such as .cue/.bin and similar %ROMSAF% has to be used instead. Adding to the confusion is however the fact that some emulators like FPseNG and FPse can only be launched using %ROMPROVIDER% even though you need to setup scoped storage access in the emulator upfront. So there are unfortunately no definitive rules regarding the use of %ROMPROVIDER%, it all depends on how the emulator has implemented the functionality. You can read more about the FileProvider API here:\
 https://developer.android.com/reference/androidx/core/content/FileProvider
 
 The `%ROM%` and `%ROMSAF%` variables can be used with both the `%DATA%` and `%EXTRA_` variables, but `%ROMPROVIDER%` can only be used with the `%DATA%` variable. For the `%DATA%` variable you'll just assign the ROM variable with an equal sign as there can only be a single _setData()_ API call per Intent. For the `%EXTRA_` variable you need to specify a name of the extra and then define it using an equal sign as an arbitrary amount of _putExtra()_ API calls can be used for an Intent.
@@ -1889,7 +1889,7 @@ The descriptions below are taken from the official documentation just linked abo
 Here's an example es_systems.xml file for Android:
 ```xml
 <?xml version="1.0"?>
-<!-- This is the ES-DE game systems configuration file for Android -->
+<!-- This is the ESTACION-PRO game systems configuration file for Android -->
 <systemList>
     <system>
         <name>atari2600</name>
@@ -1941,9 +1941,9 @@ Here's an example es_systems.xml file for Android:
 
 ## es_systems_sorting.xml
 
-This file makes it possible to apply custom systems sorting without having to modify the es_systems.xml file directly. It should be placed in the custom_systems directory, e.g.  `~/ES-DE/custom_systems/es_systems_sorting.xml`
+This file makes it possible to apply custom systems sorting without having to modify the es_systems.xml file directly. It should be placed in the custom_systems directory, e.g.  `~/ESTACION-PRO/custom_systems/es_systems_sorting.xml`
 
-Note that in order for ES-DE to load this file you'll need to set the _Systems sorting_ option in the _UI settings_ menu to _Full names or custom_.
+Note that in order for ESTACION-PRO to load this file you'll need to set the _Systems sorting_ option in the _UI settings_ menu to _Full names or custom_.
 
 The structure of this file is essentially a simplified version of the es_systems.xml file, but with only the `<name>` and `<systemsortname>` tags present per system.
 
@@ -1971,9 +1971,9 @@ You only need to include systems that you want to customize sorting for, and if 
 
 Note that the `<systemsortname>` tags are sorted in [lexicographic order](https://en.wikipedia.org/wiki/Lexicographic_order) so 11 will be sorted above 2 but 002 will be sorted above 011. Secondary sorting will always be done by the fullname tag in es_systems.xml.
 
-There are also four complete sorting files bundled with ES-DE, you can find them in the resources/sorting/ directory, or you can access them [here](https://gitlab.com/es-de/emulationstation-de/-/tree/master/resources/sorting).
+There are also four complete sorting files bundled with ESTACION-PRO, you can find them in the resources/sorting/ directory, or you can access them [here](https://github.com/DOCK-PI3/ESTACION-PRO/tree/master/resources/sorting).
 
-These files include all systems supported by ES-DE and provide the following sorting options:
+These files include all systems supported by ESTACION-PRO and provide the following sorting options:
 
 * Release year
 * Manufacturer, release year
@@ -1986,7 +1986,7 @@ You can apply any of these sorting files via the _Systems sorting_ option in the
 
 The es_import_rules.xml file is used by the game importer that is accessible via the _Utilities_ menu and via a button in the "No ROMs" interface on application startup if there are no games present.
 
-The configuration file makes it possible to define which game systems should be added to the game importer and what rule types to use for each system. The es_import_rules.xml file is located in the resources directory, i.e. the same location as the es_systems.xml and es_find_rules.xml files, but a customized copy can be placed in ~/ES-DE/custom_systems, which will complement the bundled file.
+The configuration file makes it possible to define which game systems should be added to the game importer and what rule types to use for each system. The es_import_rules.xml file is located in the resources directory, i.e. the same location as the es_systems.xml and es_find_rules.xml files, but a customized copy can be placed in ~/ESTACION-PRO/custom_systems, which will complement the bundled file.
 
 The structure of the file is similar to es_find_rules.xml with the configuration contained within a _ruleList_ tag pair. There is a _system_ tag pair that describes each system and the name attribute for this tag defines the actual game system to apply the configuration to.
 
@@ -2002,7 +2002,7 @@ Here's an example:
 
 ```xml
 <?xml version="1.0"?>
-<!-- This is the ES-DE import rules configuration file for Android -->
+<!-- This is the ESTACION-PRO import rules configuration file for Android -->
 <ruleList>
     <system name="androidapps">
         <rule name="Android Package" type="androidpackage">
@@ -2022,13 +2022,13 @@ Here's an example:
 </ruleList>
 ```
 
-`file` - This rule is available on Linux and Windows and has a mandatory _extension_ tag which controls the file extension to match when looking for files to import. This extension is case-sensitive in Linux and case-insensitive in Windows. There's also a _directory_ tag with a mandatory _recursive_ attribute. You can add multiple _directory_ tags to look for files at various locations. It's also possible to use the `%ESPATH%` variable for the directory tag to look for files relative to the ES-DE binary directory. The tilde symbol `~` is supported as well and will expand to the user home directory. Note that this will always expand to the operating system home directory, even if the --home command line option has been used, or if a portable.txt file is present.
+`file` - This rule is available on Linux and Windows and has a mandatory _extension_ tag which controls the file extension to match when looking for files to import. This extension is case-sensitive in Linux and case-insensitive in Windows. There's also a _directory_ tag with a mandatory _recursive_ attribute. You can add multiple _directory_ tags to look for files at various locations. It's also possible to use the `%ESPATH%` variable for the directory tag to look for files relative to the ESTACION-PRO binary directory. The tilde symbol `~` is supported as well and will expand to the user home directory. Note that this will always expand to the operating system home directory, even if the --home command line option has been used, or if a portable.txt file is present.
 
 Here's an example:
 
 ```xml
 <?xml version="1.0"?>
-<!-- This is the ES-DE import rules configuration file for Windows -->
+<!-- This is the ESTACION-PRO import rules configuration file for Windows -->
 <ruleList>
     <system name="desktop">
         <rule name="Shortcut File" type="file">
@@ -2062,13 +2062,13 @@ Here's an example:
 </ruleList>
 ```
 
-`desktopshortcut` - This rule is available on Linux and FreeBSD and only has a _directory_ tag with two optional attributes, _gamesOnly_ and _execFilter_. The way this rule works is that it searches for files with the .desktop extension in the defined directories and will then parse these files to retrieve the name of the game or application as well as the Exec key, the application category and whether the NoDisplay key has been set. The name parsing is important as these files can have cryptic names like _org.kde.gwenview.desktop_ and ES-DE will instead use the actual name defined inside the file. The _gamesOnly_ attribute controls whether to only include entries categorized as games. The _execFilter_ attribute can be used to match against the content of the _Exec_ key inside the shortcut file to only include files where there's a match. Note that this matching is case-insensitive. Finally the NoDisplay key is set for entries that should not be shown in the operating system menus, and ES-DE will as such skip these files during the import process. The tilde symbol `~` is supported as well for the directory tag, and will expand to the user home directory. Note that this will always expand to the operating system home directory, even if the --home command line option has been used, or if a portable.txt file is present.
+`desktopshortcut` - This rule is available on Linux and FreeBSD and only has a _directory_ tag with two optional attributes, _gamesOnly_ and _execFilter_. The way this rule works is that it searches for files with the .desktop extension in the defined directories and will then parse these files to retrieve the name of the game or application as well as the Exec key, the application category and whether the NoDisplay key has been set. The name parsing is important as these files can have cryptic names like _org.kde.gwenview.desktop_ and ESTACION-PRO will instead use the actual name defined inside the file. The _gamesOnly_ attribute controls whether to only include entries categorized as games. The _execFilter_ attribute can be used to match against the content of the _Exec_ key inside the shortcut file to only include files where there's a match. Note that this matching is case-insensitive. Finally the NoDisplay key is set for entries that should not be shown in the operating system menus, and ESTACION-PRO will as such skip these files during the import process. The tilde symbol `~` is supported as well for the directory tag, and will expand to the user home directory. Note that this will always expand to the operating system home directory, even if the --home command line option has been used, or if a portable.txt file is present.
 
 Here's an example:
 
 ```xml
 <?xml version="1.0"?>
-<!-- This is the ES-DE import rules configuration file for Linux -->
+<!-- This is the ESTACION-PRO import rules configuration file for Linux -->
 <ruleList>
     <system name="desktop">
         <rule name="Desktop Shortcut" type="desktopshortcut">
@@ -2103,13 +2103,13 @@ Here's an example:
 </ruleList>
 ```
 
-`macosbundle` - This rule is only available on macOS and works a bit different than the other rules. It has a _directory_ tag with a mandatory _recursive_ attribute which is used to define which directory to look for bundles in. As macOS bundles are entire directory structures containing the actual application files, ES-DE will make symlinks to these directories rather than copying them to the target system directory. The tilde symbol `~` is supported as well for the directory tag, and will expand to the user home directory. Note that this will always expand to the operating system home directory, even if the --home command line option has been used, or if a portable.txt file is present.
+`macosbundle` - This rule is only available on macOS and works a bit different than the other rules. It has a _directory_ tag with a mandatory _recursive_ attribute which is used to define which directory to look for bundles in. As macOS bundles are entire directory structures containing the actual application files, ESTACION-PRO will make symlinks to these directories rather than copying them to the target system directory. The tilde symbol `~` is supported as well for the directory tag, and will expand to the user home directory. Note that this will always expand to the operating system home directory, even if the --home command line option has been used, or if a portable.txt file is present.
 
 Here's an example:
 
 ```xml
 <?xml version="1.0"?>
-<!-- This is the ES-DE import rules configuration file for macOS -->
+<!-- This is the ESTACION-PRO import rules configuration file for macOS -->
 <ruleList>
     <system name="desktop">
         <rule name="macOS Bundle" type="macosbundle">
@@ -2128,29 +2128,29 @@ Here's an example:
 
 The gamelist.xml file for a system defines the metadata for its entries, such as the game names, descriptions, release dates and ratings.
 
-As of the fork to ES-DE, game media information no longer needs to be defined in the gamelist.xml files. Instead the application will look for any media matching the ROM filename. The media path where to look for game media is configurable either manually in `es_settings.xml` or via the GUI. If configured manually in es_settings.xml, it looks something like this:
+In ESTACION-PRO, game media information no longer needs to be defined in the gamelist.xml files. Instead the application will look for any media matching the ROM filename. The media path where to look for game media is configurable either manually in `es_settings.xml` or via the GUI. If configured manually in es_settings.xml, it looks something like this:
 
 ```xml
-<string name="MediaDirectory" value="~/games/media/ES-DE" />
+<string name="MediaDirectory" value="~/games/media/ESTACION-PRO" />
 ```
 
-There is also support to add the variable %ESPATH% to the media directory setting, this will expand to the path where the ES-DE executable is started from. You should normally not need this, but the option is there for special cases. For example:
+There is also support to add the variable %ESPATH% to the media directory setting, this will expand to the path where the ESTACION-PRO executable is started from. You should normally not need this, but the option is there for special cases. For example:
 
 ```xml
 <string name="MediaDirectory" value="%ESPATH%/../downloaded_media" />
 ```
 
-The default media directory is `~/ES-DE/downloaded_media`
+The default media directory is `~/ESTACION-PRO/downloaded_media`
 
-You can use ES-DE's scrapers to populate the gamelist.xml files, or manually update individual entries using the metadata editor. All of this is explained in the [User guide](USERGUIDE-DEV.md).
+You can use ESTACION-PRO's scrapers to populate the gamelist.xml files, or manually update individual entries using the metadata editor. All of this is explained in the [User guide](USERGUIDE-DEV.md).
 
-The gamelist.xml files are searched for in the ES-DE home directory, i.e. `~/ES-DE/gamelists/<system name>/gamelist.xml`
+The gamelist.xml files are searched for in the ESTACION-PRO home directory, i.e. `~/ESTACION-PRO/gamelists/<system name>/gamelist.xml`
 
 For example:
 
 ```
-~/ES-DE/gamelists/c64/gamelist.xml
-~/ES-DE/gamelists/megadrive/gamelist.xml
+~/ESTACION-PRO/gamelists/c64/gamelist.xml
+~/ESTACION-PRO/gamelists/megadrive/gamelist.xml
 ```
 
 **gamelist.xml file structure**
@@ -2187,7 +2187,7 @@ There are a few different data types for the metadata which the string values in
 * `datetime` - a date and optionally a time encoded as an ISO string in the format "%Y%m%dT%H%M%S",  for example "19950311T000000"
 * `bool` - a true or false value
 
-Some metadata is also marked as "statistic", these are kept track of by ES-DE and do not show up in the metadata editor. They are shown in certain views (for example, the detailed view and the video view both show `lastplayed`, although the label can be disabled by the theme).
+Some metadata is also marked as "statistic", these are kept track of by ESTACION-PRO and do not show up in the metadata editor. They are shown in certain views (for example, the detailed view and the video view both show `lastplayed`, although the label can be disabled by the theme).
 
 There are two basic categories of metadata, `game` and `folders` and the metdata tags for these are described in detail below.
 
@@ -2241,13 +2241,13 @@ For folders, most of the fields are identical although some are removed. In the 
 
 **Additional gamelist.xml information**
 
-* If a value matches the default for a particular piece of metadata, ES-DE will not write it to the gamelist.xml file (for example, if `genre` isn't specified, an empty genre tag will not be written)
+* If a value matches the default for a particular piece of metadata, ESTACION-PRO will not write it to the gamelist.xml file (for example, if `genre` isn't specified, an empty genre tag will not be written)
 
 * A `game` can actually point to a folder/directory if the folder has a matching extension, although this is exceedingly rare
 
 * The `folder` metadata will only be used if a game file is found inside that folder, as empty folders will be skipped during startup even if they have metadata values defined for themselves
 
-* ES-DE will keep entries for games and folders that it can't find the game/ROM files for, i.e. it will not clean up the gamelist.xml files automatically when game files are missing
+* ESTACION-PRO will keep entries for games and folders that it can't find the game/ROM files for, i.e. it will not clean up the gamelist.xml files automatically when game files are missing
 
 * The switch `--gamelist-only` can be used to skip automatic searching, and only display games defined in the gamelist.xml files
 
@@ -2255,8 +2255,8 @@ For folders, most of the fields are identical although some are removed. In the 
 
 ## Debug mode
 
-By enabling the _Debug mode_ setting in the _Other settings_ menu or by passing the --debug command line option, ES-DE will increase the logging to include a lot of additional debug output which is useful both for development and in order to pinpoint issues as a user.
-In addition to this extra logging, a few key combinations are enabled when in debug mode. These are useful both for working on ES-DE itself as well as for theme developers.
+By enabling the _Debug mode_ setting in the _Other settings_ menu or by passing the --debug command line option, ESTACION-PRO will increase the logging to include a lot of additional debug output which is useful both for development and in order to pinpoint issues as a user.
+In addition to this extra logging, a few key combinations are enabled when in debug mode. These are useful both for working on ESTACION-PRO itself as well as for theme developers.
 
 **Ctrl + i**
 
@@ -2278,11 +2278,11 @@ By default all controller input (keyboard and controller button presses) will be
 
 ## Adding custom controller profiles
 
-Before attempting to add a custom profile for your controller you need to check whether there is device driver support for it in your operating system. If the controller works in other applications and games, then proceed with the instructions below, but if it doesn't work anywhere else then chances are very low that you can get it to work in ES-DE.
+Before attempting to add a custom profile for your controller you need to check whether there is device driver support for it in your operating system. If the controller works in other applications and games, then proceed with the instructions below, but if it doesn't work anywhere else then chances are very low that you can get it to work in ESTACION-PRO.
 
-ES-DE uses the [SDL](https://www.libsdl.org) (Simple DirectMedia Layer) library to handle controller input, so in order for a controller to work in ES-DE, it has to be supported by SDL. There is however a possibility to add custom controller profiles to SDL which in some cases could enable devices in ES-DE that would otherwise not be supported. This is generally a temporary solution though, as controller support is constantly getting improved natively in SDL. As a first step it's therefore recommended to open a request at the SDL [issue tracker](https://github.com/libsdl-org/SDL/issues) to have your specific controller added to a future SDL release.
+ESTACION-PRO uses the [SDL](https://www.libsdl.org) (Simple DirectMedia Layer) library to handle controller input, so in order for a controller to work in ESTACION-PRO, it has to be supported by SDL. There is however a possibility to add custom controller profiles to SDL which in some cases could enable devices in ESTACION-PRO that would otherwise not be supported. This is generally a temporary solution though, as controller support is constantly getting improved natively in SDL. As a first step it's therefore recommended to open a request at the SDL [issue tracker](https://github.com/libsdl-org/SDL/issues) to have your specific controller added to a future SDL release.
 
-Assuming the controller works in other applications than ES-DE, you can attempt to add a custom profile by creating the file `~/ES-DE/controllers/es_controller_mappings.cfg` and enter the appropriate configuration inside this file.
+Assuming the controller works in other applications than ESTACION-PRO, you can attempt to add a custom profile by creating the file `~/ESTACION-PRO/controllers/es_controller_mappings.cfg` and enter the appropriate configuration inside this file.
 
 The required format is described here:\
 https://github.com/gabomdq/SDL_GameControllerDB
@@ -2292,7 +2292,7 @@ https://raw.githubusercontent.com/gabomdq/SDL_GameControllerDB/master/gamecontro
 
 But just do this as a first step to see whether you controller gets enabled. If it does, then you should remove all entries that are not relevant. That is important as this file will take precedence over the built-in controller profiles in the SDL library, so any future controller bug fixes and similar would not apply. In the past the gamecontrollerdb.txt file has also included some invalid configuration entries, so even though it may make your controller work, it could actually break some other controllers that you may want to use now or in the future.
 
-Therefore only keep the entries in the es_controller_mappings.cfg file that are relevant for your devices. You can find each relevant controller GUID by starting ES-DE and then looking in the `~/ES-DE/logs/es_log.txt` file. You should see entries such as the following:
+Therefore only keep the entries in the es_controller_mappings.cfg file that are relevant for your devices. You can find each relevant controller GUID by starting ESTACION-PRO and then looking in the `~/ESTACION-PRO/logs/es_log.txt` file. You should see entries such as the following:
 ```
 May 16 18:26:17 Info:   Added controller with custom configuration: "X360 Controller" (GUID: 030000005e0400008e02000010010000, instance ID: 0, device index: 0)
 ```
@@ -2301,53 +2301,53 @@ It's the GUID that is the key, and it's the lines matching these IDs that you wa
 
 Even if pasting the entire content of gamecontrollerdb.txt into the es_controller_mappings.cfg file did not enable your controller, all hope is not lost. You may still be able to create your own custom controller entry, but doing that is beyond the scope of this document and you would have to look into the instructions at the SDL_GameControllerDB URL mentioned above.
 
-As a final note, this configuration file can also be used for the opposite purpose, i.e. to blacklist devices so that they will not work inside ES-DE. Some wireless controllers with buggy drivers will register as two devices meaning every button press will be registered twice. In this situation, blacklisting one of these entries will make the controller behave correctly. Although it's possible to enable the _Only accept input from first controller_ menu option as a workaround, this will completely ignore all other controllers which may not be what you want. To blacklist a controller, follow the same procedure described above but leave the button configuration blank for the GUID entry.
+As a final note, this configuration file can also be used for the opposite purpose, i.e. to blacklist devices so that they will not work inside ESTACION-PRO. Some wireless controllers with buggy drivers will register as two devices meaning every button press will be registered twice. In this situation, blacklisting one of these entries will make the controller behave correctly. Although it's possible to enable the _Only accept input from first controller_ menu option as a workaround, this will completely ignore all other controllers which may not be what you want. To blacklist a controller, follow the same procedure described above but leave the button configuration blank for the GUID entry.
 
 ## Portable installation on Windows
 
 _As there is a preconfigured portable release available for Windows, this section is mostly relevant for understanding how the setup works, as well as to provide information on how to make customizations._
 
-It's possible to easily create a portable installation of ES-DE on Windows, for example to place on a USB memory stick.
+It's possible to easily create a portable installation of ESTACION-PRO on Windows, for example to place on a USB memory stick.
 
 For this example, let's assume that the removable media has the device name `F:\`
 
 These are the steps to perform:
 
-* Install ES-DE
-* Copy the ES-DE installation directory to F:\
-* Create a directory named F:\ES-DE\Emulators
-* Copy your emulator directories to F:\ES-DE\Emulators\
-* Copy your ROMs directory to F:\ES-DE\
-* Create an empty file named portable.txt in F:\ES-DE\
+* Install ESTACION-PRO
+* Copy the ESTACION-PRO installation directory to F:\
+* Create a directory named F:\ESTACION-PRO\Emulators
+* Copy your emulator directories to F:\ESTACION-PRO\Emulators\
+* Copy your ROMs directory to F:\ESTACION-PRO\
+* Create an empty file named portable.txt in F:\ESTACION-PRO\
 
 You should end up with something like this:
 ```
-F:\ES-DE\
-F:\ES-DE\Emulators\dosbox-staging\
-F:\ES-DE\Emulators\RetroArch-Win64\
-F:\ES-DE\Emulators\RPCS3\
-F:\ES-DE\Emulators\xemu\
-F:\ES-DE\ROMs\
-F:\ES-DE\portable.txt
+F:\ESTACION-PRO\
+F:\ESTACION-PRO\Emulators\dosbox-staging\
+F:\ESTACION-PRO\Emulators\RetroArch-Win64\
+F:\ESTACION-PRO\Emulators\RPCS3\
+F:\ESTACION-PRO\Emulators\xemu\
+F:\ESTACION-PRO\ROMs\
+F:\ESTACION-PRO\portable.txt
 ```
 
-This is just an example as you may of course not use these specific emulators. There are also many more emulators supported as detailed in the `es_find_rules.xml` configuration file. As well there will be many more files and directories than those listed above inside the F:\ES-DE folder.
+This is just an example as you may of course not use these specific emulators. There are also many more emulators supported as detailed in the `es_find_rules.xml` configuration file. As well there will be many more files and directories than those listed above inside the F:\ESTACION-PRO folder.
 
-How the portable setup works is that when ES-DE finds a file named portable.txt in its executable directory, it will by default locate the ES-DE application data directory directly inside this folder. It's also possible to modify portable.txt with a path relative to the ES-DE executable directory. For instance if two dots `..` are placed inside the portable.txt file, then the ES-DE application data directory will be located in the parent folder, which would be directly under F:\ for this example.
+How the portable setup works is that when ESTACION-PRO finds a file named portable.txt in its executable directory, it will by default locate the ESTACION-PRO application data directory directly inside this folder. It's also possible to modify portable.txt with a path relative to the ESTACION-PRO executable directory. For instance if two dots `..` are placed inside the portable.txt file, then the ESTACION-PRO application data directory will be located in the parent folder, which would be directly under F:\ for this example.
 
-If the --home command line parameter is passed when starting ES-DE, that will override the portable.txt file.
+If the --home command line parameter is passed when starting ESTACION-PRO, that will override the portable.txt file.
 
-Start ES-DE from the F:\ device and check that everything works as expected. Just be aware that some emulators may not play that well with a portable setup and may store their configuration files in your home directory (probably on your C: drive) or at some other location. So when using the portable installation on another computer you may need to perform some additional emulator-specific setup.
+Start ESTACION-PRO from the F:\ device and check that everything works as expected. Just be aware that some emulators may not play that well with a portable setup and may store their configuration files in your home directory (probably on your C: drive) or at some other location. So when using the portable installation on another computer you may need to perform some additional emulator-specific setup.
 
 Following this, optionally copy any existing gamelist.xml files, game media files etc. to the removable media. For example:
 
 ```
-F:\ES-DE\ES-DE\collections\
-F:\ES-DE\ES-DE\downloaded_media\
-F:\ES-DE\ES-DE\gamelists\
+F:\ESTACION-PRO\ESTACION-PRO\collections\
+F:\ESTACION-PRO\ESTACION-PRO\downloaded_media\
+F:\ESTACION-PRO\ESTACION-PRO\gamelists\
 ```
 
-You could alternatively copy over your entire ES-DE application data directory, but in this case make sure that you have no settings in es_settings.xml that point to a specific location on your local filesystem, such as the game ROMs or game media directories.
+You could alternatively copy over your entire ESTACION-PRO application data directory, but in this case make sure that you have no settings in es_settings.xml that point to a specific location on your local filesystem, such as the game ROMs or game media directories.
 
 You now have a fully functional portable retrogaming installation!
 
@@ -2357,9 +2357,9 @@ Just make sure to not place the portable installation on a network share that us
 
 ## Custom event scripts
 
-There are numerous locations throughout ES-DE where custom scripts can be executed if the option to do so has been enabled in the settings. You'll find the option _Enable custom event scripts_ on the Main menu under _Other settings_. By default this setting is deactivated so make sure to enable it to use this feature.
+There are numerous locations throughout ESTACION-PRO where custom scripts can be executed if the option to do so has been enabled in the settings. You'll find the option _Enable custom event scripts_ on the Main menu under _Other settings_. By default this setting is deactivated so make sure to enable it to use this feature.
 
-The approach is quite straightforward, ES-DE will look for any files inside a script directory that corresponds to the event that is triggered and will then attempt to execute all these files (regardless of their file extensions, except on Windows where only .bat files can be used). If you want to have the scripts executed in a certain order you can name them accordingly as they will be sorted and executed in lexicographic order. The sorting is case-sensitive on Linux and Android and case-insensitive on macOS and Windows. ES-DE will wait for each script to finish its execution before moving on to the next one, so the application will suspend briefly when whatever the script is doing is executing. If you want to avoid this you can setup a wrapper script that executes another script outside the ES-DE scripts directory as a background process. Refer to your operating system documentation on how to accomplish this.
+The approach is quite straightforward, ESTACION-PRO will look for any files inside a script directory that corresponds to the event that is triggered and will then attempt to execute all these files (regardless of their file extensions, except on Windows where only .bat files can be used). If you want to have the scripts executed in a certain order you can name them accordingly as they will be sorted and executed in lexicographic order. The sorting is case-sensitive on Linux and Android and case-insensitive on macOS and Windows. ESTACION-PRO will wait for each script to finish its execution before moving on to the next one, so the application will suspend briefly when whatever the script is doing is executing. If you want to avoid this you can setup a wrapper script that executes another script outside the ESTACION-PRO scripts directory as a background process. Refer to your operating system documentation on how to accomplish this.
 
 On Windows PowerShell scripts can't be executed directly but they can be run via .bat wrapper script where you explicitly call powershell.exe with the -command flag. Just be aware that by default the execution of PowerShell scripts is disabled on Windows. Further details about PowerShell is beyond the scope of this document.
 
@@ -2390,19 +2390,19 @@ There are up to four parameters that will be passed to these scripts, as detaile
 
 ***)** Parameters in _italics_ are literal strings.
 
-Note that the _game-select_ and _system-select_ events require that the _Browsing custom events_ option in the Other settings menu is enabled. Also note that enabling this could lead to a lot of latency in the application as the event is triggered so frequently. So only enable these events if you really need them. And if you do, then make sure to execute scripts that run their activities in the background and immediately return to ES-DE, rather than blocking ES-DE during the script execution.
+Note that the _game-select_ and _system-select_ events require that the _Browsing custom events_ option in the Other settings menu is enabled. Also note that enabling this could lead to a lot of latency in the application as the event is triggered so frequently. So only enable these events if you really need them. And if you do, then make sure to execute scripts that run their activities in the background and immediately return to ESTACION-PRO, rather than blocking ESTACION-PRO during the script execution.
 
 For the _game-select_ event, when starting to fast scroll in the gamelist view, an event containing blank parameters will be triggered so that you can detect this state.
 
 We'll go through two examples:
 * Creating a log file that will record the start and end time for each game we play, letting us see how much time we spend on retro-gaming
-* Changing the system resolution when launching and returning from a game in order to run the emulator at a lower resolution than ES-DE
+* Changing the system resolution when launching and returning from a game in order to run the emulator at a lower resolution than ESTACION-PRO
 
 The following examples are for Linux systems, but it works the same way on Android, macOS and Windows (although .bat batch files are used on Windows instead of shell scripts and any spaces in the parameters are not escaped as is the case on Linux, Android and macOS).
 
 As can be seen in the table above, the events executed when a game starts and ends are named _game-start_ and _game-end_
 
-So let's create the folders for these events inside the application data directory, or more specifically in `~/ES-DE/scripts`
+So let's create the folders for these events inside the application data directory, or more specifically in `~/ESTACION-PRO/scripts`
 
 **Game log**
 
@@ -2413,7 +2413,7 @@ Let's name the start script `game_start_logging.sh` with the following contents:
 ```
 #!/bin/bash
 TIMESTAMP=$(date +%Y-%m-%d' '%H:%M:%S)
-echo Starting game "\""${2}"\"" "\""${4}"\"" "(\""${1}"\")" at $TIMESTAMP >> ~/ES-DE/logs/game_playlog.txt
+echo Starting game "\""${2}"\"" "\""${4}"\"" "(\""${1}"\")" at $TIMESTAMP >> ~/ESTACION-PRO/logs/game_playlog.txt
 ```
 
 And let's name the end script `game_end_logging.sh` with the following contents:
@@ -2421,30 +2421,30 @@ And let's name the end script `game_end_logging.sh` with the following contents:
 ```
 #!/bin/bash
 TIMESTAMP=$(date +%Y-%m-%d' '%H:%M:%S)
-echo "Ending game  " "\""${2}"\"" "\""${4}"\"" "(\""${1}"\")" at $TIMESTAMP >> ~/ES-DE/logs/game_playlog.txt
+echo "Ending game  " "\""${2}"\"" "\""${4}"\"" "(\""${1}"\")" at $TIMESTAMP >> ~/ESTACION-PRO/logs/game_playlog.txt
 ```
 
 After creating the two scripts, you should have something like this on the filesystem:
 
 ```
-~/ES-DE/scripts/game-start/game_start_logging.sh
-~/ES-DE/scripts/game-end/game_end_logging.sh
+~/ESTACION-PRO/scripts/game-start/game_start_logging.sh
+~/ESTACION-PRO/scripts/game-end/game_end_logging.sh
 ```
 
 Don't forget to make the scripts executable (e.g. "chmod 755 ./game_start_logging.sh").
 
-If we now start ES-DE with the debug flag and launch a game, something like the following should show up in es_log.txt:
+If we now start ESTACION-PRO with the debug flag and launch a game, something like the following should show up in es_log.txt:
 
 ```
 Aug 05 14:19:24 Debug:  Scripting::fireEvent(): game-start "/home/myusername/ROMs/nes/Legend\ of\ Zelda,\ The.zip" "The Legend Of Zelda" "nes" "Nintendo Entertainment System"
-Aug 05 14:19:24 Debug:  Executing: /home/myusername/ES-DE/scripts/game-start/game_start_logging.sh "/home/myusername/ROMs/nes/Legend\ of\ Zelda,\ The.zip" "The Legend Of Zelda" "nes" "Nintendo Entertainment System"
+Aug 05 14:19:24 Debug:  Executing: /home/myusername/ESTACION-PRO/scripts/game-start/game_start_logging.sh "/home/myusername/ROMs/nes/Legend\ of\ Zelda,\ The.zip" "The Legend Of Zelda" "nes" "Nintendo Entertainment System"
 .
 .
 Aug 05 14:27:15 Debug:  Scripting::fireEvent(): game-end "/home/myusername/ROMs/nes/Legend\ of\ Zelda,\ The.zip" "The Legend Of Zelda" "nes" "Nintendo Entertainment System" ""
-Aug 05 14:27:15 Debug:  Executing: /home/myusername/ES-DE/scripts/game-end/game_end_logging.sh "/home/myusername/ROMs/nes/Legend\ of\ Zelda,\ The.zip" "The Legend Of Zelda" "nes" "Nintendo Entertainment System"
+Aug 05 14:27:15 Debug:  Executing: /home/myusername/ESTACION-PRO/scripts/game-end/game_end_logging.sh "/home/myusername/ROMs/nes/Legend\ of\ Zelda,\ The.zip" "The Legend Of Zelda" "nes" "Nintendo Entertainment System"
 ```
 
-Finally after running some games, ~/ES-DE/logs/game_playlog.txt should contain something like the following:
+Finally after running some games, ~/ESTACION-PRO/logs/game_playlog.txt should contain something like the following:
 
 ```
 Starting game "The Legend Of Zelda" "Nintendo Entertainment System" ("/home/myusername/ROMs/nes/Legend\ of\ Zelda,\ The.zip") at 2020-08-05 14:19:24
@@ -2475,13 +2475,13 @@ sleep 0.3
 xdotool search --class es-de windowactivate
 ```
 
-The last two lines are optional, they're used to set the focus back to ES-DE in case you're running attention-seeking applications such as Kodi which may steal focus after resolution changes. You may need to adjust the sleep time to get this to work reliably though, as the timing may differ between different computers and graphics drivers.
+The last two lines are optional, they're used to set the focus back to ESTACION-PRO in case you're running attention-seeking applications such as Kodi which may steal focus after resolution changes. You may need to adjust the sleep time to get this to work reliably though, as the timing may differ between different computers and graphics drivers.
 
 After creating the two scripts, you should have something like this on the filesystem:
 
 ```
-~/ES-DE/scripts/game-start/set_resolution_1080p.sh
-~/ES-DE/scripts/game-end/set_resolution_4K.sh
+~/ESTACION-PRO/scripts/game-start/set_resolution_1080p.sh
+~/ESTACION-PRO/scripts/game-end/set_resolution_4K.sh
 ```
 
 Don't forget to make the scripts executable (e.g. "chmod 755 ./set_resolution_1080p.sh").

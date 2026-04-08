@@ -1,6 +1,6 @@
-# ES-DE Frontend (development version) - Linux on AArch64 documentation
+# ESTACION-PRO Frontend (development version) - Linux on AArch64 documentation
 
-This document is only relevant for the current ES-DE development version and it contains information specific to the Linux on AArch64 release, for more general ES-DE documentation refer to the [User guide](USERGUIDE-DEV.md) as well as the general [FAQ](FAQ.md).
+This document is only relevant for the current ESTACION-PRO development version and it contains information specific to the Linux on AArch64 release, for more general ESTACION-PRO documentation refer to the [User guide](USERGUIDE-DEV.md) as well as the general [FAQ](FAQ.md).
 
 Table of contents:
 
@@ -15,7 +15,7 @@ https://github.com/christianhaitian/retroarch-cores
 
 Support for a lot of standalone emulators is also missing as compared to Linux on x86/x64, but as many of these have been ported to macOS ARM and Android they will hopefully be officially released on Linux AArch64 as well.
 
-For this port there is a separate set of find rules, import rules and system configuration in the [resources/systems/linuxarm](https://gitlab.com/es-de/emulationstation-de/-/tree/master/resources/systems/linuxarm) directory.
+For this port there is a separate set of find rules, import rules and system configuration in the [resources/systems/linuxarm](https://github.com/DOCK-PI3/ESTACION-PRO/tree/master/resources/systems/linuxarm) directory.
 
 ## Running on devices that use OpenGL ES
 
@@ -29,9 +29,9 @@ On some mobile devices that lack driver support for desktop OpenGL you may be ab
 MESA_GL_VERSION_OVERRIDE=3.3 MESA_LOADER_DRIVER_OVERRIDE=zink ./ES-DE_aarch64.AppImage
 ```
 
-Using Zink instead of a native OpenGL driver comes with some performance penalties though. So on some SBCs and handhelds it could be a good idea to instead build ES-DE yourself with OpenGL ES support. Also be aware that not all mobile devices may have a fully conformant Vulkan implementation, which could make Zink misbehave or not work at all.
+Using Zink instead of a native OpenGL driver comes with some performance penalties though. So on some SBCs and handhelds it could be a good idea to instead build ESTACION-PRO yourself with OpenGL ES support. Also be aware that not all mobile devices may have a fully conformant Vulkan implementation, which could make Zink misbehave or not work at all.
 
-The AppImage will only run in a desktop environment, if you need KMS/direct framebuffer access you'll need to build ES-DE yourself with the DEINIT_ON_LAUNCH option.
+The AppImage will only run in a desktop environment, if you need KMS/direct framebuffer access you'll need to build ESTACION-PRO yourself with the DEINIT_ON_LAUNCH option.
 
 ## Supported game systems
 
@@ -84,14 +84,14 @@ All emulators are RetroArch cores unless marked as **(Standalone)**
 | cps3                  | Capcom Play System III                         | MAME - Current                    | MAME 2010,<br>MAME 2003-Plus,<br>MAME 2003,<br>MAME 2000,<br>MAME **(Standalone)**,<br>FinalBurn Neo,<br>FB Alpha 2012,<br>FB Alpha 2012 CPS-3 | Depends      | See the specific _Arcade and Neo Geo_ section in the user guide|
 | crvision              | VTech CreatiVision                             | JollyCV                           | MAME - Current,<br>MAME **(Standalone)**             | Yes          | Single archive or ROM file           |
 | daphne                | Daphne Arcade LaserDisc Emulator               | MAME - Current                    | MAME **(Standalone)**,<br>DirkSimple,<br>ares [Mega LD] **(Standalone)** | Depends     | See the specific _LaserDisc Games_ section in the user guide|
-| desktop               | Desktop Applications                           | _Suspend ES-DE_                   | _Keep ES-DE running_,<br> _AppImage (Suspend ES-DE)_,<br> _AppImage (Keep ES-DE running)_ | No           | See the specific _Ports and desktop applications_ section in the user guide|
+| desktop               | Desktop Applications                           | _Suspend ES-DE_                   | _Keep ESTACION-PRO running_,<br> _AppImage (Suspend ESTACION-PRO)_,<br> _AppImage (Keep ESTACION-PRO running)_ | No           | See the specific _Ports and desktop applications_ section in the user guide|
 | doom                  | Doom                                           | PrBoom                            | PrBoom+ **(Standalone)**,<br>Boom 3,<br>Boom 3 xp,<br> _Shortcut or script_ | No           |                                      |
 | dos                   | DOS (PC)                                       | DOSBox-Pure                       | DOSBox Pure Unleashed **(Standalone)**,<br>DOSBox-Core,<br>DOSBox-SVN,<br>DOSBox-X **(Standalone)**,<br>DOSBox Staging **(Standalone)**,<br>DREAMM **(Standalone)**,<br>VirtualXT | No           | See the specific _DOS / PC_ section in the user guide|
 | dragon32              | Dragon Data Dragon 32                          | MAME Dragon 32 [Tape] **(Standalone)** | MAME Dragon 32 [Cartridge] **(Standalone)**,<br>MAME Dragon 64 [Tape] **(Standalone)**,<br>MAME Dragon 64 [Cartridge] **(Standalone)** | Yes          | See the specific _Dragon 32 and Tano Dragon_ section in the user guide|
 | dreamcast             | Sega Dreamcast                                 | Flycast                           | Flycast **(Standalone)**        | No           | In separate folder interpreted as a file, with .m3u playlist if multi-disc game |
 | easyrpg               | EasyRPG Game Engine                            | EasyRPG                           | EasyRPG Player **(Standalone)** | No           | See the specific _EasyRPG Game Engine_ section in the user guide|
 | electron              | Acorn Electron                                 | MAME [Tape] **(Standalone)**      | MAME [Diskette DFS] **(Standalone)**,<br>MAME [Diskette ADFS] **(Standalone)** | Yes          | Single archive, or single tape or diskette image file |
-| emulators             | Emulators                                      | _Suspend ES-DE_                   | _Keep ES-DE running_,<br> _AppImage (Suspend ES-DE)_,<br> _AppImage (Keep ES-DE running)_ | No           | See the specific _Ports and desktop applications_ section in the user guide|
+| emulators             | Emulators                                      | _Suspend ES-DE_                   | _Keep ESTACION-PRO running_,<br> _AppImage (Suspend ESTACION-PRO)_,<br> _AppImage (Keep ESTACION-PRO running)_ | No           | See the specific _Ports and desktop applications_ section in the user guide|
 | epic                  | Epic Games Store                               | Epic Games Store **(Standalone)** |                       | No           | Shortcut (.desktop/.app/.lnk) file |
 | famicom               | Nintendo Family Computer                       | Mesen                             | Mesen **(Standalone)**,<br>Nestopia UE,<br>Nestopia UE **(Standalone)**,<br>FCEUmm,<br>QuickNES,<br>Mednafen **(Standalone)**,<br>ares **(Standalone)**,<br>ares FDS **(Standalone)** | No           | Single archive or ROM file. For Famicom games in 3D see the specific _Nintendo NES and Famicom in 3D_ section in the user guide|
 | fba                   | FinalBurn Alpha                                | FB Alpha 2012                     | FB Alpha 2012 Neo Geo,<br>FB Alpha 2012 CPS-1,<br>FB Alpha 2012 CPS-2,<br>FB Alpha 2012 CPS-3 | Yes          | See the specific _Arcade and Neo Geo_ section in the user guide|
@@ -222,9 +222,9 @@ All emulators are RetroArch cores unless marked as **(Standalone)**
 | wasm4                 | WASM-4 Fantasy Console                         | WASM-4                            |                                   | No           | Single .wasm file                    |
 | wii                   | Nintendo Wii                                   | Dolphin                           | Dolphin **(Standalone)**,<br>PrimeHack **(Standalone)** | No           |                                      |
 | wiiu                  | Nintendo Wii U                                 | _Placeholder_                     |                                   |              |                                      |
-| windows               | Microsoft Windows                              | _Suspend ES-DE_                   | _Keep ES-DE running_,<br> _AppImage (Suspend ES-DE)_,<br> _AppImage (Keep ES-DE running)_ | No           | Shortcut (.desktop/.app/.lnk) file, script or AppImage |
-| windows3x             | Microsoft Windows 3.x                          | DOSBox-X **(Standalone)**         | DOSBox-Pure,<br>DOSBox Pure Unleashed **(Standalone)**,<br> _Shortcut or script (Suspend ES-DE)_,<br> _Shortcut or script (Keep ES-DE running)_,<br> _AppImage (Suspend ES-DE)_,<br> _AppImage (Keep ES-DE running)_ | No           | See the specific _Microsoft Windows 3.x and 9x_ section in the user guide|
-| windows9x             | Microsoft Windows 9x                           | DOSBox-X **(Standalone)**         | DOSBox-Pure,<br>DOSBox Pure Unleashed **(Standalone)**,<br> _Shortcut or script (Suspend ES-DE)_,<br> _Shortcut or script (Keep ES-DE running)_,<br> _AppImage (Suspend ES-DE)_,<br> _AppImage (Keep ES-DE running)_ | No           | See the specific _Microsoft Windows 3.x and 9x_ section in the user guide|
+| windows               | Microsoft Windows                              | _Suspend ES-DE_                   | _Keep ESTACION-PRO running_,<br> _AppImage (Suspend ESTACION-PRO)_,<br> _AppImage (Keep ESTACION-PRO running)_ | No           | Shortcut (.desktop/.app/.lnk) file, script or AppImage |
+| windows3x             | Microsoft Windows 3.x                          | DOSBox-X **(Standalone)**         | DOSBox-Pure,<br>DOSBox Pure Unleashed **(Standalone)**,<br> _Shortcut or script (Suspend ESTACION-PRO)_,<br> _Shortcut or script (Keep ESTACION-PRO running)_,<br> _AppImage (Suspend ESTACION-PRO)_,<br> _AppImage (Keep ESTACION-PRO running)_ | No           | See the specific _Microsoft Windows 3.x and 9x_ section in the user guide|
+| windows9x             | Microsoft Windows 9x                           | DOSBox-X **(Standalone)**         | DOSBox-Pure,<br>DOSBox Pure Unleashed **(Standalone)**,<br> _Shortcut or script (Suspend ESTACION-PRO)_,<br> _Shortcut or script (Keep ESTACION-PRO running)_,<br> _AppImage (Suspend ESTACION-PRO)_,<br> _AppImage (Keep ESTACION-PRO running)_ | No           | See the specific _Microsoft Windows 3.x and 9x_ section in the user guide|
 | wonderswan            | Bandai WonderSwan                              | Beetle Cygne                      | Mednafen **(Standalone)**,<br>ares **(Standalone)**,<br>ares [Benesse Pocket Challenge V2] **(Standalone)**,<br>Mesen **(Standalone)** | No           | Single archive or ROM file    |
 | wonderswancolor       | Bandai WonderSwan Color                        | Beetle Cygne                      | Mednafen **(Standalone)**,<br>ares **(Standalone)**,<br>Mesen **(Standalone)** | No           | Single archive or ROM file    |
 | x1                    | Sharp X1                                       | X Millennium                      | MAME [Diskette] **(Standalone)**,<br>MAME [Tape] **(Standalone)** | Yes for MAME | Single archive or diskette/tape file |
